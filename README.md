@@ -28,5 +28,5 @@ Run the tests with `pytest` (or `uv run pytest`).
 After changing dependencies in `pyproject.toml`, regenerate `requirements.txt`:
 
 ```bash
-uv pip compile pyproject.toml --extra dev --python-version 3.12 -o requirements.txt
+uv pip compile pyproject.toml --extra dev --python-version 3.12 --universal -o requirements.txt
 ```
