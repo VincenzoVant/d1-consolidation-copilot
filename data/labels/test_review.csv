@@ -1,0 +1,251 @@
+﻿account_id;company_id;industry;language;source;code;name;target_code;target_name_en;target_name_local;verdict;corrected_target;note
+test-c000-000;test-c000;software;nl;rules;121000;Herwaarderingsmeerwaarden op materiële vaste activa;121;Revaluation Surpluses on Tangible Fixed Assets;Herwaarderingsmeerwaarden op materiële vaste activa;ok;;
+test-c000-007;test-c000;software;nl;rules;220000;terreinen;220;Land;Terreinen;ok;;
+test-c000-010;test-c000;software;nl;rules;250000;Terreinen en gebouwen in leasing of op grond van een soortgelijk recht;250;Land and Buildings in Leasing or Other Similar Rights;Terreinen en gebouwen in leasing of op grond van een soortgelijk recht;ok;;
+test-c000-013;test-c000;software;nl;rules;309000;Grondst. - Geboekte waardeverm. (-);309;Raw Materials - Amounts Written Down Recorded (-);Grondstoffen - Geboekte waardeverminderingen (-);ok;;
+test-c000-021;test-c000;software;nl;rules;414000;Te innen opbrengsten;414;Income Receivable;Te innen opbrengsten;ok;;
+test-c000-026;test-c000;software;nl;rules;433000;kredietinstellingen - schulden in rekening-courant;433;Credit Institutions - Current Account Payable;Kredietinstellingen - Schulden in rekening-courant;ok;;
+test-c000-038;test-c000;software;nl;rules;649001;Als herstructureringskosten geactiveerde bedrijfskosten (-) - Antwerpen;649;Operating Charges Carried to Assets as Restructuring Costs (-);Als herstructureringskosten geactiveerde bedrijfskosten (-);ok;;
+test-c001-007;test-c001;construction;fr;rules;163000;Prov. pour obligations environnementales;163;Provisions for Environmental Obligations;Provisions pour obligations environnementales;ok;;
+test-c001-008;test-c001;construction;fr;rules;163001;Prov. pour obligations environnementales - projet A;163;Provisions for Environmental Obligations;Provisions pour obligations environnementales;ok;;
+test-c001-039;test-c001;construction;fr;rules;700000;Ventes et prestations de services;700;Sales and Services Rendered;Ventes et prestations de services;ok;;
+test-c002-028;test-c002;retail;en;rules;578000;Cash in Hand - Satmps;578;Cash in Hand - Stamps;Cash in Hand - Stamps;ok;;"Typo in name (Satmps); mapping fine"
+test-c002-030;test-c002;retail;en;rules;600000;Purchases of Raw Materials;600;Purchases of Raw Materials;Purchases of Raw Materials;ok;;
+test-c002-033;test-c002;retail;en;rules;602002;Purchases of Services, Works and Studies - EU;602;Purchases of Services, Works and Studies;Purchases of Services, Works and Studies;ok;;
+test-c002-036;test-c002;retail;en;rules;620000;Remun. and Direct Social Benefits;620;Remuneration and Direct Social Benefits;Remuneration and Direct Social Benefits;ok;;
+test-c003-001;test-c003;services;mixed;rules;122000;herwaarderingsmeerwaarden op financiële vaste activa;122;Revaluation Surpluses on Financial Fixed Assets;Herwaarderingsmeerwaarden op financiële vaste activa / Plus-values de réévaluation sur immobilisations financières;ok;;
+test-c003-007;test-c003;services;mixed;rules;171002;niet-achtergestelde obligatieleningen (> 1 jaar) / emprunts obligataires non subordonnes (> 1 an) - intern;171;Unsubordinated Debentures (> 1 Year);Niet-achtergestelde obligatieleningen (> 1 jaar) / Emprunts obligataires non subordonnés (> 1 an);ok;;
+test-c003-015;test-c003;services;mixed;rules;284000;Other Sharse;284;Other Shares;Andere aandelen / Autres actions et parts;ok;;"Typo in name (Sharse); mapping fine"
+test-c003-017;test-c003;services;mixed;rules;359000;ONROERENDE GOEDEREN BESTEMD VOOR VERKOOP - GEBOEKTE WAARDEVERMINDERINGEN (-);359;Immovable Property Intended for Sale - Amounts Written Down Recorded (-);Onroerende goederen bestemd voor verkoop - Geboekte waardeverminderingen (-) / Immeubles destinés à la vente - Réductions de valeur actées (-);ok;;
+test-c003-024;test-c003;services;mixed;rules;424000;Overige leningen (> 1 jaar vervallend < 1 jaar) / Autres emprunts (> 1 an écheant < 1 an);424;Other Loans (> 1 Year Falling Due < 1 Year);Overige leningen (> 1 jaar vervallend < 1 jaar) / Autres emprunts (> 1 an écheant < 1 an);ok;;
+test-c003-029;test-c003;services;mixed;rules;488000;Borgtochten ontvangen in contanten;488;Guarantees Received in Cash;Borgtochten ontvangen in contanten / Cautionnements reçus en numéraire;ok;;
+test-c003-032;test-c003;services;mixed;rules;621000;werkgeversbijdragen voor sociale verzekeringen;621;Employers' Contribution for Social Security;Werkgeversbijdragen voor sociale verzekeringen / Cotisations patronales d'assurances sociales;ok;;
+test-c003-035;test-c003;services;mixed;rules;631000;Waardeverminderingen op voorraden;631;Amounts Written Off Stocks;Waardeverminderingen op voorraden / Réductions de valeur sur stocks;ok;;
+test-c003-037;test-c003;services;mixed;rules;635000;Prov. for Pensions and Similar Obligations;635;Provisions for Pensions and Similar Obligations;Voorzieningen voor pensioenen en soortgelijke verplichtingen / Provisions pour pensions et obligations similaires;ok;;
+test-c003-046;test-c003;services;mixed;rules;754000;Exchange Differences;754;Exchange Differences;Wisselresultaten / Différences de change;ok;;
+test-c004-003;test-c004;software;fr;rules;4910;etablissements de crédit (> 1 an);173;Credit Institutions (> 1 Year);Etablissements de crédit (> 1 an);ok;;
+test-c004-025;test-c004;software;fr;rules;5130;Etablissements de crédit;550;Cash at Bank - Credit Institutions;Etablissements de crédit;ok;;"Generic name; assumed this is the bank balance (55). If it's a bank debt, use 433/430"
+test-c004-026;test-c004;software;fr;rules;5140;Achats d'immeubles destinés à la ventte;605;Purchases of Immovable Property for Resale;Achats d'immeubles destinés à la vente;ok;;"Typo in name; mapping fine"
+test-c004-033;test-c004;software;fr;rules;5210;Pensions de retraite et de survie;624;Retirement and Survivors' Pensions;Pensions de retraite et de survie;ok;;
+test-c004-041;test-c004;software;fr;rules;5290;TRANSFERT AUX IMPÔTS DIFFÉRÉS;680;Transfer to Deferred Taxes;Transfert aux impôts différés;ok;;
+test-c005-006;test-c005;construction;en;rules;4770;Buildings;221;Buildings;Buildings;ok;;
+test-c005-012;test-c005;construction;en;rules;4830;finished goods - amts. written down recorded (-);339;Finished Goods - Amounts Written Down Recorded (-);Finished Goods - Amounts Written Down Recorded (-);ok;;
+test-c005-013;test-c005;construction;en;rules;4840;finished goods - amts. written down recorded (-) - internal;339;Finished Goods - Amounts Written Down Recorded (-);Finished Goods - Amounts Written Down Recorded (-);ok;;
+test-c005-015;test-c005;construction;en;rules;4860;TRADE DEBTORS - BILLS RECEIVABLE;401;Trade Debtors - Bills Receivable;Trade Debtors - Bills Receivable;ok;;
+test-c005-025;test-c005;construction;en;rules;4960;Bills of Exchange Payable - other;441;Bills of Exchange Payable;Bills of Exchange Payable;ok;;
+test-c005-032;test-c005;construction;en;rules;5030;Fixed-Income Securities - Amounts Written Down Recorded (-);529;Fixed-Income Securities - Amounts Written Down Recorded (-);Fixed-Income Securities - Amounts Written Down Recorded (-);ok;;
+test-c005-038;test-c005;construction;en;rules;5090;RETIREMENT AND SURVIVORS' PENSIONS;624;Retirement and Survivors' Pensions;Retirement and Survivors' Pensions;ok;;
+test-c005-044;test-c005;construction;en;rules;5150;Provisions of a Finnacial Nature;656;Provisions of a Financial Nature;Provisions of a Financial Nature;ok;;"Typo in name; mapping fine"
+test-c005-047;test-c005;construction;en;rules;5180;Increase (Decrease) in Stocks;712;Increase (Decrease) in Stocks of Work in Progress;Increase (Decrease) in Stocks of Work in Progress;ok;;"Generic 71x label; 712 is plausible, but 713/717 are possible. Confirm with the company"
+test-c006-005;test-c006;retail;mixed;rules;3730;Installaties, machines en uitrusting in leasing of op grond van een soortgelijk recht - Gent;251;Plant, Machinery and Equipment in Leasing or Other Similar Rights;Installaties, machines en uitrusting in leasing of op grond van een soortgelijk recht / Installations, machines et outillage détenues en location-financement et droits similaires;ok;;
+test-c006-006;test-c006;retail;mixed;rules;3740;participating interests in aff;280;Participating Interests in Affiliated Enterprises;Deelnemingen in verbonden vennootschappen / Participations dans les sociétés liées;ok;;
+test-c006-010;test-c006;retail;mixed;rules;3780;acomptes versés sur achats pour stocks - réductions de valeur actées (-);369;Advance Payments on Purchases for Stocks - Amounts Written Down Recorded (-);Vooruitbetalingen op voorraadinkopen - Geboekte waardeverminderingen (-) / Acomptes versés sur achats pour stocks - Réductions de valeur actées (-);ok;;
+test-c006-017;test-c006;retail;mixed;rules;3850;Leveranciers;440;Suppliers;Leveranciers / Fournisseurs;ok;;
+test-c006-028;test-c006;retail;mixed;rules;3960;Ouderdoms- en overlevingspensi - Gent;624;Retirement and Survivors' Pensions;Ouderdoms- en overlevingspensioenen / Pensions de retraite et de survie;ok;;
+test-c007-015;test-c007;services;nl;rules;1670;Vooruitbetalingen op voorraadinkopen - Vooruitbetalingen - intern;360;Advance Payments on Purchases for Stocks - Advance Payments;Vooruitbetalingen op voorraadinkopen - Vooruitbetalingen;ok;;
+test-c007-022;test-c007;services;nl;rules;1740;Overige vorderingen - Geboekte waardeverminderingen (-);419;Sundry Amounts Receivable - Amounts Written Down Recorded (-);Overige vorderingen - Geboekte waardeverminderingen (-);ok;;
+test-c007-023;test-c007;services;nl;rules;1750;Overige vorderingen - Geboekte waardeverminderingen (-) - Antwerpen;419;Sundry Amounts Receivable - Amounts Written Down Recorded (-);Overige vorderingen - Geboekte waardeverminderingen (-);ok;;
+test-c007-035;test-c007;services;nl;rules;1870;Waardeverminderingen op handelsvorderingen (> 1 jaar);633;Amounts Written Off Trade Debtors (> 1 Year);Waardeverminderingen op handelsvorderingen (> 1 jaar);ok;;
+test-c007-046;test-c007;services;nl;rules;1980;Terugneming van afschr. en van waardeverm.;760;Write-Back of Depreciation and of Amounts Written Off;Terugneming van afschrijvingen en van waardeverminderingen;ok;;
+test-c007-048;test-c007;services;nl;rules;2000;andere niet-recurrente bedrijfsoprbengsten;764;Other Non-Recurring Operating Income;Andere niet-recurrente bedrijfsopbrengsten;ok;;"Typo in name; mapping fine"
+test-c007-049;test-c007;services;nl;rules;2010;Onttrekking aan de reserves;792;Withdrawals From Reserves;Onttrekking aan de reserves;ok;;
+test-c008-000;test-c008;software;en;llm;1240;Reversal WD - short-term investments;124;Decrease in Amounts Written Down on Current Investments;Decrease in Amounts Written Down on Current Investments;ok;;Fine for an investment company. Otherwise, write-backs on current investments are normally credited to 651
+test-c008-001;test-c008;software;en;llm;1600;Pension provision - group insurance staff;160;Provisions for Pensions and Similar Obligations;Provisions for Pensions and Similar Obligations;ok;;
+test-c008-002;test-c008;software;en;llm;1601;Pension provision - IPT managers;160;Provisions for Pensions and Similar Obligations;Provisions for Pensions and Similar Obligations;ok;;
+test-c008-003;test-c008;software;en;llm;1740;LT loan - shareholder current acct;174;Other Loans (> 1 Year);Other Loans (> 1 Year);ok;;
+test-c008-004;test-c008;software;en;llm;1741;LT loan - PMV/Flanders Innovation;174;Other Loans (> 1 Year);Other Loans (> 1 Year);ok;;Use 170 if the PMV loan is subordinated
+test-c008-005;test-c008;software;en;llm;1760;Customer prepayments LT - SaaS multi-year deals;176;Advance Payments on Contract in Progress (> 1 Year);Advance Payments on Contract in Progress (> 1 Year);ok;;"Acceptable; 493 is an alternative if treated as deferred revenue"
+test-c008-006;test-c008;software;en;llm;1780;Cash deposits received - subletting Ghent office;178;Guarantees Received in Cash (> 1 Year);Guarantees Received in Cash (> 1 Year);ok;;"Fine if the deposit is held >1y; otherwise 488"
+test-c008-007;test-c008;software;en;llm;1790;Other LT payables - earn-out acquisition;179;Other Amounts Payable (> 1 Year);Other Amounts Payable (> 1 Year);ok;;
+test-c008-008;test-c008;software;en;llm;2220;Land - Leuven HQ plot;222;Developed Land;Developed Land;ok;;"Fine if the HQ is built on the plot; undeveloped land would be 220"
+test-c008-009;test-c008;software;en;llm;3000;Hardware components stock (IoT kits);300;Raw Materials - Acquisition Value;Raw Materials - Acquisition Value;ok;;"Fine if the components are assembled; 340 if resold as-is"
+test-c008-010;test-c008;software;en;llm;4170;Doubtful sundry receivables;417;Sundry Amounts Receivable - Doubtful Amounts Receivable;Sundry Amounts Receivable - Doubtful Amounts Receivable;ok;;
+test-c008-011;test-c008;software;en;llm;4200;Sub loan founders - current portion;420;Subordinated Loans (> 1 Year Falling Due < 1 Year);Subordinated Loans (> 1 Year Falling Due < 1 Year);ok;;
+test-c008-012;test-c008;software;en;llm;4210;Bond loan - due within 12m;421;Unsubordinated Debentures (> 1 Year Falling Due < 1 Year);Unsubordinated Debentures (> 1 Year Falling Due < 1 Year);ok;;
+test-c008-013;test-c008;software;en;llm;5310;Term deposit KBC 3-12m;531;Fixed Term Deposit Between One Month and One Year;Fixed Term Deposit Between One Month and One Year;ok;;
+test-c008-014;test-c008;software;en;llm;5311;Term deposit Belfius 6m;531;Fixed Term Deposit Between One Month and One Year;Fixed Term Deposit Between One Month and One Year;ok;;
+test-c008-015;test-c008;software;en;llm;5390;WD term deposits (-);539;Fixed Term Deposits - Amounts Written Down Recorded (-);Fixed Term Deposits - Amounts Written Down Recorded (-);ok;;
+test-c008-016;test-c008;software;en;llm;5700;Petty cash Leuven;570;Cash in Hand - Cash;Cash in Hand - Cash;ok;;
+test-c008-017;test-c008;software;en;llm;5701;Petty cash Ghent;570;Cash in Hand - Cash;Cash in Hand - Cash;ok;;
+test-c008-018;test-c008;software;en;llm;6010;Office supplies & consumables;601;Purchases of Consumables;Purchases of Consumables;drop;;Office supplies are services & sundry goods (61), and the standard chart has no 3-digit group for them (only 617/618). 601 is for production consumables
+test-c008-019;test-c008;software;en;llm;6210;Employer NSSO contributions;621;Employers' Contribution for Social Security;Employers' Contribution for Social Security;ok;;
+test-c008-020;test-c008;software;en;llm;6300;Depreciation charges - IT & dev capitalised;630;Depreciation, Amounts Written Off and Provisions for Risks;Depreciation, Amounts Written Off and Provisions for Risks;ok;;
+test-c008-021;test-c008;software;en;llm;6590;Capitalised fin. charges restructuring (-);659;Financial Charges Carried to Assets as Restructuring Costs (-);Financial Charges Carried to Assets as Restructuring Costs (-);ok;;
+test-c008-022;test-c008;software;en;llm;7800;Release deferred tax - capital grants;780;Transfer From Deferred Taxes;Transfer From Deferred Taxes;ok;;
+test-c008-023;test-c008;software;en;llm;7920;Transfer from available reserves;792;Withdrawals From Reserves;Withdrawals From Reserves;ok;;
+test-c008-024;test-c008;software;en;llm;7921;Transfer from untaxed reserves;792;Withdrawals From Reserves;Withdrawals From Reserves;fix;789;"Withdrawal from untaxed reserves has its own group (789); 792 is for available/other reserves"
+test-c009-000;test-c009;construction;mixed;llm;2010;Frais émission prêt BNP 2024;201;Loan Issue Expenses;Kosten bij uitgifte van leningen / Frais d'émission d'emprunts;ok;;
+test-c009-001;test-c009;construction;mixed;llm;2200;Grond magazijn Zellik;220;Land;Terreinen / Terrains;ok;;
+test-c009-002;test-c009;construction;mixed;llm;2201;Terrain dépôt Anderlecht;220;Land;Terreinen / Terrains;ok;;
+test-c009-003;test-c009;construction;mixed;llm;3300;Prefab betonelementen - stock;330;Finished Goods - Acquisition Value;Gereed product - Aanschaffingswaarde / Produits finis - Valeur d'acquisition;ok;;"Fine if produced in-house; purchased elements would be 300/340"
+test-c009-004;test-c009;construction;mixed;llm;3710;Winst % afwerking werf Ukkel;371;Contracts in Progress - Profit Recognized;Bestellingen in uitvoering - Toegerekende winst / Commandes en cours d'exécution - Bénéfice pris en compte;ok;;
+test-c009-005;test-c009;construction;mixed;llm;3711;Marge reconnue chantier Etterbeek;371;Contracts in Progress - Profit Recognized;Bestellingen in uitvoering - Toegerekende winst / Commandes en cours d'exécution - Bénéfice pris en compte;ok;;
+test-c009-006;test-c009;construction;mixed;llm;4200;Achtergestelde lening zaakvoerder - KT deel;420;Subordinated Loans (> 1 Year Falling Due < 1 Year);Achtergestelde leningen (> 1 jaar vervallend < 1 jaar) / Emprunts subordonnés (> 1 an écheant < 1 an);ok;;
+test-c009-007;test-c009;construction;mixed;llm;4280;Waarborg ontvangen onderaannemers;428;Guarantees Received in Cash (> 1 Year Falling Due < 1 Year);Borgtochten ontvangen in contanten (> 1 jaar vervallend < 1 jaar) / Cautionnements reçus en numéraire (> 1 an écheant < 1 an);fix;488;"Cash guarantees received with no term stated go in 488; 428 is only the current portion of a >1y guarantee (178)"
+test-c009-008;test-c009;construction;mixed;llm;4281;Caution reçue locataire dépôt;428;Guarantees Received in Cash (> 1 Year Falling Due < 1 Year);Borgtochten ontvangen in contanten (> 1 jaar vervallend < 1 jaar) / Cautionnements reçus en numéraire (> 1 an écheant < 1 an);fix;488;"Tenant deposit with no term stated: 488 (or 178 if held >1y); 428 is only the current portion of 178"
+test-c009-009;test-c009;construction;mixed;llm;5200;Staatsbon / obligations KBC;520;Fixed-Income Securities - Acquisition Value;Vastrentende effecten - Aanschaffingswaarde / Titres à revenu fixe - Valeur d'acquisition;ok;;
+test-c009-010;test-c009;construction;mixed;llm;5780;Postzegels & timbres fiscaux;578;Cash in Hand - Stamps;Kassen - Zegels / Caisses - Timbres;ok;;
+test-c009-011;test-c009;construction;mixed;llm;6010;Klein materiaal werf (schroeven, kit);601;Purchases of Consumables;Aankopen van hulpstoffen / Achats de fournitures;ok;;
+test-c009-012;test-c009;construction;mixed;llm;6011;Fournitures EPI / safety gear;601;Purchases of Consumables;Aankopen van hulpstoffen / Achats de fournitures;ok;;Borderline: PPE could also be booked in 61
+test-c009-013;test-c009;construction;mixed;llm;6370;Prov. sanering grond Zellik;637;Provisions for Environmental Obligations;Voorzieningen voor milieuverplichtingen / Provisions pour obligations environnementales;ok;;
+test-c009-014;test-c009;construction;mixed;llm;6410;Verlies verkoop bestelwagen / machines;641;Loss on Ordinary Disposal of Tangible Fixed Assets;Minderwaarden bij de courante realisatie van materiële vaste activa / Moins-values sur réalisations courantes d'immobilisations corporelles;ok;;
+test-c009-015;test-c009;construction;mixed;llm;6500;Intrest investeringskrediet Belfius;650;Debt Charges;Kosten van schulden / Charges des dettes;ok;;
+test-c009-016;test-c009;construction;mixed;llm;6501;Intérêts leasing grue;650;Debt Charges;Kosten van schulden / Charges des dettes;ok;;
+test-c009-017;test-c009;construction;mixed;llm;6540;Exchange diff. purchases GBP/PLN;654;Exchange Differences;Wisselresultaten / Différences de change;ok;;
+test-c009-018;test-c009;construction;mixed;llm;6560;Prov. financière garanties bancaires;656;Provisions of a Financial Nature;Voorzieningen met financieel karakter / Provisions à caractère financier;ok;;
+test-c009-019;test-c009;construction;mixed;llm;6700;Vennootschapsbelasting - voorafbetalingen;670;Belgian Income Taxes on the Result of the Current Period;Belgische belastingen op het resultaat van het boekjaar / Impôts belges sur le résultat de l'exercice;ok;;
+test-c009-020;test-c009;construction;mixed;llm;7120;Variation en-cours chantiers;712;Increase (Decrease) in Stocks of Work in Progress;Toename (Afname) van de voorraad goederen in bewerking / Augmentation (Réduction) des stocks d'en-cours de fabrication;fix;717;Construction sites in progress are contracts in progress (37x/717), consistent with the 371 accounts
+test-c009-021;test-c009;construction;mixed;llm;7410;Gain on sale equipment (graafmachine);741;Capital Profits on Ordinary Disposal of Tangible Fixed Assets;Meerwaarden bij de courante realisatie van materiële vaste activa / Plus-values sur réalisations courantes d'immobilisations corporelles;ok;;
+test-c009-022;test-c009;construction;mixed;llm;7610;Reprise RDV participation SPV Immo;761;Write-Back of Amounts Written Down Financial Fixed Assets;Terugneming van waardeverminderingen op financiële vaste activa / Reprises de réductions de valeur sur immobilisations financières;ok;;
+test-c009-023;test-c009;construction;mixed;llm;7620;Terugname prov. geschil bouwheer;762;Write-Back of Provisions for Non-Recurring Liabilities and Charges;Terugneming van voorzieningen voor niet-recurrente risico's en kosten / Reprises de provisions pour risques et charges non récurrents;drop;;"Correct group 638 is missing from the Odoo chart. A dispute provision with a client is an operating (recurring) provision; it's reversed through 638. Use 762 only if it was set up as non-recurring via 662"
+test-c009-024;test-c009;construction;mixed;llm;7690;Produits financiers exceptionnels;769;Other Non-Recurring Financial Income;Andere niet-recurrente financiële opbrengsten / Autres produits financiers non récurrents;ok;;
+test-c010-000;test-c010;retail;nl;llm;171100;Obligatielening 2022-2029 4,25%;171;Unsubordinated Debentures (> 1 Year);Niet-achtergestelde obligatieleningen (> 1 jaar);ok;;
+test-c010-001;test-c010;retail;nl;llm;210100;Ontwikkeling webshop & kassasysteem;210;Research and Development Costs;Kosten van onderzoek en ontwikkeling;ok;;"Acceptable; 211 is also used for in-house software"
+test-c010-002;test-c010;retail;nl;llm;212100;Goodwill overname winkel Mechelen;212;Goodwill;Goodwill;ok;;
+test-c010-003;test-c010;retail;nl;llm;300100;Grondstoffen voorraad magazijn Gent;300;Raw Materials - Acquisition Value;Grondstoffen - Aanschaffingswaarde;ok;;
+test-c010-004;test-c010;retail;nl;llm;300200;Verpakkingsmat. voorraad (dozen/zakken);300;Raw Materials - Acquisition Value;Grondstoffen - Aanschaffingswaarde;fix;310;Packaging materials (boxes/bags) are consumables (31), not raw materials
+test-c010-005;test-c010;retail;nl;llm;309100;WV voorraad grondstoffen;309;Raw Materials - Amounts Written Down Recorded (-);Grondstoffen - Geboekte waardeverminderingen (-);ok;;
+test-c010-006;test-c010;retail;nl;llm;320100;Goederen in bewerking atelier;320;Work in Progress - Acquisition Value;Goederen in bewerking - Aanschaffingswaarde;ok;;
+test-c010-007;test-c010;retail;nl;llm;339100;WV gereed product - incourant/solden;339;Finished Goods - Amounts Written Down Recorded (-);Gereed product - Geboekte waardeverminderingen (-);ok;;
+test-c010-008;test-c010;retail;nl;llm;422100;Leasing bestelwagen KBC Lease - KT deel;422;Leasing and Other Similar Obligations (> 1 Year Falling Due < 1 Year);Leasingschulden en soortgelijke schulden (> 1 jaar vervallend < 1 jaar);ok;;
+test-c010-009;test-c010;retail;nl;llm;433100;Kaskrediet KBC BE12 xxxx;433;Credit Institutions - Current Account Payable;Kredietinstellingen - Schulden in rekening-courant;ok;;
+test-c010-010;test-c010;retail;nl;llm;433200;Straight loan Belfius rek.-crt.;433;Credit Institutions - Current Account Payable;Kredietinstellingen - Schulden in rekening-courant;fix;430;A straight loan is a fixed-term advance (430), not a current-account overdraft (433)
+test-c010-011;test-c010;retail;nl;llm;450100;Te betalen VenB aj 2026 (raming);450;Estimated Taxes Payable;Geraamde belastingschulden;ok;;
+test-c010-012;test-c010;retail;nl;llm;453100;Bedrijfsvoorheffing lonen bedienden;453;Taxes Withheld;Ingehouden voorheffingen;ok;;
+test-c010-013;test-c010;retail;nl;llm;453200;Roerende voorheffing dividend;453;Taxes Withheld;Ingehouden voorheffingen;ok;;
+test-c010-014;test-c010;retail;nl;llm;492100;TBK energie & water winkels;492;Accrued Charges;Toe te rekenen kosten;ok;;
+test-c010-015;test-c010;retail;nl;llm;492200;TBK interesten leningen;492;Accrued Charges;Toe te rekenen kosten;ok;;
+test-c010-016;test-c010;retail;nl;llm;493100;OTO cadeaubonnen nog niet ingeruild;493;Deferred Income;Over te dragen opbrengsten;ok;;
+test-c010-017;test-c010;retail;nl;llm;621100;RSZ werkgever bedienden;621;Employers' Contribution for Social Security;Werkgeversbijdragen voor sociale verzekeringen;ok;;
+test-c010-018;test-c010;retail;nl;llm;634100;WV dubieuze klanten B2B;634;Amounts Written Off Trade Debtors;Waardeverminderingen op handelsvorderingen;ok;;
+test-c010-019;test-c010;retail;nl;llm;660100;Uitz. afschr. sluiting filiaal Aalst;660;Non-Recurring Depreciation of and Amounts Written Off;Niet-recurrente afschrijvingen en waardeverminderingen;ok;;
+test-c010-020;test-c010;retail;nl;llm;708100;Kortingen getrouwheidskaart;708;Discounts, Allowances and Rebates Allowed (-);Toegekende kortingen, ristorno's en rabatten (-);ok;;
+test-c010-021;test-c010;retail;nl;llm;708200;Kassakortingen & promo's winkel;708;Discounts, Allowances and Rebates Allowed (-);Toegekende kortingen, ristorno's en rabatten (-);ok;;
+test-c010-022;test-c010;retail;nl;llm;750100;Dividend deelneming Retail Holding NV;750;Income From Financial Fixed Assets;Opbrengsten uit financiële vaste activa;ok;;
+test-c010-023;test-c010;retail;nl;llm;754100;Koersverschillen USD aankopen;754;Exchange Differences;Wisselresultaten;ok;;
+test-c010-024;test-c010;retail;nl;llm;764100;Meerwaarde verkoop rek & inrichting;764;Other Non-Recurring Operating Income;Andere niet-recurrente bedrijfsopbrengsten;fix;741;Gains on disposing of tangible fixed assets have their own group: 741 (ordinary) or 763 (non-recurring, e.g. store closure). 764 doesn't fit
+test-c011-000;test-c011;services;fr;llm;211100;Licences logiciels (Odoo, M365);211;Concessions, Patents, Licences, Know-How, Brands and Similar Rights;Concessions, brevets, licences, savoir-faire, marques et droits similaires;ok;;
+test-c011-001;test-c011;services;fr;llm;221000;Bâtiment bureaux Gand - Kortrijksesteenweg;221;Buildings;Constructions;ok;;
+test-c011-002;test-c011;services;fr;llm;221010;Bureau annexe Bruxelles - Louise;221;Buildings;Constructions;ok;;
+test-c011-003;test-c011;services;fr;llm;280000;Particip. VTO Consulting SRL;280;Participating Interests in Affiliated Enterprises;Participations dans les sociétés liées;ok;;
+test-c011-004;test-c011;services;fr;llm;291000;Garantie locative LT bureaux;291;Other Amounts Receivable (> 1 Year);Autres créances (> 1 an);fix;288;A rental guarantee paid is a cash guarantee (288), the same treatment as c014's rental guarantees
+test-c011-005;test-c011;services;fr;llm;404000;Factures à établir clients;404;Trade Debtors - Income Receivable;Créances commerciales - Produits à recevoir;ok;;
+test-c011-006;test-c011;services;fr;llm;421000;Emprunt oblig. 2022 - tranche CT;421;Unsubordinated Debentures (> 1 Year Falling Due < 1 Year);Emprunts obligataires non subordonnés (> 1 an écheant < 1 an);ok;;
+test-c011-007;test-c011;services;fr;llm;439000;Prêt gérant (compte courant LT);439;Other Loans;Autres emprunts;fix;174;"LT manager current account is a long-term loan (174); 439 is short-term financial debt. If it's a receivable from the manager, use 291"
+test-c011-008;test-c011;services;fr;llm;451000;TVA due 21%;451;VAT Payable;TVA à payer;ok;;
+test-c011-009;test-c011;services;fr;llm;451060;TVA due 6%;451;VAT Payable;TVA à payer;ok;;
+test-c011-010;test-c011;services;fr;llm;455000;Salaires nets à payer;455;Remuneration;Rémunérations;ok;;
+test-c011-011;test-c011;services;fr;llm;455100;Pécule vacances à payer;455;Remuneration;Rémunérations;fix;456;Holiday pay payable has its own group: 456 Holiday pay
+test-c011-012;test-c011;services;fr;llm;489000;Dettes diverses - à régulariser;489;Sundry Amounts Payable;Autres dettes;ok;;
+test-c011-013;test-c011;services;fr;llm;520000;Bons d'État - KBC;520;Fixed-Income Securities - Acquisition Value;Titres à revenu fixe - Valeur d'acquisition;ok;;
+test-c011-014;test-c011;services;fr;llm;520100;Obligations Belfius placement;520;Fixed-Income Securities - Acquisition Value;Titres à revenu fixe - Valeur d'acquisition;ok;;
+test-c011-015;test-c011;services;fr;llm;617000;Intérims Randstad;617;Costs of Hired Temporary Staff and Persons Placed at the Enterprise's Disposal;Frais de personnel intérimaire et de personnes mises à la disposition de la société;ok;;
+test-c011-016;test-c011;services;fr;llm;617100;Consultants freelance mis à dispo;617;Costs of Hired Temporary Staff and Persons Placed at the Enterprise's Disposal;Frais de personnel intérimaire et de personnes mises à la disposition de la société;ok;;
+test-c011-017;test-c011;services;fr;llm;621000;ONSS patronale;621;Employers' Contribution for Social Security;Cotisations patronales d'assurances sociales;ok;;
+test-c011-018;test-c011;services;fr;llm;651000;RDV créances clients douteux;651;Amounts Written Off Current Assets;Réductions de valeur sur actifs circulants;fix;634;"Write-down on doubtful trade receivables goes to 634; 651 is for current financial assets"
+test-c011-019;test-c011;services;fr;llm;657000;Frais bancaires KBC;657;Miscellaneous Financial Charges;Charges financières diverses;ok;;
+test-c011-020;test-c011;services;fr;llm;661000;RDV particip. VTO Consulting;661;Amounts Written Off Financial Fixed Assets;Réductions de valeur sur immobilisations financières;ok;;
+test-c011-021;test-c011;services;fr;llm;700000;Honoraires consultance;700;Sales and Services Rendered;Ventes et prestations de services;ok;;
+test-c011-022;test-c011;services;fr;llm;713000;Variation stock projets terminés;713;Increase (Decrease) in Stocks of Finished Goods;Augmentation (Réduction) des stocks de produits finis;ok;;
+test-c011-023;test-c011;services;fr;llm;760000;Reprise RDV créances clients;760;Write-Back of Depreciation and of Amounts Written Off;Reprises d'amortissements et de réductions de valeur;fix;634;"Reversal of write-down on trade receivables is credited to 634; 760 is for intangible/tangible fixed assets"
+test-c011-024;test-c011;services;fr;llm;769000;Plus-value cession titres;769;Other Non-Recurring Financial Income;Autres produits financiers non récurrents;fix;752;Capital gain on securities: 752 if current investments, 763 if financial fixed assets. Not 769
+test-c012-000;test-c012;software;mixed;llm;5350;Reprise RDV placements trésorerie;124;Decrease in Amounts Written Down on Current Investments;Terugnemingen van waardeverminderingen op geldbeleggingen / Reprises de réductions de valeur sur placements de trésorerie;ok;;Fine for an investment company. Otherwise, write-backs on current investments are normally credited to 651
+test-c012-001;test-c012;software;mixed;llm;5360;Vrijgestelde reserve investeringsaftrek;132;Untaxed Reserves;Belastingvrije reserves / Réserves immunisées;ok;;
+test-c012-002;test-c012;software;mixed;llm;5370;Réserve immunisée plus-values;132;Untaxed Reserves;Belastingvrije reserves / Réserves immunisées;ok;;
+test-c012-003;test-c012;software;mixed;llm;5380;Oprichtingskosten notaris NV;200;Formation Expenses;Oprichtingskosten / Frais d'établissement;ok;;
+test-c012-004;test-c012;software;mixed;llm;5390;Huurwaarborg kantoor Brussel LT;291;Other Amounts Receivable (> 1 Year);Overige vorderingen (> 1 jaar) / Autres créances (> 1 an);fix;288;A rental guarantee paid is a cash guarantee (288)
+test-c012-005;test-c012;software;mixed;llm;5400;Long-term loan to CloudOps BV;291;Other Amounts Receivable (> 1 Year);Overige vorderingen (> 1 jaar) / Autres créances (> 1 an);ok;;Use 281 if CloudOps is affiliated, or 285 if it's a lasting financial link
+test-c012-006;test-c012;software;mixed;llm;5410;Fournitures IT & câblage;310;Consumables - Acquisition Value;Hulpstoffen - Aanschaffingswaarde / Fournitures - Valeur d'acquisition;ok;;"Fine if held as stock; otherwise an expense (61)"
+test-c012-007;test-c012;software;mixed;llm;5420;WIP custom dev - write-down;329;Work in Progress - Amounts Written Down Recorded (-);Goederen in bewerking - Geboekte waardeverminderingen (-) / En-cours de fabrication - Réductions de valeur actées (-);ok;;
+test-c012-008;test-c012;software;mixed;llm;5430;Acomptes hardware stock;360;Advance Payments on Purchases for Stocks - Advance Payments;Vooruitbetalingen op voorraadinkopen - Vooruitbetalingen / Acomptes versés sur achats pour stocks - Acomptes versés;ok;;
+test-c012-009;test-c012;software;mixed;llm;5440;Achtergestelde lening PMV - KT deel;420;Subordinated Loans (> 1 Year Falling Due < 1 Year);Achtergestelde leningen (> 1 jaar vervallend < 1 jaar) / Emprunts subordonnés (> 1 an écheant < 1 an);ok;;
+test-c012-010;test-c012;software;mixed;llm;5450;Straight loan KBC;430;Credit Institutions - Fixed Term Loans;Kredietinstellingen - Leningen op rekening met vaste termijn / Etablissements de crédit - Emprunts en compte à terme fixe;ok;;
+test-c012-011;test-c012;software;mixed;llm;5460;Prêt terme fixe BNP Fortis;430;Credit Institutions - Fixed Term Loans;Kredietinstellingen - Leningen op rekening met vaste termijn / Etablissements de crédit - Emprunts en compte à terme fixe;ok;;
+test-c012-012;test-c012;software;mixed;llm;5470;Promesse Belfius;431;Credit Institutions - Promissory Notes;Kredietinstellingen - Promessen / Etablissements de crédit - Promesses;ok;;
+test-c012-013;test-c012;software;mixed;llm;5480;Leveranciers binnenland;440;Suppliers;Leveranciers / Fournisseurs;ok;;
+test-c012-014;test-c012;software;mixed;llm;5490;Suppliers EU/SaaS (AWS, Atlassian);440;Suppliers;Leveranciers / Fournisseurs;ok;;
+test-c012-015;test-c012;software;mixed;llm;5500;Effets à payer fournisseurs;441;Bills of Exchange Payable;Te betalen wissels / Effets à payer;ok;;
+test-c012-016;test-c012;software;mixed;llm;5510;Btw te betalen 21%;451;VAT Payable;Te betalen btw / TVA à payer;ok;;
+test-c012-017;test-c012;software;mixed;llm;5520;TVA due autoliquidation intracom;451;VAT Payable;Te betalen btw / TVA à payer;ok;;
+test-c012-018;test-c012;software;mixed;llm;5530;Client deposits received - hosting;488;Guarantees Received in Cash;Borgtochten ontvangen in contanten / Cautionnements reçus en numéraire;ok;;
+test-c012-019;test-c012;software;mixed;llm;5540;RSZ werkgeversbijdragen;621;Employers' Contribution for Social Security;Werkgeversbijdragen voor sociale verzekeringen / Cotisations patronales d'assurances sociales;ok;;
+test-c012-020;test-c012;software;mixed;llm;5550;RDV créances clients douteux;634;Amounts Written Off Trade Debtors;Waardeverminderingen op handelsvorderingen / Réductions de valeur sur créances commerciales;ok;;
+test-c012-021;test-c012;software;mixed;llm;5560;Provision WEEE / e-waste servers;637;Provisions for Environmental Obligations;Voorzieningen voor milieuverplichtingen / Provisions pour obligations environnementales;ok;;
+test-c012-022;test-c012;software;mixed;llm;5570;Waardeverm. vlottende activa fin.;651;Amounts Written Off Current Assets;Waardeverminderingen op vlottende activa / Réductions de valeur sur actifs circulants;ok;;
+test-c012-023;test-c012;software;mixed;llm;5580;Activated restructuring costs (-);669;Non-Recurring Charges Carried to Assets as Restructuring Costs (-);Als herstructureringskosten geactiveerde niet-recurrente kosten (-) / Charges non récurrentes portées à l'actif au titre de frais de restructuration (-);ok;;"Generic name; 649/659 if the charges are operating/financial"
+test-c012-024;test-c012;software;mixed;llm;5590;Onttrekking vrijgestelde reserves;789;Transfer From Untaxed Reserves;Onttrekking aan de belastingvrije reserves / Prélèvement sur les réserves immunisées;ok;;
+test-c013-000;test-c013;construction;nl;llm;6880;Voorz. groepsverzekering bedienden;160;Provisions for Pensions and Similar Obligations;Voorzieningen voor pensioenen en soortgelijke verplichtingen;ok;;
+test-c013-001;test-c013;construction;nl;llm;6890;Obligatielening 2022-2029 (4,25%);171;Unsubordinated Debentures (> 1 Year);Niet-achtergestelde obligatieleningen (> 1 jaar);ok;;
+test-c013-002;test-c013;construction;nl;llm;6900;Lening zaakvoerder LT;285;Other Amounts Receivable;Andere vorderingen;fix;291;Receivable from the manager isn't a financial fixed asset, so it goes in 291. If it's money owed to the manager, use 174
+test-c013-003;test-c013;construction;nl;llm;6910;Vordering tijdelijke handelsvereniging Gent-Zuid;285;Other Amounts Receivable;Andere vorderingen;ok;;"Fine if the joint-venture claim is long-term; a current account would be 416"
+test-c013-004;test-c013;construction;nl;llm;6920;WV afgewerkte prefab-elementen;339;Finished Goods - Amounts Written Down Recorded (-);Gereed product - Geboekte waardeverminderingen (-);ok;;
+test-c013-005;test-c013;construction;nl;llm;6930;WV voorschotten leveranciers materialen;369;Advance Payments on Purchases for Stocks - Amounts Written Down Recorded (-);Vooruitbetalingen op voorraadinkopen - Geboekte waardeverminderingen (-);ok;;
+test-c013-006;test-c013;construction;nl;llm;6940;Voorschotfacturen werf Residentie Leiezicht;406;Trade Debtors - Advance Payments;Handelsvorderingen - Vooruitbetalingen;fix;400;"Advance invoices issued to a client are receivables from customers (400); 406 is advances the company paid. If this account carries the credit side, it belongs in 46"
+test-c013-007;test-c013;construction;nl;llm;6950;Voorschotfacturen werf Kerkstraat Aalst;406;Trade Debtors - Advance Payments;Handelsvorderingen - Vooruitbetalingen;fix;400;Same as Residentie Leiezicht: invoiced client advances go in 400, not 406
+test-c013-008;test-c013;construction;nl;llm;6960;Ontvangen waarborg huurder loods <1j;428;Guarantees Received in Cash (> 1 Year Falling Due < 1 Year);Borgtochten ontvangen in contanten (> 1 jaar vervallend < 1 jaar);ok;;"Fine if it's the current portion of a >1y guarantee; otherwise 488"
+test-c013-009;test-c013;construction;nl;llm;6970;Te betalen wissels leveranciers;441;Bills of Exchange Payable;Te betalen wissels;ok;;
+test-c013-010;test-c013;construction;nl;llm;6980;RSZ te betalen;454;National Social Security Office;Rijksdienst voor Sociale Zekerheid;ok;;
+test-c013-011;test-c013;construction;nl;llm;6990;RSZ - Fonds voor Bestaanszekerheid bouw;454;National Social Security Office;Rijksdienst voor Sociale Zekerheid;ok;;
+test-c013-012;test-c013;construction;nl;llm;7000;Over te dragen kosten (verzek. ABR, leasing);490;Deferred Charges;Over te dragen kosten;ok;;
+test-c013-013;test-c013;construction;nl;llm;7010;Wachtrekening bank - nog toe te wijzen;499;Suspense Accounts;Wachtrekeningen;ok;;
+test-c013-014;test-c013;construction;nl;llm;7020;Tussenrekening lonen Securex;499;Suspense Accounts;Wachtrekeningen;ok;;
+test-c013-015;test-c013;construction;nl;llm;7030;Staatsbons KBC - aanschaf;520;Fixed-Income Securities - Acquisition Value;Vastrentende effecten - Aanschaffingswaarde;ok;;
+test-c013-016;test-c013;construction;nl;llm;7040;WV termijnrekening Belfius;539;Fixed Term Deposits - Amounts Written Down Recorded (-);Termijnrekeningen - Geboekte waardeverminderingen (-);ok;;
+test-c013-017;test-c013;construction;nl;llm;7050;Kas postzegels;578;Cash in Hand - Stamps;Kassen - Zegels;ok;;
+test-c013-018;test-c013;construction;nl;llm;7060;Voorraadwijziging bouwmaterialen;609;Decrease (Increase) in Stocks;Afname (Toename) van de voorraad;ok;;
+test-c013-019;test-c013;construction;nl;llm;7070;Voorraadwijziging stockage loods;609;Decrease (Increase) in Stocks;Afname (Toename) van de voorraad;ok;;
+test-c013-020;test-c013;construction;nl;llm;7080;Afwaardering incourante stock;631;Amounts Written Off Stocks;Waardeverminderingen op voorraden;ok;;
+test-c013-021;test-c013;construction;nl;llm;7090;WV deelneming Bouwgroep VDM;661;Amounts Written Off Financial Fixed Assets;Waardeverminderingen op financiële vaste activa;ok;;
+test-c013-022;test-c013;construction;nl;llm;7100;Venn.belasting voorafbetalingen;670;Belgian Income Taxes on the Result of the Current Period;Belgische belastingen op het resultaat van het boekjaar;ok;;
+test-c013-023;test-c013;construction;nl;llm;7110;Buitenl. belasting werf Nederland;672;Foreign Income Taxes on the Result of the Current Period;Buitenlandse belastingen op het resultaat van het boekjaar;ok;;
+test-c013-024;test-c013;construction;nl;llm;7120;Terugname vrijgestelde meerwaarde;789;Transfer From Untaxed Reserves;Onttrekking aan de belastingvrije reserves;ok;;
+test-c014-000;test-c014;retail;fr;llm;6450;Plus-val. réév. particip. Immo Retail SA;122;Revaluation Surpluses on Financial Fixed Assets;Plus-values de réévaluation sur immobilisations financières;ok;;
+test-c014-001;test-c014;retail;fr;llm;6460;Acomptes reçus cdes clients pro LT;176;Advance Payments on Contract in Progress (> 1 Year);Acomptes sur commandes (> 1 an);ok;;
+test-c014-002;test-c014;retail;fr;llm;6470;Prêt LT gérant - créance;285;Other Amounts Receivable;Autres créances;fix;291;Receivable from the manager isn't a financial fixed asset, so it goes in 291
+test-c014-003;test-c014;retail;fr;llm;6480;Créance LT ancien franchisé Namur;285;Other Amounts Receivable;Autres créances;fix;290;A former franchisee's LT receivable is commercial, so it goes in 290 (291 if it's a loan)
+test-c014-004;test-c014;retail;fr;llm;6490;Garantie locative magasin Gand;288;Cash Guarantees Paid;Cautionnements versés en numéraire;ok;;
+test-c014-005;test-c014;retail;fr;llm;6500;Garantie locative magasin Liège;288;Cash Guarantees Paid;Cautionnements versés en numéraire;ok;;
+test-c014-006;test-c014;retail;fr;llm;6510;RDV stock articles fins de série;339;Finished Goods - Amounts Written Down Recorded (-);Produits finis - Réductions de valeur actées (-);fix;349;End-of-line retail articles are goods for resale, so the write-down goes in 349, not 339 (finished goods)
+test-c014-007;test-c014;retail;fr;llm;6520;Entrepôt Wavre destiné à la vente;350;Immovable Property Intended for Sale - Acquisition Value;Immeubles destinés à la vente - Valeur d'acquisition;fix;221;A retailer's own warehouse held for sale stays in fixed assets (buildings). 35 is for property-developer stock
+test-c014-008;test-c014;retail;fr;llm;6530;Acomptes fournisseurs collection hiver;360;Advance Payments on Purchases for Stocks - Advance Payments;Acomptes versés sur achats pour stocks - Acomptes versés;ok;;
+test-c014-009;test-c014;retail;fr;llm;6540;Acomptes import Asie (marchandises);360;Advance Payments on Purchases for Stocks - Advance Payments;Acomptes versés sur achats pour stocks - Acomptes versés;ok;;
+test-c014-010;test-c014;retail;fr;llm;6550;Cautions versées Proximus/Engie;418;Sundry Amounts Receivable - Cash Guarantees Paid;Créances diverses - Cautionnements versés en numéraire;ok;;
+test-c014-011;test-c014;retail;fr;llm;6560;Prêt subord. actionnaire - part CT;420;Subordinated Loans (> 1 Year Falling Due < 1 Year);Emprunts subordonnés (> 1 an écheant < 1 an);ok;;
+test-c014-012;test-c014;retail;fr;llm;6570;Emprunt obligataire 2022 - échéance an;421;Unsubordinated Debentures (> 1 Year Falling Due < 1 Year);Emprunts obligataires non subordonnés (> 1 an écheant < 1 an);ok;;
+test-c014-013;test-c014;retail;fr;llm;6580;Straight loan BNP Fortis;430;Credit Institutions - Fixed Term Loans;Etablissements de crédit - Emprunts en compte à terme fixe;ok;;
+test-c014-014;test-c014;retail;fr;llm;6590;Avance terme fixe KBC;430;Credit Institutions - Fixed Term Loans;Etablissements de crédit - Emprunts en compte à terme fixe;ok;;
+test-c014-015;test-c014;retail;fr;llm;6600;Bons cadeaux & cartes fidélité à reporter;493;Deferred Income;Produits à reporter;ok;;
+test-c014-016;test-c014;retail;fr;llm;6610;Rémunération gérant (mandat);618;Remuneration, Premiums for Extra Statutory Insurance, Pensions of Directors, Managers or Active Partners Which Are Not Allowed Following the Contract;Rémunérations, primes pour assurances extralégales, pensions de retraite et de survie des administrateurs, gérants et associés actifs qui ne sont pas attribuées en vertu d'un contrat de travail;ok;;
+test-c014-017;test-c014;retail;fr;llm;6620;Assurance groupe gérant (EIP);618;Remuneration, Premiums for Extra Statutory Insurance, Pensions of Directors, Managers or Active Partners Which Are Not Allowed Following the Contract;Rémunérations, primes pour assurances extralégales, pensions de retraite et de survie des administrateurs, gérants et associés actifs qui ne sont pas attribuées en vertu d'un contrat de travail;ok;;
+test-c014-018;test-c014;retail;fr;llm;6630;Dotation RDV stock invendus;631;Amounts Written Off Stocks;Réductions de valeur sur stocks;ok;;
+test-c014-019;test-c014;retail;fr;llm;6640;Dot. prov. gros entretien magasins;636;Provisions for Major Repairs and Maintenance;Provisions pour grosses réparations et gros entretien;ok;;
+test-c014-020;test-c014;retail;fr;llm;6650;Moins-value vente placements trésorerie;652;Capital Losses on Disposal of Current Assets;Moins-values sur réalisation d'actifs circulants;ok;;
+test-c014-021;test-c014;retail;fr;llm;6660;RDV participation Immo Retail SA;661;Amounts Written Off Financial Fixed Assets;Réductions de valeur sur immobilisations financières;ok;;
+test-c014-022;test-c014;retail;fr;llm;6670;Plus-value vente placements trésorerie;752;Capital Profits on Disposal of Current Assets;Plus-values sur réalisation d'actifs circulants;ok;;
+test-c014-023;test-c014;retail;fr;llm;6680;Écarts de change USD fournisseurs;755;Foreign Currency Translation Differences;Ecarts de conversion des devises;fix;754;"Realised FX differences on supplier payments go in 754 (654 if a loss); 755 is translation differences. Keep 755 only for year-end revaluation"
+test-c014-024;test-c014;retail;fr;llm;6690;Produits fin. divers (escomptes, intérêts);756;Miscellaneous Financial Income;Produits financiers divers;ok;;
+test-c015-000;test-c015;services;en;llm;1010;Write-back impairment short-term investments;124;Decrease in Amounts Written Down on Current Investments;Decrease in Amounts Written Down on Current Investments;ok;;Fine for an investment company. Otherwise, write-backs on current investments are normally credited to 651
+test-c015-001;test-c015;services;en;llm;1020;Tax-exempt reserve - investment deduction;132;Untaxed Reserves;Untaxed Reserves;ok;;
+test-c015-002;test-c015;services;en;llm;1030;Tax-exempt capital gains reserve;132;Untaxed Reserves;Untaxed Reserves;ok;;
+test-c015-003;test-c015;services;en;llm;1040;Deferred tax on capital grants;168;Deferred Taxes;Deferred Taxes;ok;;
+test-c015-004;test-c015;services;en;llm;1050;Software licences - Exact Online & MS365;211;Concessions, Patents, Licences, Know-How, Brands and Similar Rights;Concessions, Patents, Licences, Know-How, Brands and Similar Rights;ok;;
+test-c015-005;test-c015;services;en;llm;1060;Trademark registration BOIP;211;Concessions, Patents, Licences, Know-How, Brands and Similar Rights;Concessions, Patents, Licences, Know-How, Brands and Similar Rights;ok;;
+test-c015-006;test-c015;services;en;llm;1070;Write-down consumables stock;309;Raw Materials - Amounts Written Down Recorded (-);Raw Materials - Amounts Written Down Recorded (-);fix;319;Write-down on consumables is 319, not 309 (raw materials)
+test-c015-007;test-c015;services;en;llm;1080;Stock training kits - cost;330;Finished Goods - Acquisition Value;Finished Goods - Acquisition Value;ok;;Use 340 if the kits are purchased for resale
+test-c015-008;test-c015;services;en;llm;1090;Other receivables - misc;416;Sundry Amounts Receivable;Sundry Amounts Receivable;ok;;
+test-c015-009;test-c015;services;en;llm;1100;Receivable insurance claim;416;Sundry Amounts Receivable;Sundry Amounts Receivable;ok;;
+test-c015-010;test-c015;services;en;llm;1110;Car leasing - current portion;424;Other Loans (> 1 Year Falling Due < 1 Year);Other Loans (> 1 Year Falling Due < 1 Year);fix;422;Current portion of a leasing debt is 422, not 424 (other loans)
+test-c015-011;test-c015;services;en;llm;1120;Bills payable - suppliers;441;Bills of Exchange Payable;Bills of Exchange Payable;ok;;
+test-c015-012;test-c015;services;en;llm;1130;VAT due 21%;451;VAT Payable;VAT Payable;ok;;
+test-c015-013;test-c015;services;en;llm;1140;VAT due 6%;451;VAT Payable;VAT Payable;ok;;
+test-c015-014;test-c015;services;en;llm;1150;Withholding tax salaries (BV);453;Taxes Withheld;Taxes Withheld;ok;;
+test-c015-015;test-c015;services;en;llm;1160;Withholding tax directors;453;Taxes Withheld;Taxes Withheld;ok;;
+test-c015-016;test-c015;services;en;llm;1170;Net salaries payable - Securex;455;Remuneration;Remuneration;ok;;
+test-c015-017;test-c015;services;en;llm;1180;Other payables - misc;489;Sundry Amounts Payable;Sundry Amounts Payable;ok;;
+test-c015-018;test-c015;services;en;llm;1190;Group insurance premiums - AG;622;Employers' Premiums for Extra Statutory Insurance;Employers' Premiums for Extra Statutory Insurance;ok;;
+test-c015-019;test-c015;services;en;llm;1200;Pension payments former staff;624;Retirement and Survivors' Pensions;Retirement and Survivors' Pensions;ok;;
+test-c015-020;test-c015;services;en;llm;1210;Local taxes & road tax company cars;640;Taxes Related to Operation;Taxes Related to Operation;ok;;
+test-c015-021;test-c015;services;en;llm;1220;FX losses USD/GBP;654;Exchange Differences;Exchange Differences;ok;;
+test-c015-022;test-c015;services;en;llm;1230;Financial provisions - allocation;656;Provisions of a Financial Nature;Provisions of a Financial Nature;ok;;
+test-c015-023;test-c015;services;en;llm;1240;Corporate tax prepayments (VA);670;Belgian Income Taxes on the Result of the Current Period;Belgian Income Taxes on the Result of the Current Period;ok;;
+test-c015-024;test-c015;services;en;llm;1250;Foreign tax prior years - NL branch;673;Foreign Income Taxes on the Result of Prior Periods;Foreign Income Taxes on the Result of Prior Periods;ok;;
