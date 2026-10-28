@@ -14,7 +14,7 @@ jobs:
         run: uv sync --extra dev --locked
       - name: Tests (no network)
         run: uv run pytest
-      - name: requirements.txt matches pyproject.toml
+      - name: requirements.txt matches uv.lock
         run: |
-          uv pip compile pyproject.toml --extra dev --python-version 3.12 --universal --quiet -o /tmp/requirements.txt
+          uv export --frozen --extra dev --no-hashes --no-emit-project --quiet -o /tmp/requirements.txt
           diff <(grep -v '^#' requirements.txt) <(grep -v '^#' /tmp/requirements.txt)

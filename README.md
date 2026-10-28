@@ -25,8 +25,9 @@ pip install -e .
 
 Run the tests with `pytest` (or `uv run pytest`).
 
-After changing dependencies in `pyproject.toml`, regenerate `requirements.txt`:
+`requirements.txt` holds the exact versions from `uv.lock`. After changing dependencies in `pyproject.toml`, update both:
 
 ```bash
-uv pip compile pyproject.toml --extra dev --python-version 3.12 --universal -o requirements.txt
+uv lock
+uv export --frozen --extra dev --no-hashes --no-emit-project -o requirements.txt
 ```
