@@ -1,0 +1,30 @@
+# Synthetic data settings. Paths are relative to the repo root.
+
+# Belgian standard chart (Odoo l10n_be, LGPL-3), used at the 3-digit level.
+chart_path: data/source/odoo_l10n_be/account.group-be.csv
+expected_groups: 190
+
+industries: [software, construction, retail, services]
+languages: [nl, fr, en, mixed]
+
+# Each split has its own seed, so no two splits share generated rows.
+splits:
+  train:  # fits the XGBoost and random-forest methods: 60 companies x 50 = 3,000 accounts
+    seed: 3003
+    rule_companies: 40
+    llm_companies: 20
+    accounts_per_company: 50
+  dev:    # calibration, thresholds and choosing the method: 40 companies x 50 = 2,000 accounts
+    seed: 1001
+    rule_companies: 20
+    llm_companies: 20
+    accounts_per_company: 50
+  test:   # hand-checked, never used for tuning: 8 companies x 25 = 200 accounts
+    seed: 2002
+    rule_companies: 4
+    llm_companies: 4
+    accounts_per_company: 25
+
+generated_dir: data/generated          # not committed (see .gitignore)
+frozen_llm_dir: data/frozen/llm_charts # committed: raw LLM outputs, never regenerated
+review_path: data/labels/test_review.csv  # committed: your hand-check verdicts

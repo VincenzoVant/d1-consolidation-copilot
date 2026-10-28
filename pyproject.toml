@@ -1,0 +1,42 @@
+[project]
+name = "d1-consolidation-copilot"
+version = "0.1.0"
+description = "Maps multilingual company charts of accounts onto the Belgian standard chart and matches intercompany entries. Synthetic data only."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    # data and config
+    "pydantic>=2.14",
+    "pyyaml>=6.0",
+    "numpy>=2.5",
+    # LLM (company-chart generation, adjudication)
+    "anthropic>=2.3",
+    # mapping and matching
+    "sentence-transformers>=6.2",
+    "scikit-learn>=1.9",
+    "xgboost>=3.4",
+    "laya>=0.4.16",
+    "rapidfuzz>=3.14",
+    "joblib>=1.6",
+    # service and review app
+    "fastapi>=0.162",
+    "uvicorn[standard]>=0.54",
+    "httpx>=0.28",
+    "streamlit>=1.66",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=9.2"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/d1"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+markers = ["network: needs internet (deselected by default)"]
+addopts = "-m 'not network' --import-mode=importlib"

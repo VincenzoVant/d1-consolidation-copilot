@@ -1,0 +1,19 @@
+# Python environment and caches
+.venv/
+__pycache__/
+.pytest_cache/
+
+# macOS
+.DS_Store
+
+# Generated data (rebuilt from seeds, never committed)
+data/generated/
+
+# LLM response cache and local audit log
+.cache/
+
+# Drift reports (come from live traffic)
+reports/drift/
+
+# Private planning docs (design spec, implementation plan)
+docs/

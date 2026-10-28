@@ -1,0 +1,37 @@
+# Which models D1 uses. Changing a model here changes results, so every
+# reported run records a hash of this file.
+
+# Writes the synthetic company charts. Must differ from mapping_model,
+# so the mapper is never tested on text written by itself.
+generator_model: claude-opus-5-5
+
+# The LLM method: picks among the top-k candidates (and, in the cascade,
+# handles low-confidence accounts of the winning method).
+mapping_model: claude-haiku-5-5
+
+# How LLM calls are made:
+#   claude_cli    - through the `claude` command, on your own Claude login (default)
+#   anthropic_api - through the Anthropic API, needs ANTHROPIC_API_KEY
+llm_backend: claude_cli
+
+# Multilingual sentence-embedding model for retrieval.
+# Provisional: chosen on the dev split in Task 2.2 among embedding_candidates.
+embedding_model: intfloat/multilingual-e5-base
+embedding_candidates:
+  - intfloat/multilingual-e5-base
+  - BAAI/bge-m3
+  - sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+
+# USD per million tokens, used for the cost-per-1,000-accounts report.
+llm_prices_per_mtok:
+  claude-haiku-5-5: {input: 0.10, output: 0.50}
+
+# Account-mapping method comparison (Phase 3). Every method chooses among the
+# same top-k embedding candidates, is calibrated on dev and judged on the
+# auto-mapped share at the target precision.
+mapping:
+  candidates_k: 10              # Laya works best with fewer than ~20 options
+  target_precision: 0.98
+  methods: [fuzzy, embeddings, xgboost, random_forest, laya, llm]
+  laya_model: convaiinnovations/laya-multilingual
+  selected_method: null         # set after the comparison on dev (Task 3.5)
