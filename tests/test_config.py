@@ -17,9 +17,10 @@ def test_load_config_reads_repo_files():
     cfg = load_config()
     assert cfg.data.expected_groups == 190
     test = cfg.data.splits["test"]
-    assert (test.rule_companies + test.llm_companies) * test.accounts_per_company == 200
-    assert cfg.data.splits["dev"].n_accounts == 2000
-    assert cfg.data.splits["train"].n_accounts == 3000
+    assert test.n_accounts == 600 and test.n_llm_accounts == 200
+    assert test.n_llm_accounts + cfg.data.review_rule_sample == 250  # rows to check by hand
+    assert cfg.data.splits["dev"].n_accounts == 3500
+    assert cfg.data.splits["train"].n_accounts == 12000
     assert cfg.models.mapping_model == "claude-haiku-5-5"
     assert cfg.models.llm_backend == "claude_cli"
     assert cfg.models.mapping.methods == ["fuzzy", "embeddings", "xgboost", "random_forest", "laya", "llm"]
@@ -102,4 +103,10 @@ def test_missing_file_raises_config_error(config_root):
 def test_invalid_yaml_raises_config_error(config_root):
     (config_root / "config" / "models.yaml").write_text("generator_model: [unclosed\n")
     with pytest.raises(ConfigError, match="models.yaml"):
+        load_config(config_root)
+
+
+def test_review_sample_cannot_exceed_rule_test_rows(config_root):
+    _edit(config_root, "data.yaml", review_rule_sample=10_000)
+    with pytest.raises(ConfigError, match="review_rule_sample"):
         load_config(config_root)

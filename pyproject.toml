@@ -16,6 +16,8 @@ dependencies = [
     "scikit-learn>=1.9",
     "xgboost>=3.4",
     "laya>=0.4.16",
+    # charts in reports (learning curve, method comparison)
+    "matplotlib>=3.9",
     "rapidfuzz>=3.14",
     "joblib>=1.6",
     # service and review app

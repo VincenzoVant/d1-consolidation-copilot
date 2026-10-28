@@ -68,16 +68,25 @@ class ModelsConfig(_Strict):
 class SplitConfig(_Strict):
     seed: int
     rule_companies: int = Field(ge=0)
+    rule_accounts_per_company: int = Field(ge=1)
     llm_companies: int = Field(ge=0)
-    accounts_per_company: int = Field(ge=1)
+    llm_accounts_per_company: int = Field(ge=1)
 
     @property
     def n_companies(self) -> int:
         return self.rule_companies + self.llm_companies
 
     @property
+    def n_rule_accounts(self) -> int:
+        return self.rule_companies * self.rule_accounts_per_company
+
+    @property
+    def n_llm_accounts(self) -> int:
+        return self.llm_companies * self.llm_accounts_per_company
+
+    @property
     def n_accounts(self) -> int:
-        return self.n_companies * self.accounts_per_company
+        return self.n_rule_accounts + self.n_llm_accounts
 
 
 class DataConfig(_Strict):
@@ -89,6 +98,7 @@ class DataConfig(_Strict):
     generated_dir: Path
     frozen_llm_dir: Path
     review_path: Path
+    review_rule_sample: int = Field(ge=0)
 
     @model_validator(mode="after")
     def _check(self) -> "DataConfig":
@@ -101,6 +111,8 @@ class DataConfig(_Strict):
         for name, split in self.splits.items():
             if split.n_companies == 0:
                 raise ValueError(f"split {name} has no companies")
+        if self.review_rule_sample > self.splits["test"].n_rule_accounts:
+            raise ValueError("review_rule_sample is larger than the number of rule-based test rows")
         return self
 
 

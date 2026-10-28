@@ -44,7 +44,9 @@ class CompanyAccount(BaseModel):
     noise: list[str]
     target_code: str  
     overlaps_dev: bool = False  
-    label_status: Literal["unchecked", "checked", "corrected"] = "unchecked"
+    # unchecked: not reviewed yet; constructed: rule-based row outside the hand-check
+    # sample (label correct by construction); checked / corrected: hand-checked.
+    label_status: Literal["unchecked", "constructed", "checked", "corrected"] = "unchecked"
 
 
 def write_jsonl(rows: list[BaseModel], path: Path) -> None:

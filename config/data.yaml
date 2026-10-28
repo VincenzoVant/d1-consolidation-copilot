@@ -8,22 +8,31 @@ industries: [software, construction, retail, services]
 languages: [nl, fr, en, mixed]
 
 # Each split has its own seed, so no two splits share generated rows.
+# Rule-based companies are free to generate; each LLM company is one Claude call.
 splits:
-  train:  # fits the XGBoost and random-forest methods: 60 companies x 50 = 3,000 accounts
+  train:  # fits XGBoost and the random forest: 200x50 + 40x50 = 12,000 accounts
     seed: 3003
-    rule_companies: 40
-    llm_companies: 20
-    accounts_per_company: 50
-  dev:    # calibration, thresholds and choosing the method: 40 companies x 50 = 2,000 accounts
+    rule_companies: 200
+    rule_accounts_per_company: 50
+    llm_companies: 40
+    llm_accounts_per_company: 50
+  dev:    # calibration, thresholds and choosing the method: 40x50 + 30x50 = 3,500 accounts
     seed: 1001
-    rule_companies: 20
-    llm_companies: 20
-    accounts_per_company: 50
-  test:   # hand-checked, never used for tuning: 8 companies x 25 = 200 accounts
+    rule_companies: 40
+    rule_accounts_per_company: 50
+    llm_companies: 30
+    llm_accounts_per_company: 50
+  test:   # never used for tuning: 8x50 + 8x25 = 600 accounts
     seed: 2002
-    rule_companies: 4
-    llm_companies: 4
-    accounts_per_company: 25
+    rule_companies: 8
+    rule_accounts_per_company: 50
+    llm_companies: 8
+    llm_accounts_per_company: 25
+
+# Hand check of the test split: every LLM-written row (200), plus a random
+# sample of rule-based rows, whose labels are correct by construction but
+# whose names can become ambiguous after noise.
+review_rule_sample: 50
 
 generated_dir: data/generated          # not committed (see .gitignore)
 frozen_llm_dir: data/frozen/llm_charts # committed: raw LLM outputs, never regenerated
