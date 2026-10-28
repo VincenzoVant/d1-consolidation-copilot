@@ -1,0 +1,315 @@
+{
+  "company_id": "dev-c043",
+  "split": "dev",
+  "industry": "services",
+  "language": "fr",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "122",
+    "132",
+    "168",
+    "212",
+    "250",
+    "281",
+    "282",
+    "283",
+    "309",
+    "319",
+    "340",
+    "379",
+    "400",
+    "401",
+    "419",
+    "424",
+    "429",
+    "430",
+    "431",
+    "451",
+    "453",
+    "455",
+    "489",
+    "617",
+    "620",
+    "631",
+    "634",
+    "636",
+    "640",
+    "659",
+    "670",
+    "671",
+    "673",
+    "715",
+    "751",
+    "752",
+    "761",
+    "764",
+    "780",
+    "792"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:27:42+00:00",
+  "usage": {
+    "input_tokens": 3189,
+    "output_tokens": 1792,
+    "cost_usd": 0.0569214,
+    "latency_ms": 17819.578082999215
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "122",
+        "code": "122100",
+        "name": "PV réévaluation particip. Servilux"
+      },
+      {
+        "target_code": "132",
+        "code": "132000",
+        "name": "Réserve immunisée PV réalisées"
+      },
+      {
+        "target_code": "168",
+        "code": "168000",
+        "name": "Impôts différés s/ subsides capital"
+      },
+      {
+        "target_code": "212",
+        "code": "212000",
+        "name": "Goodwill reprise clientèle Namur"
+      },
+      {
+        "target_code": "250",
+        "code": "250100",
+        "name": "Bureau Gosselies - leasing immob."
+      },
+      {
+        "target_code": "281",
+        "code": "281010",
+        "name": "Prêt intra-groupe Holding VDT"
+      },
+      {
+        "target_code": "281",
+        "code": "281020",
+        "name": "C/c Servilux Consulting SA"
+      },
+      {
+        "target_code": "282",
+        "code": "282000",
+        "name": "Particip. 25% DataPlan SRL"
+      },
+      {
+        "target_code": "283",
+        "code": "283000",
+        "name": "Avance DataPlan SRL"
+      },
+      {
+        "target_code": "309",
+        "code": "309000",
+        "name": "RDV stock matériel câblage"
+      },
+      {
+        "target_code": "319",
+        "code": "319000",
+        "name": "RDV fournitures bureau/consommables"
+      },
+      {
+        "target_code": "340",
+        "code": "340000",
+        "name": "Stock licences & matériel revente"
+      },
+      {
+        "target_code": "379",
+        "code": "379000",
+        "name": "RDV projets en cours (WIP)"
+      },
+      {
+        "target_code": "400",
+        "code": "400000",
+        "name": "Clients Belgique"
+      },
+      {
+        "target_code": "400",
+        "code": "400100",
+        "name": "Clients UE / intracom"
+      },
+      {
+        "target_code": "401",
+        "code": "401000",
+        "name": "Effets à recevoir clients"
+      },
+      {
+        "target_code": "419",
+        "code": "419000",
+        "name": "RDV débiteurs divers douteux"
+      },
+      {
+        "target_code": "424",
+        "code": "424000",
+        "name": "Prêt subordonné SOWALFIN - part CT"
+      },
+      {
+        "target_code": "429",
+        "code": "429000",
+        "name": "Dette reprise fonds - échéance an"
+      },
+      {
+        "target_code": "430",
+        "code": "430100",
+        "name": "Straight loan BNP Paribas Fortis"
+      },
+      {
+        "target_code": "430",
+        "code": "430200",
+        "name": "Avance à terme fixe Belfius"
+      },
+      {
+        "target_code": "431",
+        "code": "431000",
+        "name": "Billets de trésorerie ING"
+      },
+      {
+        "target_code": "451",
+        "code": "451210",
+        "name": "TVA due 21%"
+      },
+      {
+        "target_code": "451",
+        "code": "451060",
+        "name": "TVA due 6% / autoliquidation"
+      },
+      {
+        "target_code": "453",
+        "code": "453000",
+        "name": "Précompte prof. retenu salaires"
+      },
+      {
+        "target_code": "455",
+        "code": "455000",
+        "name": "Salaires nets à payer employés"
+      },
+      {
+        "target_code": "455",
+        "code": "455100",
+        "name": "Pécule vacances à payer"
+      },
+      {
+        "target_code": "489",
+        "code": "489000",
+        "name": "Dettes diverses à régulariser"
+      },
+      {
+        "target_code": "489",
+        "code": "489100",
+        "name": "Notes de frais à rembourser"
+      },
+      {
+        "target_code": "617",
+        "code": "617000",
+        "name": "Intérims Randstad"
+      },
+      {
+        "target_code": "617",
+        "code": "617100",
+        "name": "Consultants détachés groupe"
+      },
+      {
+        "target_code": "620",
+        "code": "620200",
+        "name": "Salaires bruts employés"
+      },
+      {
+        "target_code": "620",
+        "code": "620300",
+        "name": "Rémun. administrateur-gérant"
+      },
+      {
+        "target_code": "631",
+        "code": "631000",
+        "name": "Dotation RDV stocks"
+      },
+      {
+        "target_code": "634",
+        "code": "634000",
+        "name": "Dotation RDV clients douteux"
+      },
+      {
+        "target_code": "636",
+        "code": "636000",
+        "name": "Prov. gros entretien bureaux"
+      },
+      {
+        "target_code": "640",
+        "code": "640100",
+        "name": "Précompte immobilier"
+      },
+      {
+        "target_code": "640",
+        "code": "640200",
+        "name": "Taxe circulation véhicules"
+      },
+      {
+        "target_code": "659",
+        "code": "659000",
+        "name": "Ch. fin. activées restructuration"
+      },
+      {
+        "target_code": "670",
+        "code": "670100",
+        "name": "ISOC - versements anticipés"
+      },
+      {
+        "target_code": "671",
+        "code": "671000",
+        "name": "Suppl. ISOC exercices antérieurs"
+      },
+      {
+        "target_code": "673",
+        "code": "673000",
+        "name": "Impôts étrangers ex. antérieurs (FR)"
+      },
+      {
+        "target_code": "715",
+        "code": "715000",
+        "name": "Var. stock immeubles destinés vente"
+      },
+      {
+        "target_code": "751",
+        "code": "751000",
+        "name": "Intérêts comptes épargne/terme"
+      },
+      {
+        "target_code": "752",
+        "code": "752000",
+        "name": "PV vente placements trésorerie"
+      },
+      {
+        "target_code": "761",
+        "code": "761000",
+        "name": "Reprise RDV particip. financières"
+      },
+      {
+        "target_code": "764",
+        "code": "764000",
+        "name": "Produits except. divers"
+      },
+      {
+        "target_code": "764",
+        "code": "764100",
+        "name": "Indemnité assurance sinistre"
+      },
+      {
+        "target_code": "780",
+        "code": "780000",
+        "name": "Prélèv. impôts différés"
+      },
+      {
+        "target_code": "792",
+        "code": "792000",
+        "name": "Prélèv. sur réserves disponibles"
+      }
+    ]
+  }
+}

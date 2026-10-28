@@ -1,0 +1,170 @@
+{
+  "company_id": "test-c012",
+  "split": "test",
+  "industry": "software",
+  "language": "mixed",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "124",
+    "132",
+    "200",
+    "291",
+    "310",
+    "329",
+    "360",
+    "420",
+    "430",
+    "431",
+    "440",
+    "441",
+    "451",
+    "488",
+    "621",
+    "634",
+    "637",
+    "651",
+    "669",
+    "789"
+  ],
+  "n_accounts": 25,
+  "created_at": "2026-10-28T20:21:37+00:00",
+  "usage": {
+    "input_tokens": 2702,
+    "output_tokens": 885,
+    "cost_usd": 0.0348854,
+    "latency_ms": 9854.670791886747
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "124",
+        "code": "7524",
+        "name": "Reprise RDV placements trésorerie"
+      },
+      {
+        "target_code": "132",
+        "code": "1320",
+        "name": "Vrijgestelde reserve investeringsaftrek"
+      },
+      {
+        "target_code": "132",
+        "code": "1321",
+        "name": "Réserve immunisée plus-values"
+      },
+      {
+        "target_code": "200",
+        "code": "2000",
+        "name": "Oprichtingskosten notaris NV"
+      },
+      {
+        "target_code": "291",
+        "code": "2910",
+        "name": "Huurwaarborg kantoor Brussel LT"
+      },
+      {
+        "target_code": "291",
+        "code": "2911",
+        "name": "Long-term loan to CloudOps BV"
+      },
+      {
+        "target_code": "310",
+        "code": "3100",
+        "name": "Fournitures IT & câblage"
+      },
+      {
+        "target_code": "329",
+        "code": "3290",
+        "name": "WIP custom dev - write-down"
+      },
+      {
+        "target_code": "360",
+        "code": "3600",
+        "name": "Acomptes hardware stock"
+      },
+      {
+        "target_code": "420",
+        "code": "4200",
+        "name": "Achtergestelde lening PMV - KT deel"
+      },
+      {
+        "target_code": "430",
+        "code": "4300",
+        "name": "Straight loan KBC"
+      },
+      {
+        "target_code": "430",
+        "code": "4301",
+        "name": "Prêt terme fixe BNP Fortis"
+      },
+      {
+        "target_code": "431",
+        "code": "4310",
+        "name": "Promesse Belfius"
+      },
+      {
+        "target_code": "440",
+        "code": "4400",
+        "name": "Leveranciers binnenland"
+      },
+      {
+        "target_code": "440",
+        "code": "4401",
+        "name": "Suppliers EU/SaaS (AWS, Atlassian)"
+      },
+      {
+        "target_code": "441",
+        "code": "4410",
+        "name": "Effets à payer fournisseurs"
+      },
+      {
+        "target_code": "451",
+        "code": "4510",
+        "name": "Btw te betalen 21%"
+      },
+      {
+        "target_code": "451",
+        "code": "4511",
+        "name": "TVA due autoliquidation intracom"
+      },
+      {
+        "target_code": "488",
+        "code": "4880",
+        "name": "Client deposits received - hosting"
+      },
+      {
+        "target_code": "621",
+        "code": "6210",
+        "name": "RSZ werkgeversbijdragen"
+      },
+      {
+        "target_code": "634",
+        "code": "6340",
+        "name": "RDV créances clients douteux"
+      },
+      {
+        "target_code": "637",
+        "code": "6370",
+        "name": "Provision WEEE / e-waste servers"
+      },
+      {
+        "target_code": "651",
+        "code": "6510",
+        "name": "Waardeverm. vlottende activa fin."
+      },
+      {
+        "target_code": "669",
+        "code": "6690",
+        "name": "Activated restructuring costs (-)"
+      },
+      {
+        "target_code": "789",
+        "code": "7890",
+        "name": "Onttrekking vrijgestelde reserves"
+      }
+    ]
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "company_id": "dev-c058",
+  "split": "dev",
+  "industry": "retail",
+  "language": "nl",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "160",
+    "179",
+    "204",
+    "251",
+    "252",
+    "285",
+    "288",
+    "300",
+    "319",
+    "339",
+    "349",
+    "369",
+    "404",
+    "406",
+    "416",
+    "417",
+    "419",
+    "450",
+    "489",
+    "530",
+    "570",
+    "603",
+    "618",
+    "620",
+    "623",
+    "630",
+    "653",
+    "657",
+    "659",
+    "662",
+    "672",
+    "689",
+    "700",
+    "708",
+    "713",
+    "742",
+    "750",
+    "756",
+    "760",
+    "762"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:28:53+00:00",
+  "usage": {
+    "input_tokens": 3418,
+    "output_tokens": 2013,
+    "cost_usd": 0.0631734,
+    "latency_ms": 18309.374625096098
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "160",
+        "code": "160100",
+        "name": "Voorz. groepsverzekering personeel"
+      },
+      {
+        "target_code": "179",
+        "code": "179100",
+        "name": "Achtergestelde lening zaakvoerder LT"
+      },
+      {
+        "target_code": "204",
+        "code": "204100",
+        "name": "Herstructurering sluiting filiaal Aalst"
+      },
+      {
+        "target_code": "251",
+        "code": "251100",
+        "name": "Leasing kassasystemen & scanners"
+      },
+      {
+        "target_code": "252",
+        "code": "252100",
+        "name": "Leasing bestelwagen Renault Master"
+      },
+      {
+        "target_code": "252",
+        "code": "252200",
+        "name": "Leasing bedrijfswagen zaakvoerder"
+      },
+      {
+        "target_code": "285",
+        "code": "285100",
+        "name": "Lening aan personeel LT"
+      },
+      {
+        "target_code": "288",
+        "code": "288100",
+        "name": "Huurwaarborg winkel Gent Veldstraat"
+      },
+      {
+        "target_code": "288",
+        "code": "288200",
+        "name": "Huurwaarborg winkel Brugge Steenstr."
+      },
+      {
+        "target_code": "300",
+        "code": "300100",
+        "name": "Voorraad verpakkingsmateriaal"
+      },
+      {
+        "target_code": "319",
+        "code": "319100",
+        "name": "WV voorraad hulpstoffen"
+      },
+      {
+        "target_code": "339",
+        "code": "339100",
+        "name": "WV eigen huismerk producten"
+      },
+      {
+        "target_code": "349",
+        "code": "349100",
+        "name": "WV handelsgoederen incourant/solden"
+      },
+      {
+        "target_code": "369",
+        "code": "369100",
+        "name": "WV voorschotten leveranciers"
+      },
+      {
+        "target_code": "404",
+        "code": "404100",
+        "name": "Nog te factureren klanten"
+      },
+      {
+        "target_code": "406",
+        "code": "406100",
+        "name": "Voorschotten betaald aan leveranciers"
+      },
+      {
+        "target_code": "416",
+        "code": "416100",
+        "name": "Te ontv. bonussen leveranciers"
+      },
+      {
+        "target_code": "417",
+        "code": "417100",
+        "name": "Dubieuze diverse vorderingen"
+      },
+      {
+        "target_code": "419",
+        "code": "419100",
+        "name": "WV diverse vorderingen"
+      },
+      {
+        "target_code": "450",
+        "code": "450100",
+        "name": "Geraamde VenB boekjaar"
+      },
+      {
+        "target_code": "489",
+        "code": "489100",
+        "name": "Openstaande cadeaubonnen klanten"
+      },
+      {
+        "target_code": "530",
+        "code": "530100",
+        "name": "Termijnrekening KBC 3 jaar"
+      },
+      {
+        "target_code": "530",
+        "code": "530200",
+        "name": "Termijnrekening Belfius 2 jaar"
+      },
+      {
+        "target_code": "570",
+        "code": "570100",
+        "name": "Kassa winkel Gent"
+      },
+      {
+        "target_code": "570",
+        "code": "570200",
+        "name": "Kassa winkel Brugge"
+      },
+      {
+        "target_code": "603",
+        "code": "603100",
+        "name": "Uitbesteding retouches/herstellingen"
+      },
+      {
+        "target_code": "618",
+        "code": "618100",
+        "name": "Bezoldiging zaakvoerder"
+      },
+      {
+        "target_code": "620",
+        "code": "620100",
+        "name": "Brutolonen bedienden winkel"
+      },
+      {
+        "target_code": "620",
+        "code": "620200",
+        "name": "Brutolonen studenten/flexijobs"
+      },
+      {
+        "target_code": "623",
+        "code": "623100",
+        "name": "Maaltijdcheques personeel"
+      },
+      {
+        "target_code": "623",
+        "code": "623200",
+        "name": "Opleidingen & werkkledij personeel"
+      },
+      {
+        "target_code": "630",
+        "code": "630100",
+        "name": "Afschr. winkelinrichting"
+      },
+      {
+        "target_code": "630",
+        "code": "630200",
+        "name": "Afschr. IT & kassahardware"
+      },
+      {
+        "target_code": "653",
+        "code": "653100",
+        "name": "Discontokosten factoring"
+      },
+      {
+        "target_code": "657",
+        "code": "657100",
+        "name": "Bankkosten KBC"
+      },
+      {
+        "target_code": "657",
+        "code": "657200",
+        "name": "Kosten betaalterminals Worldline"
+      },
+      {
+        "target_code": "659",
+        "code": "659100",
+        "name": "Geactiveerde fin. kosten herstructurering"
+      },
+      {
+        "target_code": "662",
+        "code": "662100",
+        "name": "Voorz. geschil verhuurder"
+      },
+      {
+        "target_code": "672",
+        "code": "672100",
+        "name": "Buitenl. belastingen webshop NL"
+      },
+      {
+        "target_code": "689",
+        "code": "689100",
+        "name": "Overboeking vrijgestelde reserve"
+      },
+      {
+        "target_code": "700",
+        "code": "700100",
+        "name": "Omzet winkel 21% btw"
+      },
+      {
+        "target_code": "700",
+        "code": "700200",
+        "name": "Omzet webshop 21% btw"
+      },
+      {
+        "target_code": "708",
+        "code": "708100",
+        "name": "Kortingen klantenkaart"
+      },
+      {
+        "target_code": "708",
+        "code": "708200",
+        "name": "Promo- en soldenkortingen"
+      },
+      {
+        "target_code": "713",
+        "code": "713100",
+        "name": "Voorraadwijziging huismerk"
+      },
+      {
+        "target_code": "742",
+        "code": "742100",
+        "name": "Meerwaarde verkoop klantenvorderingen"
+      },
+      {
+        "target_code": "750",
+        "code": "750100",
+        "name": "Dividenden deelnemingen"
+      },
+      {
+        "target_code": "756",
+        "code": "756100",
+        "name": "Betalingskortingen leveranciers"
+      },
+      {
+        "target_code": "760",
+        "code": "760100",
+        "name": "Terugname WV voorraad"
+      },
+      {
+        "target_code": "762",
+        "code": "762100",
+        "name": "Terugname voorz. geschil verhuurder"
+      }
+    ]
+  }
+}

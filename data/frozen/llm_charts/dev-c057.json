@@ -1,0 +1,315 @@
+{
+  "company_id": "dev-c057",
+  "split": "dev",
+  "industry": "construction",
+  "language": "mixed",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "122",
+    "161",
+    "171",
+    "172",
+    "173",
+    "200",
+    "212",
+    "213",
+    "252",
+    "281",
+    "288",
+    "290",
+    "329",
+    "330",
+    "340",
+    "369",
+    "370",
+    "371",
+    "416",
+    "425",
+    "426",
+    "430",
+    "432",
+    "433",
+    "459",
+    "491",
+    "492",
+    "531",
+    "578",
+    "600",
+    "601",
+    "603",
+    "641",
+    "642",
+    "650",
+    "651",
+    "653",
+    "655",
+    "659",
+    "761"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:28:54+00:00",
+  "usage": {
+    "input_tokens": 3965,
+    "output_tokens": 2204,
+    "cost_usd": 0.0713694,
+    "latency_ms": 23190.776665927842
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "122",
+        "code": "1220-10",
+        "name": "Herwaardering particip. Bouwgroep Zenne NV"
+      },
+      {
+        "target_code": "161",
+        "code": "1610-00",
+        "name": "Prov. fiscale - contrôle TVA 2024"
+      },
+      {
+        "target_code": "171",
+        "code": "1710-00",
+        "name": "Obligatielening 2022-2029 (privé plaatsing)"
+      },
+      {
+        "target_code": "172",
+        "code": "1720-01",
+        "name": "Leasing LT - Liebherr kraan (>1j)"
+      },
+      {
+        "target_code": "173",
+        "code": "1730-01",
+        "name": "Investeringskrediet BNP Fortis LT"
+      },
+      {
+        "target_code": "173",
+        "code": "1730-02",
+        "name": "Crédit LT Belfius - hangar Anderlecht"
+      },
+      {
+        "target_code": "200",
+        "code": "2000-00",
+        "name": "Frais de constitution SRL"
+      },
+      {
+        "target_code": "212",
+        "code": "2120-00",
+        "name": "Goodwill overname klantenbestand Dakwerken Peeters"
+      },
+      {
+        "target_code": "213",
+        "code": "2130-00",
+        "name": "Acompte logiciel planning chantiers"
+      },
+      {
+        "target_code": "252",
+        "code": "2520-01",
+        "name": "Leasing camionnettes Ford Transit"
+      },
+      {
+        "target_code": "252",
+        "code": "2520-02",
+        "name": "Leasing bedrijfswagens zaakvoerders"
+      },
+      {
+        "target_code": "281",
+        "code": "2810-00",
+        "name": "LT lening aan Vastgoed VDB BV (verbonden)"
+      },
+      {
+        "target_code": "288",
+        "code": "2880-01",
+        "name": "Waarborg huur loods Vilvoorde"
+      },
+      {
+        "target_code": "288",
+        "code": "2880-02",
+        "name": "Cautionnement Sibelga / Vivaqua chantiers"
+      },
+      {
+        "target_code": "290",
+        "code": "2900-00",
+        "name": "Retentions klanten >1 an (garantie 5%)"
+      },
+      {
+        "target_code": "329",
+        "code": "3290-00",
+        "name": "WV werken in uitvoering (-)"
+      },
+      {
+        "target_code": "330",
+        "code": "3300-00",
+        "name": "Stock prefab elementen (gereed)"
+      },
+      {
+        "target_code": "340",
+        "code": "3400-00",
+        "name": "Stock handelsgoederen - tegels & sanitair"
+      },
+      {
+        "target_code": "369",
+        "code": "3690-00",
+        "name": "RDV acomptes fournisseurs stock (-)"
+      },
+      {
+        "target_code": "370",
+        "code": "3700-01",
+        "name": "WIP chantier Ixelles Rue du Trône"
+      },
+      {
+        "target_code": "370",
+        "code": "3700-02",
+        "name": "Bestelling in uitvoering - project Mechelen Nekker"
+      },
+      {
+        "target_code": "371",
+        "code": "3710-01",
+        "name": "Winstmarge POC - Ixelles Trône"
+      },
+      {
+        "target_code": "371",
+        "code": "3710-02",
+        "name": "Toegerekende winst Mechelen Nekker"
+      },
+      {
+        "target_code": "416",
+        "code": "4160-00",
+        "name": "Débiteurs divers / te recup. schadeclaims"
+      },
+      {
+        "target_code": "425",
+        "code": "4250-00",
+        "name": "Leveranciers LT - deel <1j"
+      },
+      {
+        "target_code": "426",
+        "code": "4260-00",
+        "name": "Voorschotten klanten LT - vervallend <1 jaar"
+      },
+      {
+        "target_code": "430",
+        "code": "4300-00",
+        "name": "Straight loan KBC (vaste termijn)"
+      },
+      {
+        "target_code": "432",
+        "code": "4320-00",
+        "name": "Crédit d'acceptation ING"
+      },
+      {
+        "target_code": "433",
+        "code": "4330-01",
+        "name": "Kaskrediet KBC rek.-courant"
+      },
+      {
+        "target_code": "433",
+        "code": "4330-02",
+        "name": "Découvert BNP Paribas Fortis"
+      },
+      {
+        "target_code": "459",
+        "code": "4590-00",
+        "name": "Fonds de Sécurité d'Existence / timbres fidélité"
+      },
+      {
+        "target_code": "491",
+        "code": "4910-00",
+        "name": "Te factureren meerwerken (accrued income)"
+      },
+      {
+        "target_code": "492",
+        "code": "4920-01",
+        "name": "Toe te rekenen kosten - energie & water werven"
+      },
+      {
+        "target_code": "492",
+        "code": "4920-02",
+        "name": "Accrued charges - factures sous-traitants à recevoir"
+      },
+      {
+        "target_code": "531",
+        "code": "5310-00",
+        "name": "Compte à terme 6 mois Belfius"
+      },
+      {
+        "target_code": "578",
+        "code": "5780-00",
+        "name": "Kas zegels / timbres poste"
+      },
+      {
+        "target_code": "600",
+        "code": "6000-01",
+        "name": "Achats béton prêt à l'emploi"
+      },
+      {
+        "target_code": "600",
+        "code": "6000-02",
+        "name": "Aankoop staal & wapening"
+      },
+      {
+        "target_code": "601",
+        "code": "6010-01",
+        "name": "Kleinmateriaal & verbruiksgoederen werf"
+      },
+      {
+        "target_code": "601",
+        "code": "6010-02",
+        "name": "Fournitures - vis, colles, silicones"
+      },
+      {
+        "target_code": "603",
+        "code": "6030-01",
+        "name": "Onderaanneming elektriciteit"
+      },
+      {
+        "target_code": "603",
+        "code": "6030-02",
+        "name": "Sous-traitance HVAC / plomberie"
+      },
+      {
+        "target_code": "641",
+        "code": "6410-00",
+        "name": "Loss on sale equipment (minwaarde materieel)"
+      },
+      {
+        "target_code": "642",
+        "code": "6420-00",
+        "name": "Minderwaarde factoring klantvorderingen"
+      },
+      {
+        "target_code": "650",
+        "code": "6500-00",
+        "name": "Intérêts crédits bancaires"
+      },
+      {
+        "target_code": "651",
+        "code": "6510-00",
+        "name": "WV dubieuze debiteurs"
+      },
+      {
+        "target_code": "653",
+        "code": "6530-00",
+        "name": "Discount charges - escompte factures"
+      },
+      {
+        "target_code": "655",
+        "code": "6550-00",
+        "name": "Wisselkoersverschillen (GBP/CHF)"
+      },
+      {
+        "target_code": "659",
+        "code": "6590-00",
+        "name": "Charges fin. activées restructuration (-)"
+      },
+      {
+        "target_code": "761",
+        "code": "7610-00",
+        "name": "Terugname WV deelnemingen"
+      }
+    ]
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "company_id": "dev-c047",
+  "split": "dev",
+  "industry": "services",
+  "language": "en",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "121",
+    "124",
+    "175",
+    "176",
+    "178",
+    "213",
+    "250",
+    "283",
+    "290",
+    "291",
+    "309",
+    "329",
+    "350",
+    "359",
+    "360",
+    "369",
+    "404",
+    "417",
+    "422",
+    "428",
+    "431",
+    "444",
+    "451",
+    "454",
+    "520",
+    "531",
+    "532",
+    "539",
+    "603",
+    "621",
+    "630",
+    "633",
+    "654",
+    "656",
+    "668",
+    "700",
+    "708",
+    "741",
+    "743",
+    "792"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:27:59+00:00",
+  "usage": {
+    "input_tokens": 3328,
+    "output_tokens": 1829,
+    "cost_usd": 0.0587734,
+    "latency_ms": 16403.613875154406
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "121",
+        "code": "121000",
+        "name": "Reval. surplus - office building Ghent"
+      },
+      {
+        "target_code": "124",
+        "code": "124000",
+        "name": "Reversal write-down short-term investments"
+      },
+      {
+        "target_code": "175",
+        "code": "175100",
+        "name": "Suppliers LT - deferred payment IT hardware"
+      },
+      {
+        "target_code": "175",
+        "code": "175200",
+        "name": "Suppliers LT - Proximus payment plan"
+      },
+      {
+        "target_code": "176",
+        "code": "176000",
+        "name": "Client advances LT - framework contracts"
+      },
+      {
+        "target_code": "178",
+        "code": "178000",
+        "name": "Rental deposits received LT - subtenants"
+      },
+      {
+        "target_code": "213",
+        "code": "213000",
+        "name": "Prepayment ERP/CRM implementation"
+      },
+      {
+        "target_code": "250",
+        "code": "250100",
+        "name": "Leased office Ghent - Kortrijksesteenweg"
+      },
+      {
+        "target_code": "250",
+        "code": "250200",
+        "name": "Leased office Antwerp - Meir"
+      },
+      {
+        "target_code": "283",
+        "code": "283000",
+        "name": "Loan to associate - DataBridge BV"
+      },
+      {
+        "target_code": "290",
+        "code": "290000",
+        "name": "Clients LT - instalment agreements"
+      },
+      {
+        "target_code": "291",
+        "code": "291000",
+        "name": "Rental guarantees paid LT"
+      },
+      {
+        "target_code": "309",
+        "code": "309000",
+        "name": "W/D supplies stock (-)"
+      },
+      {
+        "target_code": "329",
+        "code": "329000",
+        "name": "W/D unbilled projects WIP (-)"
+      },
+      {
+        "target_code": "350",
+        "code": "350000",
+        "name": "Property held for resale - parking units"
+      },
+      {
+        "target_code": "359",
+        "code": "359000",
+        "name": "W/D property held for resale (-)"
+      },
+      {
+        "target_code": "360",
+        "code": "360000",
+        "name": "Prepayments to suppliers - stock purchases"
+      },
+      {
+        "target_code": "369",
+        "code": "369000",
+        "name": "W/D prepayments stock purchases (-)"
+      },
+      {
+        "target_code": "404",
+        "code": "404100",
+        "name": "Unbilled revenue - consultancy days"
+      },
+      {
+        "target_code": "404",
+        "code": "404200",
+        "name": "Unbilled revenue - maintenance contracts"
+      },
+      {
+        "target_code": "417",
+        "code": "417000",
+        "name": "Doubtful other receivables"
+      },
+      {
+        "target_code": "422",
+        "code": "422000",
+        "name": "Leasing - current portion (Belfius Lease)"
+      },
+      {
+        "target_code": "428",
+        "code": "428000",
+        "name": "Deposits received - due within year"
+      },
+      {
+        "target_code": "431",
+        "code": "431000",
+        "name": "KBC straight loan (promissory note)"
+      },
+      {
+        "target_code": "444",
+        "code": "444100",
+        "name": "Purchase invoices to receive - suppliers"
+      },
+      {
+        "target_code": "444",
+        "code": "444200",
+        "name": "Purchase invoices to receive - freelancers"
+      },
+      {
+        "target_code": "451",
+        "code": "451100",
+        "name": "Output VAT 21%"
+      },
+      {
+        "target_code": "451",
+        "code": "451200",
+        "name": "VAT payable - intra-EU reverse charge"
+      },
+      {
+        "target_code": "454",
+        "code": "454000",
+        "name": "RSZ/ONSS payable"
+      },
+      {
+        "target_code": "520",
+        "code": "520000",
+        "name": "Bonds - Belgian state notes"
+      },
+      {
+        "target_code": "531",
+        "code": "531100",
+        "name": "Term deposit KBC 3-12m"
+      },
+      {
+        "target_code": "531",
+        "code": "531200",
+        "name": "Term deposit Belfius 3-12m"
+      },
+      {
+        "target_code": "532",
+        "code": "532000",
+        "name": "Term deposit ING < 1m"
+      },
+      {
+        "target_code": "539",
+        "code": "539000",
+        "name": "W/D term deposits (-)"
+      },
+      {
+        "target_code": "603",
+        "code": "603100",
+        "name": "Subcontractors - freelance consultants"
+      },
+      {
+        "target_code": "603",
+        "code": "603200",
+        "name": "Subcontracting - IT development partners"
+      },
+      {
+        "target_code": "621",
+        "code": "621100",
+        "name": "Employer RSZ - employees"
+      },
+      {
+        "target_code": "621",
+        "code": "621200",
+        "name": "Employer RSZ - management"
+      },
+      {
+        "target_code": "630",
+        "code": "630000",
+        "name": "Depreciation charges fixed assets"
+      },
+      {
+        "target_code": "633",
+        "code": "633000",
+        "name": "Write-off LT client receivables"
+      },
+      {
+        "target_code": "654",
+        "code": "654000",
+        "name": "FX differences (USD/GBP)"
+      },
+      {
+        "target_code": "656",
+        "code": "656000",
+        "name": "Financial provisions - charge"
+      },
+      {
+        "target_code": "668",
+        "code": "668000",
+        "name": "Other non-recurring finance costs"
+      },
+      {
+        "target_code": "700",
+        "code": "700100",
+        "name": "Revenue consultancy"
+      },
+      {
+        "target_code": "700",
+        "code": "700200",
+        "name": "Revenue training & workshops"
+      },
+      {
+        "target_code": "708",
+        "code": "708000",
+        "name": "Discounts granted to clients"
+      },
+      {
+        "target_code": "741",
+        "code": "741000",
+        "name": "Gain on sale of company cars"
+      },
+      {
+        "target_code": "743",
+        "code": "743000",
+        "name": "Other operating income - recharged costs"
+      },
+      {
+        "target_code": "792",
+        "code": "792000",
+        "name": "Transfer from reserves"
+      },
+      {
+        "target_code": "124",
+        "code": "124100",
+        "name": "Write-back W/D investment funds"
+      }
+    ]
+  }
+}

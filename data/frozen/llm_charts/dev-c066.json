@@ -1,0 +1,315 @@
+{
+  "company_id": "dev-c066",
+  "split": "dev",
+  "industry": "retail",
+  "language": "en",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "160",
+    "161",
+    "171",
+    "174",
+    "201",
+    "210",
+    "220",
+    "221",
+    "251",
+    "283",
+    "309",
+    "310",
+    "319",
+    "330",
+    "369",
+    "409",
+    "416",
+    "424",
+    "429",
+    "441",
+    "455",
+    "491",
+    "608",
+    "609",
+    "622",
+    "623",
+    "624",
+    "632",
+    "636",
+    "641",
+    "642",
+    "700",
+    "715",
+    "741",
+    "755",
+    "756",
+    "761",
+    "764",
+    "769",
+    "792"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:29:32+00:00",
+  "usage": {
+    "input_tokens": 3153,
+    "output_tokens": 1856,
+    "cost_usd": 0.057913400000000004,
+    "latency_ms": 16854.85579096712
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "160",
+        "code": "1600100",
+        "name": "Prov. group insurance top-up staff"
+      },
+      {
+        "target_code": "161",
+        "code": "1610100",
+        "name": "Prov. tax reassessment FY"
+      },
+      {
+        "target_code": "171",
+        "code": "1710100",
+        "name": "Bond loan 2023-2030 (4.25%)"
+      },
+      {
+        "target_code": "174",
+        "code": "1740100",
+        "name": "LT loan KBC - Ghent shop fit-out"
+      },
+      {
+        "target_code": "174",
+        "code": "1740200",
+        "name": "LT loan Belfius - Bruges warehouse"
+      },
+      {
+        "target_code": "201",
+        "code": "2010100",
+        "name": "Arrangement fees bank loans"
+      },
+      {
+        "target_code": "210",
+        "code": "2100100",
+        "name": "Dev. webshop & loyalty app"
+      },
+      {
+        "target_code": "220",
+        "code": "2200100",
+        "name": "Land Ghent Kortrijksesteenweg"
+      },
+      {
+        "target_code": "220",
+        "code": "2200200",
+        "name": "Land warehouse Bruges"
+      },
+      {
+        "target_code": "221",
+        "code": "2210100",
+        "name": "Shop building Ghent"
+      },
+      {
+        "target_code": "221",
+        "code": "2210200",
+        "name": "Warehouse building Bruges"
+      },
+      {
+        "target_code": "251",
+        "code": "2510100",
+        "name": "Leased forklift & racking (fin. lease)"
+      },
+      {
+        "target_code": "283",
+        "code": "2830100",
+        "name": "Loan to RetailCo Logistics BV (25%)"
+      },
+      {
+        "target_code": "309",
+        "code": "3090100",
+        "name": "W/D packaging materials stock"
+      },
+      {
+        "target_code": "310",
+        "code": "3100100",
+        "name": "Stock bags, labels & shop supplies"
+      },
+      {
+        "target_code": "319",
+        "code": "3190100",
+        "name": "W/D shop supplies obsolete"
+      },
+      {
+        "target_code": "330",
+        "code": "3300100",
+        "name": "Stock own-label products"
+      },
+      {
+        "target_code": "330",
+        "code": "3300200",
+        "name": "Stock gift boxes assembled"
+      },
+      {
+        "target_code": "369",
+        "code": "3690100",
+        "name": "W/D deposits paid to suppliers"
+      },
+      {
+        "target_code": "409",
+        "code": "4090100",
+        "name": "Allowance doubtful B2B customers"
+      },
+      {
+        "target_code": "416",
+        "code": "4160100",
+        "name": "Receivable card terminal (Worldline)"
+      },
+      {
+        "target_code": "416",
+        "code": "4160200",
+        "name": "Insurance claims receivable"
+      },
+      {
+        "target_code": "424",
+        "code": "4240100",
+        "name": "Current portion LT loans KBC/Belfius"
+      },
+      {
+        "target_code": "429",
+        "code": "4290100",
+        "name": "Current portion other LT payables"
+      },
+      {
+        "target_code": "441",
+        "code": "4410100",
+        "name": "Bills payable suppliers"
+      },
+      {
+        "target_code": "455",
+        "code": "4550100",
+        "name": "Net salaries payable - employees"
+      },
+      {
+        "target_code": "455",
+        "code": "4550200",
+        "name": "Holiday pay & 13th month accrued"
+      },
+      {
+        "target_code": "491",
+        "code": "4910100",
+        "name": "Accrued supplier bonuses receivable"
+      },
+      {
+        "target_code": "608",
+        "code": "6080100",
+        "name": "Purch. discounts - payment terms"
+      },
+      {
+        "target_code": "608",
+        "code": "6080200",
+        "name": "Year-end volume rebates suppliers"
+      },
+      {
+        "target_code": "609",
+        "code": "6090100",
+        "name": "Change in stock merchandise"
+      },
+      {
+        "target_code": "622",
+        "code": "6220100",
+        "name": "Group & hospitalisation insurance (empl.)"
+      },
+      {
+        "target_code": "623",
+        "code": "6230100",
+        "name": "Meal vouchers employer part"
+      },
+      {
+        "target_code": "623",
+        "code": "6230200",
+        "name": "Staff training & workwear"
+      },
+      {
+        "target_code": "624",
+        "code": "6240100",
+        "name": "Pension payments former staff"
+      },
+      {
+        "target_code": "632",
+        "code": "6320100",
+        "name": "W/O shopfit projects in progress"
+      },
+      {
+        "target_code": "636",
+        "code": "6360100",
+        "name": "Prov. major roof/HVAC repairs"
+      },
+      {
+        "target_code": "641",
+        "code": "6410100",
+        "name": "Loss on sale shop equipment"
+      },
+      {
+        "target_code": "642",
+        "code": "6420100",
+        "name": "Loss factoring receivables"
+      },
+      {
+        "target_code": "700",
+        "code": "7000100",
+        "name": "Shop sales 21% VAT"
+      },
+      {
+        "target_code": "700",
+        "code": "7000200",
+        "name": "Webshop sales 6% VAT"
+      },
+      {
+        "target_code": "715",
+        "code": "7150100",
+        "name": "Change stock property for resale"
+      },
+      {
+        "target_code": "741",
+        "code": "7410100",
+        "name": "Gain on sale vehicles/equipment"
+      },
+      {
+        "target_code": "755",
+        "code": "7550100",
+        "name": "FX gains USD suppliers"
+      },
+      {
+        "target_code": "755",
+        "code": "7550200",
+        "name": "FX gains GBP purchases"
+      },
+      {
+        "target_code": "756",
+        "code": "7560100",
+        "name": "Cash differences & rounding gains"
+      },
+      {
+        "target_code": "761",
+        "code": "7610100",
+        "name": "Reversal W/D participations"
+      },
+      {
+        "target_code": "764",
+        "code": "7640100",
+        "name": "Non-recurring op. income - other"
+      },
+      {
+        "target_code": "769",
+        "code": "7690100",
+        "name": "Non-recurring fin. income - other"
+      },
+      {
+        "target_code": "792",
+        "code": "7920100",
+        "name": "Release from available reserves"
+      }
+    ]
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "company_id": "dev-c054",
+  "split": "dev",
+  "industry": "retail",
+  "language": "mixed",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "160",
+    "170",
+    "172",
+    "175",
+    "210",
+    "212",
+    "222",
+    "250",
+    "251",
+    "283",
+    "290",
+    "310",
+    "330",
+    "359",
+    "360",
+    "424",
+    "426",
+    "428",
+    "430",
+    "441",
+    "454",
+    "492",
+    "520",
+    "602",
+    "604",
+    "609",
+    "623",
+    "624",
+    "634",
+    "635",
+    "637",
+    "641",
+    "650",
+    "655",
+    "672",
+    "673",
+    "690",
+    "760",
+    "762",
+    "789"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:28:35+00:00",
+  "usage": {
+    "input_tokens": 4087,
+    "output_tokens": 1923,
+    "cost_usd": 0.0667254,
+    "latency_ms": 18583.21529184468
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "160",
+        "code": "16100",
+        "name": "Prov. pensioen zaakvoerder (IPT)"
+      },
+      {
+        "target_code": "170",
+        "code": "17110",
+        "name": "Achtergestelde lening aandeelhouder VdB"
+      },
+      {
+        "target_code": "172",
+        "code": "17210",
+        "name": "Leasing bestelwagen Sprinter >1j"
+      },
+      {
+        "target_code": "175",
+        "code": "17510",
+        "name": "Fournisseurs LT - accord étalement Ricoh"
+      },
+      {
+        "target_code": "210",
+        "code": "21010",
+        "name": "Dev. webshop & e-commerce platform"
+      },
+      {
+        "target_code": "212",
+        "code": "21200",
+        "name": "Goodwill overname winkel Elsene"
+      },
+      {
+        "target_code": "222",
+        "code": "22210",
+        "name": "Terrain + bâtiment magasin Anderlecht"
+      },
+      {
+        "target_code": "222",
+        "code": "22220",
+        "name": "Grond magazijn Vilvoorde"
+      },
+      {
+        "target_code": "250",
+        "code": "25010",
+        "name": "Leasing immo shop Louise (Belfius Lease)"
+      },
+      {
+        "target_code": "251",
+        "code": "25110",
+        "name": "Leasing kassasystemen POS"
+      },
+      {
+        "target_code": "251",
+        "code": "25120",
+        "name": "Leasing koelinstallatie Vilvoorde"
+      },
+      {
+        "target_code": "283",
+        "code": "28310",
+        "name": "Prêt à Retail Partners SRL (particip.)"
+      },
+      {
+        "target_code": "290",
+        "code": "29010",
+        "name": "Klanten LT - afbetalingsplan B2B"
+      },
+      {
+        "target_code": "310",
+        "code": "31010",
+        "name": "Stock verpakking & draagtassen"
+      },
+      {
+        "target_code": "330",
+        "code": "33010",
+        "name": "Stock private label - Anderlecht"
+      },
+      {
+        "target_code": "330",
+        "code": "33020",
+        "name": "Stock private label - Webshop"
+      },
+      {
+        "target_code": "359",
+        "code": "35990",
+        "name": "RDV immeuble destiné à la vente (-)"
+      },
+      {
+        "target_code": "360",
+        "code": "36010",
+        "name": "Acomptes fournisseurs marchandises"
+      },
+      {
+        "target_code": "360",
+        "code": "36020",
+        "name": "Advance payments Asia import (USD)"
+      },
+      {
+        "target_code": "424",
+        "code": "42410",
+        "name": "Lening VdB - deel <1j"
+      },
+      {
+        "target_code": "426",
+        "code": "42610",
+        "name": "Acomptes clients commandes spéciales <1an"
+      },
+      {
+        "target_code": "428",
+        "code": "42810",
+        "name": "Waarborg ontvangen onderhuurder"
+      },
+      {
+        "target_code": "430",
+        "code": "43010",
+        "name": "Straight loan KBC"
+      },
+      {
+        "target_code": "430",
+        "code": "43020",
+        "name": "Crédit à terme BNP Paribas Fortis"
+      },
+      {
+        "target_code": "441",
+        "code": "44100",
+        "name": "Wissels te betalen leveranciers"
+      },
+      {
+        "target_code": "454",
+        "code": "45400",
+        "name": "RSZ / ONSS à payer"
+      },
+      {
+        "target_code": "492",
+        "code": "49210",
+        "name": "Te ontvangen facturen energie"
+      },
+      {
+        "target_code": "492",
+        "code": "49220",
+        "name": "Accrued costs - interim & audit"
+      },
+      {
+        "target_code": "520",
+        "code": "52010",
+        "name": "Staatsbon / bons d'État"
+      },
+      {
+        "target_code": "602",
+        "code": "60210",
+        "name": "Sous-traitance livraisons (Bpost/DPD)"
+      },
+      {
+        "target_code": "602",
+        "code": "60220",
+        "name": "Studies & consultancy marketing"
+      },
+      {
+        "target_code": "604",
+        "code": "60410",
+        "name": "Aankopen handelsgoederen 21%"
+      },
+      {
+        "target_code": "604",
+        "code": "60420",
+        "name": "Achats marchandises intracom 6%"
+      },
+      {
+        "target_code": "609",
+        "code": "60900",
+        "name": "Voorraadwijziging handelsgoederen"
+      },
+      {
+        "target_code": "623",
+        "code": "62310",
+        "name": "Maaltijdcheques / chèques-repas"
+      },
+      {
+        "target_code": "623",
+        "code": "62320",
+        "name": "Staff training & workwear"
+      },
+      {
+        "target_code": "624",
+        "code": "62400",
+        "name": "Pensioenen ex-personeel (rechtstreeks)"
+      },
+      {
+        "target_code": "634",
+        "code": "63400",
+        "name": "RDV clients douteux"
+      },
+      {
+        "target_code": "635",
+        "code": "63500",
+        "name": "Dotatie prov. pensioenen"
+      },
+      {
+        "target_code": "637",
+        "code": "63700",
+        "name": "Provision dépollution site Vilvoorde"
+      },
+      {
+        "target_code": "641",
+        "code": "64100",
+        "name": "Minwaarde verkoop vaste activa"
+      },
+      {
+        "target_code": "650",
+        "code": "65010",
+        "name": "Interest charges bank loans"
+      },
+      {
+        "target_code": "650",
+        "code": "65020",
+        "name": "Intérêts leasing"
+      },
+      {
+        "target_code": "655",
+        "code": "65500",
+        "name": "Wisselkoersverschillen USD/GBP"
+      },
+      {
+        "target_code": "672",
+        "code": "67200",
+        "name": "Foreign tax current year (NL branch)"
+      },
+      {
+        "target_code": "673",
+        "code": "67300",
+        "name": "Impôts étrangers ex. antérieurs"
+      },
+      {
+        "target_code": "690",
+        "code": "69000",
+        "name": "Overgedragen verlies vorig boekjaar"
+      },
+      {
+        "target_code": "760",
+        "code": "76000",
+        "name": "Reprise amort. & RDV"
+      },
+      {
+        "target_code": "762",
+        "code": "76200",
+        "name": "Terugname prov. geschil huurder"
+      },
+      {
+        "target_code": "789",
+        "code": "78900",
+        "name": "Onttrekking vrijgestelde reserves"
+      }
+    ]
+  }
+}

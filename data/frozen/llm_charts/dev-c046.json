@@ -1,0 +1,315 @@
+{
+  "company_id": "dev-c046",
+  "split": "dev",
+  "industry": "retail",
+  "language": "fr",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "120",
+    "160",
+    "164",
+    "172",
+    "200",
+    "211",
+    "285",
+    "291",
+    "329",
+    "370",
+    "414",
+    "416",
+    "418",
+    "419",
+    "421",
+    "423",
+    "428",
+    "432",
+    "441",
+    "451",
+    "453",
+    "480",
+    "491",
+    "604",
+    "605",
+    "631",
+    "633",
+    "635",
+    "642",
+    "649",
+    "650",
+    "651",
+    "659",
+    "662",
+    "680",
+    "712",
+    "741",
+    "760",
+    "789",
+    "792"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:27:57+00:00",
+  "usage": {
+    "input_tokens": 3201,
+    "output_tokens": 1883,
+    "cost_usd": 0.0588374,
+    "latency_ms": 17219.43354094401
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "120",
+        "code": "120100",
+        "name": "Plus-val. réévaluation fonds de commerce"
+      },
+      {
+        "target_code": "160",
+        "code": "160100",
+        "name": "Prov. pension gérant (EIP)"
+      },
+      {
+        "target_code": "164",
+        "code": "164100",
+        "name": "Prov. litige bail magasin Namur"
+      },
+      {
+        "target_code": "164",
+        "code": "164200",
+        "name": "Prov. garanties clients SAV"
+      },
+      {
+        "target_code": "172",
+        "code": "172100",
+        "name": "Leasing caisses enregistreuses >1an"
+      },
+      {
+        "target_code": "172",
+        "code": "172200",
+        "name": "Leasing camionnette livraison >1an"
+      },
+      {
+        "target_code": "200",
+        "code": "200100",
+        "name": "Frais constitution SRL (notaire)"
+      },
+      {
+        "target_code": "211",
+        "code": "211100",
+        "name": "Licence logiciel caisse POS"
+      },
+      {
+        "target_code": "285",
+        "code": "285100",
+        "name": "Prêt au personnel >1an"
+      },
+      {
+        "target_code": "285",
+        "code": "285200",
+        "name": "Créance s/ cession fonds Wavre"
+      },
+      {
+        "target_code": "291",
+        "code": "291100",
+        "name": "Avance LT gérant c/c"
+      },
+      {
+        "target_code": "329",
+        "code": "329100",
+        "name": "RDV en-cours retouches/ateliers"
+      },
+      {
+        "target_code": "370",
+        "code": "370100",
+        "name": "Cdes clients en cours (sur mesure)"
+      },
+      {
+        "target_code": "414",
+        "code": "414100",
+        "name": "Ristournes fournisseurs à recevoir"
+      },
+      {
+        "target_code": "414",
+        "code": "414200",
+        "name": "Primes Bancontact/Payconiq à recevoir"
+      },
+      {
+        "target_code": "416",
+        "code": "416100",
+        "name": "Créances diverses - remb. assurances"
+      },
+      {
+        "target_code": "416",
+        "code": "416200",
+        "name": "Chèques-repas/éco à encaisser Edenred"
+      },
+      {
+        "target_code": "418",
+        "code": "418100",
+        "name": "Garantie locative magasin Namur"
+      },
+      {
+        "target_code": "418",
+        "code": "418200",
+        "name": "Garantie locative magasin Liège"
+      },
+      {
+        "target_code": "419",
+        "code": "419100",
+        "name": "RDV créances diverses douteuses"
+      },
+      {
+        "target_code": "421",
+        "code": "421100",
+        "name": "Emprunt obligataire - part <1an"
+      },
+      {
+        "target_code": "423",
+        "code": "423100",
+        "name": "Prêt Belfius invest. - échéance <1an"
+      },
+      {
+        "target_code": "423",
+        "code": "423200",
+        "name": "Prêt ING aménagement - échéance <1an"
+      },
+      {
+        "target_code": "428",
+        "code": "428100",
+        "name": "Cautions reçues sous-location <1an"
+      },
+      {
+        "target_code": "432",
+        "code": "432100",
+        "name": "Crédit d'acceptation BNP Fortis"
+      },
+      {
+        "target_code": "441",
+        "code": "441100",
+        "name": "Effets à payer fournisseurs"
+      },
+      {
+        "target_code": "451",
+        "code": "451100",
+        "name": "TVA due ventes 21%"
+      },
+      {
+        "target_code": "451",
+        "code": "451200",
+        "name": "TVA due ventes 6%"
+      },
+      {
+        "target_code": "453",
+        "code": "453100",
+        "name": "Précompte prof. retenu salaires"
+      },
+      {
+        "target_code": "480",
+        "code": "480100",
+        "name": "Coupons obligations échus à payer"
+      },
+      {
+        "target_code": "491",
+        "code": "491100",
+        "name": "Produits acquis (loyers/intérêts)"
+      },
+      {
+        "target_code": "604",
+        "code": "604100",
+        "name": "Achats marchandises 21%"
+      },
+      {
+        "target_code": "604",
+        "code": "604200",
+        "name": "Achats marchandises 6%"
+      },
+      {
+        "target_code": "605",
+        "code": "605100",
+        "name": "Achat immeuble destiné revente"
+      },
+      {
+        "target_code": "631",
+        "code": "631100",
+        "name": "RDV stock (invendus/démarque)"
+      },
+      {
+        "target_code": "633",
+        "code": "633100",
+        "name": "RDV clients pro >1an"
+      },
+      {
+        "target_code": "635",
+        "code": "635100",
+        "name": "Dotation prov. pension gérant"
+      },
+      {
+        "target_code": "642",
+        "code": "642100",
+        "name": "Frais affacturage / cession créances"
+      },
+      {
+        "target_code": "649",
+        "code": "649100",
+        "name": "Ch. expl. activées restructuration (-)"
+      },
+      {
+        "target_code": "650",
+        "code": "650100",
+        "name": "Intérêts emprunts bancaires"
+      },
+      {
+        "target_code": "650",
+        "code": "650200",
+        "name": "Intérêts leasing"
+      },
+      {
+        "target_code": "651",
+        "code": "651100",
+        "name": "RDV actifs circulants financiers"
+      },
+      {
+        "target_code": "659",
+        "code": "659100",
+        "name": "Ch. fin. activées restructuration (-)"
+      },
+      {
+        "target_code": "662",
+        "code": "662100",
+        "name": "Dotation prov. fermeture magasin"
+      },
+      {
+        "target_code": "680",
+        "code": "680100",
+        "name": "Transfert impôts différés"
+      },
+      {
+        "target_code": "712",
+        "code": "712100",
+        "name": "Var. stock en-cours ateliers"
+      },
+      {
+        "target_code": "741",
+        "code": "741100",
+        "name": "Plus-value vente matériel/véhicule"
+      },
+      {
+        "target_code": "760",
+        "code": "760100",
+        "name": "Reprise amort. et RDV"
+      },
+      {
+        "target_code": "789",
+        "code": "789100",
+        "name": "Prélèv. réserves immunisées"
+      },
+      {
+        "target_code": "792",
+        "code": "792100",
+        "name": "Prélèvement s/ réserves dispo"
+      }
+    ]
+  }
+}

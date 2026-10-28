@@ -1,0 +1,310 @@
+{
+  "company_id": "train-c214",
+  "split": "train",
+  "industry": "retail",
+  "language": "mixed",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "160",
+    "164",
+    "168",
+    "171",
+    "178",
+    "202",
+    "211",
+    "222",
+    "250",
+    "310",
+    "330",
+    "339",
+    "360",
+    "369",
+    "371",
+    "400",
+    "424",
+    "425",
+    "429",
+    "431",
+    "440",
+    "441",
+    "452",
+    "459",
+    "520",
+    "550",
+    "570",
+    "600",
+    "602",
+    "603",
+    "632",
+    "633",
+    "634",
+    "635",
+    "662",
+    "668",
+    "671",
+    "760",
+    "761",
+    "780"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:25:27+00:00",
+  "usage": {
+    "input_tokens": 3959,
+    "output_tokens": 1899,
+    "cost_usd": 0.0652214,
+    "latency_ms": 19655.163957970217
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "160",
+        "code": "160010",
+        "name": "Prov. pensioenen bedrijfsleider (IPT)"
+      },
+      {
+        "target_code": "164",
+        "code": "164010",
+        "name": "Provision litige bail Elsene"
+      },
+      {
+        "target_code": "164",
+        "code": "164020",
+        "name": "Prov. garantie retours klanten"
+      },
+      {
+        "target_code": "168",
+        "code": "168000",
+        "name": "Impôts différés plus-value réinvestie"
+      },
+      {
+        "target_code": "171",
+        "code": "171000",
+        "name": "Obligatielening 2023-2030 4,5%"
+      },
+      {
+        "target_code": "178",
+        "code": "178010",
+        "name": "Huurwaarborg onderhuurder Ukkel"
+      },
+      {
+        "target_code": "178",
+        "code": "178020",
+        "name": "Cautions reçues concession shop-in-shop"
+      },
+      {
+        "target_code": "202",
+        "code": "202000",
+        "name": "Frais constitution & notaire"
+      },
+      {
+        "target_code": "211",
+        "code": "211010",
+        "name": "Software licenties kassasysteem POS"
+      },
+      {
+        "target_code": "222",
+        "code": "222000",
+        "name": "Terrain bâti magasin Ixelles"
+      },
+      {
+        "target_code": "250",
+        "code": "250000",
+        "name": "Leasing gebouw entrepôt Vilvoorde"
+      },
+      {
+        "target_code": "310",
+        "code": "310000",
+        "name": "Stock emballages & sacs"
+      },
+      {
+        "target_code": "330",
+        "code": "330010",
+        "name": "Voorraad handelsgoederen Elsene"
+      },
+      {
+        "target_code": "330",
+        "code": "330020",
+        "name": "Stock marchandises Uccle"
+      },
+      {
+        "target_code": "339",
+        "code": "339000",
+        "name": "WV voorraad obsolete collectie"
+      },
+      {
+        "target_code": "360",
+        "code": "360000",
+        "name": "Acomptes fournisseurs collection hiver"
+      },
+      {
+        "target_code": "369",
+        "code": "369000",
+        "name": "RV acomptes fournisseurs douteux"
+      },
+      {
+        "target_code": "371",
+        "code": "371000",
+        "name": "Commandes clients B2B - marge prise"
+      },
+      {
+        "target_code": "400",
+        "code": "400010",
+        "name": "Klanten B2B / Clients pro"
+      },
+      {
+        "target_code": "400",
+        "code": "400020",
+        "name": "Webshop customers (Mollie)"
+      },
+      {
+        "target_code": "424",
+        "code": "424000",
+        "name": "Lening Brupart - KT gedeelte"
+      },
+      {
+        "target_code": "425",
+        "code": "425000",
+        "name": "Dettes fourn. LT échéant dans l'année"
+      },
+      {
+        "target_code": "429",
+        "code": "429000",
+        "name": "Autres dettes LT part court terme"
+      },
+      {
+        "target_code": "431",
+        "code": "431000",
+        "name": "Straight loan BNP Fortis"
+      },
+      {
+        "target_code": "440",
+        "code": "440010",
+        "name": "Leveranciers binnenland"
+      },
+      {
+        "target_code": "440",
+        "code": "440020",
+        "name": "Suppliers EU / import"
+      },
+      {
+        "target_code": "441",
+        "code": "441000",
+        "name": "Effets à payer fournisseurs"
+      },
+      {
+        "target_code": "452",
+        "code": "452010",
+        "name": "Te betalen VenB"
+      },
+      {
+        "target_code": "452",
+        "code": "452020",
+        "name": "Taxe régionale Bruxelles enseignes"
+      },
+      {
+        "target_code": "459",
+        "code": "459000",
+        "name": "Other social debts - staff"
+      },
+      {
+        "target_code": "520",
+        "code": "520000",
+        "name": "Staatsbons / OLO portefeuille"
+      },
+      {
+        "target_code": "550",
+        "code": "550010",
+        "name": "KBC zichtrekening"
+      },
+      {
+        "target_code": "550",
+        "code": "550020",
+        "name": "BNP Paribas Fortis compte courant"
+      },
+      {
+        "target_code": "570",
+        "code": "570010",
+        "name": "Kassa winkel Elsene"
+      },
+      {
+        "target_code": "570",
+        "code": "570020",
+        "name": "Caisse magasin Uccle"
+      },
+      {
+        "target_code": "600",
+        "code": "600000",
+        "name": "Achats matières atelier retouches"
+      },
+      {
+        "target_code": "602",
+        "code": "602010",
+        "name": "Purchased services - logistics"
+      },
+      {
+        "target_code": "602",
+        "code": "602020",
+        "name": "Studies etalage & interieur"
+      },
+      {
+        "target_code": "603",
+        "code": "603000",
+        "name": "Sous-traitance confection"
+      },
+      {
+        "target_code": "632",
+        "code": "632000",
+        "name": "WV bestellingen in uitvoering"
+      },
+      {
+        "target_code": "633",
+        "code": "633000",
+        "name": "RV créances clients > 1 an"
+      },
+      {
+        "target_code": "634",
+        "code": "634000",
+        "name": "Bad debts write-off clients"
+      },
+      {
+        "target_code": "635",
+        "code": "635000",
+        "name": "Dotatie pensioenvoorziening"
+      },
+      {
+        "target_code": "662",
+        "code": "662000",
+        "name": "Dotation prov. charges exceptionnelles"
+      },
+      {
+        "target_code": "668",
+        "code": "668000",
+        "name": "Non-recurring bank charges"
+      },
+      {
+        "target_code": "671",
+        "code": "671000",
+        "name": "VenB vorige boekjaren - aanslagen"
+      },
+      {
+        "target_code": "760",
+        "code": "760000",
+        "name": "Reprise amort. & RV"
+      },
+      {
+        "target_code": "761",
+        "code": "761000",
+        "name": "Terugn. WV financiële vaste activa"
+      },
+      {
+        "target_code": "780",
+        "code": "780000",
+        "name": "Prélèvement impôts différés"
+      }
+    ]
+  }
+}

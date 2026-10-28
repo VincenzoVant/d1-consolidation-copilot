@@ -1,0 +1,320 @@
+{
+  "company_id": "train-c213",
+  "split": "train",
+  "industry": "construction",
+  "language": "en",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "121",
+    "122",
+    "162",
+    "171",
+    "222",
+    "223",
+    "252",
+    "290",
+    "300",
+    "339",
+    "349",
+    "371",
+    "404",
+    "418",
+    "419",
+    "422",
+    "423",
+    "425",
+    "429",
+    "432",
+    "455",
+    "489",
+    "531",
+    "600",
+    "602",
+    "620",
+    "621",
+    "636",
+    "640",
+    "650",
+    "652",
+    "656",
+    "661",
+    "664",
+    "671",
+    "689",
+    "700",
+    "713",
+    "717",
+    "741"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:25:18+00:00",
+  "usage": {
+    "input_tokens": 3251,
+    "output_tokens": 1669,
+    "cost_usd": 0.054957400000000003,
+    "latency_ms": 15481.346874963492
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "121",
+        "code": "1210",
+        "name": "Reval. surplus - warehouse Zele"
+      },
+      {
+        "target_code": "122",
+        "code": "1220",
+        "name": "Reval. surplus - stake Bouwteam NV"
+      },
+      {
+        "target_code": "162",
+        "code": "1620",
+        "name": "Prov. overhaul tower crane Liebherr"
+      },
+      {
+        "target_code": "162",
+        "code": "1621",
+        "name": "Prov. roof repair depot"
+      },
+      {
+        "target_code": "171",
+        "code": "1710",
+        "name": "Bond loan 2023-2030"
+      },
+      {
+        "target_code": "222",
+        "code": "2220",
+        "name": "Land depot Industrieweg"
+      },
+      {
+        "target_code": "222",
+        "code": "2221",
+        "name": "Building plot Lokeren project"
+      },
+      {
+        "target_code": "223",
+        "code": "2230",
+        "name": "Leasehold (opstal) yard Gent"
+      },
+      {
+        "target_code": "252",
+        "code": "2520",
+        "name": "Leased vans - Ford Transit"
+      },
+      {
+        "target_code": "252",
+        "code": "2521",
+        "name": "Leased excavator CAT 308"
+      },
+      {
+        "target_code": "290",
+        "code": "2900",
+        "name": "Long-term client receivables (payment plans)"
+      },
+      {
+        "target_code": "300",
+        "code": "3000",
+        "name": "Stock concrete blocks & bricks"
+      },
+      {
+        "target_code": "300",
+        "code": "3001",
+        "name": "Stock rebar & steel"
+      },
+      {
+        "target_code": "339",
+        "code": "3390",
+        "name": "W/D prefab elements stock"
+      },
+      {
+        "target_code": "349",
+        "code": "3490",
+        "name": "W/D resale tiles & sanitary"
+      },
+      {
+        "target_code": "371",
+        "code": "3710",
+        "name": "WIP margin recognised - sites"
+      },
+      {
+        "target_code": "404",
+        "code": "4040",
+        "name": "Invoices to issue - progress statements"
+      },
+      {
+        "target_code": "418",
+        "code": "4180",
+        "name": "Deposits paid - rental equipment"
+      },
+      {
+        "target_code": "418",
+        "code": "4181",
+        "name": "Guarantee paid - Fluvius connections"
+      },
+      {
+        "target_code": "419",
+        "code": "4190",
+        "name": "W/D doubtful sundry receivables"
+      },
+      {
+        "target_code": "422",
+        "code": "4220",
+        "name": "Leasing - current portion"
+      },
+      {
+        "target_code": "423",
+        "code": "4230",
+        "name": "Investment loan KBC - due <1y"
+      },
+      {
+        "target_code": "423",
+        "code": "4231",
+        "name": "Investment loan Belfius - due <1y"
+      },
+      {
+        "target_code": "425",
+        "code": "4250",
+        "name": "Supplier payment plan - due <1y"
+      },
+      {
+        "target_code": "429",
+        "code": "4290",
+        "name": "Shareholder loan - due <1y"
+      },
+      {
+        "target_code": "432",
+        "code": "4320",
+        "name": "Bank acceptances KBC"
+      },
+      {
+        "target_code": "455",
+        "code": "4550",
+        "name": "Net wages payable - workers"
+      },
+      {
+        "target_code": "455",
+        "code": "4551",
+        "name": "Salaries payable - staff"
+      },
+      {
+        "target_code": "489",
+        "code": "4890",
+        "name": "Other payables - misc"
+      },
+      {
+        "target_code": "531",
+        "code": "5310",
+        "name": "Term deposit KBC 6 months"
+      },
+      {
+        "target_code": "600",
+        "code": "6000",
+        "name": "Purch. concrete & mortar"
+      },
+      {
+        "target_code": "600",
+        "code": "6001",
+        "name": "Purch. timber & formwork"
+      },
+      {
+        "target_code": "602",
+        "code": "6020",
+        "name": "Subcontractors - electrical"
+      },
+      {
+        "target_code": "602",
+        "code": "6021",
+        "name": "Subcontractors - stability engineer & studies"
+      },
+      {
+        "target_code": "620",
+        "code": "6200",
+        "name": "Gross wages workers"
+      },
+      {
+        "target_code": "620",
+        "code": "6201",
+        "name": "Gross salaries staff"
+      },
+      {
+        "target_code": "621",
+        "code": "6210",
+        "name": "Employer RSZ/ONSS"
+      },
+      {
+        "target_code": "636",
+        "code": "6360",
+        "name": "Alloc. prov. major maintenance crane"
+      },
+      {
+        "target_code": "640",
+        "code": "6400",
+        "name": "Vehicle road tax & property tax"
+      },
+      {
+        "target_code": "650",
+        "code": "6500",
+        "name": "Interest bank loans"
+      },
+      {
+        "target_code": "652",
+        "code": "6520",
+        "name": "Loss on sale of receivables (factoring)"
+      },
+      {
+        "target_code": "656",
+        "code": "6560",
+        "name": "Financial provisions - guarantees"
+      },
+      {
+        "target_code": "661",
+        "code": "6610",
+        "name": "Write-off participation Bouwteam NV"
+      },
+      {
+        "target_code": "664",
+        "code": "6640",
+        "name": "Exceptional costs - site damage claim"
+      },
+      {
+        "target_code": "671",
+        "code": "6710",
+        "name": "Corp. tax prior years - assessments"
+      },
+      {
+        "target_code": "689",
+        "code": "6890",
+        "name": "Transfer to tax-free reserves"
+      },
+      {
+        "target_code": "700",
+        "code": "7000",
+        "name": "Turnover construction works 21%"
+      },
+      {
+        "target_code": "700",
+        "code": "7001",
+        "name": "Turnover renovation 6%"
+      },
+      {
+        "target_code": "713",
+        "code": "7130",
+        "name": "Change in stock prefab elements"
+      },
+      {
+        "target_code": "717",
+        "code": "7170",
+        "name": "Change in WIP - sites"
+      },
+      {
+        "target_code": "741",
+        "code": "7410",
+        "name": "Gain on sale of machinery & vans"
+      }
+    ]
+  }
+}

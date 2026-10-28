@@ -1,0 +1,315 @@
+{
+  "company_id": "train-c218",
+  "split": "train",
+  "industry": "retail",
+  "language": "nl",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "120",
+    "121",
+    "124",
+    "132",
+    "163",
+    "171",
+    "172",
+    "223",
+    "281",
+    "282",
+    "284",
+    "285",
+    "290",
+    "309",
+    "340",
+    "371",
+    "401",
+    "406",
+    "417",
+    "419",
+    "422",
+    "430",
+    "432",
+    "441",
+    "444",
+    "454",
+    "530",
+    "600",
+    "608",
+    "618",
+    "620",
+    "631",
+    "649",
+    "653",
+    "668",
+    "672",
+    "673",
+    "715",
+    "751",
+    "789"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:25:46+00:00",
+  "usage": {
+    "input_tokens": 3442,
+    "output_tokens": 1953,
+    "cost_usd": 0.06216540000000001,
+    "latency_ms": 19186.380416853353
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "120",
+        "code": "120100",
+        "name": "Herwaard. software & merknaam"
+      },
+      {
+        "target_code": "121",
+        "code": "121100",
+        "name": "Herwaard.meerw. pand Veldstraat Gent"
+      },
+      {
+        "target_code": "124",
+        "code": "124000",
+        "name": "Terugname WV beleggingsfondsen"
+      },
+      {
+        "target_code": "132",
+        "code": "132100",
+        "name": "Vrijgest. meerwaarden (bel.vrij)"
+      },
+      {
+        "target_code": "163",
+        "code": "163000",
+        "name": "Voorz. bodemsanering magazijn"
+      },
+      {
+        "target_code": "171",
+        "code": "171000",
+        "name": "Obligatielening 2023-2030"
+      },
+      {
+        "target_code": "172",
+        "code": "172100",
+        "name": "Leasing bestelwagen LT"
+      },
+      {
+        "target_code": "172",
+        "code": "172200",
+        "name": "Leasing kassasystemen LT"
+      },
+      {
+        "target_code": "223",
+        "code": "223000",
+        "name": "Opstalrecht parking winkel Brugge"
+      },
+      {
+        "target_code": "281",
+        "code": "281100",
+        "name": "Lening aan Retail Holding NV"
+      },
+      {
+        "target_code": "282",
+        "code": "282000",
+        "name": "Deelneming Inkoopcoop. Detailhandel"
+      },
+      {
+        "target_code": "284",
+        "code": "284000",
+        "name": "Aandelen coöperatie Febelco/overig"
+      },
+      {
+        "target_code": "285",
+        "code": "285100",
+        "name": "Huurwaarborg winkel Gent"
+      },
+      {
+        "target_code": "285",
+        "code": "285200",
+        "name": "Huurwaarborg winkel Brugge"
+      },
+      {
+        "target_code": "290",
+        "code": "290000",
+        "name": "Klanten afbetaling > 1 jaar"
+      },
+      {
+        "target_code": "309",
+        "code": "309000",
+        "name": "WV verpakkingsmateriaal"
+      },
+      {
+        "target_code": "340",
+        "code": "340100",
+        "name": "Voorraad koopwaar Gent"
+      },
+      {
+        "target_code": "340",
+        "code": "340200",
+        "name": "Voorraad koopwaar Brugge"
+      },
+      {
+        "target_code": "371",
+        "code": "371000",
+        "name": "Maatwerkorders - toeger. winst"
+      },
+      {
+        "target_code": "401",
+        "code": "401100",
+        "name": "Te innen wissels klanten"
+      },
+      {
+        "target_code": "401",
+        "code": "401200",
+        "name": "Wissels B2B-klanten ter incasso"
+      },
+      {
+        "target_code": "406",
+        "code": "406000",
+        "name": "Voorschotten aan leveranciers"
+      },
+      {
+        "target_code": "417",
+        "code": "417000",
+        "name": "Dubieuze vorderingen diversen"
+      },
+      {
+        "target_code": "419",
+        "code": "419000",
+        "name": "WV overige vorderingen"
+      },
+      {
+        "target_code": "422",
+        "code": "422000",
+        "name": "Leasing KT deel (<1j)"
+      },
+      {
+        "target_code": "430",
+        "code": "430100",
+        "name": "Straight loan KBC"
+      },
+      {
+        "target_code": "430",
+        "code": "430200",
+        "name": "Termijnlening Belfius"
+      },
+      {
+        "target_code": "432",
+        "code": "432000",
+        "name": "Acceptkrediet ING"
+      },
+      {
+        "target_code": "441",
+        "code": "441000",
+        "name": "Te betalen wissels leveranciers"
+      },
+      {
+        "target_code": "444",
+        "code": "444100",
+        "name": "TOF goederen"
+      },
+      {
+        "target_code": "444",
+        "code": "444200",
+        "name": "TOF energie & diensten"
+      },
+      {
+        "target_code": "454",
+        "code": "454000",
+        "name": "RSZ te betalen"
+      },
+      {
+        "target_code": "530",
+        "code": "530100",
+        "name": "Termijnrek. KBC 3j"
+      },
+      {
+        "target_code": "530",
+        "code": "530200",
+        "name": "Termijndeposito Belfius 2j"
+      },
+      {
+        "target_code": "600",
+        "code": "600100",
+        "name": "Aank. verpakking & zakjes"
+      },
+      {
+        "target_code": "600",
+        "code": "600200",
+        "name": "Aank. materiaal geschenkverpakking"
+      },
+      {
+        "target_code": "608",
+        "code": "608100",
+        "name": "Ontv. kortingen leveranciers"
+      },
+      {
+        "target_code": "608",
+        "code": "608200",
+        "name": "Eindejaarsristorno's leveranciers"
+      },
+      {
+        "target_code": "618",
+        "code": "618000",
+        "name": "Bezoldiging zaakvoerder"
+      },
+      {
+        "target_code": "620",
+        "code": "620100",
+        "name": "Brutolonen bedienden winkel"
+      },
+      {
+        "target_code": "620",
+        "code": "620200",
+        "name": "Lonen studenten/flexi"
+      },
+      {
+        "target_code": "631",
+        "code": "631000",
+        "name": "WV voorraad (verouderd/beschadigd)"
+      },
+      {
+        "target_code": "649",
+        "code": "649000",
+        "name": "Geactiv. herstructureringskosten"
+      },
+      {
+        "target_code": "653",
+        "code": "653000",
+        "name": "Discontokosten wissels"
+      },
+      {
+        "target_code": "668",
+        "code": "668000",
+        "name": "Uitzonderl. financiële kosten"
+      },
+      {
+        "target_code": "672",
+        "code": "672000",
+        "name": "Buitenl. belasting boekjaar"
+      },
+      {
+        "target_code": "673",
+        "code": "673000",
+        "name": "Buitenl. belasting vorige jaren"
+      },
+      {
+        "target_code": "715",
+        "code": "715000",
+        "name": "Voorraadwijz. vastgoed te koop"
+      },
+      {
+        "target_code": "751",
+        "code": "751000",
+        "name": "Interesten termijnrekeningen"
+      },
+      {
+        "target_code": "789",
+        "code": "789000",
+        "name": "Onttrekking bel.vrije reserves"
+      }
+    ]
+  }
+}

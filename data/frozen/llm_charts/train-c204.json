@@ -1,0 +1,315 @@
+{
+  "company_id": "train-c204",
+  "split": "train",
+  "industry": "software",
+  "language": "mixed",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "121",
+    "122",
+    "124",
+    "161",
+    "176",
+    "202",
+    "221",
+    "222",
+    "223",
+    "288",
+    "310",
+    "330",
+    "369",
+    "423",
+    "425",
+    "428",
+    "432",
+    "440",
+    "452",
+    "499",
+    "520",
+    "530",
+    "539",
+    "550",
+    "570",
+    "600",
+    "602",
+    "620",
+    "622",
+    "624",
+    "630",
+    "640",
+    "652",
+    "653",
+    "656",
+    "669",
+    "671",
+    "672",
+    "712",
+    "764"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:24:42+00:00",
+  "usage": {
+    "input_tokens": 3973,
+    "output_tokens": 1896,
+    "cost_usd": 0.0652734,
+    "latency_ms": 18264.654207974672
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "121",
+        "code": "121000",
+        "name": "Herwaardering IT-hardware & serverpark"
+      },
+      {
+        "target_code": "122",
+        "code": "122000",
+        "name": "Plus-value réévaluation particip. DevLabs BV"
+      },
+      {
+        "target_code": "124",
+        "code": "124000",
+        "name": "Reversal write-down treasury investments"
+      },
+      {
+        "target_code": "161",
+        "code": "161000",
+        "name": "Provisie fiscale geschillen VenB"
+      },
+      {
+        "target_code": "176",
+        "code": "176000",
+        "name": "Acomptes clients projets LT (>1 an)"
+      },
+      {
+        "target_code": "202",
+        "code": "202000",
+        "name": "Kapitaalverhoging - notaris & registratie"
+      },
+      {
+        "target_code": "221",
+        "code": "221100",
+        "name": "Bureau Bruxelles - Avenue Louise"
+      },
+      {
+        "target_code": "221",
+        "code": "221200",
+        "name": "Kantoor Gent - Tech Lane"
+      },
+      {
+        "target_code": "222",
+        "code": "222000",
+        "name": "Grond kantoor Gent (bebouwd)"
+      },
+      {
+        "target_code": "223",
+        "code": "223000",
+        "name": "Droit d'emphytéose parking Louise"
+      },
+      {
+        "target_code": "288",
+        "code": "288000",
+        "name": "Huurwaarborg kantoren (geblokkeerd)"
+      },
+      {
+        "target_code": "310",
+        "code": "310000",
+        "name": "Supplies stock - cables, peripherals"
+      },
+      {
+        "target_code": "330",
+        "code": "330000",
+        "name": "Stock appliances SecureBox"
+      },
+      {
+        "target_code": "369",
+        "code": "369000",
+        "name": "WV voorschotten voorraadaankopen"
+      },
+      {
+        "target_code": "423",
+        "code": "423000",
+        "name": "Investeringskrediet KBC - KT gedeelte"
+      },
+      {
+        "target_code": "425",
+        "code": "425000",
+        "name": "Dettes fourn. LT échéant dans l'année"
+      },
+      {
+        "target_code": "428",
+        "code": "428000",
+        "name": "Customer deposits - current portion"
+      },
+      {
+        "target_code": "432",
+        "code": "432000",
+        "name": "Crédit d'acceptation BNP Fortis"
+      },
+      {
+        "target_code": "440",
+        "code": "440000",
+        "name": "Leveranciers binnenland"
+      },
+      {
+        "target_code": "440",
+        "code": "440100",
+        "name": "Suppliers EU / non-EU (SaaS vendors)"
+      },
+      {
+        "target_code": "452",
+        "code": "452000",
+        "name": "VenB te betalen"
+      },
+      {
+        "target_code": "452",
+        "code": "452100",
+        "name": "Précompte immobilier à payer"
+      },
+      {
+        "target_code": "499",
+        "code": "499000",
+        "name": "Wachtrekening - te verduidelijken"
+      },
+      {
+        "target_code": "499",
+        "code": "499100",
+        "name": "Suspense - Stripe payouts unmatched"
+      },
+      {
+        "target_code": "520",
+        "code": "520000",
+        "name": "Obligations OLO - valeur d'acquisition"
+      },
+      {
+        "target_code": "530",
+        "code": "530100",
+        "name": "Termijnrekening Belfius 24m"
+      },
+      {
+        "target_code": "530",
+        "code": "530200",
+        "name": "Term deposit ING 36 months"
+      },
+      {
+        "target_code": "539",
+        "code": "539000",
+        "name": "RV dépôts à terme actées"
+      },
+      {
+        "target_code": "550",
+        "code": "550100",
+        "name": "KBC Zichtrekening BE12"
+      },
+      {
+        "target_code": "550",
+        "code": "550200",
+        "name": "Belfius compte courant"
+      },
+      {
+        "target_code": "570",
+        "code": "570100",
+        "name": "Caisse Bruxelles"
+      },
+      {
+        "target_code": "570",
+        "code": "570200",
+        "name": "Kas Gent"
+      },
+      {
+        "target_code": "600",
+        "code": "600000",
+        "name": "Purchases components hardware kits"
+      },
+      {
+        "target_code": "602",
+        "code": "602100",
+        "name": "Freelance developers"
+      },
+      {
+        "target_code": "602",
+        "code": "602200",
+        "name": "Sous-traitance conseil & audit sécurité"
+      },
+      {
+        "target_code": "620",
+        "code": "620100",
+        "name": "Brutolonen bedienden"
+      },
+      {
+        "target_code": "620",
+        "code": "620200",
+        "name": "Rémunération administrateurs"
+      },
+      {
+        "target_code": "622",
+        "code": "622000",
+        "name": "Hospitalisatieverzekering DKV"
+      },
+      {
+        "target_code": "624",
+        "code": "624000",
+        "name": "Pension complémentaire ex-gérant"
+      },
+      {
+        "target_code": "630",
+        "code": "630000",
+        "name": "Afschrijvingen & provisions risques"
+      },
+      {
+        "target_code": "640",
+        "code": "640000",
+        "name": "Taxe régionale & verkeersbelasting"
+      },
+      {
+        "target_code": "652",
+        "code": "652000",
+        "name": "Loss on sale current assets"
+      },
+      {
+        "target_code": "653",
+        "code": "653000",
+        "name": "Factoringkosten debiteuren"
+      },
+      {
+        "target_code": "656",
+        "code": "656000",
+        "name": "Provisions financières"
+      },
+      {
+        "target_code": "669",
+        "code": "669000",
+        "name": "Restructuring costs capitalised (-)"
+      },
+      {
+        "target_code": "671",
+        "code": "671000",
+        "name": "VenB vorige boekjaren - aanslagen"
+      },
+      {
+        "target_code": "672",
+        "code": "672100",
+        "name": "Foreign tax current year - NL"
+      },
+      {
+        "target_code": "672",
+        "code": "672200",
+        "name": "Impôt étranger exercice - France"
+      },
+      {
+        "target_code": "712",
+        "code": "712000",
+        "name": "Wijziging WIP projecten op maat"
+      },
+      {
+        "target_code": "764",
+        "code": "764000",
+        "name": "Produits exceptionnels d'exploitation"
+      }
+    ]
+  }
+}

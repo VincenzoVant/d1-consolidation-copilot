@@ -1,0 +1,315 @@
+{
+  "company_id": "train-c232",
+  "split": "train",
+  "industry": "software",
+  "language": "en",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "132",
+    "160",
+    "168",
+    "170",
+    "175",
+    "178",
+    "200",
+    "202",
+    "210",
+    "223",
+    "280",
+    "283",
+    "291",
+    "359",
+    "370",
+    "418",
+    "422",
+    "424",
+    "451",
+    "452",
+    "453",
+    "459",
+    "492",
+    "499",
+    "602",
+    "608",
+    "609",
+    "640",
+    "649",
+    "651",
+    "652",
+    "653",
+    "663",
+    "671",
+    "708",
+    "713",
+    "755",
+    "756",
+    "769",
+    "789"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:26:53+00:00",
+  "usage": {
+    "input_tokens": 3064,
+    "output_tokens": 2073,
+    "cost_usd": 0.0615414,
+    "latency_ms": 19072.068040957674
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "132",
+        "code": "13200",
+        "name": "Tax-exempt reserve - investment deduction"
+      },
+      {
+        "target_code": "160",
+        "code": "16000",
+        "name": "Pension provision - directors IPT"
+      },
+      {
+        "target_code": "168",
+        "code": "16800",
+        "name": "Deferred tax on capital grants VLAIO"
+      },
+      {
+        "target_code": "170",
+        "code": "17000",
+        "name": "Subordinated loan PMV"
+      },
+      {
+        "target_code": "175",
+        "code": "17500",
+        "name": "LT supplier payables - hardware deferred plan"
+      },
+      {
+        "target_code": "178",
+        "code": "17800",
+        "name": "Customer deposits received LT (on-prem licences)"
+      },
+      {
+        "target_code": "200",
+        "code": "20000",
+        "name": "Incorporation costs - notary & registration"
+      },
+      {
+        "target_code": "202",
+        "code": "20200",
+        "name": "Capital increase costs 2024"
+      },
+      {
+        "target_code": "210",
+        "code": "21010",
+        "name": "Dev costs capitalised - Flowdesk platform"
+      },
+      {
+        "target_code": "210",
+        "code": "21020",
+        "name": "Dev costs capitalised - mobile app v3"
+      },
+      {
+        "target_code": "223",
+        "code": "22300",
+        "name": "Leasehold rights office Ghent Zuid"
+      },
+      {
+        "target_code": "280",
+        "code": "28000",
+        "name": "Investment in subsidiary Flowdesk NL BV"
+      },
+      {
+        "target_code": "283",
+        "code": "28300",
+        "name": "LT loan to associate DataBridge SRL"
+      },
+      {
+        "target_code": "291",
+        "code": "29100",
+        "name": "Other LT receivables - staff loans"
+      },
+      {
+        "target_code": "359",
+        "code": "35900",
+        "name": "Write-down property held for sale Kortrijk"
+      },
+      {
+        "target_code": "370",
+        "code": "37010",
+        "name": "WIP fixed-price projects - Customer Colruyt ERP link"
+      },
+      {
+        "target_code": "370",
+        "code": "37020",
+        "name": "WIP fixed-price projects - other implementations"
+      },
+      {
+        "target_code": "418",
+        "code": "41810",
+        "name": "Rental deposit paid - Ghent office"
+      },
+      {
+        "target_code": "418",
+        "code": "41820",
+        "name": "Rental deposit paid - Antwerp coworking"
+      },
+      {
+        "target_code": "422",
+        "code": "42200",
+        "name": "Car leases - current portion (ALD)"
+      },
+      {
+        "target_code": "424",
+        "code": "42400",
+        "name": "Shareholder loan - current portion"
+      },
+      {
+        "target_code": "451",
+        "code": "45110",
+        "name": "VAT payable BE 21%"
+      },
+      {
+        "target_code": "451",
+        "code": "45120",
+        "name": "VAT payable OSS EU digital services"
+      },
+      {
+        "target_code": "452",
+        "code": "45200",
+        "name": "Corporate tax payable (VenB/ISOC)"
+      },
+      {
+        "target_code": "453",
+        "code": "45310",
+        "name": "Payroll withholding tax (BV/PP) staff"
+      },
+      {
+        "target_code": "453",
+        "code": "45320",
+        "name": "Withholding tax directors' fees"
+      },
+      {
+        "target_code": "459",
+        "code": "45900",
+        "name": "Other payroll liabilities - meal vouchers & ecocheques"
+      },
+      {
+        "target_code": "492",
+        "code": "49210",
+        "name": "Accrued expenses - AWS/Azure hosting"
+      },
+      {
+        "target_code": "492",
+        "code": "49220",
+        "name": "Accrued expenses - accountant & audit fees"
+      },
+      {
+        "target_code": "499",
+        "code": "49900",
+        "name": "Suspense - unmatched bank items"
+      },
+      {
+        "target_code": "602",
+        "code": "60210",
+        "name": "Freelance developers & subcontractors"
+      },
+      {
+        "target_code": "602",
+        "code": "60220",
+        "name": "Third-party SaaS resold to clients"
+      },
+      {
+        "target_code": "608",
+        "code": "60800",
+        "name": "Supplier discounts received"
+      },
+      {
+        "target_code": "609",
+        "code": "60900",
+        "name": "Change in stock - hardware for resale"
+      },
+      {
+        "target_code": "640",
+        "code": "64010",
+        "name": "Property tax (onroerende voorheffing)"
+      },
+      {
+        "target_code": "640",
+        "code": "64020",
+        "name": "Road tax & regional levies"
+      },
+      {
+        "target_code": "649",
+        "code": "64900",
+        "name": "Restructuring costs capitalised (contra)"
+      },
+      {
+        "target_code": "651",
+        "code": "65100",
+        "name": "Write-down on current assets"
+      },
+      {
+        "target_code": "652",
+        "code": "65200",
+        "name": "Loss on sale of current assets"
+      },
+      {
+        "target_code": "653",
+        "code": "65300",
+        "name": "Factoring discount charges"
+      },
+      {
+        "target_code": "663",
+        "code": "66300",
+        "name": "Loss on disposal of IT equipment & cars"
+      },
+      {
+        "target_code": "671",
+        "code": "67100",
+        "name": "Corporate tax adjustments prior years"
+      },
+      {
+        "target_code": "708",
+        "code": "70810",
+        "name": "Volume discounts on subscriptions"
+      },
+      {
+        "target_code": "708",
+        "code": "70820",
+        "name": "Reseller partner rebates"
+      },
+      {
+        "target_code": "713",
+        "code": "71300",
+        "name": "Change in stock - finished appliances"
+      },
+      {
+        "target_code": "755",
+        "code": "75510",
+        "name": "FX translation gains USD"
+      },
+      {
+        "target_code": "755",
+        "code": "75520",
+        "name": "FX translation gains GBP"
+      },
+      {
+        "target_code": "756",
+        "code": "75600",
+        "name": "Sundry financial income"
+      },
+      {
+        "target_code": "769",
+        "code": "76900",
+        "name": "Other one-off financial income"
+      },
+      {
+        "target_code": "789",
+        "code": "78900",
+        "name": "Release of tax-exempt reserves"
+      }
+    ]
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "company_id": "dev-c065",
+  "split": "dev",
+  "industry": "construction",
+  "language": "fr",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "122",
+    "124",
+    "160",
+    "161",
+    "168",
+    "173",
+    "174",
+    "178",
+    "211",
+    "222",
+    "280",
+    "284",
+    "290",
+    "300",
+    "330",
+    "371",
+    "400",
+    "401",
+    "404",
+    "406",
+    "411",
+    "416",
+    "420",
+    "423",
+    "425",
+    "432",
+    "439",
+    "441",
+    "451",
+    "532",
+    "603",
+    "608",
+    "624",
+    "633",
+    "641",
+    "662",
+    "670",
+    "689",
+    "690",
+    "715"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:29:33+00:00",
+  "usage": {
+    "input_tokens": 3084,
+    "output_tokens": 2061,
+    "cost_usd": 0.0614614,
+    "latency_ms": 19501.768707996234
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "122",
+        "code": "1220100",
+        "name": "Plus-val. réévaluation particip. Immo Bati SA"
+      },
+      {
+        "target_code": "124",
+        "code": "1240100",
+        "name": "Reprise RDV placements trésorerie"
+      },
+      {
+        "target_code": "160",
+        "code": "1600100",
+        "name": "Prov. pension complém. gérant"
+      },
+      {
+        "target_code": "161",
+        "code": "1610100",
+        "name": "Prov. redressement fiscal ISOC"
+      },
+      {
+        "target_code": "168",
+        "code": "1680100",
+        "name": "Impôts différés s/ subsides & PV étalées"
+      },
+      {
+        "target_code": "173",
+        "code": "1730100",
+        "name": "Crédit invest. BNP Fortis - hangar Wetteren"
+      },
+      {
+        "target_code": "173",
+        "code": "1730200",
+        "name": "Prêt KBC - camion grue & pelleteuse"
+      },
+      {
+        "target_code": "174",
+        "code": "1740100",
+        "name": "Prêt gérant LT - compte courant bloqué"
+      },
+      {
+        "target_code": "178",
+        "code": "1780100",
+        "name": "Garanties locatives reçues - dépôt Zelzate"
+      },
+      {
+        "target_code": "178",
+        "code": "1780200",
+        "name": "Caution reçue sous-traitants (retenue 5%)"
+      },
+      {
+        "target_code": "211",
+        "code": "2110100",
+        "name": "Licences logiciels (Revit / devis WinBouw)"
+      },
+      {
+        "target_code": "222",
+        "code": "2220100",
+        "name": "Terrain dépôt & bureaux rue de l'Industrie"
+      },
+      {
+        "target_code": "280",
+        "code": "2800100",
+        "name": "Particip. Immo Bati SA (filiale promotion)"
+      },
+      {
+        "target_code": "284",
+        "code": "2840100",
+        "name": "Parts coopérative CBC / Confédération Constr."
+      },
+      {
+        "target_code": "290",
+        "code": "2900100",
+        "name": "Clients LT - retenues de garantie > 1 an"
+      },
+      {
+        "target_code": "300",
+        "code": "3000100",
+        "name": "Stock béton, ciment & granulats"
+      },
+      {
+        "target_code": "300",
+        "code": "3000200",
+        "name": "Stock aciers à béton & treillis"
+      },
+      {
+        "target_code": "330",
+        "code": "3300100",
+        "name": "Stock éléments préfabriqués (linteaux, prédalles)"
+      },
+      {
+        "target_code": "371",
+        "code": "3710100",
+        "name": "Chantiers en cours - marge reconnue"
+      },
+      {
+        "target_code": "371",
+        "code": "3710200",
+        "name": "Chantier Résidence Les Tilleuls - bénéfice % avanc."
+      },
+      {
+        "target_code": "400",
+        "code": "4000000",
+        "name": "Clients privés"
+      },
+      {
+        "target_code": "400",
+        "code": "4000100",
+        "name": "Clients publics (communes, CPAS)"
+      },
+      {
+        "target_code": "401",
+        "code": "4010100",
+        "name": "Traites à recevoir clients"
+      },
+      {
+        "target_code": "404",
+        "code": "4040100",
+        "name": "Factures à établir (états d'avancement)"
+      },
+      {
+        "target_code": "406",
+        "code": "4060100",
+        "name": "Acomptes versés fournisseurs matériaux"
+      },
+      {
+        "target_code": "406",
+        "code": "4060200",
+        "name": "Acomptes versés sous-traitants"
+      },
+      {
+        "target_code": "411",
+        "code": "4110100",
+        "name": "TVA déductible 21%"
+      },
+      {
+        "target_code": "411",
+        "code": "4110200",
+        "name": "TVA déductible cocontractant (autoliquidation)"
+      },
+      {
+        "target_code": "416",
+        "code": "4160100",
+        "name": "Créances diverses (sinistres assurance)"
+      },
+      {
+        "target_code": "420",
+        "code": "4200100",
+        "name": "Prêt subordonné gérant - part CT"
+      },
+      {
+        "target_code": "423",
+        "code": "4230100",
+        "name": "Crédits invest. - échéances < 1 an"
+      },
+      {
+        "target_code": "425",
+        "code": "4250100",
+        "name": "Dettes fournisseurs LT échéant dans l'année"
+      },
+      {
+        "target_code": "432",
+        "code": "4320100",
+        "name": "Crédit d'acceptation Belfius"
+      },
+      {
+        "target_code": "439",
+        "code": "4390100",
+        "name": "Autres emprunts CT (avance leasing)"
+      },
+      {
+        "target_code": "441",
+        "code": "4410100",
+        "name": "Traites à payer fournisseurs"
+      },
+      {
+        "target_code": "451",
+        "code": "4510100",
+        "name": "TVA due 21%"
+      },
+      {
+        "target_code": "451",
+        "code": "4510200",
+        "name": "TVA due 6% (rénovation logements)"
+      },
+      {
+        "target_code": "532",
+        "code": "5320100",
+        "name": "Dépôt à terme 1 mois KBC"
+      },
+      {
+        "target_code": "532",
+        "code": "5320200",
+        "name": "Compte à terme 1 mois BNP"
+      },
+      {
+        "target_code": "603",
+        "code": "6030100",
+        "name": "Sous-traitance chantier Gand Dok Noord"
+      },
+      {
+        "target_code": "603",
+        "code": "6030200",
+        "name": "Sous-traitance électricité & HVAC"
+      },
+      {
+        "target_code": "608",
+        "code": "6080100",
+        "name": "Ristournes obtenues fournisseurs matériaux"
+      },
+      {
+        "target_code": "624",
+        "code": "6240100",
+        "name": "Pensions retraite & survie (ass. groupe)"
+      },
+      {
+        "target_code": "633",
+        "code": "6330100",
+        "name": "RDV créances clients > 1 an"
+      },
+      {
+        "target_code": "641",
+        "code": "6410100",
+        "name": "Moins-value vente matériel de chantier"
+      },
+      {
+        "target_code": "662",
+        "code": "6620100",
+        "name": "Prov. litiges chantiers non récurrents"
+      },
+      {
+        "target_code": "670",
+        "code": "6700100",
+        "name": "ISOC - versements anticipés & enrôlement"
+      },
+      {
+        "target_code": "689",
+        "code": "6890100",
+        "name": "Dotation réserves immunisées"
+      },
+      {
+        "target_code": "690",
+        "code": "6900100",
+        "name": "Perte reportée exercice préc."
+      },
+      {
+        "target_code": "715",
+        "code": "7150100",
+        "name": "Variation stock maisons construites pour vente"
+      }
+    ]
+  }
+}

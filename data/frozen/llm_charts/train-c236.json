@@ -1,0 +1,315 @@
+{
+  "company_id": "train-c236",
+  "split": "train",
+  "industry": "software",
+  "language": "mixed",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "132",
+    "160",
+    "162",
+    "164",
+    "172",
+    "173",
+    "252",
+    "329",
+    "339",
+    "360",
+    "371",
+    "400",
+    "404",
+    "407",
+    "423",
+    "428",
+    "429",
+    "450",
+    "480",
+    "530",
+    "550",
+    "602",
+    "603",
+    "605",
+    "621",
+    "622",
+    "623",
+    "632",
+    "641",
+    "649",
+    "650",
+    "651",
+    "652",
+    "663",
+    "673",
+    "700",
+    "741",
+    "743",
+    "750",
+    "760"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:27:11+00:00",
+  "usage": {
+    "input_tokens": 4074,
+    "output_tokens": 1859,
+    "cost_usd": 0.0653414,
+    "latency_ms": 17439.55187499523
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "132",
+        "code": "132000",
+        "name": "Vrijgestelde meerwaarden - immunisation"
+      },
+      {
+        "target_code": "160",
+        "code": "160100",
+        "name": "Prov. pension plan founders (IPT)"
+      },
+      {
+        "target_code": "162",
+        "code": "162000",
+        "name": "Provision gros entretien bureaux Louise"
+      },
+      {
+        "target_code": "164",
+        "code": "164100",
+        "name": "Prov. litige client - SLA claims"
+      },
+      {
+        "target_code": "164",
+        "code": "164200",
+        "name": "Voorziening garantie softwareprojecten"
+      },
+      {
+        "target_code": "172",
+        "code": "172000",
+        "name": "Leasing wagenpark LT - Athlon"
+      },
+      {
+        "target_code": "173",
+        "code": "173100",
+        "name": "KBC investeringskrediet LT"
+      },
+      {
+        "target_code": "173",
+        "code": "173200",
+        "name": "Prêt Belfius R&D platform >1an"
+      },
+      {
+        "target_code": "252",
+        "code": "252100",
+        "name": "Company cars in leasing"
+      },
+      {
+        "target_code": "252",
+        "code": "252200",
+        "name": "Mobilier open space leasing"
+      },
+      {
+        "target_code": "329",
+        "code": "329000",
+        "name": "WIP custom dev - waardevermindering"
+      },
+      {
+        "target_code": "339",
+        "code": "339000",
+        "name": "Write-down hardware appliances stock"
+      },
+      {
+        "target_code": "360",
+        "code": "360000",
+        "name": "Acomptes fournisseurs hardware"
+      },
+      {
+        "target_code": "371",
+        "code": "371000",
+        "name": "Projects in progress - margin recognised"
+      },
+      {
+        "target_code": "400",
+        "code": "400000",
+        "name": "Klanten België"
+      },
+      {
+        "target_code": "400",
+        "code": "400100",
+        "name": "Clients EU / export"
+      },
+      {
+        "target_code": "404",
+        "code": "404000",
+        "name": "Factures à établir (unbilled revenue)"
+      },
+      {
+        "target_code": "407",
+        "code": "407000",
+        "name": "Dubieuze debiteuren - in recovery"
+      },
+      {
+        "target_code": "423",
+        "code": "423000",
+        "name": "KBC krediet - KT gedeelte"
+      },
+      {
+        "target_code": "428",
+        "code": "428000",
+        "name": "Waarborgen ontvangen - huurder subverhuur"
+      },
+      {
+        "target_code": "429",
+        "code": "429000",
+        "name": "Other LT debts - current portion"
+      },
+      {
+        "target_code": "450",
+        "code": "450000",
+        "name": "Estimated corporate tax (ISoc/VenB)"
+      },
+      {
+        "target_code": "480",
+        "code": "480000",
+        "name": "Coupons échus obligations à payer"
+      },
+      {
+        "target_code": "530",
+        "code": "530000",
+        "name": "Termijnrekening ING 24m"
+      },
+      {
+        "target_code": "550",
+        "code": "550100",
+        "name": "KBC Business BE68"
+      },
+      {
+        "target_code": "550",
+        "code": "550200",
+        "name": "Belfius courant BE45"
+      },
+      {
+        "target_code": "602",
+        "code": "602100",
+        "name": "Cloud hosting AWS/Azure"
+      },
+      {
+        "target_code": "602",
+        "code": "602200",
+        "name": "Freelance devs - prestations"
+      },
+      {
+        "target_code": "603",
+        "code": "603000",
+        "name": "Onderaanneming projecten (nearshore)"
+      },
+      {
+        "target_code": "605",
+        "code": "605000",
+        "name": "Achat immeubles revente"
+      },
+      {
+        "target_code": "621",
+        "code": "621000",
+        "name": "RSZ werkgeversbijdragen"
+      },
+      {
+        "target_code": "622",
+        "code": "622000",
+        "name": "Groepsverzekering & hospi (AG)"
+      },
+      {
+        "target_code": "623",
+        "code": "623100",
+        "name": "Chèques-repas & ecocheques"
+      },
+      {
+        "target_code": "623",
+        "code": "623200",
+        "name": "Training & conferences staff"
+      },
+      {
+        "target_code": "632",
+        "code": "632000",
+        "name": "WV op projecten in uitvoering"
+      },
+      {
+        "target_code": "641",
+        "code": "641000",
+        "name": "Loss on sale laptops/IT equipment"
+      },
+      {
+        "target_code": "649",
+        "code": "649000",
+        "name": "Restructuring costs capitalised (-)"
+      },
+      {
+        "target_code": "650",
+        "code": "650100",
+        "name": "Intresten leningen KBC/Belfius"
+      },
+      {
+        "target_code": "650",
+        "code": "650200",
+        "name": "Intérêts leasing voitures"
+      },
+      {
+        "target_code": "651",
+        "code": "651000",
+        "name": "Waardevermindering handelsvorderingen"
+      },
+      {
+        "target_code": "652",
+        "code": "652000",
+        "name": "Loss on sale short-term investments"
+      },
+      {
+        "target_code": "663",
+        "code": "663000",
+        "name": "Moins-value cession participations"
+      },
+      {
+        "target_code": "673",
+        "code": "673000",
+        "name": "Foreign tax prior years (NL/FR)"
+      },
+      {
+        "target_code": "700",
+        "code": "700100",
+        "name": "SaaS subscriptions revenue"
+      },
+      {
+        "target_code": "700",
+        "code": "700200",
+        "name": "Consultance & implémentation"
+      },
+      {
+        "target_code": "741",
+        "code": "741000",
+        "name": "Meerwaarde verkoop vaste activa"
+      },
+      {
+        "target_code": "743",
+        "code": "743100",
+        "name": "Doorfacturatie kosten aan klanten"
+      },
+      {
+        "target_code": "743",
+        "code": "743200",
+        "name": "Sous-location bureaux - recettes"
+      },
+      {
+        "target_code": "750",
+        "code": "750000",
+        "name": "Dividends participations"
+      },
+      {
+        "target_code": "760",
+        "code": "760000",
+        "name": "Reprise réductions de valeur"
+      }
+    ]
+  }
+}

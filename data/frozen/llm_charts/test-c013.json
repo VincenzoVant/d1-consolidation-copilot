@@ -1,0 +1,170 @@
+{
+  "company_id": "test-c013",
+  "split": "test",
+  "industry": "construction",
+  "language": "nl",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "160",
+    "171",
+    "285",
+    "339",
+    "369",
+    "406",
+    "428",
+    "441",
+    "454",
+    "490",
+    "499",
+    "520",
+    "539",
+    "578",
+    "609",
+    "631",
+    "661",
+    "670",
+    "672",
+    "789"
+  ],
+  "n_accounts": 25,
+  "created_at": "2026-10-28T20:21:40+00:00",
+  "usage": {
+    "input_tokens": 2402,
+    "output_tokens": 1023,
+    "cost_usd": 0.035245399999999996,
+    "latency_ms": 13092.994082951918
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "160",
+        "code": "160100",
+        "name": "Voorz. groepsverzekering bedienden"
+      },
+      {
+        "target_code": "171",
+        "code": "171000",
+        "name": "Obligatielening 2022-2029 (4,25%)"
+      },
+      {
+        "target_code": "285",
+        "code": "285100",
+        "name": "Lening zaakvoerder LT"
+      },
+      {
+        "target_code": "285",
+        "code": "285200",
+        "name": "Vordering tijdelijke handelsvereniging Gent-Zuid"
+      },
+      {
+        "target_code": "339",
+        "code": "339000",
+        "name": "WV afgewerkte prefab-elementen"
+      },
+      {
+        "target_code": "369",
+        "code": "369000",
+        "name": "WV voorschotten leveranciers materialen"
+      },
+      {
+        "target_code": "406",
+        "code": "406010",
+        "name": "Voorschotfacturen werf Residentie Leiezicht"
+      },
+      {
+        "target_code": "406",
+        "code": "406020",
+        "name": "Voorschotfacturen werf Kerkstraat Aalst"
+      },
+      {
+        "target_code": "428",
+        "code": "428000",
+        "name": "Ontvangen waarborg huurder loods <1j"
+      },
+      {
+        "target_code": "441",
+        "code": "441000",
+        "name": "Te betalen wissels leveranciers"
+      },
+      {
+        "target_code": "454",
+        "code": "454000",
+        "name": "RSZ te betalen"
+      },
+      {
+        "target_code": "454",
+        "code": "454100",
+        "name": "RSZ - Fonds voor Bestaanszekerheid bouw"
+      },
+      {
+        "target_code": "490",
+        "code": "490000",
+        "name": "Over te dragen kosten (verzek. ABR, leasing)"
+      },
+      {
+        "target_code": "499",
+        "code": "499000",
+        "name": "Wachtrekening bank - nog toe te wijzen"
+      },
+      {
+        "target_code": "499",
+        "code": "499900",
+        "name": "Tussenrekening lonen Securex"
+      },
+      {
+        "target_code": "520",
+        "code": "520000",
+        "name": "Staatsbons KBC - aanschaf"
+      },
+      {
+        "target_code": "539",
+        "code": "539000",
+        "name": "WV termijnrekening Belfius"
+      },
+      {
+        "target_code": "578",
+        "code": "578000",
+        "name": "Kas postzegels"
+      },
+      {
+        "target_code": "609",
+        "code": "609100",
+        "name": "Voorraadwijziging bouwmaterialen"
+      },
+      {
+        "target_code": "609",
+        "code": "609200",
+        "name": "Voorraadwijziging stockage loods"
+      },
+      {
+        "target_code": "631",
+        "code": "631000",
+        "name": "Afwaardering incourante stock"
+      },
+      {
+        "target_code": "661",
+        "code": "661000",
+        "name": "WV deelneming Bouwgroep VDM"
+      },
+      {
+        "target_code": "670",
+        "code": "670100",
+        "name": "Venn.belasting voorafbetalingen"
+      },
+      {
+        "target_code": "672",
+        "code": "672000",
+        "name": "Buitenl. belasting werf Nederland"
+      },
+      {
+        "target_code": "789",
+        "code": "789000",
+        "name": "Terugname vrijgestelde meerwaarde"
+      }
+    ]
+  }
+}

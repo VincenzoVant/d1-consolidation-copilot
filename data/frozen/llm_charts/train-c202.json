@@ -1,0 +1,315 @@
+{
+  "company_id": "train-c202",
+  "split": "train",
+  "industry": "retail",
+  "language": "nl",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "120",
+    "160",
+    "172",
+    "176",
+    "202",
+    "204",
+    "211",
+    "221",
+    "281",
+    "291",
+    "319",
+    "330",
+    "360",
+    "369",
+    "401",
+    "406",
+    "409",
+    "412",
+    "421",
+    "433",
+    "441",
+    "444",
+    "451",
+    "488",
+    "490",
+    "492",
+    "493",
+    "529",
+    "605",
+    "624",
+    "632",
+    "636",
+    "650",
+    "653",
+    "663",
+    "708",
+    "752",
+    "760",
+    "762",
+    "792"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:24:24+00:00",
+  "usage": {
+    "input_tokens": 3276,
+    "output_tokens": 1834,
+    "cost_usd": 0.0584574,
+    "latency_ms": 16896.803374867886
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "120",
+        "code": "120100",
+        "name": "Herwaardering merknaam & webshop"
+      },
+      {
+        "target_code": "160",
+        "code": "160100",
+        "name": "Voorz. pensioenen zaakvoerder"
+      },
+      {
+        "target_code": "172",
+        "code": "172100",
+        "name": "Leasing bestelwagen LT"
+      },
+      {
+        "target_code": "172",
+        "code": "172200",
+        "name": "Leasing kassasystemen LT"
+      },
+      {
+        "target_code": "176",
+        "code": "176100",
+        "name": "Ontv. voorschotten grote bestellingen >1j"
+      },
+      {
+        "target_code": "202",
+        "code": "202100",
+        "name": "Oprichtingskosten notaris/akte"
+      },
+      {
+        "target_code": "204",
+        "code": "204100",
+        "name": "Herstructurering sluiting filiaal"
+      },
+      {
+        "target_code": "211",
+        "code": "211100",
+        "name": "Software & licenties kassa/ERP"
+      },
+      {
+        "target_code": "221",
+        "code": "221100",
+        "name": "Gebouw winkel Gent Veldstraat"
+      },
+      {
+        "target_code": "221",
+        "code": "221200",
+        "name": "Gebouw magazijn Brugge"
+      },
+      {
+        "target_code": "281",
+        "code": "281100",
+        "name": "Lening aan Holding VT bv"
+      },
+      {
+        "target_code": "291",
+        "code": "291100",
+        "name": "Huurwaarborg winkelpand LT"
+      },
+      {
+        "target_code": "319",
+        "code": "319000",
+        "name": "WV verpakkingsmateriaal (-)"
+      },
+      {
+        "target_code": "330",
+        "code": "330100",
+        "name": "Voorraad eigen merk producten"
+      },
+      {
+        "target_code": "360",
+        "code": "360100",
+        "name": "Voorschotten leveranciers voorraad"
+      },
+      {
+        "target_code": "369",
+        "code": "369000",
+        "name": "WV voorschotten leveranciers (-)"
+      },
+      {
+        "target_code": "401",
+        "code": "401100",
+        "name": "Te innen wissels klanten"
+      },
+      {
+        "target_code": "406",
+        "code": "406100",
+        "name": "Betaalde voorschotten klanten-retour"
+      },
+      {
+        "target_code": "409",
+        "code": "409000",
+        "name": "WV dubieuze klanten (-)"
+      },
+      {
+        "target_code": "412",
+        "code": "412100",
+        "name": "Terug te vorderen VenB"
+      },
+      {
+        "target_code": "412",
+        "code": "412200",
+        "name": "Terug te vorderen RV"
+      },
+      {
+        "target_code": "421",
+        "code": "421100",
+        "name": "Obligatielening - deel KT"
+      },
+      {
+        "target_code": "433",
+        "code": "433100",
+        "name": "KBC kaskrediet"
+      },
+      {
+        "target_code": "433",
+        "code": "433200",
+        "name": "Belfius rek.-courant debet"
+      },
+      {
+        "target_code": "441",
+        "code": "441100",
+        "name": "Te betalen wissels leveranciers"
+      },
+      {
+        "target_code": "444",
+        "code": "444100",
+        "name": "TOF handelsgoederen"
+      },
+      {
+        "target_code": "444",
+        "code": "444200",
+        "name": "TOF diensten & energie"
+      },
+      {
+        "target_code": "451",
+        "code": "451210",
+        "name": "Btw verkopen 21%"
+      },
+      {
+        "target_code": "451",
+        "code": "451060",
+        "name": "Btw verkopen 6%"
+      },
+      {
+        "target_code": "488",
+        "code": "488100",
+        "name": "Ontvangen waarborgen onderhuur"
+      },
+      {
+        "target_code": "490",
+        "code": "490100",
+        "name": "OTDK verzekeringen"
+      },
+      {
+        "target_code": "490",
+        "code": "490200",
+        "name": "OTDK huur winkels"
+      },
+      {
+        "target_code": "492",
+        "code": "492100",
+        "name": "TTRK intresten lening"
+      },
+      {
+        "target_code": "492",
+        "code": "492200",
+        "name": "TTRK energie/nutsvoorz."
+      },
+      {
+        "target_code": "493",
+        "code": "493100",
+        "name": "OTDO cadeaubonnen"
+      },
+      {
+        "target_code": "529",
+        "code": "529000",
+        "name": "WV obligaties belegging (-)"
+      },
+      {
+        "target_code": "605",
+        "code": "605100",
+        "name": "Aankoop vastgoed doorverkoop"
+      },
+      {
+        "target_code": "624",
+        "code": "624100",
+        "name": "Groepsverzekering pensioen"
+      },
+      {
+        "target_code": "632",
+        "code": "632100",
+        "name": "WV lopende maatwerkorders"
+      },
+      {
+        "target_code": "636",
+        "code": "636100",
+        "name": "Voorz. grote herstellingen dak/gevel"
+      },
+      {
+        "target_code": "650",
+        "code": "650100",
+        "name": "Intresten investeringskrediet"
+      },
+      {
+        "target_code": "650",
+        "code": "650200",
+        "name": "Intresten leasing"
+      },
+      {
+        "target_code": "653",
+        "code": "653100",
+        "name": "Discontokosten factoring"
+      },
+      {
+        "target_code": "663",
+        "code": "663100",
+        "name": "Minderwaarde verkoop vaste activa"
+      },
+      {
+        "target_code": "708",
+        "code": "708100",
+        "name": "Kortingen klantenkaart (-)"
+      },
+      {
+        "target_code": "708",
+        "code": "708200",
+        "name": "Solden & promo-kortingen (-)"
+      },
+      {
+        "target_code": "752",
+        "code": "752100",
+        "name": "Meerwaarde verkoop beleggingen"
+      },
+      {
+        "target_code": "760",
+        "code": "760100",
+        "name": "Terugname afschr./WV"
+      },
+      {
+        "target_code": "762",
+        "code": "762100",
+        "name": "Terugname voorz. geschillen"
+      },
+      {
+        "target_code": "792",
+        "code": "792100",
+        "name": "Onttrekking beschikb. reserves"
+      }
+    ]
+  }
+}

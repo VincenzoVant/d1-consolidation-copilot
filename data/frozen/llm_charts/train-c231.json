@@ -1,0 +1,315 @@
+{
+  "company_id": "train-c231",
+  "split": "train",
+  "industry": "services",
+  "language": "nl",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "120",
+    "121",
+    "161",
+    "201",
+    "220",
+    "252",
+    "291",
+    "319",
+    "349",
+    "371",
+    "414",
+    "422",
+    "428",
+    "431",
+    "441",
+    "450",
+    "452",
+    "454",
+    "455",
+    "488",
+    "491",
+    "529",
+    "532",
+    "578",
+    "609",
+    "631",
+    "637",
+    "642",
+    "649",
+    "656",
+    "662",
+    "664",
+    "668",
+    "669",
+    "673",
+    "690",
+    "713",
+    "741",
+    "752",
+    "769"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:26:44+00:00",
+  "usage": {
+    "input_tokens": 3265,
+    "output_tokens": 1938,
+    "cost_usd": 0.0604494,
+    "latency_ms": 17917.977459030226
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "120",
+        "code": "120100",
+        "name": "Herwaard. meerwaarde software & licenties"
+      },
+      {
+        "target_code": "121",
+        "code": "121100",
+        "name": "Herwaard. meerwaarde kantoorgebouw Gent"
+      },
+      {
+        "target_code": "161",
+        "code": "161000",
+        "name": "Voorziening fiscale geschillen"
+      },
+      {
+        "target_code": "201",
+        "code": "201000",
+        "name": "Dossierkosten investeringskrediet"
+      },
+      {
+        "target_code": "220",
+        "code": "220100",
+        "name": "Grond kantoor Gent - Kortrijksesteenweg"
+      },
+      {
+        "target_code": "252",
+        "code": "252100",
+        "name": "Leasing bedrijfswagens"
+      },
+      {
+        "target_code": "252",
+        "code": "252200",
+        "name": "Leasing kantoorinrichting"
+      },
+      {
+        "target_code": "291",
+        "code": "291000",
+        "name": "Waarborg huur kantoor LT"
+      },
+      {
+        "target_code": "319",
+        "code": "319000",
+        "name": "WV kantoorbenodigdheden"
+      },
+      {
+        "target_code": "349",
+        "code": "349000",
+        "name": "WV handelsgoederen (hardware doorverkoop)"
+      },
+      {
+        "target_code": "371",
+        "code": "371000",
+        "name": "Projecten in uitvoering - toeger. winst"
+      },
+      {
+        "target_code": "414",
+        "code": "414100",
+        "name": "Nog te factureren prestaties"
+      },
+      {
+        "target_code": "414",
+        "code": "414200",
+        "name": "Te ontvangen subsidies VLAIO"
+      },
+      {
+        "target_code": "422",
+        "code": "422000",
+        "name": "Leasing KT-deel Belfius Lease"
+      },
+      {
+        "target_code": "428",
+        "code": "428000",
+        "name": "Ontv. waarborgen KT-deel"
+      },
+      {
+        "target_code": "431",
+        "code": "431100",
+        "name": "Straight loan KBC"
+      },
+      {
+        "target_code": "431",
+        "code": "431200",
+        "name": "Kaskrediet promesse BNP"
+      },
+      {
+        "target_code": "441",
+        "code": "441000",
+        "name": "Te betalen wissels leveranciers"
+      },
+      {
+        "target_code": "450",
+        "code": "450000",
+        "name": "Geraamde Ven.B lopend boekjaar"
+      },
+      {
+        "target_code": "452",
+        "code": "452100",
+        "name": "Te betalen Ven.B"
+      },
+      {
+        "target_code": "452",
+        "code": "452200",
+        "name": "Verkeersbelasting & gemeentetaksen"
+      },
+      {
+        "target_code": "454",
+        "code": "454100",
+        "name": "RSZ kwartaalaangifte"
+      },
+      {
+        "target_code": "454",
+        "code": "454200",
+        "name": "RSZ provisies maandelijks"
+      },
+      {
+        "target_code": "455",
+        "code": "455100",
+        "name": "Netto lonen bedienden"
+      },
+      {
+        "target_code": "455",
+        "code": "455200",
+        "name": "Bezoldiging bestuurders"
+      },
+      {
+        "target_code": "488",
+        "code": "488100",
+        "name": "Ontv. waarborgen klanten"
+      },
+      {
+        "target_code": "488",
+        "code": "488200",
+        "name": "Waarborg onderhuur kantoor Antwerpen"
+      },
+      {
+        "target_code": "491",
+        "code": "491000",
+        "name": "Verworven opbrengsten (intresten)"
+      },
+      {
+        "target_code": "529",
+        "code": "529000",
+        "name": "WV obligaties"
+      },
+      {
+        "target_code": "532",
+        "code": "532100",
+        "name": "Termijnrek. KBC 1 mnd"
+      },
+      {
+        "target_code": "532",
+        "code": "532200",
+        "name": "Termijnrek. ING 1 mnd"
+      },
+      {
+        "target_code": "578",
+        "code": "578000",
+        "name": "Kas postzegels"
+      },
+      {
+        "target_code": "609",
+        "code": "609000",
+        "name": "Voorraadwijziging handelsgoederen"
+      },
+      {
+        "target_code": "631",
+        "code": "631000",
+        "name": "WV voorraad - dotatie/terugname"
+      },
+      {
+        "target_code": "637",
+        "code": "637000",
+        "name": "Voorz. milieu (afvoer IT-materiaal)"
+      },
+      {
+        "target_code": "642",
+        "code": "642000",
+        "name": "Kosten factoring klanten"
+      },
+      {
+        "target_code": "649",
+        "code": "649000",
+        "name": "Geactiveerde herstructureringskosten (bedrijf)"
+      },
+      {
+        "target_code": "656",
+        "code": "656000",
+        "name": "Voorz. financiële risico's"
+      },
+      {
+        "target_code": "662",
+        "code": "662000",
+        "name": "Voorz. niet-recurrente kosten"
+      },
+      {
+        "target_code": "664",
+        "code": "664100",
+        "name": "Uitz. kosten verhuis kantoor"
+      },
+      {
+        "target_code": "664",
+        "code": "664200",
+        "name": "Schadevergoeding geschil klant"
+      },
+      {
+        "target_code": "668",
+        "code": "668000",
+        "name": "Uitz. financiële kosten"
+      },
+      {
+        "target_code": "669",
+        "code": "669000",
+        "name": "Geactiveerde herstructureringskosten (uitz.)"
+      },
+      {
+        "target_code": "673",
+        "code": "673000",
+        "name": "Buitenl. belastingen vorige jaren (NL)"
+      },
+      {
+        "target_code": "690",
+        "code": "690000",
+        "name": "Overgedragen verlies vorig boekjaar"
+      },
+      {
+        "target_code": "713",
+        "code": "713000",
+        "name": "Voorraadwijziging gereed product"
+      },
+      {
+        "target_code": "741",
+        "code": "741100",
+        "name": "Meerwaarde verkoop bedrijfswagens"
+      },
+      {
+        "target_code": "741",
+        "code": "741200",
+        "name": "Meerwaarde verkoop IT-materiaal"
+      },
+      {
+        "target_code": "752",
+        "code": "752000",
+        "name": "Meerwaarde verkoop beleggingen"
+      },
+      {
+        "target_code": "769",
+        "code": "769000",
+        "name": "Uitz. financiële opbrengsten"
+      }
+    ]
+  }
+}

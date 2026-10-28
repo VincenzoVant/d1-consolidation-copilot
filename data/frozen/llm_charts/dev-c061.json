@@ -1,0 +1,315 @@
+{
+  "company_id": "dev-c061",
+  "split": "dev",
+  "industry": "construction",
+  "language": "nl",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "122",
+    "170",
+    "174",
+    "213",
+    "220",
+    "223",
+    "250",
+    "288",
+    "300",
+    "360",
+    "371",
+    "404",
+    "409",
+    "412",
+    "414",
+    "417",
+    "428",
+    "430",
+    "440",
+    "491",
+    "520",
+    "550",
+    "603",
+    "604",
+    "623",
+    "634",
+    "640",
+    "649",
+    "655",
+    "657",
+    "663",
+    "669",
+    "671",
+    "680",
+    "743",
+    "751",
+    "754",
+    "755",
+    "761",
+    "769"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:29:15+00:00",
+  "usage": {
+    "input_tokens": 3184,
+    "output_tokens": 1994,
+    "cost_usd": 0.0609214,
+    "latency_ms": 21924.56941609271
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "122",
+        "code": "122000",
+        "name": "Herwaard. meerw. deelneming Bouwgroep Vandaele"
+      },
+      {
+        "target_code": "170",
+        "code": "170100",
+        "name": "Achtergest. lening zaakvoerder"
+      },
+      {
+        "target_code": "174",
+        "code": "174000",
+        "name": "Lening Vlaamse Participatiemij (PMV)"
+      },
+      {
+        "target_code": "213",
+        "code": "213000",
+        "name": "Voorschot software calculatie WinBouw"
+      },
+      {
+        "target_code": "220",
+        "code": "220100",
+        "name": "Grond magazijn Industrieweg Zele"
+      },
+      {
+        "target_code": "220",
+        "code": "220200",
+        "name": "Bouwgrond Lokeren Molsbergen"
+      },
+      {
+        "target_code": "223",
+        "code": "223000",
+        "name": "Opstalrecht stockageterrein Dendermonde"
+      },
+      {
+        "target_code": "250",
+        "code": "250000",
+        "name": "Leasing loods + kantoor Zele"
+      },
+      {
+        "target_code": "288",
+        "code": "288100",
+        "name": "Waarborg huur werfcontainers"
+      },
+      {
+        "target_code": "288",
+        "code": "288200",
+        "name": "Borg nutsaansluitingen werven"
+      },
+      {
+        "target_code": "300",
+        "code": "300100",
+        "name": "Voorraad beton & cement"
+      },
+      {
+        "target_code": "300",
+        "code": "300200",
+        "name": "Voorraad wapeningsstaal"
+      },
+      {
+        "target_code": "360",
+        "code": "360000",
+        "name": "Voorschot lev. dakmaterialen"
+      },
+      {
+        "target_code": "371",
+        "code": "371000",
+        "name": "Werken in uitvoering - toegerek. winst"
+      },
+      {
+        "target_code": "404",
+        "code": "404000",
+        "name": "Op te maken vorderingsstaten klanten"
+      },
+      {
+        "target_code": "409",
+        "code": "409000",
+        "name": "WV dubieuze klanten (-)"
+      },
+      {
+        "target_code": "412",
+        "code": "412100",
+        "name": "Terug te vorderen btw"
+      },
+      {
+        "target_code": "412",
+        "code": "412200",
+        "name": "Terug te vorderen VAA/voorafbetalingen VenB"
+      },
+      {
+        "target_code": "414",
+        "code": "414000",
+        "name": "Te ontv. tussenkomst verzekeraar schadegeval"
+      },
+      {
+        "target_code": "417",
+        "code": "417000",
+        "name": "Dubieuze div. vorderingen"
+      },
+      {
+        "target_code": "428",
+        "code": "428000",
+        "name": "Ontv. huurwaarborg onderverhuur loods"
+      },
+      {
+        "target_code": "430",
+        "code": "430100",
+        "name": "Straight loan KBC"
+      },
+      {
+        "target_code": "430",
+        "code": "430200",
+        "name": "Kaskrediet vaste termijn Belfius"
+      },
+      {
+        "target_code": "440",
+        "code": "440000",
+        "name": "Leveranciers algemeen"
+      },
+      {
+        "target_code": "440",
+        "code": "440500",
+        "name": "Lev. Gedimat/Desco bouwmat."
+      },
+      {
+        "target_code": "491",
+        "code": "491000",
+        "name": "Verkregen opbrengsten (te factureren)"
+      },
+      {
+        "target_code": "520",
+        "code": "520000",
+        "name": "Staatsbon / obligaties"
+      },
+      {
+        "target_code": "550",
+        "code": "550100",
+        "name": "KBC zichtrek. BE..1234"
+      },
+      {
+        "target_code": "550",
+        "code": "550200",
+        "name": "Belfius zichtrek. werven"
+      },
+      {
+        "target_code": "603",
+        "code": "603100",
+        "name": "OA ruwbouw/metselwerk"
+      },
+      {
+        "target_code": "603",
+        "code": "603200",
+        "name": "OA elektriciteit & sanitair"
+      },
+      {
+        "target_code": "604",
+        "code": "604100",
+        "name": "Aankoop handelsgoederen 21%"
+      },
+      {
+        "target_code": "604",
+        "code": "604200",
+        "name": "Aankoop handelsgoederen IC verlegd"
+      },
+      {
+        "target_code": "623",
+        "code": "623100",
+        "name": "Werkkledij & PBM arbeiders"
+      },
+      {
+        "target_code": "623",
+        "code": "623200",
+        "name": "Maaltijdcheques & ecocheques"
+      },
+      {
+        "target_code": "634",
+        "code": "634000",
+        "name": "WV handelsvord. klanten"
+      },
+      {
+        "target_code": "640",
+        "code": "640000",
+        "name": "Bedrijfsbel. (OV, verkeersbel., gemeentetaks)"
+      },
+      {
+        "target_code": "649",
+        "code": "649000",
+        "name": "Geactiv. herstructur. bedrijfskosten (-)"
+      },
+      {
+        "target_code": "655",
+        "code": "655000",
+        "name": "Omrekeningsverschil valuta (kost)"
+      },
+      {
+        "target_code": "657",
+        "code": "657000",
+        "name": "Bankkosten & borgtochtprovisies"
+      },
+      {
+        "target_code": "663",
+        "code": "663000",
+        "name": "Minderwaarde verkoop materieel"
+      },
+      {
+        "target_code": "669",
+        "code": "669000",
+        "name": "Geactiv. n-recurr. herstr. kosten (-)"
+      },
+      {
+        "target_code": "671",
+        "code": "671000",
+        "name": "Supplement VenB vorige jaren"
+      },
+      {
+        "target_code": "680",
+        "code": "680000",
+        "name": "Overb. uitgest. belast."
+      },
+      {
+        "target_code": "743",
+        "code": "743000",
+        "name": "Div. opbrengsten (doorrek. container/afval)"
+      },
+      {
+        "target_code": "751",
+        "code": "751000",
+        "name": "Intresten spaarrek./termijnrek."
+      },
+      {
+        "target_code": "754",
+        "code": "754000",
+        "name": "Wisselkoersresultaat"
+      },
+      {
+        "target_code": "755",
+        "code": "755000",
+        "name": "Omrekeningsverschil valuta (opbrengst)"
+      },
+      {
+        "target_code": "761",
+        "code": "761000",
+        "name": "Terugn. WV deelnemingen"
+      },
+      {
+        "target_code": "769",
+        "code": "769000",
+        "name": "Andere uitzonderl. fin. opbrengsten"
+      }
+    ]
+  }
+}

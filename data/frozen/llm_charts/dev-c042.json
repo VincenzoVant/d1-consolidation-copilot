@@ -1,0 +1,315 @@
+{
+  "company_id": "dev-c042",
+  "split": "dev",
+  "industry": "retail",
+  "language": "nl",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "171",
+    "172",
+    "173",
+    "179",
+    "202",
+    "221",
+    "222",
+    "281",
+    "285",
+    "309",
+    "340",
+    "369",
+    "400",
+    "414",
+    "420",
+    "423",
+    "425",
+    "429",
+    "430",
+    "441",
+    "451",
+    "453",
+    "493",
+    "550",
+    "570",
+    "601",
+    "617",
+    "620",
+    "624",
+    "632",
+    "635",
+    "637",
+    "650",
+    "651",
+    "653",
+    "660",
+    "662",
+    "669",
+    "689",
+    "690"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:27:39+00:00",
+  "usage": {
+    "input_tokens": 3221,
+    "output_tokens": 1860,
+    "cost_usd": 0.0585374,
+    "latency_ms": 17034.197417087853
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "171",
+        "code": "171000",
+        "name": "Obligatielening 2023-2030"
+      },
+      {
+        "target_code": "172",
+        "code": "172000",
+        "name": "Leasing kassasystemen LT"
+      },
+      {
+        "target_code": "173",
+        "code": "173010",
+        "name": "Investeringskrediet KBC winkel Gent"
+      },
+      {
+        "target_code": "173",
+        "code": "173020",
+        "name": "Rollover Belfius LT"
+      },
+      {
+        "target_code": "179",
+        "code": "179000",
+        "name": "Lening zaakvoerder LT"
+      },
+      {
+        "target_code": "202",
+        "code": "202000",
+        "name": "Notaris- en oprichtingskosten BV"
+      },
+      {
+        "target_code": "221",
+        "code": "221010",
+        "name": "Winkelpand Gent Veldstraat"
+      },
+      {
+        "target_code": "221",
+        "code": "221020",
+        "name": "Magazijn Brugge"
+      },
+      {
+        "target_code": "222",
+        "code": "222000",
+        "name": "Grond winkel Gent"
+      },
+      {
+        "target_code": "281",
+        "code": "281000",
+        "name": "R/C Vastgoed BV (verbonden)"
+      },
+      {
+        "target_code": "285",
+        "code": "285000",
+        "name": "Huurwaarborg winkel Brugge"
+      },
+      {
+        "target_code": "309",
+        "code": "309000",
+        "name": "WV verpakkingsmateriaal"
+      },
+      {
+        "target_code": "340",
+        "code": "340010",
+        "name": "Voorraad textiel"
+      },
+      {
+        "target_code": "340",
+        "code": "340020",
+        "name": "Voorraad accessoires & schoenen"
+      },
+      {
+        "target_code": "369",
+        "code": "369000",
+        "name": "WV voorschotten leveranciers"
+      },
+      {
+        "target_code": "400",
+        "code": "400000",
+        "name": "Klanten binnenland"
+      },
+      {
+        "target_code": "400",
+        "code": "400100",
+        "name": "Klanten webshop"
+      },
+      {
+        "target_code": "414",
+        "code": "414000",
+        "name": "Te ontv. bonussen leveranciers"
+      },
+      {
+        "target_code": "420",
+        "code": "420000",
+        "name": "KT deel achtergestelde lening"
+      },
+      {
+        "target_code": "423",
+        "code": "423010",
+        "name": "KT deel invest.krediet KBC"
+      },
+      {
+        "target_code": "423",
+        "code": "423020",
+        "name": "KT deel rollover Belfius"
+      },
+      {
+        "target_code": "425",
+        "code": "425000",
+        "name": "KT deel leverancierskrediet"
+      },
+      {
+        "target_code": "429",
+        "code": "429000",
+        "name": "KT deel lening zaakvoerder"
+      },
+      {
+        "target_code": "430",
+        "code": "430000",
+        "name": "Straight loan KBC"
+      },
+      {
+        "target_code": "441",
+        "code": "441000",
+        "name": "Te betalen wissels lev."
+      },
+      {
+        "target_code": "451",
+        "code": "451210",
+        "name": "Btw verkopen 21%"
+      },
+      {
+        "target_code": "451",
+        "code": "451060",
+        "name": "Btw verkopen 6%"
+      },
+      {
+        "target_code": "453",
+        "code": "453000",
+        "name": "Bedrijfsvoorheffing personeel"
+      },
+      {
+        "target_code": "493",
+        "code": "493000",
+        "name": "Over te dragen opbr. cadeaubonnen"
+      },
+      {
+        "target_code": "550",
+        "code": "550100",
+        "name": "KBC zichtrek. BE12"
+      },
+      {
+        "target_code": "550",
+        "code": "550200",
+        "name": "Belfius zichtrek."
+      },
+      {
+        "target_code": "570",
+        "code": "570100",
+        "name": "Kassa winkel Gent"
+      },
+      {
+        "target_code": "570",
+        "code": "570200",
+        "name": "Kassa winkel Brugge"
+      },
+      {
+        "target_code": "601",
+        "code": "601000",
+        "name": "Aankoop draagtassen & verpakking"
+      },
+      {
+        "target_code": "617",
+        "code": "617000",
+        "name": "Interim personeel (Randstad)"
+      },
+      {
+        "target_code": "620",
+        "code": "620100",
+        "name": "Brutolonen bedienden"
+      },
+      {
+        "target_code": "620",
+        "code": "620200",
+        "name": "Bezoldiging zaakvoerder"
+      },
+      {
+        "target_code": "624",
+        "code": "624000",
+        "name": "Pensioen ex-werknemers"
+      },
+      {
+        "target_code": "632",
+        "code": "632000",
+        "name": "WV bestellingen in uitvoering"
+      },
+      {
+        "target_code": "635",
+        "code": "635000",
+        "name": "Voorz. IPT zaakvoerder"
+      },
+      {
+        "target_code": "637",
+        "code": "637000",
+        "name": "Voorz. bodemsanering magazijn"
+      },
+      {
+        "target_code": "650",
+        "code": "650100",
+        "name": "Intresten investeringskrediet"
+      },
+      {
+        "target_code": "650",
+        "code": "650200",
+        "name": "Intresten straight loan"
+      },
+      {
+        "target_code": "651",
+        "code": "651000",
+        "name": "WV dubieuze debiteuren"
+      },
+      {
+        "target_code": "653",
+        "code": "653000",
+        "name": "Discontokosten factoring"
+      },
+      {
+        "target_code": "660",
+        "code": "660000",
+        "name": "Uitz. afschr. winkelinrichting"
+      },
+      {
+        "target_code": "662",
+        "code": "662000",
+        "name": "Voorz. sluiting filiaal"
+      },
+      {
+        "target_code": "669",
+        "code": "669000",
+        "name": "Geactiveerde herstructureringskost"
+      },
+      {
+        "target_code": "689",
+        "code": "689000",
+        "name": "Overb. naar vrijgestelde reserves"
+      },
+      {
+        "target_code": "690",
+        "code": "690000",
+        "name": "Overgedragen verlies vorig BJ"
+      }
+    ]
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "company_id": "dev-c052",
+  "split": "dev",
+  "industry": "software",
+  "language": "fr",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "121",
+    "124",
+    "171",
+    "175",
+    "176",
+    "200",
+    "211",
+    "281",
+    "284",
+    "285",
+    "300",
+    "310",
+    "319",
+    "369",
+    "370",
+    "400",
+    "409",
+    "416",
+    "419",
+    "422",
+    "429",
+    "431",
+    "480",
+    "490",
+    "532",
+    "539",
+    "550",
+    "602",
+    "634",
+    "636",
+    "659",
+    "669",
+    "673",
+    "680",
+    "708",
+    "715",
+    "752",
+    "754",
+    "762",
+    "769"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:28:31+00:00",
+  "usage": {
+    "input_tokens": 3251,
+    "output_tokens": 1901,
+    "cost_usd": 0.059597399999999995,
+    "latency_ms": 17352.720082970336
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "121",
+        "code": "121000",
+        "name": "Plus-value réévaluation bâtiment Gand"
+      },
+      {
+        "target_code": "124",
+        "code": "124000",
+        "name": "Reprise RDV placements trésorerie"
+      },
+      {
+        "target_code": "171",
+        "code": "171100",
+        "name": "Emprunt obligataire 2024-2029 (4,25%)"
+      },
+      {
+        "target_code": "175",
+        "code": "175000",
+        "name": "Fournisseurs LT - échéancier > 1 an"
+      },
+      {
+        "target_code": "176",
+        "code": "176000",
+        "name": "Acomptes reçus projets pluriannuels"
+      },
+      {
+        "target_code": "200",
+        "code": "200000",
+        "name": "Frais de constitution SRL"
+      },
+      {
+        "target_code": "211",
+        "code": "211100",
+        "name": "Licences logicielles tierces (Microsoft, Atlassian)"
+      },
+      {
+        "target_code": "211",
+        "code": "211200",
+        "name": "Marque déposée NOVADESK"
+      },
+      {
+        "target_code": "281",
+        "code": "281100",
+        "name": "Prêt intragroupe NovaSoft NL BV"
+      },
+      {
+        "target_code": "281",
+        "code": "281200",
+        "name": "C/C NovaSoft France SAS"
+      },
+      {
+        "target_code": "284",
+        "code": "284000",
+        "name": "Participation start-up DataLoop"
+      },
+      {
+        "target_code": "285",
+        "code": "285000",
+        "name": "Garanties locatives bureaux"
+      },
+      {
+        "target_code": "300",
+        "code": "300000",
+        "name": "Stock composants hardware (boîtiers)"
+      },
+      {
+        "target_code": "310",
+        "code": "310000",
+        "name": "Stock fournitures bureau & IT"
+      },
+      {
+        "target_code": "319",
+        "code": "319000",
+        "name": "RDV stock fournitures (-)"
+      },
+      {
+        "target_code": "369",
+        "code": "369000",
+        "name": "RDV acomptes fournisseurs stock (-)"
+      },
+      {
+        "target_code": "370",
+        "code": "370000",
+        "name": "Projets en cours (WIP) - valeur coûtant"
+      },
+      {
+        "target_code": "400",
+        "code": "400100",
+        "name": "Clients Belgique"
+      },
+      {
+        "target_code": "400",
+        "code": "400200",
+        "name": "Clients UE/export"
+      },
+      {
+        "target_code": "409",
+        "code": "409000",
+        "name": "RDV clients douteux (-)"
+      },
+      {
+        "target_code": "416",
+        "code": "416100",
+        "name": "Créances diverses - remb. frais personnel"
+      },
+      {
+        "target_code": "416",
+        "code": "416200",
+        "name": "Subside VLAIO à recevoir"
+      },
+      {
+        "target_code": "419",
+        "code": "419000",
+        "name": "RDV créances diverses (-)"
+      },
+      {
+        "target_code": "422",
+        "code": "422000",
+        "name": "Leasing voitures - part CT"
+      },
+      {
+        "target_code": "429",
+        "code": "429000",
+        "name": "Prêt Wikipreneur - part < 1 an"
+      },
+      {
+        "target_code": "431",
+        "code": "431000",
+        "name": "Straight loan ING (avance à terme fixe)"
+      },
+      {
+        "target_code": "480",
+        "code": "480000",
+        "name": "Coupons obligataires échus à payer"
+      },
+      {
+        "target_code": "490",
+        "code": "490100",
+        "name": "Abonnements SaaS payés d'avance"
+      },
+      {
+        "target_code": "490",
+        "code": "490200",
+        "name": "Assurances payées d'avance"
+      },
+      {
+        "target_code": "532",
+        "code": "532100",
+        "name": "Dépôt 1 mois KBC"
+      },
+      {
+        "target_code": "532",
+        "code": "532200",
+        "name": "Dépôt 1 mois Belfius"
+      },
+      {
+        "target_code": "539",
+        "code": "539000",
+        "name": "RDV dépôts à terme (-)"
+      },
+      {
+        "target_code": "550",
+        "code": "550100",
+        "name": "KBC compte courant BE12"
+      },
+      {
+        "target_code": "550",
+        "code": "550200",
+        "name": "Belfius compte courant BE68"
+      },
+      {
+        "target_code": "602",
+        "code": "602100",
+        "name": "Sous-traitance développement freelances"
+      },
+      {
+        "target_code": "602",
+        "code": "602200",
+        "name": "Hébergement cloud AWS/Azure"
+      },
+      {
+        "target_code": "634",
+        "code": "634000",
+        "name": "Dotation RDV créances clients"
+      },
+      {
+        "target_code": "636",
+        "code": "636000",
+        "name": "Provision gros entretien serveurs/locaux"
+      },
+      {
+        "target_code": "659",
+        "code": "659000",
+        "name": "Charges fin. activées restructuration (-)"
+      },
+      {
+        "target_code": "669",
+        "code": "669000",
+        "name": "Charges non récurr. activées restructuration (-)"
+      },
+      {
+        "target_code": "673",
+        "code": "673000",
+        "name": "Impôts étrangers ex. antérieurs (retenues)"
+      },
+      {
+        "target_code": "680",
+        "code": "680000",
+        "name": "Dotation impôts différés"
+      },
+      {
+        "target_code": "708",
+        "code": "708100",
+        "name": "Remises commerciales licences"
+      },
+      {
+        "target_code": "708",
+        "code": "708200",
+        "name": "Ristournes partenaires revendeurs"
+      },
+      {
+        "target_code": "715",
+        "code": "715000",
+        "name": "Var. stock immeubles destinés à la vente"
+      },
+      {
+        "target_code": "752",
+        "code": "752000",
+        "name": "Plus-value cession placements"
+      },
+      {
+        "target_code": "754",
+        "code": "754100",
+        "name": "Différences de change USD"
+      },
+      {
+        "target_code": "754",
+        "code": "754200",
+        "name": "Différences de change GBP"
+      },
+      {
+        "target_code": "762",
+        "code": "762000",
+        "name": "Reprise provision litige client"
+      },
+      {
+        "target_code": "769",
+        "code": "769000",
+        "name": "Produits financiers exceptionnels divers"
+      }
+    ]
+  }
+}

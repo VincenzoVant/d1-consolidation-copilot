@@ -1,0 +1,175 @@
+{
+  "company_id": "test-c011",
+  "split": "test",
+  "industry": "services",
+  "language": "fr",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "211",
+    "221",
+    "280",
+    "291",
+    "404",
+    "421",
+    "439",
+    "451",
+    "455",
+    "489",
+    "520",
+    "617",
+    "621",
+    "651",
+    "657",
+    "661",
+    "700",
+    "713",
+    "760",
+    "769"
+  ],
+  "n_accounts": 25,
+  "created_at": "2026-10-28T20:21:27+00:00",
+  "usage": {
+    "input_tokens": 2287,
+    "output_tokens": 881,
+    "cost_usd": 0.0314854,
+    "latency_ms": 9321.803875034675
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "211",
+        "code": "211100",
+        "name": "Licences logiciels (Odoo, M365)"
+      },
+      {
+        "target_code": "221",
+        "code": "221000",
+        "name": "Bâtiment bureaux Gand - Kortrijksesteenweg"
+      },
+      {
+        "target_code": "221",
+        "code": "221010",
+        "name": "Bureau annexe Bruxelles - Louise"
+      },
+      {
+        "target_code": "280",
+        "code": "280000",
+        "name": "Particip. VTO Consulting SRL"
+      },
+      {
+        "target_code": "291",
+        "code": "291000",
+        "name": "Garantie locative LT bureaux"
+      },
+      {
+        "target_code": "404",
+        "code": "404000",
+        "name": "Factures à établir clients"
+      },
+      {
+        "target_code": "421",
+        "code": "421000",
+        "name": "Emprunt oblig. 2022 - tranche CT"
+      },
+      {
+        "target_code": "439",
+        "code": "439000",
+        "name": "Prêt gérant (compte courant LT)"
+      },
+      {
+        "target_code": "451",
+        "code": "451000",
+        "name": "TVA due 21%"
+      },
+      {
+        "target_code": "451",
+        "code": "451060",
+        "name": "TVA due 6%"
+      },
+      {
+        "target_code": "455",
+        "code": "455000",
+        "name": "Salaires nets à payer"
+      },
+      {
+        "target_code": "455",
+        "code": "455100",
+        "name": "Pécule vacances à payer"
+      },
+      {
+        "target_code": "489",
+        "code": "489000",
+        "name": "Dettes diverses - à régulariser"
+      },
+      {
+        "target_code": "520",
+        "code": "520000",
+        "name": "Bons d'État - KBC"
+      },
+      {
+        "target_code": "520",
+        "code": "520100",
+        "name": "Obligations Belfius placement"
+      },
+      {
+        "target_code": "617",
+        "code": "617000",
+        "name": "Intérims Randstad"
+      },
+      {
+        "target_code": "617",
+        "code": "617100",
+        "name": "Consultants freelance mis à dispo"
+      },
+      {
+        "target_code": "621",
+        "code": "621000",
+        "name": "ONSS patronale"
+      },
+      {
+        "target_code": "651",
+        "code": "651000",
+        "name": "RDV créances clients douteux"
+      },
+      {
+        "target_code": "657",
+        "code": "657000",
+        "name": "Frais bancaires KBC"
+      },
+      {
+        "target_code": "657",
+        "code": "657100",
+        "name": "Frais terminal Bancontact/Stripe"
+      },
+      {
+        "target_code": "661",
+        "code": "661000",
+        "name": "RDV particip. VTO Consulting"
+      },
+      {
+        "target_code": "700",
+        "code": "700000",
+        "name": "Honoraires consultance"
+      },
+      {
+        "target_code": "713",
+        "code": "713000",
+        "name": "Variation stock projets terminés"
+      },
+      {
+        "target_code": "760",
+        "code": "760000",
+        "name": "Reprise RDV créances clients"
+      },
+      {
+        "target_code": "769",
+        "code": "769000",
+        "name": "Plus-value cession titres"
+      }
+    ]
+  }
+}

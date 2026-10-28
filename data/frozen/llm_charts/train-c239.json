@@ -1,0 +1,315 @@
+{
+  "company_id": "train-c239",
+  "split": "train",
+  "industry": "services",
+  "language": "en",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "120",
+    "174",
+    "201",
+    "204",
+    "210",
+    "221",
+    "222",
+    "252",
+    "280",
+    "283",
+    "288",
+    "310",
+    "330",
+    "411",
+    "416",
+    "417",
+    "418",
+    "420",
+    "426",
+    "429",
+    "430",
+    "431",
+    "452",
+    "454",
+    "459",
+    "488",
+    "601",
+    "632",
+    "633",
+    "655",
+    "657",
+    "661",
+    "663",
+    "673",
+    "680",
+    "700",
+    "708",
+    "715",
+    "743",
+    "764"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:27:25+00:00",
+  "usage": {
+    "input_tokens": 3099,
+    "output_tokens": 1839,
+    "cost_usd": 0.0571414,
+    "latency_ms": 19385.31979196705
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "120",
+        "code": "1200-00",
+        "name": "Reval. reserve - software licences"
+      },
+      {
+        "target_code": "174",
+        "code": "1740-10",
+        "name": "Loan from shareholder VDB (LT)"
+      },
+      {
+        "target_code": "201",
+        "code": "2010-00",
+        "name": "Bank loan arrangement fees"
+      },
+      {
+        "target_code": "204",
+        "code": "2040-00",
+        "name": "Reorganisation costs 2025"
+      },
+      {
+        "target_code": "210",
+        "code": "2100-00",
+        "name": "Dev. costs client portal platform"
+      },
+      {
+        "target_code": "221",
+        "code": "2210-01",
+        "name": "Office building Ghent HQ"
+      },
+      {
+        "target_code": "221",
+        "code": "2210-02",
+        "name": "Office building Antwerp branch"
+      },
+      {
+        "target_code": "222",
+        "code": "2220-00",
+        "name": "Land - Ghent HQ plot"
+      },
+      {
+        "target_code": "252",
+        "code": "2520-01",
+        "name": "Leased cars - fleet Athlon"
+      },
+      {
+        "target_code": "252",
+        "code": "2520-02",
+        "name": "Leased office furniture"
+      },
+      {
+        "target_code": "280",
+        "code": "2800-00",
+        "name": "Shares subsidiary Consult NL BV"
+      },
+      {
+        "target_code": "283",
+        "code": "2830-00",
+        "name": "Loan to associate DataLab SRL"
+      },
+      {
+        "target_code": "288",
+        "code": "2880-01",
+        "name": "Rent deposit Antwerp office"
+      },
+      {
+        "target_code": "288",
+        "code": "2880-02",
+        "name": "Deposit utilities / Fluvius"
+      },
+      {
+        "target_code": "310",
+        "code": "3100-00",
+        "name": "Stock office & IT supplies"
+      },
+      {
+        "target_code": "330",
+        "code": "3300-00",
+        "name": "Stock training kits / manuals"
+      },
+      {
+        "target_code": "411",
+        "code": "4110-21",
+        "name": "Input VAT 21%"
+      },
+      {
+        "target_code": "411",
+        "code": "4110-06",
+        "name": "Input VAT 6% / reduced"
+      },
+      {
+        "target_code": "416",
+        "code": "4160-00",
+        "name": "Other receivables - staff advances"
+      },
+      {
+        "target_code": "416",
+        "code": "4160-10",
+        "name": "Insurance claims receivable"
+      },
+      {
+        "target_code": "417",
+        "code": "4170-00",
+        "name": "Doubtful other receivables"
+      },
+      {
+        "target_code": "418",
+        "code": "4180-00",
+        "name": "Short-term deposits paid (events)"
+      },
+      {
+        "target_code": "420",
+        "code": "4200-00",
+        "name": "Subord. loan PMV - current portion"
+      },
+      {
+        "target_code": "426",
+        "code": "4260-00",
+        "name": "Client prepayments LT projects - due <1y"
+      },
+      {
+        "target_code": "429",
+        "code": "4290-00",
+        "name": "Other LT debts - due within year"
+      },
+      {
+        "target_code": "430",
+        "code": "4300-01",
+        "name": "Straight loan KBC"
+      },
+      {
+        "target_code": "430",
+        "code": "4300-02",
+        "name": "Straight loan BNP Paribas Fortis"
+      },
+      {
+        "target_code": "431",
+        "code": "4310-00",
+        "name": "Bills payable - Belfius"
+      },
+      {
+        "target_code": "452",
+        "code": "4520-01",
+        "name": "Corporate tax payable (ISOC)"
+      },
+      {
+        "target_code": "452",
+        "code": "4520-02",
+        "name": "Withholding tax on wages payable"
+      },
+      {
+        "target_code": "454",
+        "code": "4540-00",
+        "name": "RSZ/ONSS payable"
+      },
+      {
+        "target_code": "459",
+        "code": "4590-00",
+        "name": "Other payroll liabilities - group insurance"
+      },
+      {
+        "target_code": "488",
+        "code": "4880-00",
+        "name": "Deposits received from subtenants"
+      },
+      {
+        "target_code": "601",
+        "code": "6010-00",
+        "name": "Purchases office supplies"
+      },
+      {
+        "target_code": "601",
+        "code": "6010-10",
+        "name": "Purchases small IT consumables"
+      },
+      {
+        "target_code": "632",
+        "code": "6320-00",
+        "name": "Write-down WIP projects"
+      },
+      {
+        "target_code": "633",
+        "code": "6330-00",
+        "name": "Write-down LT trade receivables"
+      },
+      {
+        "target_code": "655",
+        "code": "6550-00",
+        "name": "FX losses USD/GBP"
+      },
+      {
+        "target_code": "657",
+        "code": "6570-00",
+        "name": "Bank charges & card fees"
+      },
+      {
+        "target_code": "661",
+        "code": "6610-00",
+        "name": "Impairment financial assets"
+      },
+      {
+        "target_code": "663",
+        "code": "6630-00",
+        "name": "Loss on sale of fixed assets"
+      },
+      {
+        "target_code": "673",
+        "code": "6730-00",
+        "name": "Foreign tax prior years (NL)"
+      },
+      {
+        "target_code": "680",
+        "code": "6800-00",
+        "name": "Deferred tax charge"
+      },
+      {
+        "target_code": "700",
+        "code": "7000-01",
+        "name": "Consulting fees Belgium"
+      },
+      {
+        "target_code": "700",
+        "code": "7000-02",
+        "name": "Consulting fees EU (reverse charge)"
+      },
+      {
+        "target_code": "708",
+        "code": "7080-00",
+        "name": "Discounts granted to clients"
+      },
+      {
+        "target_code": "715",
+        "code": "7150-00",
+        "name": "Change in property stock for resale"
+      },
+      {
+        "target_code": "743",
+        "code": "7430-01",
+        "name": "Recharged costs to clients"
+      },
+      {
+        "target_code": "743",
+        "code": "7430-02",
+        "name": "Sublease income Antwerp office"
+      },
+      {
+        "target_code": "764",
+        "code": "7640-00",
+        "name": "Non-recurring income - other"
+      }
+    ]
+  }
+}

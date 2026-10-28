@@ -1,0 +1,315 @@
+{
+  "company_id": "dev-c059",
+  "split": "dev",
+  "industry": "services",
+  "language": "fr",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "120",
+    "170",
+    "176",
+    "179",
+    "204",
+    "210",
+    "222",
+    "223",
+    "252",
+    "282",
+    "320",
+    "340",
+    "350",
+    "359",
+    "379",
+    "400",
+    "416",
+    "419",
+    "421",
+    "423",
+    "432",
+    "433",
+    "450",
+    "492",
+    "499",
+    "530",
+    "601",
+    "604",
+    "609",
+    "617",
+    "620",
+    "622",
+    "636",
+    "642",
+    "651",
+    "661",
+    "712",
+    "713",
+    "715",
+    "750"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:28:57+00:00",
+  "usage": {
+    "input_tokens": 3217,
+    "output_tokens": 1696,
+    "cost_usd": 0.0552254,
+    "latency_ms": 16178.202375071123
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "120",
+        "code": "120100",
+        "name": "Plus-val. réév. logiciel CRM"
+      },
+      {
+        "target_code": "170",
+        "code": "170100",
+        "name": "Prêt subordonné actionnaire VDB"
+      },
+      {
+        "target_code": "176",
+        "code": "176100",
+        "name": "Acomptes reçus projets LT"
+      },
+      {
+        "target_code": "179",
+        "code": "179100",
+        "name": "Garanties locatives reçues LT"
+      },
+      {
+        "target_code": "204",
+        "code": "204100",
+        "name": "Frais réorganisation 2024"
+      },
+      {
+        "target_code": "210",
+        "code": "210100",
+        "name": "Dév. plateforme interne ServiPro"
+      },
+      {
+        "target_code": "222",
+        "code": "222100",
+        "name": "Terrain bureau Gand"
+      },
+      {
+        "target_code": "222",
+        "code": "222200",
+        "name": "Terrain bureau Namur"
+      },
+      {
+        "target_code": "223",
+        "code": "223100",
+        "name": "Usufruit bureaux Bruxelles"
+      },
+      {
+        "target_code": "252",
+        "code": "252100",
+        "name": "Leasing véhicules société"
+      },
+      {
+        "target_code": "252",
+        "code": "252200",
+        "name": "Leasing mobilier bureau"
+      },
+      {
+        "target_code": "282",
+        "code": "282100",
+        "name": "Particip. TechConsult SRL"
+      },
+      {
+        "target_code": "320",
+        "code": "320100",
+        "name": "En-cours prestations non facturées"
+      },
+      {
+        "target_code": "340",
+        "code": "340100",
+        "name": "Stock matériel revente"
+      },
+      {
+        "target_code": "350",
+        "code": "350100",
+        "name": "Immeuble Wavre à vendre"
+      },
+      {
+        "target_code": "359",
+        "code": "359100",
+        "name": "RDV immeuble Wavre"
+      },
+      {
+        "target_code": "379",
+        "code": "379100",
+        "name": "RDV missions en cours"
+      },
+      {
+        "target_code": "400",
+        "code": "400100",
+        "name": "Clients Belgique"
+      },
+      {
+        "target_code": "400",
+        "code": "400200",
+        "name": "Clients UE"
+      },
+      {
+        "target_code": "416",
+        "code": "416100",
+        "name": "Créances div. personnel"
+      },
+      {
+        "target_code": "416",
+        "code": "416200",
+        "name": "TVA à récupérer div."
+      },
+      {
+        "target_code": "419",
+        "code": "419100",
+        "name": "RDV créances diverses"
+      },
+      {
+        "target_code": "421",
+        "code": "421100",
+        "name": "Obligations éch. -1 an"
+      },
+      {
+        "target_code": "423",
+        "code": "423100",
+        "name": "Prêt Belfius part CT"
+      },
+      {
+        "target_code": "432",
+        "code": "432100",
+        "name": "Crédit acceptation BNP"
+      },
+      {
+        "target_code": "433",
+        "code": "433100",
+        "name": "Straight loan KBC"
+      },
+      {
+        "target_code": "433",
+        "code": "433200",
+        "name": "Découvert ING"
+      },
+      {
+        "target_code": "450",
+        "code": "450100",
+        "name": "ISOC estimé exercice"
+      },
+      {
+        "target_code": "450",
+        "code": "450200",
+        "name": "Précompte prof. estimé"
+      },
+      {
+        "target_code": "492",
+        "code": "492100",
+        "name": "Factures à recevoir"
+      },
+      {
+        "target_code": "492",
+        "code": "492200",
+        "name": "Intérêts courus à payer"
+      },
+      {
+        "target_code": "499",
+        "code": "499100",
+        "name": "Compte d'attente banque"
+      },
+      {
+        "target_code": "499",
+        "code": "499200",
+        "name": "Attente à régulariser"
+      },
+      {
+        "target_code": "530",
+        "code": "530100",
+        "name": "Dépôt terme KBC 3 ans"
+      },
+      {
+        "target_code": "601",
+        "code": "601100",
+        "name": "Fournitures bureau"
+      },
+      {
+        "target_code": "601",
+        "code": "601200",
+        "name": "Petit matériel IT"
+      },
+      {
+        "target_code": "604",
+        "code": "604100",
+        "name": "Achats matériel revente 21%"
+      },
+      {
+        "target_code": "609",
+        "code": "609100",
+        "name": "Variation stock marchandises"
+      },
+      {
+        "target_code": "617",
+        "code": "617100",
+        "name": "Intérimaires Randstad"
+      },
+      {
+        "target_code": "620",
+        "code": "620100",
+        "name": "Salaires employés"
+      },
+      {
+        "target_code": "620",
+        "code": "620200",
+        "name": "Rémun. gérant"
+      },
+      {
+        "target_code": "622",
+        "code": "622100",
+        "name": "Assurance groupe AG"
+      },
+      {
+        "target_code": "636",
+        "code": "636100",
+        "name": "Prov. gros entretien bureaux"
+      },
+      {
+        "target_code": "642",
+        "code": "642100",
+        "name": "Moins-val. affacturage"
+      },
+      {
+        "target_code": "651",
+        "code": "651100",
+        "name": "RDV créances clients"
+      },
+      {
+        "target_code": "661",
+        "code": "661100",
+        "name": "RDV particip. TechConsult"
+      },
+      {
+        "target_code": "712",
+        "code": "712100",
+        "name": "Var. en-cours prestations"
+      },
+      {
+        "target_code": "713",
+        "code": "713100",
+        "name": "Var. stock produits finis"
+      },
+      {
+        "target_code": "715",
+        "code": "715100",
+        "name": "Var. immeubles à vendre"
+      },
+      {
+        "target_code": "750",
+        "code": "750100",
+        "name": "Dividendes TechConsult"
+      }
+    ]
+  }
+}

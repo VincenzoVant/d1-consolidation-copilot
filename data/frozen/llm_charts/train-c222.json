@@ -1,0 +1,315 @@
+{
+  "company_id": "train-c222",
+  "split": "train",
+  "industry": "retail",
+  "language": "fr",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "132",
+    "200",
+    "211",
+    "213",
+    "221",
+    "222",
+    "223",
+    "288",
+    "379",
+    "406",
+    "419",
+    "420",
+    "421",
+    "424",
+    "440",
+    "453",
+    "454",
+    "489",
+    "491",
+    "492",
+    "499",
+    "520",
+    "539",
+    "617",
+    "621",
+    "622",
+    "630",
+    "635",
+    "650",
+    "652",
+    "653",
+    "655",
+    "659",
+    "661",
+    "662",
+    "664",
+    "673",
+    "717",
+    "741",
+    "760"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:26:06+00:00",
+  "usage": {
+    "input_tokens": 3153,
+    "output_tokens": 1923,
+    "cost_usd": 0.0592534,
+    "latency_ms": 20027.27104211226
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "132",
+        "code": "1320100",
+        "name": "Réserve immunisée plus-value remploi"
+      },
+      {
+        "target_code": "200",
+        "code": "2000100",
+        "name": "Frais constitution SRL & notaire"
+      },
+      {
+        "target_code": "211",
+        "code": "2110100",
+        "name": "Licence logiciel caisse POS"
+      },
+      {
+        "target_code": "213",
+        "code": "2130100",
+        "name": "Acompte dév. webshop"
+      },
+      {
+        "target_code": "221",
+        "code": "2210100",
+        "name": "Bâtiment magasin Gand"
+      },
+      {
+        "target_code": "221",
+        "code": "2210200",
+        "name": "Bâtiment dépôt Wavre"
+      },
+      {
+        "target_code": "222",
+        "code": "2220100",
+        "name": "Terrain magasin Gand"
+      },
+      {
+        "target_code": "222",
+        "code": "2220200",
+        "name": "Terrain dépôt Wavre"
+      },
+      {
+        "target_code": "223",
+        "code": "2230100",
+        "name": "Droit emphytéose parking Namur"
+      },
+      {
+        "target_code": "288",
+        "code": "2880100",
+        "name": "Garantie locative shop Namur"
+      },
+      {
+        "target_code": "288",
+        "code": "2880200",
+        "name": "Caution Sibelga/Engie compteurs"
+      },
+      {
+        "target_code": "379",
+        "code": "3790100",
+        "name": "RDV cdes clients sur mesure"
+      },
+      {
+        "target_code": "406",
+        "code": "4060100",
+        "name": "Acomptes versés fourn. marchandises"
+      },
+      {
+        "target_code": "419",
+        "code": "4190100",
+        "name": "RDV créances diverses douteuses"
+      },
+      {
+        "target_code": "420",
+        "code": "4200100",
+        "name": "Prêt subordonné actionnaire - tranche CT"
+      },
+      {
+        "target_code": "421",
+        "code": "4210100",
+        "name": "Obligations émises - échéance an"
+      },
+      {
+        "target_code": "424",
+        "code": "4240100",
+        "name": "Crédit invest. BNP - part < 1 an"
+      },
+      {
+        "target_code": "440",
+        "code": "4400100",
+        "name": "Fournisseurs marchandises"
+      },
+      {
+        "target_code": "440",
+        "code": "4400200",
+        "name": "Fournisseurs frais généraux"
+      },
+      {
+        "target_code": "453",
+        "code": "4530100",
+        "name": "Précompte prof. salaires"
+      },
+      {
+        "target_code": "453",
+        "code": "4530200",
+        "name": "Précompte mobilier dividendes"
+      },
+      {
+        "target_code": "454",
+        "code": "4540100",
+        "name": "ONSS à payer"
+      },
+      {
+        "target_code": "489",
+        "code": "4890100",
+        "name": "Dettes diverses - bons cadeaux émis"
+      },
+      {
+        "target_code": "491",
+        "code": "4910100",
+        "name": "Ristournes fourn. à recevoir"
+      },
+      {
+        "target_code": "492",
+        "code": "4920100",
+        "name": "Factures à recevoir énergie"
+      },
+      {
+        "target_code": "492",
+        "code": "4920200",
+        "name": "Pécule vacances à imputer"
+      },
+      {
+        "target_code": "499",
+        "code": "4990100",
+        "name": "Attente Bancontact/Payconiq"
+      },
+      {
+        "target_code": "499",
+        "code": "4990200",
+        "name": "Compte d'attente à ventiler"
+      },
+      {
+        "target_code": "520",
+        "code": "5200100",
+        "name": "Bons d'État - valeur achat"
+      },
+      {
+        "target_code": "539",
+        "code": "5390100",
+        "name": "RDV dépôts à terme KBC"
+      },
+      {
+        "target_code": "617",
+        "code": "6170100",
+        "name": "Intérims Randstad magasin"
+      },
+      {
+        "target_code": "617",
+        "code": "6170200",
+        "name": "Intérims soldes/fêtes"
+      },
+      {
+        "target_code": "621",
+        "code": "6210100",
+        "name": "ONSS patronale"
+      },
+      {
+        "target_code": "622",
+        "code": "6220100",
+        "name": "Assurance groupe AG - part patronale"
+      },
+      {
+        "target_code": "630",
+        "code": "6300100",
+        "name": "Dotation amort. aménagements shops"
+      },
+      {
+        "target_code": "635",
+        "code": "6350100",
+        "name": "Dotation prov. pension gérant"
+      },
+      {
+        "target_code": "650",
+        "code": "6500100",
+        "name": "Intérêts crédit invest."
+      },
+      {
+        "target_code": "650",
+        "code": "6500200",
+        "name": "Intérêts straight loan stocks"
+      },
+      {
+        "target_code": "652",
+        "code": "6520100",
+        "name": "Moins-value cession placements"
+      },
+      {
+        "target_code": "653",
+        "code": "6530100",
+        "name": "Escompte factoring créances"
+      },
+      {
+        "target_code": "655",
+        "code": "6550100",
+        "name": "Écarts change USD fourn."
+      },
+      {
+        "target_code": "655",
+        "code": "6550200",
+        "name": "Écarts change GBP"
+      },
+      {
+        "target_code": "659",
+        "code": "6590100",
+        "name": "Charges fin. activées restructuration (-)"
+      },
+      {
+        "target_code": "661",
+        "code": "6610100",
+        "name": "RDV participations financières"
+      },
+      {
+        "target_code": "662",
+        "code": "6620100",
+        "name": "Prov. fermeture shop non récurrente"
+      },
+      {
+        "target_code": "664",
+        "code": "6640100",
+        "name": "Charges except. dégâts des eaux"
+      },
+      {
+        "target_code": "673",
+        "code": "6730100",
+        "name": "Impôts étrangers ex. antérieurs"
+      },
+      {
+        "target_code": "717",
+        "code": "7170100",
+        "name": "Var. cdes en cours sur mesure"
+      },
+      {
+        "target_code": "741",
+        "code": "7410100",
+        "name": "Plus-value vente camionnette"
+      },
+      {
+        "target_code": "760",
+        "code": "7600100",
+        "name": "Reprise RDV et amort."
+      }
+    ]
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "company_id": "train-c227",
+  "split": "train",
+  "industry": "services",
+  "language": "mixed",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "161",
+    "172",
+    "175",
+    "176",
+    "211",
+    "213",
+    "281",
+    "282",
+    "339",
+    "370",
+    "379",
+    "416",
+    "424",
+    "430",
+    "439",
+    "444",
+    "451",
+    "455",
+    "492",
+    "499",
+    "529",
+    "602",
+    "604",
+    "605",
+    "608",
+    "621",
+    "635",
+    "637",
+    "651",
+    "655",
+    "664",
+    "669",
+    "673",
+    "700",
+    "712",
+    "715",
+    "742",
+    "760",
+    "761",
+    "769"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:26:26+00:00",
+  "usage": {
+    "input_tokens": 4043,
+    "output_tokens": 1927,
+    "cost_usd": 0.0664534,
+    "latency_ms": 19798.103041015565
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "161",
+        "code": "161000",
+        "name": "Prov. fiscale risico's / risques fiscaux"
+      },
+      {
+        "target_code": "172",
+        "code": "172100",
+        "name": "Leasing Audi A4 - BNP Lease LT"
+      },
+      {
+        "target_code": "172",
+        "code": "172200",
+        "name": "Leasing serverinfra Dell Financial >1j"
+      },
+      {
+        "target_code": "175",
+        "code": "175000",
+        "name": "Leveranciers LT - afbetalingsplan Proximus"
+      },
+      {
+        "target_code": "176",
+        "code": "176000",
+        "name": "Acomptes reçus clients projets > 1 an"
+      },
+      {
+        "target_code": "211",
+        "code": "211010",
+        "name": "Software licenties (Exact, M365, Adobe)"
+      },
+      {
+        "target_code": "213",
+        "code": "213000",
+        "name": "Voorschot ontwikkeling CRM-module"
+      },
+      {
+        "target_code": "281",
+        "code": "281100",
+        "name": "Lening aan ConsultCo Lux SARL"
+      },
+      {
+        "target_code": "281",
+        "code": "281200",
+        "name": "Créance intragroupe - Holding VTN BV"
+      },
+      {
+        "target_code": "282",
+        "code": "282000",
+        "name": "Participation 20% DigiStudio Gent"
+      },
+      {
+        "target_code": "339",
+        "code": "339000",
+        "name": "WV afgewerkte prod. - opleidingskits"
+      },
+      {
+        "target_code": "370",
+        "code": "370000",
+        "name": "Projets en cours - coût d'acquisition"
+      },
+      {
+        "target_code": "379",
+        "code": "379000",
+        "name": "WV projecten in uitvoering"
+      },
+      {
+        "target_code": "416",
+        "code": "416100",
+        "name": "Div. vorderingen - terug te vorderen voorschotten personeel"
+      },
+      {
+        "target_code": "416",
+        "code": "416200",
+        "name": "Créances diverses - remboursement assurance"
+      },
+      {
+        "target_code": "424",
+        "code": "424000",
+        "name": "Achtergestelde lening aandeelhouder - KT deel"
+      },
+      {
+        "target_code": "430",
+        "code": "430100",
+        "name": "Straight loan KBC"
+      },
+      {
+        "target_code": "430",
+        "code": "430200",
+        "name": "Avance à terme fixe Belfius"
+      },
+      {
+        "target_code": "439",
+        "code": "439000",
+        "name": "Overbruggingskrediet Winwinlening"
+      },
+      {
+        "target_code": "444",
+        "code": "444000",
+        "name": "Factures à recevoir - fournisseurs"
+      },
+      {
+        "target_code": "444",
+        "code": "444100",
+        "name": "TOF freelancers / subcontractors"
+      },
+      {
+        "target_code": "451",
+        "code": "451000",
+        "name": "Btw verschuldigd 21%"
+      },
+      {
+        "target_code": "451",
+        "code": "451100",
+        "name": "TVA due autoliquidation intracom"
+      },
+      {
+        "target_code": "455",
+        "code": "455000",
+        "name": "Netto lonen te betalen bedienden"
+      },
+      {
+        "target_code": "455",
+        "code": "455100",
+        "name": "Rémunérations dues - dirigeants"
+      },
+      {
+        "target_code": "492",
+        "code": "492000",
+        "name": "Accrued costs - year end"
+      },
+      {
+        "target_code": "499",
+        "code": "499000",
+        "name": "Wachtrekening / compte d'attente CODA"
+      },
+      {
+        "target_code": "529",
+        "code": "529000",
+        "name": "RDV obligations - portefeuille ING"
+      },
+      {
+        "target_code": "602",
+        "code": "602100",
+        "name": "Onderaanneming IT-consultants"
+      },
+      {
+        "target_code": "602",
+        "code": "602200",
+        "name": "Honoraires sous-traitance traduction"
+      },
+      {
+        "target_code": "604",
+        "code": "604000",
+        "name": "Aankoop hardware voor doorverkoop"
+      },
+      {
+        "target_code": "604",
+        "code": "604100",
+        "name": "Achats licences revente clients"
+      },
+      {
+        "target_code": "605",
+        "code": "605000",
+        "name": "Aankoop kantoorunit Zaventem (verkoop)"
+      },
+      {
+        "target_code": "608",
+        "code": "608000",
+        "name": "Supplier rebates & discounts received"
+      },
+      {
+        "target_code": "621",
+        "code": "621000",
+        "name": "RSZ werkgeversbijdragen / ONSS patronal"
+      },
+      {
+        "target_code": "635",
+        "code": "635000",
+        "name": "Dotation provision pensions IPT"
+      },
+      {
+        "target_code": "637",
+        "code": "637000",
+        "name": "Voorziening bodemsanering site Anderlecht"
+      },
+      {
+        "target_code": "651",
+        "code": "651000",
+        "name": "WV dubieuze debiteuren"
+      },
+      {
+        "target_code": "655",
+        "code": "655000",
+        "name": "Wisselkoersverschillen USD/GBP"
+      },
+      {
+        "target_code": "664",
+        "code": "664000",
+        "name": "Charges except. - litige ex-client"
+      },
+      {
+        "target_code": "669",
+        "code": "669000",
+        "name": "Geactiveerde herstructureringskosten (-)"
+      },
+      {
+        "target_code": "673",
+        "code": "673000",
+        "name": "Foreign WHT prior years - FR/NL"
+      },
+      {
+        "target_code": "700",
+        "code": "700100",
+        "name": "Omzet consultancy Brussel"
+      },
+      {
+        "target_code": "700",
+        "code": "700200",
+        "name": "CA formations / trainings Antwerpen"
+      },
+      {
+        "target_code": "712",
+        "code": "712000",
+        "name": "Var. stock en-cours projets"
+      },
+      {
+        "target_code": "715",
+        "code": "715000",
+        "name": "Wijziging voorraad onroerend goed te koop"
+      },
+      {
+        "target_code": "742",
+        "code": "742000",
+        "name": "Plus-value cession créances factoring"
+      },
+      {
+        "target_code": "760",
+        "code": "760000",
+        "name": "Terugname afschr. & WV"
+      },
+      {
+        "target_code": "761",
+        "code": "761000",
+        "name": "Reprise RDV participations financières"
+      },
+      {
+        "target_code": "769",
+        "code": "769000",
+        "name": "Other non-recurring financial income"
+      }
+    ]
+  }
+}

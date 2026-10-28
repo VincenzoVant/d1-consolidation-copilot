@@ -1,0 +1,315 @@
+{
+  "company_id": "train-c229",
+  "split": "train",
+  "industry": "construction",
+  "language": "en",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "163",
+    "174",
+    "176",
+    "201",
+    "210",
+    "212",
+    "222",
+    "251",
+    "252",
+    "281",
+    "282",
+    "285",
+    "290",
+    "310",
+    "370",
+    "371",
+    "411",
+    "416",
+    "424",
+    "429",
+    "440",
+    "456",
+    "480",
+    "491",
+    "520",
+    "539",
+    "578",
+    "609",
+    "617",
+    "640",
+    "650",
+    "655",
+    "656",
+    "659",
+    "672",
+    "690",
+    "713",
+    "715",
+    "756",
+    "792"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:26:34+00:00",
+  "usage": {
+    "input_tokens": 3085,
+    "output_tokens": 1762,
+    "cost_usd": 0.0554894,
+    "latency_ms": 16175.228375010192
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "163",
+        "code": "163100",
+        "name": "Prov. soil remediation yard Zele"
+      },
+      {
+        "target_code": "174",
+        "code": "174100",
+        "name": "Loan shareholder VDB family"
+      },
+      {
+        "target_code": "174",
+        "code": "174200",
+        "name": "Loan PMV-z Win-Win LT"
+      },
+      {
+        "target_code": "176",
+        "code": "176100",
+        "name": "LT advances project Residentie Schelde"
+      },
+      {
+        "target_code": "176",
+        "code": "176200",
+        "name": "LT advances project School Lokeren"
+      },
+      {
+        "target_code": "201",
+        "code": "201000",
+        "name": "Arrangement fees bank loan KBC"
+      },
+      {
+        "target_code": "210",
+        "code": "210000",
+        "name": "Dev. costs prefab wall system"
+      },
+      {
+        "target_code": "212",
+        "code": "212000",
+        "name": "Goodwill takeover Dakwerken Pauwels"
+      },
+      {
+        "target_code": "222",
+        "code": "222000",
+        "name": "Land depot Industrieweg"
+      },
+      {
+        "target_code": "251",
+        "code": "251100",
+        "name": "Leasing excavator CAT 320"
+      },
+      {
+        "target_code": "251",
+        "code": "251200",
+        "name": "Leasing tower crane Liebherr"
+      },
+      {
+        "target_code": "252",
+        "code": "252100",
+        "name": "Leasing vans Ford Transit"
+      },
+      {
+        "target_code": "252",
+        "code": "252200",
+        "name": "Leasing site containers & office furn."
+      },
+      {
+        "target_code": "281",
+        "code": "281000",
+        "name": "LT receivable VDB Vastgoed NV"
+      },
+      {
+        "target_code": "282",
+        "code": "282000",
+        "name": "Shares THV Bouwteam Waasland"
+      },
+      {
+        "target_code": "285",
+        "code": "285000",
+        "name": "Rent deposits & guarantees LT"
+      },
+      {
+        "target_code": "290",
+        "code": "290000",
+        "name": "Customers retentions >1y"
+      },
+      {
+        "target_code": "310",
+        "code": "310000",
+        "name": "Stock consumables (fixings, sealants)"
+      },
+      {
+        "target_code": "370",
+        "code": "370100",
+        "name": "WIP cost site Residentie Schelde"
+      },
+      {
+        "target_code": "370",
+        "code": "370200",
+        "name": "WIP cost site School Lokeren"
+      },
+      {
+        "target_code": "371",
+        "code": "371000",
+        "name": "WIP margin taken on sites"
+      },
+      {
+        "target_code": "411",
+        "code": "411100",
+        "name": "VAT to recover 21%"
+      },
+      {
+        "target_code": "411",
+        "code": "411200",
+        "name": "VAT to recover 6% renovations"
+      },
+      {
+        "target_code": "416",
+        "code": "416000",
+        "name": "Misc. receivables (insurance claims)"
+      },
+      {
+        "target_code": "424",
+        "code": "424000",
+        "name": "Shareholder loan - current portion"
+      },
+      {
+        "target_code": "429",
+        "code": "429000",
+        "name": "Other LT debts due this year"
+      },
+      {
+        "target_code": "440",
+        "code": "440100",
+        "name": "Suppliers - Van Marcke & building mat."
+      },
+      {
+        "target_code": "440",
+        "code": "440200",
+        "name": "Suppliers - subcontractors"
+      },
+      {
+        "target_code": "456",
+        "code": "456000",
+        "name": "Accrued holiday pay staff"
+      },
+      {
+        "target_code": "480",
+        "code": "480000",
+        "name": "Bonds & coupons payable"
+      },
+      {
+        "target_code": "491",
+        "code": "491000",
+        "name": "Income to receive (invoices to send)"
+      },
+      {
+        "target_code": "520",
+        "code": "520000",
+        "name": "State bonds OLO"
+      },
+      {
+        "target_code": "539",
+        "code": "539000",
+        "name": "Write-down term deposits"
+      },
+      {
+        "target_code": "578",
+        "code": "578000",
+        "name": "Postage stamps"
+      },
+      {
+        "target_code": "609",
+        "code": "609000",
+        "name": "Stock movement materials"
+      },
+      {
+        "target_code": "617",
+        "code": "617100",
+        "name": "Interim workers Randstad"
+      },
+      {
+        "target_code": "617",
+        "code": "617200",
+        "name": "Hired staff via subcontr. (detached)"
+      },
+      {
+        "target_code": "640",
+        "code": "640100",
+        "name": "Road tax company vehicles"
+      },
+      {
+        "target_code": "640",
+        "code": "640200",
+        "name": "Property tax & municipal taxes"
+      },
+      {
+        "target_code": "650",
+        "code": "650100",
+        "name": "Interest KBC investment loan"
+      },
+      {
+        "target_code": "650",
+        "code": "650200",
+        "name": "Interest leasing contracts"
+      },
+      {
+        "target_code": "655",
+        "code": "655000",
+        "name": "FX loss (GBP/PLN payments)"
+      },
+      {
+        "target_code": "656",
+        "code": "656000",
+        "name": "Fin. provisions allocation"
+      },
+      {
+        "target_code": "659",
+        "code": "659000",
+        "name": "Capitalised interest restructuring (-)"
+      },
+      {
+        "target_code": "672",
+        "code": "672000",
+        "name": "Foreign tax Netherlands sites"
+      },
+      {
+        "target_code": "690",
+        "code": "690000",
+        "name": "Loss brought forward"
+      },
+      {
+        "target_code": "713",
+        "code": "713000",
+        "name": "Stock change finished goods"
+      },
+      {
+        "target_code": "715",
+        "code": "715000",
+        "name": "Stock change houses built for sale"
+      },
+      {
+        "target_code": "756",
+        "code": "756000",
+        "name": "Misc. financial income"
+      },
+      {
+        "target_code": "792",
+        "code": "792000",
+        "name": "Release from reserves"
+      }
+    ]
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "company_id": "train-c208",
+  "split": "train",
+  "industry": "software",
+  "language": "nl",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "120",
+    "121",
+    "178",
+    "204",
+    "210",
+    "220",
+    "221",
+    "251",
+    "309",
+    "329",
+    "349",
+    "359",
+    "370",
+    "407",
+    "409",
+    "411",
+    "412",
+    "416",
+    "419",
+    "459",
+    "492",
+    "499",
+    "531",
+    "601",
+    "602",
+    "632",
+    "635",
+    "637",
+    "650",
+    "652",
+    "656",
+    "657",
+    "664",
+    "670",
+    "673",
+    "689",
+    "690",
+    "713",
+    "717",
+    "761"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:25:07+00:00",
+  "usage": {
+    "input_tokens": 3246,
+    "output_tokens": 2068,
+    "cost_usd": 0.0628974,
+    "latency_ms": 25172.486332943663
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "120",
+        "code": "120100",
+        "name": "Herwaard. software IP (CodeNest)"
+      },
+      {
+        "target_code": "121",
+        "code": "121100",
+        "name": "Herwaard. kantoorgebouw Gent"
+      },
+      {
+        "target_code": "178",
+        "code": "178100",
+        "name": "Ontv. huurwaarborg onderverhuur 2e verd."
+      },
+      {
+        "target_code": "204",
+        "code": "204100",
+        "name": "Reorg.kosten 2024 (afbouw team Hasselt)"
+      },
+      {
+        "target_code": "210",
+        "code": "210100",
+        "name": "Ontwikkelingskost CodeNest v3"
+      },
+      {
+        "target_code": "210",
+        "code": "210200",
+        "name": "Ontwikkelingskost mobiele app Flowly"
+      },
+      {
+        "target_code": "220",
+        "code": "220100",
+        "name": "Grond Kortrijksesteenweg Gent"
+      },
+      {
+        "target_code": "221",
+        "code": "221100",
+        "name": "Kantoor Gent - Kortrijksesteenweg"
+      },
+      {
+        "target_code": "221",
+        "code": "221200",
+        "name": "Kantoor Leuven - Vaartkom (verbouwing)"
+      },
+      {
+        "target_code": "251",
+        "code": "251100",
+        "name": "Leasing serverrack & netwerk (BNP Lease)"
+      },
+      {
+        "target_code": "309",
+        "code": "309100",
+        "name": "WV voorraad hardware-onderdelen"
+      },
+      {
+        "target_code": "329",
+        "code": "329100",
+        "name": "WV onderhanden projecten (WIP)"
+      },
+      {
+        "target_code": "349",
+        "code": "349100",
+        "name": "WV doorverkoop licenties/hardware"
+      },
+      {
+        "target_code": "359",
+        "code": "359100",
+        "name": "WV vastgoed te koop (oud kantoor Aalst)"
+      },
+      {
+        "target_code": "370",
+        "code": "370100",
+        "name": "Lopende fixed-price projecten - kostprijs"
+      },
+      {
+        "target_code": "407",
+        "code": "407100",
+        "name": "Dubieuze klanten"
+      },
+      {
+        "target_code": "409",
+        "code": "409100",
+        "name": "WV dubieuze klanten"
+      },
+      {
+        "target_code": "411",
+        "code": "411100",
+        "name": "Te recup. btw aankopen 21%"
+      },
+      {
+        "target_code": "411",
+        "code": "411200",
+        "name": "Te recup. btw intracom. (verlegd)"
+      },
+      {
+        "target_code": "412",
+        "code": "412100",
+        "name": "Terug te vorderen VenB (voorafbet.)"
+      },
+      {
+        "target_code": "416",
+        "code": "416100",
+        "name": "Div. vord. - voorschotten personeel"
+      },
+      {
+        "target_code": "416",
+        "code": "416200",
+        "name": "Div. vord. - te ontv. VLAIO subsidie"
+      },
+      {
+        "target_code": "419",
+        "code": "419100",
+        "name": "WV diverse vorderingen"
+      },
+      {
+        "target_code": "459",
+        "code": "459100",
+        "name": "Te betalen groepsverz./maaltijdcheques"
+      },
+      {
+        "target_code": "492",
+        "code": "492100",
+        "name": "Toe te rek. kosten - nog te ontv. facturen"
+      },
+      {
+        "target_code": "492",
+        "code": "492200",
+        "name": "Toe te rek. kosten - AWS/Azure maand"
+      },
+      {
+        "target_code": "499",
+        "code": "499000",
+        "name": "Wachtrekening bank (onbekend)"
+      },
+      {
+        "target_code": "499",
+        "code": "499900",
+        "name": "Tussenrek. Stripe-uitbetalingen"
+      },
+      {
+        "target_code": "531",
+        "code": "531100",
+        "name": "Termijnrek. KBC 6 maanden"
+      },
+      {
+        "target_code": "531",
+        "code": "531200",
+        "name": "Termijnrek. Belfius 12 maanden"
+      },
+      {
+        "target_code": "601",
+        "code": "601100",
+        "name": "Aankoop kleine IT-onderdelen & kabels"
+      },
+      {
+        "target_code": "602",
+        "code": "602100",
+        "name": "Freelance developers (onderaanneming)"
+      },
+      {
+        "target_code": "602",
+        "code": "602200",
+        "name": "Hosting & cloud doorgerekend aan klant"
+      },
+      {
+        "target_code": "632",
+        "code": "632100",
+        "name": "WV op lopende projecten"
+      },
+      {
+        "target_code": "635",
+        "code": "635100",
+        "name": "Voorz. pensioen (IPT zaakvoerders)"
+      },
+      {
+        "target_code": "637",
+        "code": "637100",
+        "name": "Voorz. milieu - afvoer oude hardware"
+      },
+      {
+        "target_code": "650",
+        "code": "650100",
+        "name": "Interesten investeringskrediet KBC"
+      },
+      {
+        "target_code": "650",
+        "code": "650200",
+        "name": "Interesten leasing BNP Lease"
+      },
+      {
+        "target_code": "652",
+        "code": "652100",
+        "name": "Minwaarde verkoop beleggingen"
+      },
+      {
+        "target_code": "656",
+        "code": "656100",
+        "name": "Voorz. financiële risico's"
+      },
+      {
+        "target_code": "657",
+        "code": "657100",
+        "name": "Bankkosten & Stripe/Mollie fees"
+      },
+      {
+        "target_code": "664",
+        "code": "664100",
+        "name": "Uitzonderl. bedrijfskosten (eenmalig)"
+      },
+      {
+        "target_code": "670",
+        "code": "670100",
+        "name": "VenB boekjaar - voorafbetalingen"
+      },
+      {
+        "target_code": "670",
+        "code": "670200",
+        "name": "VenB boekjaar - geraamd saldo"
+      },
+      {
+        "target_code": "673",
+        "code": "673100",
+        "name": "Buitenl. bronheffing vorige jaren (NL)"
+      },
+      {
+        "target_code": "689",
+        "code": "689100",
+        "name": "Overb. naar belastingvrije reserve (innovatieaftrek)"
+      },
+      {
+        "target_code": "690",
+        "code": "690100",
+        "name": "Overgedragen verlies vorig boekjaar"
+      },
+      {
+        "target_code": "713",
+        "code": "713100",
+        "name": "Voorraadwijz. hardware-kits gereed"
+      },
+      {
+        "target_code": "717",
+        "code": "717100",
+        "name": "Wijziging onderhanden projecten"
+      },
+      {
+        "target_code": "761",
+        "code": "761100",
+        "name": "Terugname WV deelneming CodeNest NL BV"
+      }
+    ]
+  }
+}

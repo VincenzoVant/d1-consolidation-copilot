@@ -1,0 +1,315 @@
+{
+  "company_id": "train-c219",
+  "split": "train",
+  "industry": "services",
+  "language": "fr",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "120",
+    "122",
+    "132",
+    "175",
+    "204",
+    "290",
+    "310",
+    "330",
+    "400",
+    "411",
+    "416",
+    "423",
+    "426",
+    "428",
+    "429",
+    "431",
+    "441",
+    "454",
+    "456",
+    "490",
+    "491",
+    "493",
+    "550",
+    "570",
+    "578",
+    "602",
+    "603",
+    "605",
+    "630",
+    "641",
+    "659",
+    "663",
+    "664",
+    "680",
+    "690",
+    "712",
+    "752",
+    "761",
+    "764",
+    "789"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:25:49+00:00",
+  "usage": {
+    "input_tokens": 3048,
+    "output_tokens": 1800,
+    "cost_usd": 0.0559534,
+    "latency_ms": 16459.072625031695
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "120",
+        "code": "120100",
+        "name": "PV réévaluation logiciels & licences"
+      },
+      {
+        "target_code": "122",
+        "code": "122100",
+        "name": "PV réévaluation particip. filiale Consult SRL"
+      },
+      {
+        "target_code": "132",
+        "code": "132000",
+        "name": "Réserve immunisée PV étalées"
+      },
+      {
+        "target_code": "175",
+        "code": "175000",
+        "name": "Fournisseurs LT - plan d'apurement"
+      },
+      {
+        "target_code": "204",
+        "code": "204000",
+        "name": "Frais réorganisation 2025 activés"
+      },
+      {
+        "target_code": "290",
+        "code": "290000",
+        "name": "Clients LT - échéancier > 12 mois"
+      },
+      {
+        "target_code": "310",
+        "code": "310000",
+        "name": "Stock fournitures bureau & consommables"
+      },
+      {
+        "target_code": "330",
+        "code": "330000",
+        "name": "Stock kits formation finis"
+      },
+      {
+        "target_code": "400",
+        "code": "400000",
+        "name": "Clients Belgique"
+      },
+      {
+        "target_code": "400",
+        "code": "400100",
+        "name": "Clients UE intracom"
+      },
+      {
+        "target_code": "411",
+        "code": "411021",
+        "name": "TVA déductible 21%"
+      },
+      {
+        "target_code": "411",
+        "code": "411006",
+        "name": "TVA déductible 6%"
+      },
+      {
+        "target_code": "416",
+        "code": "416000",
+        "name": "Débiteurs divers"
+      },
+      {
+        "target_code": "416",
+        "code": "416200",
+        "name": "Avances personnel à récupérer"
+      },
+      {
+        "target_code": "423",
+        "code": "423000",
+        "name": "Prêt KBC invest. - part CT"
+      },
+      {
+        "target_code": "426",
+        "code": "426000",
+        "name": "Acomptes clients projets - part CT"
+      },
+      {
+        "target_code": "428",
+        "code": "428000",
+        "name": "Garanties locatives reçues - part CT"
+      },
+      {
+        "target_code": "429",
+        "code": "429000",
+        "name": "Autres dettes LT échéant dans l'année"
+      },
+      {
+        "target_code": "431",
+        "code": "431000",
+        "name": "Straight loan Belfius"
+      },
+      {
+        "target_code": "441",
+        "code": "441000",
+        "name": "Traites fournisseurs à payer"
+      },
+      {
+        "target_code": "454",
+        "code": "454000",
+        "name": "ONSS cotisations trimestrielles"
+      },
+      {
+        "target_code": "456",
+        "code": "456000",
+        "name": "Prov. pécule vacances employés"
+      },
+      {
+        "target_code": "456",
+        "code": "456100",
+        "name": "Prov. double pécule vacances"
+      },
+      {
+        "target_code": "490",
+        "code": "490000",
+        "name": "Charges payées d'avance - assurances"
+      },
+      {
+        "target_code": "490",
+        "code": "490100",
+        "name": "Abonnements SaaS payés d'avance"
+      },
+      {
+        "target_code": "491",
+        "code": "491000",
+        "name": "Facturation à établir"
+      },
+      {
+        "target_code": "493",
+        "code": "493000",
+        "name": "Contrats maintenance facturés d'avance"
+      },
+      {
+        "target_code": "550",
+        "code": "550100",
+        "name": "KBC compte courant BE12"
+      },
+      {
+        "target_code": "550",
+        "code": "550200",
+        "name": "Belfius compte pro BE68"
+      },
+      {
+        "target_code": "570",
+        "code": "570100",
+        "name": "Caisse bureau Gand"
+      },
+      {
+        "target_code": "570",
+        "code": "570200",
+        "name": "Caisse bureau Bruxelles"
+      },
+      {
+        "target_code": "578",
+        "code": "578000",
+        "name": "Timbres poste & bpost"
+      },
+      {
+        "target_code": "602",
+        "code": "602100",
+        "name": "Honoraires consultants freelance"
+      },
+      {
+        "target_code": "602",
+        "code": "602200",
+        "name": "Études & traductions externes"
+      },
+      {
+        "target_code": "603",
+        "code": "603100",
+        "name": "Sous-traitance dév. IT"
+      },
+      {
+        "target_code": "603",
+        "code": "603200",
+        "name": "Sous-traitance projet Lean Antwerpen"
+      },
+      {
+        "target_code": "605",
+        "code": "605000",
+        "name": "Achat immeuble destiné revente"
+      },
+      {
+        "target_code": "630",
+        "code": "630200",
+        "name": "Amort. matériel informatique"
+      },
+      {
+        "target_code": "630",
+        "code": "630300",
+        "name": "Amort. véhicules de société"
+      },
+      {
+        "target_code": "641",
+        "code": "641000",
+        "name": "MV cession matériel courant"
+      },
+      {
+        "target_code": "659",
+        "code": "659000",
+        "name": "Intérêts activés frais restructuration (-)"
+      },
+      {
+        "target_code": "663",
+        "code": "663000",
+        "name": "MV except. cession immobilisations"
+      },
+      {
+        "target_code": "664",
+        "code": "664000",
+        "name": "Charges exceptionnelles diverses"
+      },
+      {
+        "target_code": "680",
+        "code": "680000",
+        "name": "Dotation impôts différés"
+      },
+      {
+        "target_code": "690",
+        "code": "690000",
+        "name": "Perte reportée N-1"
+      },
+      {
+        "target_code": "712",
+        "code": "712000",
+        "name": "Variation en-cours projets clients"
+      },
+      {
+        "target_code": "752",
+        "code": "752000",
+        "name": "PV cession actifs circulants"
+      },
+      {
+        "target_code": "761",
+        "code": "761000",
+        "name": "Reprise RDV participations"
+      },
+      {
+        "target_code": "764",
+        "code": "764000",
+        "name": "Produits exceptionnels divers"
+      },
+      {
+        "target_code": "789",
+        "code": "789000",
+        "name": "Reprise réserve immunisée"
+      }
+    ]
+  }
+}

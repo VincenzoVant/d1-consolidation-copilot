@@ -1,0 +1,315 @@
+{
+  "company_id": "train-c211",
+  "split": "train",
+  "industry": "services",
+  "language": "mixed",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "122",
+    "161",
+    "173",
+    "179",
+    "212",
+    "222",
+    "284",
+    "288",
+    "291",
+    "300",
+    "349",
+    "401",
+    "411",
+    "418",
+    "426",
+    "430",
+    "433",
+    "441",
+    "444",
+    "456",
+    "480",
+    "489",
+    "492",
+    "493",
+    "531",
+    "532",
+    "623",
+    "630",
+    "640",
+    "650",
+    "656",
+    "661",
+    "670",
+    "689",
+    "690",
+    "708",
+    "750",
+    "755",
+    "761",
+    "789"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:25:14+00:00",
+  "usage": {
+    "input_tokens": 3685,
+    "output_tokens": 3117,
+    "cost_usd": 0.0873894,
+    "latency_ms": 26976.48554109037
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "122",
+        "code": "122000",
+        "name": "Herwaarderingsmeerwaarde deelneming NovaLink"
+      },
+      {
+        "target_code": "161",
+        "code": "161000",
+        "name": "Prov. fiscale - contrôle TVA 2024"
+      },
+      {
+        "target_code": "173",
+        "code": "173100",
+        "name": "Investeringskrediet KBC kantoor Elsene"
+      },
+      {
+        "target_code": "173",
+        "code": "173200",
+        "name": "Emprunt BNP Fortis - rénovation bureaux"
+      },
+      {
+        "target_code": "179",
+        "code": "179000",
+        "name": "Achtergestelde lening zaakvoerder"
+      },
+      {
+        "target_code": "212",
+        "code": "212000",
+        "name": "Goodwill overname klantenportefeuille Datapoint"
+      },
+      {
+        "target_code": "222",
+        "code": "222000",
+        "name": "Terrain bâti - Rue du Trône 45"
+      },
+      {
+        "target_code": "284",
+        "code": "284000",
+        "name": "Coöp. aandelen & participations diverses"
+      },
+      {
+        "target_code": "288",
+        "code": "288100",
+        "name": "Huurwaarborg kantoor Louizalaan"
+      },
+      {
+        "target_code": "288",
+        "code": "288200",
+        "name": "Garantie locative parking Flagey"
+      },
+      {
+        "target_code": "291",
+        "code": "291000",
+        "name": "LT loan to subsidiary NovaLink"
+      },
+      {
+        "target_code": "300",
+        "code": "300000",
+        "name": "Stock IT hardware for client projects"
+      },
+      {
+        "target_code": "349",
+        "code": "349000",
+        "name": "WV voorraad handelsgoederen (-)"
+      },
+      {
+        "target_code": "401",
+        "code": "401000",
+        "name": "Effets à recevoir clients"
+      },
+      {
+        "target_code": "411",
+        "code": "411021",
+        "name": "Aftrekbare btw 21%"
+      },
+      {
+        "target_code": "411",
+        "code": "411006",
+        "name": "TVA déductible 6%"
+      },
+      {
+        "target_code": "418",
+        "code": "418000",
+        "name": "Waarborgen betaald - energieleverancier"
+      },
+      {
+        "target_code": "426",
+        "code": "426000",
+        "name": "Acomptes reçus projets LT - part < 1 an"
+      },
+      {
+        "target_code": "430",
+        "code": "430000",
+        "name": "Straight loan ING"
+      },
+      {
+        "target_code": "430",
+        "code": "430100",
+        "name": "Vaste voorschot Belfius 3m"
+      },
+      {
+        "target_code": "433",
+        "code": "433000",
+        "name": "Overdraft KBC Business"
+      },
+      {
+        "target_code": "433",
+        "code": "433100",
+        "name": "Ligne de crédit Belfius c/c"
+      },
+      {
+        "target_code": "441",
+        "code": "441000",
+        "name": "Wissels te betalen"
+      },
+      {
+        "target_code": "444",
+        "code": "444000",
+        "name": "Factures à recevoir - fournisseurs"
+      },
+      {
+        "target_code": "444",
+        "code": "444100",
+        "name": "Invoices to receive - freelancers"
+      },
+      {
+        "target_code": "456",
+        "code": "456000",
+        "name": "Provisie vakantiegeld bedienden"
+      },
+      {
+        "target_code": "480",
+        "code": "480000",
+        "name": "Coupons échus à payer"
+      },
+      {
+        "target_code": "489",
+        "code": "489000",
+        "name": "Diverse schulden - Amex corporate card"
+      },
+      {
+        "target_code": "492",
+        "code": "492000",
+        "name": "Accrued costs - utilities"
+      },
+      {
+        "target_code": "492",
+        "code": "492100",
+        "name": "Toe te rekenen interesten"
+      },
+      {
+        "target_code": "493",
+        "code": "493000",
+        "name": "Produits à reporter - contrats maintenance"
+      },
+      {
+        "target_code": "493",
+        "code": "493100",
+        "name": "Deferred revenue - SaaS subscriptions"
+      },
+      {
+        "target_code": "531",
+        "code": "531000",
+        "name": "Termijndeposito 6m KBC"
+      },
+      {
+        "target_code": "532",
+        "code": "532000",
+        "name": "Dépôt à terme 1 mois BNP"
+      },
+      {
+        "target_code": "623",
+        "code": "623000",
+        "name": "Maaltijdcheques Pluxee"
+      },
+      {
+        "target_code": "623",
+        "code": "623100",
+        "name": "Team building & formations"
+      },
+      {
+        "target_code": "630",
+        "code": "630000",
+        "name": "Afschrijvingen MVA & IVA"
+      },
+      {
+        "target_code": "640",
+        "code": "640000",
+        "name": "Onroerende voorheffing Troonstraat"
+      },
+      {
+        "target_code": "650",
+        "code": "650000",
+        "name": "Interest charges bank loans"
+      },
+      {
+        "target_code": "656",
+        "code": "656000",
+        "name": "Prov. financières - risque garantie"
+      },
+      {
+        "target_code": "661",
+        "code": "661000",
+        "name": "Waardevermindering participatie NovaLink"
+      },
+      {
+        "target_code": "670",
+        "code": "670000",
+        "name": "Vennootschapsbelasting - voorafbetalingen"
+      },
+      {
+        "target_code": "670",
+        "code": "670100",
+        "name": "ISOC - régularisation exercice"
+      },
+      {
+        "target_code": "689",
+        "code": "689000",
+        "name": "Dotation réserves immunisées"
+      },
+      {
+        "target_code": "690",
+        "code": "690000",
+        "name": "Overgedragen verlies vorig boekjaar"
+      },
+      {
+        "target_code": "708",
+        "code": "708000",
+        "name": "Remises accordées clients"
+      },
+      {
+        "target_code": "750",
+        "code": "750000",
+        "name": "Dividends received participations"
+      },
+      {
+        "target_code": "755",
+        "code": "755000",
+        "name": "Koersverschillen USD/GBP"
+      },
+      {
+        "target_code": "761",
+        "code": "761000",
+        "name": "Reprise RDV participations"
+      },
+      {
+        "target_code": "789",
+        "code": "789000",
+        "name": "Onttrekking belastingvrije reserves"
+      }
+    ]
+  }
+}

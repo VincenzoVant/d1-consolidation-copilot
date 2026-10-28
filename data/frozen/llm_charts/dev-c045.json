@@ -1,0 +1,315 @@
+{
+  "company_id": "dev-c045",
+  "split": "dev",
+  "industry": "construction",
+  "language": "nl",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "121",
+    "124",
+    "132",
+    "162",
+    "170",
+    "204",
+    "210",
+    "211",
+    "251",
+    "281",
+    "329",
+    "339",
+    "350",
+    "360",
+    "379",
+    "401",
+    "409",
+    "414",
+    "421",
+    "422",
+    "425",
+    "431",
+    "432",
+    "444",
+    "453",
+    "488",
+    "532",
+    "609",
+    "617",
+    "618",
+    "621",
+    "634",
+    "637",
+    "662",
+    "669",
+    "712",
+    "751",
+    "762",
+    "780",
+    "792"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:27:57+00:00",
+  "usage": {
+    "input_tokens": 3554,
+    "output_tokens": 1863,
+    "cost_usd": 0.0612614,
+    "latency_ms": 18192.142584128305
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "121",
+        "code": "121000",
+        "name": "Herwaard. meerwaarde loods Zele"
+      },
+      {
+        "target_code": "124",
+        "code": "124000",
+        "name": "Terugname WV beleggingen"
+      },
+      {
+        "target_code": "132",
+        "code": "132000",
+        "name": "Vrijgestelde reserve investeringsreserve"
+      },
+      {
+        "target_code": "162",
+        "code": "162100",
+        "name": "Voorz. groot onderhoud kranen"
+      },
+      {
+        "target_code": "162",
+        "code": "162200",
+        "name": "Voorz. herstelling dak magazijn"
+      },
+      {
+        "target_code": "170",
+        "code": "170000",
+        "name": "Achtergestelde lening zaakvoerder"
+      },
+      {
+        "target_code": "204",
+        "code": "204000",
+        "name": "Herstructurering afd. renovatie"
+      },
+      {
+        "target_code": "210",
+        "code": "210000",
+        "name": "O&O prefab wandelementen"
+      },
+      {
+        "target_code": "211",
+        "code": "211000",
+        "name": "Software licenties calculatieprogramma"
+      },
+      {
+        "target_code": "251",
+        "code": "251100",
+        "name": "Leasing graafmachine CAT 308"
+      },
+      {
+        "target_code": "251",
+        "code": "251200",
+        "name": "Leasing torenkraan Liebherr"
+      },
+      {
+        "target_code": "281",
+        "code": "281000",
+        "name": "Vordering VDB Vastgoed BV"
+      },
+      {
+        "target_code": "329",
+        "code": "329000",
+        "name": "WV halffabricaten werkplaats"
+      },
+      {
+        "target_code": "339",
+        "code": "339000",
+        "name": "WV prefab elementen stock"
+      },
+      {
+        "target_code": "350",
+        "code": "350000",
+        "name": "Projectgrond verkaveling Lokeren"
+      },
+      {
+        "target_code": "360",
+        "code": "360000",
+        "name": "Voorschotten leveranciers materialen"
+      },
+      {
+        "target_code": "379",
+        "code": "379000",
+        "name": "WV lopende werven"
+      },
+      {
+        "target_code": "401",
+        "code": "401100",
+        "name": "Te innen wissels klanten"
+      },
+      {
+        "target_code": "401",
+        "code": "401200",
+        "name": "Wissels in omloop KBC"
+      },
+      {
+        "target_code": "409",
+        "code": "409000",
+        "name": "WV dubieuze klanten"
+      },
+      {
+        "target_code": "414",
+        "code": "414000",
+        "name": "Te ontv. opbrengsten / nog te factureren"
+      },
+      {
+        "target_code": "421",
+        "code": "421000",
+        "name": "Obligatielening KV deel <1j"
+      },
+      {
+        "target_code": "422",
+        "code": "422000",
+        "name": "Leasing machines KV deel <1j"
+      },
+      {
+        "target_code": "425",
+        "code": "425000",
+        "name": "Leverancierskrediet KV deel <1j"
+      },
+      {
+        "target_code": "431",
+        "code": "431000",
+        "name": "Straight loan Belfius"
+      },
+      {
+        "target_code": "432",
+        "code": "432000",
+        "name": "Acceptkrediet BNP Fortis"
+      },
+      {
+        "target_code": "444",
+        "code": "444100",
+        "name": "Nog te ontv. fact. onderaannemers"
+      },
+      {
+        "target_code": "444",
+        "code": "444200",
+        "name": "Nog te ontv. fact. materialen"
+      },
+      {
+        "target_code": "453",
+        "code": "453100",
+        "name": "BV arbeiders"
+      },
+      {
+        "target_code": "453",
+        "code": "453200",
+        "name": "BV bedienden"
+      },
+      {
+        "target_code": "488",
+        "code": "488100",
+        "name": "Ontv. waarborg huurder appartement"
+      },
+      {
+        "target_code": "488",
+        "code": "488200",
+        "name": "Ontv. borg verhuur stellingen"
+      },
+      {
+        "target_code": "532",
+        "code": "532100",
+        "name": "Termijnrek. KBC 1 maand"
+      },
+      {
+        "target_code": "532",
+        "code": "532200",
+        "name": "Kasbon Belfius kort"
+      },
+      {
+        "target_code": "609",
+        "code": "609000",
+        "name": "Voorraadwijziging bouwmaterialen"
+      },
+      {
+        "target_code": "617",
+        "code": "617100",
+        "name": "Interim arbeiders werf"
+      },
+      {
+        "target_code": "617",
+        "code": "617200",
+        "name": "Uitzendkrachten bureel"
+      },
+      {
+        "target_code": "618",
+        "code": "618000",
+        "name": "Bezoldiging zaakvoerder"
+      },
+      {
+        "target_code": "621",
+        "code": "621100",
+        "name": "RSZ werkgever arbeiders"
+      },
+      {
+        "target_code": "621",
+        "code": "621200",
+        "name": "RSZ werkgever bedienden"
+      },
+      {
+        "target_code": "634",
+        "code": "634000",
+        "name": "WV op klanten"
+      },
+      {
+        "target_code": "637",
+        "code": "637000",
+        "name": "Voorz. bodemsanering terrein"
+      },
+      {
+        "target_code": "662",
+        "code": "662000",
+        "name": "Voorz. geschil werf Gent"
+      },
+      {
+        "target_code": "669",
+        "code": "669000",
+        "name": "Geactiveerde herstructureringskost"
+      },
+      {
+        "target_code": "712",
+        "code": "712100",
+        "name": "Voorraadwijz. werken in uitvoering"
+      },
+      {
+        "target_code": "712",
+        "code": "712200",
+        "name": "Voorraadwijz. halffabricaten"
+      },
+      {
+        "target_code": "751",
+        "code": "751000",
+        "name": "Interesten termijnrekeningen"
+      },
+      {
+        "target_code": "762",
+        "code": "762000",
+        "name": "Terugname voorz. geschillen"
+      },
+      {
+        "target_code": "780",
+        "code": "780000",
+        "name": "Onttr. uitgestelde belastingen"
+      },
+      {
+        "target_code": "792",
+        "code": "792000",
+        "name": "Onttrekking reserves"
+      }
+    ]
+  }
+}

@@ -1,0 +1,320 @@
+{
+  "company_id": "train-c206",
+  "split": "train",
+  "industry": "retail",
+  "language": "fr",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "124",
+    "161",
+    "164",
+    "168",
+    "173",
+    "179",
+    "201",
+    "202",
+    "222",
+    "252",
+    "280",
+    "290",
+    "319",
+    "329",
+    "339",
+    "369",
+    "401",
+    "411",
+    "414",
+    "422",
+    "426",
+    "431",
+    "432",
+    "444",
+    "492",
+    "493",
+    "529",
+    "539",
+    "602",
+    "603",
+    "604",
+    "618",
+    "623",
+    "632",
+    "640",
+    "649",
+    "657",
+    "662",
+    "715",
+    "764"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:24:45+00:00",
+  "usage": {
+    "input_tokens": 3217,
+    "output_tokens": 1841,
+    "cost_usd": 0.0581254,
+    "latency_ms": 17581.952250096947
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "124",
+        "code": "124000",
+        "name": "Reprise RV placements tréso"
+      },
+      {
+        "target_code": "161",
+        "code": "161000",
+        "name": "Prov. redressement fiscal ISOC"
+      },
+      {
+        "target_code": "164",
+        "code": "164100",
+        "name": "Prov. litige bail magasin Namur"
+      },
+      {
+        "target_code": "164",
+        "code": "164200",
+        "name": "Prov. garanties SAV clients"
+      },
+      {
+        "target_code": "168",
+        "code": "168000",
+        "name": "Impôts différés s/ plus-values"
+      },
+      {
+        "target_code": "173",
+        "code": "173010",
+        "name": "Emprunt BNP Fortis - rénovation shop Gand"
+      },
+      {
+        "target_code": "173",
+        "code": "173020",
+        "name": "Crédit invest. Belfius LT"
+      },
+      {
+        "target_code": "179",
+        "code": "179000",
+        "name": "Prêt gérant LT (compte courant bloqué)"
+      },
+      {
+        "target_code": "201",
+        "code": "201000",
+        "name": "Frais dossier emprunt Belfius"
+      },
+      {
+        "target_code": "202",
+        "code": "202000",
+        "name": "Frais constitution notaire"
+      },
+      {
+        "target_code": "222",
+        "code": "222000",
+        "name": "Terrain entrepôt Wavre"
+      },
+      {
+        "target_code": "252",
+        "code": "252100",
+        "name": "Leasing camionnette livraison"
+      },
+      {
+        "target_code": "252",
+        "code": "252200",
+        "name": "Leasing mobilier showroom"
+      },
+      {
+        "target_code": "280",
+        "code": "280000",
+        "name": "Particip. Retail Logistics SRL"
+      },
+      {
+        "target_code": "290",
+        "code": "290000",
+        "name": "Clients - plan paiement > 1 an"
+      },
+      {
+        "target_code": "319",
+        "code": "319000",
+        "name": "RV stock emballages & sacs"
+      },
+      {
+        "target_code": "329",
+        "code": "329000",
+        "name": "RV en-cours atelier retouches"
+      },
+      {
+        "target_code": "339",
+        "code": "339000",
+        "name": "RV produits finis (lots déclassés)"
+      },
+      {
+        "target_code": "369",
+        "code": "369000",
+        "name": "RV acomptes fournisseurs stock"
+      },
+      {
+        "target_code": "401",
+        "code": "401000",
+        "name": "Effets à recevoir clients B2B"
+      },
+      {
+        "target_code": "411",
+        "code": "411021",
+        "name": "TVA déductible 21%"
+      },
+      {
+        "target_code": "411",
+        "code": "411006",
+        "name": "TVA déductible 6%"
+      },
+      {
+        "target_code": "414",
+        "code": "414100",
+        "name": "Ristournes fournisseurs à recevoir"
+      },
+      {
+        "target_code": "414",
+        "code": "414200",
+        "name": "Intérêts à recevoir"
+      },
+      {
+        "target_code": "422",
+        "code": "422000",
+        "name": "Leasing camionnette - part CT"
+      },
+      {
+        "target_code": "426",
+        "code": "426000",
+        "name": "Acomptes clients cdes spéciales - CT"
+      },
+      {
+        "target_code": "431",
+        "code": "431000",
+        "name": "Straight loan ING"
+      },
+      {
+        "target_code": "432",
+        "code": "432000",
+        "name": "Crédit acceptation KBC import"
+      },
+      {
+        "target_code": "444",
+        "code": "444100",
+        "name": "FAR marchandises"
+      },
+      {
+        "target_code": "444",
+        "code": "444200",
+        "name": "FAR énergie & frais généraux"
+      },
+      {
+        "target_code": "492",
+        "code": "492100",
+        "name": "Charges à imputer - loyers"
+      },
+      {
+        "target_code": "492",
+        "code": "492200",
+        "name": "Intérêts courus non échus"
+      },
+      {
+        "target_code": "493",
+        "code": "493000",
+        "name": "Bons cadeaux à reporter"
+      },
+      {
+        "target_code": "529",
+        "code": "529000",
+        "name": "RV obligations en portefeuille"
+      },
+      {
+        "target_code": "539",
+        "code": "539000",
+        "name": "RV dépôts à terme"
+      },
+      {
+        "target_code": "602",
+        "code": "602100",
+        "name": "Achats services - étalagiste"
+      },
+      {
+        "target_code": "602",
+        "code": "602200",
+        "name": "Achats travaux - aménagement vitrines"
+      },
+      {
+        "target_code": "603",
+        "code": "603000",
+        "name": "Sous-traitance retouches & montage"
+      },
+      {
+        "target_code": "604",
+        "code": "604021",
+        "name": "Achats marchandises 21%"
+      },
+      {
+        "target_code": "604",
+        "code": "604006",
+        "name": "Achats marchandises 6%"
+      },
+      {
+        "target_code": "618",
+        "code": "618000",
+        "name": "Rémun. gérant (mandat)"
+      },
+      {
+        "target_code": "623",
+        "code": "623100",
+        "name": "Chèques-repas personnel"
+      },
+      {
+        "target_code": "623",
+        "code": "623200",
+        "name": "Vêtements de travail & formation"
+      },
+      {
+        "target_code": "632",
+        "code": "632000",
+        "name": "RV commandes en cours"
+      },
+      {
+        "target_code": "640",
+        "code": "640100",
+        "name": "Précompte immobilier magasins"
+      },
+      {
+        "target_code": "640",
+        "code": "640200",
+        "name": "Taxe enseigne & taxes communales"
+      },
+      {
+        "target_code": "649",
+        "code": "649000",
+        "name": "Frais restructuration activés (-)"
+      },
+      {
+        "target_code": "657",
+        "code": "657000",
+        "name": "Frais bancaires & terminaux Bancontact"
+      },
+      {
+        "target_code": "662",
+        "code": "662000",
+        "name": "Dotation prov. fermeture magasin"
+      },
+      {
+        "target_code": "715",
+        "code": "715000",
+        "name": "Var. stock immeubles destinés à la vente"
+      },
+      {
+        "target_code": "764",
+        "code": "764000",
+        "name": "Produits except. - indemnité assurance"
+      }
+    ]
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "company_id": "test-c014",
+  "split": "test",
+  "industry": "retail",
+  "language": "fr",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "122",
+    "176",
+    "285",
+    "288",
+    "339",
+    "350",
+    "360",
+    "418",
+    "420",
+    "421",
+    "430",
+    "493",
+    "618",
+    "631",
+    "636",
+    "652",
+    "661",
+    "752",
+    "755",
+    "756"
+  ],
+  "n_accounts": 25,
+  "created_at": "2026-10-28T20:21:41+00:00",
+  "usage": {
+    "input_tokens": 2486,
+    "output_tokens": 921,
+    "cost_usd": 0.0338774,
+    "latency_ms": 11440.45408302918
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "122",
+        "code": "122000",
+        "name": "Plus-val. réév. particip. Immo Retail SA"
+      },
+      {
+        "target_code": "176",
+        "code": "176000",
+        "name": "Acomptes reçus cdes clients pro LT"
+      },
+      {
+        "target_code": "285",
+        "code": "285000",
+        "name": "Prêt LT gérant - créance"
+      },
+      {
+        "target_code": "285",
+        "code": "285100",
+        "name": "Créance LT ancien franchisé Namur"
+      },
+      {
+        "target_code": "288",
+        "code": "288000",
+        "name": "Garantie locative magasin Gand"
+      },
+      {
+        "target_code": "288",
+        "code": "288100",
+        "name": "Garantie locative magasin Liège"
+      },
+      {
+        "target_code": "339",
+        "code": "339000",
+        "name": "RDV stock articles fins de série"
+      },
+      {
+        "target_code": "350",
+        "code": "350000",
+        "name": "Entrepôt Wavre destiné à la vente"
+      },
+      {
+        "target_code": "360",
+        "code": "360000",
+        "name": "Acomptes fournisseurs collection hiver"
+      },
+      {
+        "target_code": "360",
+        "code": "360100",
+        "name": "Acomptes import Asie (marchandises)"
+      },
+      {
+        "target_code": "418",
+        "code": "418000",
+        "name": "Cautions versées Proximus/Engie"
+      },
+      {
+        "target_code": "420",
+        "code": "420000",
+        "name": "Prêt subord. actionnaire - part CT"
+      },
+      {
+        "target_code": "421",
+        "code": "421000",
+        "name": "Emprunt obligataire 2022 - échéance an"
+      },
+      {
+        "target_code": "430",
+        "code": "430000",
+        "name": "Straight loan BNP Fortis"
+      },
+      {
+        "target_code": "430",
+        "code": "430100",
+        "name": "Avance terme fixe KBC"
+      },
+      {
+        "target_code": "493",
+        "code": "493000",
+        "name": "Bons cadeaux & cartes fidélité à reporter"
+      },
+      {
+        "target_code": "618",
+        "code": "618000",
+        "name": "Rémunération gérant (mandat)"
+      },
+      {
+        "target_code": "618",
+        "code": "618100",
+        "name": "Assurance groupe gérant (EIP)"
+      },
+      {
+        "target_code": "631",
+        "code": "631000",
+        "name": "Dotation RDV stock invendus"
+      },
+      {
+        "target_code": "636",
+        "code": "636000",
+        "name": "Dot. prov. gros entretien magasins"
+      },
+      {
+        "target_code": "652",
+        "code": "652000",
+        "name": "Moins-value vente placements trésorerie"
+      },
+      {
+        "target_code": "661",
+        "code": "661000",
+        "name": "RDV participation Immo Retail SA"
+      },
+      {
+        "target_code": "752",
+        "code": "752000",
+        "name": "Plus-value vente placements trésorerie"
+      },
+      {
+        "target_code": "755",
+        "code": "755000",
+        "name": "Écarts de change USD fournisseurs"
+      },
+      {
+        "target_code": "756",
+        "code": "756000",
+        "name": "Produits fin. divers (escomptes, intérêts)"
+      }
+    ]
+  }
+}

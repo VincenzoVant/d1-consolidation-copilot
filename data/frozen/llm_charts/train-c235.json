@@ -1,0 +1,315 @@
+{
+  "company_id": "train-c235",
+  "split": "train",
+  "industry": "services",
+  "language": "fr",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "124",
+    "132",
+    "163",
+    "164",
+    "170",
+    "171",
+    "176",
+    "211",
+    "212",
+    "221",
+    "281",
+    "290",
+    "300",
+    "309",
+    "310",
+    "319",
+    "349",
+    "360",
+    "379",
+    "400",
+    "416",
+    "431",
+    "550",
+    "570",
+    "600",
+    "603",
+    "617",
+    "630",
+    "642",
+    "652",
+    "654",
+    "660",
+    "668",
+    "672",
+    "673",
+    "751",
+    "755",
+    "761",
+    "769",
+    "789"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:27:02+00:00",
+  "usage": {
+    "input_tokens": 3106,
+    "output_tokens": 1727,
+    "cost_usd": 0.054957400000000003,
+    "latency_ms": 15025.232332991436
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "124",
+        "code": "124000",
+        "name": "Reprise RDV placements trésorerie"
+      },
+      {
+        "target_code": "132",
+        "code": "132000",
+        "name": "Réserve immunisée plus-values"
+      },
+      {
+        "target_code": "163",
+        "code": "163000",
+        "name": "Prov. assainissement sol bureau Gand"
+      },
+      {
+        "target_code": "164",
+        "code": "164000",
+        "name": "Prov. litige client en cours"
+      },
+      {
+        "target_code": "164",
+        "code": "164100",
+        "name": "Prov. garantie prestations"
+      },
+      {
+        "target_code": "170",
+        "code": "170000",
+        "name": "Prêt subordonné actionnaire"
+      },
+      {
+        "target_code": "171",
+        "code": "171000",
+        "name": "Emprunt obligataire 2029"
+      },
+      {
+        "target_code": "176",
+        "code": "176000",
+        "name": "Acomptes reçus contrats pluriannuels"
+      },
+      {
+        "target_code": "211",
+        "code": "211000",
+        "name": "Licences logiciels ERP"
+      },
+      {
+        "target_code": "211",
+        "code": "211100",
+        "name": "Marque et nom de domaine"
+      },
+      {
+        "target_code": "212",
+        "code": "212000",
+        "name": "Goodwill reprise clientèle"
+      },
+      {
+        "target_code": "221",
+        "code": "221000",
+        "name": "Bâtiment siège Bruxelles"
+      },
+      {
+        "target_code": "221",
+        "code": "221100",
+        "name": "Aménagements bureau Gand"
+      },
+      {
+        "target_code": "281",
+        "code": "281000",
+        "name": "C/C société soeur Holding"
+      },
+      {
+        "target_code": "290",
+        "code": "290000",
+        "name": "Clients - étalement paiement > 1 an"
+      },
+      {
+        "target_code": "300",
+        "code": "300000",
+        "name": "Stock matériel de base"
+      },
+      {
+        "target_code": "309",
+        "code": "309000",
+        "name": "RDV stock matériel de base"
+      },
+      {
+        "target_code": "310",
+        "code": "310000",
+        "name": "Stock fournitures bureau"
+      },
+      {
+        "target_code": "319",
+        "code": "319000",
+        "name": "RDV stock fournitures"
+      },
+      {
+        "target_code": "349",
+        "code": "349000",
+        "name": "RDV marchandises revente"
+      },
+      {
+        "target_code": "360",
+        "code": "360000",
+        "name": "Acomptes versés fournisseurs stock"
+      },
+      {
+        "target_code": "379",
+        "code": "379000",
+        "name": "RDV travaux en cours projets"
+      },
+      {
+        "target_code": "400",
+        "code": "400000",
+        "name": "Clients Belgique"
+      },
+      {
+        "target_code": "400",
+        "code": "400100",
+        "name": "Clients UE"
+      },
+      {
+        "target_code": "416",
+        "code": "416000",
+        "name": "Créances diverses"
+      },
+      {
+        "target_code": "416",
+        "code": "416100",
+        "name": "Avances au personnel"
+      },
+      {
+        "target_code": "431",
+        "code": "431000",
+        "name": "Straight loan KBC"
+      },
+      {
+        "target_code": "550",
+        "code": "550000",
+        "name": "KBC compte courant"
+      },
+      {
+        "target_code": "550",
+        "code": "550100",
+        "name": "BNP Paribas Fortis c/c"
+      },
+      {
+        "target_code": "570",
+        "code": "570000",
+        "name": "Caisse siège"
+      },
+      {
+        "target_code": "570",
+        "code": "570100",
+        "name": "Petite caisse Gand"
+      },
+      {
+        "target_code": "600",
+        "code": "600000",
+        "name": "Achats matériel consommé projets"
+      },
+      {
+        "target_code": "603",
+        "code": "603000",
+        "name": "Sous-traitance freelances IT"
+      },
+      {
+        "target_code": "603",
+        "code": "603100",
+        "name": "Sous-traitance consultants externes"
+      },
+      {
+        "target_code": "617",
+        "code": "617000",
+        "name": "Intérimaires Randstad"
+      },
+      {
+        "target_code": "617",
+        "code": "617100",
+        "name": "Personnel mis à dispo. groupe"
+      },
+      {
+        "target_code": "630",
+        "code": "630000",
+        "name": "Dotation amort. immob. incorporelles"
+      },
+      {
+        "target_code": "630",
+        "code": "630200",
+        "name": "Dotation amort. immob. corporelles"
+      },
+      {
+        "target_code": "642",
+        "code": "642000",
+        "name": "Perte cession créances factoring"
+      },
+      {
+        "target_code": "652",
+        "code": "652000",
+        "name": "Moins-values réalisation placements"
+      },
+      {
+        "target_code": "654",
+        "code": "654000",
+        "name": "Différences de change négatives"
+      },
+      {
+        "target_code": "660",
+        "code": "660000",
+        "name": "Amort. exceptionnels immobilisations"
+      },
+      {
+        "target_code": "668",
+        "code": "668000",
+        "name": "Autres charges financières exceptionnelles"
+      },
+      {
+        "target_code": "672",
+        "code": "672000",
+        "name": "Impôts étrangers exercice en cours"
+      },
+      {
+        "target_code": "673",
+        "code": "673000",
+        "name": "Impôts étrangers exercices antérieurs"
+      },
+      {
+        "target_code": "751",
+        "code": "751000",
+        "name": "Intérêts comptes à terme"
+      },
+      {
+        "target_code": "755",
+        "code": "755000",
+        "name": "Écarts de conversion devises"
+      },
+      {
+        "target_code": "761",
+        "code": "761000",
+        "name": "Reprise RDV participations"
+      },
+      {
+        "target_code": "769",
+        "code": "769000",
+        "name": "Produits financiers exceptionnels"
+      },
+      {
+        "target_code": "789",
+        "code": "789000",
+        "name": "Prélèvement réserves immunisées"
+      }
+    ]
+  }
+}

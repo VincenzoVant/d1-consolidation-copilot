@@ -1,0 +1,315 @@
+{
+  "company_id": "dev-c053",
+  "split": "dev",
+  "industry": "construction",
+  "language": "en",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "120",
+    "124",
+    "178",
+    "200",
+    "201",
+    "212",
+    "222",
+    "280",
+    "281",
+    "339",
+    "340",
+    "350",
+    "371",
+    "379",
+    "400",
+    "401",
+    "407",
+    "411",
+    "423",
+    "450",
+    "451",
+    "456",
+    "520",
+    "529",
+    "530",
+    "570",
+    "622",
+    "637",
+    "652",
+    "655",
+    "656",
+    "659",
+    "668",
+    "673",
+    "708",
+    "750",
+    "751",
+    "763",
+    "764",
+    "789"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:28:31+00:00",
+  "usage": {
+    "input_tokens": 3076,
+    "output_tokens": 1873,
+    "cost_usd": 0.057637400000000005,
+    "latency_ms": 17380.917791975662
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "120",
+        "code": "1201000",
+        "name": "Reval. surplus - software & licences"
+      },
+      {
+        "target_code": "124",
+        "code": "1241000",
+        "name": "Reversal w/d on short-term investments"
+      },
+      {
+        "target_code": "178",
+        "code": "1781000",
+        "name": "Cash deposits recd - rental scaffolding"
+      },
+      {
+        "target_code": "178",
+        "code": "1781100",
+        "name": "Cash guarantee recd - subcontractor Bouw Peeters"
+      },
+      {
+        "target_code": "200",
+        "code": "2001000",
+        "name": "Incorporation costs (notary/registration)"
+      },
+      {
+        "target_code": "201",
+        "code": "2011000",
+        "name": "Loan arrangement fees - KBC investment loan"
+      },
+      {
+        "target_code": "212",
+        "code": "2121000",
+        "name": "Goodwill takeover Dakwerken Janssens"
+      },
+      {
+        "target_code": "222",
+        "code": "2221000",
+        "name": "Land - yard & depot Lokeren"
+      },
+      {
+        "target_code": "222",
+        "code": "2221100",
+        "name": "Building plot Zele Kerkstraat"
+      },
+      {
+        "target_code": "280",
+        "code": "2801000",
+        "name": "Shares VT Vastgoed BV"
+      },
+      {
+        "target_code": "280",
+        "code": "2801100",
+        "name": "Shares VT Materieel BV"
+      },
+      {
+        "target_code": "281",
+        "code": "2811000",
+        "name": "Loan to VT Vastgoed BV"
+      },
+      {
+        "target_code": "339",
+        "code": "3391000",
+        "name": "W/D finished units in stock (-)"
+      },
+      {
+        "target_code": "340",
+        "code": "3401000",
+        "name": "Trading stock - bricks & blocks"
+      },
+      {
+        "target_code": "340",
+        "code": "3401100",
+        "name": "Trading stock - insulation & membranes"
+      },
+      {
+        "target_code": "350",
+        "code": "3501000",
+        "name": "Houses for sale - project Residentie Molenhoek"
+      },
+      {
+        "target_code": "371",
+        "code": "3711000",
+        "name": "WIP margin recognised - site Gent Dampoort"
+      },
+      {
+        "target_code": "371",
+        "code": "3711100",
+        "name": "WIP margin recognised - site Aalst Stationsplein"
+      },
+      {
+        "target_code": "379",
+        "code": "3791000",
+        "name": "WIP loss provision on contracts (-)"
+      },
+      {
+        "target_code": "400",
+        "code": "4001000",
+        "name": "Debtors - private clients"
+      },
+      {
+        "target_code": "400",
+        "code": "4001100",
+        "name": "Debtors - public works (municipalities)"
+      },
+      {
+        "target_code": "401",
+        "code": "4011000",
+        "name": "Bills receivable from clients"
+      },
+      {
+        "target_code": "407",
+        "code": "4071000",
+        "name": "Doubtful debtors - in litigation"
+      },
+      {
+        "target_code": "411",
+        "code": "4111000",
+        "name": "Input VAT 21%"
+      },
+      {
+        "target_code": "411",
+        "code": "4111100",
+        "name": "Input VAT 6% renovation"
+      },
+      {
+        "target_code": "423",
+        "code": "4231000",
+        "name": "KBC loan - current portion"
+      },
+      {
+        "target_code": "423",
+        "code": "4231100",
+        "name": "Belfius equipment loan - due within 1 yr"
+      },
+      {
+        "target_code": "450",
+        "code": "4501000",
+        "name": "Corporate tax payable - estimate"
+      },
+      {
+        "target_code": "451",
+        "code": "4511000",
+        "name": "Output VAT 21%"
+      },
+      {
+        "target_code": "451",
+        "code": "4511100",
+        "name": "VAT due - reverse charge co-contracting"
+      },
+      {
+        "target_code": "456",
+        "code": "4561000",
+        "name": "Accrued holiday pay staff"
+      },
+      {
+        "target_code": "520",
+        "code": "5201000",
+        "name": "Bonds - Belgian state OLO"
+      },
+      {
+        "target_code": "529",
+        "code": "5291000",
+        "name": "W/D on bonds (-)"
+      },
+      {
+        "target_code": "530",
+        "code": "5301000",
+        "name": "Term deposit Argenta 2 yrs"
+      },
+      {
+        "target_code": "570",
+        "code": "5701000",
+        "name": "Petty cash office"
+      },
+      {
+        "target_code": "570",
+        "code": "5701100",
+        "name": "Petty cash site foreman"
+      },
+      {
+        "target_code": "622",
+        "code": "6221000",
+        "name": "Group insurance premiums - employer share"
+      },
+      {
+        "target_code": "637",
+        "code": "6371000",
+        "name": "Provision soil remediation depot"
+      },
+      {
+        "target_code": "652",
+        "code": "6521000",
+        "name": "Loss on sale of short-term investments"
+      },
+      {
+        "target_code": "655",
+        "code": "6551000",
+        "name": "FX differences - suppliers NL/UK"
+      },
+      {
+        "target_code": "656",
+        "code": "6561000",
+        "name": "Financial provisions - addition"
+      },
+      {
+        "target_code": "659",
+        "code": "6591000",
+        "name": "Capitalised interest restructuring (-)"
+      },
+      {
+        "target_code": "668",
+        "code": "6681000",
+        "name": "Exceptional bank charges / penalties"
+      },
+      {
+        "target_code": "673",
+        "code": "6731000",
+        "name": "Foreign tax prior years - NL branch"
+      },
+      {
+        "target_code": "708",
+        "code": "7081000",
+        "name": "Discounts granted to clients (-)"
+      },
+      {
+        "target_code": "750",
+        "code": "7501000",
+        "name": "Interest on loan VT Vastgoed"
+      },
+      {
+        "target_code": "751",
+        "code": "7511000",
+        "name": "Interest received - bank & deposits"
+      },
+      {
+        "target_code": "763",
+        "code": "7631000",
+        "name": "Gain on sale of machinery & vans"
+      },
+      {
+        "target_code": "764",
+        "code": "7641000",
+        "name": "Other exceptional income - insurance claims"
+      },
+      {
+        "target_code": "789",
+        "code": "7891000",
+        "name": "Release tax-exempt reserves"
+      }
+    ]
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "company_id": "dev-c044",
+  "split": "dev",
+  "industry": "software",
+  "language": "mixed",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "162",
+    "170",
+    "211",
+    "212",
+    "213",
+    "250",
+    "280",
+    "284",
+    "291",
+    "329",
+    "359",
+    "423",
+    "428",
+    "431",
+    "439",
+    "441",
+    "450",
+    "453",
+    "459",
+    "488",
+    "492",
+    "530",
+    "570",
+    "605",
+    "609",
+    "618",
+    "620",
+    "630",
+    "640",
+    "651",
+    "659",
+    "664",
+    "672",
+    "689",
+    "690",
+    "700",
+    "708",
+    "752",
+    "763",
+    "780"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:27:55+00:00",
+  "usage": {
+    "input_tokens": 4080,
+    "output_tokens": 2007,
+    "cost_usd": 0.0683494,
+    "latency_ms": 20567.31562479399
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "162",
+        "code": "162100",
+        "name": "Prov. gros entretien serveurroom Etterbeek"
+      },
+      {
+        "target_code": "170",
+        "code": "170500",
+        "name": "Achtergestelde lening oprichters (Qualified Loan)"
+      },
+      {
+        "target_code": "211",
+        "code": "211010",
+        "name": "Software licenties – Atlassian/JetBrains"
+      },
+      {
+        "target_code": "211",
+        "code": "211020",
+        "name": "Merk 'Flowly' – registratie BOIP/EUIPO"
+      },
+      {
+        "target_code": "212",
+        "code": "212000",
+        "name": "Goodwill acquisition DataNest SRL"
+      },
+      {
+        "target_code": "213",
+        "code": "213000",
+        "name": "Acomptes dév. plateforme v3 (externe)"
+      },
+      {
+        "target_code": "250",
+        "code": "250100",
+        "name": "Leasing bureau Rue de la Loi 42"
+      },
+      {
+        "target_code": "280",
+        "code": "280010",
+        "name": "Participation Flowly France SAS"
+      },
+      {
+        "target_code": "280",
+        "code": "280020",
+        "name": "Deelneming Flowly Nederland BV"
+      },
+      {
+        "target_code": "284",
+        "code": "284000",
+        "name": "Aandelen coöperatie / startup shares"
+      },
+      {
+        "target_code": "291",
+        "code": "291000",
+        "name": "Huurwaarborg LT – kantoor Gent"
+      },
+      {
+        "target_code": "329",
+        "code": "329000",
+        "name": "RV en-cours projets forfaitaires (-)"
+      },
+      {
+        "target_code": "359",
+        "code": "359000",
+        "name": "WV onroerend goed te koop (-)"
+      },
+      {
+        "target_code": "423",
+        "code": "423010",
+        "name": "BNP Paribas Fortis – invest loan KT deel"
+      },
+      {
+        "target_code": "423",
+        "code": "423020",
+        "name": "KBC startlening – current portion"
+      },
+      {
+        "target_code": "428",
+        "code": "428000",
+        "name": "Borgtochten klanten LT <1j"
+      },
+      {
+        "target_code": "431",
+        "code": "431000",
+        "name": "Straight loan ING (promesse)"
+      },
+      {
+        "target_code": "439",
+        "code": "439000",
+        "name": "Prêt court terme Finance.brussels"
+      },
+      {
+        "target_code": "441",
+        "code": "441000",
+        "name": "Effets à payer fournisseurs"
+      },
+      {
+        "target_code": "450",
+        "code": "450000",
+        "name": "VenB geraamd – current year"
+      },
+      {
+        "target_code": "453",
+        "code": "453010",
+        "name": "Bedrijfsvoorheffing lonen"
+      },
+      {
+        "target_code": "453",
+        "code": "453020",
+        "name": "Précompte mobilier dividendes"
+      },
+      {
+        "target_code": "459",
+        "code": "459000",
+        "name": "Other payroll liabilities (SD Worx)"
+      },
+      {
+        "target_code": "488",
+        "code": "488000",
+        "name": "Cautions reçues clients hardware"
+      },
+      {
+        "target_code": "492",
+        "code": "492010",
+        "name": "Accrued costs – AWS/Azure hosting"
+      },
+      {
+        "target_code": "492",
+        "code": "492020",
+        "name": "Te ontvangen facturen algemeen"
+      },
+      {
+        "target_code": "530",
+        "code": "530000",
+        "name": "Term deposit Belfius 24m"
+      },
+      {
+        "target_code": "570",
+        "code": "570010",
+        "name": "Petty cash Brussels HQ"
+      },
+      {
+        "target_code": "570",
+        "code": "570020",
+        "name": "Kas kantoor Gent"
+      },
+      {
+        "target_code": "605",
+        "code": "605000",
+        "name": "Achat immeuble destiné revente"
+      },
+      {
+        "target_code": "609",
+        "code": "609000",
+        "name": "Voorraadwijziging hardware kits"
+      },
+      {
+        "target_code": "618",
+        "code": "618000",
+        "name": "Bezoldiging zaakvoerders (management fee)"
+      },
+      {
+        "target_code": "620",
+        "code": "620010",
+        "name": "Brutolonen bedienden"
+      },
+      {
+        "target_code": "620",
+        "code": "620020",
+        "name": "Bonus & cheques-repas devs"
+      },
+      {
+        "target_code": "630",
+        "code": "630010",
+        "name": "Afschr. IT hardware & laptops"
+      },
+      {
+        "target_code": "630",
+        "code": "630020",
+        "name": "Amort. logiciels activés"
+      },
+      {
+        "target_code": "640",
+        "code": "640000",
+        "name": "Taxes régionales & onroerende voorheffing"
+      },
+      {
+        "target_code": "651",
+        "code": "651000",
+        "name": "Bad debt write-down customers"
+      },
+      {
+        "target_code": "659",
+        "code": "659000",
+        "name": "Fin. kosten geactiveerd herstructurering (-)"
+      },
+      {
+        "target_code": "664",
+        "code": "664000",
+        "name": "One-off costs – office move"
+      },
+      {
+        "target_code": "672",
+        "code": "672000",
+        "name": "Impôts étrangers (retenue source clients)"
+      },
+      {
+        "target_code": "689",
+        "code": "689000",
+        "name": "Dotation réserves immunisées"
+      },
+      {
+        "target_code": "690",
+        "code": "690000",
+        "name": "Overgedragen verlies vorig jaar"
+      },
+      {
+        "target_code": "700",
+        "code": "700010",
+        "name": "SaaS subscriptions Flowly Cloud"
+      },
+      {
+        "target_code": "700",
+        "code": "700020",
+        "name": "Consultancy & implementatie"
+      },
+      {
+        "target_code": "708",
+        "code": "708000",
+        "name": "Kortingen klanten / credit notes"
+      },
+      {
+        "target_code": "752",
+        "code": "752000",
+        "name": "Plus-value vente placements"
+      },
+      {
+        "target_code": "763",
+        "code": "763000",
+        "name": "Gain on sale fixed assets (laptops/car)"
+      },
+      {
+        "target_code": "780",
+        "code": "780000",
+        "name": "Onttrekking uitgestelde belastingen"
+      },
+      {
+        "target_code": "700",
+        "code": "700030",
+        "name": "Licences on-premise (EU)"
+      }
+    ]
+  }
+}

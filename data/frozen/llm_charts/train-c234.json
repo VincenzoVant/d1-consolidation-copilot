@@ -1,0 +1,315 @@
+{
+  "company_id": "train-c234",
+  "split": "train",
+  "industry": "retail",
+  "language": "nl",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "120",
+    "122",
+    "124",
+    "174",
+    "178",
+    "179",
+    "210",
+    "211",
+    "212",
+    "284",
+    "339",
+    "340",
+    "359",
+    "401",
+    "421",
+    "423",
+    "429",
+    "439",
+    "453",
+    "456",
+    "492",
+    "532",
+    "578",
+    "609",
+    "617",
+    "621",
+    "659",
+    "660",
+    "662",
+    "663",
+    "669",
+    "672",
+    "690",
+    "717",
+    "751",
+    "752",
+    "756",
+    "761",
+    "763",
+    "789"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:27:05+00:00",
+  "usage": {
+    "input_tokens": 3362,
+    "output_tokens": 1999,
+    "cost_usd": 0.0624454,
+    "latency_ms": 21090.09929187596
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "120",
+        "code": "120100",
+        "name": "Herwaard. meerw. software & webshop"
+      },
+      {
+        "target_code": "122",
+        "code": "122100",
+        "name": "Herwaard. meerw. deelneming Retail Logistics BV"
+      },
+      {
+        "target_code": "124",
+        "code": "124100",
+        "name": "Terugn. WV beleggingsfondsen"
+      },
+      {
+        "target_code": "174",
+        "code": "174100",
+        "name": "Lening zaakvoerder LT"
+      },
+      {
+        "target_code": "174",
+        "code": "174200",
+        "name": "Achtergestelde lening familie Van Tornout"
+      },
+      {
+        "target_code": "178",
+        "code": "178100",
+        "name": "Huurwaarborg onderverhuur winkel Brugge"
+      },
+      {
+        "target_code": "179",
+        "code": "179100",
+        "name": "Overige LT schulden leverancier inrichting"
+      },
+      {
+        "target_code": "210",
+        "code": "210100",
+        "name": "Ontwikkeling kassasysteem & app"
+      },
+      {
+        "target_code": "211",
+        "code": "211100",
+        "name": "Licenties ERP/kassa software"
+      },
+      {
+        "target_code": "211",
+        "code": "211200",
+        "name": "Merkregistratie huismerk"
+      },
+      {
+        "target_code": "212",
+        "code": "212100",
+        "name": "Handelsfonds winkel Gent overname"
+      },
+      {
+        "target_code": "284",
+        "code": "284100",
+        "name": "Aandelen coöperatie aankoopcentrale"
+      },
+      {
+        "target_code": "339",
+        "code": "339100",
+        "name": "WV eigen samengestelde geschenkpakketten"
+      },
+      {
+        "target_code": "340",
+        "code": "340100",
+        "name": "Voorraad koopwaar winkel Gent"
+      },
+      {
+        "target_code": "340",
+        "code": "340200",
+        "name": "Voorraad koopwaar winkel Brugge"
+      },
+      {
+        "target_code": "359",
+        "code": "359100",
+        "name": "WV pand Kortrijk te koop"
+      },
+      {
+        "target_code": "401",
+        "code": "401100",
+        "name": "Te innen wissels klanten B2B"
+      },
+      {
+        "target_code": "421",
+        "code": "421100",
+        "name": "Obligatielening KT gedeelte"
+      },
+      {
+        "target_code": "423",
+        "code": "423100",
+        "name": "KBC investeringskrediet - aflossing < 1 jaar"
+      },
+      {
+        "target_code": "423",
+        "code": "423200",
+        "name": "Belfius lening verbouwing - aflossing < 1 jaar"
+      },
+      {
+        "target_code": "429",
+        "code": "429100",
+        "name": "Overige LT schulden - vervallend dit jaar"
+      },
+      {
+        "target_code": "439",
+        "code": "439100",
+        "name": "Kaskrediet van zaakvoerder"
+      },
+      {
+        "target_code": "453",
+        "code": "453100",
+        "name": "Bedrijfsvoorheffing lonen"
+      },
+      {
+        "target_code": "453",
+        "code": "453200",
+        "name": "Roerende voorheffing dividenden"
+      },
+      {
+        "target_code": "456",
+        "code": "456100",
+        "name": "Prov. vakantiegeld bedienden"
+      },
+      {
+        "target_code": "456",
+        "code": "456200",
+        "name": "Prov. vakantiegeld arbeiders"
+      },
+      {
+        "target_code": "492",
+        "code": "492100",
+        "name": "Toe te rek. kosten energie winkels"
+      },
+      {
+        "target_code": "492",
+        "code": "492200",
+        "name": "Toe te rek. kosten huur & lasten"
+      },
+      {
+        "target_code": "532",
+        "code": "532100",
+        "name": "KBC termijnrekening 1 maand"
+      },
+      {
+        "target_code": "578",
+        "code": "578100",
+        "name": "Postzegels kantoor"
+      },
+      {
+        "target_code": "609",
+        "code": "609100",
+        "name": "Voorraadwijziging handelsgoederen"
+      },
+      {
+        "target_code": "617",
+        "code": "617100",
+        "name": "Interimkrachten Randstad"
+      },
+      {
+        "target_code": "617",
+        "code": "617200",
+        "name": "Interim studenten eindejaarsperiode"
+      },
+      {
+        "target_code": "621",
+        "code": "621100",
+        "name": "RSZ werkgever"
+      },
+      {
+        "target_code": "659",
+        "code": "659100",
+        "name": "Geactiv. fin. kosten herstructurering"
+      },
+      {
+        "target_code": "660",
+        "code": "660100",
+        "name": "Uitzonderl. afschr. inrichting gesloten winkel"
+      },
+      {
+        "target_code": "662",
+        "code": "662100",
+        "name": "Voorziening sluiting filiaal"
+      },
+      {
+        "target_code": "663",
+        "code": "663100",
+        "name": "Minderwaarde verkoop bestelwagen"
+      },
+      {
+        "target_code": "669",
+        "code": "669100",
+        "name": "Geactiv. herstructureringskosten"
+      },
+      {
+        "target_code": "672",
+        "code": "672100",
+        "name": "Buitenl. belasting webshop NL"
+      },
+      {
+        "target_code": "690",
+        "code": "690100",
+        "name": "Overgedragen verlies vorig boekjaar"
+      },
+      {
+        "target_code": "717",
+        "code": "717100",
+        "name": "Wijziging bestellingen in uitvoering maatwerk"
+      },
+      {
+        "target_code": "751",
+        "code": "751100",
+        "name": "Intresten zichtrekening KBC"
+      },
+      {
+        "target_code": "751",
+        "code": "751200",
+        "name": "Intresten spaarrekening Belfius"
+      },
+      {
+        "target_code": "752",
+        "code": "752100",
+        "name": "Meerwaarde verkoop beleggingen"
+      },
+      {
+        "target_code": "756",
+        "code": "756100",
+        "name": "Betalingskorting leveranciers"
+      },
+      {
+        "target_code": "761",
+        "code": "761100",
+        "name": "Terugn. WV deelneming"
+      },
+      {
+        "target_code": "763",
+        "code": "763100",
+        "name": "Meerwaarde verkoop vaste activa"
+      },
+      {
+        "target_code": "789",
+        "code": "789100",
+        "name": "Onttrekking investeringsreserve"
+      },
+      {
+        "target_code": "578",
+        "code": "578200",
+        "name": "Maaltijdcheques & zegels kassa"
+      }
+    ]
+  }
+}

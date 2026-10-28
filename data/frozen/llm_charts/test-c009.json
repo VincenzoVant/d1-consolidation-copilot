@@ -1,0 +1,170 @@
+{
+  "company_id": "test-c009",
+  "split": "test",
+  "industry": "construction",
+  "language": "mixed",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "201",
+    "220",
+    "330",
+    "371",
+    "420",
+    "428",
+    "520",
+    "578",
+    "601",
+    "637",
+    "641",
+    "650",
+    "654",
+    "656",
+    "670",
+    "712",
+    "741",
+    "761",
+    "762",
+    "769"
+  ],
+  "n_accounts": 25,
+  "created_at": "2026-10-28T20:21:30+00:00",
+  "usage": {
+    "input_tokens": 2771,
+    "output_tokens": 939,
+    "cost_usd": 0.0365174,
+    "latency_ms": 12298.499875003472
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "201",
+        "code": "2010",
+        "name": "Frais émission prêt BNP 2024"
+      },
+      {
+        "target_code": "220",
+        "code": "2200",
+        "name": "Grond magazijn Zellik"
+      },
+      {
+        "target_code": "220",
+        "code": "2201",
+        "name": "Terrain dépôt Anderlecht"
+      },
+      {
+        "target_code": "330",
+        "code": "3300",
+        "name": "Prefab betonelementen - stock"
+      },
+      {
+        "target_code": "371",
+        "code": "3710",
+        "name": "Winst % afwerking werf Ukkel"
+      },
+      {
+        "target_code": "371",
+        "code": "3711",
+        "name": "Marge reconnue chantier Etterbeek"
+      },
+      {
+        "target_code": "420",
+        "code": "4200",
+        "name": "Achtergestelde lening zaakvoerder - KT deel"
+      },
+      {
+        "target_code": "428",
+        "code": "4280",
+        "name": "Waarborg ontvangen onderaannemers"
+      },
+      {
+        "target_code": "428",
+        "code": "4281",
+        "name": "Caution reçue locataire dépôt"
+      },
+      {
+        "target_code": "520",
+        "code": "5200",
+        "name": "Staatsbon / obligations KBC"
+      },
+      {
+        "target_code": "578",
+        "code": "5780",
+        "name": "Postzegels & timbres fiscaux"
+      },
+      {
+        "target_code": "601",
+        "code": "6010",
+        "name": "Klein materiaal werf (schroeven, kit)"
+      },
+      {
+        "target_code": "601",
+        "code": "6011",
+        "name": "Fournitures EPI / safety gear"
+      },
+      {
+        "target_code": "637",
+        "code": "6370",
+        "name": "Prov. sanering grond Zellik"
+      },
+      {
+        "target_code": "641",
+        "code": "6410",
+        "name": "Verlies verkoop bestelwagen / machines"
+      },
+      {
+        "target_code": "650",
+        "code": "6500",
+        "name": "Intrest investeringskrediet Belfius"
+      },
+      {
+        "target_code": "650",
+        "code": "6501",
+        "name": "Intérêts leasing grue"
+      },
+      {
+        "target_code": "654",
+        "code": "6540",
+        "name": "Exchange diff. purchases GBP/PLN"
+      },
+      {
+        "target_code": "656",
+        "code": "6560",
+        "name": "Prov. financière garanties bancaires"
+      },
+      {
+        "target_code": "670",
+        "code": "6700",
+        "name": "Vennootschapsbelasting - voorafbetalingen"
+      },
+      {
+        "target_code": "712",
+        "code": "7120",
+        "name": "Variation en-cours chantiers"
+      },
+      {
+        "target_code": "741",
+        "code": "7410",
+        "name": "Gain on sale equipment (graafmachine)"
+      },
+      {
+        "target_code": "761",
+        "code": "7610",
+        "name": "Reprise RDV participation SPV Immo"
+      },
+      {
+        "target_code": "762",
+        "code": "7620",
+        "name": "Terugname prov. geschil bouwheer"
+      },
+      {
+        "target_code": "769",
+        "code": "7690",
+        "name": "Produits financiers exceptionnels"
+      }
+    ]
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "company_id": "dev-c060",
+  "split": "dev",
+  "industry": "software",
+  "language": "mixed",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "122",
+    "124",
+    "161",
+    "179",
+    "220",
+    "221",
+    "222",
+    "285",
+    "291",
+    "319",
+    "320",
+    "340",
+    "360",
+    "369",
+    "371",
+    "414",
+    "416",
+    "419",
+    "426",
+    "428",
+    "429",
+    "433",
+    "441",
+    "451",
+    "452",
+    "455",
+    "603",
+    "604",
+    "605",
+    "608",
+    "609",
+    "633",
+    "634",
+    "680",
+    "708",
+    "751",
+    "760",
+    "761",
+    "769",
+    "780"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:29:06+00:00",
+  "usage": {
+    "input_tokens": 3873,
+    "output_tokens": 1983,
+    "cost_usd": 0.0662134,
+    "latency_ms": 18481.959792086855
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "122",
+        "code": "1221000",
+        "name": "Herwaardering particip. CodeNest BV"
+      },
+      {
+        "target_code": "124",
+        "code": "1241000",
+        "name": "Reprise RV placements trésorerie"
+      },
+      {
+        "target_code": "161",
+        "code": "1611000",
+        "name": "Provision tax audit FY prior years"
+      },
+      {
+        "target_code": "179",
+        "code": "1791000",
+        "name": "Lening aandeelhouder LT"
+      },
+      {
+        "target_code": "220",
+        "code": "2201000",
+        "name": "Terrain Zaventem - parking"
+      },
+      {
+        "target_code": "220",
+        "code": "2201100",
+        "name": "Grond Gent Tech Lane"
+      },
+      {
+        "target_code": "221",
+        "code": "2211000",
+        "name": "Bureau Bruxelles Av. Louise"
+      },
+      {
+        "target_code": "221",
+        "code": "2211100",
+        "name": "Office Gent - verbouwing"
+      },
+      {
+        "target_code": "222",
+        "code": "2221000",
+        "name": "Terrain bâti Zaventem HQ"
+      },
+      {
+        "target_code": "285",
+        "code": "2851000",
+        "name": "Borg huurwaarborg kantoor LT"
+      },
+      {
+        "target_code": "291",
+        "code": "2911000",
+        "name": "Créance LT ex-filiale"
+      },
+      {
+        "target_code": "319",
+        "code": "3191000",
+        "name": "WV hardware supplies (-)"
+      },
+      {
+        "target_code": "320",
+        "code": "3201000",
+        "name": "WIP custom dev projects"
+      },
+      {
+        "target_code": "340",
+        "code": "3401000",
+        "name": "Stock licences tierces revente"
+      },
+      {
+        "target_code": "360",
+        "code": "3601000",
+        "name": "Acompte fournisseur hardware"
+      },
+      {
+        "target_code": "369",
+        "code": "3691000",
+        "name": "RV acomptes stock (-)"
+      },
+      {
+        "target_code": "371",
+        "code": "3711000",
+        "name": "Winst lopende projecten POC"
+      },
+      {
+        "target_code": "414",
+        "code": "4141000",
+        "name": "Te factureren SaaS abonnementen"
+      },
+      {
+        "target_code": "414",
+        "code": "4141100",
+        "name": "Accrued revenue support hours"
+      },
+      {
+        "target_code": "416",
+        "code": "4161000",
+        "name": "Débiteurs divers"
+      },
+      {
+        "target_code": "416",
+        "code": "4161100",
+        "name": "Terug te vorderen subsidie VLAIO"
+      },
+      {
+        "target_code": "419",
+        "code": "4191000",
+        "name": "WV diverse vorderingen (-)"
+      },
+      {
+        "target_code": "426",
+        "code": "4261000",
+        "name": "Customer prepayments LT <1y"
+      },
+      {
+        "target_code": "428",
+        "code": "4281000",
+        "name": "Cautions reçues clients <1 an"
+      },
+      {
+        "target_code": "429",
+        "code": "4291000",
+        "name": "KT deel lening aandeelhouder"
+      },
+      {
+        "target_code": "433",
+        "code": "4331000",
+        "name": "KBC rekening-courant"
+      },
+      {
+        "target_code": "433",
+        "code": "4331100",
+        "name": "BNP Paribas Fortis straight loan"
+      },
+      {
+        "target_code": "441",
+        "code": "4411000",
+        "name": "Effets à payer fournisseurs"
+      },
+      {
+        "target_code": "451",
+        "code": "4511000",
+        "name": "TVA due 21%"
+      },
+      {
+        "target_code": "451",
+        "code": "4511100",
+        "name": "Btw verlegd intracom services"
+      },
+      {
+        "target_code": "452",
+        "code": "4521000",
+        "name": "Vennootschapsbelasting te betalen"
+      },
+      {
+        "target_code": "455",
+        "code": "4551000",
+        "name": "Net salaries payable - employees"
+      },
+      {
+        "target_code": "455",
+        "code": "4551100",
+        "name": "Rémunérations dirigeants à payer"
+      },
+      {
+        "target_code": "603",
+        "code": "6031000",
+        "name": "Freelance devs - project Atlas"
+      },
+      {
+        "target_code": "603",
+        "code": "6031100",
+        "name": "Onderaanneming nearshore team"
+      },
+      {
+        "target_code": "604",
+        "code": "6041000",
+        "name": "Achats licences Microsoft"
+      },
+      {
+        "target_code": "604",
+        "code": "6041100",
+        "name": "Purchases hardware resale"
+      },
+      {
+        "target_code": "605",
+        "code": "6051000",
+        "name": "Aankoop vastgoed voor verkoop"
+      },
+      {
+        "target_code": "608",
+        "code": "6081000",
+        "name": "Supplier rebates received"
+      },
+      {
+        "target_code": "609",
+        "code": "6091000",
+        "name": "Variation stock licences"
+      },
+      {
+        "target_code": "633",
+        "code": "6331000",
+        "name": "WV handelsvord. >1 jaar"
+      },
+      {
+        "target_code": "634",
+        "code": "6341000",
+        "name": "Provision clients douteux"
+      },
+      {
+        "target_code": "680",
+        "code": "6801000",
+        "name": "Transfer to deferred tax"
+      },
+      {
+        "target_code": "708",
+        "code": "7081000",
+        "name": "Kortingen SaaS klanten"
+      },
+      {
+        "target_code": "708",
+        "code": "7081100",
+        "name": "Remises partenaires revendeurs"
+      },
+      {
+        "target_code": "751",
+        "code": "7511000",
+        "name": "Intérêts comptes épargne"
+      },
+      {
+        "target_code": "760",
+        "code": "7601000",
+        "name": "Reversal depreciation & write-downs"
+      },
+      {
+        "target_code": "761",
+        "code": "7611000",
+        "name": "Terugname WV deelneming CodeNest"
+      },
+      {
+        "target_code": "769",
+        "code": "7691000",
+        "name": "Autres produits fin. non récurrents"
+      },
+      {
+        "target_code": "780",
+        "code": "7801000",
+        "name": "Release deferred taxes"
+      }
+    ]
+  }
+}

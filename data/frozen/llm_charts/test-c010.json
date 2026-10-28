@@ -1,0 +1,170 @@
+{
+  "company_id": "test-c010",
+  "split": "test",
+  "industry": "retail",
+  "language": "nl",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "171",
+    "210",
+    "212",
+    "300",
+    "309",
+    "320",
+    "339",
+    "422",
+    "433",
+    "450",
+    "453",
+    "492",
+    "493",
+    "621",
+    "634",
+    "660",
+    "708",
+    "750",
+    "754",
+    "764"
+  ],
+  "n_accounts": 25,
+  "created_at": "2026-10-28T20:21:31+00:00",
+  "usage": {
+    "input_tokens": 2349,
+    "output_tokens": 1062,
+    "cost_usd": 0.035601400000000005,
+    "latency_ms": 13013.056457974017
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "171",
+        "code": "171100",
+        "name": "Obligatielening 2022-2029 4,25%"
+      },
+      {
+        "target_code": "210",
+        "code": "210100",
+        "name": "Ontwikkeling webshop & kassasysteem"
+      },
+      {
+        "target_code": "212",
+        "code": "212100",
+        "name": "Goodwill overname winkel Mechelen"
+      },
+      {
+        "target_code": "300",
+        "code": "300100",
+        "name": "Grondstoffen voorraad magazijn Gent"
+      },
+      {
+        "target_code": "300",
+        "code": "300200",
+        "name": "Verpakkingsmat. voorraad (dozen/zakken)"
+      },
+      {
+        "target_code": "309",
+        "code": "309100",
+        "name": "WV voorraad grondstoffen"
+      },
+      {
+        "target_code": "320",
+        "code": "320100",
+        "name": "Goederen in bewerking atelier"
+      },
+      {
+        "target_code": "339",
+        "code": "339100",
+        "name": "WV gereed product - incourant/solden"
+      },
+      {
+        "target_code": "422",
+        "code": "422100",
+        "name": "Leasing bestelwagen KBC Lease - KT deel"
+      },
+      {
+        "target_code": "433",
+        "code": "433100",
+        "name": "Kaskrediet KBC BE12 xxxx"
+      },
+      {
+        "target_code": "433",
+        "code": "433200",
+        "name": "Straight loan Belfius rek.-crt."
+      },
+      {
+        "target_code": "450",
+        "code": "450100",
+        "name": "Te betalen VenB aj 2026 (raming)"
+      },
+      {
+        "target_code": "453",
+        "code": "453100",
+        "name": "Bedrijfsvoorheffing lonen bedienden"
+      },
+      {
+        "target_code": "453",
+        "code": "453200",
+        "name": "Roerende voorheffing dividend"
+      },
+      {
+        "target_code": "492",
+        "code": "492100",
+        "name": "TBK energie & water winkels"
+      },
+      {
+        "target_code": "492",
+        "code": "492200",
+        "name": "TBK interesten leningen"
+      },
+      {
+        "target_code": "493",
+        "code": "493100",
+        "name": "OTO cadeaubonnen nog niet ingeruild"
+      },
+      {
+        "target_code": "621",
+        "code": "621100",
+        "name": "RSZ werkgever bedienden"
+      },
+      {
+        "target_code": "634",
+        "code": "634100",
+        "name": "WV dubieuze klanten B2B"
+      },
+      {
+        "target_code": "660",
+        "code": "660100",
+        "name": "Uitz. afschr. sluiting filiaal Aalst"
+      },
+      {
+        "target_code": "708",
+        "code": "708100",
+        "name": "Kortingen getrouwheidskaart"
+      },
+      {
+        "target_code": "708",
+        "code": "708200",
+        "name": "Kassakortingen & promo's winkel"
+      },
+      {
+        "target_code": "750",
+        "code": "750100",
+        "name": "Dividend deelneming Retail Holding NV"
+      },
+      {
+        "target_code": "754",
+        "code": "754100",
+        "name": "Koersverschillen USD aankopen"
+      },
+      {
+        "target_code": "764",
+        "code": "764100",
+        "name": "Meerwaarde verkoop rek & inrichting"
+      }
+    ]
+  }
+}

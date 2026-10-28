@@ -1,0 +1,315 @@
+{
+  "company_id": "dev-c050",
+  "split": "dev",
+  "industry": "retail",
+  "language": "en",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "121",
+    "132",
+    "163",
+    "168",
+    "172",
+    "174",
+    "179",
+    "210",
+    "251",
+    "280",
+    "283",
+    "320",
+    "350",
+    "379",
+    "416",
+    "418",
+    "425",
+    "426",
+    "431",
+    "441",
+    "444",
+    "452",
+    "459",
+    "488",
+    "489",
+    "493",
+    "529",
+    "530",
+    "550",
+    "578",
+    "602",
+    "605",
+    "618",
+    "620",
+    "623",
+    "631",
+    "661",
+    "700",
+    "762",
+    "763"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:28:23+00:00",
+  "usage": {
+    "input_tokens": 3198,
+    "output_tokens": 2879,
+    "cost_usd": 0.0787334,
+    "latency_ms": 25720.886500086635
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "121",
+        "code": "121000",
+        "name": "Reval. surplus - Gent shop building"
+      },
+      {
+        "target_code": "132",
+        "code": "132000",
+        "name": "Tax-exempt investment reserve"
+      },
+      {
+        "target_code": "163",
+        "code": "163000",
+        "name": "Prov. soil remediation Mechelen warehouse"
+      },
+      {
+        "target_code": "168",
+        "code": "168000",
+        "name": "Deferred tax on spread capital gains"
+      },
+      {
+        "target_code": "172",
+        "code": "172100",
+        "name": "Lease liab. LT - ING Lease delivery vans"
+      },
+      {
+        "target_code": "172",
+        "code": "172200",
+        "name": "Lease liab. LT - Belfius POS terminals"
+      },
+      {
+        "target_code": "174",
+        "code": "174000",
+        "name": "Subordinated loan - family holding"
+      },
+      {
+        "target_code": "179",
+        "code": "179000",
+        "name": "Deferred purchase price Leuven shop goodwill"
+      },
+      {
+        "target_code": "210",
+        "code": "210000",
+        "name": "Dev. costs webshop platform"
+      },
+      {
+        "target_code": "251",
+        "code": "251000",
+        "name": "Leased shop fittings & refrigeration"
+      },
+      {
+        "target_code": "280",
+        "code": "280000",
+        "name": "Shares RetailCo Logistics BV"
+      },
+      {
+        "target_code": "283",
+        "code": "283000",
+        "name": "Loan to Stockpoint NV (20% stake)"
+      },
+      {
+        "target_code": "320",
+        "code": "320000",
+        "name": "WIP - in-house gift box assembly"
+      },
+      {
+        "target_code": "350",
+        "code": "350000",
+        "name": "Apartment above Brugge shop - for sale"
+      },
+      {
+        "target_code": "379",
+        "code": "379000",
+        "name": "Write-down shopfit contracts in progress"
+      },
+      {
+        "target_code": "416",
+        "code": "416000",
+        "name": "Misc. receivables - insurance claims"
+      },
+      {
+        "target_code": "416",
+        "code": "416100",
+        "name": "To receive - Bancontact/Payconiq settlements"
+      },
+      {
+        "target_code": "418",
+        "code": "418000",
+        "name": "Rent deposit paid - Antwerp Meir shop"
+      },
+      {
+        "target_code": "418",
+        "code": "418100",
+        "name": "Rent deposit paid - Gent Veldstraat shop"
+      },
+      {
+        "target_code": "425",
+        "code": "425000",
+        "name": "Supplier credit LT - current portion"
+      },
+      {
+        "target_code": "426",
+        "code": "426000",
+        "name": "Customer deposits custom orders - current portion"
+      },
+      {
+        "target_code": "431",
+        "code": "431000",
+        "name": "KBC straight loan - promissory notes"
+      },
+      {
+        "target_code": "441",
+        "code": "441000",
+        "name": "Bills payable - suppliers"
+      },
+      {
+        "target_code": "444",
+        "code": "444000",
+        "name": "Invoices to receive - merchandise"
+      },
+      {
+        "target_code": "444",
+        "code": "444100",
+        "name": "Invoices to receive - utilities & services"
+      },
+      {
+        "target_code": "452",
+        "code": "452000",
+        "name": "Corporate income tax payable"
+      },
+      {
+        "target_code": "452",
+        "code": "452100",
+        "name": "Municipal signage tax payable"
+      },
+      {
+        "target_code": "459",
+        "code": "459000",
+        "name": "Group insurance premiums payable - AG"
+      },
+      {
+        "target_code": "488",
+        "code": "488000",
+        "name": "Cash guarantees received - franchise partners"
+      },
+      {
+        "target_code": "489",
+        "code": "489000",
+        "name": "Unredeemed gift vouchers"
+      },
+      {
+        "target_code": "489",
+        "code": "489100",
+        "name": "Sundry payables - other"
+      },
+      {
+        "target_code": "493",
+        "code": "493000",
+        "name": "Deferred income - loyalty points"
+      },
+      {
+        "target_code": "529",
+        "code": "529000",
+        "name": "Write-down bonds held"
+      },
+      {
+        "target_code": "530",
+        "code": "530000",
+        "name": "KBC term deposit 24 months"
+      },
+      {
+        "target_code": "550",
+        "code": "550100",
+        "name": "KBC current account"
+      },
+      {
+        "target_code": "550",
+        "code": "550200",
+        "name": "Belfius current account"
+      },
+      {
+        "target_code": "578",
+        "code": "578000",
+        "name": "Postage stamps"
+      },
+      {
+        "target_code": "602",
+        "code": "602000",
+        "name": "Subcontracted window dressing"
+      },
+      {
+        "target_code": "605",
+        "code": "605000",
+        "name": "Purchase property for resale"
+      },
+      {
+        "target_code": "618",
+        "code": "618000",
+        "name": "Director fees - management company"
+      },
+      {
+        "target_code": "620",
+        "code": "620100",
+        "name": "Gross wages shop staff"
+      },
+      {
+        "target_code": "620",
+        "code": "620200",
+        "name": "Gross salaries office staff"
+      },
+      {
+        "target_code": "623",
+        "code": "623000",
+        "name": "Meal vouchers & staff gifts"
+      },
+      {
+        "target_code": "623",
+        "code": "623100",
+        "name": "Staff training & workwear"
+      },
+      {
+        "target_code": "631",
+        "code": "631000",
+        "name": "Stock write-down obsolete/seasonal"
+      },
+      {
+        "target_code": "661",
+        "code": "661000",
+        "name": "Impairment participations"
+      },
+      {
+        "target_code": "700",
+        "code": "700100",
+        "name": "Sales shops 21% VAT"
+      },
+      {
+        "target_code": "700",
+        "code": "700200",
+        "name": "Sales webshop 6% VAT"
+      },
+      {
+        "target_code": "762",
+        "code": "762000",
+        "name": "Reversal provision litigation"
+      },
+      {
+        "target_code": "763",
+        "code": "763000",
+        "name": "Gain on sale fixed assets - vans"
+      }
+    ]
+  }
+}

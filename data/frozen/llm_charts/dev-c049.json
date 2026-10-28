@@ -1,0 +1,315 @@
+{
+  "company_id": "dev-c049",
+  "split": "dev",
+  "industry": "construction",
+  "language": "fr",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "161",
+    "202",
+    "210",
+    "211",
+    "212",
+    "222",
+    "252",
+    "291",
+    "300",
+    "310",
+    "319",
+    "349",
+    "359",
+    "370",
+    "409",
+    "414",
+    "417",
+    "418",
+    "425",
+    "451",
+    "454",
+    "459",
+    "480",
+    "489",
+    "490",
+    "493",
+    "499",
+    "570",
+    "624",
+    "630",
+    "633",
+    "636",
+    "642",
+    "649",
+    "652",
+    "663",
+    "680",
+    "689",
+    "741",
+    "756"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:28:13+00:00",
+  "usage": {
+    "input_tokens": 3087,
+    "output_tokens": 1824,
+    "cost_usd": 0.0567454,
+    "latency_ms": 16928.30283404328
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "161",
+        "code": "161000",
+        "name": "Prov. impôts - redressement contrôle fiscal"
+      },
+      {
+        "target_code": "202",
+        "code": "202000",
+        "name": "Frais constitution SRL & notaire"
+      },
+      {
+        "target_code": "210",
+        "code": "210000",
+        "name": "Dév. procédé isolation façade"
+      },
+      {
+        "target_code": "211",
+        "code": "211000",
+        "name": "Licences logiciels métré & devis"
+      },
+      {
+        "target_code": "212",
+        "code": "212000",
+        "name": "Goodwill reprise Ets Dubois"
+      },
+      {
+        "target_code": "222",
+        "code": "222000",
+        "name": "Terrain + hangar dépôt Rue de l'Industrie"
+      },
+      {
+        "target_code": "252",
+        "code": "252100",
+        "name": "Leasing camionnette Ford Transit"
+      },
+      {
+        "target_code": "252",
+        "code": "252200",
+        "name": "Leasing mini-pelle Kubota"
+      },
+      {
+        "target_code": "291",
+        "code": "291000",
+        "name": "Prêt à LT gérant"
+      },
+      {
+        "target_code": "300",
+        "code": "300100",
+        "name": "Stock béton, ciment & granulats"
+      },
+      {
+        "target_code": "300",
+        "code": "300200",
+        "name": "Stock acier armature & treillis"
+      },
+      {
+        "target_code": "310",
+        "code": "310100",
+        "name": "Stock petit matériel & outillage"
+      },
+      {
+        "target_code": "310",
+        "code": "310200",
+        "name": "Stock carburant & lubrifiants dépôt"
+      },
+      {
+        "target_code": "319",
+        "code": "319000",
+        "name": "RV stock fournitures obsolètes"
+      },
+      {
+        "target_code": "349",
+        "code": "349000",
+        "name": "RV stock carrelage revente"
+      },
+      {
+        "target_code": "359",
+        "code": "359000",
+        "name": "RV maison à vendre Wavre"
+      },
+      {
+        "target_code": "370",
+        "code": "370100",
+        "name": "Chantier en cours - Résidence Les Tilleuls"
+      },
+      {
+        "target_code": "370",
+        "code": "370200",
+        "name": "Chantier en cours - Rénovation école Namur"
+      },
+      {
+        "target_code": "409",
+        "code": "409000",
+        "name": "RV clients douteux"
+      },
+      {
+        "target_code": "414",
+        "code": "414000",
+        "name": "Factures à établir (états d'avancement)"
+      },
+      {
+        "target_code": "417",
+        "code": "417000",
+        "name": "Débiteurs divers douteux"
+      },
+      {
+        "target_code": "418",
+        "code": "418100",
+        "name": "Cautionnement marché public - Ville de Namur"
+      },
+      {
+        "target_code": "418",
+        "code": "418200",
+        "name": "Garantie locative dépôt"
+      },
+      {
+        "target_code": "425",
+        "code": "425000",
+        "name": "Fourn. dettes LT échéant dans l'année"
+      },
+      {
+        "target_code": "451",
+        "code": "451100",
+        "name": "TVA due 21%"
+      },
+      {
+        "target_code": "451",
+        "code": "451200",
+        "name": "TVA due 6% rénovation"
+      },
+      {
+        "target_code": "454",
+        "code": "454000",
+        "name": "ONSS à payer"
+      },
+      {
+        "target_code": "459",
+        "code": "459000",
+        "name": "Timbres fidélité & intempéries"
+      },
+      {
+        "target_code": "480",
+        "code": "480000",
+        "name": "Coupons obligataires échus"
+      },
+      {
+        "target_code": "489",
+        "code": "489000",
+        "name": "Créditeurs divers"
+      },
+      {
+        "target_code": "490",
+        "code": "490100",
+        "name": "Assurances TRC payées d'avance"
+      },
+      {
+        "target_code": "490",
+        "code": "490200",
+        "name": "Taxe circulation & leasing à reporter"
+      },
+      {
+        "target_code": "493",
+        "code": "493000",
+        "name": "Acomptes facturés à reporter"
+      },
+      {
+        "target_code": "499",
+        "code": "499000",
+        "name": "Compte d'attente"
+      },
+      {
+        "target_code": "499",
+        "code": "499100",
+        "name": "Attente - écarts banque à justifier"
+      },
+      {
+        "target_code": "570",
+        "code": "570100",
+        "name": "Caisse bureau"
+      },
+      {
+        "target_code": "570",
+        "code": "570200",
+        "name": "Caisse chef de chantier"
+      },
+      {
+        "target_code": "624",
+        "code": "624000",
+        "name": "Assurance groupe pension"
+      },
+      {
+        "target_code": "630",
+        "code": "630000",
+        "name": "Amortissements matériel & véhicules"
+      },
+      {
+        "target_code": "633",
+        "code": "633000",
+        "name": "RV créances clients LT"
+      },
+      {
+        "target_code": "636",
+        "code": "636000",
+        "name": "Dotation prov. gros entretien grue"
+      },
+      {
+        "target_code": "642",
+        "code": "642000",
+        "name": "Pertes sur cession créances factoring"
+      },
+      {
+        "target_code": "649",
+        "code": "649000",
+        "name": "Frais restructuration portés à l'actif"
+      },
+      {
+        "target_code": "652",
+        "code": "652000",
+        "name": "Moins-value vente stock"
+      },
+      {
+        "target_code": "663",
+        "code": "663000",
+        "name": "Moins-value vente matériel"
+      },
+      {
+        "target_code": "680",
+        "code": "680000",
+        "name": "Transfert impôts différés"
+      },
+      {
+        "target_code": "689",
+        "code": "689000",
+        "name": "Dotation réserve immunisée"
+      },
+      {
+        "target_code": "741",
+        "code": "741000",
+        "name": "Plus-value vente camion & engins"
+      },
+      {
+        "target_code": "756",
+        "code": "756000",
+        "name": "Produits financiers divers"
+      },
+      {
+        "target_code": "756",
+        "code": "756100",
+        "name": "Escomptes obtenus fournisseurs"
+      }
+    ]
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "company_id": "train-c209",
+  "split": "train",
+  "industry": "construction",
+  "language": "fr",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "121",
+    "160",
+    "170",
+    "172",
+    "173",
+    "178",
+    "202",
+    "213",
+    "222",
+    "251",
+    "280",
+    "284",
+    "300",
+    "310",
+    "319",
+    "320",
+    "369",
+    "400",
+    "406",
+    "414",
+    "423",
+    "428",
+    "439",
+    "450",
+    "451",
+    "454",
+    "491",
+    "520",
+    "531",
+    "570",
+    "601",
+    "622",
+    "623",
+    "642",
+    "663",
+    "700",
+    "708",
+    "717",
+    "750",
+    "755"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:25:03+00:00",
+  "usage": {
+    "input_tokens": 3065,
+    "output_tokens": 1793,
+    "cost_usd": 0.0559494,
+    "latency_ms": 18131.085542030632
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "121",
+        "code": "121000",
+        "name": "Plus-value réév. hangar Wavre"
+      },
+      {
+        "target_code": "160",
+        "code": "160000",
+        "name": "Prov. pension complémentaire gérant"
+      },
+      {
+        "target_code": "170",
+        "code": "170100",
+        "name": "Prêt subordonné actionnaire Dupont"
+      },
+      {
+        "target_code": "172",
+        "code": "172000",
+        "name": "Leasing camion benne MAN LT"
+      },
+      {
+        "target_code": "173",
+        "code": "173010",
+        "name": "Crédit invest. BNP Fortis - pelleteuse"
+      },
+      {
+        "target_code": "173",
+        "code": "173020",
+        "name": "Crédit hangar Belfius LT"
+      },
+      {
+        "target_code": "178",
+        "code": "178000",
+        "name": "Garanties locatives reçues LT"
+      },
+      {
+        "target_code": "202",
+        "code": "202000",
+        "name": "Frais constitution SRL & notaire"
+      },
+      {
+        "target_code": "213",
+        "code": "213000",
+        "name": "Acompte logiciel métré/devis"
+      },
+      {
+        "target_code": "222",
+        "code": "222000",
+        "name": "Terrain + dépôt rue de la Station"
+      },
+      {
+        "target_code": "251",
+        "code": "251010",
+        "name": "Leasing grue mobile Liebherr"
+      },
+      {
+        "target_code": "251",
+        "code": "251020",
+        "name": "Leasing mini-pelle Kubota"
+      },
+      {
+        "target_code": "280",
+        "code": "280000",
+        "name": "Particip. Dupont Toitures SRL"
+      },
+      {
+        "target_code": "284",
+        "code": "284000",
+        "name": "Parts coopérative CPH"
+      },
+      {
+        "target_code": "300",
+        "code": "300010",
+        "name": "Stock ciment & granulats"
+      },
+      {
+        "target_code": "300",
+        "code": "300020",
+        "name": "Stock fers à béton & treillis"
+      },
+      {
+        "target_code": "310",
+        "code": "310000",
+        "name": "Stock petit matériel & consommables"
+      },
+      {
+        "target_code": "319",
+        "code": "319000",
+        "name": "RDV stock consommables"
+      },
+      {
+        "target_code": "320",
+        "code": "320010",
+        "name": "En-cours chantier Namur résidence"
+      },
+      {
+        "target_code": "320",
+        "code": "320020",
+        "name": "En-cours chantier Gembloux villa"
+      },
+      {
+        "target_code": "369",
+        "code": "369000",
+        "name": "RDV acomptes fournisseurs stock"
+      },
+      {
+        "target_code": "400",
+        "code": "400000",
+        "name": "Clients particuliers"
+      },
+      {
+        "target_code": "400",
+        "code": "400100",
+        "name": "Clients promoteurs & pros"
+      },
+      {
+        "target_code": "406",
+        "code": "406000",
+        "name": "Acomptes versés fournisseurs"
+      },
+      {
+        "target_code": "414",
+        "code": "414000",
+        "name": "Factures à établir clients"
+      },
+      {
+        "target_code": "423",
+        "code": "423010",
+        "name": "Crédit BNP pelleteuse - part CT"
+      },
+      {
+        "target_code": "423",
+        "code": "423020",
+        "name": "Crédit Belfius hangar - part CT"
+      },
+      {
+        "target_code": "428",
+        "code": "428000",
+        "name": "Garanties reçues - échéance -1an"
+      },
+      {
+        "target_code": "439",
+        "code": "439000",
+        "name": "Avance de trésorerie divers"
+      },
+      {
+        "target_code": "450",
+        "code": "450000",
+        "name": "ISOC estimé exercice"
+      },
+      {
+        "target_code": "451",
+        "code": "451210",
+        "name": "TVA due 21%"
+      },
+      {
+        "target_code": "451",
+        "code": "451060",
+        "name": "TVA due 6% rénovation"
+      },
+      {
+        "target_code": "454",
+        "code": "454000",
+        "name": "ONSS à payer"
+      },
+      {
+        "target_code": "491",
+        "code": "491000",
+        "name": "Produits acquis (intérêts courus)"
+      },
+      {
+        "target_code": "520",
+        "code": "520000",
+        "name": "Obligations d'État OLO"
+      },
+      {
+        "target_code": "531",
+        "code": "531000",
+        "name": "Compte à terme 6 mois ING"
+      },
+      {
+        "target_code": "570",
+        "code": "570000",
+        "name": "Caisse bureau"
+      },
+      {
+        "target_code": "570",
+        "code": "570100",
+        "name": "Caisse chantier"
+      },
+      {
+        "target_code": "601",
+        "code": "601010",
+        "name": "Achats consommables chantier"
+      },
+      {
+        "target_code": "601",
+        "code": "601020",
+        "name": "Achats outillage <250€"
+      },
+      {
+        "target_code": "622",
+        "code": "622000",
+        "name": "Assurance groupe ouvriers"
+      },
+      {
+        "target_code": "623",
+        "code": "623000",
+        "name": "Vêtements travail & EPI"
+      },
+      {
+        "target_code": "642",
+        "code": "642000",
+        "name": "Perte sur créances clients"
+      },
+      {
+        "target_code": "663",
+        "code": "663000",
+        "name": "Moins-value vente matériel"
+      },
+      {
+        "target_code": "700",
+        "code": "700010",
+        "name": "CA travaux gros œuvre"
+      },
+      {
+        "target_code": "700",
+        "code": "700020",
+        "name": "CA rénovation 6%"
+      },
+      {
+        "target_code": "708",
+        "code": "708000",
+        "name": "Remises accordées clients"
+      },
+      {
+        "target_code": "717",
+        "code": "717000",
+        "name": "Variation chantiers en cours"
+      },
+      {
+        "target_code": "750",
+        "code": "750000",
+        "name": "Dividendes Dupont Toitures"
+      },
+      {
+        "target_code": "755",
+        "code": "755000",
+        "name": "Écarts de change"
+      }
+    ]
+  }
+}

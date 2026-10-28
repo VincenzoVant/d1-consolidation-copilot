@@ -1,0 +1,315 @@
+{
+  "company_id": "train-c217",
+  "split": "train",
+  "industry": "construction",
+  "language": "mixed",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "163",
+    "172",
+    "178",
+    "200",
+    "201",
+    "213",
+    "223",
+    "282",
+    "283",
+    "310",
+    "339",
+    "340",
+    "350",
+    "360",
+    "369",
+    "414",
+    "417",
+    "419",
+    "421",
+    "432",
+    "440",
+    "441",
+    "451",
+    "453",
+    "489",
+    "539",
+    "617",
+    "632",
+    "633",
+    "635",
+    "637",
+    "649",
+    "664",
+    "670",
+    "671",
+    "713",
+    "717",
+    "763",
+    "769",
+    "792"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:25:39+00:00",
+  "usage": {
+    "input_tokens": 4185,
+    "output_tokens": 1873,
+    "cost_usd": 0.0665094,
+    "latency_ms": 19339.333374984562
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "163",
+        "code": "163100",
+        "name": "Prov. sanering grond werfdepot Vilvoorde"
+      },
+      {
+        "target_code": "172",
+        "code": "172010",
+        "name": "Leasing graafkraan CAT 308 - BNP Lease"
+      },
+      {
+        "target_code": "172",
+        "code": "172020",
+        "name": "Leasing camionnette Ford Transit >1j"
+      },
+      {
+        "target_code": "178",
+        "code": "178100",
+        "name": "Waarborg ontvangen huurder loods Anderlecht"
+      },
+      {
+        "target_code": "178",
+        "code": "178200",
+        "name": "Cautions reçues sous-traitants >1 an"
+      },
+      {
+        "target_code": "200",
+        "code": "200000",
+        "name": "Frais de constitution SRL"
+      },
+      {
+        "target_code": "201",
+        "code": "201000",
+        "name": "Dossierkosten investeringskrediet KBC"
+      },
+      {
+        "target_code": "213",
+        "code": "213000",
+        "name": "Acompte licence logiciel métré/calcul"
+      },
+      {
+        "target_code": "223",
+        "code": "223000",
+        "name": "Opstalrecht terrein stelplaats Zaventem"
+      },
+      {
+        "target_code": "282",
+        "code": "282000",
+        "name": "Participation THV Bouwteam Brussel-Noord"
+      },
+      {
+        "target_code": "283",
+        "code": "283000",
+        "name": "Loan to joint venture THV Brussel-Noord"
+      },
+      {
+        "target_code": "310",
+        "code": "310100",
+        "name": "Stock petit matériel & consommables"
+      },
+      {
+        "target_code": "310",
+        "code": "310200",
+        "name": "Voorraad bevestigingsmateriaal / boutjes & schroeven"
+      },
+      {
+        "target_code": "339",
+        "code": "339000",
+        "name": "RV prefab elementen (-)"
+      },
+      {
+        "target_code": "340",
+        "code": "340100",
+        "name": "Stock carrelage revente"
+      },
+      {
+        "target_code": "340",
+        "code": "340200",
+        "name": "Voorraad sanitair handelsgoederen"
+      },
+      {
+        "target_code": "350",
+        "code": "350000",
+        "name": "Projet immo Rue Vandenpeereboom - lots à vendre"
+      },
+      {
+        "target_code": "360",
+        "code": "360000",
+        "name": "Voorschotten aankoop staal/wapening"
+      },
+      {
+        "target_code": "369",
+        "code": "369000",
+        "name": "RV op voorschotten voorraad (-)"
+      },
+      {
+        "target_code": "414",
+        "code": "414000",
+        "name": "Facturen op te maken / à facturer"
+      },
+      {
+        "target_code": "417",
+        "code": "417000",
+        "name": "Doubtful receivables - other"
+      },
+      {
+        "target_code": "419",
+        "code": "419000",
+        "name": "RV diverse vorderingen (-)"
+      },
+      {
+        "target_code": "421",
+        "code": "421000",
+        "name": "Obligatielening - deel <1j"
+      },
+      {
+        "target_code": "432",
+        "code": "432000",
+        "name": "Crédit d'acceptation Belfius"
+      },
+      {
+        "target_code": "440",
+        "code": "440000",
+        "name": "Leveranciers algemeen"
+      },
+      {
+        "target_code": "440",
+        "code": "440500",
+        "name": "Fournisseurs onderaannemers (sous-traitants)"
+      },
+      {
+        "target_code": "441",
+        "code": "441000",
+        "name": "Effets à payer fournisseurs"
+      },
+      {
+        "target_code": "451",
+        "code": "451210",
+        "name": "BTW verschuldigd 21%"
+      },
+      {
+        "target_code": "451",
+        "code": "451060",
+        "name": "TVA due 6% rénovation"
+      },
+      {
+        "target_code": "453",
+        "code": "453000",
+        "name": "BV lonen bedienden"
+      },
+      {
+        "target_code": "453",
+        "code": "453100",
+        "name": "Précompte prof. ouvriers"
+      },
+      {
+        "target_code": "489",
+        "code": "489000",
+        "name": "Diverse schulden / Dettes diverses"
+      },
+      {
+        "target_code": "539",
+        "code": "539000",
+        "name": "Write-down term deposit (-)"
+      },
+      {
+        "target_code": "617",
+        "code": "617100",
+        "name": "Interims Randstad werf"
+      },
+      {
+        "target_code": "617",
+        "code": "617200",
+        "name": "Personnel mis à disposition (détachement)"
+      },
+      {
+        "target_code": "632",
+        "code": "632000",
+        "name": "RV werken in uitvoering"
+      },
+      {
+        "target_code": "633",
+        "code": "633000",
+        "name": "Réd. valeur créances clients >1 an"
+      },
+      {
+        "target_code": "635",
+        "code": "635000",
+        "name": "Provision pensions groupe"
+      },
+      {
+        "target_code": "637",
+        "code": "637000",
+        "name": "Dotation prov. assainissement sol"
+      },
+      {
+        "target_code": "649",
+        "code": "649000",
+        "name": "Herstructureringskosten geactiveerd (-)"
+      },
+      {
+        "target_code": "664",
+        "code": "664100",
+        "name": "Schadevergoeding geschil werf Ukkel"
+      },
+      {
+        "target_code": "664",
+        "code": "664200",
+        "name": "One-off claim settlement charges"
+      },
+      {
+        "target_code": "670",
+        "code": "670000",
+        "name": "Vennootschapsbelasting boekjaar"
+      },
+      {
+        "target_code": "671",
+        "code": "671000",
+        "name": "ISOC exercices antérieurs"
+      },
+      {
+        "target_code": "713",
+        "code": "713000",
+        "name": "Variation stock produits finis"
+      },
+      {
+        "target_code": "717",
+        "code": "717000",
+        "name": "Wijziging werken in uitvoering (WIP)"
+      },
+      {
+        "target_code": "763",
+        "code": "763100",
+        "name": "Meerwaarde verkoop materieel/machines"
+      },
+      {
+        "target_code": "763",
+        "code": "763200",
+        "name": "Plus-value vente véhicules"
+      },
+      {
+        "target_code": "769",
+        "code": "769000",
+        "name": "Other one-off financial income"
+      },
+      {
+        "target_code": "792",
+        "code": "792000",
+        "name": "Prélèvement sur réserves"
+      }
+    ]
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "company_id": "train-c226",
+  "split": "train",
+  "industry": "retail",
+  "language": "en",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "124",
+    "170",
+    "175",
+    "202",
+    "204",
+    "212",
+    "222",
+    "251",
+    "252",
+    "319",
+    "330",
+    "370",
+    "419",
+    "420",
+    "423",
+    "425",
+    "431",
+    "432",
+    "459",
+    "493",
+    "539",
+    "550",
+    "570",
+    "601",
+    "602",
+    "605",
+    "635",
+    "654",
+    "655",
+    "660",
+    "663",
+    "670",
+    "689",
+    "712",
+    "713",
+    "756",
+    "761",
+    "763",
+    "789",
+    "792"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:26:21+00:00",
+  "usage": {
+    "input_tokens": 3147,
+    "output_tokens": 1828,
+    "cost_usd": 0.057305400000000006,
+    "latency_ms": 16193.250166950747
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "124",
+        "code": "124100",
+        "name": "Reversal w/d short-term investments"
+      },
+      {
+        "target_code": "170",
+        "code": "170100",
+        "name": "Subord. shareholder loan - Fam. Vantornout LT"
+      },
+      {
+        "target_code": "175",
+        "code": "175100",
+        "name": "Suppliers LT payment plan - shop fit-out"
+      },
+      {
+        "target_code": "202",
+        "code": "202100",
+        "name": "Formation costs - notary & registration"
+      },
+      {
+        "target_code": "204",
+        "code": "204100",
+        "name": "Reorganisation costs store network"
+      },
+      {
+        "target_code": "212",
+        "code": "212100",
+        "name": "Goodwill takeover shop Brugge"
+      },
+      {
+        "target_code": "222",
+        "code": "222100",
+        "name": "Land - warehouse site Zwijnaarde"
+      },
+      {
+        "target_code": "251",
+        "code": "251100",
+        "name": "Leased POS & cash registers"
+      },
+      {
+        "target_code": "252",
+        "code": "252100",
+        "name": "Leased delivery van & shop furniture"
+      },
+      {
+        "target_code": "319",
+        "code": "319100",
+        "name": "W/d packaging & supplies stock (-)"
+      },
+      {
+        "target_code": "330",
+        "code": "330100",
+        "name": "Stock own-label products Gent"
+      },
+      {
+        "target_code": "330",
+        "code": "330200",
+        "name": "Stock own-label products Brugge"
+      },
+      {
+        "target_code": "370",
+        "code": "370100",
+        "name": "Orders in progress - custom fit-outs"
+      },
+      {
+        "target_code": "419",
+        "code": "419100",
+        "name": "Provision doubtful sundry receivables (-)"
+      },
+      {
+        "target_code": "420",
+        "code": "420100",
+        "name": "Subord. shareholder loan - current portion"
+      },
+      {
+        "target_code": "423",
+        "code": "423100",
+        "name": "KBC investment loan - due within 1 yr"
+      },
+      {
+        "target_code": "423",
+        "code": "423200",
+        "name": "Belfius store loan - due within 1 yr"
+      },
+      {
+        "target_code": "425",
+        "code": "425100",
+        "name": "Supplier payment plan - current portion"
+      },
+      {
+        "target_code": "431",
+        "code": "431100",
+        "name": "KBC straight loan (promissory note)"
+      },
+      {
+        "target_code": "432",
+        "code": "432100",
+        "name": "Bank acceptance credit ING"
+      },
+      {
+        "target_code": "459",
+        "code": "459100",
+        "name": "Holiday pay accrual staff"
+      },
+      {
+        "target_code": "459",
+        "code": "459200",
+        "name": "Group insurance premiums payable"
+      },
+      {
+        "target_code": "493",
+        "code": "493100",
+        "name": "Gift vouchers sold not yet redeemed"
+      },
+      {
+        "target_code": "493",
+        "code": "493200",
+        "name": "Prepaid customer orders - deferred"
+      },
+      {
+        "target_code": "539",
+        "code": "539100",
+        "name": "W/d term deposit (-)"
+      },
+      {
+        "target_code": "550",
+        "code": "550100",
+        "name": "KBC current account BE12"
+      },
+      {
+        "target_code": "550",
+        "code": "550200",
+        "name": "Belfius current account BE45"
+      },
+      {
+        "target_code": "550",
+        "code": "550300",
+        "name": "ING business account BE78"
+      },
+      {
+        "target_code": "570",
+        "code": "570100",
+        "name": "Cash register shop Gent"
+      },
+      {
+        "target_code": "570",
+        "code": "570200",
+        "name": "Cash register shop Brugge"
+      },
+      {
+        "target_code": "601",
+        "code": "601100",
+        "name": "Purchases bags & packaging"
+      },
+      {
+        "target_code": "601",
+        "code": "601200",
+        "name": "Purchases shop supplies & labels"
+      },
+      {
+        "target_code": "602",
+        "code": "602100",
+        "name": "Subcontracted window decoration"
+      },
+      {
+        "target_code": "602",
+        "code": "602200",
+        "name": "Subcontracted alterations & repairs"
+      },
+      {
+        "target_code": "605",
+        "code": "605100",
+        "name": "Purchase property for resale"
+      },
+      {
+        "target_code": "635",
+        "code": "635100",
+        "name": "Provision pension commitments manager"
+      },
+      {
+        "target_code": "654",
+        "code": "654100",
+        "name": "FX differences USD suppliers"
+      },
+      {
+        "target_code": "654",
+        "code": "654200",
+        "name": "FX differences GBP suppliers"
+      },
+      {
+        "target_code": "655",
+        "code": "655100",
+        "name": "FX translation differences"
+      },
+      {
+        "target_code": "660",
+        "code": "660100",
+        "name": "Exceptional write-off fixed assets"
+      },
+      {
+        "target_code": "663",
+        "code": "663100",
+        "name": "Loss on sale of fixed assets"
+      },
+      {
+        "target_code": "670",
+        "code": "670100",
+        "name": "Corporate tax - prepayments current yr"
+      },
+      {
+        "target_code": "689",
+        "code": "689100",
+        "name": "Transfer to tax-free reserves"
+      },
+      {
+        "target_code": "712",
+        "code": "712100",
+        "name": "Change in stock WIP"
+      },
+      {
+        "target_code": "713",
+        "code": "713100",
+        "name": "Change in stock own-label goods"
+      },
+      {
+        "target_code": "756",
+        "code": "756100",
+        "name": "Sundry financial income - cash discounts"
+      },
+      {
+        "target_code": "761",
+        "code": "761100",
+        "name": "Reversal w/d financial fixed assets"
+      },
+      {
+        "target_code": "763",
+        "code": "763100",
+        "name": "Gain on sale of fixed assets"
+      },
+      {
+        "target_code": "789",
+        "code": "789100",
+        "name": "Release of tax-free reserves"
+      },
+      {
+        "target_code": "792",
+        "code": "792100",
+        "name": "Withdrawal from available reserves"
+      }
+    ]
+  }
+}

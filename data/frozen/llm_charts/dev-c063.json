@@ -1,0 +1,315 @@
+{
+  "company_id": "dev-c063",
+  "split": "dev",
+  "industry": "services",
+  "language": "en",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "122",
+    "132",
+    "163",
+    "168",
+    "170",
+    "172",
+    "178",
+    "200",
+    "210",
+    "213",
+    "223",
+    "282",
+    "283",
+    "285",
+    "288",
+    "329",
+    "379",
+    "407",
+    "455",
+    "459",
+    "491",
+    "492",
+    "578",
+    "603",
+    "608",
+    "617",
+    "622",
+    "630",
+    "636",
+    "655",
+    "657",
+    "661",
+    "664",
+    "668",
+    "672",
+    "680",
+    "743",
+    "751",
+    "754",
+    "769"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:29:14+00:00",
+  "usage": {
+    "input_tokens": 3033,
+    "output_tokens": 1741,
+    "cost_usd": 0.0546534,
+    "latency_ms": 16416.855124989524
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "122",
+        "code": "122000",
+        "name": "Reval. surplus - stake Datalink BV"
+      },
+      {
+        "target_code": "132",
+        "code": "132000",
+        "name": "Tax-exempt reserve (investment reserve)"
+      },
+      {
+        "target_code": "163",
+        "code": "163000",
+        "name": "Prov. env. clean-up Mechelen office"
+      },
+      {
+        "target_code": "168",
+        "code": "168000",
+        "name": "Deferred tax on capital grants"
+      },
+      {
+        "target_code": "170",
+        "code": "170100",
+        "name": "Subord. loan shareholder VDB Holding"
+      },
+      {
+        "target_code": "172",
+        "code": "172100",
+        "name": "Lease debt company cars >1y"
+      },
+      {
+        "target_code": "178",
+        "code": "178000",
+        "name": "Rent deposits received - subtenant"
+      },
+      {
+        "target_code": "200",
+        "code": "200000",
+        "name": "Incorporation costs (notary)"
+      },
+      {
+        "target_code": "210",
+        "code": "210000",
+        "name": "R&D - client portal platform"
+      },
+      {
+        "target_code": "213",
+        "code": "213000",
+        "name": "Prepayment ERP licence implementation"
+      },
+      {
+        "target_code": "223",
+        "code": "223000",
+        "name": "Long lease right - Gent office"
+      },
+      {
+        "target_code": "282",
+        "code": "282000",
+        "name": "Shareholding 20% Consultix NV"
+      },
+      {
+        "target_code": "283",
+        "code": "283000",
+        "name": "Loan to Consultix NV"
+      },
+      {
+        "target_code": "285",
+        "code": "285100",
+        "name": "LT loan to managing director"
+      },
+      {
+        "target_code": "285",
+        "code": "285200",
+        "name": "LT receivable - sale of old fit-out"
+      },
+      {
+        "target_code": "288",
+        "code": "288100",
+        "name": "Rent guarantee Mechelen (blocked acct)"
+      },
+      {
+        "target_code": "288",
+        "code": "288200",
+        "name": "Deposits utilities & fuel cards"
+      },
+      {
+        "target_code": "329",
+        "code": "329000",
+        "name": "WIP write-down - unbillable hours"
+      },
+      {
+        "target_code": "379",
+        "code": "379000",
+        "name": "Write-down fixed-price projects in progress"
+      },
+      {
+        "target_code": "407",
+        "code": "407000",
+        "name": "Doubtful customers - in collection"
+      },
+      {
+        "target_code": "455",
+        "code": "455000",
+        "name": "Net salaries payable - employees"
+      },
+      {
+        "target_code": "455",
+        "code": "455100",
+        "name": "Director fee payable"
+      },
+      {
+        "target_code": "459",
+        "code": "459000",
+        "name": "Holiday pay accrual"
+      },
+      {
+        "target_code": "459",
+        "code": "459100",
+        "name": "Year-end bonus accrual (13th month)"
+      },
+      {
+        "target_code": "491",
+        "code": "491000",
+        "name": "Unbilled revenue - time & material"
+      },
+      {
+        "target_code": "491",
+        "code": "491100",
+        "name": "Accrued interest receivable"
+      },
+      {
+        "target_code": "492",
+        "code": "492000",
+        "name": "Invoices to receive"
+      },
+      {
+        "target_code": "492",
+        "code": "492100",
+        "name": "Accrued interest payable bank loans"
+      },
+      {
+        "target_code": "578",
+        "code": "578000",
+        "name": "Postage stamps / bpost"
+      },
+      {
+        "target_code": "603",
+        "code": "603000",
+        "name": "Subcontractors - freelance consultants"
+      },
+      {
+        "target_code": "603",
+        "code": "603100",
+        "name": "Subcontracting IT development offshore"
+      },
+      {
+        "target_code": "608",
+        "code": "608000",
+        "name": "Supplier discounts received"
+      },
+      {
+        "target_code": "617",
+        "code": "617000",
+        "name": "Interim staff (Randstad)"
+      },
+      {
+        "target_code": "617",
+        "code": "617100",
+        "name": "Seconded staff from group"
+      },
+      {
+        "target_code": "622",
+        "code": "622000",
+        "name": "Group insurance premiums (pension)"
+      },
+      {
+        "target_code": "630",
+        "code": "630000",
+        "name": "Depreciation charge for the year"
+      },
+      {
+        "target_code": "636",
+        "code": "636000",
+        "name": "Prov. major maintenance building"
+      },
+      {
+        "target_code": "655",
+        "code": "655000",
+        "name": "FX translation loss USD/GBP"
+      },
+      {
+        "target_code": "657",
+        "code": "657000",
+        "name": "Bank charges KBC"
+      },
+      {
+        "target_code": "657",
+        "code": "657100",
+        "name": "Payment terminal & Stripe fees"
+      },
+      {
+        "target_code": "661",
+        "code": "661000",
+        "name": "Impairment financial fixed assets"
+      },
+      {
+        "target_code": "664",
+        "code": "664000",
+        "name": "Exceptional operating costs - settlements"
+      },
+      {
+        "target_code": "668",
+        "code": "668000",
+        "name": "Exceptional financial charges"
+      },
+      {
+        "target_code": "672",
+        "code": "672000",
+        "name": "Foreign withholding tax (NL branch)"
+      },
+      {
+        "target_code": "680",
+        "code": "680000",
+        "name": "Transfer to deferred taxes"
+      },
+      {
+        "target_code": "743",
+        "code": "743000",
+        "name": "Sundry income - recharges to staff"
+      },
+      {
+        "target_code": "751",
+        "code": "751000",
+        "name": "Interest income savings account"
+      },
+      {
+        "target_code": "754",
+        "code": "754000",
+        "name": "Exchange gains realised"
+      },
+      {
+        "target_code": "769",
+        "code": "769000",
+        "name": "Exceptional financial income"
+      },
+      {
+        "target_code": "491",
+        "code": "491200",
+        "name": "Subsidies receivable (VLAIO)"
+      }
+    ]
+  }
+}

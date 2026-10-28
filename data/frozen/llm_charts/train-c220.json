@@ -1,0 +1,315 @@
+{
+  "company_id": "train-c220",
+  "split": "train",
+  "industry": "software",
+  "language": "mixed",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "121",
+    "122",
+    "160",
+    "162",
+    "164",
+    "172",
+    "179",
+    "200",
+    "201",
+    "220",
+    "281",
+    "282",
+    "309",
+    "330",
+    "340",
+    "359",
+    "379",
+    "401",
+    "416",
+    "429",
+    "432",
+    "433",
+    "440",
+    "454",
+    "488",
+    "603",
+    "604",
+    "618",
+    "620",
+    "621",
+    "623",
+    "649",
+    "654",
+    "660",
+    "690",
+    "712",
+    "713",
+    "752",
+    "754",
+    "792"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:25:56+00:00",
+  "usage": {
+    "input_tokens": 4091,
+    "output_tokens": 1923,
+    "cost_usd": 0.0667574,
+    "latency_ms": 20083.310374990106
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "121",
+        "code": "121100",
+        "name": "Herwaardering gebouw kantoor Etterbeek"
+      },
+      {
+        "target_code": "122",
+        "code": "122100",
+        "name": "Plus-value réévaluation particip. CodeNest BV"
+      },
+      {
+        "target_code": "160",
+        "code": "160100",
+        "name": "Prov. pensioen IPT bestuurders"
+      },
+      {
+        "target_code": "162",
+        "code": "162100",
+        "name": "Provision gros entretien serverroom"
+      },
+      {
+        "target_code": "164",
+        "code": "164100",
+        "name": "Prov. litige client SLA Q-Ticket"
+      },
+      {
+        "target_code": "164",
+        "code": "164200",
+        "name": "Provision garantie licences on-premise"
+      },
+      {
+        "target_code": "172",
+        "code": "172100",
+        "name": "Leasing wagenpark LT (ING Lease)"
+      },
+      {
+        "target_code": "179",
+        "code": "179100",
+        "name": "Achtergestelde lening Finance.brussels LT"
+      },
+      {
+        "target_code": "200",
+        "code": "200100",
+        "name": "Oprichtingskosten notaris & publicatie"
+      },
+      {
+        "target_code": "201",
+        "code": "201100",
+        "name": "Frais dossier emprunt BNP 2024"
+      },
+      {
+        "target_code": "220",
+        "code": "220100",
+        "name": "Terrain parking Zaventem"
+      },
+      {
+        "target_code": "281",
+        "code": "281100",
+        "name": "IC loan Bytewise France SAS"
+      },
+      {
+        "target_code": "281",
+        "code": "281200",
+        "name": "Vordering IC Bytewise Nederland BV"
+      },
+      {
+        "target_code": "282",
+        "code": "282100",
+        "name": "Participation 20% DataLoom SRL"
+      },
+      {
+        "target_code": "309",
+        "code": "309100",
+        "name": "WV hardware componenten (-)"
+      },
+      {
+        "target_code": "330",
+        "code": "330100",
+        "name": "Stock appliances BoxOne finished"
+      },
+      {
+        "target_code": "340",
+        "code": "340100",
+        "name": "Voorraad resale hardware (tablets/scanners)"
+      },
+      {
+        "target_code": "359",
+        "code": "359100",
+        "name": "RdV immeuble destiné à la vente (-)"
+      },
+      {
+        "target_code": "379",
+        "code": "379100",
+        "name": "WV projecten in uitvoering fixed-price (-)"
+      },
+      {
+        "target_code": "401",
+        "code": "401100",
+        "name": "Effets à recevoir clients"
+      },
+      {
+        "target_code": "416",
+        "code": "416100",
+        "name": "Te ontvangen subsidie VLAIO"
+      },
+      {
+        "target_code": "416",
+        "code": "416200",
+        "name": "Créances diverses - remb. assurance"
+      },
+      {
+        "target_code": "429",
+        "code": "429100",
+        "name": "Lening Finance.brussels - deel < 1 jaar"
+      },
+      {
+        "target_code": "432",
+        "code": "432100",
+        "name": "Acceptkrediet KBC"
+      },
+      {
+        "target_code": "433",
+        "code": "433100",
+        "name": "KBC straight loan / kaskrediet"
+      },
+      {
+        "target_code": "433",
+        "code": "433200",
+        "name": "Belfius ouverture de crédit CC"
+      },
+      {
+        "target_code": "440",
+        "code": "440100",
+        "name": "Fournisseurs Belgique"
+      },
+      {
+        "target_code": "440",
+        "code": "440200",
+        "name": "Suppliers EU/non-EU (AWS, Atlassian)"
+      },
+      {
+        "target_code": "454",
+        "code": "454100",
+        "name": "RSZ/ONSS kwartaalbijdragen"
+      },
+      {
+        "target_code": "488",
+        "code": "488100",
+        "name": "Waarborg ontvangen onderhuur kantoor"
+      },
+      {
+        "target_code": "603",
+        "code": "603100",
+        "name": "Freelance devs - subcontracting"
+      },
+      {
+        "target_code": "603",
+        "code": "603200",
+        "name": "Sous-traitance QA offshore (Romania)"
+      },
+      {
+        "target_code": "604",
+        "code": "604100",
+        "name": "Aankoop hardware resale 21%"
+      },
+      {
+        "target_code": "604",
+        "code": "604200",
+        "name": "Achats licences tierces revente"
+      },
+      {
+        "target_code": "618",
+        "code": "618100",
+        "name": "Management fee bestuurders"
+      },
+      {
+        "target_code": "620",
+        "code": "620100",
+        "name": "Salaires employés Bruxelles"
+      },
+      {
+        "target_code": "620",
+        "code": "620200",
+        "name": "Bezoldigingen bedienden kantoor Gent"
+      },
+      {
+        "target_code": "621",
+        "code": "621100",
+        "name": "Werkgeversbijdragen RSZ"
+      },
+      {
+        "target_code": "623",
+        "code": "623100",
+        "name": "Maaltijdcheques & ecocheques"
+      },
+      {
+        "target_code": "649",
+        "code": "649100",
+        "name": "Restructuring costs capitalised (-)"
+      },
+      {
+        "target_code": "654",
+        "code": "654100",
+        "name": "Wisselverlies USD"
+      },
+      {
+        "target_code": "654",
+        "code": "654200",
+        "name": "Pertes de change GBP"
+      },
+      {
+        "target_code": "660",
+        "code": "660100",
+        "name": "Uitz. afschrijving legacy platform v1"
+      },
+      {
+        "target_code": "690",
+        "code": "690100",
+        "name": "Perte reportée exercice préc."
+      },
+      {
+        "target_code": "712",
+        "code": "712100",
+        "name": "Var. stock WIP projecten"
+      },
+      {
+        "target_code": "713",
+        "code": "713100",
+        "name": "Change in stock BoxOne appliances"
+      },
+      {
+        "target_code": "752",
+        "code": "752100",
+        "name": "Meerwaarde verkoop beleggingen"
+      },
+      {
+        "target_code": "754",
+        "code": "754100",
+        "name": "Gains de change USD"
+      },
+      {
+        "target_code": "754",
+        "code": "754200",
+        "name": "FX gain GBP"
+      },
+      {
+        "target_code": "792",
+        "code": "792100",
+        "name": "Onttrekking beschikbare reserves"
+      }
+    ]
+  }
+}

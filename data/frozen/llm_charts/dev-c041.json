@@ -1,0 +1,315 @@
+{
+  "company_id": "dev-c041",
+  "split": "dev",
+  "industry": "construction",
+  "language": "mixed",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "121",
+    "122",
+    "171",
+    "176",
+    "210",
+    "212",
+    "251",
+    "320",
+    "340",
+    "349",
+    "369",
+    "371",
+    "401",
+    "406",
+    "409",
+    "412",
+    "417",
+    "430",
+    "439",
+    "441",
+    "453",
+    "455",
+    "488",
+    "490",
+    "493",
+    "602",
+    "608",
+    "618",
+    "622",
+    "624",
+    "633",
+    "649",
+    "656",
+    "660",
+    "663",
+    "664",
+    "669",
+    "690",
+    "742",
+    "769"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:27:39+00:00",
+  "usage": {
+    "input_tokens": 4208,
+    "output_tokens": 1952,
+    "cost_usd": 0.0682734,
+    "latency_ms": 19617.126875091344
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "121",
+        "code": "121000",
+        "name": "Herwaardering gebouw depot Vilvoorde"
+      },
+      {
+        "target_code": "122",
+        "code": "122000",
+        "name": "Plus-value réévaluation particip. BetonMix SRL"
+      },
+      {
+        "target_code": "171",
+        "code": "171000",
+        "name": "Obligatielening 2023-2030 (niet achtergesteld)"
+      },
+      {
+        "target_code": "176",
+        "code": "176000",
+        "name": "Acomptes reçus LT - projet Résidence Iris"
+      },
+      {
+        "target_code": "210",
+        "code": "210000",
+        "name": "R&D prefab wandelementen"
+      },
+      {
+        "target_code": "212",
+        "code": "212000",
+        "name": "Goodwill overname Dakwerken Peeters"
+      },
+      {
+        "target_code": "251",
+        "code": "251100",
+        "name": "Leasing torenkraan Liebherr 81K"
+      },
+      {
+        "target_code": "251",
+        "code": "251200",
+        "name": "Leasing graafmachine CAT 308 - ING Lease"
+      },
+      {
+        "target_code": "320",
+        "code": "320100",
+        "name": "WIP werf Anderlecht - Rue Wayez"
+      },
+      {
+        "target_code": "320",
+        "code": "320200",
+        "name": "En-cours chantier Uccle - Av. Brugmann"
+      },
+      {
+        "target_code": "340",
+        "code": "340000",
+        "name": "Stock handelsgoederen (tegels, sanitair)"
+      },
+      {
+        "target_code": "349",
+        "code": "349000",
+        "name": "RV stock marchandises (-)"
+      },
+      {
+        "target_code": "369",
+        "code": "369000",
+        "name": "WV voorschotten leveranciers stock (-)"
+      },
+      {
+        "target_code": "371",
+        "code": "371100",
+        "name": "Winst lopende bestelling - School Jette"
+      },
+      {
+        "target_code": "371",
+        "code": "371200",
+        "name": "Bénéfice pris en compte - Bureaux Etterbeek"
+      },
+      {
+        "target_code": "401",
+        "code": "401000",
+        "name": "Wissels te innen klanten"
+      },
+      {
+        "target_code": "406",
+        "code": "406100",
+        "name": "Voorschotten aan leveranciers - Gedimat"
+      },
+      {
+        "target_code": "406",
+        "code": "406200",
+        "name": "Acomptes versés fournisseurs divers"
+      },
+      {
+        "target_code": "409",
+        "code": "409000",
+        "name": "Bad debt allowance trade debtors (-)"
+      },
+      {
+        "target_code": "412",
+        "code": "412000",
+        "name": "Terug te vorderen VenB / précompte"
+      },
+      {
+        "target_code": "417",
+        "code": "417000",
+        "name": "Créances douteuses diverses"
+      },
+      {
+        "target_code": "430",
+        "code": "430100",
+        "name": "Straight loan Belfius"
+      },
+      {
+        "target_code": "430",
+        "code": "430200",
+        "name": "Crédit terme fixe KBC"
+      },
+      {
+        "target_code": "439",
+        "code": "439000",
+        "name": "Lening zaakvoerder"
+      },
+      {
+        "target_code": "441",
+        "code": "441000",
+        "name": "Effets à payer fournisseurs"
+      },
+      {
+        "target_code": "453",
+        "code": "453100",
+        "name": "BV bedienden"
+      },
+      {
+        "target_code": "453",
+        "code": "453200",
+        "name": "PP ouvriers chantier"
+      },
+      {
+        "target_code": "455",
+        "code": "455100",
+        "name": "Te betalen lonen arbeiders"
+      },
+      {
+        "target_code": "455",
+        "code": "455200",
+        "name": "Rémunérations employés à payer"
+      },
+      {
+        "target_code": "488",
+        "code": "488100",
+        "name": "Cautions reçues locataires dépôt"
+      },
+      {
+        "target_code": "488",
+        "code": "488200",
+        "name": "Borg ontvangen huur stelling/materieel"
+      },
+      {
+        "target_code": "490",
+        "code": "490100",
+        "name": "Prepaid insurance ABR/CAR"
+      },
+      {
+        "target_code": "490",
+        "code": "490200",
+        "name": "Over te dragen kosten - leasing"
+      },
+      {
+        "target_code": "493",
+        "code": "493000",
+        "name": "Produits à reporter facturation anticipée"
+      },
+      {
+        "target_code": "602",
+        "code": "602100",
+        "name": "Onderaannemers ruwbouw"
+      },
+      {
+        "target_code": "602",
+        "code": "602200",
+        "name": "Bureau d'études stabilité / architecte"
+      },
+      {
+        "target_code": "608",
+        "code": "608000",
+        "name": "Ristorno's leveranciers (-)"
+      },
+      {
+        "target_code": "618",
+        "code": "618000",
+        "name": "Rémunération gérant (mandat)"
+      },
+      {
+        "target_code": "622",
+        "code": "622000",
+        "name": "Groepsverzekering personeel"
+      },
+      {
+        "target_code": "624",
+        "code": "624000",
+        "name": "Pension payments ex-employees"
+      },
+      {
+        "target_code": "633",
+        "code": "633000",
+        "name": "WV handelsvorderingen > 1 jaar"
+      },
+      {
+        "target_code": "649",
+        "code": "649000",
+        "name": "Frais restructuration activés (-)"
+      },
+      {
+        "target_code": "656",
+        "code": "656000",
+        "name": "Provisions financières"
+      },
+      {
+        "target_code": "660",
+        "code": "660000",
+        "name": "Afschrijving uitzonderlijk materieel"
+      },
+      {
+        "target_code": "663",
+        "code": "663000",
+        "name": "Loss on sale vehicles/equipment"
+      },
+      {
+        "target_code": "664",
+        "code": "664000",
+        "name": "Autres charges non récurrentes"
+      },
+      {
+        "target_code": "669",
+        "code": "669000",
+        "name": "Geactiveerde n.r. herstructureringskosten (-)"
+      },
+      {
+        "target_code": "690",
+        "code": "690000",
+        "name": "Overgedragen verlies vorig boekjaar"
+      },
+      {
+        "target_code": "742",
+        "code": "742000",
+        "name": "Meerwaarde factoring vorderingen"
+      },
+      {
+        "target_code": "769",
+        "code": "769000",
+        "name": "Produits financiers exceptionnels"
+      }
+    ]
+  }
+}

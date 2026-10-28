@@ -1,0 +1,315 @@
+{
+  "company_id": "dev-c069",
+  "split": "dev",
+  "industry": "construction",
+  "language": "en",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "122",
+    "161",
+    "162",
+    "163",
+    "173",
+    "178",
+    "202",
+    "223",
+    "282",
+    "349",
+    "360",
+    "369",
+    "401",
+    "404",
+    "416",
+    "417",
+    "419",
+    "420",
+    "422",
+    "430",
+    "439",
+    "459",
+    "489",
+    "491",
+    "493",
+    "529",
+    "539",
+    "578",
+    "604",
+    "605",
+    "631",
+    "634",
+    "657",
+    "668",
+    "689",
+    "717",
+    "741",
+    "761",
+    "764",
+    "769"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:29:50+00:00",
+  "usage": {
+    "input_tokens": 3217,
+    "output_tokens": 1930,
+    "cost_usd": 0.059905400000000004,
+    "latency_ms": 18283.077458152547
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "122",
+        "code": "122000",
+        "name": "Reval. surplus - stake Betonmix NV"
+      },
+      {
+        "target_code": "161",
+        "code": "161000",
+        "name": "Prov. corporate tax dispute AJ2024"
+      },
+      {
+        "target_code": "162",
+        "code": "162000",
+        "name": "Prov. major overhaul tower crane Liebherr"
+      },
+      {
+        "target_code": "162",
+        "code": "162010",
+        "name": "Prov. repairs yard & warehouse Lokeren"
+      },
+      {
+        "target_code": "163",
+        "code": "163000",
+        "name": "Prov. soil remediation depot (OVAM)"
+      },
+      {
+        "target_code": "173",
+        "code": "173100",
+        "name": "Investment loan KBC - excavators"
+      },
+      {
+        "target_code": "173",
+        "code": "173200",
+        "name": "Mortgage loan BNP Fortis - depot building"
+      },
+      {
+        "target_code": "178",
+        "code": "178000",
+        "name": "Cash deposits recd - rented scaffolding"
+      },
+      {
+        "target_code": "178",
+        "code": "178010",
+        "name": "Rental deposit recd - subtenant office"
+      },
+      {
+        "target_code": "202",
+        "code": "202000",
+        "name": "Start-up costs - VCA certification & setup"
+      },
+      {
+        "target_code": "223",
+        "code": "223000",
+        "name": "Superficies right - storage plot Zele"
+      },
+      {
+        "target_code": "282",
+        "code": "282000",
+        "name": "Shareholding 20% THV Ringvaart"
+      },
+      {
+        "target_code": "349",
+        "code": "349000",
+        "name": "W/D stock resale materials (-)"
+      },
+      {
+        "target_code": "360",
+        "code": "360000",
+        "name": "Advances paid to suppliers - stock materials"
+      },
+      {
+        "target_code": "369",
+        "code": "369000",
+        "name": "W/D advances to suppliers (-)"
+      },
+      {
+        "target_code": "401",
+        "code": "401000",
+        "name": "Customers - bills of exchange to collect"
+      },
+      {
+        "target_code": "404",
+        "code": "404000",
+        "name": "Invoices to be issued - progress statements"
+      },
+      {
+        "target_code": "416",
+        "code": "416000",
+        "name": "Misc. receivables - insurance claims"
+      },
+      {
+        "target_code": "416",
+        "code": "416100",
+        "name": "Receivable - recoverable fuel excise"
+      },
+      {
+        "target_code": "417",
+        "code": "417000",
+        "name": "Doubtful misc. receivables"
+      },
+      {
+        "target_code": "419",
+        "code": "419000",
+        "name": "W/D misc. receivables (-)"
+      },
+      {
+        "target_code": "420",
+        "code": "420000",
+        "name": "Subord. loan shareholder - current portion"
+      },
+      {
+        "target_code": "422",
+        "code": "422000",
+        "name": "Leasing vans & machines - due within year"
+      },
+      {
+        "target_code": "430",
+        "code": "430100",
+        "name": "Straight loan Belfius - roll-over"
+      },
+      {
+        "target_code": "430",
+        "code": "430200",
+        "name": "Fixed advance ING - bridge financing"
+      },
+      {
+        "target_code": "439",
+        "code": "439000",
+        "name": "Short-term loan - other lenders"
+      },
+      {
+        "target_code": "459",
+        "code": "459000",
+        "name": "Payable - fund for existence security (FBZ)"
+      },
+      {
+        "target_code": "459",
+        "code": "459100",
+        "name": "Payable - weather stamps & loyalty stamps (Constructiv)"
+      },
+      {
+        "target_code": "489",
+        "code": "489000",
+        "name": "Misc. payables - other"
+      },
+      {
+        "target_code": "489",
+        "code": "489100",
+        "name": "Retentions withheld - subcontractors"
+      },
+      {
+        "target_code": "491",
+        "code": "491000",
+        "name": "Accrued income - to receive"
+      },
+      {
+        "target_code": "493",
+        "code": "493000",
+        "name": "Deferred income - prepaid works"
+      },
+      {
+        "target_code": "529",
+        "code": "529000",
+        "name": "W/D bonds held (-)"
+      },
+      {
+        "target_code": "539",
+        "code": "539000",
+        "name": "W/D term deposits (-)"
+      },
+      {
+        "target_code": "578",
+        "code": "578000",
+        "name": "Postage stamps - office"
+      },
+      {
+        "target_code": "604",
+        "code": "604000",
+        "name": "Purch. materials for resale 21%"
+      },
+      {
+        "target_code": "604",
+        "code": "604060",
+        "name": "Purch. materials for resale 6% (renovation)"
+      },
+      {
+        "target_code": "605",
+        "code": "605000",
+        "name": "Purch. building plots for resale"
+      },
+      {
+        "target_code": "631",
+        "code": "631000",
+        "name": "Write-down stock materials"
+      },
+      {
+        "target_code": "634",
+        "code": "634000",
+        "name": "Write-down customers - bad debts"
+      },
+      {
+        "target_code": "657",
+        "code": "657000",
+        "name": "Bank charges & bank guarantee fees"
+      },
+      {
+        "target_code": "668",
+        "code": "668000",
+        "name": "Exceptional financial charges"
+      },
+      {
+        "target_code": "689",
+        "code": "689000",
+        "name": "Transfer to tax-exempt reserves"
+      },
+      {
+        "target_code": "717",
+        "code": "717100",
+        "name": "WIP change - site Gent Dampoort"
+      },
+      {
+        "target_code": "717",
+        "code": "717200",
+        "name": "WIP change - site Aalst residentie Schelde"
+      },
+      {
+        "target_code": "741",
+        "code": "741000",
+        "name": "Gain on sale of vehicles"
+      },
+      {
+        "target_code": "741",
+        "code": "741100",
+        "name": "Gain on sale of site machinery"
+      },
+      {
+        "target_code": "761",
+        "code": "761000",
+        "name": "Reversal W/D financial fixed assets"
+      },
+      {
+        "target_code": "764",
+        "code": "764000",
+        "name": "Other exceptional operating income"
+      },
+      {
+        "target_code": "769",
+        "code": "769000",
+        "name": "Other exceptional financial income"
+      }
+    ]
+  }
+}

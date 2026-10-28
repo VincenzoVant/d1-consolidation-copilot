@@ -1,0 +1,315 @@
+{
+  "company_id": "dev-c064",
+  "split": "dev",
+  "industry": "software",
+  "language": "nl",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "162",
+    "168",
+    "201",
+    "280",
+    "281",
+    "283",
+    "300",
+    "320",
+    "329",
+    "371",
+    "404",
+    "406",
+    "418",
+    "419",
+    "420",
+    "422",
+    "430",
+    "451",
+    "452",
+    "453",
+    "459",
+    "492",
+    "530",
+    "550",
+    "603",
+    "621",
+    "632",
+    "652",
+    "655",
+    "656",
+    "659",
+    "661",
+    "669",
+    "680",
+    "712",
+    "715",
+    "761",
+    "769",
+    "789",
+    "792"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:29:23+00:00",
+  "usage": {
+    "input_tokens": 3294,
+    "output_tokens": 1914,
+    "cost_usd": 0.060201399999999995,
+    "latency_ms": 17364.762749988586
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "162",
+        "code": "162100",
+        "name": "Voorz. groot onderhoud kantoor Gent"
+      },
+      {
+        "target_code": "168",
+        "code": "168000",
+        "name": "Uitgest. belasting kapitaalsubsidie VLAIO"
+      },
+      {
+        "target_code": "201",
+        "code": "201000",
+        "name": "Dossierkosten investeringskrediet"
+      },
+      {
+        "target_code": "280",
+        "code": "280100",
+        "name": "Deelneming CodeNest BV (100%)"
+      },
+      {
+        "target_code": "280",
+        "code": "280200",
+        "name": "Deelneming CodeNest Nederland BV"
+      },
+      {
+        "target_code": "281",
+        "code": "281100",
+        "name": "R/C CodeNest BV"
+      },
+      {
+        "target_code": "281",
+        "code": "281200",
+        "name": "Lening CodeNest Nederland BV"
+      },
+      {
+        "target_code": "283",
+        "code": "283000",
+        "name": "Lening DataBridge NV (25%)"
+      },
+      {
+        "target_code": "300",
+        "code": "300000",
+        "name": "Voorraad hardware/sensoren IoT-kits"
+      },
+      {
+        "target_code": "320",
+        "code": "320000",
+        "name": "OHW maatwerkprojecten"
+      },
+      {
+        "target_code": "329",
+        "code": "329000",
+        "name": "WV OHW maatwerk (-)"
+      },
+      {
+        "target_code": "371",
+        "code": "371000",
+        "name": "Fixed price projecten - toegerek. winst"
+      },
+      {
+        "target_code": "404",
+        "code": "404000",
+        "name": "Nog te factureren licenties/SaaS"
+      },
+      {
+        "target_code": "406",
+        "code": "406000",
+        "name": "Voorschotten leveranciers"
+      },
+      {
+        "target_code": "406",
+        "code": "406100",
+        "name": "Vooruitbet. AWS/Azure credits"
+      },
+      {
+        "target_code": "418",
+        "code": "418100",
+        "name": "Huurwaarborg kantoor Gent"
+      },
+      {
+        "target_code": "418",
+        "code": "418200",
+        "name": "Huurwaarborg kantoor Leuven"
+      },
+      {
+        "target_code": "419",
+        "code": "419000",
+        "name": "WV dubieuze overige vorderingen"
+      },
+      {
+        "target_code": "420",
+        "code": "420000",
+        "name": "Achtergest. lening PMV - KT deel"
+      },
+      {
+        "target_code": "422",
+        "code": "422000",
+        "name": "Leasing wagenpark - deel < 1 jaar"
+      },
+      {
+        "target_code": "430",
+        "code": "430100",
+        "name": "Straight loan KBC"
+      },
+      {
+        "target_code": "430",
+        "code": "430200",
+        "name": "Kaskrediet vaste termijn Belfius"
+      },
+      {
+        "target_code": "451",
+        "code": "451000",
+        "name": "Btw verschuldigd 21%"
+      },
+      {
+        "target_code": "451",
+        "code": "451100",
+        "name": "Btw verlegd intracom diensten"
+      },
+      {
+        "target_code": "452",
+        "code": "452000",
+        "name": "Te betalen VenB"
+      },
+      {
+        "target_code": "453",
+        "code": "453000",
+        "name": "Bedrijfsvoorheffing personeel"
+      },
+      {
+        "target_code": "453",
+        "code": "453100",
+        "name": "Roerende voorheffing dividend"
+      },
+      {
+        "target_code": "459",
+        "code": "459000",
+        "name": "Groepsverzekering te betalen"
+      },
+      {
+        "target_code": "492",
+        "code": "492000",
+        "name": "TBK diversen"
+      },
+      {
+        "target_code": "492",
+        "code": "492100",
+        "name": "TBK interesten leningen"
+      },
+      {
+        "target_code": "530",
+        "code": "530000",
+        "name": "Termijnrek. KBC 3 jaar"
+      },
+      {
+        "target_code": "550",
+        "code": "550100",
+        "name": "KBC zichtrekening"
+      },
+      {
+        "target_code": "550",
+        "code": "550200",
+        "name": "Belfius zichtrekening"
+      },
+      {
+        "target_code": "603",
+        "code": "603000",
+        "name": "Freelance developers"
+      },
+      {
+        "target_code": "603",
+        "code": "603100",
+        "name": "Onderaanneming offshore dev team"
+      },
+      {
+        "target_code": "621",
+        "code": "621000",
+        "name": "RSZ werkgever"
+      },
+      {
+        "target_code": "632",
+        "code": "632000",
+        "name": "WV fixed price projecten"
+      },
+      {
+        "target_code": "652",
+        "code": "652000",
+        "name": "Minderw. verkoop beleggingen"
+      },
+      {
+        "target_code": "655",
+        "code": "655000",
+        "name": "Koersverschillen USD/GBP"
+      },
+      {
+        "target_code": "656",
+        "code": "656000",
+        "name": "Fin. voorziening garantie dochter"
+      },
+      {
+        "target_code": "659",
+        "code": "659000",
+        "name": "Geactiv. fin. kosten herstructurering (-)"
+      },
+      {
+        "target_code": "661",
+        "code": "661000",
+        "name": "WV deelneming CodeNest NL"
+      },
+      {
+        "target_code": "669",
+        "code": "669000",
+        "name": "Geactiv. herstructureringskosten (-)"
+      },
+      {
+        "target_code": "680",
+        "code": "680000",
+        "name": "Overboeking uitgest. belasting subsidie"
+      },
+      {
+        "target_code": "712",
+        "code": "712000",
+        "name": "Wijziging OHW projecten"
+      },
+      {
+        "target_code": "715",
+        "code": "715000",
+        "name": "Wijziging voorraad vastgoed verkoop"
+      },
+      {
+        "target_code": "761",
+        "code": "761000",
+        "name": "Terugn. WV deelnemingen"
+      },
+      {
+        "target_code": "769",
+        "code": "769000",
+        "name": "Uitzonderl. fin. opbrengsten"
+      },
+      {
+        "target_code": "789",
+        "code": "789000",
+        "name": "Onttrekking belastingvrije reserve"
+      },
+      {
+        "target_code": "792",
+        "code": "792000",
+        "name": "Onttrekking beschikbare reserve"
+      }
+    ]
+  }
+}

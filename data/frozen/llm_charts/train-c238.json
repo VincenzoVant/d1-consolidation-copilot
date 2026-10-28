@@ -1,0 +1,315 @@
+{
+  "company_id": "train-c238",
+  "split": "train",
+  "industry": "retail",
+  "language": "fr",
+  "requested_model": "claude-opus-5-5",
+  "served_model": "claude-opus-5-5",
+  "backend": "ClaudeCLIBackend",
+  "prompt_version": "v1",
+  "prompt_sha256": "8c3df7673398d70366edfcad77381deda871b88d688cf5f16f77e09f18a4ab24",
+  "group_codes": [
+    "120",
+    "121",
+    "122",
+    "164",
+    "170",
+    "173",
+    "179",
+    "202",
+    "204",
+    "213",
+    "223",
+    "251",
+    "252",
+    "282",
+    "285",
+    "291",
+    "300",
+    "330",
+    "339",
+    "370",
+    "371",
+    "404",
+    "406",
+    "417",
+    "423",
+    "432",
+    "454",
+    "455",
+    "570",
+    "600",
+    "602",
+    "620",
+    "622",
+    "632",
+    "635",
+    "640",
+    "670",
+    "689",
+    "700",
+    "712"
+  ],
+  "n_accounts": 50,
+  "created_at": "2026-10-28T20:27:20+00:00",
+  "usage": {
+    "input_tokens": 3140,
+    "output_tokens": 1794,
+    "cost_usd": 0.056569400000000006,
+    "latency_ms": 16969.377167057246
+  },
+  "response": {
+    "accounts": [
+      {
+        "target_code": "120",
+        "code": "120100",
+        "name": "Réév. logiciel caisse & site web"
+      },
+      {
+        "target_code": "121",
+        "code": "121100",
+        "name": "Réév. bâtiment magasin Namur"
+      },
+      {
+        "target_code": "122",
+        "code": "122100",
+        "name": "Réév. participation Logistique Sud SA"
+      },
+      {
+        "target_code": "164",
+        "code": "164100",
+        "name": "Prov. litige bail Liège"
+      },
+      {
+        "target_code": "164",
+        "code": "164200",
+        "name": "Prov. garantie clients retours"
+      },
+      {
+        "target_code": "170",
+        "code": "170100",
+        "name": "Prêt subordonné actionnaire Dupont"
+      },
+      {
+        "target_code": "173",
+        "code": "173100",
+        "name": "Emprunt Belfius rénovation Namur"
+      },
+      {
+        "target_code": "173",
+        "code": "173200",
+        "name": "Emprunt ING achat entrepôt"
+      },
+      {
+        "target_code": "179",
+        "code": "179100",
+        "name": "Dette LT reprise fonds commerce Liège"
+      },
+      {
+        "target_code": "202",
+        "code": "202100",
+        "name": "Frais notaire augmentation capital"
+      },
+      {
+        "target_code": "204",
+        "code": "204100",
+        "name": "Frais réorganisation fermeture Wavre"
+      },
+      {
+        "target_code": "213",
+        "code": "213100",
+        "name": "Acompte nouveau logiciel POS"
+      },
+      {
+        "target_code": "223",
+        "code": "223100",
+        "name": "Droit superficie parking Namur"
+      },
+      {
+        "target_code": "251",
+        "code": "251100",
+        "name": "Leasing caisses enregistreuses & scanners"
+      },
+      {
+        "target_code": "252",
+        "code": "252100",
+        "name": "Leasing camionnette livraison"
+      },
+      {
+        "target_code": "282",
+        "code": "282100",
+        "name": "Particip. GIE Achats Wallonie"
+      },
+      {
+        "target_code": "285",
+        "code": "285100",
+        "name": "Garantie locative magasin Liège"
+      },
+      {
+        "target_code": "285",
+        "code": "285200",
+        "name": "Garantie locative magasin Namur"
+      },
+      {
+        "target_code": "291",
+        "code": "291100",
+        "name": "Prêt LT au personnel"
+      },
+      {
+        "target_code": "300",
+        "code": "300100",
+        "name": "Stock emballages & sacs"
+      },
+      {
+        "target_code": "330",
+        "code": "330100",
+        "name": "Stock marchandises confect. maison"
+      },
+      {
+        "target_code": "339",
+        "code": "339100",
+        "name": "RDV stock invendus fin saison"
+      },
+      {
+        "target_code": "370",
+        "code": "370100",
+        "name": "Cdes clients en cours (sur mesure)"
+      },
+      {
+        "target_code": "371",
+        "code": "371100",
+        "name": "Marge reconnue cdes en cours"
+      },
+      {
+        "target_code": "404",
+        "code": "404100",
+        "name": "NC fournisseurs à recevoir"
+      },
+      {
+        "target_code": "404",
+        "code": "404200",
+        "name": "Ristournes fin d'année à recevoir"
+      },
+      {
+        "target_code": "406",
+        "code": "406100",
+        "name": "Acomptes versés fournisseurs"
+      },
+      {
+        "target_code": "417",
+        "code": "417100",
+        "name": "Créances douteuses diverses"
+      },
+      {
+        "target_code": "423",
+        "code": "423100",
+        "name": "Belfius - part échéant dans l'année"
+      },
+      {
+        "target_code": "432",
+        "code": "432100",
+        "name": "Crédit acceptation BNP import"
+      },
+      {
+        "target_code": "454",
+        "code": "454100",
+        "name": "ONSS à payer"
+      },
+      {
+        "target_code": "455",
+        "code": "455100",
+        "name": "Salaires nets à payer"
+      },
+      {
+        "target_code": "455",
+        "code": "455200",
+        "name": "Pécule vacances à payer"
+      },
+      {
+        "target_code": "570",
+        "code": "570100",
+        "name": "Caisse magasin Namur"
+      },
+      {
+        "target_code": "570",
+        "code": "570200",
+        "name": "Caisse magasin Liège"
+      },
+      {
+        "target_code": "600",
+        "code": "600100",
+        "name": "Achats emballages & sacs"
+      },
+      {
+        "target_code": "602",
+        "code": "602100",
+        "name": "Sous-traitance retouches"
+      },
+      {
+        "target_code": "602",
+        "code": "602200",
+        "name": "Livraisons transporteur externe"
+      },
+      {
+        "target_code": "620",
+        "code": "620100",
+        "name": "Salaires vendeurs"
+      },
+      {
+        "target_code": "620",
+        "code": "620200",
+        "name": "Appointements employés bureau"
+      },
+      {
+        "target_code": "622",
+        "code": "622100",
+        "name": "Assurance groupe AG Insurance"
+      },
+      {
+        "target_code": "632",
+        "code": "632100",
+        "name": "RDV cdes en cours"
+      },
+      {
+        "target_code": "635",
+        "code": "635100",
+        "name": "Dotation prov. pension gérant"
+      },
+      {
+        "target_code": "640",
+        "code": "640100",
+        "name": "Taxe enseigne & précompte immo."
+      },
+      {
+        "target_code": "640",
+        "code": "640200",
+        "name": "Taxe circulation véhicules"
+      },
+      {
+        "target_code": "670",
+        "code": "670100",
+        "name": "ISOC versements anticipés"
+      },
+      {
+        "target_code": "689",
+        "code": "689100",
+        "name": "Dotation réserve immunisée"
+      },
+      {
+        "target_code": "700",
+        "code": "700100",
+        "name": "Ventes magasins TVA 21%"
+      },
+      {
+        "target_code": "700",
+        "code": "700200",
+        "name": "Ventes webshop TVA 21%"
+      },
+      {
+        "target_code": "712",
+        "code": "712100",
+        "name": "Var. stock en-cours retouches"
+      }
+    ]
+  }
+}
