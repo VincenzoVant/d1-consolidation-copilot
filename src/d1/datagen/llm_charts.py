@@ -137,7 +137,7 @@ def parse_chart(response: dict, allowed_codes: set[str]) -> list[LLMAccount]:
     return rows
 
 
-def _frozen_path(frozen_dir: Path, company_id: str) -> Path:
+def frozen_path(frozen_dir: Path, company_id: str) -> Path:
     return Path(frozen_dir) / f"{company_id}.json"
 
 
@@ -160,7 +160,7 @@ def fetch_llm_company(
     Does nothing if the company's frozen file already exists, so an interrupted
     run can simply be restarted. Nothing is written unless the answer is usable.
     """
-    path = _frozen_path(frozen_dir, company_id)
+    path = frozen_path(frozen_dir, company_id)
     if path.exists():
         return path
 
@@ -227,7 +227,7 @@ def _cut_to(rows: list[LLMAccount], n_accounts: int) -> list[LLMAccount]:
 
 def load_llm_company(frozen_dir: Path, company_id: str, split: Split, n_accounts: int) -> list[CompanyAccount]:
     """Turn one frozen file into the company's first n_accounts rows."""
-    path = _frozen_path(frozen_dir, company_id)
+    path = frozen_path(frozen_dir, company_id)
     if not path.exists():
         raise FrozenOutputMissing(f"{path} is missing: run `python -m d1.datagen fetch-llm --split {split}`")
     record = json.loads(path.read_text(encoding="utf-8"))

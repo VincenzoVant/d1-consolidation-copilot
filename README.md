@@ -25,6 +25,22 @@ pip install -e .
 
 Run the tests with `pytest` (or `uv run pytest`).
 
+## Build the data
+
+```bash
+python -m d1.datagen build
+```
+
+This writes `data/generated/{train,dev,test}.jsonl` (12,000 / 3,500 / 600 accounts) from the rule-based generator and the LLM-written company charts frozen in `data/frozen/llm_charts/`. It needs no network and no LLM access.
+
+The frozen charts were written once by the generator model with:
+
+```bash
+python -m d1.datagen fetch-llm --split all   # 78 calls; only companies without a frozen file
+```
+
+By default this runs through the Claude CLI on your own login (`llm_backend` in `config/models.yaml`).
+
 `requirements.txt` holds the exact versions from `uv.lock`. After changing dependencies in `pyproject.toml`, update both:
 
 ```bash
