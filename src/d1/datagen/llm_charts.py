@@ -9,10 +9,11 @@ test rows stays valid.
                                     -> load_llm_company  (frozen file -> CompanyAccount rows)
 
 Code schemes: LLMs number accounts after the target group (1680 for group 168),
-which hands a mapper the answer. So, as for rule-based companies, each company
-gets a scheme: "llm" keeps the LLM's own codes (like a company that follows
-PCMN numbering), "legacy" keeps the LLM's names but replaces the codes with
-sequential 4-digit codes that never start with the target.
+which hands a mapper the answer. So, as for rule-based companies, the split plan
+gives each company a scheme, applied when loading: "llm" keeps the LLM's own
+codes (like a company that follows PCMN numbering), "legacy" keeps the LLM's
+names but replaces the codes with sequential 4-digit codes that never start with
+the target. The scheme does not change the prompt, so it is not part of the call.
 """
 
 import hashlib
@@ -150,7 +151,6 @@ def fetch_llm_company(
     split: Split,
     industry: str,
     language: Language,
-    code_scheme: LLMCodeScheme,
     groups: list[StandardAccount],
     n_accounts: int,
     frozen_dir: Path,
@@ -184,7 +184,6 @@ def fetch_llm_company(
         "split": split,
         "industry": industry,
         "language": language,
-        "code_scheme": code_scheme,
         "requested_model": generator_model,
         "served_model": response.model,
         "backend": type(backend).__name__,
@@ -225,8 +224,10 @@ def _cut_to(rows: list[LLMAccount], n_accounts: int) -> list[LLMAccount]:
     return [row for i, row in enumerate(rows) if i in keep]
 
 
-def load_llm_company(frozen_dir: Path, company_id: str, split: Split, n_accounts: int) -> list[CompanyAccount]:
-    """Turn one frozen file into the company's first n_accounts rows."""
+def load_llm_company(
+    frozen_dir: Path, company_id: str, split: Split, n_accounts: int, code_scheme: LLMCodeScheme = "llm"
+) -> list[CompanyAccount]:
+    """Turn one frozen file into the company's n_accounts rows, with codes per code_scheme."""
     path = frozen_path(frozen_dir, company_id)
     if not path.exists():
         raise FrozenOutputMissing(f"{path} is missing: run `python -m d1.datagen fetch-llm --split {split}`")
@@ -238,8 +239,7 @@ def load_llm_company(frozen_dir: Path, company_id: str, split: Split, n_accounts
     if len(rows) < _min_rows(n_accounts):
         raise LLMOutputError(f"{path.name}: only {len(rows)} usable accounts, need at least {_min_rows(n_accounts)}")
 
-    scheme: LLMCodeScheme = record["code_scheme"]
-    if scheme == "legacy":
+    if code_scheme == "legacy":
         # Seeded by the company id, so every rebuild gives the same codes.
         codes = legacy_codes([row.target_code for row in rows], Random(company_id))
         noise = ["llm", "legacy_code"]
@@ -254,7 +254,7 @@ def load_llm_company(frozen_dir: Path, company_id: str, split: Split, n_accounts
             split=split,
             source="llm",
             language=record["language"],
-            code_scheme=scheme,
+            code_scheme=code_scheme,
             code=code,
             name=row.name,
             noise=list(noise),

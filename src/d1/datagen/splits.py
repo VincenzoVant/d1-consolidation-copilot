@@ -1,7 +1,7 @@
 """Train, dev and test splits: which companies each one has, and building them.
 
 Every company is fixed by its split and its index i:
-  - company_plan gives its industry, language and source (rules or llm);
+  - company_plan gives its industry, language, source (rules or llm) and code scheme;
   - its random generator is Random(split seed * 1000 + i).
 So building twice gives byte-identical files, and a deleted LLM company is
 fetched again with exactly the same groups.
@@ -50,6 +50,7 @@ class CompanySpec(BaseModel):
     industry: str
     language: Language
     source: Literal["rules", "llm"]
+    code_scheme: Literal["pcmn", "llm", "legacy"]
     index: int
     n_accounts: int
 
@@ -58,11 +59,16 @@ def company_plan(split: Split, cfg: SplitConfig, industries: list[str], language
     """The companies of one split: rule-based first, then LLM-written.
 
     Industry cycles fastest; the language shifts by one every full round of
-    industries, so every industry meets every language and both sources.
+    industries, so every industry meets every language and both sources. The
+    code scheme alternates every full round of industries: the company's own
+    numbering ("pcmn" for rules, "llm" for LLM-written), then "legacy" codes that
+    never start with the target. Balanced by formula, not by random draws, so a
+    small split cannot end up with almost no legacy companies.
     """
     plan = []
     for i in range(cfg.n_companies):
         source = "rules" if i < cfg.rule_companies else "llm"
+        own_numbering = "pcmn" if source == "rules" else "llm"
         plan.append(
             CompanySpec(
                 company_id=f"{split}-c{i:03d}",
@@ -70,6 +76,7 @@ def company_plan(split: Split, cfg: SplitConfig, industries: list[str], language
                 industry=industries[i % len(industries)],
                 language=languages[(i + i // len(industries)) % len(languages)],
                 source=source,
+                code_scheme=own_numbering if (i // len(industries)) % 2 == 0 else "legacy",
                 index=i,
                 n_accounts=cfg.rule_accounts_per_company if source == "rules" else cfg.llm_accounts_per_company,
             )
@@ -128,13 +135,12 @@ def fetch_missing_llm(
             continue
         rng = _company_rng(cfg, spec)
         groups = select_llm_groups(chart, spec.n_accounts, rng)
-        code_scheme = rng.choice(["llm", "legacy"])
         if not frozen_path(frozen_dir, spec.company_id).exists():
-            todo.append((spec, groups, code_scheme))
+            todo.append((spec, groups))
 
     log(f"{len(todo)} to fetch with {config.models.generator_model}, {max_workers} at a time")
 
-    def fetch(spec: CompanySpec, groups: list[StandardAccount], code_scheme: str) -> Path:
+    def fetch(spec: CompanySpec, groups: list[StandardAccount]) -> Path:
         return fetch_llm_company(
             backend,
             generator_model=config.models.generator_model,
@@ -143,7 +149,6 @@ def fetch_missing_llm(
             split=spec.split,
             industry=spec.industry,
             language=spec.language,
-            code_scheme=code_scheme,
             groups=groups,
             n_accounts=spec.n_accounts,
             frozen_dir=frozen_dir,
@@ -189,10 +194,11 @@ def build_split(split: Split, config: Config, chart: list[StandardAccount]) -> l
     for cfg, spec in _plans(config, (split,)):
         if spec.source == "rules":
             rows += generate_rule_company(
-                spec.company_id, split, spec.industry, spec.language, chart, spec.n_accounts, _company_rng(cfg, spec)
-            )
+                spec.company_id, split, spec.industry, spec.language, chart, spec.n_accounts, _company_rng(cfg, spec),
+                code_scheme=spec.code_scheme,
+            )  # fmt: skip
             continue
-        company = load_llm_company(config.data.frozen_llm_dir, spec.company_id, split, spec.n_accounts)
+        company = load_llm_company(config.data.frozen_llm_dir, spec.company_id, split, spec.n_accounts, spec.code_scheme)
         # A frozen file made under a different plan would quietly unbalance the split.
         for field in ("industry", "language"):
             if getattr(company[0], field) != getattr(spec, field):

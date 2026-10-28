@@ -48,7 +48,7 @@ class FakeBackend:
         return LLMResponse(structured=self.structured, model=self.model, input_tokens=900, output_tokens=700, cost_usd=0.07, latency_ms=1)
 
 
-def _fetch(backend, groups, frozen_dir, company_id="test-c08", split="test", n=10, code_scheme="llm"):
+def _fetch(backend, groups, frozen_dir, company_id="test-c08", split="test", n=10):
     return fetch_llm_company(
         backend,
         generator_model="claude-opus-5-5",
@@ -57,7 +57,6 @@ def _fetch(backend, groups, frozen_dir, company_id="test-c08", split="test", n=1
         split=split,
         industry="construction",
         language="nl",
-        code_scheme=code_scheme,
         groups=groups,
         n_accounts=n,
         frozen_dir=frozen_dir,
@@ -147,7 +146,8 @@ def test_fetch_writes_frozen_file_then_never_calls_again(groups, tmp_path):
     saved = json.loads(path.read_text(encoding="utf-8"))
     assert path == tmp_path / "test-c08.json"
     assert saved["company_id"] == "test-c08" and saved["split"] == "test"
-    assert saved["industry"] == "construction" and saved["language"] == "nl" and saved["code_scheme"] == "llm"
+    assert saved["industry"] == "construction" and saved["language"] == "nl"
+    assert "code_scheme" not in saved  # decided by the split plan at build time, not by the LLM call
     assert saved["requested_model"] == saved["served_model"] == "claude-opus-5-5"
     assert saved["backend"] == "FakeBackend" and saved["prompt_version"] == PROMPT_VERSION
     assert len(saved["prompt_sha256"]) == 64
@@ -207,15 +207,15 @@ def test_load_cuts_surplus_second_accounts_not_whole_groups(groups, tmp_path):
 
 def test_load_legacy_scheme_replaces_codes_so_they_never_reveal_the_target(groups, tmp_path):
     # _answer's codes start with the target, just as the real trial's did.
-    _fetch(FakeBackend(_answer(groups, 10)), groups, tmp_path, code_scheme="legacy")
-    rows = load_llm_company(tmp_path, "test-c08", "test", 10)
+    _fetch(FakeBackend(_answer(groups, 10)), groups, tmp_path)
+    rows = load_llm_company(tmp_path, "test-c08", "test", 10, code_scheme="legacy")
     assert all(r.code_scheme == "legacy" and r.noise == ["llm", "legacy_code"] for r in rows)
     assert all(len(r.code) == 4 and not r.code.startswith(r.target_code) for r in rows)
     assert len({r.code for r in rows}) == 10
     # Only the codes change: names and targets are the LLM's, and reloading gives the same codes.
     answer = _answer(groups, 10)["accounts"]
     assert [(r.name, r.target_code) for r in rows] == [(a["name"], a["target_code"]) for a in answer]
-    assert rows == load_llm_company(tmp_path, "test-c08", "test", 10)
+    assert rows == load_llm_company(tmp_path, "test-c08", "test", 10, code_scheme="legacy")
 
 
 def test_load_missing_file_raises_with_command_hint(tmp_path):

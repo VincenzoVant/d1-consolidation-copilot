@@ -51,6 +51,26 @@ def test_train_plan_is_balanced(cfg):
     assert all(Counter(c.source for c in plan if c.language == lang) == {"rules": 50, "llm": 10} for lang in cfg.data.languages)
 
 
+def test_test_plan_balances_code_schemes(cfg):
+    plan = _plan(cfg, "test")
+    assert Counter((c.source, c.code_scheme) for c in plan) == {
+        ("rules", "pcmn"): 4, ("rules", "legacy"): 4, ("llm", "llm"): 4, ("llm", "legacy"): 4,
+    }  # fmt: skip
+    for source in ("rules", "llm"):
+        for group in (cfg.data.languages, cfg.data.industries):
+            for value in group:
+                schemes = [c.code_scheme for c in plan if c.source == source and value in (c.language, c.industry)]
+                assert len(set(schemes)) == 2, (source, value)  # every language and industry gets both schemes
+
+
+@pytest.mark.parametrize("split", ["train", "dev"])
+def test_larger_plans_split_code_schemes_about_evenly(cfg, split):
+    plan = _plan(cfg, split)
+    for source in ("rules", "llm"):
+        schemes = [c.code_scheme for c in plan if c.source == source]
+        assert 0.4 <= schemes.count("legacy") / len(schemes) <= 0.6
+
+
 def test_plan_ids_indices_and_sizes(cfg):
     plan = _plan(cfg, "test")
     assert [c.company_id for c in plan] == [f"test-c{i:03d}" for i in range(16)]
@@ -91,8 +111,7 @@ def test_fetch_missing_llm_fetches_each_company_once(small_root, fake_writer):
     assert fetch_missing_llm(config, "test", fake_writer) == []
     assert fake_writer.calls == 2
     for p in paths:
-        saved = json.loads(p.read_text(encoding="utf-8"))
-        assert saved["code_scheme"] in {"llm", "legacy"} and len(saved["group_codes"]) == 8
+        assert len(json.loads(p.read_text(encoding="utf-8"))["group_codes"]) == 8
 
 
 def test_fetch_all_covers_every_split_and_is_reproducible(small_root, fake_writer):
@@ -174,7 +193,9 @@ def test_rows_follow_the_plan_and_ids_are_unique(small_root, fake_writer):
         assert {r.company_id for r in split_rows} == set(plan)
         for r in split_rows:
             spec = plan[r.company_id]
-            assert (r.split, r.source, r.industry, r.language) == (split, spec.source, spec.industry, spec.language)
+            assert (r.split, r.source, r.industry, r.language, r.code_scheme) == (
+                split, spec.source, spec.industry, spec.language, spec.code_scheme,
+            )  # fmt: skip
     ids = [r.account_id for split_rows in rows.values() for r in split_rows]
     assert len(ids) == len(set(ids))
 
