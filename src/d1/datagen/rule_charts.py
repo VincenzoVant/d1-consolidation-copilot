@@ -51,7 +51,7 @@ def _sub_qualifiers(lang: str, count: int, rng: Random) -> list[str]:
     return picked + [f"{i}" for i in range(2, 2 + count - len(picked))]
 
 
-def _legacy_codes(targets: list[str], rng: Random) -> list[str]:
+def legacy_codes(targets: list[str], rng: Random) -> list[str]:
     """Sequential 4-digit codes, skipping any that would start with the row's target code."""
     code = rng.randint(100, 700) * 10
     codes = []
@@ -116,7 +116,7 @@ def generate_rule_company(
             codes.append(f"{target}{seen[target]:03d}")
         extra_tags: list[str] = []
     else:
-        codes = _legacy_codes([target for target, _, _ in rows], rng)
+        codes = legacy_codes([target for target, _, _ in rows], rng)
         extra_tags = ["legacy_code"]
 
     return [
