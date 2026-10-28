@@ -41,6 +41,15 @@ python -m d1.datagen fetch-llm --split all   # 78 calls; only companies without 
 
 By default this runs through the Claude CLI on your own login (`llm_backend` in `config/models.yaml`).
 
+## Hand check of the test set
+
+```bash
+python -m d1.datagen export-review   # 250 test rows -> data/labels/test_review.csv
+python -m d1.datagen apply-review    # verdicts -> data/generated/test_checked.jsonl
+```
+
+All 200 LLM-written test rows and a random 50 rule-based rows are checked by hand: `ok`, `fix` (with `corrected_target`) or `drop`.
+
 `requirements.txt` holds the exact versions from `uv.lock`. After changing dependencies in `pyproject.toml`, update both:
 
 ```bash

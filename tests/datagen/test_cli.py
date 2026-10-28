@@ -56,3 +56,46 @@ def test_split_and_workers_are_validated():
         main(["fetch-llm", "--split", "prod"])
     with pytest.raises(SystemExit):
         main(["fetch-llm", "--split", "test", "--workers", "0"])
+
+
+# --- export-review / apply-review --------------------------------------------------------
+
+
+def _built(small_root, fake_writer):
+    main(["fetch-llm", "--split", "all"], backend_factory=lambda config: fake_writer, root=small_root)
+    main(["build"], root=small_root)
+    return load_config(small_root)
+
+
+def test_export_review_needs_a_built_test_split(small_root, capsys):
+    assert main(["export-review"], root=small_root) == 1
+    assert "build" in capsys.readouterr().err
+
+
+def test_export_fill_and_apply_review(small_root, fake_writer, capsys):
+    config = _built(small_root, fake_writer)
+    capsys.readouterr()
+    assert main(["export-review"], root=small_root) == 0
+    assert "30 rows" in capsys.readouterr().out  # 20 LLM rows + review_rule_sample 10
+
+    path = config.data.review_path
+    text = path.read_text(encoding="utf-8-sig").splitlines()
+    header = text[0].split(";")
+    filled = [text[0]] + [";".join("ok" if col == "verdict" else cell for col, cell in zip(header, line.split(";"))) for line in text[1:]]
+    path.write_text("\n".join(filled) + "\n", encoding="utf-8-sig")
+
+    assert main(["apply-review"], root=small_root) == 0
+    out = capsys.readouterr().out
+    assert "llm: ok 20, fix 0, drop 0" in out and "rules: ok 10, fix 0, drop 0" in out
+    assert "fix rate: 0.0% (0 of 10)" in out
+    checked = config.data.generated_dir / "test_checked.jsonl"
+    assert checked.is_file() and len(checked.read_text(encoding="utf-8").splitlines()) == 80
+
+
+def test_apply_review_lists_the_problems(small_root, fake_writer, capsys):
+    _built(small_root, fake_writer)
+    main(["export-review"], root=small_root)
+    capsys.readouterr()
+    assert main(["apply-review"], root=small_root) == 1  # nothing filled in yet
+    err = capsys.readouterr().err
+    assert err.startswith("error: 30 problems in the review:") and "missing verdict" in err
