@@ -14,9 +14,11 @@ mapping_model: claude-haiku-5-5
 #   anthropic_api - through the Anthropic API, needs ANTHROPIC_API_KEY
 llm_backend: claude_cli
 
-# Multilingual sentence-embedding model for retrieval.
-# Provisional: chosen on the dev split in Task 2.2 among embedding_candidates.
-embedding_model: intfloat/multilingual-e5-base
+# Multilingual sentence-embedding model for retrieval. Chosen on the dev split
+# among embedding_candidates by the highest recall@k (87.0%, against 82.8% for
+# e5-base and 71.1% for mpnet): see reports/embedding_selection.md and
+# notebooks/embedding_selection.ipynb.
+embedding_model: BAAI/bge-m3
 embedding_candidates:
   - intfloat/multilingual-e5-base
   - BAAI/bge-m3

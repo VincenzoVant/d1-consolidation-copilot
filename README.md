@@ -50,6 +50,14 @@ python -m d1.datagen apply-review    # verdicts -> data/generated/test_checked.j
 
 All 200 LLM-written test rows and a random 50 rule-based rows are checked by hand: `ok`, `fix` (with `corrected_target`) or `drop`.
 
+## Choosing the embedding model
+
+```bash
+python -m d1.evaluation.select_embedder   # compares the candidate models on dev -> reports/
+```
+
+The three multilingual candidates in `config/models.yaml` each build the top-10 shortlist for every dev account, and the model whose shortlist most often holds the right group wins. The result, with charts and the reasoning, is in [`notebooks/embedding_selection.ipynb`](notebooks/embedding_selection.ipynb): **BAAI/bge-m3**, with the right group on the shortlist for 87.0% of dev accounts (e5-base 82.8%, mpnet 71.1%). The first run downloads the models (about 4 GB).
+
 `requirements.txt` holds the exact versions from `uv.lock`. After changing dependencies in `pyproject.toml`, update both:
 
 ```bash
