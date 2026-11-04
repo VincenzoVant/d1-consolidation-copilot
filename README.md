@@ -31,7 +31,7 @@ Run the tests with `pytest` (or `uv run pytest`).
 python -m d1.datagen build
 ```
 
-This writes `data/generated/{train,dev,test}.jsonl` (12,000 / 3,500 / 600 accounts) from the rule-based generator and the LLM-written company charts frozen in `data/frozen/llm_charts/`. It needs no network and no LLM access.
+This writes `data/generated/{train,dev,test}.jsonl` (12,000 / 3,500 / 600 accounts) from the rule-based generator and the LLM-written company charts frozen in `data/frozen/llm_charts/`. It needs no network and no LLM access. Running it again leaves identical files untouched; if the result would differ from the saved files, it stops and keeps them, unless you add `--force` (the same holds for `apply-review`).
 
 The frozen charts were written once by the generator model with:
 
@@ -50,13 +50,19 @@ python -m d1.datagen apply-review    # verdicts -> data/generated/test_checked.j
 
 All 200 LLM-written test rows and a random 50 rule-based rows are checked by hand: `ok`, `fix` (with `corrected_target`) or `drop`.
 
+## Notebooks: the pipeline, step by step
+
+`notebooks/` has one notebook per step, in order. Each follows one real account or record through that step, then shows it on all the data with charts:
+
+01 standard chart · 02 noise · 03 rule-based companies · 04 LLM-written companies · 05 splits · 06 hand check · 07 retrieval · 08 embedding selection · 09 calibration
+
 ## Choosing the embedding model
 
 ```bash
 python -m d1.evaluation.select_embedder   # compares the candidate models on dev -> reports/
 ```
 
-The three multilingual candidates in `config/models.yaml` each build the top-10 shortlist for every dev account, and the model whose shortlist most often holds the right group wins. The result, with charts and the reasoning, is in [`notebooks/embedding_selection.ipynb`](notebooks/embedding_selection.ipynb): **BAAI/bge-m3**, with the right group on the shortlist for 87.0% of dev accounts (e5-base 82.8%, mpnet 71.1%). The first run downloads the models (about 4 GB).
+The three multilingual candidates in `config/models.yaml` each build the top-10 shortlist for every dev account, and the model whose shortlist most often holds the right group wins. The result, with charts and the reasoning, is in [`notebooks/08_embedding_selection.ipynb`](notebooks/08_embedding_selection.ipynb): **BAAI/bge-m3**, with the right group on the shortlist for 87.0% of dev accounts (e5-base 82.8%, mpnet 71.1%). The first run downloads the models (about 4 GB).
 
 `requirements.txt` holds the exact versions from `uv.lock`. After changing dependencies in `pyproject.toml`, update both:
 

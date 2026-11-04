@@ -49,13 +49,16 @@ class CompanyAccount(BaseModel):
     label_status: Literal["unchecked", "constructed", "checked", "corrected"] = "unchecked"
 
 
+def jsonl_text(rows: list[BaseModel]) -> str:
+    """One JSON object per line: the exact text write_jsonl writes."""
+    return "".join(row.model_dump_json() + "\n" for row in rows)
+
+
 def write_jsonl(rows: list[BaseModel], path: Path) -> None:
     """Write one JSON object per line, creating the parent folder if needed."""
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        for row in rows:
-            f.write(row.model_dump_json() + "\n")
+    path.write_text(jsonl_text(rows), encoding="utf-8")
 
 
 def read_jsonl(path: Path) -> list[CompanyAccount]:

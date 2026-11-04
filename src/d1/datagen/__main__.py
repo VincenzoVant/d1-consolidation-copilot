@@ -1,9 +1,13 @@
 """Command line for the data generator.
 
     python -m d1.datagen fetch-llm --split train|dev|test|all   # LLM-written companies, once
-    python -m d1.datagen build                                  # all three splits, offline
+    python -m d1.datagen build [--force]                        # all three splits, offline
     python -m d1.datagen export-review                          # test rows to check -> CSV
-    python -m d1.datagen apply-review                           # your verdicts -> test_checked.jsonl
+    python -m d1.datagen apply-review [--force]                 # your verdicts -> test_checked.jsonl
+
+build and apply-review never silently replace data later steps were built on:
+an identical file is left untouched, a file that would change is refused
+unless --force is given.
 
 Known errors print to stderr (one line; a list for review problems) and exit with code 1.
 """
@@ -16,12 +20,13 @@ from pathlib import Path
 from d1.config import REPO_ROOT, Config, ConfigError, load_config
 from d1.datagen.handcheck import ReviewError, apply_review, export_review
 from d1.datagen.llm_charts import FrozenOutputMissing, LLMOutputError
-from d1.datagen.schema import CompanyAccount, read_jsonl, write_jsonl
+from d1.datagen.safe_write import DataChangedError, safe_write
+from d1.datagen.schema import CompanyAccount, jsonl_text, read_jsonl
 from d1.datagen.splits import build_all, fetch_missing_llm
 from d1.datagen.standard_chart import ChartError, load_standard_chart
 from d1.llm import LLMBackend, LLMError, make_backend
 
-KNOWN_ERRORS = (ConfigError, ChartError, FrozenOutputMissing, LLMOutputError, LLMError, ReviewError)
+KNOWN_ERRORS = (ConfigError, ChartError, FrozenOutputMissing, LLMOutputError, LLMError, ReviewError, DataChangedError)
 
 
 def _positive_int(value: str) -> int:
@@ -37,9 +42,11 @@ def _parser() -> argparse.ArgumentParser:
     fetch = commands.add_parser("fetch-llm", help="have the generator model write the LLM companies that are not frozen yet")
     fetch.add_argument("--split", required=True, choices=["train", "dev", "test", "all"])
     fetch.add_argument("--workers", type=_positive_int, default=4, help="calls at the same time (default 4)")
-    commands.add_parser("build", help="write train/dev/test JSONL from the rules and the frozen LLM files")
+    build = commands.add_parser("build", help="write train/dev/test JSONL from the rules and the frozen LLM files")
     commands.add_parser("export-review", help="write the test rows to check by hand to the review CSV")
-    commands.add_parser("apply-review", help="apply the verdicts in the review CSV to the test split")
+    apply = commands.add_parser("apply-review", help="apply the verdicts in the review CSV to the test split")
+    for command in (build, apply):
+        command.add_argument("--force", action="store_true", help="replace existing data even if it would change")
     return parser
 
 
@@ -50,7 +57,7 @@ def _test_rows(config: Config) -> list[CompanyAccount]:
     return read_jsonl(path)
 
 
-def _review(config: Config, command: str) -> None:
+def _review(config: Config, command: str, force: bool = False) -> None:
     rows = _test_rows(config)
     chart = load_standard_chart(config.data.chart_path, expected=config.data.expected_groups)
     path, sample, seed = config.data.review_path, config.data.review_rule_sample, config.data.splits["test"].seed
@@ -61,7 +68,8 @@ def _review(config: Config, command: str) -> None:
         return
     result = apply_review(rows, chart, path, sample, seed)
     out = config.data.generated_dir / "test_checked.jsonl"
-    write_jsonl(result.rows, out)
+    status = safe_write({out: jsonl_text(result.rows)}, force, rerun_hint="run `python -m d1.datagen apply-review --force`")
+    print(f"{out.name}: {status[out]}")
     for source, counts in result.counts.items():
         print(f"{source}: " + ", ".join(f"{verdict} {n}" for verdict, n in counts.items()))
     changed = result.counts["rules"]["fix"] + result.counts["rules"]["drop"]
@@ -82,9 +90,9 @@ def main(
             paths = fetch_missing_llm(config, args.split, backend_factory(config), max_workers=args.workers, log=print)
             print(f"{len(paths)} new frozen files in {config.data.frozen_llm_dir}")
         elif args.command in ("export-review", "apply-review"):
-            _review(config, args.command)
+            _review(config, args.command, force=getattr(args, "force", False))
         else:
-            for split, path in build_all(config).items():
+            for split, path in build_all(config, force=args.force, log=print).items():
                 with open(path, encoding="utf-8") as f:
                     print(f"{split}: {sum(1 for _ in f)} accounts -> {path}")
     except KNOWN_ERRORS as e:

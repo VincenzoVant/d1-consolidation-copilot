@@ -32,7 +32,8 @@ from d1.datagen.llm_charts import (
 )
 from d1.datagen.noise import strip_accents
 from d1.datagen.rule_charts import generate_rule_company
-from d1.datagen.schema import CompanyAccount, Language, Split, StandardAccount, write_jsonl
+from d1.datagen.safe_write import safe_write
+from d1.datagen.schema import CompanyAccount, Language, Split, StandardAccount, jsonl_text
 from d1.datagen.standard_chart import load_standard_chart
 from d1.llm import LOGIN_HINT, LLMBackend
 
@@ -209,11 +210,13 @@ def build_split(split: Split, config: Config, chart: list[StandardAccount]) -> l
     return rows
 
 
-def build_all(config: Config) -> dict[Split, Path]:
+def build_all(config: Config, force: bool = False, log: Callable[[str], None] = lambda message: None) -> dict[Split, Path]:
     """Build train, dev and test and write them to generated_dir as JSONL.
 
     Nothing is written unless all three splits build, and every LLM company must
-    be fetched first; build never calls an LLM.
+    be fetched first; build never calls an LLM. A file that already exists is
+    left untouched if it would come out the same, and is only replaced with
+    force=True if it would change (see safe_write).
     """
     llm_ids = [spec.company_id for _, spec in _plans(config, SPLITS) if spec.source == "llm"]
     missing = [c for c in llm_ids if not frozen_path(config.data.frozen_llm_dir, c).exists()]
@@ -228,8 +231,9 @@ def build_all(config: Config) -> dict[Split, Path]:
     # Test names that also occur in train or dev measure memory, not generalisation.
     rows["test"] = mark_overlaps(rows["test"], rows["train"] + rows["dev"])
 
-    paths = {}
-    for split, split_rows in rows.items():
-        paths[split] = config.data.generated_dir / f"{split}.jsonl"
-        write_jsonl(split_rows, paths[split])
+    paths = {split: config.data.generated_dir / f"{split}.jsonl" for split in rows}
+    status = safe_write({paths[split]: jsonl_text(split_rows) for split, split_rows in rows.items()}, force,
+                        rerun_hint="run `python -m d1.datagen build --force`")  # fmt: skip
+    for path in paths.values():
+        log(f"{path.name}: {status[path]}")
     return paths

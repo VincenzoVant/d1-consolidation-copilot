@@ -99,3 +99,54 @@ def test_apply_review_lists_the_problems(small_root, fake_writer, capsys):
     assert main(["apply-review"], root=small_root) == 1  # nothing filled in yet
     err = capsys.readouterr().err
     assert err.startswith("error: 30 problems in the review:") and "missing verdict" in err
+
+
+# --- not overwriting data that later steps use ----------------------------------------------
+
+
+def test_build_twice_reports_unchanged(small_root, fake_writer, capsys):
+    _built(small_root, fake_writer)
+    capsys.readouterr()
+    assert main(["build"], root=small_root) == 0
+    assert "dev.jsonl: unchanged" in capsys.readouterr().out
+
+
+def test_build_refuses_changed_data_until_forced(small_root, fake_writer, capsys):
+    config = _built(small_root, fake_writer)
+    dev = config.data.generated_dir / "dev.jsonl"
+    dev.write_text(dev.read_text(encoding="utf-8").replace("Rekening", "Konto", 1), encoding="utf-8")
+    capsys.readouterr()
+    assert main(["build"], root=small_root) == 1
+    err = capsys.readouterr().err
+    assert "dev.jsonl" in err and "build --force" in err and "Konto" in dev.read_text(encoding="utf-8")
+    assert main(["build", "--force"], root=small_root) == 0
+    assert "dev.jsonl: replaced" in capsys.readouterr().out and "Konto" not in dev.read_text(encoding="utf-8")
+
+
+def _reviewed(small_root, fake_writer):
+    config = _built(small_root, fake_writer)
+    main(["export-review"], root=small_root)
+    path = config.data.review_path
+    text = path.read_text(encoding="utf-8-sig").splitlines()
+    header = text[0].split(";")
+    filled = [text[0]] + [";".join("ok" if col == "verdict" else cell for col, cell in zip(header, line.split(";"))) for line in text[1:]]
+    path.write_text("\n".join(filled) + "\n", encoding="utf-8-sig")
+    assert main(["apply-review"], root=small_root) == 0
+    return config
+
+
+def test_apply_review_twice_reports_unchanged(small_root, fake_writer, capsys):
+    _reviewed(small_root, fake_writer)
+    capsys.readouterr()
+    assert main(["apply-review"], root=small_root) == 0
+    assert "test_checked.jsonl: unchanged" in capsys.readouterr().out
+
+
+def test_apply_review_refuses_to_replace_a_different_checked_file(small_root, fake_writer, capsys):
+    config = _reviewed(small_root, fake_writer)
+    checked = config.data.generated_dir / "test_checked.jsonl"
+    checked.write_text(checked.read_text(encoding="utf-8").replace('"checked"', '"corrected"', 1), encoding="utf-8")
+    capsys.readouterr()
+    assert main(["apply-review"], root=small_root) == 1
+    assert "apply-review --force" in capsys.readouterr().err
+    assert main(["apply-review", "--force"], root=small_root) == 0

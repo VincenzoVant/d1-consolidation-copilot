@@ -1,4 +1,4 @@
-"""The numbers behind notebooks/embedding_selection.ipynb, kept here so they are tested.
+"""The numbers behind notebooks/08_embedding_selection.ipynb, kept here so they are tested.
 
 Input: reports/embedding_selection_rows.csv, one line per (model, dev account)
 with gold_rank = where the right group ranks among all 190 (1 = first).

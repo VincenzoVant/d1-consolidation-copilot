@@ -1,10 +1,12 @@
 import json
+import os
 from collections import Counter
 
 import pytest
 
 from d1.config import load_config
 from d1.datagen.llm_charts import FrozenOutputMissing, LLMOutputError
+from d1.datagen.safe_write import DataChangedError
 from d1.datagen.schema import CompanyAccount, read_jsonl
 from d1.datagen.splits import (
     build_all,
@@ -215,3 +217,31 @@ def test_build_rejects_frozen_file_made_for_a_different_plan(small_root, fake_wr
     path.write_text(json.dumps(saved), encoding="utf-8")
     with pytest.raises(LLMOutputError, match="language"):
         build_all(config)
+
+
+def test_build_again_leaves_identical_files_untouched(small_root, fake_writer):
+    config = load_config(small_root)
+    fetch_missing_llm(config, "all", fake_writer)
+    paths = build_all(config)
+    stamps = {}
+    for p in paths.values():
+        os.utime(p, ns=(1_000_000_000, 1_000_000_000))
+        stamps[p] = p.stat().st_mtime_ns
+    log = []
+    build_all(config, log=log.append)
+    assert all(p.stat().st_mtime_ns == stamps[p] for p in paths.values())  # not rewritten
+    assert log == ["train.jsonl: unchanged", "dev.jsonl: unchanged", "test.jsonl: unchanged"]
+
+
+def test_build_refuses_to_replace_data_that_would_change(small_root, fake_writer):
+    # E.g. the generator code changed after the results and the hand check were made.
+    config = load_config(small_root)
+    fetch_missing_llm(config, "all", fake_writer)
+    paths = build_all(config)
+    kept = paths["dev"].read_text(encoding="utf-8").splitlines(keepends=True)[1:]  # pretend the saved file is older
+    paths["dev"].write_text("".join(kept), encoding="utf-8")
+    with pytest.raises(DataChangedError, match=r"dev\.jsonl.*--force"):
+        build_all(config)
+    assert paths["dev"].read_text(encoding="utf-8") == "".join(kept)  # the existing data is kept
+    build_all(config, force=True)
+    assert len(read_jsonl(paths["dev"])) == len(kept) + 1
