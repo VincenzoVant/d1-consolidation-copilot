@@ -145,3 +145,15 @@ def test_reliability_bins():
     assert [b["n"] for b in bins] == [1, 2, 1]  # empty bins are left out
     assert bins[1]["mean_p"] == pytest.approx(0.15) and bins[1]["accuracy"] == 0.5
     assert bins[2]["low"] == pytest.approx(0.9) and bins[2]["high"] == pytest.approx(1.0)
+
+
+# --- a threshold that holds for both the honest and the saved probabilities ---------------
+
+
+def test_stricter_threshold_takes_the_higher():
+    from d1.mapper.calibrate import stricter_threshold
+
+    assert stricter_threshold(0.8528, 0.8541) == 0.8541
+    assert stricter_threshold(0.95, 0.9477) == 0.95
+    assert stricter_threshold(None, 0.9) is None  # unreachable either way: everything to review
+    assert stricter_threshold(0.9, None) is None

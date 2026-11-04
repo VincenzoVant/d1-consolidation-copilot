@@ -5,9 +5,11 @@
 For one method:
   1. fit it on the train split, if it learns (XGBoost, random forest);
   2. let it score every dev account's shortlist;
-  3. calibrate out of fold on dev (companies kept together) and choose t_auto,
-     the lowest confidence at which >= target precision of auto-mapped dev accounts are right;
-  4. refit the calibrator on all of dev and write artifacts/methods/<method>/:
+  3. calibrate out of fold on dev (companies kept together), refit the calibrator
+     on all of dev, and choose t_auto: the lowest confidence at which >= target
+     precision of auto-mapped dev accounts are right, both on the out-of-fold
+     probabilities and on the saved calibrator's (the stricter of the two);
+  4. write artifacts/methods/<method>/:
      method.json (+ model files), calibrator.json, thresholds.json, dev_summary.json.
 
 The test split is never read here.
@@ -24,7 +26,7 @@ import numpy as np
 from d1.config import REPO_ROOT, Config, ConfigError, Method, load_config
 from d1.datagen.schema import CompanyAccount, read_jsonl
 from d1.datagen.standard_chart import ChartError, load_standard_chart
-from d1.mapper.calibrate import Calibrator, choose_threshold, cross_fit_probs, feature_matrix
+from d1.mapper.calibrate import Calibrator, choose_threshold, cross_fit_probs, feature_matrix, stricter_threshold
 from d1.mapper.embed import Embedder, SentenceTransformerEmbedder
 from d1.mapper.methods import METHOD_REGISTRY
 from d1.mapper.methods.base import accounts_from_rows
@@ -69,11 +71,13 @@ def train_method(config: Config, name: Method, embedder_factory: Callable[[str],
     companies = np.array([r.company_id for r in dev])
 
     # Accounts without a pick are never auto-mapped: probability 0, and left out of the fit.
-    p = np.zeros(len(dev))
+    oof, p = np.zeros(len(dev)), np.zeros(len(dev))
     folds = min(5, len(set(companies[picked])))
-    p[picked] = cross_fit_probs(X[picked], right[picked], folds=folds, seed=0, groups=companies[picked])
-    t_auto = choose_threshold(p, right, target, min_support=MIN_SUPPORT)
+    oof[picked] = cross_fit_probs(X[picked], right[picked], folds=folds, seed=0, groups=companies[picked])
     calibrator = Calibrator().fit(X[picked], right[picked])
+    p[picked] = calibrator.predict(X[picked])  # exactly what the Mapper will compute for these accounts
+    t_oof = choose_threshold(oof, right, target, min_support=MIN_SUPPORT)
+    t_auto = stricter_threshold(t_oof, choose_threshold(p, right, target, min_support=MIN_SUPPORT))
 
     folder = artifact_dir(config, name)
     folder.mkdir(parents=True, exist_ok=True)
@@ -82,7 +86,9 @@ def train_method(config: Config, name: Method, embedder_factory: Callable[[str],
     thresholds = Thresholds(method=name, t_auto=t_auto, target_precision=target, fitted_on="dev", embedding_model=embedder.model_id)
     _write_json(folder / "thresholds.json", thresholds.model_dump())
 
-    auto = p >= t_auto if t_auto is not None else np.zeros(len(dev), bool)
+    # The dev numbers use the saved calibrator, so an evaluation run on dev reproduces them exactly.
+    auto = (p >= t_auto) & picked if t_auto is not None else np.zeros(len(dev), bool)
+    auto_oof = (oof >= t_auto) & picked if t_auto is not None else np.zeros(len(dev), bool)
     by_source = {}
     for source in ("rules", "llm"):
         s = np.array([r.source == source for r in dev])
@@ -93,6 +99,8 @@ def train_method(config: Config, name: Method, embedder_factory: Callable[[str],
         "method": name, "version": method.version(), "n_dev": len(dev), "top1": float(right.mean()),
         "no_pick": int((~picked).sum()), "t_auto": t_auto, "auto_share": float(auto.mean()),
         "auto_precision": float(right[auto].mean()) if auto.any() else None, "by_source": by_source,
+        "out_of_fold": {"t_auto": t_oof, "auto_share": float(auto_oof.mean()),
+                        "auto_precision": float(right[auto_oof].mean()) if auto_oof.any() else None},
     }  # fmt: skip
     _write_json(folder / "dev_summary.json", summary)
     return summary

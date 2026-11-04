@@ -4,21 +4,26 @@
   "n_dev": 3500,
   "top1": 0.5771428571428572,
   "no_pick": 0,
-  "t_auto": 0.8527780183070588,
-  "auto_share": 0.3394285714285714,
-  "auto_precision": 0.9806397306397306,
+  "t_auto": 0.8541204566265104,
+  "auto_share": 0.33714285714285713,
+  "auto_precision": 0.9838983050847457,
   "by_source": {
     "rules": {
       "n": 2000,
       "top1": 0.89,
-      "auto_share": 0.5725,
-      "auto_precision": 0.9982532751091703
+      "auto_share": 0.5695,
+      "auto_precision": 1.0
     },
     "llm": {
       "n": 1500,
       "top1": 0.16,
-      "auto_share": 0.028666666666666667,
-      "auto_precision": 0.5116279069767442
+      "auto_share": 0.027333333333333334,
+      "auto_precision": 0.5365853658536586
     }
+  },
+  "out_of_fold": {
+    "t_auto": 0.8527780183070588,
+    "auto_share": 0.33714285714285713,
+    "auto_precision": 0.9822033898305085
   }
 }

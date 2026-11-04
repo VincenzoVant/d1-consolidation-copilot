@@ -181,3 +181,25 @@ def test_cli_without_dev_split_names_build(config_root, capsys):
     shutil.copytree(REPO_ROOT / "data" / "source", config_root / "data" / "source")
     assert main(["--method", "fuzzy"], root=config_root) == 1
     assert "python -m d1.datagen build" in capsys.readouterr().err
+
+
+def test_map_can_reuse_shortlists_computed_before(fake_embedder, chart):
+    mapper = _mapper(fake_embedder, chart, {"a": CLEAR})
+    shortlists = mapper.retriever.top_k(["Leveranciers"], K)
+    calls = len(fake_embedder.calls)
+    (d,) = mapper.map([AccountIn(account_id="a", name="Leveranciers")], shortlists=shortlists)
+    assert len(fake_embedder.calls) == calls and d.decision_path == "auto"  # no second retrieval
+
+
+def test_decisions_carry_cost_and_latency(fake_embedder, chart):
+    answer = {**CLEAR, "cost_usd": 0.0012, "latency_ms": 800.0, "cached": True}
+    (d,) = _mapper(fake_embedder, chart, {"a": answer}).map([AccountIn(account_id="a", name="x")])
+    assert (d.cost_usd, d.latency_ms, d.cached) == (0.0012, 800.0, True)
+
+
+def test_threshold_holds_out_of_fold_and_with_the_saved_calibrator(mapper_root, FakeEmbedder):
+    config = load_config(mapper_root)
+    summary = train_method(config, "fuzzy", _fake_factory(FakeEmbedder))
+    if summary["t_auto"] is not None:
+        assert summary["auto_precision"] >= 0.98 and summary["out_of_fold"]["auto_precision"] >= 0.98
+    assert set(summary["out_of_fold"]) == {"t_auto", "auto_share", "auto_precision"}

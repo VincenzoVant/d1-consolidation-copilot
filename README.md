@@ -54,7 +54,7 @@ All 200 LLM-written test rows and a random 50 rule-based rows are checked by han
 
 `notebooks/` has one notebook per step, in order. Each follows one real account or record through that step, then shows it on all the data with charts:
 
-01 standard chart · 02 noise · 03 rule-based companies · 04 LLM-written companies · 05 splits · 06 hand check · 07 retrieval · 08 embedding selection · 09 calibration · 10 baselines and pipeline
+01 standard chart · 02 noise · 03 rule-based companies · 04 LLM-written companies · 05 splits · 06 hand check · 07 retrieval · 08 embedding selection · 09 calibration · 10 baselines and pipeline · 11 metrics and the test guard
 
 ## Choosing the embedding model
 
@@ -70,7 +70,15 @@ The three multilingual candidates in `config/models.yaml` each build the top-10 
 python -m d1.mapper.train --method fuzzy        # or embeddings, or all
 ```
 
-This calibrates the method on dev and saves it in `artifacts/methods/<method>/`. On dev, the two baselines auto-map 33.9% (fuzzy) and 22.9% (embeddings) of accounts at 98% precision, but on the LLM-written accounts fuzzy's auto-maps are right only 51% of the time (notebook 10).
+This calibrates the method on dev and saves it in `artifacts/methods/<method>/`. On dev, the two baselines auto-map 33.7% (fuzzy) and 23.0% (embeddings) of accounts at 98% precision, but on the LLM-written accounts fuzzy's auto-maps are right only 54% of the time (notebook 10).
+
+## Evaluating a method
+
+```bash
+python -m d1.evaluation.run_mapping --split dev --method embeddings
+```
+
+This writes `reports/results/<run>/` with the metrics (95% intervals over companies), readable tables and one line per account. The test split runs only with `--reported`, reads the hand-checked labels, and every such run is logged in `reports/test_runs.jsonl`. The train split is refused.
 
 `requirements.txt` holds the exact versions from `uv.lock`. After changing dependencies in `pyproject.toml`, update both:
 

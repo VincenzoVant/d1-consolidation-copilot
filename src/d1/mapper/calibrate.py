@@ -120,6 +120,20 @@ def choose_threshold(p: np.ndarray, correct: np.ndarray, target: float = 0.98, m
     return float(curve["threshold"][ok].min())
 
 
+def stricter_threshold(*thresholds: float | None) -> float | None:
+    """The highest of the thresholds; None if any is None (unreachable one way means review).
+
+    train.py chooses one threshold on the out-of-fold probabilities (honest) and one
+    on the saved calibrator's probabilities (what the Mapper applies), and keeps the
+    stricter, so the target holds both ways. They differ when many accounts share
+    one score: fuzzy gives 29% of dev accounts a top score of exactly 1.0, and the
+    two calibrators then place that whole block on different sides of the line.
+    """
+    if any(t is None for t in thresholds):
+        return None
+    return max(thresholds)
+
+
 def reliability_bins(p: np.ndarray, correct: np.ndarray, n_bins: int = 10) -> list[dict]:
     """Accounts grouped by predicted probability: if calibrated, mean_p matches accuracy in every bin."""
     p = np.asarray(p, dtype=float)

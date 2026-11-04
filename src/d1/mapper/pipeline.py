@@ -40,6 +40,9 @@ class MappingDecision(BaseModel):
     reason: str | None = None
     status: str
     model_versions: dict[str, str]
+    cost_usd: float = 0.0  # what the method's call cost (the LLM), for the cost report
+    latency_ms: float = 0.0
+    cached: bool = False
 
 
 class Thresholds(BaseModel):
@@ -76,10 +79,16 @@ class Mapper:
         self.k = k
         self.cascade = cascade  # arrives in Task 3.6
 
-    def map(self, accounts: list[AccountIn]) -> list[MappingDecision]:
+    def map(self, accounts: list[AccountIn], shortlists: list[list[Candidate]] | None = None) -> list[MappingDecision]:
+        """One decision per account, in input order.
+
+        shortlists can be passed in when they were already computed (the evaluation
+        also measures recall on them), so retrieval isn't run twice.
+        """
         if not accounts:
             return []
-        shortlists = self.retriever.top_k([a.name for a in accounts], self.k)
+        if shortlists is None:
+            shortlists = self.retriever.top_k([a.name for a in accounts], self.k)
         outputs = self.method.score(accounts, shortlists)
         versions = {
             "embedder": self.retriever.embedder.model_id,
@@ -102,6 +111,7 @@ class Mapper:
                     candidates=[Candidate(code=c, score=s) for c, s in ranked], confidence=confidence,
                     decision_path="auto" if auto else "review", chosen_code=out.chosen_code,
                     reason=out.reason, status=out.status, model_versions=versions,
+                    cost_usd=out.cost_usd, latency_ms=out.latency_ms, cached=out.cached,
                 )  # fmt: skip
             )
         return decisions
