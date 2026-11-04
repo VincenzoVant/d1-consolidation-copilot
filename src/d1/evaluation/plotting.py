@@ -26,6 +26,11 @@ COLORS = {
 SINGLE = "#2a78d6"  # a chart with one series
 SOURCE_COLORS = {"rules": "#2a78d6", "llm": "#eb6834"}
 LANGUAGE_COLORS = {"nl": "#2a78d6", "fr": "#eb6834", "en": "#1baf7a", "mixed": "#eda100"}
+# The six mapping methods, in the reference order (validated for adjacent bars).
+METHOD_COLORS = {
+    "fuzzy": "#2a78d6", "embeddings": "#eb6834", "xgboost": "#1baf7a",
+    "random_forest": "#eda100", "laya": "#e87ba4", "llm": "#008300",
+}
 # Sequential blue, light to dark, for heatmaps.
 BLUE_RAMP = ["#cde2fb", "#86b6ef", "#3987e5", "#1c5cab", "#0d366b"]
 

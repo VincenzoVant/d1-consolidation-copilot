@@ -1,0 +1,5 @@
+{
+  "method": "embeddings",
+  "version": "embeddings-top1-v1",
+  "params": {}
+}

@@ -1,0 +1,8 @@
+{
+  "method": "embeddings",
+  "t_auto": 0.9501254307739344,
+  "t_llm": null,
+  "target_precision": 0.98,
+  "fitted_on": "dev",
+  "embedding_model": "BAAI/bge-m3"
+}

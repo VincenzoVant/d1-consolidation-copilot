@@ -1,0 +1,8 @@
+{
+  "method": "fuzzy",
+  "t_auto": 0.8527780183070588,
+  "t_llm": null,
+  "target_precision": 0.98,
+  "fitted_on": "dev",
+  "embedding_model": "BAAI/bge-m3"
+}

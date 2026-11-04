@@ -1,0 +1,24 @@
+{
+  "method": "fuzzy",
+  "version": "fuzzy-wratio-k10-v1",
+  "n_dev": 3500,
+  "top1": 0.5771428571428572,
+  "no_pick": 0,
+  "t_auto": 0.8527780183070588,
+  "auto_share": 0.3394285714285714,
+  "auto_precision": 0.9806397306397306,
+  "by_source": {
+    "rules": {
+      "n": 2000,
+      "top1": 0.89,
+      "auto_share": 0.5725,
+      "auto_precision": 0.9982532751091703
+    },
+    "llm": {
+      "n": 1500,
+      "top1": 0.16,
+      "auto_share": 0.028666666666666667,
+      "auto_precision": 0.5116279069767442
+    }
+  }
+}

@@ -54,7 +54,7 @@ All 200 LLM-written test rows and a random 50 rule-based rows are checked by han
 
 `notebooks/` has one notebook per step, in order. Each follows one real account or record through that step, then shows it on all the data with charts:
 
-01 standard chart · 02 noise · 03 rule-based companies · 04 LLM-written companies · 05 splits · 06 hand check · 07 retrieval · 08 embedding selection · 09 calibration
+01 standard chart · 02 noise · 03 rule-based companies · 04 LLM-written companies · 05 splits · 06 hand check · 07 retrieval · 08 embedding selection · 09 calibration · 10 baselines and pipeline
 
 ## Choosing the embedding model
 
@@ -63,6 +63,14 @@ python -m d1.evaluation.select_embedder   # compares the candidate models on dev
 ```
 
 The three multilingual candidates in `config/models.yaml` each build the top-10 shortlist for every dev account, and the model whose shortlist most often holds the right group wins. The result, with charts and the reasoning, is in [`notebooks/08_embedding_selection.ipynb`](notebooks/08_embedding_selection.ipynb): **BAAI/bge-m3**, with the right group on the shortlist for 87.0% of dev accounts (e5-base 82.8%, mpnet 71.1%). The first run downloads the models (about 4 GB).
+
+## Training and calibrating a method
+
+```bash
+python -m d1.mapper.train --method fuzzy        # or embeddings, or all
+```
+
+This calibrates the method on dev and saves it in `artifacts/methods/<method>/`. On dev, the two baselines auto-map 33.9% (fuzzy) and 22.9% (embeddings) of accounts at 98% precision, but on the LLM-written accounts fuzzy's auto-maps are right only 51% of the time (notebook 10).
 
 `requirements.txt` holds the exact versions from `uv.lock`. After changing dependencies in `pyproject.toml`, update both:
 

@@ -1,0 +1,7 @@
+{
+  "method": "fuzzy",
+  "version": "fuzzy-wratio-k10-v1",
+  "params": {
+    "k": 10
+  }
+}
