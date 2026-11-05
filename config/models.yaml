@@ -9,6 +9,11 @@ generator_model: claude-opus-5-5
 # handles low-confidence accounts of the winning method).
 mapping_model: claude-haiku-5-5
 
+# Writes the one-line descriptions of the 190 standard groups (Task 2.6).
+# Must differ from generator_model: Opus wrote the LLM accounts, and its own
+# wording would match its own accounts.
+description_model: claude-sonnet-5-5
+
 # How LLM calls are made:
 #   claude_cli    - through the `claude` command, on your own Claude login (default)
 #   anthropic_api - through the Anthropic API, needs ANTHROPIC_API_KEY
@@ -37,3 +42,8 @@ mapping:
   methods: [fuzzy, embeddings, xgboost, random_forest, laya, llm]
   laya_model: convaiinnovations/laya-multilingual
   selected_method: null         # set after the comparison on dev (Task 3.5)
+  # What each standard group is compared with: names, descriptions (names plus
+  # its description) or average (the mean of both scores). Chosen on dev:
+  # recall@10 87.0% -> 91.9%, embeddings baseline auto-maps 23.0% -> 32.6% at
+  # 98% (notebooks/12_group_descriptions.ipynb).
+  group_text: average

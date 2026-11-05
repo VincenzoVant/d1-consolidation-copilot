@@ -30,8 +30,7 @@ from d1.mapper.calibrate import Calibrator, choose_threshold, cross_fit_probs, f
 from d1.mapper.embed import Embedder, SentenceTransformerEmbedder
 from d1.mapper.methods import METHOD_REGISTRY
 from d1.mapper.methods.base import accounts_from_rows
-from d1.mapper.pipeline import MapperError, Thresholds, artifact_dir
-from d1.mapper.retrieve import Retriever
+from d1.mapper.pipeline import MapperError, Thresholds, artifact_dir, build_retriever
 
 MIN_SUPPORT = 50  # a threshold must be backed by at least this many auto-mapped dev accounts
 
@@ -59,7 +58,7 @@ def train_method(config: Config, name: Method, embedder_factory: Callable[[str],
     train = _rows(config, "train") if method.needs_training else []
     dev = _rows(config, "dev")
     embedder = embedder_factory(config.models.embedding_model)
-    retriever = Retriever(embedder, chart, cache_dir=config.root / ".cache" / "embeddings")
+    retriever = build_retriever(config, embedder, chart)
 
     if method.needs_training:
         method.fit(train, retriever.top_k([r.name for r in train], k))
@@ -83,7 +82,8 @@ def train_method(config: Config, name: Method, embedder_factory: Callable[[str],
     folder.mkdir(parents=True, exist_ok=True)
     method.save(folder)
     _write_json(folder / "calibrator.json", calibrator.to_json())
-    thresholds = Thresholds(method=name, t_auto=t_auto, target_precision=target, fitted_on="dev", embedding_model=embedder.model_id)
+    thresholds = Thresholds(method=name, t_auto=t_auto, target_precision=target, fitted_on="dev", embedding_model=embedder.model_id,
+                            group_text=retriever.group_text)
     _write_json(folder / "thresholds.json", thresholds.model_dump())
 
     # The dev numbers use the saved calibrator, so an evaluation run on dev reproduces them exactly.

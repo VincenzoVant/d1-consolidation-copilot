@@ -37,6 +37,7 @@ class MappingConfig(_Strict):
     methods: list[Method] = Field(min_length=1)
     laya_model: str
     selected_method: Method | None = None
+    group_text: Literal["names", "descriptions", "average"] = "names"  # what each standard group is embedded as (Task 2.6)
 
     @model_validator(mode="after")
     def _check(self) -> "MappingConfig":
@@ -50,6 +51,7 @@ class MappingConfig(_Strict):
 class ModelsConfig(_Strict):
     generator_model: str
     mapping_model: str
+    description_model: str  # writes the group descriptions; never the generator (d1.mapper.descriptions)
     llm_backend: Literal["claude_cli", "anthropic_api"]
     embedding_model: str
     embedding_candidates: list[str] = Field(min_length=1)
@@ -60,6 +62,8 @@ class ModelsConfig(_Strict):
     def _check(self) -> "ModelsConfig":
         if self.generator_model == self.mapping_model:
             raise ValueError("generator_model and mapping_model must differ")
+        if self.description_model == self.generator_model:
+            raise ValueError("description_model must differ from generator_model, which wrote the accounts the descriptions are matched against")
         if self.mapping_model not in self.llm_prices_per_mtok:
             raise ValueError(f"llm_prices_per_mtok has no entry for {self.mapping_model}")
         return self
@@ -97,6 +101,7 @@ class DataConfig(_Strict):
     splits: dict[Split, SplitConfig]
     generated_dir: Path
     frozen_llm_dir: Path
+    frozen_descriptions_dir: Path
     review_path: Path
     review_rule_sample: int = Field(ge=0)
 
@@ -122,7 +127,7 @@ class Config(_Strict):
     models: ModelsConfig
 
 
-_PATH_FIELDS = ("chart_path", "generated_dir", "frozen_llm_dir", "review_path")
+_PATH_FIELDS = ("chart_path", "generated_dir", "frozen_llm_dir", "frozen_descriptions_dir", "review_path")
 
 
 def _read_yaml(path: Path) -> dict:

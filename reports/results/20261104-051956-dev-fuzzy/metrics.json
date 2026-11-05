@@ -1,0 +1,211 @@
+{
+  "run_id": "20261104-051956-dev-fuzzy",
+  "created_at": "2026-11-04T05:19:56+00:00",
+  "split": "dev",
+  "method": "fuzzy",
+  "labels_file": "dev.jsonl",
+  "n": 3500,
+  "label_status": {
+    "unchecked": 3500
+  },
+  "model_versions": {
+    "embedder": "BAAI/bge-m3",
+    "method": "fuzzy-wratio-k10-v1",
+    "calibrator": "5ca9fb906d4b"
+  },
+  "thresholds": {
+    "method": "fuzzy",
+    "t_auto": 0.8541204566265104,
+    "t_llm": null,
+    "target_precision": 0.98,
+    "fitted_on": "dev",
+    "embedding_model": "BAAI/bge-m3",
+    "group_text": "average"
+  },
+  "overall": {
+    "auto_share": 0.33714285714285713,
+    "auto_share_ci": [
+      0.27197857142857146,
+      0.3977142857142857
+    ],
+    "auto_precision": 0.9838983050847457,
+    "auto_precision_ci": [
+      0.9724397372107628,
+      0.991989218149466
+    ],
+    "review_share": 0.6628571428571428,
+    "top1": 0.5771428571428572,
+    "top1_ci": [
+      0.49142857142857144,
+      0.6585785714285713
+    ],
+    "top3": 0.6722857142857143,
+    "recall_at_k": 0.9194285714285715,
+    "k": 10
+  },
+  "breakdowns": {
+    "source": [
+      {
+        "value": "rules",
+        "n": 2000,
+        "auto_share": 0.5695,
+        "auto_precision": 1.0,
+        "top1": 0.89
+      },
+      {
+        "value": "llm",
+        "n": 1500,
+        "auto_share": 0.027333333333333334,
+        "auto_precision": 0.5365853658536586,
+        "top1": 0.16
+      }
+    ],
+    "language": [
+      {
+        "value": "en",
+        "n": 900,
+        "auto_share": 0.36666666666666664,
+        "auto_precision": 0.990909090909091,
+        "top1": 0.5588888888888889
+      },
+      {
+        "value": "fr",
+        "n": 900,
+        "auto_share": 0.35888888888888887,
+        "auto_precision": 0.978328173374613,
+        "top1": 0.5677777777777778
+      },
+      {
+        "value": "mixed",
+        "n": 850,
+        "auto_share": 0.28,
+        "auto_precision": 0.9789915966386554,
+        "top1": 0.6035294117647059
+      },
+      {
+        "value": "nl",
+        "n": 850,
+        "auto_share": 0.34,
+        "auto_precision": 0.986159169550173,
+        "top1": 0.58
+      }
+    ],
+    "noise": [
+      {
+        "value": "legacy_code",
+        "n": 1700,
+        "auto_share": 0.3411764705882353,
+        "auto_precision": 0.9810344827586207,
+        "top1": 0.5852941176470589
+      },
+      {
+        "value": "llm",
+        "n": 1500,
+        "auto_share": 0.027333333333333334,
+        "auto_precision": 0.5365853658536586,
+        "top1": 0.16
+      },
+      {
+        "value": "case",
+        "n": 534,
+        "auto_share": 0.5580524344569289,
+        "auto_precision": 1.0,
+        "top1": 0.8707865168539326
+      },
+      {
+        "value": "sub_account",
+        "n": 400,
+        "auto_share": 0.065,
+        "auto_precision": 1.0,
+        "top1": 0.835
+      },
+      {
+        "value": "no noise",
+        "n": 352,
+        "auto_share": 0.9659090909090909,
+        "auto_precision": 1.0,
+        "top1": 0.9829545454545454
+      },
+      {
+        "value": "abbreviation",
+        "n": 293,
+        "auto_share": 0.07167235494880546,
+        "auto_precision": 1.0,
+        "top1": 0.6552901023890785
+      },
+      {
+        "value": "typo",
+        "n": 286,
+        "auto_share": 0.46153846153846156,
+        "auto_precision": 1.0,
+        "top1": 0.8671328671328671
+      },
+      {
+        "value": "truncated",
+        "n": 161,
+        "auto_share": 0.037267080745341616,
+        "auto_precision": 1.0,
+        "top1": 0.5590062111801242
+      },
+      {
+        "value": "bilingual",
+        "n": 140,
+        "auto_share": 0.007142857142857143,
+        "auto_precision": 1.0,
+        "top1": 0.8714285714285714
+      },
+      {
+        "value": "accents_stripped",
+        "n": 112,
+        "auto_share": 0.5267857142857143,
+        "auto_precision": 1.0,
+        "top1": 0.875
+      }
+    ],
+    "industry": [
+      {
+        "value": "construction",
+        "n": 900,
+        "auto_share": 0.3277777777777778,
+        "auto_precision": 0.9864406779661017,
+        "top1": 0.58
+      },
+      {
+        "value": "software",
+        "n": 900,
+        "auto_share": 0.33555555555555555,
+        "auto_precision": 0.9834437086092715,
+        "top1": 0.5533333333333333
+      },
+      {
+        "value": "retail",
+        "n": 850,
+        "auto_share": 0.33294117647058824,
+        "auto_precision": 0.9893992932862191,
+        "top1": 0.5894117647058823
+      },
+      {
+        "value": "services",
+        "n": 850,
+        "auto_share": 0.35294117647058826,
+        "auto_precision": 0.9766666666666667,
+        "top1": 0.5870588235294117
+      }
+    ],
+    "overlaps_dev": [
+      {
+        "value": "new name",
+        "n": 3500,
+        "auto_share": 0.33714285714285713,
+        "auto_precision": 0.9838983050847457,
+        "top1": 0.5771428571428572
+      }
+    ]
+  },
+  "cost": {
+    "calls_per_1000": 0.0,
+    "cost_per_1000_usd": 0.0,
+    "median_latency_ms": 0.0,
+    "cache_hit_rate": 0.0
+  }
+}

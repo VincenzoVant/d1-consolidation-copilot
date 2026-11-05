@@ -17,8 +17,10 @@ from typing import Literal
 from pydantic import BaseModel
 
 from d1.config import Config, Method
+from d1.datagen.schema import StandardAccount
 from d1.datagen.standard_chart import load_standard_chart
 from d1.mapper.calibrate import Calibrator, features
+from d1.mapper.descriptions import DescriptionError, load_descriptions
 from d1.mapper.embed import Embedder, SentenceTransformerEmbedder
 from d1.mapper.methods import METHOD_REGISTRY, AccountIn, MappingMethod
 from d1.mapper.retrieve import Candidate, Retriever
@@ -52,10 +54,24 @@ class Thresholds(BaseModel):
     target_precision: float
     fitted_on: Literal["dev"]
     embedding_model: str  # the shortlists these were fitted on; loading with another model is refused
+    group_text: str = "names"  # what the groups were embedded as for those shortlists; a mismatch is refused too
 
 
 def artifact_dir(config: Config, method: str) -> Path:
     return config.root / ARTIFACTS_DIR / method
+
+
+def build_retriever(config: Config, embedder: Embedder, chart: list[StandardAccount]) -> Retriever:
+    """The shortlist builder as config/models.yaml sets it (mapping.group_text)."""
+    group_text = config.models.mapping.group_text
+    descriptions = None
+    if group_text != "names":
+        try:
+            descriptions = load_descriptions(config.data.frozen_descriptions_dir, chart)
+        except DescriptionError as e:
+            raise MapperError(f"group_text is {group_text}, but {e}") from None
+    cache = config.root / ".cache" / "embeddings"
+    return Retriever(embedder, chart, cache_dir=cache, descriptions=descriptions, group_text=group_text)
 
 
 def calibrator_hash(calibrator: Calibrator) -> str:
@@ -140,8 +156,13 @@ class Mapper:
                 f"{name} was calibrated on shortlists from {thresholds.embedding_model}, but the embedder is {embedder.model_id}: "
                 f"run `python -m d1.mapper.train --method {name}` again"
             )
+        if thresholds.group_text != config.models.mapping.group_text:
+            raise MapperError(
+                f"{name} was calibrated with group_text {thresholds.group_text}, but the config says "
+                f"{config.models.mapping.group_text}: run `python -m d1.mapper.train --method {name}` again"
+            )
         mapping_method = METHOD_REGISTRY[name](config)
         mapping_method.load(folder)
         chart = load_standard_chart(config.data.chart_path, expected=config.data.expected_groups)
-        retriever = Retriever(embedder, chart, cache_dir=config.root / ".cache" / "embeddings")
+        retriever = build_retriever(config, embedder, chart)
         return cls(retriever, mapping_method, calibrator, thresholds, config.models.mapping.candidates_k)

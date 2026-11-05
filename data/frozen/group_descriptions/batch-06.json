@@ -1,0 +1,458 @@
+{
+  "batch": 6,
+  "requested_model": "claude-sonnet-5-5",
+  "served_model": "claude-sonnet-5-5",
+  "prompt_version": "v1",
+  "prompt_sha256": "298e9d4285b0da301d49b77a526f9c50ade766080c50fd219f5d9c319d2a1803",
+  "group_codes": [
+    "454",
+    "455",
+    "456",
+    "459",
+    "480",
+    "488",
+    "489",
+    "490",
+    "491",
+    "492",
+    "493",
+    "499",
+    "520",
+    "529",
+    "530",
+    "531",
+    "532",
+    "539",
+    "550"
+  ],
+  "created_at": "2026-11-04T05:05:14+00:00",
+  "usage": {
+    "input_tokens": 2859,
+    "output_tokens": 3275,
+    "cost_usd": 0.04165479999999999,
+    "latency_ms": 22430.876791942865
+  },
+  "response": {
+    "groups": [
+      {
+        "code": "454",
+        "description": "Amount owed to the social security office (RSZ/ONSS) for employer and employee social contributions on wages, unpaid at period end.",
+        "words_nl": [
+          "RSZ",
+          "RSZ-bijdragen",
+          "sociale bijdragen",
+          "RSZ te betalen",
+          "RSZ kwartaalaangifte"
+        ],
+        "words_fr": [
+          "ONSS",
+          "cotisations ONSS",
+          "cotisations sociales",
+          "ONSS à payer"
+        ],
+        "words_en": [
+          "NSSO",
+          "social security contributions",
+          "social security payable",
+          "payroll contributions"
+        ]
+      },
+      {
+        "code": "455",
+        "description": "Net wages, salaries and directors' fees owed to employees and managers but not yet paid, as opposed to the social contributions or holiday pay on them.",
+        "words_nl": [
+          "netto lonen",
+          "lonen te betalen",
+          "wedden",
+          "bezoldiging bestuurders",
+          "tantièmes"
+        ],
+        "words_fr": [
+          "salaires nets",
+          "salaires à payer",
+          "appointements",
+          "rémunérations administrateurs",
+          "tantièmes"
+        ],
+        "words_en": [
+          "net wages",
+          "salaries payable",
+          "directors' fees",
+          "pay due"
+        ]
+      },
+      {
+        "code": "456",
+        "description": "Holiday pay owed to employees, including the holiday pay accrued for the year and amounts due to the holiday fund, as a liability rather than the cost that builds it up.",
+        "words_nl": [
+          "vakantiegeld",
+          "vakantiegeld bedienden",
+          "vakantiefonds",
+          "dubbel vakantiegeld",
+          "vakantiegeld te betalen"
+        ],
+        "words_fr": [
+          "pécule de vacances",
+          "pécule employés",
+          "caisse de vacances",
+          "double pécule",
+          "pécule à payer"
+        ],
+        "words_en": [
+          "holiday pay",
+          "vacation pay",
+          "holiday pay payable",
+          "holiday fund"
+        ]
+      },
+      {
+        "code": "459",
+        "description": "Other social payables not covered elsewhere, such as group or hospitalisation insurance, social secretariat fees, employee deductions and similar amounts owed.",
+        "words_nl": [
+          "groepsverzekering",
+          "arbeidsongevallenverzekering",
+          "sociaal secretariaat",
+          "andere sociale schulden",
+          "inhoudingen personeel"
+        ],
+        "words_fr": [
+          "assurance groupe",
+          "assurance accidents du travail",
+          "secrétariat social",
+          "autres dettes sociales",
+          "retenues personnel"
+        ],
+        "words_en": [
+          "group insurance",
+          "work accident insurance",
+          "payroll agency",
+          "other social payables"
+        ]
+      },
+      {
+        "code": "480",
+        "description": "Bonds that have fallen due and coupons that have matured but have not yet been paid out to the holders.",
+        "words_nl": [
+          "vervallen obligaties",
+          "vervallen coupons",
+          "obligaties te betalen",
+          "coupons te betalen"
+        ],
+        "words_fr": [
+          "obligations échues",
+          "coupons échus",
+          "obligations à rembourser",
+          "coupons à payer"
+        ],
+        "words_en": [
+          "matured bonds",
+          "matured coupons",
+          "bonds due",
+          "unpaid coupons"
+        ]
+      },
+      {
+        "code": "488",
+        "description": "Cash deposits received from third parties as security, such as tenants' or customers' deposits, which the company must return later.",
+        "words_nl": [
+          "borgtocht ontvangen",
+          "huurwaarborg",
+          "waarborgen ontvangen",
+          "borg in contanten"
+        ],
+        "words_fr": [
+          "cautionnement reçu",
+          "garantie locative",
+          "cautions reçues",
+          "dépôt de garantie"
+        ],
+        "words_en": [
+          "deposit received",
+          "security deposit",
+          "guarantee received",
+          "tenant deposit"
+        ]
+      },
+      {
+        "code": "489",
+        "description": "Miscellaneous short-term payables that fit no other account, such as sundry amounts owed to third parties or current account balances of minor items.",
+        "words_nl": [
+          "diverse schulden",
+          "overige schulden",
+          "te betalen bedragen",
+          "tussenrekening"
+        ],
+        "words_fr": [
+          "dettes diverses",
+          "autres dettes",
+          "divers à payer",
+          "sommes à payer"
+        ],
+        "words_en": [
+          "sundry payables",
+          "other payables",
+          "miscellaneous liabilities",
+          "other amounts due"
+        ]
+      },
+      {
+        "code": "490",
+        "description": "Costs already paid or booked in this year that relate to a following year, so they are postponed to the period they belong to (prepaid expenses).",
+        "words_nl": [
+          "vooruitbetaalde kosten",
+          "over te dragen kosten",
+          "vooruitbetaalde huur",
+          "vooruitbetaalde verzekering"
+        ],
+        "words_fr": [
+          "charges constatées d'avance",
+          "charges à reporter",
+          "loyer payé d'avance",
+          "assurance payée d'avance"
+        ],
+        "words_en": [
+          "prepaid expenses",
+          "prepayments",
+          "prepaid rent",
+          "prepaid insurance"
+        ]
+      },
+      {
+        "code": "491",
+        "description": "Income that belongs to the current year but will only be received or invoiced later, such as interest earned but not yet collected.",
+        "words_nl": [
+          "verkregen opbrengsten",
+          "te ontvangen interesten",
+          "nog te ontvangen opbrengsten",
+          "op te leggen facturen"
+        ],
+        "words_fr": [
+          "produits acquis",
+          "intérêts à recevoir",
+          "produits à recevoir",
+          "factures à établir"
+        ],
+        "words_en": [
+          "accrued income",
+          "interest receivable",
+          "income to receive",
+          "accrued revenue"
+        ]
+      },
+      {
+        "code": "492",
+        "description": "Costs that belong to the current year but will only be invoiced or paid later, such as unbilled supplies or interest owed, booked at year-end as a liability.",
+        "words_nl": [
+          "toe te rekenen kosten",
+          "nog te ontvangen facturen",
+          "te betalen interesten",
+          "werkelijke kosten te verrekenen"
+        ],
+        "words_fr": [
+          "charges à imputer",
+          "factures à recevoir",
+          "intérêts à payer",
+          "charges à payer"
+        ],
+        "words_en": [
+          "accrued expenses",
+          "accrued charges",
+          "invoices to receive",
+          "accrued interest payable"
+        ]
+      },
+      {
+        "code": "493",
+        "description": "Income received or invoiced in this year that relates to a following year, so it is postponed to the period it belongs to.",
+        "words_nl": [
+          "over te dragen opbrengsten",
+          "vooruitgefactureerde opbrengsten",
+          "vooruitontvangen huur",
+          "uitgestelde opbrengsten"
+        ],
+        "words_fr": [
+          "produits à reporter",
+          "produits constatés d'avance",
+          "loyer perçu d'avance",
+          "revenus différés"
+        ],
+        "words_en": [
+          "deferred income",
+          "prepaid income",
+          "income received in advance",
+          "unearned revenue"
+        ]
+      },
+      {
+        "code": "499",
+        "description": "Temporary holding account for items that cannot yet be allocated to the right account and must be cleared once identified.",
+        "words_nl": [
+          "wachtrekening",
+          "tussenrekening",
+          "te verdelen bedragen",
+          "onbekende betalingen"
+        ],
+        "words_fr": [
+          "compte d'attente",
+          "compte transitoire",
+          "sommes à ventiler",
+          "paiements non identifiés"
+        ],
+        "words_en": [
+          "suspense account",
+          "clearing account",
+          "unallocated items",
+          "unidentified payments"
+        ]
+      },
+      {
+        "code": "520",
+        "description": "Bonds and similar fixed-income securities held as short-term investments, recorded at their purchase price; the write-downs are kept in a separate account.",
+        "words_nl": [
+          "obligaties",
+          "staatsbons",
+          "kasbons",
+          "vastrentende waarden"
+        ],
+        "words_fr": [
+          "obligations",
+          "bons d'État",
+          "bons de caisse",
+          "valeurs à revenu fixe"
+        ],
+        "words_en": [
+          "bonds",
+          "government bonds",
+          "treasury notes",
+          "fixed-income investments"
+        ]
+      },
+      {
+        "code": "529",
+        "description": "Write-downs recorded on short-term fixed-income securities when their value falls below cost; a credit balance that reduces the securities account.",
+        "words_nl": [
+          "waardevermindering obligaties",
+          "geboekte waardeverminderingen",
+          "minderwaarde effecten"
+        ],
+        "words_fr": [
+          "réduction de valeur obligations",
+          "réductions de valeur actées",
+          "moins-value titres"
+        ],
+        "words_en": [
+          "write-down on bonds",
+          "impairment securities",
+          "valuation allowance"
+        ]
+      },
+      {
+        "code": "530",
+        "description": "Term deposits placed with a bank for a period longer than one year, so they cannot be withdrawn freely in the short term.",
+        "words_nl": [
+          "termijnrekening",
+          "termijndepositio",
+          "deposito > 1 jaar",
+          "langlopende termijnrekening"
+        ],
+        "words_fr": [
+          "compte à terme",
+          "dépôt à terme",
+          "dépôt > 1 an",
+          "placement à terme"
+        ],
+        "words_en": [
+          "term deposit",
+          "time deposit",
+          "deposit over 1 year",
+          "long-term deposit"
+        ]
+      },
+      {
+        "code": "531",
+        "description": "Term deposits with a bank for a remaining term between one month and one year, in between the short and long deposits.",
+        "words_nl": [
+          "termijnrekening",
+          "termijndeposito",
+          "deposito 1 maand tot 1 jaar",
+          "spaarrekening termijn"
+        ],
+        "words_fr": [
+          "compte à terme",
+          "dépôt à terme",
+          "dépôt 1 mois à 1 an",
+          "placement à terme"
+        ],
+        "words_en": [
+          "term deposit",
+          "time deposit",
+          "deposit 1-12 months",
+          "medium-term deposit"
+        ]
+      },
+      {
+        "code": "532",
+        "description": "Term deposits with a bank for a term of one month or less, the most liquid of the term deposits.",
+        "words_nl": [
+          "termijnrekening",
+          "kortlopend deposito",
+          "deposito < 1 maand",
+          "termijnrekening 1 maand"
+        ],
+        "words_fr": [
+          "compte à terme",
+          "dépôt à court terme",
+          "dépôt < 1 mois",
+          "placement 1 mois"
+        ],
+        "words_en": [
+          "term deposit",
+          "short-term deposit",
+          "deposit under 1 month",
+          "one-month deposit"
+        ]
+      },
+      {
+        "code": "539",
+        "description": "Write-downs recorded on term deposits when recovery is doubtful; a credit balance that reduces the deposit accounts.",
+        "words_nl": [
+          "waardevermindering termijnrekening",
+          "geboekte waardeverminderingen",
+          "minderwaarde deposito"
+        ],
+        "words_fr": [
+          "réduction de valeur dépôt à terme",
+          "réductions de valeur actées",
+          "moins-value dépôt"
+        ],
+        "words_en": [
+          "write-down on deposits",
+          "deposit impairment",
+          "valuation allowance"
+        ]
+      },
+      {
+        "code": "550",
+        "description": "Current bank accounts held with banks and other credit institutions, used for daily receipts and payments.",
+        "words_nl": [
+          "zichtrekening",
+          "bankrekening",
+          "rekening-courant bank",
+          "bank"
+        ],
+        "words_fr": [
+          "compte courant",
+          "compte à vue",
+          "compte bancaire",
+          "banque"
+        ],
+        "words_en": [
+          "bank account",
+          "current account",
+          "checking account",
+          "bank"
+        ]
+      }
+    ]
+  }
+}

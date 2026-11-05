@@ -1,0 +1,475 @@
+{
+  "batch": 9,
+  "requested_model": "claude-sonnet-5-5",
+  "served_model": "claude-sonnet-5-5",
+  "prompt_version": "v1",
+  "prompt_sha256": "298e9d4285b0da301d49b77a526f9c50ade766080c50fd219f5d9c319d2a1803",
+  "group_codes": [
+    "660",
+    "661",
+    "662",
+    "663",
+    "664",
+    "668",
+    "669",
+    "670",
+    "671",
+    "672",
+    "673",
+    "680",
+    "689",
+    "690",
+    "700",
+    "708",
+    "712",
+    "713",
+    "715"
+  ],
+  "created_at": "2026-11-04T05:06:34+00:00",
+  "usage": {
+    "input_tokens": 3318,
+    "output_tokens": 3888,
+    "cost_usd": 0.04962079999999999,
+    "latency_ms": 30331.108417129144
+  },
+  "response": {
+    "groups": [
+      {
+        "code": "660",
+        "description": "Exceptional depreciation or write-downs on tangible and intangible fixed assets, start-up costs or current assets that fall outside normal activity, such as after a fire, closure or major obsolescence.",
+        "words_nl": [
+          "uitzonderlijke afschrijving",
+          "extra afschrijving",
+          "uitzonderlijke waardevermindering",
+          "afschrijving herstructurering"
+        ],
+        "words_fr": [
+          "amortissement exceptionnel",
+          "amortissement extraordinaire",
+          "réduction de valeur exceptionnelle",
+          "amort. non récurrent"
+        ],
+        "words_en": [
+          "exceptional depreciation",
+          "extraordinary write-off",
+          "one-off impairment",
+          "special write-down"
+        ]
+      },
+      {
+        "code": "661",
+        "description": "Impairment charges on participations, shares, loans and other financial fixed assets when the loss in value is exceptional; the balance-sheet counterpart is the write-down account, not a provision.",
+        "words_nl": [
+          "waardevermindering deelneming",
+          "waardevermindering aandelen",
+          "waardevermindering vordering",
+          "uitzonderlijk"
+        ],
+        "words_fr": [
+          "réduction de valeur participation",
+          "réduction valeur actions",
+          "réd. de valeur créance financière",
+          "exceptionnelle"
+        ],
+        "words_en": [
+          "impairment of investments",
+          "write-down of shares",
+          "write-down financial loan",
+          "exceptional impairment"
+        ]
+      },
+      {
+        "code": "662",
+        "description": "Charge recorded when setting up or increasing a provision for exceptional risks such as restructuring, major disputes or site clean-up; it is the expense, while the provision itself sits on the balance sheet.",
+        "words_nl": [
+          "voorziening herstructurering",
+          "voorziening geschil",
+          "dotatie voorziening",
+          "voorziening saneringskosten"
+        ],
+        "words_fr": [
+          "provision restructuration",
+          "provision litige",
+          "dotation provision",
+          "provision remise en état"
+        ],
+        "words_en": [
+          "restructuring provision",
+          "litigation provision",
+          "provision charge",
+          "clean-up provision"
+        ]
+      },
+      {
+        "code": "663",
+        "description": "Losses made when selling or disposing of fixed assets for less than their book value, such as the sale of a building, machine, vehicle or shares at a loss.",
+        "words_nl": [
+          "minderwaarde verkoop",
+          "verlies verkoop activa",
+          "minderwaarde gebouw",
+          "minderwaarde voertuig",
+          "minderwaarde aandelen"
+        ],
+        "words_fr": [
+          "moins-value vente",
+          "perte sur cession",
+          "moins-value immeuble",
+          "moins-value véhicule",
+          "moins-value actions"
+        ],
+        "words_en": [
+          "loss on disposal",
+          "capital loss",
+          "loss on sale of asset",
+          "loss on sale of building"
+        ]
+      },
+      {
+        "code": "664",
+        "description": "Exceptional operating costs that are not depreciation, provisions or disposal losses, such as one-off penalties, compensation, severance or fire and accident damage.",
+        "words_nl": [
+          "uitzonderlijke kosten",
+          "boetes",
+          "schadevergoeding",
+          "ontslagvergoeding uitzonderlijk",
+          "andere uitzonderlijke kosten"
+        ],
+        "words_fr": [
+          "charges exceptionnelles",
+          "amendes",
+          "indemnités",
+          "sinistre",
+          "autres charges except."
+        ],
+        "words_en": [
+          "exceptional costs",
+          "penalties",
+          "compensation paid",
+          "one-off operating loss",
+          "damages"
+        ]
+      },
+      {
+        "code": "668",
+        "description": "Exceptional financial costs that do not fit elsewhere, such as unusual exchange losses, losses on financial guarantees, debt waivers granted or one-off interest charges.",
+        "words_nl": [
+          "uitzonderlijke financiële kosten",
+          "wisselverlies uitzonderlijk",
+          "schuldkwijtschelding",
+          "afstand van vordering",
+          "andere uitz. fin. kosten"
+        ],
+        "words_fr": [
+          "charges financières exceptionnelles",
+          "perte de change exceptionnelle",
+          "abandon de créance",
+          "autres charges fin. except."
+        ],
+        "words_en": [
+          "exceptional financial costs",
+          "one-off exchange loss",
+          "debt waiver",
+          "other exceptional finance charges"
+        ]
+      },
+      {
+        "code": "669",
+        "description": "Credit entry removing exceptional restructuring costs from the income statement because they are capitalised as an asset on the balance sheet, so it reduces the non-recurring charges.",
+        "words_nl": [
+          "activering herstructureringskosten",
+          "herstructureringskosten geactiveerd",
+          "overboeking naar activa",
+          "geactiveerde kosten"
+        ],
+        "words_fr": [
+          "activation frais de restructuration",
+          "frais de restructuration activés",
+          "transfert à l'actif",
+          "charges portées à l'actif"
+        ],
+        "words_en": [
+          "capitalised restructuring costs",
+          "restructuring costs to assets",
+          "capitalisation credit",
+          "charges carried to assets"
+        ]
+      },
+      {
+        "code": "670",
+        "description": "Corporate income tax charge for the current financial year in Belgium, including advance payments, withholding tax credited and the estimated tax due, as opposed to adjustments for earlier years.",
+        "words_nl": [
+          "vennootschapsbelasting",
+          "voorafbetalingen",
+          "geschatte belasting",
+          "belasting boekjaar",
+          "afrekening VenB"
+        ],
+        "words_fr": [
+          "impôt des sociétés",
+          "versements anticipés",
+          "impôt estimé",
+          "ISOC",
+          "précompte mobilier imputable"
+        ],
+        "words_en": [
+          "corporate income tax",
+          "advance tax payments",
+          "estimated tax",
+          "current year tax",
+          "CIT"
+        ]
+      },
+      {
+        "code": "671",
+        "description": "Additional Belgian income tax assessed for earlier years, such as tax assessment adjustments and tax audit supplements, plus the provisions set up for them.",
+        "words_nl": [
+          "aanvullende aanslag",
+          "belastingaanpassing vorig jaar",
+          "belastingcontrole",
+          "bijkomende belasting",
+          "regularisatie vorig boekjaar"
+        ],
+        "words_fr": [
+          "supplément d'impôt",
+          "rappel d'impôt",
+          "régularisation exercice antérieur",
+          "contrôle fiscal",
+          "impôt complémentaire"
+        ],
+        "words_en": [
+          "prior year tax adjustment",
+          "additional assessment",
+          "tax audit supplement",
+          "back tax",
+          "prior year true-up"
+        ]
+      },
+      {
+        "code": "672",
+        "description": "Income tax payable abroad on the profit of the current year, for example from foreign branches or foreign-source income, as opposed to Belgian tax or tax for earlier years.",
+        "words_nl": [
+          "buitenlandse belasting",
+          "belasting filiaal buitenland",
+          "buitenlandse bronbelasting",
+          "belasting dit boekjaar buitenland"
+        ],
+        "words_fr": [
+          "impôt étranger",
+          "impôt succursale étrangère",
+          "retenue à la source étrangère",
+          "impôt étranger exercice"
+        ],
+        "words_en": [
+          "foreign income tax",
+          "foreign branch tax",
+          "foreign withholding tax",
+          "overseas tax current year"
+        ]
+      },
+      {
+        "code": "673",
+        "description": "Adjustments and supplements for foreign income tax relating to earlier years, such as foreign assessments or corrections after a tax return has been filed.",
+        "words_nl": [
+          "buitenlandse belasting vorig jaar",
+          "buitenlandse aanslag",
+          "regularisatie buitenlandse belasting",
+          "aanvullende buitenlandse belasting"
+        ],
+        "words_fr": [
+          "impôt étranger exercice antérieur",
+          "rappel d'impôt étranger",
+          "régularisation impôt étranger",
+          "supplément impôt étranger"
+        ],
+        "words_en": [
+          "prior year foreign tax",
+          "foreign tax adjustment",
+          "foreign back tax",
+          "foreign assessment"
+        ]
+      },
+      {
+        "code": "680",
+        "description": "Charge for adding to deferred tax liabilities, booked in the appropriation account when tax is expected to be payable in later years; the liability itself is on the balance sheet.",
+        "words_nl": [
+          "toevoeging uitgestelde belasting",
+          "uitgestelde belastingen",
+          "dotatie uitgestelde belasting",
+          "belastinglatentie"
+        ],
+        "words_fr": [
+          "dotation impôts différés",
+          "impôts différés",
+          "transfert impôts différés",
+          "latence fiscale"
+        ],
+        "words_en": [
+          "deferred tax charge",
+          "deferred tax transfer",
+          "addition to deferred tax",
+          "deferred tax liability"
+        ]
+      },
+      {
+        "code": "689",
+        "description": "Amounts transferred from profit to untaxed reserves in the appropriation account, such as exceptional depreciation, investment reserves or capital gains exempt from tax for now.",
+        "words_nl": [
+          "toevoeging belastingvrije reserve",
+          "investeringsreserve",
+          "vrijgestelde meerwaarde",
+          "belastingvrije reserves"
+        ],
+        "words_fr": [
+          "dotation réserves immunisées",
+          "réserve d'investissement",
+          "plus-value exonérée",
+          "réserves immunisées"
+        ],
+        "words_en": [
+          "untaxed reserves transfer",
+          "investment reserve",
+          "exempt capital gain",
+          "tax-free reserve"
+        ]
+      },
+      {
+        "code": "690",
+        "description": "Opening debit balance of the appropriation account, being the accumulated loss of the previous year that is carried forward into the current year's result allocation.",
+        "words_nl": [
+          "overgedragen verlies",
+          "verlies vorig boekjaar",
+          "verlies overdracht",
+          "overgedragen resultaat"
+        ],
+        "words_fr": [
+          "perte reportée",
+          "perte exercice précédent",
+          "report à nouveau débiteur",
+          "perte à reporter"
+        ],
+        "words_en": [
+          "loss brought forward",
+          "prior year loss",
+          "accumulated loss",
+          "carried forward loss"
+        ]
+      },
+      {
+        "code": "700",
+        "description": "Revenue from selling goods and services to customers in the ordinary course of business, before deducting discounts and rebates, usually split by product, service or region.",
+        "words_nl": [
+          "verkoop handelsgoederen",
+          "dienstverlening",
+          "omzet",
+          "verkopen binnenland",
+          "verkopen export"
+        ],
+        "words_fr": [
+          "ventes marchandises",
+          "prestations de services",
+          "chiffre d'affaires",
+          "ventes Belgique",
+          "ventes export"
+        ],
+        "words_en": [
+          "sales of goods",
+          "services rendered",
+          "revenue",
+          "domestic sales",
+          "export sales"
+        ]
+      },
+      {
+        "code": "708",
+        "description": "Reductions on sales granted to customers, such as invoice discounts, volume rebates and year-end bonuses, booked as a negative against turnover; this differs from financial discounts for early payment.",
+        "words_nl": [
+          "kortingen",
+          "ristorno",
+          "rabatten",
+          "commerciële korting",
+          "klantenkorting"
+        ],
+        "words_fr": [
+          "remises",
+          "ristournes",
+          "rabais",
+          "remise commerciale",
+          "remise clients"
+        ],
+        "words_en": [
+          "sales discounts",
+          "rebates",
+          "volume discount",
+          "customer allowances",
+          "credit notes"
+        ]
+      },
+      {
+        "code": "712",
+        "description": "Year-end change in the value of unfinished goods still in production, shown as income if stock rises and as a negative if it falls; it covers work in progress, not completed products or buildings.",
+        "words_nl": [
+          "voorraadwijziging goederen in bewerking",
+          "onderhanden werk",
+          "stockwijziging halffabricaten",
+          "goederen in bewerking"
+        ],
+        "words_fr": [
+          "variation en-cours de fabrication",
+          "en-cours",
+          "variation stock semi-finis",
+          "travaux en cours"
+        ],
+        "words_en": [
+          "work in progress change",
+          "WIP movement",
+          "semi-finished stock change",
+          "unfinished goods"
+        ]
+      },
+      {
+        "code": "713",
+        "description": "Year-end change in stock of completed products ready for sale that the company has made itself, shown as income if stock rises and as a negative if it falls; it covers finished goods, not work in progress.",
+        "words_nl": [
+          "voorraadwijziging gereed product",
+          "stockwijziging eindproducten",
+          "gereed product",
+          "voorraadvariatie"
+        ],
+        "words_fr": [
+          "variation stock produits finis",
+          "produits finis",
+          "variation de stock",
+          "stock produits fabriqués"
+        ],
+        "words_en": [
+          "finished goods change",
+          "finished goods stock movement",
+          "stock variation",
+          "change in finished products"
+        ]
+      },
+      {
+        "code": "715",
+        "description": "Year-end change in stock of buildings or properties built by the company for resale, such as a property developer's completed or in-progress projects, shown as income or a negative.",
+        "words_nl": [
+          "voorraadwijziging onroerend goed",
+          "vastgoed voor verkoop",
+          "projectontwikkeling",
+          "woningen in aanbouw"
+        ],
+        "words_fr": [
+          "variation stock immeubles",
+          "immeubles destinés à la vente",
+          "promotion immobilière",
+          "logements en construction"
+        ],
+        "words_en": [
+          "property stock change",
+          "real estate for resale",
+          "development stock",
+          "properties under construction"
+        ]
+      }
+    ]
+  }
+}

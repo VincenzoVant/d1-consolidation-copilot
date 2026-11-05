@@ -3,6 +3,7 @@ import shutil
 from random import Random
 
 import pytest
+import yaml
 
 from d1.config import REPO_ROOT, load_config
 from d1.datagen.rule_charts import generate_rule_company
@@ -154,6 +155,54 @@ def test_from_artifacts_refuses_another_embedding_model(mapper_root, FakeEmbedde
     # The thresholds were fitted with one embedder; loading with another would silently change every score.
     with pytest.raises(MapperError, match="fake/trigram-256"):
         Mapper.from_artifacts(config, "fuzzy", embedder_factory=lambda name: FakeEmbedder("fake/other"))
+
+
+def _set_group_text(root, value: str) -> None:
+    path = root / "config" / "models.yaml"
+    data = yaml.safe_load(path.read_text(encoding="utf-8"))
+    data["mapping"]["group_text"] = value
+    path.write_text(yaml.safe_dump(data), encoding="utf-8")
+
+
+def _freeze_descriptions(config, chart):
+    folder = config.data.frozen_descriptions_dir
+    shutil.rmtree(folder, ignore_errors=True)  # replace the real descriptions with tiny ones
+    folder.mkdir(parents=True)
+    groups = [{"code": a.code, "description": f"about {a.code}", "words_nl": [], "words_fr": [], "words_en": []} for a in chart]
+    (folder / "batch-01.json").write_text(json.dumps({"response": {"groups": groups}}), encoding="utf-8")
+
+
+def test_train_records_the_group_text(mapper_root, FakeEmbedder):
+    _set_group_text(mapper_root, "names")
+    train_method(load_config(mapper_root), "fuzzy", _fake_factory(FakeEmbedder))
+    thresholds = json.loads((mapper_root / "artifacts" / "methods" / "fuzzy" / "thresholds.json").read_text())
+    assert thresholds["group_text"] == "names"
+
+
+def test_from_artifacts_refuses_another_group_text(mapper_root, chart, FakeEmbedder):
+    _set_group_text(mapper_root, "names")
+    train_method(load_config(mapper_root), "fuzzy", _fake_factory(FakeEmbedder))
+    # Shortlists with descriptions are different shortlists: the calibrator was not fitted on them.
+    _set_group_text(mapper_root, "average")
+    _freeze_descriptions(load_config(mapper_root), chart)
+    with pytest.raises(MapperError, match="group_text"):
+        Mapper.from_artifacts(load_config(mapper_root), "fuzzy", embedder_factory=_fake_factory(FakeEmbedder))
+
+
+def test_build_retriever_follows_the_setting(mapper_root, chart, FakeEmbedder):
+    from d1.mapper.pipeline import build_retriever
+
+    _set_group_text(mapper_root, "names")
+    assert build_retriever(load_config(mapper_root), FakeEmbedder(), chart).descriptions is None
+
+    _set_group_text(mapper_root, "average")
+    config = load_config(mapper_root)
+    shutil.rmtree(config.data.frozen_descriptions_dir)
+    with pytest.raises(MapperError, match=r"python -m d1\.mapper\.descriptions"):
+        build_retriever(config, FakeEmbedder(), chart)  # nothing frozen yet
+    _freeze_descriptions(config, chart)
+    retriever = build_retriever(config, FakeEmbedder(), chart)
+    assert retriever.group_text == "average" and retriever.descriptions["620"] == "about 620"
 
 
 # --- command line ---------------------------------------------------------------------------

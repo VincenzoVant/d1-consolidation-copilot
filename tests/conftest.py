@@ -19,8 +19,11 @@ def fixtures_dir() -> Path:
 
 @pytest.fixture
 def config_root(tmp_path: Path) -> Path:
-    """A throwaway repo root holding a copy of config/, safe to edit in a test."""
+    """A throwaway repo root holding a copy of config/ and the frozen group descriptions, safe to edit in a test."""
     shutil.copytree(REPO_ROOT / "config", tmp_path / "config")
+    # config/models.yaml embeds the groups with their descriptions, so a root without them could not build a retriever.
+    descriptions = Path("data") / "frozen" / "group_descriptions"
+    shutil.copytree(REPO_ROOT / descriptions, tmp_path / descriptions)
     return tmp_path
 
 

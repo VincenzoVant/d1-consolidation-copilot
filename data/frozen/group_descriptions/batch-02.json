@@ -1,0 +1,474 @@
+{
+  "batch": 2,
+  "requested_model": "claude-sonnet-5-5",
+  "served_model": "claude-sonnet-5-5",
+  "prompt_version": "v1",
+  "prompt_sha256": "298e9d4285b0da301d49b77a526f9c50ade766080c50fd219f5d9c319d2a1803",
+  "group_codes": [
+    "179",
+    "200",
+    "201",
+    "202",
+    "204",
+    "210",
+    "211",
+    "212",
+    "213",
+    "220",
+    "221",
+    "222",
+    "223",
+    "250",
+    "251",
+    "252",
+    "280",
+    "281",
+    "282"
+  ],
+  "created_at": "2026-11-04T05:03:39+00:00",
+  "usage": {
+    "input_tokens": 2958,
+    "output_tokens": 3160,
+    "cost_usd": 0.0409008,
+    "latency_ms": 22705.999667057768
+  },
+  "response": {
+    "groups": [
+      {
+        "code": "179",
+        "description": "Long-term debts due after more than one year that fit no other category, such as deposits received, miscellaneous long-term payables or sundry borrowings from third parties.",
+        "words_nl": [
+          "borgtochten ontvangen",
+          "diverse langlopende schulden",
+          "waarborgen ontvangen",
+          "overige LT-schulden"
+        ],
+        "words_fr": [
+          "cautionnements reçus",
+          "dettes diverses LT",
+          "autres dettes long terme",
+          "garanties reçues"
+        ],
+        "words_en": [
+          "deposits received",
+          "sundry long-term debts",
+          "guarantees received",
+          "other LT payables"
+        ]
+      },
+      {
+        "code": "200",
+        "description": "Capitalised costs of setting up the company or increasing its capital, such as incorporation, notary and registration fees, kept on the balance sheet and written off over time.",
+        "words_nl": [
+          "oprichtingskosten",
+          "kapitaalverhoging",
+          "notariskosten",
+          "registratiekosten",
+          "opstartkosten"
+        ],
+        "words_fr": [
+          "frais de constitution",
+          "augmentation de capital",
+          "frais de notaire",
+          "frais d'enregistrement",
+          "frais de démarrage"
+        ],
+        "words_en": [
+          "incorporation costs",
+          "capital increase",
+          "notary fees",
+          "registration fees",
+          "start-up costs"
+        ]
+      },
+      {
+        "code": "201",
+        "description": "Capitalised costs incurred to issue bonds or other loans, such as bank and underwriting fees and issue discounts, spread over the life of the loan.",
+        "words_nl": [
+          "uitgiftekosten lening",
+          "emissiekosten",
+          "obligatielening",
+          "agio lening",
+          "dossierkosten lening"
+        ],
+        "words_fr": [
+          "frais d'émission",
+          "emprunt obligataire",
+          "prime d'émission",
+          "frais de dossier emprunt"
+        ],
+        "words_en": [
+          "bond issue costs",
+          "loan issue fees",
+          "debenture",
+          "issue discount",
+          "loan arrangement fees"
+        ]
+      },
+      {
+        "code": "202",
+        "description": "Other capitalised set-up and start-up costs that are neither capital-raising nor loan-issue costs, such as pre-opening, organisation and launch expenses.",
+        "words_nl": [
+          "overige opstartkosten",
+          "voorbereidingskosten",
+          "organisatiekosten",
+          "opstartuitgaven"
+        ],
+        "words_fr": [
+          "autres frais de démarrage",
+          "frais de prospection",
+          "frais d'organisation",
+          "frais de lancement"
+        ],
+        "words_en": [
+          "pre-opening costs",
+          "launch costs",
+          "organisation costs",
+          "other start-up costs"
+        ]
+      },
+      {
+        "code": "204",
+        "description": "Capitalised costs of a reorganisation, such as redundancy or relocation costs, kept on the balance sheet and amortised, as distinct from a restructuring provision or the expense account.",
+        "words_nl": [
+          "herstructurering",
+          "reorganisatiekosten",
+          "afvloeiingskosten",
+          "sociaal plan"
+        ],
+        "words_fr": [
+          "restructuration",
+          "frais de réorganisation",
+          "frais de licenciement",
+          "plan social"
+        ],
+        "words_en": [
+          "restructuring",
+          "reorganisation costs",
+          "redundancy costs",
+          "capitalised restructuring"
+        ]
+      },
+      {
+        "code": "210",
+        "description": "Capitalised internal or external costs of research and development projects that are expected to generate future benefits, kept as an intangible asset and amortised.",
+        "words_nl": [
+          "O&O",
+          "ontwikkelingskosten",
+          "onderzoekskosten",
+          "R&D",
+          "ontwikkelingsproject"
+        ],
+        "words_fr": [
+          "R&D",
+          "frais de développement",
+          "frais de recherche",
+          "projet de développement"
+        ],
+        "words_en": [
+          "R&D",
+          "development costs",
+          "research costs",
+          "development project"
+        ]
+      },
+      {
+        "code": "211",
+        "description": "Acquired intellectual and industrial property rights such as patents, licences, trademarks, software licences and know-how, capitalised and amortised.",
+        "words_nl": [
+          "octrooien",
+          "licenties",
+          "merken",
+          "software",
+          "knowhow",
+          "concessies"
+        ],
+        "words_fr": [
+          "brevets",
+          "licences",
+          "marques",
+          "logiciels",
+          "savoir-faire",
+          "concessions"
+        ],
+        "words_en": [
+          "patents",
+          "licences",
+          "trademarks",
+          "software",
+          "know-how"
+        ]
+      },
+      {
+        "code": "212",
+        "description": "The premium paid when acquiring a business or business activity above the value of its identifiable net assets, capitalised and amortised.",
+        "words_nl": [
+          "goodwill",
+          "overnamepremie",
+          "klantenbestand",
+          "overgenomen handelsfonds"
+        ],
+        "words_fr": [
+          "goodwill",
+          "survaleur",
+          "fonds de commerce",
+          "clientèle reprise"
+        ],
+        "words_en": [
+          "goodwill",
+          "acquisition premium",
+          "business takeover",
+          "customer base"
+        ]
+      },
+      {
+        "code": "213",
+        "description": "Prepayments and down payments made to suppliers for intangible assets not yet delivered or completed, such as software or licences under development.",
+        "words_nl": [
+          "voorschotten immateriële",
+          "vooruitbetaling software",
+          "voorschot licentie",
+          "vooruitbetalingen"
+        ],
+        "words_fr": [
+          "acomptes incorporels",
+          "acompte logiciel",
+          "acompte licence",
+          "avances versées"
+        ],
+        "words_en": [
+          "advance payments",
+          "software prepayment",
+          "licence deposit",
+          "down payments"
+        ]
+      },
+      {
+        "code": "220",
+        "description": "Bare land owned by the company without buildings, such as plots, building land and agricultural land, at acquisition cost.",
+        "words_nl": [
+          "grond",
+          "bouwgrond",
+          "percelen",
+          "landbouwgrond",
+          "terreinen"
+        ],
+        "words_fr": [
+          "terrain",
+          "terrain à bâtir",
+          "parcelles",
+          "terrain agricole"
+        ],
+        "words_en": [
+          "land",
+          "building plot",
+          "plots",
+          "agricultural land"
+        ]
+      },
+      {
+        "code": "221",
+        "description": "Buildings and constructions owned by the company such as offices, warehouses, factories and their fixed installations, where the building is booked separately from the land.",
+        "words_nl": [
+          "gebouwen",
+          "kantoorgebouw",
+          "magazijn",
+          "fabriek",
+          "industriële gebouwen"
+        ],
+        "words_fr": [
+          "bâtiments",
+          "immeuble de bureaux",
+          "entrepôt",
+          "usine",
+          "constructions"
+        ],
+        "words_en": [
+          "buildings",
+          "office building",
+          "warehouse",
+          "factory",
+          "premises"
+        ]
+      },
+      {
+        "code": "222",
+        "description": "Built-on plots where land and building are recorded together as one property, rather than being split between land and buildings.",
+        "words_nl": [
+          "bebouwd perceel",
+          "onroerend goed",
+          "pand",
+          "grond en gebouw"
+        ],
+        "words_fr": [
+          "terrain bâti",
+          "immeuble",
+          "propriété bâtie",
+          "bien immobilier"
+        ],
+        "words_en": [
+          "developed land",
+          "built property",
+          "land with building",
+          "real estate"
+        ]
+      },
+      {
+        "code": "223",
+        "description": "Real rights over property owned by others, such as long lease (erfpacht), building rights (opstal), usufruct and easements, capitalised and amortised.",
+        "words_nl": [
+          "erfpacht",
+          "opstalrecht",
+          "vruchtgebruik",
+          "recht van opstal",
+          "erfdienstbaarheid"
+        ],
+        "words_fr": [
+          "emphytéose",
+          "droit de superficie",
+          "usufruit",
+          "servitude"
+        ],
+        "words_en": [
+          "long lease",
+          "building right",
+          "usufruct",
+          "easement"
+        ]
+      },
+      {
+        "code": "250",
+        "description": "Land and buildings held under a finance lease or similar right, recognised as an asset at the leased value, as opposed to those owned outright or rented under operating lease.",
+        "words_nl": [
+          "leasing gebouw",
+          "vastgoedleasing",
+          "leasing terrein",
+          "financieringshuur"
+        ],
+        "words_fr": [
+          "leasing immobilier",
+          "location-financement bâtiment",
+          "leasing terrain",
+          "crédit-bail immobilier"
+        ],
+        "words_en": [
+          "property leasing",
+          "finance lease building",
+          "leased land",
+          "real estate lease"
+        ]
+      },
+      {
+        "code": "251",
+        "description": "Machinery, plant and equipment used in production and held under a finance lease or similar right, recognised as an asset.",
+        "words_nl": [
+          "leasing machines",
+          "leasing installaties",
+          "leasing uitrusting",
+          "machineleasing"
+        ],
+        "words_fr": [
+          "leasing machines",
+          "leasing installations",
+          "leasing outillage",
+          "crédit-bail matériel"
+        ],
+        "words_en": [
+          "machinery lease",
+          "plant lease",
+          "equipment lease",
+          "finance lease machines"
+        ]
+      },
+      {
+        "code": "252",
+        "description": "Office furniture and vehicles such as company cars and trucks held under a finance lease or similar right, recognised as an asset.",
+        "words_nl": [
+          "leasing wagens",
+          "leasing voertuigen",
+          "leasing meubilair",
+          "autoleasing",
+          "leasing vrachtwagen"
+        ],
+        "words_fr": [
+          "leasing voitures",
+          "leasing véhicules",
+          "leasing mobilier",
+          "leasing camion"
+        ],
+        "words_en": [
+          "car lease",
+          "vehicle lease",
+          "furniture lease",
+          "truck lease"
+        ]
+      },
+      {
+        "code": "280",
+        "description": "Shares and equity stakes held in subsidiaries and other group companies, at acquisition cost, as distinct from loans to them.",
+        "words_nl": [
+          "aandelen dochter",
+          "deelneming dochter",
+          "aandelen groepsvennootschap",
+          "participatie"
+        ],
+        "words_fr": [
+          "actions filiale",
+          "participation filiale",
+          "titres société liée",
+          "parts sociétés du groupe"
+        ],
+        "words_en": [
+          "shares in subsidiary",
+          "subsidiary investment",
+          "group company shares",
+          "equity stake"
+        ]
+      },
+      {
+        "code": "281",
+        "description": "Long-term loans and other receivables from group companies, such as subsidiaries and parent, distinct from the shares held in them.",
+        "words_nl": [
+          "lening aan dochter",
+          "vordering groepsvennootschap",
+          "rekening-courant verbonden",
+          "lening aan moeder"
+        ],
+        "words_fr": [
+          "prêt à filiale",
+          "créance société liée",
+          "compte courant lié",
+          "prêt groupe"
+        ],
+        "words_en": [
+          "loan to subsidiary",
+          "intercompany receivable",
+          "group loan",
+          "related party loan"
+        ]
+      },
+      {
+        "code": "282",
+        "description": "Shares and stakes in companies in which a participating interest exists but which are not group companies, such as associates and minority holdings, at acquisition cost.",
+        "words_nl": [
+          "deelneming",
+          "minderheidsparticipatie",
+          "aandelen geassocieerde",
+          "participatie niet-verbonden"
+        ],
+        "words_fr": [
+          "participation",
+          "participation minoritaire",
+          "titres entreprise associée",
+          "actions participations"
+        ],
+        "words_en": [
+          "participating interest",
+          "minority stake",
+          "associate shares",
+          "equity investment"
+        ]
+      }
+    ]
+  }
+}

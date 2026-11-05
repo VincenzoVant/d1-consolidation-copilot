@@ -1,0 +1,431 @@
+{
+  "batch": 1,
+  "requested_model": "claude-sonnet-5-5",
+  "served_model": "claude-sonnet-5-5",
+  "prompt_version": "v1",
+  "prompt_sha256": "298e9d4285b0da301d49b77a526f9c50ade766080c50fd219f5d9c319d2a1803",
+  "group_codes": [
+    "120",
+    "121",
+    "122",
+    "124",
+    "132",
+    "160",
+    "161",
+    "162",
+    "163",
+    "164",
+    "168",
+    "170",
+    "171",
+    "172",
+    "173",
+    "174",
+    "175",
+    "176",
+    "178"
+  ],
+  "created_at": "2026-11-04T05:03:16+00:00",
+  "usage": {
+    "input_tokens": 3173,
+    "output_tokens": 3022,
+    "cost_usd": 0.042908,
+    "latency_ms": 24385.13679197058
+  },
+  "response": {
+    "groups": [
+      {
+        "code": "120",
+        "description": "Equity reserve created when intangible assets such as patents or development costs are formally revalued above their book value, until the surplus is realised.",
+        "words_nl": [
+          "herwaardering immateriële",
+          "meerwaarde immaterieel",
+          "herwaardering octrooien"
+        ],
+        "words_fr": [
+          "réévaluation incorporelles",
+          "plus-value immatériel",
+          "réévaluation brevets"
+        ],
+        "words_en": [
+          "intangibles revaluation",
+          "revaluation surplus intangibles",
+          "patent revaluation"
+        ]
+      },
+      {
+        "code": "121",
+        "description": "Equity reserve created when tangible assets such as buildings, land or machinery are revalued above their book value, as opposed to the asset account itself.",
+        "words_nl": [
+          "herwaardering gebouwen",
+          "herwaardering terreinen",
+          "meerwaarde materieel",
+          "herwaardering installaties"
+        ],
+        "words_fr": [
+          "réévaluation bâtiments",
+          "réévaluation terrains",
+          "plus-value corporelles",
+          "réévaluation installations"
+        ],
+        "words_en": [
+          "building revaluation",
+          "land revaluation",
+          "tangible revaluation surplus"
+        ]
+      },
+      {
+        "code": "122",
+        "description": "Equity reserve created when financial fixed assets such as participations or long-term investments are revalued upward above cost.",
+        "words_nl": [
+          "herwaardering deelnemingen",
+          "herwaardering aandelen",
+          "meerwaarde financieel"
+        ],
+        "words_fr": [
+          "réévaluation participations",
+          "réévaluation actions",
+          "plus-value financières"
+        ],
+        "words_en": [
+          "participations revaluation",
+          "shares revaluation",
+          "financial assets surplus"
+        ]
+      },
+      {
+        "code": "124",
+        "description": "Equity reserve for write-downs on current investments (short-term securities) that were reversed because the value recovered, booked here rather than in income.",
+        "words_nl": [
+          "terugneming waardevermindering",
+          "geldbeleggingen herwaardering",
+          "herstel waarde beleggingen"
+        ],
+        "words_fr": [
+          "reprise réduction de valeur",
+          "placements de trésorerie",
+          "reprise sur placements"
+        ],
+        "words_en": [
+          "write-down reversal",
+          "investments recovery",
+          "current investments reversal"
+        ]
+      },
+      {
+        "code": "132",
+        "description": "Reserves built from profit that have not yet been taxed thanks to tax rules, such as accelerated depreciation or investment deductions, carrying a latent tax liability.",
+        "words_nl": [
+          "vrijgestelde reserves",
+          "investeringsaftrek",
+          "versnelde afschrijving",
+          "uitgestelde belasting reserve"
+        ],
+        "words_fr": [
+          "réserves exonérées",
+          "déduction pour investissement",
+          "amortissements accélérés",
+          "réserve immunisée"
+        ],
+        "words_en": [
+          "tax-exempt reserves",
+          "investment deduction",
+          "accelerated depreciation reserve"
+        ]
+      },
+      {
+        "code": "160",
+        "description": "Balance-sheet provision for expected future pension, early-retirement and similar staff benefit obligations, not the pension expense that funds it.",
+        "words_nl": [
+          "pensioenvoorziening",
+          "voorziening brugpensioen",
+          "voorziening personeel",
+          "groepsverzekering"
+        ],
+        "words_fr": [
+          "provision pension",
+          "provision prépension",
+          "provision personnel",
+          "assurance groupe"
+        ],
+        "words_en": [
+          "pension provision",
+          "early retirement provision",
+          "staff benefits provision"
+        ]
+      },
+      {
+        "code": "161",
+        "description": "Balance-sheet provision for expected tax charges, such as disputed assessments or tax risks, not the tax expense itself.",
+        "words_nl": [
+          "voorziening belastingen",
+          "fiscaal risico",
+          "belastinggeschil",
+          "voorziening fiscale"
+        ],
+        "words_fr": [
+          "provision impôts",
+          "risque fiscal",
+          "litige fiscal",
+          "provision charges fiscales"
+        ],
+        "words_en": [
+          "tax provision",
+          "tax risk",
+          "tax dispute provision"
+        ]
+      },
+      {
+        "code": "162",
+        "description": "Balance-sheet provision spread over several years for large planned repairs or maintenance that will be carried out later.",
+        "words_nl": [
+          "voorziening groot onderhoud",
+          "grote herstellingen",
+          "onderhoudsvoorziening"
+        ],
+        "words_fr": [
+          "provision gros entretien",
+          "grosses réparations",
+          "provision entretien"
+        ],
+        "words_en": [
+          "major repairs provision",
+          "maintenance provision",
+          "overhaul provision"
+        ]
+      },
+      {
+        "code": "163",
+        "description": "Balance-sheet provision for expected costs of environmental obligations such as soil clean-up, site restoration or dismantling.",
+        "words_nl": [
+          "voorziening milieu",
+          "bodemsanering",
+          "ontmanteling",
+          "herstel site"
+        ],
+        "words_fr": [
+          "provision environnement",
+          "assainissement sol",
+          "démantèlement",
+          "remise en état"
+        ],
+        "words_en": [
+          "environmental provision",
+          "soil remediation",
+          "site restoration",
+          "decommissioning"
+        ]
+      },
+      {
+        "code": "164",
+        "description": "Balance-sheet provision for other risks and costs not covered by the specific provisions, such as litigation, warranties or onerous contracts.",
+        "words_nl": [
+          "voorziening geschillen",
+          "garantievoorziening",
+          "voorziening risico's",
+          "voorziening verlieslatend contract"
+        ],
+        "words_fr": [
+          "provision litiges",
+          "provision garanties",
+          "provision risques",
+          "contrat déficitaire"
+        ],
+        "words_en": [
+          "litigation provision",
+          "warranty provision",
+          "other risks provision"
+        ]
+      },
+      {
+        "code": "168",
+        "description": "Liability for taxes that will become payable in future periods because of temporary differences between accounting and tax treatment.",
+        "words_nl": [
+          "uitgestelde belasting",
+          "latente belasting",
+          "belastinglatentie"
+        ],
+        "words_fr": [
+          "impôt différé",
+          "impôt latent",
+          "latence fiscale"
+        ],
+        "words_en": [
+          "deferred tax",
+          "deferred tax liability",
+          "latent tax"
+        ]
+      },
+      {
+        "code": "170",
+        "description": "Long-term loans that rank behind other creditors in case of bankruptcy, repayable after more than one year.",
+        "words_nl": [
+          "achtergestelde lening",
+          "achtergestelde schuld",
+          "lening aandeelhouder achtergesteld"
+        ],
+        "words_fr": [
+          "emprunt subordonné",
+          "dette subordonnée",
+          "prêt subordonné"
+        ],
+        "words_en": [
+          "subordinated loan",
+          "junior debt",
+          "subordinated debt"
+        ]
+      },
+      {
+        "code": "171",
+        "description": "Bonds issued by the company to investors, ordinary ranking and repayable after more than one year.",
+        "words_nl": [
+          "obligatielening",
+          "obligaties",
+          "converteerbare lening",
+          "obligatie uitgifte"
+        ],
+        "words_fr": [
+          "emprunt obligataire",
+          "obligations",
+          "obligations convertibles"
+        ],
+        "words_en": [
+          "bond issue",
+          "debentures",
+          "bonds payable",
+          "convertible bonds"
+        ]
+      },
+      {
+        "code": "172",
+        "description": "Long-term amounts owed under finance leases and similar contracts for assets used by the company, due after more than one year.",
+        "words_nl": [
+          "leasingschuld",
+          "financiële leasing",
+          "lease-schuld",
+          "huurkoop"
+        ],
+        "words_fr": [
+          "dette leasing",
+          "location-financement",
+          "crédit-bail",
+          "dette de leasing"
+        ],
+        "words_en": [
+          "finance lease",
+          "lease liability",
+          "hire purchase"
+        ]
+      },
+      {
+        "code": "173",
+        "description": "Long-term bank loans and credit lines from credit institutions, such as investment or mortgage loans, repayable after more than one year.",
+        "words_nl": [
+          "bankkrediet",
+          "investeringskrediet",
+          "hypothecaire lening",
+          "bankschuld lange termijn"
+        ],
+        "words_fr": [
+          "crédit bancaire",
+          "crédit d'investissement",
+          "prêt hypothécaire",
+          "emprunt bancaire"
+        ],
+        "words_en": [
+          "bank loan",
+          "investment loan",
+          "mortgage loan",
+          "term loan"
+        ]
+      },
+      {
+        "code": "174",
+        "description": "Long-term loans from sources other than banks or bondholders, such as shareholders, directors or related parties, due after more than one year.",
+        "words_nl": [
+          "lening aandeelhouder",
+          "rekening-courant lang",
+          "lening vennoot",
+          "andere lening"
+        ],
+        "words_fr": [
+          "prêt actionnaire",
+          "compte courant long terme",
+          "emprunt associé",
+          "autre emprunt"
+        ],
+        "words_en": [
+          "shareholder loan",
+          "director loan",
+          "related party loan",
+          "other loan"
+        ]
+      },
+      {
+        "code": "175",
+        "description": "Amounts owed to suppliers for goods or services that are payable after more than one year, such as long payment plans.",
+        "words_nl": [
+          "leveranciers lange termijn",
+          "handelsschuld",
+          "schuld leverancier",
+          "betalingsplan leverancier"
+        ],
+        "words_fr": [
+          "fournisseurs long terme",
+          "dette commerciale",
+          "dette fournisseur",
+          "plan de paiement"
+        ],
+        "words_en": [
+          "long-term suppliers",
+          "trade payables",
+          "supplier debt"
+        ]
+      },
+      {
+        "code": "176",
+        "description": "Customer down payments received on orders that will only be settled after more than one year, such as long-term contracts.",
+        "words_nl": [
+          "voorschotten klanten",
+          "ontvangen voorschot",
+          "vooruitbetaling klant",
+          "voorschot bestelling"
+        ],
+        "words_fr": [
+          "acomptes clients",
+          "acompte reçu",
+          "acompte commande",
+          "avance client"
+        ],
+        "words_en": [
+          "customer advances",
+          "down payments received",
+          "customer deposits",
+          "prepayments received"
+        ]
+      },
+      {
+        "code": "178",
+        "description": "Cash deposits received from third parties as security, such as tenant or customer deposits, which will be repaid after more than one year.",
+        "words_nl": [
+          "huurwaarborg ontvangen",
+          "borgsom",
+          "waarborg ontvangen",
+          "borg contant"
+        ],
+        "words_fr": [
+          "garantie locative reçue",
+          "cautionnement reçu",
+          "caution reçue",
+          "dépôt de garantie"
+        ],
+        "words_en": [
+          "deposits received",
+          "tenant deposit",
+          "cash guarantee",
+          "security deposit"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,493 @@
+{
+  "batch": 3,
+  "requested_model": "claude-sonnet-5-5",
+  "served_model": "claude-sonnet-5-5",
+  "prompt_version": "v1",
+  "prompt_sha256": "298e9d4285b0da301d49b77a526f9c50ade766080c50fd219f5d9c319d2a1803",
+  "group_codes": [
+    "283",
+    "284",
+    "285",
+    "288",
+    "290",
+    "291",
+    "300",
+    "309",
+    "310",
+    "319",
+    "320",
+    "329",
+    "330",
+    "339",
+    "340",
+    "349",
+    "350",
+    "359",
+    "360"
+  ],
+  "created_at": "2026-11-04T05:04:05+00:00",
+  "usage": {
+    "input_tokens": 3152,
+    "output_tokens": 3666,
+    "cost_usd": 0.046736799999999995,
+    "latency_ms": 25924.203084083274
+  },
+  "response": {
+    "groups": [
+      {
+        "code": "283",
+        "description": "Loans and other receivables, due beyond one year, on companies in which your company holds a participating interest (not subsidiaries or affiliates in the strict sense), kept as long-term financing.",
+        "words_nl": [
+          "vordering deelneming",
+          "lening deelneming",
+          "rekening-courant deelneming",
+          "vordering op deelnemingsvennootschap"
+        ],
+        "words_fr": [
+          "créance participation",
+          "prêt participation",
+          "compte courant participation",
+          "créance société participée"
+        ],
+        "words_en": [
+          "loan to investee",
+          "participating interest receivable",
+          "investee current account",
+          "long-term loan"
+        ]
+      },
+      {
+        "code": "284",
+        "description": "Shares and equity stakes held long term that are not participations, for example minor holdings kept as an investment without a participating link.",
+        "words_nl": [
+          "aandelen",
+          "andere aandelen",
+          "effecten",
+          "aandelenportefeuille",
+          "kleine belangen"
+        ],
+        "words_fr": [
+          "actions",
+          "autres actions",
+          "parts",
+          "titres immobilisés",
+          "portefeuille actions"
+        ],
+        "words_en": [
+          "shares",
+          "other shares",
+          "long-term securities",
+          "equity holdings",
+          "minor stakes"
+        ]
+      },
+      {
+        "code": "285",
+        "description": "Long-term loans and receivables on third parties that are not linked companies, such as loans to staff, directors or other outsiders, to be collected after more than a year.",
+        "words_nl": [
+          "lening aan derden",
+          "langlopende lening",
+          "vordering op derden",
+          "lening aan vennoot",
+          "lening personeel"
+        ],
+        "words_fr": [
+          "prêt à des tiers",
+          "prêt à long terme",
+          "créance à long terme",
+          "prêt au personnel",
+          "prêt associé"
+        ],
+        "words_en": [
+          "loan to third party",
+          "long-term loan",
+          "other long-term receivable",
+          "staff loan",
+          "shareholder loan"
+        ]
+      },
+      {
+        "code": "288",
+        "description": "Deposits and guarantees paid in cash to third parties, for example rental deposits or utility guarantees, which are expected to be refunded later.",
+        "words_nl": [
+          "waarborg",
+          "huurwaarborg",
+          "borgtocht contant",
+          "waarborg nutsbedrijven",
+          "gestorte waarborg"
+        ],
+        "words_fr": [
+          "garantie locative",
+          "cautionnement",
+          "caution versée",
+          "garantie en espèces",
+          "cautionnement bail"
+        ],
+        "words_en": [
+          "rental deposit",
+          "guarantee deposit",
+          "cash deposit",
+          "security deposit",
+          "utility deposit"
+        ]
+      },
+      {
+        "code": "290",
+        "description": "Amounts customers owe for goods or services sold that fall due after more than one year, such as long-term payment plans and trade bills receivable.",
+        "words_nl": [
+          "klanten > 1 jaar",
+          "handelsvorderingen lange termijn",
+          "te ontvangen wissels",
+          "afbetalingsplan klant",
+          "klantenvordering"
+        ],
+        "words_fr": [
+          "clients > 1 an",
+          "créances commerciales long terme",
+          "effets à recevoir",
+          "plan de paiement client",
+          "créance client"
+        ],
+        "words_en": [
+          "trade receivables LT",
+          "customers > 1 year",
+          "bills receivable",
+          "instalment receivable",
+          "long-term debtors"
+        ]
+      },
+      {
+        "code": "291",
+        "description": "Non-trade receivables due after more than one year, such as long-term loans or advances to third parties, which are not customer invoices and not financial fixed asset loans.",
+        "words_nl": [
+          "overige vorderingen lange termijn",
+          "lening > 1 jaar",
+          "voorschotten lange termijn",
+          "diverse vorderingen",
+          "vordering > 1 jaar"
+        ],
+        "words_fr": [
+          "autres créances long terme",
+          "prêt > 1 an",
+          "avances long terme",
+          "créances diverses",
+          "créance > 1 an"
+        ],
+        "words_en": [
+          "other LT receivables",
+          "loan > 1 year",
+          "long-term advances",
+          "sundry receivables",
+          "non-trade receivable"
+        ]
+      },
+      {
+        "code": "300",
+        "description": "Purchase cost of raw materials in stock that will be transformed in production, valued at acquisition cost at year end.",
+        "words_nl": [
+          "grondstoffen",
+          "voorraad grondstoffen",
+          "grondstoffen aankoop",
+          "ruw materiaal",
+          "voorraad grondstof"
+        ],
+        "words_fr": [
+          "matières premières",
+          "stock matières premières",
+          "stock MP",
+          "matières brutes",
+          "stock matières"
+        ],
+        "words_en": [
+          "raw materials",
+          "raw material stock",
+          "RM inventory",
+          "raw materials at cost",
+          "materials in stock"
+        ]
+      },
+      {
+        "code": "309",
+        "description": "Write-downs recorded on raw materials stock when its value falls below cost; a negative balance that reduces group 300 on the balance sheet.",
+        "words_nl": [
+          "waardevermindering grondstoffen",
+          "afwaardering grondstoffen",
+          "minwaarde grondstoffen",
+          "waardeverminderingen voorraad"
+        ],
+        "words_fr": [
+          "réduction de valeur matières premières",
+          "dépréciation matières",
+          "moins-value stock MP",
+          "réd. valeur stock"
+        ],
+        "words_en": [
+          "raw materials write-down",
+          "raw materials impairment",
+          "stock write-down RM",
+          "obsolescence allowance"
+        ]
+      },
+      {
+        "code": "310",
+        "description": "Stock of consumables and supplies used up in production or operations, such as packaging, fuel, spare parts and cleaning products, at acquisition cost.",
+        "words_nl": [
+          "hulpstoffen",
+          "voorraad hulpstoffen",
+          "verpakkingsmateriaal",
+          "brandstof voorraad",
+          "onderdelen voorraad"
+        ],
+        "words_fr": [
+          "fournitures",
+          "stock fournitures",
+          "emballages",
+          "stock carburant",
+          "pièces détachées"
+        ],
+        "words_en": [
+          "consumables",
+          "supplies stock",
+          "packaging materials",
+          "spare parts stock",
+          "fuel stock"
+        ]
+      },
+      {
+        "code": "319",
+        "description": "Write-downs on consumables and supplies stock when value falls below cost; a negative balance that reduces group 310.",
+        "words_nl": [
+          "waardevermindering hulpstoffen",
+          "afwaardering hulpstoffen",
+          "minwaarde hulpstoffen",
+          "waardeverminderingen hulpstoffen"
+        ],
+        "words_fr": [
+          "réduction de valeur fournitures",
+          "dépréciation fournitures",
+          "moins-value fournitures",
+          "réd. valeur fournitures"
+        ],
+        "words_en": [
+          "consumables write-down",
+          "supplies impairment",
+          "consumables allowance",
+          "stock write-down supplies"
+        ]
+      },
+      {
+        "code": "320",
+        "description": "Cost of goods partly produced at year end that are still in the production process, not yet finished products.",
+        "words_nl": [
+          "goederen in bewerking",
+          "onderhanden werk",
+          "halffabricaten",
+          "onderhanden producten",
+          "productie in uitvoering"
+        ],
+        "words_fr": [
+          "en-cours de fabrication",
+          "produits en cours",
+          "semi-finis",
+          "travaux en cours",
+          "en-cours production"
+        ],
+        "words_en": [
+          "work in progress",
+          "WIP",
+          "semi-finished goods",
+          "unfinished goods",
+          "production in progress"
+        ]
+      },
+      {
+        "code": "329",
+        "description": "Write-downs on work in progress when its value falls below cost; a negative balance that reduces group 320.",
+        "words_nl": [
+          "waardevermindering goederen in bewerking",
+          "afwaardering onderhanden werk",
+          "minwaarde halffabricaten",
+          "waardeverminderingen in bewerking"
+        ],
+        "words_fr": [
+          "réduction de valeur en-cours",
+          "dépréciation en-cours",
+          "moins-value en-cours",
+          "réd. valeur en-cours"
+        ],
+        "words_en": [
+          "WIP write-down",
+          "WIP impairment",
+          "work in progress allowance",
+          "semi-finished write-down"
+        ]
+      },
+      {
+        "code": "330",
+        "description": "Stock of finished products made by the company and ready for sale, valued at production cost.",
+        "words_nl": [
+          "gereed product",
+          "eindproducten",
+          "voorraad afgewerkte producten",
+          "afgewerkte goederen",
+          "productvoorraad"
+        ],
+        "words_fr": [
+          "produits finis",
+          "stock produits finis",
+          "stock PF",
+          "produits fabriqués",
+          "stock produits"
+        ],
+        "words_en": [
+          "finished goods",
+          "finished products",
+          "FG inventory",
+          "manufactured goods",
+          "finished stock"
+        ]
+      },
+      {
+        "code": "339",
+        "description": "Write-downs on finished goods when net realisable value falls below cost; a negative balance that reduces group 330.",
+        "words_nl": [
+          "waardevermindering gereed product",
+          "afwaardering eindproducten",
+          "minwaarde afgewerkte producten",
+          "waardeverminderingen gereed product"
+        ],
+        "words_fr": [
+          "réduction de valeur produits finis",
+          "dépréciation produits finis",
+          "moins-value PF",
+          "réd. valeur produits finis"
+        ],
+        "words_en": [
+          "finished goods write-down",
+          "FG impairment",
+          "finished goods allowance",
+          "product write-down"
+        ]
+      },
+      {
+        "code": "340",
+        "description": "Stock of goods bought from suppliers and held to be resold unchanged, valued at purchase cost.",
+        "words_nl": [
+          "handelsgoederen",
+          "voorraad handelsgoederen",
+          "koopwaar",
+          "goederen voor wederverkoop",
+          "voorraad goederen"
+        ],
+        "words_fr": [
+          "marchandises",
+          "stock marchandises",
+          "marchandises revente",
+          "stock de marchandises",
+          "stock commercial"
+        ],
+        "words_en": [
+          "merchandise",
+          "goods for resale",
+          "trading goods",
+          "merchandise stock",
+          "inventory resale"
+        ]
+      },
+      {
+        "code": "349",
+        "description": "Write-downs on goods for resale when value falls below purchase cost, for example for slow-moving stock; a negative balance that reduces group 340.",
+        "words_nl": [
+          "waardevermindering handelsgoederen",
+          "afwaardering koopwaar",
+          "minwaarde handelsgoederen",
+          "waardeverminderingen voorraad goederen"
+        ],
+        "words_fr": [
+          "réduction de valeur marchandises",
+          "dépréciation marchandises",
+          "moins-value stock marchandises",
+          "réd. valeur marchandises"
+        ],
+        "words_en": [
+          "merchandise write-down",
+          "goods impairment",
+          "slow-moving stock allowance",
+          "resale stock write-down"
+        ]
+      },
+      {
+        "code": "350",
+        "description": "Real estate held as stock for sale, such as buildings or plots built or bought by a developer or dealer for resale, at acquisition cost.",
+        "words_nl": [
+          "onroerende goederen voor verkoop",
+          "vastgoedvoorraad",
+          "gebouwen te koop",
+          "bouwgronden voorraad",
+          "projectontwikkeling voorraad"
+        ],
+        "words_fr": [
+          "immeubles destinés à la vente",
+          "stock immobilier",
+          "immeubles à vendre",
+          "terrains à bâtir stock",
+          "promotion immobilière"
+        ],
+        "words_en": [
+          "property for sale",
+          "real estate stock",
+          "buildings held for sale",
+          "land inventory",
+          "development property"
+        ]
+      },
+      {
+        "code": "359",
+        "description": "Write-downs on real estate held for sale when its value falls below cost; a negative balance that reduces group 350.",
+        "words_nl": [
+          "waardevermindering vastgoed voorraad",
+          "afwaardering onroerend goed verkoop",
+          "minwaarde onroerende goederen",
+          "waardeverminderingen vastgoed"
+        ],
+        "words_fr": [
+          "réduction de valeur immeubles",
+          "dépréciation stock immobilier",
+          "moins-value immeubles à vendre",
+          "réd. valeur immeubles"
+        ],
+        "words_en": [
+          "property stock write-down",
+          "real estate impairment",
+          "property for sale allowance",
+          "land write-down"
+        ]
+      },
+      {
+        "code": "360",
+        "description": "Down payments made to suppliers for goods to be delivered into stock, before the goods are received and the invoice is booked.",
+        "words_nl": [
+          "vooruitbetalingen",
+          "voorschotten leveranciers",
+          "voorschot op aankoop",
+          "vooruitbetaald aan leverancier",
+          "voorschot voorraad"
+        ],
+        "words_fr": [
+          "acomptes versés",
+          "acomptes fournisseurs",
+          "avances sur achats",
+          "acompte sur commande",
+          "acomptes stocks"
+        ],
+        "words_en": [
+          "advance payments",
+          "supplier prepayments",
+          "down payments",
+          "deposits on orders",
+          "advances on purchases"
+        ]
+      }
+    ]
+  }
+}

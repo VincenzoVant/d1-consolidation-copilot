@@ -36,4 +36,5 @@ review_rule_sample: 50
 
 generated_dir: data/generated          # not committed (see .gitignore)
 frozen_llm_dir: data/frozen/llm_charts # committed: raw LLM outputs, never regenerated
+frozen_descriptions_dir: data/frozen/group_descriptions # committed: the group descriptions, written once
 review_path: data/labels/test_review.csv  # committed: your hand-check verdicts

@@ -1,0 +1,460 @@
+{
+  "batch": 4,
+  "requested_model": "claude-sonnet-5-5",
+  "served_model": "claude-sonnet-5-5",
+  "prompt_version": "v1",
+  "prompt_sha256": "298e9d4285b0da301d49b77a526f9c50ade766080c50fd219f5d9c319d2a1803",
+  "group_codes": [
+    "369",
+    "370",
+    "371",
+    "379",
+    "400",
+    "401",
+    "404",
+    "406",
+    "407",
+    "409",
+    "411",
+    "412",
+    "414",
+    "416",
+    "417",
+    "418",
+    "419",
+    "420",
+    "421"
+  ],
+  "created_at": "2026-11-04T05:04:28+00:00",
+  "usage": {
+    "input_tokens": 3198,
+    "output_tokens": 3401,
+    "cost_usd": 0.04427079999999999,
+    "latency_ms": 22942.36637512222
+  },
+  "response": {
+    "groups": [
+      {
+        "code": "369",
+        "description": "Write-downs on prepayments made to suppliers for stock goods not yet delivered, booked when the supplier may not deliver or refund; it is a contra balance sheet account, not the advance itself.",
+        "words_nl": [
+          "waardevermindering voorschot",
+          "vooruitbetaling voorraad WV",
+          "afwaardering voorschot",
+          "WV voorschotten leveranciers"
+        ],
+        "words_fr": [
+          "RV acomptes stocks",
+          "réduction valeur acompte",
+          "acomptes fournisseurs RV",
+          "dépréciation acompte"
+        ],
+        "words_en": [
+          "write-down advance",
+          "stock advance impairment",
+          "supplier advance provision",
+          "impairment prepayment"
+        ]
+      },
+      {
+        "code": "370",
+        "description": "Cost of work in progress on customer orders, such as materials, labour and overheads incurred so far on long-term contracts not yet invoiced or completed.",
+        "words_nl": [
+          "bestellingen in uitvoering",
+          "werk in uitvoering",
+          "lopende projecten",
+          "aanschaffingswaarde WIP"
+        ],
+        "words_fr": [
+          "commandes en cours",
+          "travaux en cours",
+          "chantiers en cours",
+          "coût de revient"
+        ],
+        "words_en": [
+          "work in progress",
+          "WIP at cost",
+          "contracts in progress",
+          "ongoing projects cost"
+        ]
+      },
+      {
+        "code": "371",
+        "description": "The share of expected profit on long-term contracts recognised in proportion to progress, added on top of the cost of the work in progress (group 370) before the contract is finished.",
+        "words_nl": [
+          "toegerekende winst",
+          "winst op bestellingen",
+          "winstneming",
+          "winst pro rata"
+        ],
+        "words_fr": [
+          "bénéfice pris en compte",
+          "bénéfice partiel",
+          "marge à l'avancement",
+          "bénéfice sur commandes"
+        ],
+        "words_en": [
+          "profit recognised",
+          "profit on contracts",
+          "percentage of completion profit",
+          "attributed profit"
+        ]
+      },
+      {
+        "code": "379",
+        "description": "Write-downs on contracts in progress when expected cost exceeds recoverable value; it is a contra account reducing groups 370 and 371, not the loss expense itself.",
+        "words_nl": [
+          "WV bestellingen",
+          "waardevermindering WIP",
+          "afwaardering lopend werk",
+          "geboekte WV"
+        ],
+        "words_fr": [
+          "RV commandes en cours",
+          "réduction valeur travaux",
+          "dépréciation chantiers",
+          "RV actées"
+        ],
+        "words_en": [
+          "write-down contracts",
+          "WIP impairment",
+          "contract loss provision",
+          "WIP write-off"
+        ]
+      },
+      {
+        "code": "400",
+        "description": "Amounts owed by customers for goods and services invoiced on credit, the normal open sales invoices in the customer ledger.",
+        "words_nl": [
+          "klanten",
+          "debiteuren",
+          "verkoopfacturen",
+          "klantenrekening",
+          "te ontvangen facturen"
+        ],
+        "words_fr": [
+          "clients",
+          "débiteurs",
+          "factures de vente",
+          "compte client",
+          "factures à encaisser"
+        ],
+        "words_en": [
+          "customers",
+          "trade debtors",
+          "sales invoices",
+          "accounts receivable",
+          "AR"
+        ]
+      },
+      {
+        "code": "401",
+        "description": "Bills of exchange or promissory notes received from customers and not yet collected or discounted; differs from open invoices (400) because a negotiable instrument exists.",
+        "words_nl": [
+          "te innen wissels",
+          "handelseffecten",
+          "wissels debiteuren",
+          "orderbriefjes"
+        ],
+        "words_fr": [
+          "effets à recevoir",
+          "effets commerciaux",
+          "traites à encaisser",
+          "billets à ordre"
+        ],
+        "words_en": [
+          "bills receivable",
+          "bills of exchange",
+          "notes receivable",
+          "trade bills"
+        ]
+      },
+      {
+        "code": "404",
+        "description": "Trade revenue earned but not yet invoiced at period end, such as delivered goods or services awaiting an invoice; it is an accrual, not an issued invoice.",
+        "words_nl": [
+          "te factureren",
+          "nog te factureren",
+          "op te stellen facturen",
+          "opbrengsten te innen"
+        ],
+        "words_fr": [
+          "factures à établir",
+          "produits à recevoir",
+          "à facturer",
+          "ventes à facturer"
+        ],
+        "words_en": [
+          "unbilled revenue",
+          "accrued income",
+          "invoices to issue",
+          "accrued sales"
+        ]
+      },
+      {
+        "code": "406",
+        "description": "Advances or deposits paid on trade receivable relationships, for example amounts prepaid in connection with customer or trade relations; kept apart from normal open invoices.",
+        "words_nl": [
+          "vooruitbetalingen",
+          "voorschotten",
+          "betaalde voorschotten",
+          "avances handel"
+        ],
+        "words_fr": [
+          "acomptes versés",
+          "avances",
+          "acomptes",
+          "avances commerciales"
+        ],
+        "words_en": [
+          "advance payments",
+          "prepayments",
+          "deposits paid",
+          "advances"
+        ]
+      },
+      {
+        "code": "407",
+        "description": "Customer receivables that are doubtful or in dispute, for example in collection, bankruptcy or litigation, moved out of the normal customer account (400).",
+        "words_nl": [
+          "dubieuze debiteuren",
+          "dubieuze klanten",
+          "betwiste vorderingen",
+          "in gerechtelijke invordering"
+        ],
+        "words_fr": [
+          "clients douteux",
+          "créances douteuses",
+          "débiteurs litigieux",
+          "en contentieux"
+        ],
+        "words_en": [
+          "doubtful debtors",
+          "bad debts",
+          "disputed receivables",
+          "litigation"
+        ]
+      },
+      {
+        "code": "409",
+        "description": "Write-downs on trade receivables for expected non-payment, shown as a negative on the balance sheet; differs from the bad debt expense account that builds it up in the P&L.",
+        "words_nl": [
+          "WV handelsvorderingen",
+          "waardevermindering debiteuren",
+          "WV dubieuze",
+          "geboekte WV"
+        ],
+        "words_fr": [
+          "RV créances commerciales",
+          "réduction valeur clients",
+          "RV actées",
+          "dépréciation clients"
+        ],
+        "words_en": [
+          "bad debt allowance",
+          "receivables write-down",
+          "impairment trade debtors",
+          "doubtful debt provision"
+        ]
+      },
+      {
+        "code": "411",
+        "description": "VAT paid on purchases and investments that is deductible and can be reclaimed from the tax authorities, including VAT credit balances to be refunded.",
+        "words_nl": [
+          "btw te recupereren",
+          "btw rekening-courant",
+          "btw tegoed",
+          "aftrekbare btw"
+        ],
+        "words_fr": [
+          "TVA déductible",
+          "TVA à récupérer",
+          "crédit de TVA",
+          "compte courant TVA"
+        ],
+        "words_en": [
+          "VAT recoverable",
+          "input VAT",
+          "VAT credit",
+          "VAT refund"
+        ]
+      },
+      {
+        "code": "412",
+        "description": "Taxes other than VAT to be recovered, such as excess corporate tax prepayments, withholding tax on dividends or interest and tax refunds receivable.",
+        "words_nl": [
+          "voorheffing",
+          "roerende voorheffing",
+          "voorafbetalingen",
+          "terug te vorderen belasting"
+        ],
+        "words_fr": [
+          "précompte mobilier",
+          "précompte professionnel",
+          "versements anticipés",
+          "impôt à récupérer"
+        ],
+        "words_en": [
+          "withholding tax",
+          "tax prepayment",
+          "tax refund",
+          "corporate tax receivable"
+        ]
+      },
+      {
+        "code": "414",
+        "description": "Non-trade income earned but not yet received, such as accrued interest, rent or commissions; separate from trade accruals (404).",
+        "words_nl": [
+          "te innen opbrengsten",
+          "te ontvangen interesten",
+          "op te brengen opbrengsten",
+          "te ontvangen huur"
+        ],
+        "words_fr": [
+          "produits à recevoir",
+          "intérêts à recevoir",
+          "loyers à recevoir",
+          "revenus courus"
+        ],
+        "words_en": [
+          "accrued income",
+          "interest receivable",
+          "income receivable",
+          "accrued interest"
+        ]
+      },
+      {
+        "code": "416",
+        "description": "Miscellaneous receivables outside normal trade, such as staff advances, amounts owed by partners or insurers and other short-term claims.",
+        "words_nl": [
+          "diverse vorderingen",
+          "overige vorderingen",
+          "voorschotten personeel",
+          "vordering verzekering"
+        ],
+        "words_fr": [
+          "créances diverses",
+          "autres créances",
+          "avances au personnel",
+          "créance assurance"
+        ],
+        "words_en": [
+          "sundry receivables",
+          "other receivables",
+          "staff advances",
+          "miscellaneous debtors"
+        ]
+      },
+      {
+        "code": "417",
+        "description": "Non-trade receivables that are doubtful or in dispute, moved out of the ordinary sundry receivables (416).",
+        "words_nl": [
+          "dubieuze debiteuren",
+          "dubieuze vorderingen",
+          "betwiste vorderingen",
+          "overige dubieuze"
+        ],
+        "words_fr": [
+          "créances douteuses",
+          "débiteurs douteux",
+          "créances litigieuses",
+          "autres douteux"
+        ],
+        "words_en": [
+          "doubtful receivables",
+          "doubtful other debtors",
+          "disputed claims",
+          "bad debts"
+        ]
+      },
+      {
+        "code": "418",
+        "description": "Deposits and guarantees paid in cash to third parties, such as rent deposits or utility guarantees, recoverable when the contract ends.",
+        "words_nl": [
+          "borgtocht contant",
+          "huurwaarborg",
+          "waarborg betaald",
+          "gestorte borg"
+        ],
+        "words_fr": [
+          "cautionnement numéraire",
+          "garantie locative",
+          "caution versée",
+          "dépôt de garantie"
+        ],
+        "words_en": [
+          "cash guarantee",
+          "rent deposit",
+          "security deposit",
+          "deposit paid"
+        ]
+      },
+      {
+        "code": "419",
+        "description": "Write-downs on non-trade receivables for expected non-recovery, a negative balance sheet account kept apart from the trade equivalent (409).",
+        "words_nl": [
+          "WV overige vorderingen",
+          "waardevermindering diverse",
+          "geboekte WV",
+          "afwaardering vorderingen"
+        ],
+        "words_fr": [
+          "RV créances diverses",
+          "réduction valeur autres créances",
+          "RV actées",
+          "dépréciation créances"
+        ],
+        "words_en": [
+          "write-down sundry",
+          "other receivables allowance",
+          "impairment sundry",
+          "provision other debtors"
+        ]
+      },
+      {
+        "code": "420",
+        "description": "The portion of subordinated loans, ranking behind other creditors, that falls due within the next year and is reclassified from long-term debt.",
+        "words_nl": [
+          "achtergestelde lening",
+          "kortlopend deel",
+          "aflossing binnen jaar",
+          "achtergestelde schuld"
+        ],
+        "words_fr": [
+          "emprunt subordonné",
+          "partie à moins d'un an",
+          "échéance annuelle",
+          "dette subordonnée"
+        ],
+        "words_en": [
+          "subordinated loan",
+          "current portion",
+          "due within one year",
+          "subordinated debt"
+        ]
+      },
+      {
+        "code": "421",
+        "description": "The portion of ordinary non-subordinated bond loans that falls due within the next year and is reclassified from long-term debt.",
+        "words_nl": [
+          "obligatielening",
+          "kortlopend deel obligaties",
+          "obligaties aflossing",
+          "converteerbare obligaties"
+        ],
+        "words_fr": [
+          "emprunt obligataire",
+          "obligations échéant",
+          "partie à moins d'un an",
+          "remboursement obligations"
+        ],
+        "words_en": [
+          "bonds",
+          "current portion bonds",
+          "bond repayment",
+          "debentures due"
+        ]
+      }
+    ]
+  }
+}

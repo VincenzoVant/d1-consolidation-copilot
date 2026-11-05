@@ -1,0 +1,458 @@
+{
+  "batch": 10,
+  "requested_model": "claude-sonnet-5-5",
+  "served_model": "claude-sonnet-5-5",
+  "prompt_version": "v1",
+  "prompt_sha256": "298e9d4285b0da301d49b77a526f9c50ade766080c50fd219f5d9c319d2a1803",
+  "group_codes": [
+    "717",
+    "741",
+    "742",
+    "743",
+    "750",
+    "751",
+    "752",
+    "754",
+    "755",
+    "756",
+    "760",
+    "761",
+    "762",
+    "763",
+    "764",
+    "769",
+    "780",
+    "789",
+    "792"
+  ],
+  "created_at": "2026-11-04T05:06:59+00:00",
+  "usage": {
+    "input_tokens": 3096,
+    "output_tokens": 3471,
+    "cost_usd": 0.0445628,
+    "latency_ms": 24855.475584045053
+  },
+  "response": {
+    "groups": [
+      {
+        "code": "717",
+        "description": "Year-end change in the value of long-running customer contracts not yet completed or invoiced, booked as a contra entry to the balance sheet contracts-in-progress account.",
+        "words_nl": [
+          "bestellingen in uitvoering",
+          "wijziging WIP",
+          "onderhanden werk",
+          "toename lopende werken"
+        ],
+        "words_fr": [
+          "commandes en cours",
+          "variation en-cours",
+          "travaux en cours",
+          "chantiers en cours"
+        ],
+        "words_en": [
+          "contracts in progress",
+          "WIP change",
+          "work in progress",
+          "unbilled contracts"
+        ]
+      },
+      {
+        "code": "741",
+        "description": "Gains made when selling tangible fixed assets such as machines, vehicles or buildings in the normal course of business, where the sale price exceeds the net book value.",
+        "words_nl": [
+          "meerwaarde verkoop",
+          "meerwaarde machines",
+          "meerwaarde voertuig",
+          "verkoop materiële activa"
+        ],
+        "words_fr": [
+          "plus-value cession",
+          "plus-value véhicule",
+          "plus-value machine",
+          "vente immobilisation"
+        ],
+        "words_en": [
+          "gain on sale",
+          "gain on vehicle",
+          "gain on equipment",
+          "disposal gain"
+        ]
+      },
+      {
+        "code": "742",
+        "description": "Gains realised when trade receivables are sold or transferred (for example factoring) for more than their book value, in the ordinary course of business.",
+        "words_nl": [
+          "meerwaarde vorderingen",
+          "verkoop klantvorderingen",
+          "factoring winst",
+          "meerwaarde debiteuren"
+        ],
+        "words_fr": [
+          "plus-value créances",
+          "cession créances clients",
+          "gain affacturage",
+          "plus-value débiteurs"
+        ],
+        "words_en": [
+          "gain on receivables",
+          "factoring gain",
+          "debtor sale gain",
+          "receivables disposal"
+        ]
+      },
+      {
+        "code": "743",
+        "description": "Catch-all for ordinary operating income not linked to turnover or other specific accounts, such as recharged costs, rental income, subsidies and compensations.",
+        "words_nl": [
+          "diverse opbrengsten",
+          "doorgerekende kosten",
+          "huuropbrengsten",
+          "subsidies",
+          "schadevergoeding"
+        ],
+        "words_fr": [
+          "produits divers",
+          "frais refacturés",
+          "loyers perçus",
+          "subsides",
+          "indemnités"
+        ],
+        "words_en": [
+          "sundry income",
+          "recharged costs",
+          "rental income",
+          "subsidies",
+          "compensation received"
+        ]
+      },
+      {
+        "code": "750",
+        "description": "Dividends, interest and other income received from financial fixed assets such as participations in affiliated companies and long-term loans or investments.",
+        "words_nl": [
+          "dividenden",
+          "rente deelnemingen",
+          "rente lening verbonden",
+          "opbrengst deelneming"
+        ],
+        "words_fr": [
+          "dividendes",
+          "intérêts participations",
+          "intérêts prêts liés",
+          "revenus participations"
+        ],
+        "words_en": [
+          "dividends received",
+          "participation income",
+          "interest on loans",
+          "investment income"
+        ]
+      },
+      {
+        "code": "751",
+        "description": "Interest, dividends and similar income earned on current assets such as bank deposits, cash investments, receivables and short-term investments.",
+        "words_nl": [
+          "rente bankrekening",
+          "rente termijnrekening",
+          "intresten",
+          "opbrengst beleggingen",
+          "rente vorderingen"
+        ],
+        "words_fr": [
+          "intérêts bancaires",
+          "intérêts compte à terme",
+          "intérêts créditeurs",
+          "revenus placements"
+        ],
+        "words_en": [
+          "bank interest",
+          "deposit interest",
+          "interest received",
+          "investment income"
+        ]
+      },
+      {
+        "code": "752",
+        "description": "Gains realised on selling current assets such as short-term investments or marketable securities above their book value, excluding trade stock.",
+        "words_nl": [
+          "meerwaarde beleggingen",
+          "meerwaarde effecten",
+          "verkoop aandelen",
+          "meerwaarde vlottende activa"
+        ],
+        "words_fr": [
+          "plus-value placements",
+          "plus-value titres",
+          "vente actions",
+          "plus-value actifs circulants"
+        ],
+        "words_en": [
+          "gain on securities",
+          "gain on investments",
+          "share sale gain",
+          "current asset gain"
+        ]
+      },
+      {
+        "code": "754",
+        "description": "Realised foreign exchange gains arising when foreign currency receivables, payables or bank balances are settled at a favourable rate.",
+        "words_nl": [
+          "koersverschillen",
+          "wisselkoerswinst",
+          "gerealiseerd koersverschil",
+          "valutawinst"
+        ],
+        "words_fr": [
+          "différences de change",
+          "gain de change",
+          "écart de change réalisé",
+          "bénéfice de change"
+        ],
+        "words_en": [
+          "exchange gain",
+          "FX gain",
+          "realised FX difference",
+          "currency gain"
+        ]
+      },
+      {
+        "code": "755",
+        "description": "Unrealised currency gains from revaluing foreign currency balances at period end rates, as opposed to realised exchange differences on settlement.",
+        "words_nl": [
+          "omrekeningsverschillen",
+          "niet-gerealiseerde koerswinst",
+          "herwaardering valuta",
+          "omrekening vreemde valuta"
+        ],
+        "words_fr": [
+          "écarts de conversion",
+          "gain de change latent",
+          "réévaluation devises",
+          "conversion devises"
+        ],
+        "words_en": [
+          "translation gain",
+          "unrealised FX gain",
+          "currency revaluation",
+          "year-end FX revaluation"
+        ]
+      },
+      {
+        "code": "756",
+        "description": "Other financial income not fitting elsewhere, such as cash discounts received from suppliers, payment discounts and income from financial instruments.",
+        "words_nl": [
+          "kaskorting leveranciers",
+          "betalingskorting",
+          "diverse financiële opbrengsten",
+          "verkregen kortingen"
+        ],
+        "words_fr": [
+          "escomptes obtenus",
+          "escompte de caisse",
+          "produits financiers divers",
+          "remises financières"
+        ],
+        "words_en": [
+          "cash discounts received",
+          "payment discounts",
+          "sundry financial income",
+          "other finance income"
+        ]
+      },
+      {
+        "code": "760",
+        "description": "Exceptional reversal of depreciation or write-downs on assets previously booked, where they are no longer needed; differs from 761 by covering non-financial assets and from 762 by not being provisions.",
+        "words_nl": [
+          "terugname afschrijvingen",
+          "terugname waardevermindering",
+          "uitzonderlijke terugneming",
+          "vrijval afschrijving"
+        ],
+        "words_fr": [
+          "reprise amortissements",
+          "reprise réduction de valeur",
+          "reprise exceptionnelle",
+          "annulation amortissement"
+        ],
+        "words_en": [
+          "depreciation reversal",
+          "write-down reversal",
+          "exceptional write-back",
+          "impairment release"
+        ]
+      },
+      {
+        "code": "761",
+        "description": "Exceptional reversal of previous write-downs on financial fixed assets such as participations and long-term loans when their value recovers.",
+        "words_nl": [
+          "terugname waardevermindering deelneming",
+          "herwaardering deelnemingen",
+          "vrijval waardevermindering financieel"
+        ],
+        "words_fr": [
+          "reprise réduction valeur participations",
+          "reprise sur immobilisations financières",
+          "revalorisation participation"
+        ],
+        "words_en": [
+          "participation write-back",
+          "financial asset reversal",
+          "investment impairment release"
+        ]
+      },
+      {
+        "code": "762",
+        "description": "Exceptional release of balance-sheet provisions for non-recurring risks and charges, such as restructuring or major disputes, that are no longer required; the opposite of the cost booked in 66.",
+        "words_nl": [
+          "vrijval voorziening",
+          "terugname voorziening",
+          "voorziening herstructurering",
+          "voorziening geschil"
+        ],
+        "words_fr": [
+          "reprise provision",
+          "provision restructuration",
+          "reprise provision litige",
+          "annulation provision"
+        ],
+        "words_en": [
+          "provision release",
+          "provision reversal",
+          "restructuring provision release",
+          "litigation provision release"
+        ]
+      },
+      {
+        "code": "763",
+        "description": "Exceptional gains on sale of fixed assets (tangible, intangible or financial) outside normal activities, unlike 741 which covers ordinary disposals of tangible assets.",
+        "words_nl": [
+          "uitzonderlijke meerwaarde",
+          "meerwaarde vaste activa",
+          "verkoop gebouw",
+          "meerwaarde deelneming"
+        ],
+        "words_fr": [
+          "plus-value exceptionnelle",
+          "plus-value immobilisations",
+          "vente immeuble",
+          "plus-value participation"
+        ],
+        "words_en": [
+          "exceptional gain",
+          "fixed asset disposal gain",
+          "building sale gain",
+          "one-off disposal gain"
+        ]
+      },
+      {
+        "code": "764",
+        "description": "Other exceptional operating income that is unusual and non-recurring, such as one-off compensation, insurance payouts or settlements.",
+        "words_nl": [
+          "uitzonderlijke opbrengsten",
+          "eenmalige opbrengst",
+          "schadeloosstelling",
+          "verzekeringsuitkering"
+        ],
+        "words_fr": [
+          "produits exceptionnels",
+          "produit unique",
+          "indemnité exceptionnelle",
+          "remboursement assurance"
+        ],
+        "words_en": [
+          "exceptional income",
+          "one-off income",
+          "insurance payout",
+          "settlement income"
+        ]
+      },
+      {
+        "code": "769",
+        "description": "Other exceptional financial income that is unusual and non-recurring, such as debt waivers received or one-off financial gains.",
+        "words_nl": [
+          "uitzonderlijke financiële opbrengst",
+          "schuldkwijtschelding",
+          "eenmalige financiële winst",
+          "abandon van schuld"
+        ],
+        "words_fr": [
+          "produit financier exceptionnel",
+          "abandon de créance",
+          "gain financier unique",
+          "remise de dette"
+        ],
+        "words_en": [
+          "exceptional financial income",
+          "debt waiver",
+          "one-off financial gain",
+          "debt forgiveness"
+        ]
+      },
+      {
+        "code": "780",
+        "description": "Release of deferred tax liabilities back to the income statement in the appropriation of results when the deferred tax is no longer due.",
+        "words_nl": [
+          "uitgestelde belastingen",
+          "onttrekking uitgestelde belasting",
+          "vrijval uitgestelde belasting"
+        ],
+        "words_fr": [
+          "impôts différés",
+          "prélèvement impôts différés",
+          "reprise impôt différé"
+        ],
+        "words_en": [
+          "deferred tax release",
+          "deferred tax withdrawal",
+          "deferred tax reversal"
+        ]
+      },
+      {
+        "code": "789",
+        "description": "Release of untaxed (tax-exempt) reserves such as accelerated depreciation or investment reserves back to the result, making them taxable again.",
+        "words_nl": [
+          "belastingvrije reserves",
+          "vrijgestelde reserve",
+          "investeringsreserve",
+          "versnelde afschrijving"
+        ],
+        "words_fr": [
+          "réserves immunisées",
+          "réserve exonérée",
+          "réserve d'investissement",
+          "amortissements accélérés"
+        ],
+        "words_en": [
+          "untaxed reserves",
+          "tax-exempt reserve",
+          "investment reserve",
+          "accelerated depreciation reserve"
+        ]
+      },
+      {
+        "code": "792",
+        "description": "Amounts taken out of equity reserves (legal, available or other) to add to the result to be appropriated, for example to fund a dividend or cover a loss.",
+        "words_nl": [
+          "onttrekking reserves",
+          "beschikbare reserve",
+          "overgedragen verlies",
+          "wettelijke reserve",
+          "dividend uit reserves"
+        ],
+        "words_fr": [
+          "prélèvement réserves",
+          "réserve disponible",
+          "réserve légale",
+          "couverture de perte",
+          "dividende sur réserves"
+        ],
+        "words_en": [
+          "reserve withdrawal",
+          "available reserves",
+          "legal reserve",
+          "reserve release",
+          "dividend funding"
+        ]
+      }
+    ]
+  }
+}

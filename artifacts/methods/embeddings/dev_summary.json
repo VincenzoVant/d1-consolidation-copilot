@@ -2,28 +2,28 @@
   "method": "embeddings",
   "version": "embeddings-top1-v1",
   "n_dev": 3500,
-  "top1": 0.6474285714285715,
+  "top1": 0.7017142857142857,
   "no_pick": 0,
-  "t_auto": 0.9501254307739344,
-  "auto_share": 0.2302857142857143,
-  "auto_precision": 0.9826302729528535,
+  "t_auto": 0.9250848633139125,
+  "auto_share": 0.32571428571428573,
+  "auto_precision": 0.980701754385965,
   "by_source": {
     "rules": {
       "n": 2000,
-      "top1": 0.8895,
-      "auto_share": 0.3755,
-      "auto_precision": 0.996005326231691
+      "top1": 0.9,
+      "auto_share": 0.5115,
+      "auto_precision": 0.9921798631476051
     },
     "llm": {
       "n": 1500,
-      "top1": 0.32466666666666666,
-      "auto_share": 0.03666666666666667,
-      "auto_precision": 0.8
+      "top1": 0.43733333333333335,
+      "auto_share": 0.078,
+      "auto_precision": 0.8803418803418803
     }
   },
   "out_of_fold": {
-    "t_auto": 0.9501254307739344,
-    "auto_share": 0.22914285714285715,
-    "auto_precision": 0.9800498753117207
+    "t_auto": 0.9250848633139125,
+    "auto_share": 0.32457142857142857,
+    "auto_precision": 0.9806338028169014
   }
 }

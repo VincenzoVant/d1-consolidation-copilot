@@ -1,0 +1,64 @@
+{
+  "k": 10,
+  "group_text": "descriptions",
+  "chosen": "BAAI/bge-m3",
+  "models": [
+    {
+      "model": "intfloat/multilingual-e5-base",
+      "top1": 0.6405714285714286,
+      "top3": 0.8151428571428572,
+      "recall_at_k": 0.91,
+      "seconds": 6.101407458772883,
+      "n_rows": 3500,
+      "dim": 768,
+      "recall_by_language": {
+        "en": 0.9444444444444444,
+        "fr": 0.8988888888888888,
+        "mixed": 0.9270588235294117,
+        "nl": 0.8682352941176471
+      },
+      "recall_by_source": {
+        "llm": 0.8186666666666667,
+        "rules": 0.9785
+      }
+    },
+    {
+      "model": "BAAI/bge-m3",
+      "top1": 0.6848571428571428,
+      "top3": 0.8562857142857143,
+      "recall_at_k": 0.9357142857142857,
+      "seconds": 14.790378875099123,
+      "n_rows": 3500,
+      "dim": 1024,
+      "recall_by_language": {
+        "en": 0.9688888888888889,
+        "fr": 0.9233333333333333,
+        "mixed": 0.9388235294117647,
+        "nl": 0.9105882352941177
+      },
+      "recall_by_source": {
+        "llm": 0.864,
+        "rules": 0.9895
+      }
+    },
+    {
+      "model": "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
+      "top1": 0.4094285714285714,
+      "top3": 0.5997142857142858,
+      "recall_at_k": 0.7508571428571429,
+      "seconds": 5.217762040905654,
+      "n_rows": 3500,
+      "dim": 768,
+      "recall_by_language": {
+        "en": 0.9022222222222223,
+        "fr": 0.7222222222222222,
+        "mixed": 0.7364705882352941,
+        "nl": 0.6352941176470588
+      },
+      "recall_by_source": {
+        "llm": 0.6393333333333333,
+        "rules": 0.8345
+      }
+    }
+  ]
+}

@@ -26,13 +26,15 @@ class Candidate(BaseModel):
     score: float  # cosine similarity between the account name and the group
 
 
-def standard_text(a: StandardAccount) -> str:
+def standard_text(a: StandardAccount, description: str | None = None) -> str:
     """What a standard group is embedded as: its three names, plus its parent.
 
     The parent tells apart groups with the same name, such as pension
-    provisions on the balance sheet (160) and as a cost (635).
+    provisions on the balance sheet (160) and as a cost (635). With a
+    description (descriptions.py), its everyday wording is added after a dash.
     """
-    return f"{a.name_en} | {a.name_nl} | {a.name_fr} ({a.parent_name_en})"
+    text = f"{a.name_en} | {a.name_nl} | {a.name_fr} ({a.parent_name_en})"
+    return f"{text} — {description}" if description else text
 
 
 def _slug(model_id: str) -> str:
@@ -50,11 +52,55 @@ def _read_cache(path: Path, n_rows: int) -> np.ndarray | None:
     return vectors
 
 
+GROUP_TEXTS = ("names", "descriptions", "average")
+
+
 class Retriever:
-    def __init__(self, embedder: Embedder, chart: list[StandardAccount], cache_dir: Path | None = None):
+    """Builds shortlists by cosine similarity between account names and the 190 groups.
+
+    group_text says what a group is compared with:
+      names         its official names (standard_text without description)
+      descriptions  its names plus its description (descriptions.py)
+      average       the mean of both similarities: the description helps loosely named
+                    accounts, the plain names keep exact-name matches clearly ahead
+    """
+
+    def __init__(
+        self,
+        embedder: Embedder,
+        chart: list[StandardAccount],
+        cache_dir: Path | None = None,
+        descriptions: dict[str, str] | None = None,
+        group_text: str = "names",
+    ):
+        if group_text not in GROUP_TEXTS:
+            raise ValueError(f"unknown group_text {group_text!r}: choose from {', '.join(GROUP_TEXTS)}")
+        if group_text == "names" and descriptions is not None:
+            raise ValueError("descriptions were given but group_text is 'names': set group_text to use them")
+        if group_text != "names":
+            if descriptions is None:
+                raise ValueError(f"group_text {group_text!r} needs descriptions")
+            missing = [a.code for a in chart if a.code not in descriptions]
+            if missing:
+                raise ValueError(f"no description for groups {', '.join(missing[:5])}")
         self.embedder = embedder
         self.codes = [a.code for a in chart]
-        self.standard_embeddings = self._standard_embeddings([standard_text(a) for a in chart], cache_dir)
+        self.group_text = group_text
+        self.descriptions = descriptions
+        plain_texts = [standard_text(a) for a in chart]
+        if group_text == "names":
+            self.texts = plain_texts
+            self.standard_embeddings = self._standard_embeddings(plain_texts, cache_dir)
+            return
+        self.texts = [standard_text(a, descriptions[a.code]) for a in chart]
+        described = self._standard_embeddings(self.texts, cache_dir)
+        if group_text == "descriptions":
+            self.standard_embeddings = described
+        else:
+            # A dot product is linear, so scoring against the mean vector gives the mean of both
+            # cosines. The mean vector is not unit length on purpose: its scores stay cosines' means.
+            plain = self._standard_embeddings(plain_texts, cache_dir)
+            self.standard_embeddings = ((plain + described) / 2).astype(np.float32)
 
     def _standard_embeddings(self, texts: list[str], cache_dir: Path | None) -> np.ndarray:
         if cache_dir is None:

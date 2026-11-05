@@ -1,6 +1,10 @@
 """Choose the embedding model on dev.
 
-    python -m d1.evaluation.select_embedder     # -> reports/embedding_selection.md (+ _rows.csv)
+    python -m d1.evaluation.select_embedder                                  # -> reports/embedding_selection.md (+ .json, _rows.csv)
+    python -m d1.evaluation.select_embedder --group-text descriptions|average  # -> reports/embedding_selection_<group_text>.*
+
+--group-text compares the models with the groups embedded with their descriptions
+(Task 2.6); the names-only report is left alone, so notebook 12 can compare them.
 
 Every candidate model builds the top-k shortlist for every dev account. The
 winner is the model whose shortlist most often contains the right group
@@ -25,12 +29,18 @@ from pathlib import Path
 from d1.config import REPO_ROOT, ConfigError, load_config
 from d1.datagen.schema import CompanyAccount, StandardAccount, read_jsonl
 from d1.datagen.standard_chart import ChartError, load_standard_chart
+from d1.mapper.descriptions import DescriptionError, load_descriptions
 from d1.mapper.embed import Embedder, SentenceTransformerEmbedder
-from d1.mapper.retrieve import Candidate, Retriever
+from d1.mapper.retrieve import GROUP_TEXTS, Candidate, Retriever
 
 REPORT_PATH = Path("reports") / "embedding_selection.md"
 ROWS_PATH = Path("reports") / "embedding_selection_rows.csv"
 SUMMARY_PATH = Path("reports") / "embedding_selection.json"
+
+
+def report_path(path: Path, group_text: str) -> Path:
+    """embedding_selection_rows.csv -> embedding_selection_average_rows.csv, and so on; names keeps the plain names."""
+    return path if group_text == "names" else path.with_name(path.name.replace("embedding_selection", f"embedding_selection_{group_text}"))
 ROWS_COLUMNS = [
     "model", "account_id", "company_id", "language", "source", "code_scheme", "noise", "name",
     "target_code", "gold_rank", "top1_score", "top2_score", "top3_codes",
@@ -70,8 +80,13 @@ def compare_embedders(
     k: int,
     embedder_factory: Callable[[str], Embedder] = SentenceTransformerEmbedder,
     clock: Callable[[], float] = time.perf_counter,
+    descriptions: dict[str, str] | None = None,
+    group_text: str = "names",
 ) -> list[dict]:
-    """Score every model's shortlists on the dev rows, in the order given."""
+    """Score every model's shortlists on the dev rows, in the order given.
+
+    descriptions and group_text: what the groups are embedded as (Retriever, Task 2.6).
+    """
     if any(r.split != "dev" for r in dev_rows):
         # Choosing a model is tuning: doing it on test would leak into the final result.
         raise ValueError("compare_embedders takes dev rows only")
@@ -87,7 +102,7 @@ def compare_embedders(
         start = clock()
         # No cache: every model pays for embedding the 190 groups, so the times compare fairly.
         # The full ranking (k = all groups) gives the rank of the right group even when it is not in the top k.
-        retriever = Retriever(embedder, chart)
+        retriever = Retriever(embedder, chart, descriptions=descriptions, group_text=group_text)
         shortlists = retriever.top_k(names, len(chart))
         seconds = clock() - start
         per_row = [
@@ -128,12 +143,12 @@ def _pct(x: float) -> str:
     return f"{x:.1%}"
 
 
-def render_report(results: list[dict], best: dict, k: int) -> str:
+def render_report(results: list[dict], best: dict, k: int, group_text: str = "names") -> str:
     n_rows = results[0]["n_rows"]
     languages = list(results[0]["recall_by_language"])
     sources = list(results[0]["recall_by_source"])
     lines = [
-        "# Choosing the embedding model",
+        "# Choosing the embedding model" + ("" if group_text == "names" else f" (group_text: {group_text})"),
         "",
         f"Run on {date.today().isoformat()} on {n_rows} dev rows, with shortlists of k = {k}. "
         f"Seconds = embedding the 190 standard groups and every dev name, on the machine that ran it (model already loaded).",
@@ -192,7 +207,9 @@ def main(
     root: Path = REPO_ROOT,
     embedder_factory: Callable[[str], Embedder] = SentenceTransformerEmbedder,
 ) -> int:
-    argparse.ArgumentParser(prog="python -m d1.evaluation.select_embedder", description=__doc__.split("\n")[0]).parse_args(argv)
+    parser = argparse.ArgumentParser(prog="python -m d1.evaluation.select_embedder", description=__doc__.split("\n")[0])
+    parser.add_argument("--group-text", choices=GROUP_TEXTS, default="names", help="what the groups are embedded as (Task 2.6)")
+    args = parser.parse_args(argv)
     try:
         config = load_config(root)
         dev_path = config.data.generated_dir / "dev.jsonl"
@@ -200,7 +217,8 @@ def main(
             raise ConfigError(f"{dev_path} not found: run `python -m d1.datagen build` first")
         chart = load_standard_chart(config.data.chart_path, expected=config.data.expected_groups)
         dev_rows = read_jsonl(dev_path)
-    except (ConfigError, ChartError) as e:
+        descriptions = None if args.group_text == "names" else load_descriptions(config.data.frozen_descriptions_dir, chart)
+    except (ConfigError, ChartError, DescriptionError) as e:
         print(f"error: {e}", file=sys.stderr)
         return 1
 
@@ -209,7 +227,7 @@ def main(
     for model_name in config.models.embedding_candidates:
         print(f"{model_name} ...", flush=True)
         try:
-            (result,) = compare_embedders([model_name], dev_rows, chart, k, embedder_factory)
+            (result,) = compare_embedders([model_name], dev_rows, chart, k, embedder_factory, descriptions=descriptions, group_text=args.group_text)
         except ModelLoadError as e:
             # No report with a model missing: the choice would not be among all candidates.
             print(f"error: {e} (models already downloaded are kept, so run it again to retry)", file=sys.stderr)
@@ -217,14 +235,20 @@ def main(
         print(f"  top-1 {_pct(result['top1'])}, recall@{k} {_pct(result['recall_at_k'])}, {result['seconds']:.1f} s")
         results.append(result)
     best = choose_best(results)
-    path = config.root / REPORT_PATH
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(render_report(results, best, k), encoding="utf-8")
-    write_rows(results, dev_rows, config.root / ROWS_PATH)
-    summary = {"k": k, "chosen": best["model"], "models": [{x: v for x, v in r.items() if x != "per_row"} for r in results]}
-    (config.root / SUMMARY_PATH).write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
-    print(f"report -> {path}, per-row results -> {config.root / ROWS_PATH}")
-    print(f"best: {best['model']}; set embedding_model to it in config/models.yaml")
+    paths = [REPORT_PATH, ROWS_PATH, SUMMARY_PATH]
+    report, rows, summary_path = (config.root / report_path(p, args.group_text) for p in paths)
+    report.parent.mkdir(parents=True, exist_ok=True)
+    report.write_text(render_report(results, best, k, group_text=args.group_text), encoding="utf-8")
+    write_rows(results, dev_rows, rows)
+    summary = {"k": k, "group_text": args.group_text, "chosen": best["model"],
+               "models": [{x: v for x, v in r.items() if x != "per_row"} for r in results]}  # fmt: skip
+    summary_path.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
+    print(f"report -> {report}, per-row results -> {rows}")
+    if args.group_text != "names":
+        print(f"best with group_text {args.group_text}: {best['model']}; compare with reports/embedding_selection.md "
+              "(notebook 12) before setting group_text in config/models.yaml")  # fmt: skip
+    else:
+        print(f"best: {best['model']}; set embedding_model to it in config/models.yaml")
     return 0
 
 

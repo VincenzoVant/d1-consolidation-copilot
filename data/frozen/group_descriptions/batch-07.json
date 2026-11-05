@@ -1,0 +1,486 @@
+{
+  "batch": 7,
+  "requested_model": "claude-sonnet-5-5",
+  "served_model": "claude-sonnet-5-5",
+  "prompt_version": "v1",
+  "prompt_sha256": "298e9d4285b0da301d49b77a526f9c50ade766080c50fd219f5d9c319d2a1803",
+  "group_codes": [
+    "570",
+    "578",
+    "600",
+    "601",
+    "602",
+    "603",
+    "604",
+    "605",
+    "608",
+    "609",
+    "617",
+    "618",
+    "620",
+    "621",
+    "622",
+    "623",
+    "624",
+    "630",
+    "631"
+  ],
+  "created_at": "2026-11-04T05:05:39+00:00",
+  "usage": {
+    "input_tokens": 3259,
+    "output_tokens": 3300,
+    "cost_usd": 0.043504799999999996,
+    "latency_ms": 24567.574582993984
+  },
+  "response": {
+    "groups": [
+      {
+        "code": "570",
+        "description": "Physical banknotes and coins held in the company's till or petty cash box, used for small daily payments and receipts.",
+        "words_nl": [
+          "kas",
+          "kasgeld",
+          "kleine kas",
+          "kassa",
+          "contant geld"
+        ],
+        "words_fr": [
+          "caisse",
+          "caisse espèces",
+          "petite caisse",
+          "argent liquide"
+        ],
+        "words_en": [
+          "cash",
+          "petty cash",
+          "till",
+          "cash box"
+        ]
+      },
+      {
+        "code": "578",
+        "description": "Postage and other stamps on hand that are kept in the till and not yet used, separate from real cash money.",
+        "words_nl": [
+          "postzegels",
+          "zegels",
+          "frankeerzegels",
+          "fiscale zegels"
+        ],
+        "words_fr": [
+          "timbres",
+          "timbres-poste",
+          "timbres fiscaux",
+          "timbres en caisse"
+        ],
+        "words_en": [
+          "stamps",
+          "postage stamps",
+          "fiscal stamps",
+          "stamps on hand"
+        ]
+      },
+      {
+        "code": "600",
+        "description": "Cost of raw materials bought to be processed or transformed into the company's own products.",
+        "words_nl": [
+          "grondstoffen",
+          "aankoop grondstoffen",
+          "basismateriaal",
+          "grondstofaankopen"
+        ],
+        "words_fr": [
+          "matières premières",
+          "achats matières",
+          "matières de base",
+          "achat mat. premières"
+        ],
+        "words_en": [
+          "raw materials",
+          "material purchases",
+          "input materials",
+          "raw material costs"
+        ]
+      },
+      {
+        "code": "601",
+        "description": "Cost of consumables and supplies used up in production or operations, such as fuel, small supplies and packaging, as opposed to the materials that end up in the product.",
+        "words_nl": [
+          "hulpstoffen",
+          "verbruiksgoederen",
+          "kleine benodigdheden",
+          "verpakking",
+          "brandstof"
+        ],
+        "words_fr": [
+          "fournitures",
+          "consommables",
+          "emballages",
+          "petit matériel",
+          "carburant"
+        ],
+        "words_en": [
+          "consumables",
+          "supplies",
+          "packaging",
+          "fuel",
+          "small materials"
+        ]
+      },
+      {
+        "code": "602",
+        "description": "Cost of services, works and studies bought from third parties that are directly linked to production or the goods sold, and that are not general subcontracting.",
+        "words_nl": [
+          "diensten",
+          "werken",
+          "studies",
+          "aankoop prestaties",
+          "externe prestaties"
+        ],
+        "words_fr": [
+          "services",
+          "travaux",
+          "études",
+          "prestations achetées",
+          "achats prestations"
+        ],
+        "words_en": [
+          "purchased services",
+          "works",
+          "studies",
+          "external services"
+        ]
+      },
+      {
+        "code": "603",
+        "description": "Cost of work that is outsourced to third-party contractors on a general basis, for example parts of the production or the activity handled by another company.",
+        "words_nl": [
+          "onderaanneming",
+          "onderaannemers",
+          "uitbesteed werk",
+          "onderaannemingen"
+        ],
+        "words_fr": [
+          "sous-traitance",
+          "sous-traitants",
+          "travail externalisé",
+          "sous-traitance générale"
+        ],
+        "words_en": [
+          "subcontracting",
+          "subcontractors",
+          "outsourced work",
+          "contract work"
+        ]
+      },
+      {
+        "code": "604",
+        "description": "Cost of goods bought and resold in unchanged state by a trading company, such as merchandise or stock for the shop.",
+        "words_nl": [
+          "handelsgoederen",
+          "koopwaren",
+          "aankoop goederen",
+          "inkopen",
+          "handelsaankopen"
+        ],
+        "words_fr": [
+          "marchandises",
+          "achats marchandises",
+          "achats revente",
+          "achats commerciaux"
+        ],
+        "words_en": [
+          "goods for resale",
+          "merchandise",
+          "trade goods",
+          "stock purchases"
+        ]
+      },
+      {
+        "code": "605",
+        "description": "Cost of buildings, land or apartments bought by a property developer or dealer with the intention to resell them, not for own use.",
+        "words_nl": [
+          "onroerende goederen",
+          "vastgoed voor verkoop",
+          "gronden",
+          "gebouwen te koop",
+          "aankoop vastgoed"
+        ],
+        "words_fr": [
+          "immeubles à vendre",
+          "achats immeubles",
+          "terrains",
+          "biens immobiliers",
+          "promotion immobilière"
+        ],
+        "words_en": [
+          "property for resale",
+          "real estate purchases",
+          "land for sale",
+          "developer stock"
+        ]
+      },
+      {
+        "code": "608",
+        "description": "Reductions obtained from suppliers on purchases of goods and materials, such as volume rebates and year-end bonuses, which reduce the purchase cost.",
+        "words_nl": [
+          "kortingen",
+          "ristorno's",
+          "rabatten",
+          "leverancierskorting",
+          "bonus leveranciers"
+        ],
+        "words_fr": [
+          "remises",
+          "ristournes",
+          "rabais",
+          "remises fournisseurs",
+          "escomptes obtenus"
+        ],
+        "words_en": [
+          "discounts received",
+          "rebates",
+          "supplier discounts",
+          "allowances",
+          "volume bonus"
+        ]
+      },
+      {
+        "code": "609",
+        "description": "Year-end adjustment of the stock value in the profit and loss account, showing the difference between opening and closing stock of purchased goods and materials, as opposed to the stock accounts on the balance sheet.",
+        "words_nl": [
+          "voorraadwijziging",
+          "voorraadvariatie",
+          "afname voorraad",
+          "toename voorraad",
+          "stockwijziging"
+        ],
+        "words_fr": [
+          "variation de stock",
+          "variation des stocks",
+          "réduction stock",
+          "augmentation stock"
+        ],
+        "words_en": [
+          "stock change",
+          "inventory movement",
+          "stock variation",
+          "change in inventory"
+        ]
+      },
+      {
+        "code": "617",
+        "description": "Cost of agency workers and staff seconded to the company by another party, invoiced as services and not paid as salaries.",
+        "words_nl": [
+          "uitzendkrachten",
+          "interim",
+          "interimarbeid",
+          "uitzendbureau",
+          "ter beschikking gesteld personeel"
+        ],
+        "words_fr": [
+          "intérimaires",
+          "personnel intérimaire",
+          "agence intérim",
+          "personnel mis à disposition"
+        ],
+        "words_en": [
+          "temp staff",
+          "agency workers",
+          "interim staff",
+          "seconded staff"
+        ]
+      },
+      {
+        "code": "618",
+        "description": "Pay, extra-legal insurance premiums and pensions for directors, managers or active partners who do not have an employment contract, as opposed to employee salaries in group 62.",
+        "words_nl": [
+          "bezoldiging bestuurders",
+          "zaakvoerders",
+          "vennoten",
+          "managementvergoeding",
+          "bestuurdersbezoldiging"
+        ],
+        "words_fr": [
+          "rémunération administrateurs",
+          "gérants",
+          "associés actifs",
+          "rémunération dirigeants",
+          "honoraires gérant"
+        ],
+        "words_en": [
+          "directors' fees",
+          "manager remuneration",
+          "partners' pay",
+          "director pension",
+          "management fees"
+        ]
+      },
+      {
+        "code": "620",
+        "description": "Gross salaries and wages and direct benefits paid to employees, such as holiday pay, bonuses, 13th month and benefits in kind, excluding employer social contributions.",
+        "words_nl": [
+          "lonen",
+          "wedden",
+          "brutoloon",
+          "vakantiegeld",
+          "eindejaarspremie",
+          "13de maand"
+        ],
+        "words_fr": [
+          "salaires",
+          "appointements",
+          "pécule de vacances",
+          "prime de fin d'année",
+          "13e mois"
+        ],
+        "words_en": [
+          "salaries",
+          "wages",
+          "gross pay",
+          "holiday pay",
+          "bonuses"
+        ]
+      },
+      {
+        "code": "621",
+        "description": "Employer's share of social security contributions (RSZ/ONSS) charged on employees' pay, as opposed to the pay itself or the extra-legal insurance premiums.",
+        "words_nl": [
+          "RSZ",
+          "patronale bijdragen",
+          "werkgeversbijdragen",
+          "sociale lasten",
+          "RSZ-bijdragen"
+        ],
+        "words_fr": [
+          "ONSS",
+          "cotisations patronales",
+          "charges sociales",
+          "cotisations ONSS"
+        ],
+        "words_en": [
+          "employer social security",
+          "social charges",
+          "payroll contributions",
+          "employer NSSO"
+        ]
+      },
+      {
+        "code": "622",
+        "description": "Premiums paid by the employer for supplementary insurance for staff beyond the statutory schemes, such as group insurance, hospitalisation and supplementary pension plans.",
+        "words_nl": [
+          "groepsverzekering",
+          "hospitalisatieverzekering",
+          "aanvullend pensioen",
+          "bovenwettelijke verzekering"
+        ],
+        "words_fr": [
+          "assurance groupe",
+          "assurance hospitalisation",
+          "pension complémentaire",
+          "assurance extralégale"
+        ],
+        "words_en": [
+          "group insurance",
+          "hospitalisation insurance",
+          "supplementary pension",
+          "extra-legal insurance"
+        ]
+      },
+      {
+        "code": "623",
+        "description": "Other staff-related costs not booked elsewhere in group 62, such as work insurance, occupational medicine, workwear, training, and staff meals and gifts.",
+        "words_nl": [
+          "arbeidsongevallenverzekering",
+          "arbeidsgeneeskunde",
+          "werkkledij",
+          "opleiding personeel",
+          "personeelskosten"
+        ],
+        "words_fr": [
+          "assurance accidents du travail",
+          "médecine du travail",
+          "vêtements de travail",
+          "formation du personnel",
+          "frais de personnel divers"
+        ],
+        "words_en": [
+          "work accident insurance",
+          "workwear",
+          "staff training",
+          "occupational health",
+          "other staff costs"
+        ]
+      },
+      {
+        "code": "624",
+        "description": "Pensions paid directly by the company to former employees or their surviving relatives, rather than premiums paid to an insurer.",
+        "words_nl": [
+          "pensioenen",
+          "rustpensioen",
+          "overlevingspensioen",
+          "directe pensioenen",
+          "pensioenuitkeringen"
+        ],
+        "words_fr": [
+          "pensions",
+          "pension de retraite",
+          "pension de survie",
+          "pensions directes",
+          "rentes"
+        ],
+        "words_en": [
+          "pensions",
+          "retirement pensions",
+          "survivor pensions",
+          "direct pensions"
+        ]
+      },
+      {
+        "code": "630",
+        "description": "Annual depreciation charges on fixed assets and the charge for amounts written off on fixed assets and for provisions for risks, which are the costs that build up the related balance sheet accounts.",
+        "words_nl": [
+          "afschrijvingen",
+          "afschrijving gebouwen",
+          "afschrijving materieel",
+          "waardeverminderingen",
+          "dotatie voorzieningen"
+        ],
+        "words_fr": [
+          "amortissements",
+          "amortissement matériel",
+          "amortissement bâtiments",
+          "réductions de valeur",
+          "dotation provisions"
+        ],
+        "words_en": [
+          "depreciation",
+          "amortisation",
+          "fixed asset write-down",
+          "provision charge"
+        ]
+      },
+      {
+        "code": "631",
+        "description": "Expense for write-downs of stock to a lower market value at year end, and the reversal of such write-downs, as opposed to the stock movement itself in group 609.",
+        "words_nl": [
+          "waardevermindering voorraad",
+          "voorraadafwaardering",
+          "afwaardering stock",
+          "terugname waardevermindering"
+        ],
+        "words_fr": [
+          "réduction de valeur stock",
+          "dépréciation stocks",
+          "réduction valeur marchandises",
+          "reprise réduction valeur"
+        ],
+        "words_en": [
+          "stock write-down",
+          "inventory impairment",
+          "stock obsolescence",
+          "stock provision"
+        ]
+      }
+    ]
+  }
+}

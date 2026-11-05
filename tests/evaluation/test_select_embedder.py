@@ -203,3 +203,44 @@ def test_cli_model_that_cannot_load_gives_one_line(cli_root, chart, FakeEmbedder
     assert err.startswith("error: could not load sentence-transformers/paraphrase-multilingual-mpnet-base-v2")
     assert "403 Forbidden" in err and "run it again" in err and err.count("\n") == 1
     assert not (cli_root / "reports" / "embedding_selection.md").exists()  # no report with a model missing
+
+
+# --- with the group descriptions (Task 2.6) ------------------------------------------------
+
+
+def _freeze_descriptions(config, chart):
+    folder = config.data.frozen_descriptions_dir
+    shutil.rmtree(folder, ignore_errors=True)  # replace the real descriptions with tiny ones
+    folder.mkdir(parents=True)
+    groups = [{"code": a.code, "description": f"about {a.code}", "words_nl": [], "words_fr": [], "words_en": []} for a in chart]
+    (folder / "batch-01.json").write_text(json.dumps({"response": {"groups": groups}}), encoding="utf-8")
+
+
+def test_compare_embedders_with_descriptions_changes_the_group_texts(chart, FakeEmbedder):
+    rows = _rows(chart)
+    texts = {a.code: "zzzz qqqq xxxx wwww " * 20 for a in chart}  # the same long noise on every group
+    (plain,) = compare_embedders(["fake"], rows, chart, K, _factory(FakeEmbedder))
+    (described,) = compare_embedders(["fake"], rows, chart, K, _factory(FakeEmbedder), descriptions=texts, group_text="descriptions")
+    assert described["recall_at_k"] < plain["recall_at_k"]  # the noise drowns the names: proof the texts were used
+
+
+@pytest.mark.parametrize("group_text", ["descriptions", "average"])
+def test_cli_with_descriptions_writes_its_own_report(cli_root, chart, FakeEmbedder, capsys, group_text):
+    config = load_config(cli_root)
+    write_jsonl(_rows(chart), config.data.generated_dir / "dev.jsonl")
+    _freeze_descriptions(config, chart)
+    assert main(["--group-text", group_text], root=cli_root, embedder_factory=_factory(FakeEmbedder)) == 0
+    reports = cli_root / "reports"
+    assert (reports / f"embedding_selection_{group_text}.md").is_file()
+    assert (reports / f"embedding_selection_{group_text}_rows.csv").is_file()
+    assert json.loads((reports / f"embedding_selection_{group_text}.json").read_text())["group_text"] == group_text
+    assert not (reports / "embedding_selection.md").exists()  # the names-only report is left alone
+    assert "group_text" in capsys.readouterr().out
+
+
+def test_cli_with_descriptions_but_none_frozen_names_the_command(cli_root, chart, capsys):
+    config = load_config(cli_root)
+    write_jsonl(_rows(chart), config.data.generated_dir / "dev.jsonl")
+    shutil.rmtree(config.data.frozen_descriptions_dir)
+    assert main(["--group-text", "average"], root=cli_root) == 1
+    assert "python -m d1.mapper.descriptions" in capsys.readouterr().err
