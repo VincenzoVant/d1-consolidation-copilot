@@ -63,7 +63,7 @@
       {
         "target_code": "122",
         "code": "122000",
-        "name": "Herwaard. meerw. deelneming Bouwgroep Vandaele"
+        "name": "Herwaard. meerw. deelneming"
       },
       {
         "target_code": "170",
@@ -73,12 +73,12 @@
       {
         "target_code": "174",
         "code": "174000",
-        "name": "Lening Vlaamse Participatiemij (PMV)"
+        "name": "Lening overheidsfonds"
       },
       {
         "target_code": "213",
         "code": "213000",
-        "name": "Voorschot software calculatie WinBouw"
+        "name": "Voorschot software calculatie"
       },
       {
         "target_code": "220",
@@ -168,12 +168,12 @@
       {
         "target_code": "430",
         "code": "430100",
-        "name": "Straight loan KBC"
+        "name": "Straight loan"
       },
       {
         "target_code": "430",
         "code": "430200",
-        "name": "Kaskrediet vaste termijn Belfius"
+        "name": "Kaskrediet vaste termijn"
       },
       {
         "target_code": "440",
@@ -183,7 +183,7 @@
       {
         "target_code": "440",
         "code": "440500",
-        "name": "Lev. Gedimat/Desco bouwmat."
+        "name": "Lev. bouwmat."
       },
       {
         "target_code": "491",
@@ -198,12 +198,12 @@
       {
         "target_code": "550",
         "code": "550100",
-        "name": "KBC zichtrek. BE..1234"
+        "name": "Zichtrek. BE..1234"
       },
       {
         "target_code": "550",
         "code": "550200",
-        "name": "Belfius zichtrek. werven"
+        "name": "Zichtrek. werven"
       },
       {
         "target_code": "603",
@@ -311,5 +311,10 @@
         "name": "Andere uitzonderl. fin. opbrengsten"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 8,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

@@ -78,7 +78,7 @@
       {
         "target_code": "211",
         "code": "2110",
-        "name": "Software licenses ArchiCAD/Revit"
+        "name": "Software licenses"
       },
       {
         "target_code": "285",
@@ -88,7 +88,7 @@
       {
         "target_code": "285",
         "code": "2851",
-        "name": "Prêt LT à SCI Les Pavillons"
+        "name": "Prêt LT à SCI"
       },
       {
         "target_code": "290",
@@ -153,7 +153,7 @@
       {
         "target_code": "418",
         "code": "4180",
-        "name": "Cautionnement Sibelga/Vivaqua chantiers"
+        "name": "Cautionnement chantiers"
       },
       {
         "target_code": "418",
@@ -163,12 +163,12 @@
       {
         "target_code": "423",
         "code": "4230",
-        "name": "KBC investeringskrediet - KT deel"
+        "name": "Investeringskrediet - KT deel"
       },
       {
         "target_code": "423",
         "code": "4231",
-        "name": "BNP Fortis prêt grue - partie CT"
+        "name": "Prêt grue - partie CT"
       },
       {
         "target_code": "425",
@@ -193,7 +193,7 @@
       {
         "target_code": "531",
         "code": "5310",
-        "name": "Belfius termijnrekening 6 maanden"
+        "name": "Termijnrekening 6 maanden"
       },
       {
         "target_code": "570",
@@ -253,7 +253,7 @@
       {
         "target_code": "661",
         "code": "6610",
-        "name": "WV deelneming THV Bouw Noord"
+        "name": "WV deelneming THV"
       },
       {
         "target_code": "664",
@@ -311,5 +311,10 @@
         "name": "Plus-value vente camionnette"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 7,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

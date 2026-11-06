@@ -63,7 +63,7 @@
       {
         "target_code": "122",
         "code": "122000",
-        "name": "Reval. surplus - stake CloudNest BV"
+        "name": "Reval. surplus - stake"
       },
       {
         "target_code": "132",
@@ -93,12 +93,12 @@
       {
         "target_code": "175",
         "code": "175000",
-        "name": "Suppliers LT - Deferred licence payment Microsoft"
+        "name": "Suppliers LT - Deferred licence payment"
       },
       {
         "target_code": "201",
         "code": "201000",
-        "name": "Loan setup fees - KBC investment credit"
+        "name": "Loan setup fees - investment credit"
       },
       {
         "target_code": "251",
@@ -108,27 +108,27 @@
       {
         "target_code": "280",
         "code": "280100",
-        "name": "Shares DevForge NL BV"
+        "name": "Shares subsidiary"
       },
       {
         "target_code": "280",
         "code": "280200",
-        "name": "Shares Codeline France SAS"
+        "name": "Shares subsidiary 2"
       },
       {
         "target_code": "281",
         "code": "281100",
-        "name": "Interco loan DevForge NL"
+        "name": "Interco loan"
       },
       {
         "target_code": "281",
         "code": "281200",
-        "name": "Interco loan Codeline FR"
+        "name": "Interco loan 2"
       },
       {
         "target_code": "283",
         "code": "283000",
-        "name": "Loan to DataBridge JV (25% stake)"
+        "name": "Loan to JV (25% stake)"
       },
       {
         "target_code": "330",
@@ -158,7 +158,7 @@
       {
         "target_code": "432",
         "code": "432000",
-        "name": "Bank acceptances Belfius"
+        "name": "Bank acceptances"
       },
       {
         "target_code": "441",
@@ -183,7 +183,7 @@
       {
         "target_code": "492",
         "code": "492100",
-        "name": "Accrued costs - AWS hosting"
+        "name": "Accrued costs - hosting"
       },
       {
         "target_code": "492",
@@ -203,7 +203,7 @@
       {
         "target_code": "530",
         "code": "530000",
-        "name": "Term deposit KBC > 1yr"
+        "name": "Term deposit > 1yr"
       },
       {
         "target_code": "539",
@@ -213,17 +213,17 @@
       {
         "target_code": "550",
         "code": "550100",
-        "name": "KBC current account"
+        "name": "Current account"
       },
       {
         "target_code": "550",
         "code": "550200",
-        "name": "Belfius current account"
+        "name": "Current account 2"
       },
       {
         "target_code": "550",
         "code": "550300",
-        "name": "ING USD account"
+        "name": "USD account"
       },
       {
         "target_code": "600",
@@ -268,7 +268,7 @@
       {
         "target_code": "657",
         "code": "657200",
-        "name": "Stripe/payment provider fees"
+        "name": "Payment provider fees"
       },
       {
         "target_code": "659",
@@ -311,5 +311,10 @@
         "name": "Transfer from reserves"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 15,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

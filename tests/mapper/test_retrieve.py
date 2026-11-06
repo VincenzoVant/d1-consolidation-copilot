@@ -7,7 +7,7 @@ from d1.config import load_config
 from d1.mapper.embed import SentenceTransformerEmbedder
 from d1.mapper.retrieve import Retriever, standard_text
 
-NAMES = ["Leveranciers", "Fournisseurs à payer", "Bank KBC zichtrekening", "Huur kantoor Gent"]
+NAMES = ["Leveranciers", "Fournisseurs à payer", "Bank zichtrekening", "Huur kantoor Gent"]
 
 
 # --- the text of a standard group ---------------------------------------------------------

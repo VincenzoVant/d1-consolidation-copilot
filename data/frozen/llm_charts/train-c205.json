@@ -63,12 +63,12 @@
       {
         "target_code": "174",
         "code": "174100",
-        "name": "Lening zaakvoerder L. Peeters"
+        "name": "Lening zaakvoerder"
       },
       {
         "target_code": "174",
         "code": "174200",
-        "name": "Achtergestelde lening BV Peeters Holding"
+        "name": "Achtergestelde lening"
       },
       {
         "target_code": "222",
@@ -83,7 +83,7 @@
       {
         "target_code": "281",
         "code": "281000",
-        "name": "R/C Peeters Vastgoed BV"
+        "name": "R/C dochter"
       },
       {
         "target_code": "288",
@@ -168,7 +168,7 @@
       {
         "target_code": "459",
         "code": "459000",
-        "name": "Te betalen getrouwheidszegels Constructiv"
+        "name": "Te betalen getrouwheidszegels"
       },
       {
         "target_code": "489",
@@ -178,12 +178,12 @@
       {
         "target_code": "531",
         "code": "531100",
-        "name": "Termijnrek. KBC 6 mnd"
+        "name": "Termijnrek. 6 mnd"
       },
       {
         "target_code": "531",
         "code": "531200",
-        "name": "Termijnrek. Belfius 3 mnd"
+        "name": "Termijnrek. 3 mnd"
       },
       {
         "target_code": "601",
@@ -316,5 +316,10 @@
         "name": "Terugname WV & afschrijvingen"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 6,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

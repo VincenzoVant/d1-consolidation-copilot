@@ -1,6 +1,6 @@
 # D1 Consolidation Copilot
 
-> **All data in this project is synthetic.** No real company ledgers are used, and no claim of production accuracy is made.
+> **All data in this project is synthetic.** No real company ledgers are used, and no claim of production accuracy is made. The account names hold no real company, bank or brand names: where a ledger would name one, they use a generic word ("bank", "subsidiary").
 
 Maps the charts of accounts of several group companies (Dutch, French, English, mixed) onto the Belgian standard chart of accounts, and matches intercompany entries between them.
 
@@ -62,7 +62,7 @@ All 200 LLM-written test rows and a random 50 rule-based rows are checked by han
 python -m d1.evaluation.select_embedder   # compares the candidate models on dev -> reports/
 ```
 
-The three multilingual candidates in `config/models.yaml` each build the top-10 shortlist for every dev account, and the model whose shortlist most often holds the right group wins. The result, with charts and the reasoning, is in [`notebooks/08_embedding_selection.ipynb`](notebooks/08_embedding_selection.ipynb): **BAAI/bge-m3**, with the right group on the shortlist for 87.0% of dev accounts (e5-base 82.8%, mpnet 71.1%). The first run downloads the models (about 4 GB).
+The three multilingual candidates in `config/models.yaml` each build the top-10 shortlist for every dev account, and the model whose shortlist most often holds the right group wins. The result, with charts and the reasoning, is in [`notebooks/08_embedding_selection.ipynb`](notebooks/08_embedding_selection.ipynb): **BAAI/bge-m3**, with the right group on the shortlist for 87.5% of dev accounts (e5-base 83.4%, mpnet 71.3%). The first run downloads the models (about 4 GB).
 
 ## Describing the standard groups
 
@@ -73,7 +73,7 @@ python -m d1.evaluation.select_embedder --group-text average  # the comparison a
 
 Official group names miss how bookkeepers write: "Gross wages shop staff" put group 620 *Remuneration and Direct Social Benefits* at rank 47. Each group now gets a one-line description and everyday ledger words in Dutch, French and English. They're written by a different model from the one that wrote the synthetic accounts, from the chart alone, and frozen.
 
-Each group is scored by the mean of its names-only and its described similarity (`group_text: average`). On dev with bge-m3, that takes the shortlist from 87.0% to 91.9% (LLM-written accounts 70.7% → 82.0%). The embeddings baseline then auto-maps 32.6% instead of 23.0% at 98% precision. See [`notebooks/12_group_descriptions.ipynb`](notebooks/12_group_descriptions.ipynb).
+Each group is scored by the mean of its names-only and its described similarity (`group_text: average`). On dev with bge-m3, that takes the shortlist from 87.5% to 92.6% (LLM-written accounts 71.9% → 83.5%). The embeddings baseline then auto-maps 32.1% instead of 21.4% at 98% precision. See [`notebooks/12_group_descriptions.ipynb`](notebooks/12_group_descriptions.ipynb).
 
 ## Training and calibrating a method
 
@@ -81,7 +81,7 @@ Each group is scored by the mean of its names-only and its described similarity 
 python -m d1.mapper.train --method fuzzy        # or embeddings, or all
 ```
 
-This calibrates the method on dev and saves it in `artifacts/methods/<method>/`. On dev, the two baselines auto-map 33.7% (fuzzy) and 32.6% (embeddings, with the group descriptions) of accounts at 98% precision. But on the LLM-written accounts, fuzzy's auto-maps are right only 54% of the time (notebook 10).
+This calibrates the method on dev and saves it in `artifacts/methods/<method>/`. On dev, the two baselines auto-map 31.6% (fuzzy) and 32.1% (embeddings, with the group descriptions) of accounts at 98% precision. But on the LLM-written accounts, fuzzy's auto-maps are right only 59% of the time, against 88% for embeddings (notebook 10). The 98% bar applies to all accounts together; precision per source is reported next to it.
 
 ## Evaluating a method
 

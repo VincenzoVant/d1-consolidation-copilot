@@ -83,17 +83,17 @@
       {
         "target_code": "210",
         "code": "210100",
-        "name": "Ontw.kost platform CloudDesk v3"
+        "name": "Ontw.kost platform v3"
       },
       {
         "target_code": "210",
         "code": "210200",
-        "name": "Ontw.kost mobiele app FieldSync"
+        "name": "Ontw.kost mobiele app"
       },
       {
         "target_code": "212",
         "code": "212000",
-        "name": "Goodwill overname DataLynx bv"
+        "name": "Goodwill overname"
       },
       {
         "target_code": "250",
@@ -103,7 +103,7 @@
       {
         "target_code": "283",
         "code": "283000",
-        "name": "Lening aan deelneming Codeforge NV"
+        "name": "Lening aan deelneming"
       },
       {
         "target_code": "300",
@@ -158,7 +158,7 @@
       {
         "target_code": "420",
         "code": "420000",
-        "name": "Achtergest. lening PMV - KT deel"
+        "name": "Achtergest. lening overheidsfonds - KT deel"
       },
       {
         "target_code": "426",
@@ -173,7 +173,7 @@
       {
         "target_code": "440",
         "code": "440100",
-        "name": "Leverancier AWS EMEA"
+        "name": "Leverancier EMEA"
       },
       {
         "target_code": "453",
@@ -188,17 +188,17 @@
       {
         "target_code": "530",
         "code": "530000",
-        "name": "Termijnrek. KBC 3 jaar"
+        "name": "Termijnrek. 3 jaar"
       },
       {
         "target_code": "531",
         "code": "531100",
-        "name": "Termijnrek. KBC 6 maanden"
+        "name": "Termijnrek. 6 maanden"
       },
       {
         "target_code": "531",
         "code": "531200",
-        "name": "Termijnrek. Belfius 12 maanden"
+        "name": "Termijnrek. 12 maanden"
       },
       {
         "target_code": "578",
@@ -258,7 +258,7 @@
       {
         "target_code": "650",
         "code": "650100",
-        "name": "Intresten investeringskrediet KBC"
+        "name": "Intresten investeringskrediet"
       },
       {
         "target_code": "650",
@@ -311,5 +311,10 @@
         "name": "Terugname vrijgest. reserve"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 10,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

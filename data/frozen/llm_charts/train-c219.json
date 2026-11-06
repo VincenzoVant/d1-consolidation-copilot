@@ -133,7 +133,7 @@
       {
         "target_code": "423",
         "code": "423000",
-        "name": "Prêt KBC invest. - part CT"
+        "name": "Prêt invest. - part CT"
       },
       {
         "target_code": "426",
@@ -153,7 +153,7 @@
       {
         "target_code": "431",
         "code": "431000",
-        "name": "Straight loan Belfius"
+        "name": "Straight loan"
       },
       {
         "target_code": "441",
@@ -198,12 +198,12 @@
       {
         "target_code": "550",
         "code": "550100",
-        "name": "KBC compte courant BE12"
+        "name": "Compte courant BE12"
       },
       {
         "target_code": "550",
         "code": "550200",
-        "name": "Belfius compte pro BE68"
+        "name": "Compte pro BE68"
       },
       {
         "target_code": "570",
@@ -218,7 +218,7 @@
       {
         "target_code": "578",
         "code": "578000",
-        "name": "Timbres poste & bpost"
+        "name": "Timbres poste"
       },
       {
         "target_code": "602",
@@ -311,5 +311,10 @@
         "name": "Reprise réserve immunisée"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 5,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

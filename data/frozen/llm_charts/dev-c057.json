@@ -63,7 +63,7 @@
       {
         "target_code": "122",
         "code": "1220-10",
-        "name": "Herwaardering particip. Bouwgroep Zenne NV"
+        "name": "Herwaardering particip."
       },
       {
         "target_code": "161",
@@ -78,17 +78,17 @@
       {
         "target_code": "172",
         "code": "1720-01",
-        "name": "Leasing LT - Liebherr kraan (>1j)"
+        "name": "Leasing LT - kraan (>1j)"
       },
       {
         "target_code": "173",
         "code": "1730-01",
-        "name": "Investeringskrediet BNP Fortis LT"
+        "name": "Investeringskrediet LT"
       },
       {
         "target_code": "173",
         "code": "1730-02",
-        "name": "Crédit LT Belfius - hangar Anderlecht"
+        "name": "Crédit LT - hangar Anderlecht"
       },
       {
         "target_code": "200",
@@ -98,7 +98,7 @@
       {
         "target_code": "212",
         "code": "2120-00",
-        "name": "Goodwill overname klantenbestand Dakwerken Peeters"
+        "name": "Goodwill overname klantenbestand dakwerkbedrijf"
       },
       {
         "target_code": "213",
@@ -108,7 +108,7 @@
       {
         "target_code": "252",
         "code": "2520-01",
-        "name": "Leasing camionnettes Ford Transit"
+        "name": "Leasing camionnettes"
       },
       {
         "target_code": "252",
@@ -118,7 +118,7 @@
       {
         "target_code": "281",
         "code": "2810-00",
-        "name": "LT lening aan Vastgoed VDB BV (verbonden)"
+        "name": "LT lening aan dochter (verbonden)"
       },
       {
         "target_code": "288",
@@ -128,7 +128,7 @@
       {
         "target_code": "288",
         "code": "2880-02",
-        "name": "Cautionnement Sibelga / Vivaqua chantiers"
+        "name": "Cautionnement chantiers"
       },
       {
         "target_code": "290",
@@ -193,22 +193,22 @@
       {
         "target_code": "430",
         "code": "4300-00",
-        "name": "Straight loan KBC (vaste termijn)"
+        "name": "Straight loan (vaste termijn)"
       },
       {
         "target_code": "432",
         "code": "4320-00",
-        "name": "Crédit d'acceptation ING"
+        "name": "Crédit d'acceptation"
       },
       {
         "target_code": "433",
         "code": "4330-01",
-        "name": "Kaskrediet KBC rek.-courant"
+        "name": "Kaskrediet rek.-courant"
       },
       {
         "target_code": "433",
         "code": "4330-02",
-        "name": "Découvert BNP Paribas Fortis"
+        "name": "Découvert"
       },
       {
         "target_code": "459",
@@ -233,7 +233,7 @@
       {
         "target_code": "531",
         "code": "5310-00",
-        "name": "Compte à terme 6 mois Belfius"
+        "name": "Compte à terme 6 mois"
       },
       {
         "target_code": "578",
@@ -311,5 +311,10 @@
         "name": "Terugname WV deelnemingen"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 13,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

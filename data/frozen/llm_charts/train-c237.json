@@ -73,7 +73,7 @@
       {
         "target_code": "122",
         "code": "122100",
-        "name": "Herwaard. deelneming Bouwgroep VDB"
+        "name": "Herwaard. deelneming"
       },
       {
         "target_code": "124",
@@ -93,7 +93,7 @@
       {
         "target_code": "211",
         "code": "211100",
-        "name": "Licentie calculatiesoftware Bouwsoft"
+        "name": "Licentie calculatiesoftware"
       },
       {
         "target_code": "290",
@@ -138,7 +138,7 @@
       {
         "target_code": "418",
         "code": "418100",
-        "name": "Borg containers Renewi"
+        "name": "Borg containers"
       },
       {
         "target_code": "418",
@@ -153,12 +153,12 @@
       {
         "target_code": "423",
         "code": "423100",
-        "name": "KBC investeringskrediet - KT deel"
+        "name": "Investeringskrediet - KT deel"
       },
       {
         "target_code": "423",
         "code": "423200",
-        "name": "Belfius lening kraan - KT deel"
+        "name": "Lening kraan - KT deel"
       },
       {
         "target_code": "426",
@@ -168,17 +168,17 @@
       {
         "target_code": "439",
         "code": "439100",
-        "name": "Overbruggingskrediet Hoedt"
+        "name": "Overbruggingskrediet"
       },
       {
         "target_code": "440",
         "code": "440100",
-        "name": "Lev. Gedimat bouwmaterialen"
+        "name": "Lev. bouwmaterialen"
       },
       {
         "target_code": "440",
         "code": "440200",
-        "name": "Lev. Vandersanden steen"
+        "name": "Lev. bakstenen"
       },
       {
         "target_code": "441",
@@ -213,12 +213,12 @@
       {
         "target_code": "550",
         "code": "550100",
-        "name": "KBC zichtrek. BE12"
+        "name": "Zichtrek. BE12"
       },
       {
         "target_code": "550",
         "code": "550200",
-        "name": "Belfius zichtrek. werven"
+        "name": "Zichtrek. werven"
       },
       {
         "target_code": "570",
@@ -268,7 +268,7 @@
       {
         "target_code": "650",
         "code": "650100",
-        "name": "Intresten KBC investeringskrediet"
+        "name": "Intresten investeringskrediet"
       },
       {
         "target_code": "650",
@@ -311,5 +311,10 @@
         "name": "Intresten spaarrek."
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 11,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

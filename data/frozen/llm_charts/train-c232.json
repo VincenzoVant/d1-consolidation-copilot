@@ -73,12 +73,12 @@
       {
         "target_code": "168",
         "code": "16800",
-        "name": "Deferred tax on capital grants VLAIO"
+        "name": "Deferred tax on capital grants"
       },
       {
         "target_code": "170",
         "code": "17000",
-        "name": "Subordinated loan PMV"
+        "name": "Subordinated loan regional fund"
       },
       {
         "target_code": "175",
@@ -103,7 +103,7 @@
       {
         "target_code": "210",
         "code": "21010",
-        "name": "Dev costs capitalised - Flowdesk platform"
+        "name": "Dev costs capitalised - platform"
       },
       {
         "target_code": "210",
@@ -118,12 +118,12 @@
       {
         "target_code": "280",
         "code": "28000",
-        "name": "Investment in subsidiary Flowdesk NL BV"
+        "name": "Investment in subsidiary"
       },
       {
         "target_code": "283",
         "code": "28300",
-        "name": "LT loan to associate DataBridge SRL"
+        "name": "LT loan to associate"
       },
       {
         "target_code": "291",
@@ -138,7 +138,7 @@
       {
         "target_code": "370",
         "code": "37010",
-        "name": "WIP fixed-price projects - Customer Colruyt ERP link"
+        "name": "WIP fixed-price projects - Customer ERP link"
       },
       {
         "target_code": "370",
@@ -158,7 +158,7 @@
       {
         "target_code": "422",
         "code": "42200",
-        "name": "Car leases - current portion (ALD)"
+        "name": "Car leases - current portion"
       },
       {
         "target_code": "424",
@@ -198,7 +198,7 @@
       {
         "target_code": "492",
         "code": "49210",
-        "name": "Accrued expenses - AWS/Azure hosting"
+        "name": "Accrued expenses - hosting"
       },
       {
         "target_code": "492",
@@ -311,5 +311,10 @@
         "name": "Release of tax-exempt reserves"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 8,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

@@ -1,6 +1,6 @@
 {
-  "run_id": "20261104-051956-dev-fuzzy",
-  "created_at": "2026-11-04T05:19:56+00:00",
+  "run_id": "20261106-080433-dev-fuzzy",
+  "created_at": "2026-11-06T08:04:33+00:00",
   "split": "dev",
   "method": "fuzzy",
   "labels_file": "dev.jsonl",
@@ -11,11 +11,11 @@
   "model_versions": {
     "embedder": "BAAI/bge-m3",
     "method": "fuzzy-wratio-k10-v1",
-    "calibrator": "5ca9fb906d4b"
+    "calibrator": "045d5aab5c79"
   },
   "thresholds": {
     "method": "fuzzy",
-    "t_auto": 0.8541204566265104,
+    "t_auto": 0.875874049216863,
     "t_llm": null,
     "target_precision": 0.98,
     "fitted_on": "dev",
@@ -23,24 +23,24 @@
     "group_text": "average"
   },
   "overall": {
-    "auto_share": 0.33714285714285713,
+    "auto_share": 0.316,
     "auto_share_ci": [
-      0.27197857142857146,
-      0.3977142857142857
+      0.2551428571428571,
+      0.3740071428571428
     ],
-    "auto_precision": 0.9838983050847457,
+    "auto_precision": 0.9855334538878843,
     "auto_precision_ci": [
-      0.9724397372107628,
-      0.991989218149466
+      0.9748422922723213,
+      0.9930858431398621
     ],
-    "review_share": 0.6628571428571428,
-    "top1": 0.5771428571428572,
+    "review_share": 0.684,
+    "top1": 0.5791428571428572,
     "top1_ci": [
-      0.49142857142857144,
-      0.6585785714285713
+      0.4948571428571429,
+      0.6600071428571428
     ],
-    "top3": 0.6722857142857143,
-    "recall_at_k": 0.9194285714285715,
+    "top3": 0.6745714285714286,
+    "recall_at_k": 0.9257142857142857,
     "k": 10
   },
   "breakdowns": {
@@ -48,102 +48,102 @@
       {
         "value": "rules",
         "n": 2000,
-        "auto_share": 0.5695,
+        "auto_share": 0.5335,
         "auto_precision": 1.0,
         "top1": 0.89
       },
       {
         "value": "llm",
         "n": 1500,
-        "auto_share": 0.027333333333333334,
-        "auto_precision": 0.5365853658536586,
-        "top1": 0.16
+        "auto_share": 0.026,
+        "auto_precision": 0.5897435897435898,
+        "top1": 0.16466666666666666
       }
     ],
     "language": [
       {
         "value": "en",
         "n": 900,
-        "auto_share": 0.36666666666666664,
-        "auto_precision": 0.990909090909091,
+        "auto_share": 0.3411111111111111,
+        "auto_precision": 0.993485342019544,
         "top1": 0.5588888888888889
       },
       {
         "value": "fr",
         "n": 900,
-        "auto_share": 0.35888888888888887,
-        "auto_precision": 0.978328173374613,
-        "top1": 0.5677777777777778
+        "auto_share": 0.34,
+        "auto_precision": 0.9771241830065359,
+        "top1": 0.5711111111111111
       },
       {
         "value": "mixed",
         "n": 850,
-        "auto_share": 0.28,
-        "auto_precision": 0.9789915966386554,
-        "top1": 0.6035294117647059
+        "auto_share": 0.2611764705882353,
+        "auto_precision": 0.9864864864864865,
+        "top1": 0.6047058823529412
       },
       {
         "value": "nl",
         "n": 850,
-        "auto_share": 0.34,
-        "auto_precision": 0.986159169550173,
-        "top1": 0.58
+        "auto_share": 0.31882352941176473,
+        "auto_precision": 0.985239852398524,
+        "top1": 0.5835294117647059
       }
     ],
     "noise": [
       {
         "value": "legacy_code",
         "n": 1700,
-        "auto_share": 0.3411764705882353,
-        "auto_precision": 0.9810344827586207,
-        "top1": 0.5852941176470589
+        "auto_share": 0.32,
+        "auto_precision": 0.9834558823529411,
+        "top1": 0.5882352941176471
       },
       {
         "value": "llm",
         "n": 1500,
-        "auto_share": 0.027333333333333334,
-        "auto_precision": 0.5365853658536586,
-        "top1": 0.16
+        "auto_share": 0.026,
+        "auto_precision": 0.5897435897435898,
+        "top1": 0.16466666666666666
       },
       {
         "value": "case",
         "n": 534,
-        "auto_share": 0.5580524344569289,
+        "auto_share": 0.5093632958801498,
         "auto_precision": 1.0,
         "top1": 0.8707865168539326
       },
       {
         "value": "sub_account",
         "n": 400,
-        "auto_share": 0.065,
+        "auto_share": 0.0275,
         "auto_precision": 1.0,
         "top1": 0.835
       },
       {
         "value": "no noise",
         "n": 352,
-        "auto_share": 0.9659090909090909,
+        "auto_share": 0.9460227272727273,
         "auto_precision": 1.0,
         "top1": 0.9829545454545454
       },
       {
         "value": "abbreviation",
         "n": 293,
-        "auto_share": 0.07167235494880546,
+        "auto_share": 0.023890784982935155,
         "auto_precision": 1.0,
         "top1": 0.6552901023890785
       },
       {
         "value": "typo",
         "n": 286,
-        "auto_share": 0.46153846153846156,
+        "auto_share": 0.3881118881118881,
         "auto_precision": 1.0,
         "top1": 0.8671328671328671
       },
       {
         "value": "truncated",
         "n": 161,
-        "auto_share": 0.037267080745341616,
+        "auto_share": 0.018633540372670808,
         "auto_precision": 1.0,
         "top1": 0.5590062111801242
       },
@@ -157,7 +157,7 @@
       {
         "value": "accents_stripped",
         "n": 112,
-        "auto_share": 0.5267857142857143,
+        "auto_share": 0.5089285714285714,
         "auto_precision": 1.0,
         "top1": 0.875
       }
@@ -166,29 +166,29 @@
       {
         "value": "construction",
         "n": 900,
-        "auto_share": 0.3277777777777778,
-        "auto_precision": 0.9864406779661017,
-        "top1": 0.58
+        "auto_share": 0.31,
+        "auto_precision": 0.989247311827957,
+        "top1": 0.5788888888888889
       },
       {
         "value": "software",
         "n": 900,
-        "auto_share": 0.33555555555555555,
-        "auto_precision": 0.9834437086092715,
-        "top1": 0.5533333333333333
+        "auto_share": 0.31444444444444447,
+        "auto_precision": 0.9893992932862191,
+        "top1": 0.5622222222222222
       },
       {
         "value": "retail",
         "n": 850,
-        "auto_share": 0.33294117647058824,
-        "auto_precision": 0.9893992932862191,
+        "auto_share": 0.30470588235294116,
+        "auto_precision": 0.9845559845559846,
         "top1": 0.5894117647058823
       },
       {
         "value": "services",
         "n": 850,
-        "auto_share": 0.35294117647058826,
-        "auto_precision": 0.9766666666666667,
+        "auto_share": 0.3352941176470588,
+        "auto_precision": 0.9789473684210527,
         "top1": 0.5870588235294117
       }
     ],
@@ -196,9 +196,9 @@
       {
         "value": "new name",
         "n": 3500,
-        "auto_share": 0.33714285714285713,
-        "auto_precision": 0.9838983050847457,
-        "top1": 0.5771428571428572
+        "auto_share": 0.316,
+        "auto_precision": 0.9855334538878843,
+        "top1": 0.5791428571428572
       }
     ]
   },

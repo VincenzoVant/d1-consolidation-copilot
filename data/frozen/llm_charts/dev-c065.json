@@ -63,7 +63,7 @@
       {
         "target_code": "122",
         "code": "1220100",
-        "name": "Plus-val. réévaluation particip. Immo Bati SA"
+        "name": "Plus-val. réévaluation particip."
       },
       {
         "target_code": "124",
@@ -88,12 +88,12 @@
       {
         "target_code": "173",
         "code": "1730100",
-        "name": "Crédit invest. BNP Fortis - hangar Wetteren"
+        "name": "Crédit invest. - hangar Wetteren"
       },
       {
         "target_code": "173",
         "code": "1730200",
-        "name": "Prêt KBC - camion grue & pelleteuse"
+        "name": "Prêt - camion grue & pelleteuse"
       },
       {
         "target_code": "174",
@@ -113,7 +113,7 @@
       {
         "target_code": "211",
         "code": "2110100",
-        "name": "Licences logiciels (Revit / devis WinBouw)"
+        "name": "Licences logiciels (devis)"
       },
       {
         "target_code": "222",
@@ -123,12 +123,12 @@
       {
         "target_code": "280",
         "code": "2800100",
-        "name": "Particip. Immo Bati SA (filiale promotion)"
+        "name": "Particip. (filiale promotion)"
       },
       {
         "target_code": "284",
         "code": "2840100",
-        "name": "Parts coopérative CBC / Confédération Constr."
+        "name": "Parts coopérative banque / fédération"
       },
       {
         "target_code": "290",
@@ -223,7 +223,7 @@
       {
         "target_code": "432",
         "code": "4320100",
-        "name": "Crédit d'acceptation Belfius"
+        "name": "Crédit d'acceptation"
       },
       {
         "target_code": "439",
@@ -248,12 +248,12 @@
       {
         "target_code": "532",
         "code": "5320100",
-        "name": "Dépôt à terme 1 mois KBC"
+        "name": "Dépôt à terme 1 mois"
       },
       {
         "target_code": "532",
         "code": "5320200",
-        "name": "Compte à terme 1 mois BNP"
+        "name": "Compte à terme 1 mois"
       },
       {
         "target_code": "603",
@@ -311,5 +311,10 @@
         "name": "Variation stock maisons construites pour vente"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 9,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

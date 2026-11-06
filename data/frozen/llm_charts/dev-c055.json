@@ -63,7 +63,7 @@
       {
         "target_code": "122",
         "code": "122000",
-        "name": "Herwaard. meerw. deelneming VTX Consult"
+        "name": "Herwaard. meerw. deelneming"
       },
       {
         "target_code": "162",
@@ -73,7 +73,7 @@
       {
         "target_code": "168",
         "code": "168000",
-        "name": "Uitgest. belast. kapitaalsubsidie VLAIO"
+        "name": "Uitgest. belast. kapitaalsubsidie"
       },
       {
         "target_code": "171",
@@ -88,7 +88,7 @@
       {
         "target_code": "174",
         "code": "174200",
-        "name": "Lening PMV Winwinlening LT"
+        "name": "Lening overheidsfonds Winwinlening LT"
       },
       {
         "target_code": "176",
@@ -118,12 +118,12 @@
       {
         "target_code": "250",
         "code": "250000",
-        "name": "Leasing kantoorruimte Antwerpen (Belfius Lease)"
+        "name": "Leasing kantoorruimte Antwerpen"
       },
       {
         "target_code": "252",
         "code": "252100",
-        "name": "Leasing bedrijfswagens (KBC Autolease)"
+        "name": "Leasing bedrijfswagens"
       },
       {
         "target_code": "252",
@@ -188,7 +188,7 @@
       {
         "target_code": "439",
         "code": "439000",
-        "name": "Lening KT Ethias"
+        "name": "Lening KT verzekeraar"
       },
       {
         "target_code": "444",
@@ -223,12 +223,12 @@
       {
         "target_code": "531",
         "code": "531100",
-        "name": "Termijnrekening KBC 6m"
+        "name": "Termijnrekening 6m"
       },
       {
         "target_code": "531",
         "code": "531200",
-        "name": "Termijnrekening Belfius 12m"
+        "name": "Termijnrekening 12m"
       },
       {
         "target_code": "578",
@@ -243,7 +243,7 @@
       {
         "target_code": "617",
         "code": "617000",
-        "name": "Interimkrachten (Randstad)"
+        "name": "Interimkrachten"
       },
       {
         "target_code": "617",
@@ -258,12 +258,12 @@
       {
         "target_code": "622",
         "code": "622000",
-        "name": "Groepsverzekering bedienden (AG)"
+        "name": "Groepsverzekering bedienden"
       },
       {
         "target_code": "622",
         "code": "622100",
-        "name": "Hospitalisatieverzekering DKV"
+        "name": "Hospitalisatieverzekering"
       },
       {
         "target_code": "649",
@@ -311,5 +311,10 @@
         "name": "Uitzonderl. fin. opbrengsten"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 11,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

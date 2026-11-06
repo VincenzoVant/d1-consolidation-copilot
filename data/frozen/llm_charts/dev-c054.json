@@ -68,17 +68,17 @@
       {
         "target_code": "170",
         "code": "17110",
-        "name": "Achtergestelde lening aandeelhouder VdB"
+        "name": "Achtergestelde lening aandeelhouder"
       },
       {
         "target_code": "172",
         "code": "17210",
-        "name": "Leasing bestelwagen Sprinter >1j"
+        "name": "Leasing bestelwagen >1j"
       },
       {
         "target_code": "175",
         "code": "17510",
-        "name": "Fournisseurs LT - accord étalement Ricoh"
+        "name": "Fournisseurs LT - accord étalement"
       },
       {
         "target_code": "210",
@@ -103,7 +103,7 @@
       {
         "target_code": "250",
         "code": "25010",
-        "name": "Leasing immo shop Louise (Belfius Lease)"
+        "name": "Leasing immo shop Louise"
       },
       {
         "target_code": "251",
@@ -118,7 +118,7 @@
       {
         "target_code": "283",
         "code": "28310",
-        "name": "Prêt à Retail Partners SRL (particip.)"
+        "name": "Prêt à société associée (particip.)"
       },
       {
         "target_code": "290",
@@ -158,7 +158,7 @@
       {
         "target_code": "424",
         "code": "42410",
-        "name": "Lening VdB - deel <1j"
+        "name": "Lening aandeelhouder - deel <1j"
       },
       {
         "target_code": "426",
@@ -173,12 +173,12 @@
       {
         "target_code": "430",
         "code": "43010",
-        "name": "Straight loan KBC"
+        "name": "Straight loan"
       },
       {
         "target_code": "430",
         "code": "43020",
-        "name": "Crédit à terme BNP Paribas Fortis"
+        "name": "Crédit à terme"
       },
       {
         "target_code": "441",
@@ -208,7 +208,7 @@
       {
         "target_code": "602",
         "code": "60210",
-        "name": "Sous-traitance livraisons (Bpost/DPD)"
+        "name": "Sous-traitance livraisons"
       },
       {
         "target_code": "602",
@@ -311,5 +311,10 @@
         "name": "Onttrekking vrijgestelde reserves"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 9,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

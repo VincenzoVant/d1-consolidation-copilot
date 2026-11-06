@@ -68,7 +68,7 @@
       {
         "target_code": "172",
         "code": "172100",
-        "name": "Leasing bestelwagen Renault Master >1j"
+        "name": "Leasing bestelwagen >1j"
       },
       {
         "target_code": "178",
@@ -78,7 +78,7 @@
       {
         "target_code": "201",
         "code": "201000",
-        "name": "Frais dossier crédit invest. BNP"
+        "name": "Frais dossier crédit invest."
       },
       {
         "target_code": "220",
@@ -93,12 +93,12 @@
       {
         "target_code": "281",
         "code": "281100",
-        "name": "R/C Holding VTX SA"
+        "name": "R/C subsidiary"
       },
       {
         "target_code": "283",
         "code": "283000",
-        "name": "Lening aan Webshop Partners BV (25%)"
+        "name": "Lening aan deelneming (25%)"
       },
       {
         "target_code": "319",
@@ -153,7 +153,7 @@
       {
         "target_code": "444",
         "code": "444100",
-        "name": "FAR énergie Engie (afrekening)"
+        "name": "FAR énergie (afrekening)"
       },
       {
         "target_code": "450",
@@ -198,27 +198,27 @@
       {
         "target_code": "499",
         "code": "499100",
-        "name": "Suspense Bancontact/Payconiq diff."
+        "name": "Suspense card payments diff."
       },
       {
         "target_code": "530",
         "code": "530000",
-        "name": "Dépôt à terme KBC 3 ans"
+        "name": "Dépôt à terme 3 ans"
       },
       {
         "target_code": "531",
         "code": "531100",
-        "name": "Termijnrekening Belfius 6 maanden"
+        "name": "Termijnrekening 6 maanden"
       },
       {
         "target_code": "531",
         "code": "531200",
-        "name": "Term deposit ING 12 months"
+        "name": "Term deposit 12 months"
       },
       {
         "target_code": "532",
         "code": "532000",
-        "name": "Kasbon ING 1 maand"
+        "name": "Kasbon 1 maand"
       },
       {
         "target_code": "602",
@@ -258,12 +258,12 @@
       {
         "target_code": "657",
         "code": "657000",
-        "name": "Bankkosten KBC"
+        "name": "Bankkosten"
       },
       {
         "target_code": "657",
         "code": "657100",
-        "name": "Commissions terminaux Worldline"
+        "name": "Commissions terminaux"
       },
       {
         "target_code": "659",
@@ -273,7 +273,7 @@
       {
         "target_code": "661",
         "code": "661000",
-        "name": "RDV participation Webshop Partners"
+        "name": "RDV participation"
       },
       {
         "target_code": "672",
@@ -311,5 +311,10 @@
         "name": "Onttrekking beschikbare reserves"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 13,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

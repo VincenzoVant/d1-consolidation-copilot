@@ -123,12 +123,12 @@
       {
         "target_code": "414",
         "code": "414200",
-        "name": "Te ontvangen subsidies VLAIO"
+        "name": "Te ontvangen subsidies"
       },
       {
         "target_code": "422",
         "code": "422000",
-        "name": "Leasing KT-deel Belfius Lease"
+        "name": "Leasing KT-deel"
       },
       {
         "target_code": "428",
@@ -138,12 +138,12 @@
       {
         "target_code": "431",
         "code": "431100",
-        "name": "Straight loan KBC"
+        "name": "Straight loan"
       },
       {
         "target_code": "431",
         "code": "431200",
-        "name": "Kaskrediet promesse BNP"
+        "name": "Kaskrediet promesse"
       },
       {
         "target_code": "441",
@@ -208,12 +208,12 @@
       {
         "target_code": "532",
         "code": "532100",
-        "name": "Termijnrek. KBC 1 mnd"
+        "name": "Termijnrek. 1 mnd"
       },
       {
         "target_code": "532",
         "code": "532200",
-        "name": "Termijnrek. ING 1 mnd"
+        "name": "Termijnrek. 1 mnd 2"
       },
       {
         "target_code": "578",
@@ -311,5 +311,10 @@
         "name": "Uitz. financiële opbrengsten"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 6,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

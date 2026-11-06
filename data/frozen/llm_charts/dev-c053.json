@@ -78,7 +78,7 @@
       {
         "target_code": "178",
         "code": "1781100",
-        "name": "Cash guarantee recd - subcontractor Bouw Peeters"
+        "name": "Cash guarantee recd - subcontractor"
       },
       {
         "target_code": "200",
@@ -88,12 +88,12 @@
       {
         "target_code": "201",
         "code": "2011000",
-        "name": "Loan arrangement fees - KBC investment loan"
+        "name": "Loan arrangement fees - investment loan"
       },
       {
         "target_code": "212",
         "code": "2121000",
-        "name": "Goodwill takeover Dakwerken Janssens"
+        "name": "Goodwill takeover roofing company"
       },
       {
         "target_code": "222",
@@ -108,17 +108,17 @@
       {
         "target_code": "280",
         "code": "2801000",
-        "name": "Shares VT Vastgoed BV"
+        "name": "Shares subsidiary"
       },
       {
         "target_code": "280",
         "code": "2801100",
-        "name": "Shares VT Materieel BV"
+        "name": "Shares subsidiary 2"
       },
       {
         "target_code": "281",
         "code": "2811000",
-        "name": "Loan to VT Vastgoed BV"
+        "name": "Loan to subsidiary"
       },
       {
         "target_code": "339",
@@ -188,12 +188,12 @@
       {
         "target_code": "423",
         "code": "4231000",
-        "name": "KBC loan - current portion"
+        "name": "Loan - current portion"
       },
       {
         "target_code": "423",
         "code": "4231100",
-        "name": "Belfius equipment loan - due within 1 yr"
+        "name": "Equipment loan - due within 1 yr"
       },
       {
         "target_code": "450",
@@ -228,7 +228,7 @@
       {
         "target_code": "530",
         "code": "5301000",
-        "name": "Term deposit Argenta 2 yrs"
+        "name": "Term deposit 2 yrs"
       },
       {
         "target_code": "570",
@@ -288,7 +288,7 @@
       {
         "target_code": "750",
         "code": "7501000",
-        "name": "Interest on loan VT Vastgoed"
+        "name": "Interest on loan"
       },
       {
         "target_code": "751",
@@ -311,5 +311,10 @@
         "name": "Release tax-exempt reserves"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 10,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

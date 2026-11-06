@@ -68,7 +68,7 @@
       {
         "target_code": "170",
         "code": "170100",
-        "name": "Prêt subordonné actionnaire VDB"
+        "name": "Prêt subordonné actionnaire"
       },
       {
         "target_code": "176",
@@ -88,7 +88,7 @@
       {
         "target_code": "210",
         "code": "210100",
-        "name": "Dév. plateforme interne ServiPro"
+        "name": "Dév. plateforme interne"
       },
       {
         "target_code": "222",
@@ -118,7 +118,7 @@
       {
         "target_code": "282",
         "code": "282100",
-        "name": "Particip. TechConsult SRL"
+        "name": "Particip."
       },
       {
         "target_code": "320",
@@ -178,22 +178,22 @@
       {
         "target_code": "423",
         "code": "423100",
-        "name": "Prêt Belfius part CT"
+        "name": "Prêt part CT"
       },
       {
         "target_code": "432",
         "code": "432100",
-        "name": "Crédit acceptation BNP"
+        "name": "Crédit acceptation"
       },
       {
         "target_code": "433",
         "code": "433100",
-        "name": "Straight loan KBC"
+        "name": "Straight loan"
       },
       {
         "target_code": "433",
         "code": "433200",
-        "name": "Découvert ING"
+        "name": "Découvert"
       },
       {
         "target_code": "450",
@@ -228,7 +228,7 @@
       {
         "target_code": "530",
         "code": "530100",
-        "name": "Dépôt terme KBC 3 ans"
+        "name": "Dépôt terme 3 ans"
       },
       {
         "target_code": "601",
@@ -253,7 +253,7 @@
       {
         "target_code": "617",
         "code": "617100",
-        "name": "Intérimaires Randstad"
+        "name": "Intérimaires"
       },
       {
         "target_code": "620",
@@ -268,7 +268,7 @@
       {
         "target_code": "622",
         "code": "622100",
-        "name": "Assurance groupe AG"
+        "name": "Assurance groupe"
       },
       {
         "target_code": "636",
@@ -288,7 +288,7 @@
       {
         "target_code": "661",
         "code": "661100",
-        "name": "RDV particip. TechConsult"
+        "name": "RDV particip."
       },
       {
         "target_code": "712",
@@ -308,8 +308,13 @@
       {
         "target_code": "750",
         "code": "750100",
-        "name": "Dividendes TechConsult"
+        "name": "Dividendes"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 12,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

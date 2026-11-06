@@ -93,27 +93,27 @@
       {
         "target_code": "211",
         "code": "211100",
-        "name": "Licences logicielles tierces (Microsoft, Atlassian)"
+        "name": "Licences logicielles tierces"
       },
       {
         "target_code": "211",
         "code": "211200",
-        "name": "Marque déposée NOVADESK"
+        "name": "Marque déposée"
       },
       {
         "target_code": "281",
         "code": "281100",
-        "name": "Prêt intragroupe NovaSoft NL BV"
+        "name": "Prêt intragroupe"
       },
       {
         "target_code": "281",
         "code": "281200",
-        "name": "C/C NovaSoft France SAS"
+        "name": "C/C filiale"
       },
       {
         "target_code": "284",
         "code": "284000",
-        "name": "Participation start-up DataLoop"
+        "name": "Participation start-up"
       },
       {
         "target_code": "285",
@@ -168,7 +168,7 @@
       {
         "target_code": "416",
         "code": "416200",
-        "name": "Subside VLAIO à recevoir"
+        "name": "Subside à recevoir"
       },
       {
         "target_code": "419",
@@ -183,12 +183,12 @@
       {
         "target_code": "429",
         "code": "429000",
-        "name": "Prêt Wikipreneur - part < 1 an"
+        "name": "Prêt fonds régional - part < 1 an"
       },
       {
         "target_code": "431",
         "code": "431000",
-        "name": "Straight loan ING (avance à terme fixe)"
+        "name": "Straight loan (avance à terme fixe)"
       },
       {
         "target_code": "480",
@@ -208,12 +208,12 @@
       {
         "target_code": "532",
         "code": "532100",
-        "name": "Dépôt 1 mois KBC"
+        "name": "Dépôt 1 mois"
       },
       {
         "target_code": "532",
         "code": "532200",
-        "name": "Dépôt 1 mois Belfius"
+        "name": "Dépôt 1 mois 2"
       },
       {
         "target_code": "539",
@@ -223,12 +223,12 @@
       {
         "target_code": "550",
         "code": "550100",
-        "name": "KBC compte courant BE12"
+        "name": "Compte courant BE12"
       },
       {
         "target_code": "550",
         "code": "550200",
-        "name": "Belfius compte courant BE68"
+        "name": "Compte courant BE68"
       },
       {
         "target_code": "602",
@@ -238,7 +238,7 @@
       {
         "target_code": "602",
         "code": "602200",
-        "name": "Hébergement cloud AWS/Azure"
+        "name": "Hébergement cloud"
       },
       {
         "target_code": "634",
@@ -311,5 +311,10 @@
         "name": "Produits financiers exceptionnels divers"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 13,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

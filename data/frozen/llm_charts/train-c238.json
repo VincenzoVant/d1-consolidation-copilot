@@ -73,7 +73,7 @@
       {
         "target_code": "122",
         "code": "122100",
-        "name": "Réév. participation Logistique Sud SA"
+        "name": "Réév. participation"
       },
       {
         "target_code": "164",
@@ -88,17 +88,17 @@
       {
         "target_code": "170",
         "code": "170100",
-        "name": "Prêt subordonné actionnaire Dupont"
+        "name": "Prêt subordonné actionnaire"
       },
       {
         "target_code": "173",
         "code": "173100",
-        "name": "Emprunt Belfius rénovation Namur"
+        "name": "Emprunt rénovation Namur"
       },
       {
         "target_code": "173",
         "code": "173200",
-        "name": "Emprunt ING achat entrepôt"
+        "name": "Emprunt achat entrepôt"
       },
       {
         "target_code": "179",
@@ -203,12 +203,12 @@
       {
         "target_code": "423",
         "code": "423100",
-        "name": "Belfius - part échéant dans l'année"
+        "name": "Emprunt - part échéant dans l'année"
       },
       {
         "target_code": "432",
         "code": "432100",
-        "name": "Crédit acceptation BNP import"
+        "name": "Crédit acceptation import"
       },
       {
         "target_code": "454",
@@ -263,7 +263,7 @@
       {
         "target_code": "622",
         "code": "622100",
-        "name": "Assurance groupe AG Insurance"
+        "name": "Assurance groupe"
       },
       {
         "target_code": "632",
@@ -311,5 +311,10 @@
         "name": "Var. stock en-cours retouches"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 7,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

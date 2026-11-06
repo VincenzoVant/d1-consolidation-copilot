@@ -2,28 +2,28 @@
   "method": "fuzzy",
   "version": "fuzzy-wratio-k10-v1",
   "n_dev": 3500,
-  "top1": 0.5771428571428572,
+  "top1": 0.5791428571428572,
   "no_pick": 0,
-  "t_auto": 0.8541204566265104,
-  "auto_share": 0.33714285714285713,
-  "auto_precision": 0.9838983050847457,
+  "t_auto": 0.875874049216863,
+  "auto_share": 0.316,
+  "auto_precision": 0.9855334538878843,
   "by_source": {
     "rules": {
       "n": 2000,
       "top1": 0.89,
-      "auto_share": 0.5695,
+      "auto_share": 0.5335,
       "auto_precision": 1.0
     },
     "llm": {
       "n": 1500,
-      "top1": 0.16,
-      "auto_share": 0.027333333333333334,
-      "auto_precision": 0.5365853658536586
+      "top1": 0.16466666666666666,
+      "auto_share": 0.026,
+      "auto_precision": 0.5897435897435898
     }
   },
   "out_of_fold": {
-    "t_auto": 0.8527780183070588,
-    "auto_share": 0.33714285714285713,
-    "auto_precision": 0.9822033898305085
+    "t_auto": 0.875874049216863,
+    "auto_share": 0.3082857142857143,
+    "auto_precision": 0.9823911028730306
   }
 }

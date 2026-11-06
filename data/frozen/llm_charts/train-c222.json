@@ -113,7 +113,7 @@
       {
         "target_code": "288",
         "code": "2880200",
-        "name": "Caution Sibelga/Engie compteurs"
+        "name": "Caution compteurs"
       },
       {
         "target_code": "379",
@@ -143,7 +143,7 @@
       {
         "target_code": "424",
         "code": "4240100",
-        "name": "Crédit invest. BNP - part < 1 an"
+        "name": "Crédit invest. - part < 1 an"
       },
       {
         "target_code": "440",
@@ -193,7 +193,7 @@
       {
         "target_code": "499",
         "code": "4990100",
-        "name": "Attente Bancontact/Payconiq"
+        "name": "Attente paiements carte"
       },
       {
         "target_code": "499",
@@ -208,12 +208,12 @@
       {
         "target_code": "539",
         "code": "5390100",
-        "name": "RDV dépôts à terme KBC"
+        "name": "RDV dépôts à terme"
       },
       {
         "target_code": "617",
         "code": "6170100",
-        "name": "Intérims Randstad magasin"
+        "name": "Intérims magasin"
       },
       {
         "target_code": "617",
@@ -228,7 +228,7 @@
       {
         "target_code": "622",
         "code": "6220100",
-        "name": "Assurance groupe AG - part patronale"
+        "name": "Assurance groupe - part patronale"
       },
       {
         "target_code": "630",
@@ -311,5 +311,10 @@
         "name": "Reprise RDV et amort."
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 6,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

@@ -73,22 +73,22 @@
       {
         "target_code": "170",
         "code": "170100",
-        "name": "Prêt subordonné actionnaire Dupont"
+        "name": "Prêt subordonné actionnaire"
       },
       {
         "target_code": "172",
         "code": "172000",
-        "name": "Leasing camion benne MAN LT"
+        "name": "Leasing camion benne LT"
       },
       {
         "target_code": "173",
         "code": "173010",
-        "name": "Crédit invest. BNP Fortis - pelleteuse"
+        "name": "Crédit invest. - pelleteuse"
       },
       {
         "target_code": "173",
         "code": "173020",
-        "name": "Crédit hangar Belfius LT"
+        "name": "Crédit hangar LT"
       },
       {
         "target_code": "178",
@@ -113,17 +113,17 @@
       {
         "target_code": "251",
         "code": "251010",
-        "name": "Leasing grue mobile Liebherr"
+        "name": "Leasing grue mobile"
       },
       {
         "target_code": "251",
         "code": "251020",
-        "name": "Leasing mini-pelle Kubota"
+        "name": "Leasing mini-pelle"
       },
       {
         "target_code": "280",
         "code": "280000",
-        "name": "Particip. Dupont Toitures SRL"
+        "name": "Particip."
       },
       {
         "target_code": "284",
@@ -188,12 +188,12 @@
       {
         "target_code": "423",
         "code": "423010",
-        "name": "Crédit BNP pelleteuse - part CT"
+        "name": "Crédit pelleteuse - part CT"
       },
       {
         "target_code": "423",
         "code": "423020",
-        "name": "Crédit Belfius hangar - part CT"
+        "name": "Crédit hangar - part CT"
       },
       {
         "target_code": "428",
@@ -238,7 +238,7 @@
       {
         "target_code": "531",
         "code": "531000",
-        "name": "Compte à terme 6 mois ING"
+        "name": "Compte à terme 6 mois"
       },
       {
         "target_code": "570",
@@ -303,7 +303,7 @@
       {
         "target_code": "750",
         "code": "750000",
-        "name": "Dividendes Dupont Toitures"
+        "name": "Dividendes"
       },
       {
         "target_code": "755",
@@ -311,5 +311,10 @@
         "name": "Écarts de change"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 11,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

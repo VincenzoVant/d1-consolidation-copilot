@@ -133,7 +133,7 @@
       {
         "target_code": "414",
         "code": "414200",
-        "name": "Primes Bancontact/Payconiq à recevoir"
+        "name": "Primes paiements mobiles à recevoir"
       },
       {
         "target_code": "416",
@@ -143,7 +143,7 @@
       {
         "target_code": "416",
         "code": "416200",
-        "name": "Chèques-repas/éco à encaisser Edenred"
+        "name": "Chèques-repas/éco à encaisser"
       },
       {
         "target_code": "418",
@@ -168,12 +168,12 @@
       {
         "target_code": "423",
         "code": "423100",
-        "name": "Prêt Belfius invest. - échéance <1an"
+        "name": "Prêt invest. - échéance <1an"
       },
       {
         "target_code": "423",
         "code": "423200",
-        "name": "Prêt ING aménagement - échéance <1an"
+        "name": "Prêt aménagement - échéance <1an"
       },
       {
         "target_code": "428",
@@ -183,7 +183,7 @@
       {
         "target_code": "432",
         "code": "432100",
-        "name": "Crédit d'acceptation BNP Fortis"
+        "name": "Crédit d'acceptation"
       },
       {
         "target_code": "441",
@@ -311,5 +311,10 @@
         "name": "Prélèvement s/ réserves dispo"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 5,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

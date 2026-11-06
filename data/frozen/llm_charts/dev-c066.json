@@ -78,12 +78,12 @@
       {
         "target_code": "174",
         "code": "1740100",
-        "name": "LT loan KBC - Ghent shop fit-out"
+        "name": "LT loan - Ghent shop fit-out"
       },
       {
         "target_code": "174",
         "code": "1740200",
-        "name": "LT loan Belfius - Bruges warehouse"
+        "name": "LT loan - Bruges warehouse"
       },
       {
         "target_code": "201",
@@ -123,7 +123,7 @@
       {
         "target_code": "283",
         "code": "2830100",
-        "name": "Loan to RetailCo Logistics BV (25%)"
+        "name": "Loan to associate (25%)"
       },
       {
         "target_code": "309",
@@ -163,7 +163,7 @@
       {
         "target_code": "416",
         "code": "4160100",
-        "name": "Receivable card terminal (Worldline)"
+        "name": "Receivable card terminal"
       },
       {
         "target_code": "416",
@@ -173,7 +173,7 @@
       {
         "target_code": "424",
         "code": "4240100",
-        "name": "Current portion LT loans KBC/Belfius"
+        "name": "Current portion LT loans"
       },
       {
         "target_code": "429",
@@ -311,5 +311,10 @@
         "name": "Release from available reserves"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 5,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

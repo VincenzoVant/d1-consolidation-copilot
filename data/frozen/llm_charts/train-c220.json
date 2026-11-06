@@ -68,7 +68,7 @@
       {
         "target_code": "122",
         "code": "122100",
-        "name": "Plus-value réévaluation particip. CodeNest BV"
+        "name": "Plus-value réévaluation particip."
       },
       {
         "target_code": "160",
@@ -83,7 +83,7 @@
       {
         "target_code": "164",
         "code": "164100",
-        "name": "Prov. litige client SLA Q-Ticket"
+        "name": "Prov. litige client SLA"
       },
       {
         "target_code": "164",
@@ -93,12 +93,12 @@
       {
         "target_code": "172",
         "code": "172100",
-        "name": "Leasing wagenpark LT (ING Lease)"
+        "name": "Leasing wagenpark LT"
       },
       {
         "target_code": "179",
         "code": "179100",
-        "name": "Achtergestelde lening Finance.brussels LT"
+        "name": "Achtergestelde lening overheidsfonds LT"
       },
       {
         "target_code": "200",
@@ -108,7 +108,7 @@
       {
         "target_code": "201",
         "code": "201100",
-        "name": "Frais dossier emprunt BNP 2024"
+        "name": "Frais dossier emprunt 2024"
       },
       {
         "target_code": "220",
@@ -118,17 +118,17 @@
       {
         "target_code": "281",
         "code": "281100",
-        "name": "IC loan Bytewise France SAS"
+        "name": "IC loan"
       },
       {
         "target_code": "281",
         "code": "281200",
-        "name": "Vordering IC Bytewise Nederland BV"
+        "name": "Vordering IC"
       },
       {
         "target_code": "282",
         "code": "282100",
-        "name": "Participation 20% DataLoom SRL"
+        "name": "Participation 20%"
       },
       {
         "target_code": "309",
@@ -138,7 +138,7 @@
       {
         "target_code": "330",
         "code": "330100",
-        "name": "Stock appliances BoxOne finished"
+        "name": "Stock appliances finished"
       },
       {
         "target_code": "340",
@@ -163,7 +163,7 @@
       {
         "target_code": "416",
         "code": "416100",
-        "name": "Te ontvangen subsidie VLAIO"
+        "name": "Te ontvangen subsidie"
       },
       {
         "target_code": "416",
@@ -173,22 +173,22 @@
       {
         "target_code": "429",
         "code": "429100",
-        "name": "Lening Finance.brussels - deel < 1 jaar"
+        "name": "Lening overheidsfonds - deel < 1 jaar"
       },
       {
         "target_code": "432",
         "code": "432100",
-        "name": "Acceptkrediet KBC"
+        "name": "Acceptkrediet"
       },
       {
         "target_code": "433",
         "code": "433100",
-        "name": "KBC straight loan / kaskrediet"
+        "name": "Straight loan / kaskrediet"
       },
       {
         "target_code": "433",
         "code": "433200",
-        "name": "Belfius ouverture de crédit CC"
+        "name": "Ouverture de crédit CC"
       },
       {
         "target_code": "440",
@@ -198,7 +198,7 @@
       {
         "target_code": "440",
         "code": "440200",
-        "name": "Suppliers EU/non-EU (AWS, Atlassian)"
+        "name": "Suppliers EU/non-EU"
       },
       {
         "target_code": "454",
@@ -288,7 +288,7 @@
       {
         "target_code": "713",
         "code": "713100",
-        "name": "Change in stock BoxOne appliances"
+        "name": "Change in stock appliances"
       },
       {
         "target_code": "752",
@@ -311,5 +311,10 @@
         "name": "Onttrekking beschikbare reserves"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 16,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

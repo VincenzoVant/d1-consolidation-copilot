@@ -88,17 +88,17 @@
       {
         "target_code": "172",
         "code": "172000",
-        "name": "Leasing wagenpark LT - Athlon"
+        "name": "Leasing wagenpark LT"
       },
       {
         "target_code": "173",
         "code": "173100",
-        "name": "KBC investeringskrediet LT"
+        "name": "Investeringskrediet LT"
       },
       {
         "target_code": "173",
         "code": "173200",
-        "name": "Prêt Belfius R&D platform >1an"
+        "name": "Prêt R&D platform >1an"
       },
       {
         "target_code": "252",
@@ -153,7 +153,7 @@
       {
         "target_code": "423",
         "code": "423000",
-        "name": "KBC krediet - KT gedeelte"
+        "name": "Krediet - KT gedeelte"
       },
       {
         "target_code": "428",
@@ -178,22 +178,22 @@
       {
         "target_code": "530",
         "code": "530000",
-        "name": "Termijnrekening ING 24m"
+        "name": "Termijnrekening 24m"
       },
       {
         "target_code": "550",
         "code": "550100",
-        "name": "KBC Business BE68"
+        "name": "Business account BE68"
       },
       {
         "target_code": "550",
         "code": "550200",
-        "name": "Belfius courant BE45"
+        "name": "Compte courant BE45"
       },
       {
         "target_code": "602",
         "code": "602100",
-        "name": "Cloud hosting AWS/Azure"
+        "name": "Cloud hosting"
       },
       {
         "target_code": "602",
@@ -218,7 +218,7 @@
       {
         "target_code": "622",
         "code": "622000",
-        "name": "Groepsverzekering & hospi (AG)"
+        "name": "Groepsverzekering & hospi"
       },
       {
         "target_code": "623",
@@ -248,7 +248,7 @@
       {
         "target_code": "650",
         "code": "650100",
-        "name": "Intresten leningen KBC/Belfius"
+        "name": "Intresten leningen"
       },
       {
         "target_code": "650",
@@ -311,5 +311,10 @@
         "name": "Reprise réductions de valeur"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 10,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

@@ -128,7 +128,7 @@
       {
         "target_code": "252",
         "code": "252100",
-        "name": "Leasing Renault Kangoo"
+        "name": "Leasing camionnette"
       },
       {
         "target_code": "252",
@@ -138,7 +138,7 @@
       {
         "target_code": "282",
         "code": "282000",
-        "name": "Particip. coopérative achats Retail Coop"
+        "name": "Particip. coopérative achats"
       },
       {
         "target_code": "290",
@@ -168,7 +168,7 @@
       {
         "target_code": "432",
         "code": "432000",
-        "name": "Crédit acceptation BNP Fortis"
+        "name": "Crédit acceptation"
       },
       {
         "target_code": "441",
@@ -208,7 +208,7 @@
       {
         "target_code": "532",
         "code": "532000",
-        "name": "Dépôt terme 1 mois KBC"
+        "name": "Dépôt terme 1 mois"
       },
       {
         "target_code": "602",
@@ -223,7 +223,7 @@
       {
         "target_code": "603",
         "code": "603000",
-        "name": "Sous-traitance livraisons Bpost"
+        "name": "Sous-traitance livraisons"
       },
       {
         "target_code": "604",
@@ -243,7 +243,7 @@
       {
         "target_code": "622",
         "code": "622000",
-        "name": "Assurance groupe AG Insurance"
+        "name": "Assurance groupe"
       },
       {
         "target_code": "632",
@@ -311,5 +311,10 @@
         "name": "Plus-value cession mobilier magasin"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 6,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

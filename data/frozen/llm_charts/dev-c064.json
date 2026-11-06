@@ -68,7 +68,7 @@
       {
         "target_code": "168",
         "code": "168000",
-        "name": "Uitgest. belasting kapitaalsubsidie VLAIO"
+        "name": "Uitgest. belasting kapitaalsubsidie"
       },
       {
         "target_code": "201",
@@ -78,27 +78,27 @@
       {
         "target_code": "280",
         "code": "280100",
-        "name": "Deelneming CodeNest BV (100%)"
+        "name": "Deelneming (100%)"
       },
       {
         "target_code": "280",
         "code": "280200",
-        "name": "Deelneming CodeNest Nederland BV"
+        "name": "Deelneming"
       },
       {
         "target_code": "281",
         "code": "281100",
-        "name": "R/C CodeNest BV"
+        "name": "R/C dochter"
       },
       {
         "target_code": "281",
         "code": "281200",
-        "name": "Lening CodeNest Nederland BV"
+        "name": "Lening dochter"
       },
       {
         "target_code": "283",
         "code": "283000",
-        "name": "Lening DataBridge NV (25%)"
+        "name": "Lening deelneming (25%)"
       },
       {
         "target_code": "300",
@@ -133,7 +133,7 @@
       {
         "target_code": "406",
         "code": "406100",
-        "name": "Vooruitbet. AWS/Azure credits"
+        "name": "Vooruitbet. cloudcredits"
       },
       {
         "target_code": "418",
@@ -153,7 +153,7 @@
       {
         "target_code": "420",
         "code": "420000",
-        "name": "Achtergest. lening PMV - KT deel"
+        "name": "Achtergest. lening overheidsfonds - KT deel"
       },
       {
         "target_code": "422",
@@ -163,12 +163,12 @@
       {
         "target_code": "430",
         "code": "430100",
-        "name": "Straight loan KBC"
+        "name": "Straight loan"
       },
       {
         "target_code": "430",
         "code": "430200",
-        "name": "Kaskrediet vaste termijn Belfius"
+        "name": "Kaskrediet vaste termijn"
       },
       {
         "target_code": "451",
@@ -213,17 +213,17 @@
       {
         "target_code": "530",
         "code": "530000",
-        "name": "Termijnrek. KBC 3 jaar"
+        "name": "Termijnrek. 3 jaar"
       },
       {
         "target_code": "550",
         "code": "550100",
-        "name": "KBC zichtrekening"
+        "name": "Zichtrekening"
       },
       {
         "target_code": "550",
         "code": "550200",
-        "name": "Belfius zichtrekening"
+        "name": "Zichtrekening 2"
       },
       {
         "target_code": "603",
@@ -268,7 +268,7 @@
       {
         "target_code": "661",
         "code": "661000",
-        "name": "WV deelneming CodeNest NL"
+        "name": "WV deelneming"
       },
       {
         "target_code": "669",
@@ -311,5 +311,10 @@
         "name": "Onttrekking beschikbare reserve"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 14,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

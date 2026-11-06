@@ -68,12 +68,12 @@
       {
         "target_code": "172",
         "code": "172010",
-        "name": "Leasing graafkraan CAT 308 - BNP Lease"
+        "name": "Leasing graafkraan"
       },
       {
         "target_code": "172",
         "code": "172020",
-        "name": "Leasing camionnette Ford Transit >1j"
+        "name": "Leasing camionnette >1j"
       },
       {
         "target_code": "178",
@@ -93,7 +93,7 @@
       {
         "target_code": "201",
         "code": "201000",
-        "name": "Dossierkosten investeringskrediet KBC"
+        "name": "Dossierkosten investeringskrediet"
       },
       {
         "target_code": "213",
@@ -108,12 +108,12 @@
       {
         "target_code": "282",
         "code": "282000",
-        "name": "Participation THV Bouwteam Brussel-Noord"
+        "name": "Participation THV"
       },
       {
         "target_code": "283",
         "code": "283000",
-        "name": "Loan to joint venture THV Brussel-Noord"
+        "name": "Loan to joint venture THV"
       },
       {
         "target_code": "310",
@@ -178,7 +178,7 @@
       {
         "target_code": "432",
         "code": "432000",
-        "name": "Crédit d'acceptation Belfius"
+        "name": "Crédit d'acceptation"
       },
       {
         "target_code": "440",
@@ -228,7 +228,7 @@
       {
         "target_code": "617",
         "code": "617100",
-        "name": "Interims Randstad werf"
+        "name": "Interims werf"
       },
       {
         "target_code": "617",
@@ -311,5 +311,10 @@
         "name": "Prélèvement sur réserves"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 7,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

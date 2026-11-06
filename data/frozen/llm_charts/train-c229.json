@@ -68,12 +68,12 @@
       {
         "target_code": "174",
         "code": "174100",
-        "name": "Loan shareholder VDB family"
+        "name": "Loan shareholder family"
       },
       {
         "target_code": "174",
         "code": "174200",
-        "name": "Loan PMV-z Win-Win LT"
+        "name": "Loan Win-Win LT"
       },
       {
         "target_code": "176",
@@ -88,7 +88,7 @@
       {
         "target_code": "201",
         "code": "201000",
-        "name": "Arrangement fees bank loan KBC"
+        "name": "Arrangement fees bank loan"
       },
       {
         "target_code": "210",
@@ -98,7 +98,7 @@
       {
         "target_code": "212",
         "code": "212000",
-        "name": "Goodwill takeover Dakwerken Pauwels"
+        "name": "Goodwill takeover roofing company"
       },
       {
         "target_code": "222",
@@ -108,17 +108,17 @@
       {
         "target_code": "251",
         "code": "251100",
-        "name": "Leasing excavator CAT 320"
+        "name": "Leasing excavator"
       },
       {
         "target_code": "251",
         "code": "251200",
-        "name": "Leasing tower crane Liebherr"
+        "name": "Leasing tower crane"
       },
       {
         "target_code": "252",
         "code": "252100",
-        "name": "Leasing vans Ford Transit"
+        "name": "Leasing vans"
       },
       {
         "target_code": "252",
@@ -128,12 +128,12 @@
       {
         "target_code": "281",
         "code": "281000",
-        "name": "LT receivable VDB Vastgoed NV"
+        "name": "LT receivable subsidiary"
       },
       {
         "target_code": "282",
         "code": "282000",
-        "name": "Shares THV Bouwteam Waasland"
+        "name": "Shares THV"
       },
       {
         "target_code": "285",
@@ -193,7 +193,7 @@
       {
         "target_code": "440",
         "code": "440100",
-        "name": "Suppliers - Van Marcke & building mat."
+        "name": "Suppliers - sanitary & building mat."
       },
       {
         "target_code": "440",
@@ -238,7 +238,7 @@
       {
         "target_code": "617",
         "code": "617100",
-        "name": "Interim workers Randstad"
+        "name": "Interim workers"
       },
       {
         "target_code": "617",
@@ -258,7 +258,7 @@
       {
         "target_code": "650",
         "code": "650100",
-        "name": "Interest KBC investment loan"
+        "name": "Interest investment loan"
       },
       {
         "target_code": "650",
@@ -311,5 +311,10 @@
         "name": "Release from reserves"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 12,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

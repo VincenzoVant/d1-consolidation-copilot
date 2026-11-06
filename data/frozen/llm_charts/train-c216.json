@@ -83,12 +83,12 @@
       {
         "target_code": "211",
         "code": "211100",
-        "name": "Software licences - JetBrains/Atlassian"
+        "name": "Software licences"
       },
       {
         "target_code": "211",
         "code": "211200",
-        "name": "Trademark reg. 'Codexa' Benelux"
+        "name": "Trademark reg. Benelux"
       },
       {
         "target_code": "221",
@@ -103,7 +103,7 @@
       {
         "target_code": "282",
         "code": "282100",
-        "name": "Stake 20% DataNest BV"
+        "name": "Stake 20%"
       },
       {
         "target_code": "288",
@@ -113,7 +113,7 @@
       {
         "target_code": "288",
         "code": "288200",
-        "name": "Deposit Proximus / utilities"
+        "name": "Deposit telecom / utilities"
       },
       {
         "target_code": "290",
@@ -148,7 +148,7 @@
       {
         "target_code": "414",
         "code": "414100",
-        "name": "Income to receive - subsidies VLAIO"
+        "name": "Income to receive - subsidies"
       },
       {
         "target_code": "420",
@@ -163,7 +163,7 @@
       {
         "target_code": "429",
         "code": "429100",
-        "name": "PMV loan - due within 12m"
+        "name": "Regional fund loan - due within 12m"
       },
       {
         "target_code": "450",
@@ -208,17 +208,17 @@
       {
         "target_code": "499",
         "code": "499200",
-        "name": "Suspense - Stripe payouts"
+        "name": "Suspense - payouts"
       },
       {
         "target_code": "520",
         "code": "520100",
-        "name": "Govt bonds - KBC securities acct"
+        "name": "Govt bonds - acct"
       },
       {
         "target_code": "530",
         "code": "530100",
-        "name": "Term deposit >1y Belfius"
+        "name": "Term deposit >1y"
       },
       {
         "target_code": "601",
@@ -308,8 +308,13 @@
       {
         "target_code": "761",
         "code": "761100",
-        "name": "Reversal W/D participation DataNest"
+        "name": "Reversal W/D participation"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 10,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

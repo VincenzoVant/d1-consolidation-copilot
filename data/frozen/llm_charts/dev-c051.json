@@ -73,12 +73,12 @@
       {
         "target_code": "173",
         "code": "173010",
-        "name": "Investeringskrediet BNP Fortis LT"
+        "name": "Investeringskrediet LT"
       },
       {
         "target_code": "173",
         "code": "173020",
-        "name": "Straight loan KBC > 1 jaar"
+        "name": "Straight loan > 1 jaar"
       },
       {
         "target_code": "251",
@@ -88,7 +88,7 @@
       {
         "target_code": "281",
         "code": "281100",
-        "name": "Créance HoldCo VVT Group SA"
+        "name": "Créance filiale"
       },
       {
         "target_code": "288",
@@ -138,7 +138,7 @@
       {
         "target_code": "418",
         "code": "418010",
-        "name": "Waarborg nutsvoorzieningen (Sibelga)"
+        "name": "Waarborg nutsvoorzieningen"
       },
       {
         "target_code": "418",
@@ -158,7 +158,7 @@
       {
         "target_code": "423",
         "code": "423010",
-        "name": "KBC loan - current portion"
+        "name": "Loan - current portion"
       },
       {
         "target_code": "426",
@@ -173,7 +173,7 @@
       {
         "target_code": "432",
         "code": "432000",
-        "name": "Acceptkrediet Belfius"
+        "name": "Acceptkrediet"
       },
       {
         "target_code": "440",
@@ -223,7 +223,7 @@
       {
         "target_code": "530",
         "code": "530000",
-        "name": "Termijnrekening ING 24m"
+        "name": "Termijnrekening 24m"
       },
       {
         "target_code": "578",
@@ -253,12 +253,12 @@
       {
         "target_code": "657",
         "code": "657010",
-        "name": "Bankkosten ING"
+        "name": "Bankkosten"
       },
       {
         "target_code": "657",
         "code": "657020",
-        "name": "Frais terminal Bancontact/Stripe"
+        "name": "Frais terminal"
       },
       {
         "target_code": "664",
@@ -311,5 +311,10 @@
         "name": "Onttrekking beschikbare reserves"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 9,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

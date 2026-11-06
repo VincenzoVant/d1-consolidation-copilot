@@ -88,12 +88,12 @@
       {
         "target_code": "173",
         "code": "173010",
-        "name": "Emprunt BNP Fortis - rénovation shop Gand"
+        "name": "Emprunt - rénovation shop Gand"
       },
       {
         "target_code": "173",
         "code": "173020",
-        "name": "Crédit invest. Belfius LT"
+        "name": "Crédit invest. LT"
       },
       {
         "target_code": "179",
@@ -103,7 +103,7 @@
       {
         "target_code": "201",
         "code": "201000",
-        "name": "Frais dossier emprunt Belfius"
+        "name": "Frais dossier emprunt"
       },
       {
         "target_code": "202",
@@ -128,7 +128,7 @@
       {
         "target_code": "280",
         "code": "280000",
-        "name": "Particip. Retail Logistics SRL"
+        "name": "Particip."
       },
       {
         "target_code": "290",
@@ -193,12 +193,12 @@
       {
         "target_code": "431",
         "code": "431000",
-        "name": "Straight loan ING"
+        "name": "Straight loan"
       },
       {
         "target_code": "432",
         "code": "432000",
-        "name": "Crédit acceptation KBC import"
+        "name": "Crédit acceptation import"
       },
       {
         "target_code": "444",
@@ -298,7 +298,7 @@
       {
         "target_code": "657",
         "code": "657000",
-        "name": "Frais bancaires & terminaux Bancontact"
+        "name": "Frais bancaires & terminaux"
       },
       {
         "target_code": "662",
@@ -316,5 +316,10 @@
         "name": "Produits except. - indemnité assurance"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 7,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

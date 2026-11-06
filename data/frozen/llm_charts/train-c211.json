@@ -63,7 +63,7 @@
       {
         "target_code": "122",
         "code": "122000",
-        "name": "Herwaarderingsmeerwaarde deelneming NovaLink"
+        "name": "Herwaarderingsmeerwaarde deelneming"
       },
       {
         "target_code": "161",
@@ -73,12 +73,12 @@
       {
         "target_code": "173",
         "code": "173100",
-        "name": "Investeringskrediet KBC kantoor Elsene"
+        "name": "Investeringskrediet kantoor Elsene"
       },
       {
         "target_code": "173",
         "code": "173200",
-        "name": "Emprunt BNP Fortis - rénovation bureaux"
+        "name": "Emprunt - rénovation bureaux"
       },
       {
         "target_code": "179",
@@ -88,7 +88,7 @@
       {
         "target_code": "212",
         "code": "212000",
-        "name": "Goodwill overname klantenportefeuille Datapoint"
+        "name": "Goodwill overname klantenportefeuille"
       },
       {
         "target_code": "222",
@@ -113,7 +113,7 @@
       {
         "target_code": "291",
         "code": "291000",
-        "name": "LT loan to subsidiary NovaLink"
+        "name": "LT loan to subsidiary"
       },
       {
         "target_code": "300",
@@ -153,22 +153,22 @@
       {
         "target_code": "430",
         "code": "430000",
-        "name": "Straight loan ING"
+        "name": "Straight loan"
       },
       {
         "target_code": "430",
         "code": "430100",
-        "name": "Vaste voorschot Belfius 3m"
+        "name": "Vaste voorschot 3m"
       },
       {
         "target_code": "433",
         "code": "433000",
-        "name": "Overdraft KBC Business"
+        "name": "Overdraft"
       },
       {
         "target_code": "433",
         "code": "433100",
-        "name": "Ligne de crédit Belfius c/c"
+        "name": "Ligne de crédit c/c"
       },
       {
         "target_code": "441",
@@ -198,7 +198,7 @@
       {
         "target_code": "489",
         "code": "489000",
-        "name": "Diverse schulden - Amex corporate card"
+        "name": "Diverse schulden - corporate card"
       },
       {
         "target_code": "492",
@@ -223,17 +223,17 @@
       {
         "target_code": "531",
         "code": "531000",
-        "name": "Termijndeposito 6m KBC"
+        "name": "Termijndeposito 6m"
       },
       {
         "target_code": "532",
         "code": "532000",
-        "name": "Dépôt à terme 1 mois BNP"
+        "name": "Dépôt à terme 1 mois"
       },
       {
         "target_code": "623",
         "code": "623000",
-        "name": "Maaltijdcheques Pluxee"
+        "name": "Maaltijdcheques"
       },
       {
         "target_code": "623",
@@ -263,7 +263,7 @@
       {
         "target_code": "661",
         "code": "661000",
-        "name": "Waardevermindering participatie NovaLink"
+        "name": "Waardevermindering participatie"
       },
       {
         "target_code": "670",
@@ -311,5 +311,10 @@
         "name": "Onttrekking belastingvrije reserves"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 14,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

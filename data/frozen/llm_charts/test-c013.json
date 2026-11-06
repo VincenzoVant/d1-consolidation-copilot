@@ -113,17 +113,17 @@
       {
         "target_code": "499",
         "code": "499900",
-        "name": "Tussenrekening lonen Securex"
+        "name": "Tussenrekening lonen"
       },
       {
         "target_code": "520",
         "code": "520000",
-        "name": "Staatsbons KBC - aanschaf"
+        "name": "Staatsbons - aanschaf"
       },
       {
         "target_code": "539",
         "code": "539000",
-        "name": "WV termijnrekening Belfius"
+        "name": "WV termijnrekening"
       },
       {
         "target_code": "578",
@@ -148,7 +148,7 @@
       {
         "target_code": "661",
         "code": "661000",
-        "name": "WV deelneming Bouwgroep VDM"
+        "name": "WV deelneming"
       },
       {
         "target_code": "670",
@@ -166,5 +166,10 @@
         "name": "Terugname vrijgestelde meerwaarde"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 4,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

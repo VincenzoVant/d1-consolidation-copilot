@@ -20,8 +20,8 @@ description_model: claude-sonnet-5-5
 llm_backend: claude_cli
 
 # Multilingual sentence-embedding model for retrieval. Chosen on the dev split
-# among embedding_candidates by the highest recall@k (87.0%, against 82.8% for
-# e5-base and 71.1% for mpnet): see reports/embedding_selection.md and
+# among embedding_candidates by the highest recall@k (87.5%, against 83.4% for
+# e5-base and 71.3% for mpnet): see reports/embedding_selection.md and
 # notebooks/08_embedding_selection.ipynb.
 embedding_model: BAAI/bge-m3
 embedding_candidates:
@@ -44,6 +44,6 @@ mapping:
   selected_method: null         # set after the comparison on dev (Task 3.5)
   # What each standard group is compared with: names, descriptions (names plus
   # its description) or average (the mean of both scores). Chosen on dev:
-  # recall@10 87.0% -> 91.9%, embeddings baseline auto-maps 23.0% -> 32.6% at
+  # recall@10 87.5% -> 92.6%, embeddings baseline auto-maps 21.4% -> 32.1% at
   # 98% (notebooks/12_group_descriptions.ipynb).
   group_text: average

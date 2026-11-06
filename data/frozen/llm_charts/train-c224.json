@@ -63,17 +63,17 @@
       {
         "target_code": "120",
         "code": "120100",
-        "name": "Herwaard. meerwaarde software-IP Planr"
+        "name": "Herwaard. meerwaarde software-IP"
       },
       {
         "target_code": "122",
         "code": "122100",
-        "name": "Herwaard. meerwaarde deelneming Codeloft NL"
+        "name": "Herwaard. meerwaarde deelneming"
       },
       {
         "target_code": "124",
         "code": "124100",
-        "name": "Terugn. WV beleggingsfondsen KBC"
+        "name": "Terugn. WV beleggingsfondsen"
       },
       {
         "target_code": "163",
@@ -93,22 +93,22 @@
       {
         "target_code": "201",
         "code": "201100",
-        "name": "Dossierkosten investeringskrediet Belfius"
+        "name": "Dossierkosten investeringskrediet"
       },
       {
         "target_code": "210",
         "code": "210100",
-        "name": "Ontwikkelingskost Planr v3 (geactiveerd)"
+        "name": "Ontwikkelingskost v3 (geactiveerd)"
       },
       {
         "target_code": "210",
         "code": "210200",
-        "name": "Ontwikkelingskost API-platform Connectr"
+        "name": "Ontwikkelingskost API-platform"
       },
       {
         "target_code": "283",
         "code": "283100",
-        "name": "Lening aan DataNest BV (deelneming 20%)"
+        "name": "Lening aan deelneming (20%)"
       },
       {
         "target_code": "290",
@@ -163,7 +163,7 @@
       {
         "target_code": "414",
         "code": "414100",
-        "name": "Te ontv. subsidie VLAIO O&O"
+        "name": "Te ontv. subsidie O&O"
       },
       {
         "target_code": "416",
@@ -178,7 +178,7 @@
       {
         "target_code": "431",
         "code": "431100",
-        "name": "Straight loan KBC (kaskrediet)"
+        "name": "Straight loan (kaskrediet)"
       },
       {
         "target_code": "440",
@@ -188,7 +188,7 @@
       {
         "target_code": "440",
         "code": "440100",
-        "name": "Leveranciers buitenland (AWS, Atlassian, ...)"
+        "name": "Leveranciers buitenland"
       },
       {
         "target_code": "452",
@@ -228,12 +228,12 @@
       {
         "target_code": "531",
         "code": "531000",
-        "name": "Termijnrekening KBC 6 mnd"
+        "name": "Termijnrekening 6 mnd"
       },
       {
         "target_code": "531",
         "code": "531100",
-        "name": "Termijnrekening Belfius 12 mnd"
+        "name": "Termijnrekening 12 mnd"
       },
       {
         "target_code": "602",
@@ -243,7 +243,7 @@
       {
         "target_code": "602",
         "code": "602100",
-        "name": "Hosting & cloud (AWS/Azure) doorgerekend"
+        "name": "Hosting & cloud doorgerekend"
       },
       {
         "target_code": "622",
@@ -288,7 +288,7 @@
       {
         "target_code": "750",
         "code": "750100",
-        "name": "Interesten lening DataNest BV"
+        "name": "Interesten lening"
       },
       {
         "target_code": "751",
@@ -298,7 +298,7 @@
       {
         "target_code": "761",
         "code": "761100",
-        "name": "Terugn. WV deelneming DataNest"
+        "name": "Terugn. WV deelneming"
       },
       {
         "target_code": "769",
@@ -311,5 +311,10 @@
         "name": "Onttrekking uitgest. belasting kapitaalsubsidie"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 15,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

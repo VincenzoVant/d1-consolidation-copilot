@@ -73,7 +73,7 @@
       {
         "target_code": "174",
         "code": "174200",
-        "name": "Prêt subordonné Wallonie Entreprendre"
+        "name": "Prêt subordonné fonds régional"
       },
       {
         "target_code": "176",
@@ -88,12 +88,12 @@
       {
         "target_code": "281",
         "code": "281100",
-        "name": "Prêt à LT Consult Holding SRL"
+        "name": "Prêt à LT filiale"
       },
       {
         "target_code": "284",
         "code": "284100",
-        "name": "Parts coopérative Crelan"
+        "name": "Parts coopérative"
       },
       {
         "target_code": "291",
@@ -138,12 +138,12 @@
       {
         "target_code": "439",
         "code": "439100",
-        "name": "Avance CT associé M. Dumont"
+        "name": "Avance CT associé"
       },
       {
         "target_code": "439",
         "code": "439200",
-        "name": "Straight loan Belfius"
+        "name": "Straight loan"
       },
       {
         "target_code": "441",
@@ -208,12 +208,12 @@
       {
         "target_code": "520",
         "code": "520100",
-        "name": "Obligations KBC court terme"
+        "name": "Obligations court terme"
       },
       {
         "target_code": "578",
         "code": "578100",
-        "name": "Timbres-poste bpost"
+        "name": "Timbres-poste"
       },
       {
         "target_code": "609",
@@ -238,7 +238,7 @@
       {
         "target_code": "650",
         "code": "650100",
-        "name": "Intérêts prêt Belfius"
+        "name": "Intérêts prêt"
       },
       {
         "target_code": "650",
@@ -283,7 +283,7 @@
       {
         "target_code": "751",
         "code": "751100",
-        "name": "Intérêts compte épargne KBC"
+        "name": "Intérêts compte épargne"
       },
       {
         "target_code": "755",
@@ -311,5 +311,10 @@
         "name": "PV cession participation"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 9,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

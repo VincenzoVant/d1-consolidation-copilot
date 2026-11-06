@@ -63,7 +63,7 @@
       {
         "target_code": "122",
         "code": "1221000",
-        "name": "Herwaardering particip. CodeNest BV"
+        "name": "Herwaardering particip."
       },
       {
         "target_code": "124",
@@ -163,7 +163,7 @@
       {
         "target_code": "416",
         "code": "4161100",
-        "name": "Terug te vorderen subsidie VLAIO"
+        "name": "Terug te vorderen subsidie"
       },
       {
         "target_code": "419",
@@ -188,12 +188,12 @@
       {
         "target_code": "433",
         "code": "4331000",
-        "name": "KBC rekening-courant"
+        "name": "Rekening-courant"
       },
       {
         "target_code": "433",
         "code": "4331100",
-        "name": "BNP Paribas Fortis straight loan"
+        "name": "Straight loan"
       },
       {
         "target_code": "441",
@@ -238,7 +238,7 @@
       {
         "target_code": "604",
         "code": "6041000",
-        "name": "Achats licences Microsoft"
+        "name": "Achats licences"
       },
       {
         "target_code": "604",
@@ -298,7 +298,7 @@
       {
         "target_code": "761",
         "code": "7611000",
-        "name": "Terugname WV deelneming CodeNest"
+        "name": "Terugname WV deelneming"
       },
       {
         "target_code": "769",
@@ -311,5 +311,10 @@
         "name": "Release deferred taxes"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 6,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

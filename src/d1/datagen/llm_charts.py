@@ -33,7 +33,7 @@ from d1.datagen.schema import CompanyAccount, Language, Split, StandardAccount
 from d1.llm import LLMBackend, LLMError
 
 PROMPT_PATH = REPO_ROOT / "prompts" / "generate_company_chart.md"
-PROMPT_VERSION = "v1"  # bump when the prompt changes, so frozen files show which prompt made them
+PROMPT_VERSION = "v2"  # bump when the prompt changes, so frozen files show which prompt made them (v2: no real names)
 SYSTEM = "You write realistic synthetic charts of accounts. Return JSON only."
 TIMEOUT_S = 300  # one company is a long answer from a large model
 

@@ -78,12 +78,12 @@
       {
         "target_code": "211",
         "code": "211000",
-        "name": "Purchased software licences (JetBrains, Atlassian)"
+        "name": "Purchased software licences"
       },
       {
         "target_code": "211",
         "code": "211010",
-        "name": "Trademark NIMBLY - Benelux/EU registration"
+        "name": "Trademark - Benelux/EU registration"
       },
       {
         "target_code": "213",
@@ -158,7 +158,7 @@
       {
         "target_code": "420",
         "code": "420000",
-        "name": "Sub. loan PMV - current portion"
+        "name": "Sub. loan regional fund - current portion"
       },
       {
         "target_code": "426",
@@ -173,7 +173,7 @@
       {
         "target_code": "444",
         "code": "444100",
-        "name": "Invoices to receive - AWS/Azure cloud"
+        "name": "Invoices to receive - cloud"
       },
       {
         "target_code": "455",
@@ -193,7 +193,7 @@
       {
         "target_code": "520",
         "code": "520000",
-        "name": "Bonds/term deposit KBC"
+        "name": "Bonds/term deposit"
       },
       {
         "target_code": "570",
@@ -208,7 +208,7 @@
       {
         "target_code": "578",
         "code": "578000",
-        "name": "Postage stamps bpost"
+        "name": "Postage stamps"
       },
       {
         "target_code": "621",
@@ -223,7 +223,7 @@
       {
         "target_code": "650",
         "code": "650000",
-        "name": "Interest bank loan KBC"
+        "name": "Interest bank loan"
       },
       {
         "target_code": "650",
@@ -248,12 +248,12 @@
       {
         "target_code": "657",
         "code": "657000",
-        "name": "Bank charges KBC/Belfius"
+        "name": "Bank charges"
       },
       {
         "target_code": "657",
         "code": "657100",
-        "name": "Stripe payment fees"
+        "name": "Payment fees"
       },
       {
         "target_code": "663",
@@ -311,5 +311,10 @@
         "name": "Reversal depreciation/write-downs"
       }
     ]
+  },
+  "names_scrubbed": {
+    "date": "2026-11-06",
+    "accounts_changed": 9,
+    "note": "real and invented company, bank, brand and person names removed or replaced by a generic word; the rest of each name is as the model wrote it"
   }
 }

@@ -1,6 +1,6 @@
 {
   "method": "embeddings",
-  "t_auto": 0.9250848633139125,
+  "t_auto": 0.9281479086042382,
   "t_llm": null,
   "target_precision": 0.98,
   "fitted_on": "dev",
