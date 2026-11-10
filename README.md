@@ -54,7 +54,7 @@ All 200 LLM-written test rows and a random 50 rule-based rows are checked by han
 
 `notebooks/` has one notebook per step, in order. Each follows one real account or record through that step, then shows it on all the data with charts:
 
-01 standard chart · 02 noise · 03 rule-based companies · 04 LLM-written companies · 05 splits · 06 hand check · 07 retrieval · 08 embedding selection · 09 calibration · 10 baselines and pipeline · 11 metrics and the test guard · 12 group descriptions
+01 standard chart · 02 noise · 03 rule-based companies · 04 LLM-written companies · 05 splits · 06 hand check · 07 retrieval · 08 embedding selection · 09 calibration · 10 baselines and pipeline · 11 metrics and the test guard · 12 group descriptions · 13 pair features
 
 ## Choosing the embedding model
 

@@ -84,6 +84,7 @@ class Retriever:
             if missing:
                 raise ValueError(f"no description for groups {', '.join(missing[:5])}")
         self.embedder = embedder
+        self.cache_dir = cache_dir
         self.codes = [a.code for a in chart]
         self.group_text = group_text
         self.descriptions = descriptions
@@ -119,6 +120,10 @@ class Retriever:
             np.save(f, vectors)
         os.replace(tmp, path)  # a crash mid-write never leaves a half file under the real name
         return vectors
+
+    def passage_embeddings(self, texts: list[str]) -> np.ndarray:
+        """Vectors for other group-side texts (such as parent groups), cached like the groups' own."""
+        return self._standard_embeddings(texts, self.cache_dir)
 
     def top_k(self, names: list[str], k: int) -> list[list[Candidate]]:
         """For each name, the k closest groups, highest score first."""
