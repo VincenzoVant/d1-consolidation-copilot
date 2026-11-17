@@ -17,3 +17,6 @@ reports/drift/
 
 # Private planning docs (design spec, implementation plan)
 docs/
+
+# The random forest is 29 MB and retrains in seconds (python -m d1.mapper.train --method random_forest)
+artifacts/methods/*/model.joblib

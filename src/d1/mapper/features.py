@@ -137,6 +137,10 @@ class PairFeaturizer:
         unknown = sorted({r.target_code for r in rows} - self._index.keys())
         if unknown:
             raise FeaturizerError(f"target groups not in the chart: {', '.join(unknown)}")
+        if self.n_pca == 0:  # no meaning features: only the 11 base features (to measure what the PCA adds)
+            dim = self.retriever.standard_embeddings.shape[1]
+            self.mean, self.components, self.explained_variance = np.zeros(dim, np.float32), np.zeros((0, dim), np.float32), []
+            return self
         accounts = self._encode([r.name for r in rows])
         targets = self.retriever.standard_embeddings[[self._index[r.target_code] for r in rows]]
         pca = PCA(n_components=self.n_pca, svd_solver="full").fit(accounts * targets)  # "full": exact, no randomness
@@ -206,8 +210,9 @@ class PairFeaturizer:
             pair_vectors = vectors[pair_name]
             X[:, col["parent_cosine"]] = np.einsum("pd,pd->p", pair_vectors, self._parent_vectors[pair_group])
             X[:, col["fuzzy_wratio"]] = wratio[pair_name, pair_group]
-            product = pair_vectors * self.retriever.standard_embeddings[pair_group]
-            X[:, col["emb_pca_0"] :] = (product - self.mean) @ self.components.T
+            if self.n_pca:
+                product = pair_vectors * self.retriever.standard_embeddings[pair_group]
+                X[:, len(BASE_FEATURES) :] = (product - self.mean) @ self.components.T
 
         sizes = np.cumsum([len(s) for s in candidates])[:-1]
         return np.split(X, sizes)

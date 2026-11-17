@@ -54,7 +54,7 @@ All 200 LLM-written test rows and a random 50 rule-based rows are checked by han
 
 `notebooks/` has one notebook per step, in order. Each follows one real account or record through that step, then shows it on all the data with charts:
 
-01 standard chart · 02 noise · 03 rule-based companies · 04 LLM-written companies · 05 splits · 06 hand check · 07 retrieval · 08 embedding selection · 09 calibration · 10 baselines and pipeline · 11 metrics and the test guard · 12 group descriptions · 13 pair features
+01 standard chart · 02 noise · 03 rule-based companies · 04 LLM-written companies · 05 splits · 06 hand check · 07 retrieval · 08 embedding selection · 09 calibration · 10 baselines and pipeline · 11 metrics and the test guard · 12 group descriptions · 13 pair features · 14 rerankers
 
 ## Choosing the embedding model
 
@@ -78,10 +78,19 @@ Each group is scored by the mean of its names-only and its described similarity 
 ## Training and calibrating a method
 
 ```bash
-python -m d1.mapper.train --method fuzzy        # or embeddings, or all
+python -m d1.mapper.train --method fuzzy        # or embeddings, xgboost, random_forest, or all
 ```
 
 This calibrates the method on dev and saves it in `artifacts/methods/<method>/`. On dev, the two baselines auto-map 31.6% (fuzzy) and 32.1% (embeddings, with the group descriptions) of accounts at 98% precision. But on the LLM-written accounts, fuzzy's auto-maps are right only 59% of the time, against 88% for embeddings (notebook 10). The 98% bar applies to all accounts together; precision per source is reported next to it.
+
+## XGBoost and random-forest rerankers
+
+```bash
+python -m d1.mapper.train --method xgboost                          # or random_forest
+python -m d1.evaluation.learning_curve --method xgboost random_forest
+```
+
+Each candidate on an account's shortlist becomes 27 numbers (the shortlist score, letters, the account code, the meaning), and a tree model trained on the train split scores each one. On dev both auto-map about 78% of accounts at 98% precision (XGBoost 78.8%, interval 72.5–84.9%), against about 32% for the baselines. Most of that gain is the account code: where it starts with the right group, the model is nearly perfect; without the code features it auto-maps 55.9%. On LLM-written accounts with an old company numbering, only 81% of what it auto-maps is right, below the pooled 98%. More rule-based training data stopped helping: from 75% to 100% of the train companies, the auto share changes by +0.6 points (XGBoost) and +0.0 (random forest), well inside its ±6.2 interval. See [`notebooks/14_rerankers.ipynb`](notebooks/14_rerankers.ipynb). The random forest's model file (28 MB) isn't committed: `--method random_forest` rebuilds it in seconds.
 
 ## Evaluating a method
 

@@ -160,6 +160,16 @@ def test_pca_features_are_the_projection_of_the_product(fitted, retriever, fake_
         assert row[COL["emb_pca_0"]:] == pytest.approx(expected, abs=1e-5)
 
 
+def test_no_pca_features(retriever, chart, tmp_path):
+    featurizer = PairFeaturizer(retriever, chart, n_pca=0).fit(_train_rows(chart))
+    assert featurizer.feature_names == PAIR_FEATURES[:11] and featurizer.explained_variance == []
+    m, _ = _one(featurizer, retriever, "Leveranciers", code="440000")
+    assert m.shape == (10, 11)
+    featurizer.save(tmp_path)
+    b, _ = _one(PairFeaturizer(retriever, chart, n_pca=0).load(tmp_path), retriever, "Leveranciers", code="440000")
+    assert np.array_equal(m, b)
+
+
 def test_too_few_rows_for_the_pca(retriever, chart):
     with pytest.raises(FeaturizerError, match="at least"):
         PairFeaturizer(retriever, chart, n_pca=16).fit(_train_rows(chart, n=10))

@@ -1,0 +1,49 @@
+{
+  "method": "random_forest",
+  "version": "random_forest-pair-features-v1-pca16-v1",
+  "n_dev": 3500,
+  "top1": 0.8411428571428572,
+  "no_pick": 0,
+  "t_auto": 0.8152832773825895,
+  "auto_share": 0.7808571428571428,
+  "auto_precision": 0.9802414928649835,
+  "by_source": {
+    "llm": {
+      "n": 1500,
+      "top1": 0.6846666666666666,
+      "auto_share": 0.568,
+      "auto_precision": 0.9577464788732394
+    },
+    "rules": {
+      "n": 2000,
+      "top1": 0.9585,
+      "auto_share": 0.9405,
+      "auto_precision": 0.9904306220095693
+    }
+  },
+  "by_code_scheme": {
+    "legacy": {
+      "n": 1700,
+      "top1": 0.7541176470588236,
+      "auto_share": 0.6335294117647059,
+      "auto_precision": 0.9498607242339833
+    },
+    "llm": {
+      "n": 800,
+      "top1": 0.835,
+      "auto_share": 0.83125,
+      "auto_precision": 1.0
+    },
+    "pcmn": {
+      "n": 1000,
+      "top1": 0.994,
+      "auto_share": 0.991,
+      "auto_precision": 1.0
+    }
+  },
+  "out_of_fold": {
+    "t_auto": 0.812728143327478,
+    "auto_share": 0.7802857142857142,
+    "auto_precision": 0.9805931893079458
+  }
+}

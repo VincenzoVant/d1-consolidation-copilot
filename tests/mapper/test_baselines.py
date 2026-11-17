@@ -8,7 +8,7 @@ from d1.datagen.rule_charts import generate_rule_company
 from d1.mapper.methods import METHOD_REGISTRY
 from d1.mapper.methods.base import AccountIn, accounts_from_rows
 from d1.mapper.methods.baselines import EmbeddingsMethod, FuzzyMethod
-from d1.mapper.retrieve import Candidate
+from d1.mapper.retrieve import Candidate, Retriever
 
 
 def _cands(*pairs):
@@ -88,11 +88,12 @@ def test_fuzzy_ignores_the_embedding_shortlist(chart):
 # --- shared behaviour ------------------------------------------------------------------------
 
 
-def test_registry_builds_both_baselines():
+def test_registry_builds_both_baselines(fake_embedder, chart):
     config = load_config()
-    assert isinstance(METHOD_REGISTRY["embeddings"](config), EmbeddingsMethod)
-    assert isinstance(METHOD_REGISTRY["fuzzy"](config), FuzzyMethod)
-    assert not METHOD_REGISTRY["fuzzy"](config).needs_training
+    retriever = Retriever(fake_embedder, chart)  # every factory gets the retriever; the baselines don't need it
+    assert isinstance(METHOD_REGISTRY["embeddings"](config, retriever), EmbeddingsMethod)
+    assert isinstance(METHOD_REGISTRY["fuzzy"](config, retriever), FuzzyMethod)
+    assert not METHOD_REGISTRY["fuzzy"](config, retriever).needs_training
 
 
 def test_baselines_save_and_load(chart, tmp_path):

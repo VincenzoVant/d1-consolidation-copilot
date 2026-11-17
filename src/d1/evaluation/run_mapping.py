@@ -37,7 +37,7 @@ from d1.mapper.pipeline import Mapper, MapperError
 RESULTS_DIR = Path("reports") / "results"
 TEST_LOG = Path("reports") / "test_runs.jsonl"
 LABEL_FILES = {"dev": "dev.jsonl", "test": "test_checked.jsonl"}
-BREAKDOWNS = ["source", "language", "noise", "industry", "overlaps_dev"]
+BREAKDOWNS = ["source", "code_scheme", "language", "noise", "industry", "overlaps_dev"]
 DECISION_COLUMNS = [
     "account_id", "company_id", "source", "language", "noise", "overlaps_dev", "name", "target_code",
     "chosen_code", "right", "confidence", "decision_path", "status", "top3",

@@ -8,17 +8,37 @@
   "auto_share": 0.316,
   "auto_precision": 0.9855334538878843,
   "by_source": {
-    "rules": {
-      "n": 2000,
-      "top1": 0.89,
-      "auto_share": 0.5335,
-      "auto_precision": 1.0
-    },
     "llm": {
       "n": 1500,
       "top1": 0.16466666666666666,
       "auto_share": 0.026,
       "auto_precision": 0.5897435897435898
+    },
+    "rules": {
+      "n": 2000,
+      "top1": 0.89,
+      "auto_share": 0.5335,
+      "auto_precision": 1.0
+    }
+  },
+  "by_code_scheme": {
+    "legacy": {
+      "n": 1700,
+      "top1": 0.5882352941176471,
+      "auto_share": 0.32,
+      "auto_precision": 0.9834558823529411
+    },
+    "llm": {
+      "n": 800,
+      "top1": 0.165,
+      "auto_share": 0.03,
+      "auto_precision": 0.7083333333333334
+    },
+    "pcmn": {
+      "n": 1000,
+      "top1": 0.895,
+      "auto_share": 0.538,
+      "auto_precision": 1.0
     }
   },
   "out_of_fold": {

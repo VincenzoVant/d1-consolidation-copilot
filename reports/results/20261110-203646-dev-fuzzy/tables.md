@@ -18,6 +18,14 @@
 | rules | 2000 | 53.3% | 100.0% | 89.0% |
 | llm | 1500 | 2.6% | 59.0% | 16.5% |
 
+## By code_scheme
+
+| code_scheme | accounts | auto-mapped | precision of auto-mapped | top-1 |
+|---|---|---|---|---|
+| legacy | 1700 | 32.0% | 98.3% | 58.8% |
+| pcmn | 1000 | 53.8% | 100.0% | 89.5% |
+| llm | 800 | 3.0% | 70.8% | 16.5% |
+
 ## By language
 
 | language | accounts | auto-mapped | precision of auto-mapped | top-1 |

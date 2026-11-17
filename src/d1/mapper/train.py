@@ -19,6 +19,7 @@ import argparse
 import json
 import sys
 from collections.abc import Callable
+from dataclasses import dataclass
 from pathlib import Path
 
 import numpy as np
@@ -27,8 +28,8 @@ from d1.config import REPO_ROOT, Config, ConfigError, Method, load_config
 from d1.datagen.schema import CompanyAccount, read_jsonl
 from d1.datagen.standard_chart import ChartError, load_standard_chart
 from d1.mapper.calibrate import Calibrator, choose_threshold, cross_fit_probs, feature_matrix, stricter_threshold
-from d1.mapper.embed import Embedder, SentenceTransformerEmbedder
-from d1.mapper.methods import METHOD_REGISTRY
+from d1.mapper.embed import Embedder, MemoEmbedder, SentenceTransformerEmbedder
+from d1.mapper.methods import METHOD_REGISTRY, MethodOutput
 from d1.mapper.methods.base import accounts_from_rows
 from d1.mapper.pipeline import MapperError, Thresholds, artifact_dir, build_retriever
 
@@ -46,6 +47,54 @@ def _write_json(path: Path, data: dict) -> None:
     path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
 
 
+@dataclass
+class DevCalibration:
+    """What calibrating one method's dev outputs gives: the calibrator, the threshold and every account's numbers."""
+
+    calibrator: Calibrator
+    right: np.ndarray  # the method's pick is the right group
+    picked: np.ndarray  # the method picked something (not "none" or a failure)
+    oof: np.ndarray  # out-of-fold probability: from a calibrator fitted without the account's company
+    p: np.ndarray  # the saved calibrator's probability: what the Mapper will compute
+    t_oof: float | None  # threshold chosen on the out-of-fold probabilities
+    t_auto: float | None  # the stricter of t_oof and the threshold on p: the one that is saved
+
+    @property
+    def auto(self) -> np.ndarray:
+        return (self.p >= self.t_auto) & self.picked if self.t_auto is not None else np.zeros(len(self.p), bool)
+
+    @property
+    def auto_oof(self) -> np.ndarray:
+        return (self.oof >= self.t_auto) & self.picked if self.t_auto is not None else np.zeros(len(self.p), bool)
+
+
+def calibrate_on_dev(outputs: list[MethodOutput], dev: list[CompanyAccount], target: float, min_support: int = MIN_SUPPORT) -> DevCalibration:
+    """Steps 3 of the module docstring: out-of-fold calibration by company, the saved calibrator, t_auto."""
+    right = np.array([o.chosen_code == r.target_code for o, r in zip(outputs, dev)])
+    picked = np.array([o.chosen_code is not None for o in outputs])
+    X = feature_matrix([list(o.scores.values()) for o in outputs])
+    companies = np.array([r.company_id for r in dev])
+    # Accounts without a pick are never auto-mapped: probability 0, and left out of the fit.
+    oof, p = np.zeros(len(dev)), np.zeros(len(dev))
+    folds = min(5, len(set(companies[picked])))
+    oof[picked] = cross_fit_probs(X[picked], right[picked], folds=folds, seed=0, groups=companies[picked])
+    calibrator = Calibrator().fit(X[picked], right[picked])
+    p[picked] = calibrator.predict(X[picked])  # exactly what the Mapper will compute for these accounts
+    t_oof = choose_threshold(oof, right, target, min_support=min_support)
+    t_auto = stricter_threshold(t_oof, choose_threshold(p, right, target, min_support=min_support))
+    return DevCalibration(calibrator, right, picked, oof, p, t_oof, t_auto)
+
+
+def segments(rows: list[CompanyAccount], right: np.ndarray, auto: np.ndarray, by: str) -> dict[str, dict]:
+    """n, top-1, auto share and auto precision per value of a row field (source, code_scheme)."""
+    out = {}
+    for value in sorted({getattr(r, by) for r in rows}):
+        s = np.array([getattr(r, by) == value for r in rows])
+        out[value] = {"n": int(s.sum()), "top1": float(right[s].mean()), "auto_share": float(auto[s].mean()),
+                      "auto_precision": float(right[auto & s].mean()) if (auto & s).any() else None}  # fmt: skip
+    return out
+
+
 def train_method(config: Config, name: Method, embedder_factory: Callable[[str], Embedder] = SentenceTransformerEmbedder) -> dict:
     """Fit (if needed), calibrate on dev and save one method; returns its dev summary."""
     if name not in METHOD_REGISTRY:
@@ -53,53 +102,35 @@ def train_method(config: Config, name: Method, embedder_factory: Callable[[str],
     k = config.models.mapping.candidates_k
     target = config.models.mapping.target_precision
     chart = load_standard_chart(config.data.chart_path, expected=config.data.expected_groups)
-    method = METHOD_REGISTRY[name](config)
-    # Read the data first: a missing file should fail in a second, not after loading a 2 GB model.
-    train = _rows(config, "train") if method.needs_training else []
-    dev = _rows(config, "dev")
-    embedder = embedder_factory(config.models.embedding_model)
+    dev = _rows(config, "dev")  # read first: a missing file should fail in a second, not after loading a 2 GB model
+    # The memo: a reranker encodes the train names for the shortlists, the PCA and the features; the model sees each once.
+    embedder = MemoEmbedder(embedder_factory(config.models.embedding_model))
     retriever = build_retriever(config, embedder, chart)
+    method = METHOD_REGISTRY[name](config, retriever)
 
     if method.needs_training:
+        train = _rows(config, "train")
         method.fit(train, retriever.top_k([r.name for r in train], k))
 
     outputs = method.score(accounts_from_rows(dev), retriever.top_k([r.name for r in dev], k))
-    right = np.array([o.chosen_code == r.target_code for o, r in zip(outputs, dev)])
-    picked = np.array([o.chosen_code is not None for o in outputs])
-    X = feature_matrix([list(o.scores.values()) for o in outputs])
-    companies = np.array([r.company_id for r in dev])
-
-    # Accounts without a pick are never auto-mapped: probability 0, and left out of the fit.
-    oof, p = np.zeros(len(dev)), np.zeros(len(dev))
-    folds = min(5, len(set(companies[picked])))
-    oof[picked] = cross_fit_probs(X[picked], right[picked], folds=folds, seed=0, groups=companies[picked])
-    calibrator = Calibrator().fit(X[picked], right[picked])
-    p[picked] = calibrator.predict(X[picked])  # exactly what the Mapper will compute for these accounts
-    t_oof = choose_threshold(oof, right, target, min_support=MIN_SUPPORT)
-    t_auto = stricter_threshold(t_oof, choose_threshold(p, right, target, min_support=MIN_SUPPORT))
+    cal = calibrate_on_dev(outputs, dev, target)
 
     folder = artifact_dir(config, name)
     folder.mkdir(parents=True, exist_ok=True)
     method.save(folder)
-    _write_json(folder / "calibrator.json", calibrator.to_json())
-    thresholds = Thresholds(method=name, t_auto=t_auto, target_precision=target, fitted_on="dev", embedding_model=embedder.model_id,
+    _write_json(folder / "calibrator.json", cal.calibrator.to_json())
+    thresholds = Thresholds(method=name, t_auto=cal.t_auto, target_precision=target, fitted_on="dev", embedding_model=embedder.model_id,
                             group_text=retriever.group_text)
     _write_json(folder / "thresholds.json", thresholds.model_dump())
 
     # The dev numbers use the saved calibrator, so an evaluation run on dev reproduces them exactly.
-    auto = (p >= t_auto) & picked if t_auto is not None else np.zeros(len(dev), bool)
-    auto_oof = (oof >= t_auto) & picked if t_auto is not None else np.zeros(len(dev), bool)
-    by_source = {}
-    for source in ("rules", "llm"):
-        s = np.array([r.source == source for r in dev])
-        if s.any():
-            by_source[source] = {"n": int(s.sum()), "top1": float(right[s].mean()), "auto_share": float(auto[s].mean()),
-                                 "auto_precision": float(right[auto & s].mean()) if (auto & s).any() else None}  # fmt: skip
+    right, auto, auto_oof = cal.right, cal.auto, cal.auto_oof
     summary = {
         "method": name, "version": method.version(), "n_dev": len(dev), "top1": float(right.mean()),
-        "no_pick": int((~picked).sum()), "t_auto": t_auto, "auto_share": float(auto.mean()),
-        "auto_precision": float(right[auto].mean()) if auto.any() else None, "by_source": by_source,
-        "out_of_fold": {"t_auto": t_oof, "auto_share": float(auto_oof.mean()),
+        "no_pick": int((~cal.picked).sum()), "t_auto": cal.t_auto, "auto_share": float(auto.mean()),
+        "auto_precision": float(right[auto].mean()) if auto.any() else None,
+        "by_source": segments(dev, right, auto, "source"), "by_code_scheme": segments(dev, right, auto, "code_scheme"),
+        "out_of_fold": {"t_auto": cal.t_oof, "auto_share": float(auto_oof.mean()),
                         "auto_precision": float(right[auto_oof].mean()) if auto_oof.any() else None},
     }  # fmt: skip
     _write_json(folder / "dev_summary.json", summary)

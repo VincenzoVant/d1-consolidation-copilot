@@ -54,3 +54,27 @@ class SentenceTransformerEmbedder:
             texts = [f"{kind}: {t}" for t in texts]
         # Normalized here rather than by the library, so every model is treated the same.
         return normalize_rows(self._model.encode(texts, convert_to_numpy=True, show_progress_bar=False))
+
+
+class MemoEmbedder:
+    """Wraps an embedder and remembers every vector it made, so each text is encoded once per run.
+
+    Training a reranker encodes the same 12,000 train names three times (the
+    shortlists, the PCA, the features), and the learning curve refits it eight
+    times. With the memo, bge-m3 sees each name once. Same model_id: the vectors
+    are the inner model's, so caches and saved methods stay valid.
+    """
+
+    def __init__(self, embedder: Embedder):
+        self.inner = embedder
+        self.model_id = embedder.model_id
+        self._memo: dict[tuple[str, str], np.ndarray] = {}
+
+    def encode(self, texts: list[str], kind: Kind) -> np.ndarray:
+        new = list(dict.fromkeys(t for t in texts if (kind, t) not in self._memo))
+        if new:
+            for text, vector in zip(new, self.inner.encode(new, kind)):
+                self._memo[(kind, text)] = vector
+        if not texts:
+            return np.zeros((0, 0), dtype=np.float32)
+        return np.stack([self._memo[(kind, t)] for t in texts])

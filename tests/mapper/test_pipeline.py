@@ -218,7 +218,8 @@ def test_cli_trains_one_method(mapper_root, FakeEmbedder, capsys):
 def test_cli_all_trains_the_built_methods_and_skips_the_rest(mapper_root, FakeEmbedder, capsys):
     assert main(["--method", "all"], root=mapper_root, embedder_factory=_fake_factory(FakeEmbedder)) == 0
     out = capsys.readouterr().out
-    assert "fuzzy:" in out and "embeddings:" in out and "xgboost: not built yet" in out
+    assert all(f"{m}: top-1" in out for m in ("fuzzy", "embeddings", "xgboost", "random_forest"))
+    assert "laya: not built yet" in out and "llm: not built yet" in out
 
 
 def test_cli_method_not_built_yet(mapper_root, capsys):
@@ -252,3 +253,20 @@ def test_threshold_holds_out_of_fold_and_with_the_saved_calibrator(mapper_root, 
     if summary["t_auto"] is not None:
         assert summary["auto_precision"] >= 0.98 and summary["out_of_fold"]["auto_precision"] >= 0.98
     assert set(summary["out_of_fold"]) == {"t_auto", "auto_share", "auto_precision"}
+
+
+def test_train_a_reranker_and_map_with_it(mapper_root, FakeEmbedder):
+    config = load_config(mapper_root)
+    summary = train_method(config, "xgboost", _fake_factory(FakeEmbedder))
+    folder = mapper_root / "artifacts" / "methods" / "xgboost"
+    assert {"model.json", "featurizer.json", "featurizer.npz", "calibrator.json", "thresholds.json"} <= {p.name for p in folder.iterdir()}
+    assert summary["method"] == "xgboost" and 0 <= summary["top1"] <= 0.76  # the mislabelled quarter can't be right
+    assert set(summary["by_code_scheme"]) == {"legacy"}  # the fixture's accounts all use legacy codes
+    mapper = Mapper.from_artifacts(config, "xgboost", embedder_factory=_fake_factory(FakeEmbedder))
+    (d,) = mapper.map([AccountIn(account_id="a", name="Leveranciers", code="4400")])
+    assert d.method == "xgboost" and d.chosen_code is not None and "xgboost" in d.model_versions["method"]
+
+
+def test_dev_summary_breaks_down_by_code_scheme(mapper_root, FakeEmbedder):
+    summary = train_method(load_config(mapper_root), "fuzzy", _fake_factory(FakeEmbedder))
+    assert summary["by_code_scheme"]["legacy"]["n"] == 200

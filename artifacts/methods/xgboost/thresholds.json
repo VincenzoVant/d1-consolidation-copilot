@@ -1,0 +1,9 @@
+{
+  "method": "xgboost",
+  "t_auto": 0.8433460543648038,
+  "t_llm": null,
+  "target_precision": 0.98,
+  "fitted_on": "dev",
+  "embedding_model": "BAAI/bge-m3",
+  "group_text": "average"
+}

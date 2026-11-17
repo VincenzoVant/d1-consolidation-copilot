@@ -161,8 +161,8 @@ class Mapper:
                 f"{name} was calibrated with group_text {thresholds.group_text}, but the config says "
                 f"{config.models.mapping.group_text}: run `python -m d1.mapper.train --method {name}` again"
             )
-        mapping_method = METHOD_REGISTRY[name](config)
-        mapping_method.load(folder)
         chart = load_standard_chart(config.data.chart_path, expected=config.data.expected_groups)
         retriever = build_retriever(config, embedder, chart)
+        mapping_method = METHOD_REGISTRY[name](config, retriever)
+        mapping_method.load(folder)
         return cls(retriever, mapping_method, calibrator, thresholds, config.models.mapping.candidates_k)

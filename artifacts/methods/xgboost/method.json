@@ -1,0 +1,163 @@
+{
+  "method": "xgboost",
+  "version": "xgboost-pair-features-v1-pca16-v1",
+  "params": {
+    "seed": 0,
+    "model": {
+      "objective": "binary:logistic",
+      "colsample_bytree": 0.8,
+      "early_stopping_rounds": 50,
+      "enable_categorical": true,
+      "eval_metric": "logloss",
+      "learning_rate": 0.05,
+      "max_depth": 6,
+      "n_estimators": 2000,
+      "random_state": 0,
+      "subsample": 0.8
+    },
+    "holdout_companies": [
+      "train-c024",
+      "train-c035",
+      "train-c037",
+      "train-c055",
+      "train-c064",
+      "train-c072",
+      "train-c077",
+      "train-c079",
+      "train-c091",
+      "train-c103",
+      "train-c122",
+      "train-c124",
+      "train-c129",
+      "train-c130",
+      "train-c136",
+      "train-c149",
+      "train-c154",
+      "train-c158",
+      "train-c180",
+      "train-c193",
+      "train-c202",
+      "train-c216",
+      "train-c224",
+      "train-c226"
+    ],
+    "fit_info": {
+      "train_accounts": 10799,
+      "train_pairs": 107990,
+      "holdout_companies": 24,
+      "holdout_accounts": 1200,
+      "holdout_top1": 0.9633333333333334,
+      "trees": 775
+    },
+    "importance": [
+      [
+        "code_prefix_match",
+        0.2838888888888889
+      ],
+      [
+        "gap_to_top",
+        0.09972222222222227
+      ],
+      [
+        "n_digits",
+        0.02722222222222226
+      ],
+      [
+        "fuzzy_wratio",
+        0.019444444444444486
+      ],
+      [
+        "token_jaccard",
+        0.0025000000000000577
+      ],
+      [
+        "emb_pca_6",
+        0.001388888888888921
+      ],
+      [
+        "rank",
+        0.0005555555555555683
+      ],
+      [
+        "emb_pca_1",
+        0.0005555555555555683
+      ],
+      [
+        "emb_pca_2",
+        0.0002777777777778212
+      ],
+      [
+        "emb_pca_0",
+        0.0002777777777777842
+      ],
+      [
+        "emb_pca_11",
+        0.0002777777777777842
+      ],
+      [
+        "emb_pca_14",
+        0.0002777777777777842
+      ],
+      [
+        "cosine",
+        3.700743415417188e-17
+      ],
+      [
+        "emb_pca_3",
+        3.700743415417188e-17
+      ],
+      [
+        "emb_pca_7",
+        3.700743415417188e-17
+      ],
+      [
+        "class_digit_match",
+        0.0
+      ],
+      [
+        "is_bilingual",
+        0.0
+      ],
+      [
+        "emb_pca_5",
+        0.0
+      ],
+      [
+        "emb_pca_8",
+        0.0
+      ],
+      [
+        "emb_pca_15",
+        0.0
+      ],
+      [
+        "emb_pca_12",
+        -0.0002777777777777102
+      ],
+      [
+        "name_len",
+        -0.0002777777777777472
+      ],
+      [
+        "parent_cosine",
+        -0.0005555555555554944
+      ],
+      [
+        "emb_pca_9",
+        -0.0005555555555554944
+      ],
+      [
+        "emb_pca_13",
+        -0.0005555555555554944
+      ],
+      [
+        "emb_pca_4",
+        -0.0008333333333332785
+      ],
+      [
+        "emb_pca_10",
+        -0.00138888888888881
+      ]
+    ]
+  }
+}

@@ -38,6 +38,7 @@ class MappingConfig(_Strict):
     laya_model: str
     selected_method: Method | None = None
     group_text: Literal["names", "descriptions", "average"] = "names"  # what each standard group is embedded as (Task 2.6)
+    n_pca: int = Field(default=16, ge=0, le=256)  # meaning features for the rerankers (Task 3.1); 0 = none
 
     @model_validator(mode="after")
     def _check(self) -> "MappingConfig":

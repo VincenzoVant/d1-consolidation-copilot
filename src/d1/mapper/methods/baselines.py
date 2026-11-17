@@ -18,7 +18,7 @@ from d1.datagen.standard_chart import load_standard_chart
 from d1.mapper.methods.base import (
     AccountIn, MethodOutput, check_lengths, read_method_info, register, save_method_info,
 )  # fmt: skip
-from d1.mapper.retrieve import Candidate
+from d1.mapper.retrieve import Candidate, Retriever
 
 LANGUAGES = ("en", "nl", "fr")
 
@@ -93,11 +93,11 @@ class FuzzyMethod:
 
 
 @register("embeddings")
-def _embeddings(config: Config) -> EmbeddingsMethod:
+def _embeddings(config: Config, retriever: Retriever) -> EmbeddingsMethod:
     return EmbeddingsMethod()
 
 
 @register("fuzzy")
-def _fuzzy(config: Config) -> FuzzyMethod:
+def _fuzzy(config: Config, retriever: Retriever) -> FuzzyMethod:
     chart = load_standard_chart(config.data.chart_path, expected=config.data.expected_groups)
     return FuzzyMethod(chart, k=config.models.mapping.candidates_k)

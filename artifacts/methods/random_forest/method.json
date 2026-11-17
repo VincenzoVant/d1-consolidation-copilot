@@ -1,0 +1,168 @@
+{
+  "method": "random_forest",
+  "version": "random_forest-pair-features-v1-pca16-v1",
+  "params": {
+    "seed": 0,
+    "model": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": "balanced_subsample",
+      "criterion": "gini",
+      "max_features": "sqrt",
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 2,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "n_estimators": 500,
+      "n_jobs": 1,
+      "oob_score": false,
+      "random_state": 0,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "holdout_companies": [
+      "train-c024",
+      "train-c035",
+      "train-c037",
+      "train-c055",
+      "train-c064",
+      "train-c072",
+      "train-c077",
+      "train-c079",
+      "train-c091",
+      "train-c103",
+      "train-c122",
+      "train-c124",
+      "train-c129",
+      "train-c130",
+      "train-c136",
+      "train-c149",
+      "train-c154",
+      "train-c158",
+      "train-c180",
+      "train-c193",
+      "train-c202",
+      "train-c216",
+      "train-c224",
+      "train-c226"
+    ],
+    "fit_info": {
+      "train_accounts": 10799,
+      "train_pairs": 107990,
+      "holdout_companies": 24,
+      "holdout_accounts": 1200,
+      "holdout_top1": 0.96,
+      "trees": 500
+    },
+    "importance": [
+      [
+        "code_prefix_match",
+        0.1941666666666666
+      ],
+      [
+        "fuzzy_wratio",
+        0.023055555555555534
+      ],
+      [
+        "n_digits",
+        0.008055555555555519
+      ],
+      [
+        "gap_to_top",
+        0.005833333333333283
+      ],
+      [
+        "token_jaccard",
+        0.0016666666666666312
+      ],
+      [
+        "emb_pca_3",
+        0.0005555555555555683
+      ],
+      [
+        "class_digit_match",
+        0.0
+      ],
+      [
+        "name_len",
+        0.0
+      ],
+      [
+        "is_bilingual",
+        0.0
+      ],
+      [
+        "emb_pca_1",
+        0.0
+      ],
+      [
+        "emb_pca_2",
+        0.0
+      ],
+      [
+        "emb_pca_4",
+        0.0
+      ],
+      [
+        "emb_pca_6",
+        0.0
+      ],
+      [
+        "emb_pca_7",
+        0.0
+      ],
+      [
+        "emb_pca_8",
+        0.0
+      ],
+      [
+        "emb_pca_9",
+        0.0
+      ],
+      [
+        "emb_pca_10",
+        0.0
+      ],
+      [
+        "emb_pca_11",
+        0.0
+      ],
+      [
+        "emb_pca_14",
+        0.0
+      ],
+      [
+        "emb_pca_0",
+        -0.0002777777777777842
+      ],
+      [
+        "emb_pca_5",
+        -0.0005555555555555683
+      ],
+      [
+        "emb_pca_13",
+        -0.0005555555555555683
+      ],
+      [
+        "emb_pca_12",
+        -0.0011111111111111367
+      ],
+      [
+        "emb_pca_15",
+        -0.0011111111111111367
+      ],
+      [
+        "cosine",
+        -0.001388888888888921
+      ],
+      [
+        "rank",
+        -0.001388888888888921
+      ],
+      [
+        "parent_cosine",
+        -0.001388888888888921
+      ]
+    ]
+  }
+}

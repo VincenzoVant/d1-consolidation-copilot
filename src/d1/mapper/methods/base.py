@@ -15,7 +15,7 @@ from pydantic import BaseModel
 
 from d1.config import Config, Method
 from d1.datagen.schema import CompanyAccount
-from d1.mapper.retrieve import Candidate
+from d1.mapper.retrieve import Candidate, Retriever
 
 
 class AccountIn(BaseModel):
@@ -54,12 +54,14 @@ class MappingMethod(Protocol):
     def load(self, folder: Path) -> None: ...
 
 
-# name -> a function that builds the method from the config. Each method's module adds itself.
-METHOD_REGISTRY: dict[Method, Callable[[Config], MappingMethod]] = {}
+# name -> a function that builds the method from the config and the shortlist's retriever
+# (the rerankers compute their features with its vectors). Each method's module adds itself.
+Factory = Callable[[Config, Retriever], MappingMethod]
+METHOD_REGISTRY: dict[Method, Factory] = {}
 
 
 def register(name: Method):
-    def add(factory: Callable[[Config], MappingMethod]) -> Callable[[Config], MappingMethod]:
+    def add(factory: Factory) -> Factory:
         METHOD_REGISTRY[name] = factory
         return factory
 

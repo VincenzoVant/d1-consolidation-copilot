@@ -47,3 +47,7 @@ mapping:
   # recall@10 87.5% -> 92.6%, embeddings baseline auto-maps 21.4% -> 32.1% at
   # 98% (notebooks/12_group_descriptions.ipynb).
   group_text: average
+  # Meaning features the XGBoost and random-forest rerankers get: a PCA of the
+  # account x group product, fitted on train (notebook 13). 16 keep 40% of its
+  # variation; 0, 16 and 64 are compared on dev in notebook 14.
+  n_pca: 16

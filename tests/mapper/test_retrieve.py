@@ -4,7 +4,7 @@ import numpy as np
 import pytest
 
 from d1.config import load_config
-from d1.mapper.embed import SentenceTransformerEmbedder
+from d1.mapper.embed import MemoEmbedder, SentenceTransformerEmbedder
 from d1.mapper.retrieve import Retriever, standard_text
 
 NAMES = ["Leveranciers", "Fournisseurs à payer", "Bank zichtrekening", "Huur kantoor Gent"]
@@ -155,6 +155,23 @@ def test_wrapper_loads_the_model_only_when_first_needed():
     embedder.encode(["a"], "query")
     embedder.encode(["b"], "query")
     assert loaded == ["BAAI/bge-m3"]
+
+
+# --- remembering vectors within one run --------------------------------------------------------
+
+
+def test_memo_embedder_encodes_each_text_once(FakeEmbedder):
+    inner = FakeEmbedder()
+    memo = MemoEmbedder(inner)
+    assert memo.model_id == inner.model_id  # same vectors, so caches and saved methods stay valid
+    first = memo.encode(["Huur", "Bank", "Huur"], "query")
+    again = memo.encode(["Bank", "Lonen"], "query")
+    assert inner.calls == [("query", 2), ("query", 1)]  # "Huur" and "Bank", then only the new "Lonen"
+    assert np.array_equal(first[1], again[0]) and np.array_equal(first[0], first[2])
+    assert np.array_equal(again, FakeEmbedder().encode(["Bank", "Lonen"], "query"))
+    memo.encode(["Bank"], "passage")  # a query and a passage are different texts to the model
+    assert inner.calls[-1] == ("passage", 1)
+    assert memo.encode([], "query").shape[0] == 0
 
 
 # --- real model (downloads it once; run with `uv run pytest -m network tests/mapper -v`) ----
