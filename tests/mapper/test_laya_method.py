@@ -137,11 +137,19 @@ def test_scores_map_back_to_codes(chart):
     assert out.latency_ms >= 0 and out.cost_usd == 0.0  # it runs locally: no money, only time
 
 
-def test_none_answer_sets_status_none(chart):
-    agent = FakeAgent(prefer={"Diverse": "none"})
+def test_none_never_vetoes_the_pick(chart):
+    """Laya leans to "none": the best group is still picked, its low score carries the doubt, the reason says so."""
+    agent = FakeAgent(prefer={"Diverse": "none"}, slot_bias=0.0)
     (out,) = _method(chart, agent).score([AccountIn(account_id="a", name="Diverse")], [SHORTLIST])
-    assert out.chosen_code is None and out.status == "none"
-    assert "none" in out.reason and "440" in out.scores  # the candidates' scores are kept for the reviewer
+    assert out.status == "ok" and out.chosen_code == "440"  # all groups tie: the first on the shortlist
+    assert "leaned to none" in out.reason
+    assert sum(out.scores.values()) < 0.5  # not rescaled over the groups: what "none" took stays missing
+
+
+def test_no_reason_when_a_group_leads(chart):
+    agent = FakeAgent(prefer={"Huur": "400"})
+    (out,) = _method(chart, agent).score([AccountIn(account_id="a", name="Huur")], [SHORTLIST])
+    assert out.chosen_code == "400" and out.reason is None
 
 
 def test_batching_preserves_order(chart):
@@ -197,7 +205,7 @@ def test_openmp_single_threaded_once_d1_is_imported():
 
 def test_version_names_model_revision_and_settings(chart):
     version = LayaMethod("convaiinnovations/laya-multilingual", chart, revision="e4e9ddf21a7b", agent_loader=None).version()
-    assert version == "laya-convaiinnovations/laya-multilingual@e4e9ddf-rot6-h640-v1"
+    assert version == "laya-convaiinnovations/laya-multilingual@e4e9ddf-rot6-h640-v1-best-group"
     once = LayaMethod("convaiinnovations/laya-multilingual", chart, revision="e4e9ddf21a7b", rotations=1, agent_loader=None)
     assert "-rot1-" in once.version()
 
@@ -248,6 +256,13 @@ def test_cache_key_follows_every_setting(chart, tmp_path):
     assert len(agent.calls) == 4
 
 
+def test_cache_key_ignores_the_decision_rule(chart):
+    """The answers depend on the question, not on how they become a pick: the cached dev answers stay valid."""
+    method = LayaMethod("convaiinnovations/laya-multilingual", chart, revision="e4e9ddf21a7b", agent_loader=None)
+    assert method.answer_version() == "laya-convaiinnovations/laya-multilingual@e4e9ddf-rot6-h640-v1"  # as before the change
+    assert method.version().startswith(method.answer_version()) and method.version() != method.answer_version()
+
+
 def test_errors_are_not_cached(chart, tmp_path):
     cache = AnswerCache(tmp_path / "laya.sqlite")
     agent = FakeAgent(fail_on="kapot")
@@ -266,6 +281,18 @@ def test_save_load_refuses_another_model_or_revision(chart, tmp_path):
         LayaMethod("convaiinnovations/laya-multilingual", chart, revision="bbb", agent_loader=None).load(tmp_path)
     with pytest.raises(ValueError, match="convaiinnovations/laya"):
         LayaMethod("convaiinnovations/laya", chart, revision="aaa", agent_loader=None).load(tmp_path)
+
+
+def test_load_refuses_a_folder_calibrated_on_another_decision_rule(chart, tmp_path):
+    """Calibrated when "none" still vetoed: the threshold was fitted on other picks."""
+    import json
+
+    LayaMethod("convaiinnovations/laya-multilingual", chart, revision="aaa", agent_loader=None).save(tmp_path)
+    info = json.loads((tmp_path / "method.json").read_text())
+    info["version"] = info["version"].removesuffix("-best-group")
+    (tmp_path / "method.json").write_text(json.dumps(info))
+    with pytest.raises(ValueError, match="retrain"):
+        LayaMethod("convaiinnovations/laya-multilingual", chart, revision="aaa", agent_loader=None).load(tmp_path)
 
 
 def test_registry_builds_laya_with_the_reviewed_revision(chart, fake_embedder):

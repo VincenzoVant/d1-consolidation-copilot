@@ -1,6 +1,6 @@
 {
-  "run_id": "20261117-070412-dev-laya",
-  "created_at": "2026-11-17T07:04:12+00:00",
+  "run_id": "20261117-202633-dev-laya",
+  "created_at": "2026-11-17T20:26:33+00:00",
   "split": "dev",
   "method": "laya",
   "labels_file": "dev.jsonl",
@@ -10,8 +10,8 @@
   },
   "model_versions": {
     "embedder": "BAAI/bge-m3",
-    "method": "laya-convaiinnovations/laya-multilingual@e4e9ddf-rot6-h640-v1",
-    "calibrator": "50178a2d1b49"
+    "method": "laya-convaiinnovations/laya-multilingual@e4e9ddf-rot6-h640-v1-best-group",
+    "calibrator": "e9fb3895bc49"
   },
   "thresholds": {
     "method": "laya",
@@ -23,26 +23,26 @@
     "group_text": "average",
     "threshold_by": "code_match",
     "t_auto_by_segment": {
-      "code_match": 0.1441747649185961,
+      "code_match": 0.10464433595017186,
       "other": null
     }
   },
   "overall": {
-    "auto_share": 0.23285714285714285,
+    "auto_share": 0.24342857142857144,
     "auto_share_ci": [
-      0.17485714285714285,
-      0.2902928571428571
+      0.1834214285714286,
+      0.3022928571428571
     ],
-    "auto_precision": 0.9840490797546012,
+    "auto_precision": 0.9847417840375586,
     "auto_precision_ci": [
-      0.9719838774287258,
-      0.992307938540333
+      0.9733727810650887,
+      0.9926200962470454
     ],
-    "review_share": 0.7671428571428571,
-    "top1": 0.376,
+    "review_share": 0.7565714285714286,
+    "top1": 0.3931428571428571,
     "top1_ci": [
-      0.3302857142857143,
-      0.42143571428571425
+      0.35,
+      0.43685714285714283
     ],
     "top3": 0.6291428571428571,
     "recall_at_k": 0.9257142857142857,
@@ -52,33 +52,33 @@
     "segment": [
       {
         "value": "code_match",
-        "n": 815,
-        "auto_share": 1.0,
-        "auto_precision": 0.9840490797546012,
-        "top1": 0.9840490797546012
+        "n": 853,
+        "auto_share": 0.9988276670574443,
+        "auto_precision": 0.9847417840375586,
+        "top1": 0.984759671746776
       },
       {
         "value": "other",
-        "n": 2685,
+        "n": 2647,
         "auto_share": 0.0,
         "auto_precision": null,
-        "top1": 0.1914338919925512
+        "top1": 0.20249338874197204
       }
     ],
     "source": [
       {
         "value": "rules",
         "n": 2000,
-        "auto_share": 0.2725,
-        "auto_precision": 0.9834862385321101,
-        "top1": 0.4495
+        "auto_share": 0.2755,
+        "auto_precision": 0.9836660617059891,
+        "top1": 0.4555
       },
       {
         "value": "llm",
         "n": 1500,
-        "auto_share": 0.18,
-        "auto_precision": 0.9851851851851852,
-        "top1": 0.278
+        "auto_share": 0.20066666666666666,
+        "auto_precision": 0.9867109634551495,
+        "top1": 0.31
       }
     ],
     "code_scheme": [
@@ -87,51 +87,51 @@
         "n": 1700,
         "auto_share": 0.00411764705882353,
         "auto_precision": 0.0,
-        "top1": 0.2847058823529412
+        "top1": 0.29764705882352943
       },
       {
         "value": "pcmn",
         "n": 1000,
-        "auto_share": 0.539,
-        "auto_precision": 0.9944341372912802,
-        "top1": 0.559
+        "auto_share": 0.545,
+        "auto_precision": 0.9944954128440368,
+        "top1": 0.565
       },
       {
         "value": "llm",
         "n": 800,
-        "auto_share": 0.33625,
-        "auto_precision": 0.9888475836431226,
-        "top1": 0.34125
+        "auto_share": 0.375,
+        "auto_precision": 0.99,
+        "top1": 0.38125
       }
     ],
     "language": [
       {
         "value": "en",
         "n": 900,
-        "auto_share": 0.3111111111111111,
-        "auto_precision": 0.9964285714285714,
-        "top1": 0.5711111111111111
+        "auto_share": 0.3188888888888889,
+        "auto_precision": 0.9965156794425087,
+        "top1": 0.5855555555555556
       },
       {
         "value": "fr",
         "n": 900,
-        "auto_share": 0.21222222222222223,
-        "auto_precision": 0.9738219895287958,
-        "top1": 0.32666666666666666
+        "auto_share": 0.2222222222222222,
+        "auto_precision": 0.975,
+        "top1": 0.3422222222222222
       },
       {
         "value": "mixed",
         "n": 850,
-        "auto_share": 0.22823529411764706,
-        "auto_precision": 0.9845360824742269,
-        "top1": 0.35294117647058826
+        "auto_share": 0.23529411764705882,
+        "auto_precision": 0.985,
+        "top1": 0.36470588235294116
       },
       {
         "value": "nl",
         "n": 850,
-        "auto_share": 0.17647058823529413,
-        "auto_precision": 0.9733333333333334,
-        "top1": 0.2447058823529412
+        "auto_share": 0.19411764705882353,
+        "auto_precision": 0.9757575757575757,
+        "top1": 0.27176470588235296
       }
     ],
     "noise": [
@@ -140,28 +140,28 @@
         "n": 1700,
         "auto_share": 0.00411764705882353,
         "auto_precision": 0.0,
-        "top1": 0.2847058823529412
+        "top1": 0.29764705882352943
       },
       {
         "value": "llm",
         "n": 1500,
-        "auto_share": 0.18,
-        "auto_precision": 0.9851851851851852,
-        "top1": 0.278
+        "auto_share": 0.20066666666666666,
+        "auto_precision": 0.9867109634551495,
+        "top1": 0.31
       },
       {
         "value": "case",
         "n": 534,
-        "auto_share": 0.2752808988764045,
-        "auto_precision": 0.9931972789115646,
-        "top1": 0.4606741573033708
+        "auto_share": 0.27715355805243447,
+        "auto_precision": 0.9932432432432432,
+        "top1": 0.4681647940074906
       },
       {
         "value": "sub_account",
         "n": 400,
-        "auto_share": 0.2775,
-        "auto_precision": 0.972972972972973,
-        "top1": 0.47
+        "auto_share": 0.28,
+        "auto_precision": 0.9732142857142857,
+        "top1": 0.4775
       },
       {
         "value": "no noise",
@@ -173,23 +173,23 @@
       {
         "value": "abbreviation",
         "n": 293,
-        "auto_share": 0.2525597269624573,
-        "auto_precision": 0.9864864864864865,
-        "top1": 0.45051194539249145
+        "auto_share": 0.25597269624573377,
+        "auto_precision": 0.9866666666666667,
+        "top1": 0.45733788395904434
       },
       {
         "value": "typo",
         "n": 286,
-        "auto_share": 0.22727272727272727,
-        "auto_precision": 0.9692307692307692,
-        "top1": 0.3986013986013986
+        "auto_share": 0.24125874125874125,
+        "auto_precision": 0.9710144927536232,
+        "top1": 0.4230769230769231
       },
       {
         "value": "truncated",
         "n": 161,
-        "auto_share": 0.20496894409937888,
-        "auto_precision": 0.9696969696969697,
-        "top1": 0.2919254658385093
+        "auto_share": 0.2111801242236025,
+        "auto_precision": 0.9705882352941176,
+        "top1": 0.30434782608695654
       },
       {
         "value": "bilingual",
@@ -201,9 +201,9 @@
       {
         "value": "accents_stripped",
         "n": 112,
-        "auto_share": 0.25,
-        "auto_precision": 0.9642857142857143,
-        "top1": 0.33035714285714285
+        "auto_share": 0.25892857142857145,
+        "auto_precision": 0.9655172413793104,
+        "top1": 0.3392857142857143
       },
       {
         "value": "misfiled_code",
@@ -217,39 +217,39 @@
       {
         "value": "construction",
         "n": 900,
-        "auto_share": 0.21333333333333335,
-        "auto_precision": 0.984375,
-        "top1": 0.38333333333333336
+        "auto_share": 0.2222222222222222,
+        "auto_precision": 0.985,
+        "top1": 0.3988888888888889
       },
       {
         "value": "software",
         "n": 900,
-        "auto_share": 0.23666666666666666,
-        "auto_precision": 0.9859154929577465,
-        "top1": 0.36444444444444446
+        "auto_share": 0.24666666666666667,
+        "auto_precision": 0.9864864864864865,
+        "top1": 0.3811111111111111
       },
       {
         "value": "retail",
         "n": 850,
-        "auto_share": 0.2564705882352941,
-        "auto_precision": 0.9862385321100917,
-        "top1": 0.37411764705882355
+        "auto_share": 0.27176470588235296,
+        "auto_precision": 0.987012987012987,
+        "top1": 0.3941176470588235
       },
       {
         "value": "services",
         "n": 850,
-        "auto_share": 0.22588235294117648,
-        "auto_precision": 0.9791666666666666,
-        "top1": 0.38235294117647056
+        "auto_share": 0.23411764705882354,
+        "auto_precision": 0.9798994974874372,
+        "top1": 0.3988235294117647
       }
     ],
     "overlaps_dev": [
       {
         "value": "new name",
         "n": 3500,
-        "auto_share": 0.23285714285714285,
-        "auto_precision": 0.9840490797546012,
-        "top1": 0.376
+        "auto_share": 0.24342857142857144,
+        "auto_precision": 0.9847417840375586,
+        "top1": 0.3931428571428571
       }
     ]
   },

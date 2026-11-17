@@ -1,27 +1,27 @@
 {
   "method": "laya",
-  "version": "laya-convaiinnovations/laya-multilingual@e4e9ddf-rot6-h640-v1",
+  "version": "laya-convaiinnovations/laya-multilingual@e4e9ddf-rot6-h640-v1-best-group",
   "n_dev": 3500,
-  "top1": 0.376,
-  "no_pick": 340,
+  "top1": 0.3931428571428571,
+  "no_pick": 0,
   "t_auto": null,
-  "auto_share": 0.23285714285714285,
-  "auto_precision": 0.9840490797546012,
+  "auto_share": 0.24342857142857144,
+  "auto_precision": 0.9847417840375586,
   "threshold_by": "code_match",
   "t_auto_by_segment": {
-    "code_match": 0.1441747649185961,
+    "code_match": 0.10464433595017186,
     "other": null
   },
   "by_segment": {
     "code_match": {
-      "n": 815,
-      "top1": 0.9840490797546012,
-      "auto_share": 1.0,
-      "auto_precision": 0.9840490797546012
+      "n": 853,
+      "top1": 0.984759671746776,
+      "auto_share": 0.9988276670574443,
+      "auto_precision": 0.9847417840375586
     },
     "other": {
-      "n": 2685,
-      "top1": 0.1914338919925512,
+      "n": 2647,
+      "top1": 0.20249338874197204,
       "auto_share": 0.0,
       "auto_precision": null
     }
@@ -29,40 +29,40 @@
   "by_source": {
     "llm": {
       "n": 1500,
-      "top1": 0.278,
-      "auto_share": 0.18,
-      "auto_precision": 0.9851851851851852
+      "top1": 0.31,
+      "auto_share": 0.20066666666666666,
+      "auto_precision": 0.9867109634551495
     },
     "rules": {
       "n": 2000,
-      "top1": 0.4495,
-      "auto_share": 0.2725,
-      "auto_precision": 0.9834862385321101
+      "top1": 0.4555,
+      "auto_share": 0.2755,
+      "auto_precision": 0.9836660617059891
     }
   },
   "by_code_scheme": {
     "legacy": {
       "n": 1700,
-      "top1": 0.2847058823529412,
+      "top1": 0.29764705882352943,
       "auto_share": 0.00411764705882353,
       "auto_precision": 0.0
     },
     "llm": {
       "n": 800,
-      "top1": 0.34125,
-      "auto_share": 0.33625,
-      "auto_precision": 0.9888475836431226
+      "top1": 0.38125,
+      "auto_share": 0.375,
+      "auto_precision": 0.99
     },
     "pcmn": {
       "n": 1000,
-      "top1": 0.559,
-      "auto_share": 0.539,
-      "auto_precision": 0.9944341372912802
+      "top1": 0.565,
+      "auto_share": 0.545,
+      "auto_precision": 0.9944954128440368
     }
   },
   "out_of_fold": {
     "t_auto": null,
-    "auto_share": 0.23257142857142857,
-    "auto_precision": 0.984029484029484
+    "auto_share": 0.24371428571428572,
+    "auto_precision": 0.984759671746776
   }
 }

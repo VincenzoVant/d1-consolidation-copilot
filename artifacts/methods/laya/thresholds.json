@@ -8,7 +8,7 @@
   "group_text": "average",
   "threshold_by": "code_match",
   "t_auto_by_segment": {
-    "code_match": 0.1441747649185961,
+    "code_match": 0.10464433595017186,
     "other": null
   }
 }

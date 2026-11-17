@@ -5,6 +5,14 @@ one forward pass, without generating text. For each account it gets one `choice`
 question: which of the 10 shortlisted groups (each shown with its English, Dutch
 and French name), or "none of these". It is not trained on our data at all.
 
+The pick is always the best of the 10 groups, even when "none" scored higher. On
+dev, 275 of Laya's 340 "none" answers had the right group on the shortlist: "none"
+is mostly hesitation, not a real "it isn't there". So "none" doesn't veto; it stays
+as a signal instead. The group scores are Laya's own probabilities, not rescaled
+over the 10 groups, so whatever "none" took lowers the top score, and the
+calibration sends those accounts to review unless something else (the code)
+vouches for them.
+
 Two things its authors document, and this method handles:
 
   position bias   where an option sits changes the answer. So the question is asked
@@ -46,6 +54,10 @@ NONE_TEXT = "none of these groups"
 # (median 32 tokens for all three). 640 gives 56 per option: all three names for 90% of groups.
 HEAD_MAX_LEN = 640
 ROTATIONS = 6
+# Bump QUESTION_VERSION when the question or the way it is asked changes: that is what the cached
+# answers depend on. DECISION names how the answer becomes a pick; changing it keeps the cache.
+QUESTION_VERSION = "v1"
+DECISION = "best-group"
 SAVE_EVERY = 200  # answers written to the cache per batch
 
 
@@ -130,7 +142,7 @@ class LayaMethod:
 
     def score(self, accounts: list[AccountIn], candidates: list[list[Candidate]]) -> list[MethodOutput]:
         check_lengths(accounts, candidates)
-        version = self.version()
+        version = self.answer_version()
         jobs = []  # (account, shortlist, state, questions, key) for every account with candidates
         for account, shortlist in zip(accounts, candidates):
             if shortlist:
@@ -172,24 +184,26 @@ class LayaMethod:
             if key in failed:
                 out.append(MethodOutput(account_id=account.account_id, scores={}, chosen_code=None, status="error", reason=failed[key]))
                 continue
-            probs = cached.get(key) or fresh[key]
+            probs = cached[key] if key in cached else fresh[key]
             hit = key in cached
             ms = 0.0 if hit else latency[key]
             scores = dict(sorted(((c.code, probs[c.code]) for c in shortlist), key=lambda kv: -kv[1]))
-            labels = [c.code for c in shortlist] + [NONE]
-            best = max(labels, key=lambda label: probs[label])  # ties: the earlier label, as max() keeps the first
-            if best == NONE:
-                out.append(MethodOutput(account_id=account.account_id, scores=scores, chosen_code=None, status="none",
-                                        reason=f"laya: none of these groups (p = {probs[NONE]:.2f})", latency_ms=ms, cached=hit))  # fmt: skip
-            else:
-                out.append(MethodOutput(account_id=account.account_id, scores=scores, chosen_code=best, latency_ms=ms, cached=hit))
+            best = max((c.code for c in shortlist), key=lambda code: probs[code])  # ties: the earlier one, as max() keeps the first
+            # "none" never vetoes the pick (module docstring); when it led, the reviewer is told.
+            reason = f"laya: leaned to none of these groups (p = {probs[NONE]:.2f} vs {probs[best]:.2f})" if probs[NONE] > probs[best] else None
+            out.append(MethodOutput(account_id=account.account_id, scores=scores, chosen_code=best, reason=reason, latency_ms=ms, cached=hit))
         return out
 
     # --- identity and saving ------------------------------------------------------------------------------
 
-    def version(self) -> str:
+    def answer_version(self) -> str:
+        """What the cached answers depend on: model, revision, settings and the question."""
         revision = (self.revision or "unpinned")[:7]
-        return f"laya-{self.model_id}@{revision}-rot{self.rotations}-h{self.head_max_len}-v1"
+        return f"laya-{self.model_id}@{revision}-rot{self.rotations}-h{self.head_max_len}-{QUESTION_VERSION}"
+
+    def version(self) -> str:
+        """The method: the answers plus how they become a pick (what the calibration was fitted on)."""
+        return f"{self.answer_version()}-{DECISION}"
 
     def save(self, folder: Path) -> None:
         """No weights to save (the model is downloaded, pinned by revision): only the settings."""
@@ -198,13 +212,16 @@ class LayaMethod:
 
     def load(self, folder: Path) -> None:
         """Refuses a folder calibrated on another model or revision: its threshold would not fit these scores."""
-        params = read_method_info(Path(folder), self.name)["params"]
+        info = read_method_info(Path(folder), self.name)
+        params = info["params"]
         if params["model_id"] != self.model_id:
             raise ValueError(f"{folder} was calibrated with {params['model_id']}, but the config says {self.model_id}: retrain it")
         if params["revision"] != self.revision:
             raise ValueError(f"{folder} was calibrated with revision {params['revision']}, but this is {self.revision}: retrain it")
         self.rotations = int(params["rotations"])
         self.head_max_len = int(params["head_max_len"])
+        if info["version"] != self.version():  # e.g. calibrated when "none" still vetoed the pick
+            raise ValueError(f"{folder} was calibrated as {info['version']}, but this is {self.version()}: retrain it")
 
 
 @register("laya")
