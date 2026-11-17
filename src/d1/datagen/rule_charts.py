@@ -7,7 +7,9 @@ Recipe for a company with n accounts:
      label) and run it through the noise rules;
   3. fill the remaining rows with sub-accounts of those groups
      ("Lev. - Brussel"), which reuse their group's noisy name;
-  4. number everything with the company's code scheme and sort by code.
+  4. number everything with the company's code scheme and sort by code;
+  5. with a PCMN-style scheme, misfile 4% of the codes: give them a neighbouring
+     group's number, as a bookkeeper who picked the wrong sub-account would.
 
 Every row keeps the group it came from as target_code: the answer key.
 """
@@ -29,6 +31,11 @@ BASE_SHARE = 0.8  # share of rows that are a group's main account; the rest are 
 BILINGUAL_P = 0.3  # in a mixed company, chance a group gets an "nl / fr" label
 
 CodeScheme = Literal["pcmn", "legacy"]
+
+# Share of PCMN-style codes (and LLM codes) given a sibling group's number. Without it, a code that
+# starts with a group was right 100% of the time in our data, and the rerankers learned to trust it
+# completely, which real companies would punish.
+MISFILED_SHARE = 0.04
 
 
 def _group_name(account: StandardAccount, language: Language, rng: Random) -> tuple[str, str, list[str]]:
@@ -63,6 +70,49 @@ def legacy_codes(targets: list[str], rng: Random) -> list[str]:
     return codes
 
 
+def sibling_groups(chart: list[StandardAccount]) -> dict[str, list[str]]:
+    """Per group, the other groups under the same parent (440: 441, 444); with none, the others in its class."""
+    by_parent: dict[str | None, list[str]] = {}
+    by_class: dict[str, list[str]] = {}
+    for a in chart:
+        by_parent.setdefault(a.parent_code, []).append(a.code)
+        by_class.setdefault(a.class_code, []).append(a.code)
+    out = {}
+    for a in chart:
+        same_parent = [c for c in by_parent[a.parent_code] if c != a.code] if a.parent_code is not None else []
+        out[a.code] = same_parent or [c for c in by_class[a.class_code] if c != a.code]
+    return out
+
+
+def misfile_codes(codes: list[str], targets: list[str], siblings: dict[str, list[str]], rng: Random,
+                  share: float = MISFILED_SHARE) -> tuple[list[str], list[bool]]:  # fmt: skip
+    """Move a share of the codes under a sibling group's number, keeping their own suffix.
+
+    Only codes that start with their target can be misfiled (a legacy code says nothing
+    to begin with). A code already taken in the company gets the next free suffix.
+    Returns the new codes and, per row, whether it was moved.
+    """
+    taken = set(codes)
+    out, moved = [], []
+    for code, target in zip(codes, targets):
+        # One draw per eligible row, whatever happens next, so the sequence is stable.
+        if code.startswith(target) and siblings.get(target) and rng.random() < share:
+            sibling = rng.choice(siblings[target])
+            suffix = code[len(target) :]
+            new, n = sibling + suffix, 1
+            while new in taken:
+                # A digit suffix counts up (441000 -> 441001); an LLM code like 604-02 gets a counter.
+                new = f"{sibling}{int(suffix) + n:0{len(suffix)}d}" if suffix.isdigit() else f"{sibling}{suffix}-{n}"
+                n += 1
+            taken.add(new)
+            out.append(new)
+            moved.append(True)
+        else:
+            out.append(code)
+            moved.append(False)
+    return out, moved
+
+
 def generate_rule_company(
     company_id: str,
     split: Split,
@@ -72,10 +122,13 @@ def generate_rule_company(
     n_accounts: int,
     rng: Random,
     code_scheme: CodeScheme | None = None,
+    misfile_share: float = MISFILED_SHARE,
 ) -> list[CompanyAccount]:
     """Generate one company's chart of n_accounts rows from the standard chart.
 
     code_scheme is drawn at random unless given (tests pass it to force one).
+    The misfiling draws from its own random stream (seeded by the company id), so
+    names, groups and every other draw are exactly what they were without it.
     industry is recorded on every row; it only shapes the LLM-written charts.
     """
     if n_accounts < 1:
@@ -109,12 +162,16 @@ def generate_rule_company(
         for qualifier in subs.get(account.code, []):
             rows.append((account.code, f"{name} - {qualifier}", tags + ["sub_account"]))
 
+    moved = [False] * len(rows)
     if scheme == "pcmn":
         codes, seen = [], {}
         for target, _, _ in rows:
             seen[target] = seen.get(target, -1) + 1
             codes.append(f"{target}{seen[target]:03d}")
         extra_tags: list[str] = []
+        if misfile_share > 0:
+            codes, moved = misfile_codes(codes, [target for target, _, _ in rows], sibling_groups(chart),
+                                         Random(f"misfile-{company_id}"), misfile_share)  # fmt: skip
     else:
         codes = legacy_codes([target for target, _, _ in rows], rng)
         extra_tags = ["legacy_code"]
@@ -130,8 +187,8 @@ def generate_rule_company(
             code_scheme=scheme,
             code=code,
             name=name,
-            noise=tags + extra_tags,
+            noise=tags + extra_tags + (["misfiled_code"] if was_moved else []),
             target_code=target,
         )
-        for i, (code, (target, name, tags)) in enumerate(zip(codes, rows))
+        for i, (code, was_moved, (target, name, tags)) in enumerate(zip(codes, moved, rows))
     ]

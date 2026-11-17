@@ -3,8 +3,8 @@ import pytest
 
 from d1.datagen.schema import CompanyAccount
 from d1.evaluation.metrics import (
-    auto_precision, auto_share, bootstrap_ci, breakdown, cost_report, paired_bootstrap_diff, recall_at_k, review_share,
-    topk_accuracy,
+    auto_precision, auto_share, bootstrap_ci, breakdown, cost_report, paired_bootstrap_diff, pick_accuracy, recall_at_k,
+    review_share, topk_accuracy,
 )  # fmt: skip
 from d1.mapper.pipeline import MappingDecision
 from d1.mapper.retrieve import Candidate
@@ -38,6 +38,15 @@ def test_auto_precision_simple():
     ds = [_d("a", "440"), _d("b", "400"), _d("c", "440"), _d("d", "400", "review")]
     assert auto_precision(ds, gold) == pytest.approx(2 / 3)  # review rows don't count
     assert auto_precision([_d("x", "440", "review")], {"x": "440"}) is None  # nothing auto-mapped: no precision
+
+
+def test_pick_accuracy_counts_a_none_answer_as_wrong():
+    """Laya can answer "none" while its best-scored candidate is right: that is not a right answer."""
+    gold = {"a": "440", "b": "440", "c": "400"}
+    ds = [_d("a", "440"), _d("b", None, path="review"), _d("c", "440")]
+    assert pick_accuracy(ds, gold) == pytest.approx(1 / 3)
+    assert topk_accuracy(ds, gold, 1) == pytest.approx(2 / 3)  # the candidate list still has 440 first for "b"
+    assert pick_accuracy([], gold) == 0.0
 
 
 def test_topk():

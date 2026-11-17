@@ -2,48 +2,67 @@
   "method": "random_forest",
   "version": "random_forest-pair-features-v1-pca16-v1",
   "n_dev": 3500,
-  "top1": 0.8411428571428572,
+  "top1": 0.8357142857142857,
   "no_pick": 0,
-  "t_auto": 0.8152832773825895,
-  "auto_share": 0.7808571428571428,
-  "auto_precision": 0.9802414928649835,
+  "t_auto": 0.8717178880540974,
+  "auto_share": 0.7417142857142857,
+  "auto_precision": 0.985362095531587,
+  "threshold_by": "code_match",
+  "t_auto_by_segment": {
+    "code_match": 0.21061441171832757,
+    "other": 0.9254532783701099
+  },
+  "by_segment": {
+    "code_match": {
+      "n": 1613,
+      "top1": 0.9876007439553627,
+      "auto_share": 1.0,
+      "auto_precision": 0.9876007439553627
+    },
+    "other": {
+      "n": 1887,
+      "top1": 0.7058823529411765,
+      "auto_share": 0.5209326974032856,
+      "auto_precision": 0.9816887080366226
+    }
+  },
   "by_source": {
     "llm": {
       "n": 1500,
-      "top1": 0.6846666666666666,
-      "auto_share": 0.568,
-      "auto_precision": 0.9577464788732394
+      "top1": 0.672,
+      "auto_share": 0.5093333333333333,
+      "auto_precision": 0.9594240837696335
     },
     "rules": {
       "n": 2000,
       "top1": 0.9585,
-      "auto_share": 0.9405,
-      "auto_precision": 0.9904306220095693
+      "auto_share": 0.916,
+      "auto_precision": 0.99617903930131
     }
   },
   "by_code_scheme": {
     "legacy": {
       "n": 1700,
-      "top1": 0.7541176470588236,
-      "auto_share": 0.6335294117647059,
-      "auto_precision": 0.9498607242339833
+      "top1": 0.7552941176470588,
+      "auto_share": 0.5652941176470588,
+      "auto_precision": 0.9771071800208116
     },
     "llm": {
       "n": 800,
-      "top1": 0.835,
-      "auto_share": 0.83125,
-      "auto_precision": 1.0
+      "top1": 0.81125,
+      "auto_share": 0.8175,
+      "auto_precision": 0.9785932721712538
     },
     "pcmn": {
       "n": 1000,
-      "top1": 0.994,
-      "auto_share": 0.991,
-      "auto_precision": 1.0
+      "top1": 0.992,
+      "auto_share": 0.981,
+      "auto_precision": 0.9979612640163099
     }
   },
   "out_of_fold": {
-    "t_auto": 0.812728143327478,
-    "auto_share": 0.7802857142857142,
-    "auto_precision": 0.9805931893079458
+    "t_auto": 0.8717178880540974,
+    "auto_share": 0.742,
+    "auto_precision": 0.9853677319984597
   }
 }

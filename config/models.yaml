@@ -51,3 +51,9 @@ mapping:
   # account x group product, fitted on train (notebook 13). 16 keep 40% of its
   # variation; 0, 16 and 64 are compared on dev in notebook 14.
   n_pca: 16
+  # How the 98% bar is applied. pooled: one threshold over all accounts, which the
+  # easy accounts can carry while a hard group gets in below 98% (notebook 14:
+  # LLM-written accounts with legacy codes at 81%). code_match: one threshold per
+  # segment the system can see on real data, "does the account's code start with
+  # the picked group?", so each segment holds 98% on its own.
+  threshold_by: code_match

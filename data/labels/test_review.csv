@@ -13,7 +13,7 @@ test-c002-028;test-c002;retail;en;rules;578000;Cash in Hand - Satmps;578;Cash in
 test-c002-030;test-c002;retail;en;rules;600000;Purchases of Raw Materials;600;Purchases of Raw Materials;Purchases of Raw Materials;ok;;
 test-c002-033;test-c002;retail;en;rules;602002;Purchases of Services, Works and Studies - EU;602;Purchases of Services, Works and Studies;Purchases of Services, Works and Studies;ok;;
 test-c002-036;test-c002;retail;en;rules;620000;Remun. and Direct Social Benefits;620;Remuneration and Direct Social Benefits;Remuneration and Direct Social Benefits;ok;;
-test-c003-001;test-c003;services;mixed;rules;122000;herwaarderingsmeerwaarden op financiële vaste activa;122;Revaluation Surpluses on Financial Fixed Assets;Herwaarderingsmeerwaarden op financiële vaste activa / Plus-values de réévaluation sur immobilisations financières;ok;;
+test-c003-001;test-c003;services;mixed;rules;121000;herwaarderingsmeerwaarden op financiële vaste activa;122;Revaluation Surpluses on Financial Fixed Assets;Herwaarderingsmeerwaarden op financiële vaste activa / Plus-values de réévaluation sur immobilisations financières;ok;;
 test-c003-007;test-c003;services;mixed;rules;171002;niet-achtergestelde obligatieleningen (> 1 jaar) / emprunts obligataires non subordonnes (> 1 an) - intern;171;Unsubordinated Debentures (> 1 Year);Niet-achtergestelde obligatieleningen (> 1 jaar) / Emprunts obligataires non subordonnés (> 1 an);ok;;
 test-c003-015;test-c003;services;mixed;rules;284000;Other Sharse;284;Other Shares;Andere aandelen / Autres actions et parts;ok;;"Typo in name (Sharse); mapping fine"
 test-c003-017;test-c003;services;mixed;rules;359000;ONROERENDE GOEDEREN BESTEMD VOOR VERKOOP - GEBOEKTE WAARDEVERMINDERINGEN (-);359;Immovable Property Intended for Sale - Amounts Written Down Recorded (-);Onroerende goederen bestemd voor verkoop - Geboekte waardeverminderingen (-) / Immeubles destinés à la vente - Réductions de valeur actées (-);ok;;
@@ -22,7 +22,7 @@ test-c003-029;test-c003;services;mixed;rules;488000;Borgtochten ontvangen in con
 test-c003-032;test-c003;services;mixed;rules;621000;werkgeversbijdragen voor sociale verzekeringen;621;Employers' Contribution for Social Security;Werkgeversbijdragen voor sociale verzekeringen / Cotisations patronales d'assurances sociales;ok;;
 test-c003-035;test-c003;services;mixed;rules;631000;Waardeverminderingen op voorraden;631;Amounts Written Off Stocks;Waardeverminderingen op voorraden / Réductions de valeur sur stocks;ok;;
 test-c003-037;test-c003;services;mixed;rules;635000;Prov. for Pensions and Similar Obligations;635;Provisions for Pensions and Similar Obligations;Voorzieningen voor pensioenen en soortgelijke verplichtingen / Provisions pour pensions et obligations similaires;ok;;
-test-c003-046;test-c003;services;mixed;rules;754000;Exchange Differences;754;Exchange Differences;Wisselresultaten / Différences de change;ok;;
+test-c003-046;test-c003;services;mixed;rules;756000;Exchange Differences;754;Exchange Differences;Wisselresultaten / Différences de change;ok;;
 test-c004-003;test-c004;software;fr;rules;4910;etablissements de crédit (> 1 an);173;Credit Institutions (> 1 Year);Etablissements de crédit (> 1 an);ok;;
 test-c004-025;test-c004;software;fr;rules;5130;Etablissements de crédit;550;Cash at Bank - Credit Institutions;Etablissements de crédit;ok;;"Generic name; assumed this is the bank balance (55). If it's a bank debt, use 433/430"
 test-c004-026;test-c004;software;fr;rules;5140;Achats d'immeubles destinés à la ventte;605;Purchases of Immovable Property for Resale;Achats d'immeubles destinés à la vente;ok;;"Typo in name; mapping fine"
@@ -101,19 +101,19 @@ test-c009-023;test-c009;construction;mixed;llm;7620;Terugname prov. geschil bouw
 test-c009-024;test-c009;construction;mixed;llm;7690;Produits financiers exceptionnels;769;Other Non-Recurring Financial Income;Andere niet-recurrente financiële opbrengsten / Autres produits financiers non récurrents;ok;;
 test-c010-000;test-c010;retail;nl;llm;171100;Obligatielening 2022-2029 4,25%;171;Unsubordinated Debentures (> 1 Year);Niet-achtergestelde obligatieleningen (> 1 jaar);ok;;
 test-c010-001;test-c010;retail;nl;llm;210100;Ontwikkeling webshop & kassasysteem;210;Research and Development Costs;Kosten van onderzoek en ontwikkeling;ok;;"Acceptable; 211 is also used for in-house software"
-test-c010-002;test-c010;retail;nl;llm;212100;Goodwill overname winkel Mechelen;212;Goodwill;Goodwill;ok;;
+test-c010-002;test-c010;retail;nl;llm;211100;Goodwill overname winkel Mechelen;212;Goodwill;Goodwill;ok;;
 test-c010-003;test-c010;retail;nl;llm;300100;Grondstoffen voorraad magazijn Gent;300;Raw Materials - Acquisition Value;Grondstoffen - Aanschaffingswaarde;ok;;
 test-c010-004;test-c010;retail;nl;llm;300200;Verpakkingsmat. voorraad (dozen/zakken);300;Raw Materials - Acquisition Value;Grondstoffen - Aanschaffingswaarde;fix;310;Packaging materials (boxes/bags) are consumables (31), not raw materials
 test-c010-005;test-c010;retail;nl;llm;309100;WV voorraad grondstoffen;309;Raw Materials - Amounts Written Down Recorded (-);Grondstoffen - Geboekte waardeverminderingen (-);ok;;
-test-c010-006;test-c010;retail;nl;llm;320100;Goederen in bewerking atelier;320;Work in Progress - Acquisition Value;Goederen in bewerking - Aanschaffingswaarde;ok;;
+test-c010-006;test-c010;retail;nl;llm;329100;Goederen in bewerking atelier;320;Work in Progress - Acquisition Value;Goederen in bewerking - Aanschaffingswaarde;ok;;
 test-c010-007;test-c010;retail;nl;llm;339100;WV gereed product - incourant/solden;339;Finished Goods - Amounts Written Down Recorded (-);Gereed product - Geboekte waardeverminderingen (-);ok;;
-test-c010-008;test-c010;retail;nl;llm;422100;Leasing bestelwagen - KT deel;422;Leasing and Other Similar Obligations (> 1 Year Falling Due < 1 Year);Leasingschulden en soortgelijke schulden (> 1 jaar vervallend < 1 jaar);ok;;
+test-c010-008;test-c010;retail;nl;llm;425100;Leasing bestelwagen - KT deel;422;Leasing and Other Similar Obligations (> 1 Year Falling Due < 1 Year);Leasingschulden en soortgelijke schulden (> 1 jaar vervallend < 1 jaar);ok;;
 test-c010-009;test-c010;retail;nl;llm;433100;Kaskrediet BE12 xxxx;433;Credit Institutions - Current Account Payable;Kredietinstellingen - Schulden in rekening-courant;ok;;
 test-c010-010;test-c010;retail;nl;llm;433200;Straight loan rek.-crt.;433;Credit Institutions - Current Account Payable;Kredietinstellingen - Schulden in rekening-courant;fix;430;A straight loan is a fixed-term advance (430), not a current-account overdraft (433)
 test-c010-011;test-c010;retail;nl;llm;450100;Te betalen VenB aj 2026 (raming);450;Estimated Taxes Payable;Geraamde belastingschulden;ok;;
 test-c010-012;test-c010;retail;nl;llm;453100;Bedrijfsvoorheffing lonen bedienden;453;Taxes Withheld;Ingehouden voorheffingen;ok;;
 test-c010-013;test-c010;retail;nl;llm;453200;Roerende voorheffing dividend;453;Taxes Withheld;Ingehouden voorheffingen;ok;;
-test-c010-014;test-c010;retail;nl;llm;492100;TBK energie & water winkels;492;Accrued Charges;Toe te rekenen kosten;ok;;
+test-c010-014;test-c010;retail;nl;llm;490100;TBK energie & water winkels;492;Accrued Charges;Toe te rekenen kosten;ok;;
 test-c010-015;test-c010;retail;nl;llm;492200;TBK interesten leningen;492;Accrued Charges;Toe te rekenen kosten;ok;;
 test-c010-016;test-c010;retail;nl;llm;493100;OTO cadeaubonnen nog niet ingeruild;493;Deferred Income;Over te dragen opbrengsten;ok;;
 test-c010-017;test-c010;retail;nl;llm;621100;RSZ werkgever bedienden;621;Employers' Contribution for Social Security;Werkgeversbijdragen voor sociale verzekeringen;ok;;

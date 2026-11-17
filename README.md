@@ -54,7 +54,7 @@ All 200 LLM-written test rows and a random 50 rule-based rows are checked by han
 
 `notebooks/` has one notebook per step, in order. Each follows one real account or record through that step, then shows it on all the data with charts:
 
-01 standard chart · 02 noise · 03 rule-based companies · 04 LLM-written companies · 05 splits · 06 hand check · 07 retrieval · 08 embedding selection · 09 calibration · 10 baselines and pipeline · 11 metrics and the test guard · 12 group descriptions · 13 pair features · 14 rerankers
+01 standard chart · 02 noise · 03 rule-based companies · 04 LLM-written companies · 05 splits · 06 hand check · 07 retrieval · 08 embedding selection · 09 calibration · 10 baselines and pipeline · 11 metrics and the test guard · 12 group descriptions · 13 pair features · 14 rerankers · 15 Laya
 
 ## Choosing the embedding model
 
@@ -73,15 +73,17 @@ python -m d1.evaluation.select_embedder --group-text average  # the comparison a
 
 Official group names miss how bookkeepers write: "Gross wages shop staff" put group 620 *Remuneration and Direct Social Benefits* at rank 47. Each group now gets a one-line description and everyday ledger words in Dutch, French and English. They're written by a different model from the one that wrote the synthetic accounts, from the chart alone, and frozen.
 
-Each group is scored by the mean of its names-only and its described similarity (`group_text: average`). On dev with bge-m3, that takes the shortlist from 87.5% to 92.6% (LLM-written accounts 71.9% → 83.5%). The embeddings baseline then auto-maps 32.1% instead of 21.4% at 98% precision. See [`notebooks/12_group_descriptions.ipynb`](notebooks/12_group_descriptions.ipynb).
+Each group is scored by the mean of its names-only and its described similarity (`group_text: average`). On dev with bge-m3, that takes the shortlist from 87.5% to 92.6% (LLM-written accounts 71.9% → 83.5%). The embeddings baseline then auto-maps 32.1% instead of 21.4% at 98% precision (with one pooled threshold, as when the choice was made). See [`notebooks/12_group_descriptions.ipynb`](notebooks/12_group_descriptions.ipynb).
 
 ## Training and calibrating a method
 
 ```bash
-python -m d1.mapper.train --method fuzzy        # or embeddings, xgboost, random_forest, or all
+python -m d1.mapper.train --method fuzzy        # or embeddings, xgboost, random_forest, laya, or all
 ```
 
-This calibrates the method on dev and saves it in `artifacts/methods/<method>/`. On dev, the two baselines auto-map 31.6% (fuzzy) and 32.1% (embeddings, with the group descriptions) of accounts at 98% precision. But on the LLM-written accounts, fuzzy's auto-maps are right only 59% of the time, against 88% for embeddings (notebook 10). The 98% bar applies to all accounts together; precision per source is reported next to it.
+This calibrates the method on dev and saves it in `artifacts/methods/<method>/`.
+
+**The 98% bar holds in each segment the system can see.** One threshold over all accounts is set mostly by the easy ones, and lets a hard group in below 98%. So there is one threshold where the account's own code starts with the picked group and one where it doesn't (`mapping.threshold_by: code_match`), and each must reach 98% on dev on its own. Whether an account was written by an LLM isn't known on real data; whether its code agrees with the pick is. On dev, the baselines auto-map 29.3% (fuzzy) and 35.9% (embeddings) of accounts, at 99.8% and 99.7%. Almost all of that is in the segment where the code agrees with their pick; on names alone they rarely reach 98%.
 
 ## XGBoost and random-forest rerankers
 
@@ -90,7 +92,17 @@ python -m d1.mapper.train --method xgboost                          # or random_
 python -m d1.evaluation.learning_curve --method xgboost random_forest
 ```
 
-Each candidate on an account's shortlist becomes 27 numbers (the shortlist score, letters, the account code, the meaning), and a tree model trained on the train split scores each one. On dev both auto-map about 78% of accounts at 98% precision (XGBoost 78.8%, interval 72.5–84.9%), against about 32% for the baselines. Most of that gain is the account code: where it starts with the right group, the model is nearly perfect; without the code features it auto-maps 55.9%. On LLM-written accounts with an old company numbering, only 81% of what it auto-maps is right, below the pooled 98%. More rule-based training data stopped helping: from 75% to 100% of the train companies, the auto share changes by +0.6 points (XGBoost) and +0.0 (random forest), well inside its ±6.2 interval. See [`notebooks/14_rerankers.ipynb`](notebooks/14_rerankers.ipynb). The random forest's model file (28 MB) isn't committed: `--method random_forest` rebuilds it in seconds.
+Each candidate on an account's shortlist becomes 27 numbers (the shortlist score, letters, the account code, the meaning), and a tree model trained on the train split scores each one. On dev both auto-map about 74% of accounts at 98.5% precision (XGBoost 74.3%, interval 67.1–81.1%; top-1 84.5%), against 29–36% for the baselines. Much of that gain is the account code, but the names carry weight too: on accounts whose code doesn't agree with the pick, XGBoost still auto-maps 52% at 98.1%. LLM-written accounts remain the hard part (50.5% auto-mapped at 96.0%). More rule-based training data stopped helping: from 75% to 100% of the train companies, the auto share changes by +0.3 points (XGBoost) and +1.7 (random forest), well inside its ±7.0 interval. See [`notebooks/14_rerankers.ipynb`](notebooks/14_rerankers.ipynb). The random forest's model file (28 MB) isn't committed: `--method random_forest` rebuilds it in seconds.
+
+**The account codes are realistically imperfect.** 4% of the PCMN-style and LLM codes are misfiled under a neighbouring group's number, as a bookkeeper who picked the wrong sub-account would (`misfiled_code`). Without them, a matching code was right 100% of the time in the data and the rerankers trusted it blindly. Those 69 dev accounts are where the rerankers' mistakes concentrate: XGBoost auto-maps 68% of them at 70% precision.
+
+## Laya: a pretrained decision model, zero-shot
+
+```bash
+python -m d1.mapper.train --method laya   # downloads laya-multilingual once (pinned revision)
+```
+
+[Laya](https://huggingface.co/convaiinnovations/laya-multilingual) reads an account and its 10 candidates and answers one multiple-choice question, without any training on this data. Its top-1 on dev is 37.6% (embeddings baseline 70.3%), and it auto-maps 23.3% at 98.4%, all where the account's code agrees with its pick. This is in line with its authors' own note that the base model is "a fast base to specialise, not a zero-shot decision engine". It runs locally on the Mac's GPU (about 0.2 s per account, no cost), asks each question under 6 rotations of the option order to cancel a position bias, and caches every answer, so a rerun is instant. See [`notebooks/15_laya.ipynb`](notebooks/15_laya.ipynb).
 
 ## Evaluating a method
 

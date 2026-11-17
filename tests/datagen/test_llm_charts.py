@@ -15,6 +15,7 @@ from d1.datagen.llm_charts import (
     parse_chart,
     select_llm_groups,
 )
+from d1.datagen.rule_charts import sibling_groups
 from d1.datagen.standard_chart import load_standard_chart
 from d1.llm import LLMError, LLMResponse
 
@@ -216,6 +217,20 @@ def test_load_legacy_scheme_replaces_codes_so_they_never_reveal_the_target(group
     answer = _answer(groups, 10)["accounts"]
     assert [(r.name, r.target_code) for r in rows] == [(a["name"], a["target_code"]) for a in answer]
     assert rows == load_llm_company(tmp_path, "test-c08", "test", 10, code_scheme="legacy")
+
+
+def test_load_llm_codes_misfiled_with_the_chart(groups, chart, tmp_path):
+    _fetch(FakeBackend(structured=_answer(groups, 12)), groups, tmp_path)
+    plain = load_llm_company(tmp_path, "test-c08", "test", 10)
+    noisy = load_llm_company(tmp_path, "test-c08", "test", 10, chart=chart, misfile_share=1.0)  # every eligible row
+    siblings = sibling_groups(chart)
+    moved = [n for n in noisy if "misfiled_code" in n.noise]
+    assert moved and all(n.code[:3] in siblings[n.target_code] for n in moved)
+    for p, n in zip(plain, noisy):
+        assert (p.account_id, p.name, p.target_code) == (n.account_id, n.name, n.target_code)
+    assert load_llm_company(tmp_path, "test-c08", "test", 10, chart=chart) == load_llm_company(tmp_path, "test-c08", "test", 10, chart=chart)
+    legacy = load_llm_company(tmp_path, "test-c08", "test", 10, code_scheme="legacy", chart=chart, misfile_share=1.0)
+    assert not any("misfiled_code" in r.noise for r in legacy)  # legacy codes say nothing to misfile
 
 
 def test_load_missing_file_raises_with_command_hint(tmp_path):

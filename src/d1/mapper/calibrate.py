@@ -10,6 +10,12 @@ right. The calibrator learns that chance on dev from two numbers per account:
 Then the threshold: auto-map only accounts whose calibrated probability is high
 enough that, on dev, at least 98% of the auto-mapped accounts are right.
 Every method is calibrated this same way, so their results compare fairly.
+
+One threshold per segment (since Task 3.3): a pooled threshold is set mostly by the
+easy accounts, so a hard group can get in below 98%. The segment is something the
+system can see on real data: does the account's own code start with the picked
+group (code_match) or not (other)? Each segment gets its own threshold, and each
+holds the 98% on dev.
 """
 
 import numpy as np
@@ -17,6 +23,12 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import GroupKFold, KFold
 
 FEATURES = ["s1", "s1_minus_s2"]
+SEGMENTS = ("code_match", "other")
+
+
+def segment_of(code: str | None, chosen_code: str | None) -> str:
+    """code_match if the account's code starts with the picked group, otherwise other (also without a code or pick)."""
+    return "code_match" if code and chosen_code and code.startswith(chosen_code) else "other"
 
 
 def features(scores: list[float]) -> np.ndarray:
@@ -118,6 +130,18 @@ def choose_threshold(p: np.ndarray, correct: np.ndarray, target: float = 0.98, m
     if not ok.any():
         return None
     return float(curve["threshold"][ok].min())
+
+
+def choose_thresholds_by_segment(
+    p: np.ndarray, correct: np.ndarray, segments: np.ndarray, target: float = 0.98, min_support: int = 50
+) -> dict[str, float | None]:
+    """choose_threshold within each segment: every segment must reach the target on its own (None: all reviewed)."""
+    p, correct, segments = np.asarray(p, dtype=float), np.asarray(correct, dtype=bool), np.asarray(segments)
+    out: dict[str, float | None] = {}
+    for segment in SEGMENTS:
+        mask = segments == segment
+        out[segment] = choose_threshold(p[mask], correct[mask], target, min_support) if mask.any() else None
+    return out
 
 
 def stricter_threshold(*thresholds: float | None) -> float | None:

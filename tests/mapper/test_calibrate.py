@@ -4,7 +4,8 @@ import numpy as np
 import pytest
 
 from d1.mapper.calibrate import (
-    Calibrator, choose_threshold, cross_fit_probs, feature_matrix, features, precision_curve, reliability_bins,
+    SEGMENTS, Calibrator, choose_threshold, choose_thresholds_by_segment, cross_fit_probs, feature_matrix, features,
+    precision_curve, reliability_bins, segment_of,
 )  # fmt: skip
 
 
@@ -157,3 +158,35 @@ def test_stricter_threshold_takes_the_higher():
     assert stricter_threshold(0.95, 0.9477) == 0.95
     assert stricter_threshold(None, 0.9) is None  # unreachable either way: everything to review
     assert stricter_threshold(0.9, None) is None
+
+
+# --- one threshold per segment the system can see -------------------------------------------------------
+
+
+def test_segment_of():
+    assert SEGMENTS == ("code_match", "other")
+    assert segment_of("440000", "440") == "code_match"  # the account's code starts with the pick
+    assert segment_of("441000", "440") == "other"
+    assert segment_of("4400", "604") == "other"
+    assert segment_of(None, "440") == "other" and segment_of("", "440") == "other"  # no code: nothing to agree with
+    assert segment_of("440000", None) == "other"  # no pick
+
+
+def test_thresholds_by_segment_hold_the_target_in_each():
+    """A pooled threshold lets a weak segment in below target; one per segment doesn't."""
+    p = np.array([0.99] * 200 + [0.90] * 100 + [0.80] * 100)
+    segment = np.array(["code_match"] * 200 + ["other"] * 200)
+    # code_match: 200 at 0.99, all right. other: 100 at 0.90 (95 right), 100 at 0.80 (60 right).
+    correct = np.array([1] * 200 + [1] * 95 + [0] * 5 + [1] * 60 + [0] * 40, bool)
+    pooled = choose_threshold(p, correct, 0.98, 50)
+    assert pooled == 0.90 and correct[(p >= pooled) & (segment == "other")].mean() == 0.95  # the weak segment gets in at 95%
+    t = choose_thresholds_by_segment(p, correct, segment, 0.98, 50)
+    assert t == {"code_match": 0.99, "other": None}  # "other" can't reach 98%: it all goes to review
+    p2 = np.where(segment == "other", np.where(correct, 0.97, 0.85), p)  # now "other" separates right from wrong
+    assert choose_thresholds_by_segment(p2, correct, segment, 0.98, 50) == {"code_match": 0.99, "other": 0.97}
+
+
+def test_thresholds_by_segment_with_an_empty_segment():
+    p = np.full(60, 0.99)
+    t = choose_thresholds_by_segment(p, np.ones(60, bool), np.array(["code_match"] * 60), 0.98, 50)
+    assert t == {"code_match": 0.99, "other": None}

@@ -1,0 +1,262 @@
+{
+  "run_id": "20261117-070331-dev-xgboost",
+  "created_at": "2026-11-17T07:03:31+00:00",
+  "split": "dev",
+  "method": "xgboost",
+  "labels_file": "dev.jsonl",
+  "n": 3500,
+  "label_status": {
+    "unchecked": 3500
+  },
+  "model_versions": {
+    "embedder": "BAAI/bge-m3",
+    "method": "xgboost-pair-features-v1-pca16-v1",
+    "calibrator": "0a1061134c79"
+  },
+  "thresholds": {
+    "method": "xgboost",
+    "t_auto": 0.8782574068995269,
+    "t_llm": null,
+    "target_precision": 0.98,
+    "fitted_on": "dev",
+    "embedding_model": "BAAI/bge-m3",
+    "group_text": "average",
+    "threshold_by": "code_match",
+    "t_auto_by_segment": {
+      "code_match": 0.15537693965589777,
+      "other": 0.9330614215301211
+    }
+  },
+  "overall": {
+    "auto_share": 0.7425714285714285,
+    "auto_share_ci": [
+      0.6708571428571428,
+      0.8105714285714286
+    ],
+    "auto_precision": 0.9849942285494421,
+    "auto_precision_ci": [
+      0.9786504156837739,
+      0.990357273653486
+    ],
+    "review_share": 0.25742857142857145,
+    "top1": 0.8451428571428572,
+    "top1_ci": [
+      0.8054214285714285,
+      0.8834285714285715
+    ],
+    "top3": 0.9008571428571429,
+    "recall_at_k": 0.9257142857142857,
+    "k": 10
+  },
+  "breakdowns": {
+    "segment": [
+      {
+        "value": "code_match",
+        "n": 1615,
+        "auto_share": 0.9993808049535604,
+        "auto_precision": 0.9876084262701363,
+        "top1": 0.9876160990712074
+      },
+      {
+        "value": "other",
+        "n": 1885,
+        "auto_share": 0.5225464190981433,
+        "auto_precision": 0.9807106598984772,
+        "top1": 0.7230769230769231
+      }
+    ],
+    "source": [
+      {
+        "value": "rules",
+        "n": 2000,
+        "auto_share": 0.9205,
+        "auto_precision": 0.9951113525258012,
+        "top1": 0.962
+      },
+      {
+        "value": "llm",
+        "n": 1500,
+        "auto_share": 0.5053333333333333,
+        "auto_precision": 0.9604221635883905,
+        "top1": 0.6893333333333334
+      }
+    ],
+    "code_scheme": [
+      {
+        "value": "legacy",
+        "n": 1700,
+        "auto_share": 0.5623529411764706,
+        "auto_precision": 0.9759414225941423,
+        "top1": 0.7735294117647059
+      },
+      {
+        "value": "pcmn",
+        "n": 1000,
+        "auto_share": 0.987,
+        "auto_precision": 0.9979736575481256,
+        "top1": 0.991
+      },
+      {
+        "value": "llm",
+        "n": 800,
+        "auto_share": 0.82,
+        "auto_precision": 0.9786585365853658,
+        "top1": 0.815
+      }
+    ],
+    "language": [
+      {
+        "value": "en",
+        "n": 900,
+        "auto_share": 0.7477777777777778,
+        "auto_precision": 0.9851411589895989,
+        "top1": 0.8644444444444445
+      },
+      {
+        "value": "fr",
+        "n": 900,
+        "auto_share": 0.7211111111111111,
+        "auto_precision": 0.9815100154083205,
+        "top1": 0.8255555555555556
+      },
+      {
+        "value": "mixed",
+        "n": 850,
+        "auto_share": 0.7741176470588236,
+        "auto_precision": 0.9848024316109423,
+        "top1": 0.8611764705882353
+      },
+      {
+        "value": "nl",
+        "n": 850,
+        "auto_share": 0.7282352941176471,
+        "auto_precision": 0.9886914378029079,
+        "top1": 0.8294117647058824
+      }
+    ],
+    "noise": [
+      {
+        "value": "legacy_code",
+        "n": 1700,
+        "auto_share": 0.5623529411764706,
+        "auto_precision": 0.9759414225941423,
+        "top1": 0.7735294117647059
+      },
+      {
+        "value": "llm",
+        "n": 1500,
+        "auto_share": 0.5053333333333333,
+        "auto_precision": 0.9604221635883905,
+        "top1": 0.6893333333333334
+      },
+      {
+        "value": "case",
+        "n": 534,
+        "auto_share": 0.8913857677902621,
+        "auto_precision": 0.9957983193277311,
+        "top1": 0.947565543071161
+      },
+      {
+        "value": "sub_account",
+        "n": 400,
+        "auto_share": 0.8825,
+        "auto_precision": 0.9943342776203966,
+        "top1": 0.96
+      },
+      {
+        "value": "no noise",
+        "n": 338,
+        "auto_share": 1.0,
+        "auto_precision": 1.0,
+        "top1": 1.0
+      },
+      {
+        "value": "abbreviation",
+        "n": 293,
+        "auto_share": 0.8464163822525598,
+        "auto_precision": 0.9959677419354839,
+        "top1": 0.9112627986348123
+      },
+      {
+        "value": "typo",
+        "n": 286,
+        "auto_share": 0.8496503496503497,
+        "auto_precision": 0.9917695473251029,
+        "top1": 0.9300699300699301
+      },
+      {
+        "value": "truncated",
+        "n": 161,
+        "auto_share": 0.7018633540372671,
+        "auto_precision": 0.9380530973451328,
+        "top1": 0.8074534161490683
+      },
+      {
+        "value": "bilingual",
+        "n": 140,
+        "auto_share": 0.9357142857142857,
+        "auto_precision": 1.0,
+        "top1": 0.9857142857142858
+      },
+      {
+        "value": "accents_stripped",
+        "n": 112,
+        "auto_share": 0.9107142857142857,
+        "auto_precision": 1.0,
+        "top1": 0.9553571428571429
+      },
+      {
+        "value": "misfiled_code",
+        "n": 69,
+        "auto_share": 0.6811594202898551,
+        "auto_precision": 0.7021276595744681,
+        "top1": 0.6956521739130435
+      }
+    ],
+    "industry": [
+      {
+        "value": "construction",
+        "n": 900,
+        "auto_share": 0.72,
+        "auto_precision": 0.9830246913580247,
+        "top1": 0.8322222222222222
+      },
+      {
+        "value": "software",
+        "n": 900,
+        "auto_share": 0.7366666666666667,
+        "auto_precision": 0.9849170437405732,
+        "top1": 0.8433333333333334
+      },
+      {
+        "value": "retail",
+        "n": 850,
+        "auto_share": 0.7635294117647059,
+        "auto_precision": 0.9907550077041603,
+        "top1": 0.8552941176470589
+      },
+      {
+        "value": "services",
+        "n": 850,
+        "auto_share": 0.7517647058823529,
+        "auto_precision": 0.9812206572769953,
+        "top1": 0.8505882352941176
+      }
+    ],
+    "overlaps_dev": [
+      {
+        "value": "new name",
+        "n": 3500,
+        "auto_share": 0.7425714285714285,
+        "auto_precision": 0.9849942285494421,
+        "top1": 0.8451428571428572
+      }
+    ]
+  },
+  "cost": {
+    "calls_per_1000": 0.0,
+    "cost_per_1000_usd": 0.0,
+    "median_latency_ms": 0.0,
+    "cache_hit_rate": 0.0
+  }
+}

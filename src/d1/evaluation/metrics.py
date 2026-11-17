@@ -32,8 +32,16 @@ def auto_precision(decisions: list[MappingDecision], gold: dict[str, str]) -> fl
     return float(np.mean([d.chosen_code == gold[d.account_id] for d in auto]))
 
 
+def pick_accuracy(decisions: list[MappingDecision], gold: dict[str, str]) -> float:
+    """Share of accounts whose pick is the right group: the reported top-1. A "none" answer counts as wrong,
+    even when the method's best-scored candidate happens to be right."""
+    if not decisions:
+        return 0.0
+    return float(np.mean([d.chosen_code == gold[d.account_id] for d in decisions]))
+
+
 def topk_accuracy(decisions: list[MappingDecision], gold: dict[str, str], k: int) -> float:
-    """Share of accounts whose right group is among the method's first k candidates."""
+    """Share of accounts whose right group is among the method's first k candidates (top-3; top-1 is pick_accuracy)."""
     if not decisions:
         return 0.0
     return float(np.mean([gold[d.account_id] in [c.code for c in d.candidates[:k]] for d in decisions]))

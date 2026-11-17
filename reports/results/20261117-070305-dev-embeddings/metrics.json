@@ -1,6 +1,6 @@
 {
-  "run_id": "20261110-203701-dev-embeddings",
-  "created_at": "2026-11-10T20:37:01+00:00",
+  "run_id": "20261117-070305-dev-embeddings",
+  "created_at": "2026-11-17T07:03:05+00:00",
   "split": "dev",
   "method": "embeddings",
   "labels_file": "dev.jsonl",
@@ -20,20 +20,25 @@
     "target_precision": 0.98,
     "fitted_on": "dev",
     "embedding_model": "BAAI/bge-m3",
-    "group_text": "average"
+    "group_text": "average",
+    "threshold_by": "code_match",
+    "t_auto_by_segment": {
+      "code_match": 0.09074411968764654,
+      "other": 0.9989019912301914
+    }
   },
   "overall": {
-    "auto_share": 0.3211428571428571,
+    "auto_share": 0.35942857142857143,
     "auto_share_ci": [
-      0.2711357142857143,
-      0.36942857142857144
+      0.28,
+      0.4411642857142856
     ],
-    "auto_precision": 0.9804270462633452,
+    "auto_precision": 0.9968203497615262,
     "auto_precision_ci": [
-      0.9700439845997014,
-      0.9889746385929592
+      0.9923142372010025,
+      1.0
     ],
-    "review_share": 0.6788571428571428,
+    "review_share": 0.6405714285714286,
     "top1": 0.7028571428571428,
     "top1_ci": [
       0.6485714285714286,
@@ -44,19 +49,35 @@
     "k": 10
   },
   "breakdowns": {
+    "segment": [
+      {
+        "value": "code_match",
+        "n": 1189,
+        "auto_share": 0.9991589571068125,
+        "auto_precision": 0.9974747474747475,
+        "top1": 0.9974768713204374
+      },
+      {
+        "value": "other",
+        "n": 2311,
+        "auto_share": 0.03028991778450887,
+        "auto_precision": 0.9857142857142858,
+        "top1": 0.5512765036780615
+      }
+    ],
     "source": [
       {
         "value": "rules",
         "n": 2000,
-        "auto_share": 0.499,
-        "auto_precision": 0.9929859719438878,
+        "auto_share": 0.4675,
+        "auto_precision": 0.9989304812834224,
         "top1": 0.9
       },
       {
         "value": "llm",
         "n": 1500,
-        "auto_share": 0.084,
-        "auto_precision": 0.8809523809523809,
+        "auto_share": 0.21533333333333332,
+        "auto_precision": 0.9907120743034056,
         "top1": 0.44
       }
     ],
@@ -64,22 +85,22 @@
       {
         "value": "legacy",
         "n": 1700,
-        "auto_share": 0.3241176470588235,
-        "auto_precision": 0.9764065335753176,
+        "auto_share": 0.03823529411764706,
+        "auto_precision": 1.0,
         "top1": 0.7194117647058823
       },
       {
         "value": "pcmn",
         "n": 1000,
-        "auto_share": 0.502,
-        "auto_precision": 0.9940239043824701,
+        "auto_share": 0.873,
+        "auto_precision": 0.9988545246277205,
         "top1": 0.906
       },
       {
         "value": "llm",
         "n": 800,
-        "auto_share": 0.08875,
-        "auto_precision": 0.9154929577464789,
+        "auto_share": 0.4,
+        "auto_precision": 0.990625,
         "top1": 0.41375
       }
     ],
@@ -87,29 +108,29 @@
       {
         "value": "en",
         "n": 900,
-        "auto_share": 0.3522222222222222,
-        "auto_precision": 0.9747634069400631,
+        "auto_share": 0.37555555555555553,
+        "auto_precision": 1.0,
         "top1": 0.7322222222222222
       },
       {
         "value": "fr",
         "n": 900,
-        "auto_share": 0.2822222222222222,
-        "auto_precision": 0.9724409448818898,
+        "auto_share": 0.33444444444444443,
+        "auto_precision": 0.9867109634551495,
         "top1": 0.6811111111111111
       },
       {
         "value": "mixed",
         "n": 850,
-        "auto_share": 0.36470588235294116,
-        "auto_precision": 0.9870967741935484,
+        "auto_share": 0.39294117647058824,
+        "auto_precision": 1.0,
         "top1": 0.7447058823529412
       },
       {
         "value": "nl",
         "n": 850,
-        "auto_share": 0.2858823529411765,
-        "auto_precision": 0.9876543209876543,
+        "auto_share": 0.3352941176470588,
+        "auto_precision": 1.0,
         "top1": 0.6529411764705882
       }
     ],
@@ -117,101 +138,108 @@
       {
         "value": "legacy_code",
         "n": 1700,
-        "auto_share": 0.3241176470588235,
-        "auto_precision": 0.9764065335753176,
+        "auto_share": 0.03823529411764706,
+        "auto_precision": 1.0,
         "top1": 0.7194117647058823
       },
       {
         "value": "llm",
         "n": 1500,
-        "auto_share": 0.084,
-        "auto_precision": 0.8809523809523809,
+        "auto_share": 0.21533333333333332,
+        "auto_precision": 0.9907120743034056,
         "top1": 0.44
       },
       {
         "value": "case",
         "n": 534,
-        "auto_share": 0.40262172284644193,
-        "auto_precision": 0.986046511627907,
+        "auto_share": 0.4344569288389513,
+        "auto_precision": 1.0,
         "top1": 0.8632958801498127
       },
       {
         "value": "sub_account",
         "n": 400,
-        "auto_share": 0.415,
+        "auto_share": 0.4425,
         "auto_precision": 1.0,
         "top1": 0.9
       },
       {
         "value": "no noise",
-        "n": 352,
-        "auto_share": 0.6761363636363636,
+        "n": 338,
+        "auto_share": 0.9763313609467456,
         "auto_precision": 1.0,
-        "top1": 0.9772727272727273
+        "top1": 0.9763313609467456
       },
       {
         "value": "abbreviation",
         "n": 293,
-        "auto_share": 0.29692832764505117,
+        "auto_share": 0.4334470989761092,
         "auto_precision": 1.0,
         "top1": 0.8122866894197952
       },
       {
         "value": "typo",
         "n": 286,
-        "auto_share": 0.32867132867132864,
-        "auto_precision": 0.9893617021276596,
+        "auto_share": 0.3916083916083916,
+        "auto_precision": 0.9910714285714286,
         "top1": 0.8496503496503497
       },
       {
         "value": "truncated",
         "n": 161,
-        "auto_share": 0.2111801242236025,
-        "auto_precision": 0.7941176470588235,
+        "auto_share": 0.33540372670807456,
+        "auto_precision": 1.0,
         "top1": 0.5838509316770186
       },
       {
         "value": "bilingual",
         "n": 140,
-        "auto_share": 0.7928571428571428,
+        "auto_share": 0.5357142857142857,
         "auto_precision": 1.0,
         "top1": 0.95
       },
       {
         "value": "accents_stripped",
         "n": 112,
-        "auto_share": 0.41964285714285715,
+        "auto_share": 0.4732142857142857,
         "auto_precision": 1.0,
         "top1": 0.8928571428571429
+      },
+      {
+        "value": "misfiled_code",
+        "n": 69,
+        "auto_share": 0.10144927536231885,
+        "auto_precision": 0.5714285714285714,
+        "top1": 0.7391304347826086
       }
     ],
     "industry": [
       {
         "value": "construction",
         "n": 900,
-        "auto_share": 0.32222222222222224,
-        "auto_precision": 0.9827586206896551,
+        "auto_share": 0.36777777777777776,
+        "auto_precision": 0.9939577039274925,
         "top1": 0.7033333333333334
       },
       {
         "value": "software",
         "n": 900,
-        "auto_share": 0.30666666666666664,
-        "auto_precision": 0.9927536231884058,
+        "auto_share": 0.34444444444444444,
+        "auto_precision": 1.0,
         "top1": 0.6844444444444444
       },
       {
         "value": "retail",
         "n": 850,
-        "auto_share": 0.31411764705882356,
-        "auto_precision": 0.9775280898876404,
+        "auto_share": 0.3552941176470588,
+        "auto_precision": 1.0,
         "top1": 0.7094117647058824
       },
       {
         "value": "services",
         "n": 850,
-        "auto_share": 0.3423529411764706,
-        "auto_precision": 0.9690721649484536,
+        "auto_share": 0.37058823529411766,
+        "auto_precision": 0.9936507936507937,
         "top1": 0.7152941176470589
       }
     ],
@@ -219,8 +247,8 @@
       {
         "value": "new name",
         "n": 3500,
-        "auto_share": 0.3211428571428571,
-        "auto_precision": 0.9804270462633452,
+        "auto_share": 0.35942857142857143,
+        "auto_precision": 0.9968203497615262,
         "top1": 0.7028571428571428
       }
     ]

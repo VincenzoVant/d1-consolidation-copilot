@@ -28,7 +28,7 @@ from d1.config import REPO_ROOT, Config, ConfigError, load_config
 from d1.datagen.schema import read_jsonl
 from d1.datagen.standard_chart import ChartError
 from d1.evaluation.metrics import (
-    auto_precision, auto_share, bootstrap_ci, breakdown, cost_report, recall_at_k, review_share, topk_accuracy,
+    auto_precision, auto_share, bootstrap_ci, breakdown, cost_report, pick_accuracy, recall_at_k, review_share, topk_accuracy,
 )  # fmt: skip
 from d1.mapper.embed import Embedder, SentenceTransformerEmbedder
 from d1.mapper.methods.base import accounts_from_rows
@@ -40,7 +40,7 @@ LABEL_FILES = {"dev": "dev.jsonl", "test": "test_checked.jsonl"}
 BREAKDOWNS = ["source", "code_scheme", "language", "noise", "industry", "overlaps_dev"]
 DECISION_COLUMNS = [
     "account_id", "company_id", "source", "language", "noise", "overlaps_dev", "name", "target_code",
-    "chosen_code", "right", "confidence", "decision_path", "status", "top3",
+    "chosen_code", "right", "confidence", "segment", "decision_path", "status", "top3",
 ]  # fmt: skip
 
 
@@ -101,7 +101,7 @@ def evaluate(config: Config, split: str, method: str, embedder_factory: Callable
         "auto_precision": auto_precision(decisions, gold),
         "auto_precision_ci": bootstrap_ci(precision, len(rows), groups=companies) if auto.any() else None,
         "review_share": review_share(decisions),
-        "top1": topk_accuracy(decisions, gold, 1),
+        "top1": pick_accuracy(decisions, gold),  # the pick, like its interval below: "none" counts as wrong
         "top1_ci": bootstrap_ci(lambda idx: right[idx].mean(), len(rows), groups=companies),
         "top3": topk_accuracy(decisions, gold, 3),
         "recall_at_k": recall_at_k({a.account_id: s for a, s in zip(accounts, shortlists)}, gold, k),
@@ -112,7 +112,7 @@ def evaluate(config: Config, split: str, method: str, embedder_factory: Callable
             "account_id": r.account_id, "company_id": r.company_id, "source": r.source, "language": r.language,
             "noise": ";".join(r.noise), "overlaps_dev": int(r.overlaps_dev), "name": r.name, "target_code": r.target_code,
             "chosen_code": d.chosen_code or "", "right": int(d.chosen_code == r.target_code), "confidence": f"{d.confidence:.6f}",
-            "decision_path": d.decision_path, "status": d.status, "top3": ";".join(c.code for c in d.candidates[:3]),
+            "segment": d.segment or "", "decision_path": d.decision_path, "status": d.status, "top3": ";".join(c.code for c in d.candidates[:3]),
         }
         for r, d in zip(rows, decisions)
     ]  # fmt: skip
@@ -122,13 +122,32 @@ def evaluate(config: Config, split: str, method: str, embedder_factory: Callable
         "label_status": dict(Counter(r.label_status for r in rows)),
         "model_versions": decisions[0].model_versions if decisions else {},
         "thresholds": mapper.thresholds.model_dump(), "overall": overall,
-        "breakdowns": {by: breakdown(rows, decisions, by) for by in BREAKDOWNS},
+        "breakdowns": {"segment": segment_breakdown(rows, decisions)} | {by: breakdown(rows, decisions, by) for by in BREAKDOWNS},
         "cost": cost_report(decisions),
     }  # fmt: skip
 
 
+def segment_breakdown(rows, decisions) -> list[dict]:
+    """The same numbers per threshold segment (code_match / other): each should hold the target on its own."""
+    gold = {r.account_id: r.target_code for r in rows}
+    out = []
+    for segment in sorted({d.segment or "" for d in decisions}):
+        part = [d for d in decisions if (d.segment or "") == segment]
+        auto = [d for d in part if d.decision_path in ("auto", "cascade_llm")]
+        out.append({"value": segment, "n": len(part), "auto_share": len(auto) / len(part),
+                    "auto_precision": float(np.mean([d.chosen_code == gold[d.account_id] for d in auto])) if auto else None,
+                    "top1": float(np.mean([d.chosen_code == gold[d.account_id] for d in part]))})  # fmt: skip
+    return out
+
+
 def _pct(x: float | None) -> str:
     return "–" if x is None else f"{x:.1%}"
+
+
+def _thresholds(t: dict) -> str:
+    if t.get("threshold_by") == "code_match":
+        return ", ".join(f"{k} {v}" for k, v in t["t_auto_by_segment"].items()) + " (one per segment)"
+    return f"{t['t_auto']} (pooled)"
 
 
 def render_tables(m: dict) -> str:
@@ -136,7 +155,7 @@ def render_tables(m: dict) -> str:
     ci = lambda pair: f"{pair[0]:.1%} – {pair[1]:.1%}" if pair else "–"  # noqa: E731
     lines = [
         f"# {m['method']} on {m['split']}", "",
-        f"{m['n']} accounts from `{m['labels_file']}`; threshold {m['thresholds']['t_auto']}; target precision {m['thresholds']['target_precision']:.0%}.", "",
+        f"{m['n']} accounts from `{m['labels_file']}`; thresholds {_thresholds(m['thresholds'])}; target precision {m['thresholds']['target_precision']:.0%}.", "",
         "| measure | value | 95% interval (companies resampled) |", "|---|---|---|",
         f"| auto-mapped | {_pct(o['auto_share'])} | {ci(o['auto_share_ci'])} |",
         f"| precision of auto-mapped | {_pct(o['auto_precision'])} | {ci(o['auto_precision_ci'])} |",

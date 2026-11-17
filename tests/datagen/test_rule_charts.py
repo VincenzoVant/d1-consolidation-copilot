@@ -3,7 +3,7 @@ from random import Random
 import pytest
 
 from d1.config import load_config
-from d1.datagen.rule_charts import SUB_QUALIFIERS, generate_rule_company
+from d1.datagen.rule_charts import MISFILED_SHARE, SUB_QUALIFIERS, generate_rule_company, misfile_codes, sibling_groups
 from d1.datagen.standard_chart import load_standard_chart
 
 
@@ -17,8 +17,8 @@ def real_chart():
     return load_standard_chart(load_config().data.chart_path, expected=190)
 
 
-def _company(chart, seed=3, n=5, language="nl", **kw):
-    return generate_rule_company("dev-c00", "dev", "retail", language, chart, n, Random(seed), **kw)
+def _company(chart, seed=3, n=5, language="nl", company_id="dev-c00", **kw):
+    return generate_rule_company(company_id, "dev", "retail", language, chart, n, Random(seed), **kw)
 
 
 def test_exact_count_unique_codes_valid_targets(mini_chart):
@@ -63,9 +63,72 @@ def test_sub_account_names_unique_within_group(real_chart):
 
 
 def test_pcmn_codes_extend_the_target_code(real_chart):
-    rows = _company(real_chart, n=50, code_scheme="pcmn")
+    rows = _company(real_chart, n=50, code_scheme="pcmn", misfile_share=0.0)
     assert all(r.code_scheme == "pcmn" and len(r.code) == 6 and r.code.startswith(r.target_code) for r in rows)
     assert all(r.code.endswith("000") for r in rows if "sub_account" not in r.noise)
+
+
+# --- misfiled codes: a PCMN-style code that points at a neighbouring group ----------------------------
+
+
+def test_sibling_groups(real_chart):
+    siblings = sibling_groups(real_chart)
+    assert siblings["440"] == ["441", "444"]  # the other groups under parent 44
+    assert "132" not in siblings["132"] and siblings["132"]  # no parent: the other groups of its class
+    assert all(code not in others and others for code, others in siblings.items())
+
+
+def test_misfile_codes_moves_a_share_under_a_sibling(real_chart):
+    siblings = sibling_groups(real_chart)
+    targets = ["440", "441", "604", "700"] * 500
+    codes = [f"{t}{i:03d}" for i, t in enumerate(targets)]
+    moved_codes, moved = misfile_codes(codes, targets, siblings, Random(0), share=0.04)
+    assert 0.03 < sum(moved) / len(moved) < 0.05
+    for code, new, target, m in zip(codes, moved_codes, targets, moved):
+        if m:
+            assert new[:3] in siblings[target] and new[3:] == code[3:]  # the sibling's number, the same suffix
+        else:
+            assert new == code
+    assert len(set(moved_codes)) == len(moved_codes)  # still unique within the company
+
+
+def test_misfile_codes_avoids_a_code_already_taken(real_chart):
+    siblings = {"440": ["441"]}
+    new, moved = misfile_codes(["440000", "441000"], ["440", "441"], siblings, Random(0), share=1.0)
+    assert moved == [True, False] and new[0] == "441001" and new[1] == "441000"
+
+
+def test_misfile_codes_handles_codes_that_are_not_only_digits():
+    siblings = {"604": ["600"]}
+    new, moved = misfile_codes(["6040-02", "6000-02", "604"], ["604", "600", "604"], siblings, Random(0), share=1.0)
+    assert moved == [True, False, True]
+    assert new[0] == "6000-02-1" and new[1] == "6000-02" and new[2] == "600"  # LLM codes come in many shapes
+
+
+def test_misfile_codes_leaves_codes_that_do_not_start_with_the_target():
+    new, moved = misfile_codes(["5000", "4400"], ["440", "604"], {"440": ["441"], "604": ["600"]}, Random(0), share=1.0)
+    assert new == ["5000", "4400"] and moved == [False, False]
+
+
+def test_pcmn_company_has_misfiled_rows_tagged_and_nothing_else_changes(real_chart):
+    clean, noisy = [], []
+    for seed in range(40):
+        # Each company its own id: the misfiling stream is seeded per company.
+        clean += _company(real_chart, n=50, seed=seed, code_scheme="pcmn", misfile_share=0.0, company_id=f"dev-c{seed:03d}")
+        noisy += _company(real_chart, n=50, seed=seed, code_scheme="pcmn", company_id=f"dev-c{seed:03d}")
+    misfiled = [n for n in noisy if "misfiled_code" in n.noise]
+    assert 0.02 < len(misfiled) / len(noisy) < 0.07 and MISFILED_SHARE == 0.04
+    for c, n in zip(clean, noisy):  # only the code and the tag differ: names, targets, ids stay the same
+        assert (c.account_id, c.name, c.target_code) == (n.account_id, n.name, n.target_code)
+        if "misfiled_code" in n.noise:
+            assert not n.code.startswith(n.target_code) and n.code[:3] in sibling_groups(real_chart)[n.target_code]
+        else:
+            assert n == c
+
+
+def test_legacy_companies_are_never_misfiled(real_chart):
+    for seed in range(20):
+        assert not any("misfiled_code" in r.noise for r in _company(real_chart, n=50, seed=seed, code_scheme="legacy"))
 
 
 def test_legacy_codes_never_reveal_the_target(real_chart):
@@ -78,8 +141,10 @@ def test_legacy_codes_never_reveal_the_target(real_chart):
 
 def test_rows_sorted_by_code(real_chart):
     for scheme in ("pcmn", "legacy"):
-        codes = [r.code for r in _company(real_chart, n=50, code_scheme=scheme)]
+        codes = [r.code for r in _company(real_chart, n=50, code_scheme=scheme, misfile_share=0.0)]
         assert codes == sorted(codes)
+    # A misfiled row keeps its place in the chart, as when a bookkeeper typed a neighbour's number:
+    # the account ids, and so everything built on them, stay the same.
 
 
 def test_code_scheme_drawn_when_not_given(real_chart):

@@ -28,7 +28,7 @@ from typing import Literal
 from pydantic import BaseModel, ConfigDict, ValidationError
 
 from d1.config import REPO_ROOT
-from d1.datagen.rule_charts import BASE_SHARE, legacy_codes
+from d1.datagen.rule_charts import BASE_SHARE, MISFILED_SHARE, legacy_codes, misfile_codes, sibling_groups
 from d1.datagen.schema import CompanyAccount, Language, Split, StandardAccount
 from d1.llm import LLMBackend, LLMError
 
@@ -225,9 +225,14 @@ def _cut_to(rows: list[LLMAccount], n_accounts: int) -> list[LLMAccount]:
 
 
 def load_llm_company(
-    frozen_dir: Path, company_id: str, split: Split, n_accounts: int, code_scheme: LLMCodeScheme = "llm"
+    frozen_dir: Path, company_id: str, split: Split, n_accounts: int, code_scheme: LLMCodeScheme = "llm",
+    chart: list[StandardAccount] | None = None, misfile_share: float = MISFILED_SHARE,
 ) -> list[CompanyAccount]:
-    """Turn one frozen file into the company's n_accounts rows, with codes per code_scheme."""
+    """Turn one frozen file into the company's n_accounts rows, with codes per code_scheme.
+
+    With the chart, the LLM's own codes are misfiled like PCMN-style ones (rule_charts.misfile_codes):
+    the model always started its codes with the right group, which real companies don't.
+    """  # fmt: skip
     path = frozen_path(frozen_dir, company_id)
     if not path.exists():
         raise FrozenOutputMissing(f"{path} is missing: run `python -m d1.datagen fetch-llm --split {split}`")
@@ -246,6 +251,10 @@ def load_llm_company(
     else:
         codes = [row.code for row in rows]
         noise = ["llm"]
+    moved = [False] * len(rows)
+    if code_scheme == "llm" and chart is not None and misfile_share > 0:
+        codes, moved = misfile_codes(codes, [row.target_code for row in rows], sibling_groups(chart),
+                                     Random(f"misfile-{company_id}"), misfile_share)  # fmt: skip
     return [
         CompanyAccount(
             account_id=f"{company_id}-{i:03d}",
@@ -257,8 +266,8 @@ def load_llm_company(
             code_scheme=code_scheme,
             code=code,
             name=row.name,
-            noise=list(noise),
+            noise=list(noise) + (["misfiled_code"] if was_moved else []),
             target_code=row.target_code,
         )
-        for i, (code, row) in enumerate(zip(codes, rows))
+        for i, (code, was_moved, row) in enumerate(zip(codes, moved, rows))
     ]

@@ -2,48 +2,67 @@
   "method": "xgboost",
   "version": "xgboost-pair-features-v1-pca16-v1",
   "n_dev": 3500,
-  "top1": 0.8494285714285714,
+  "top1": 0.8451428571428572,
   "no_pick": 0,
-  "t_auto": 0.8433460543648038,
-  "auto_share": 0.7882857142857143,
-  "auto_precision": 0.9800652410293584,
+  "t_auto": 0.8782574068995269,
+  "auto_share": 0.7425714285714285,
+  "auto_precision": 0.9849942285494421,
+  "threshold_by": "code_match",
+  "t_auto_by_segment": {
+    "code_match": 0.15537693965589777,
+    "other": 0.9330614215301211
+  },
+  "by_segment": {
+    "code_match": {
+      "n": 1615,
+      "top1": 0.9876160990712074,
+      "auto_share": 0.9993808049535604,
+      "auto_precision": 0.9876084262701363
+    },
+    "other": {
+      "n": 1885,
+      "top1": 0.7230769230769231,
+      "auto_share": 0.5225464190981433,
+      "auto_precision": 0.9807106598984772
+    }
+  },
   "by_source": {
     "llm": {
       "n": 1500,
-      "top1": 0.698,
-      "auto_share": 0.5746666666666667,
-      "auto_precision": 0.9582366589327146
+      "top1": 0.6893333333333334,
+      "auto_share": 0.5053333333333333,
+      "auto_precision": 0.9604221635883905
     },
     "rules": {
       "n": 2000,
-      "top1": 0.963,
-      "auto_share": 0.9485,
-      "auto_precision": 0.9899841855561413
+      "top1": 0.962,
+      "auto_share": 0.9205,
+      "auto_precision": 0.9951113525258012
     }
   },
   "by_code_scheme": {
     "legacy": {
       "n": 1700,
-      "top1": 0.7705882352941177,
-      "auto_share": 0.6447058823529411,
-      "auto_precision": 0.9498175182481752
+      "top1": 0.7735294117647059,
+      "auto_share": 0.5623529411764706,
+      "auto_precision": 0.9759414225941423
     },
     "llm": {
       "n": 800,
-      "top1": 0.83625,
-      "auto_share": 0.83625,
-      "auto_precision": 1.0
+      "top1": 0.815,
+      "auto_share": 0.82,
+      "auto_precision": 0.9786585365853658
     },
     "pcmn": {
       "n": 1000,
-      "top1": 0.994,
-      "auto_share": 0.994,
-      "auto_precision": 1.0
+      "top1": 0.991,
+      "auto_share": 0.987,
+      "auto_precision": 0.9979736575481256
     }
   },
   "out_of_fold": {
-    "t_auto": 0.8406326770507883,
-    "auto_share": 0.788,
-    "auto_precision": 0.9804205946337926
+    "t_auto": 0.87501608427045,
+    "auto_share": 0.7425714285714285,
+    "auto_precision": 0.9853789919199692
   }
 }

@@ -215,15 +215,39 @@ def test_cli_trains_one_method(mapper_root, FakeEmbedder, capsys):
     assert (mapper_root / "artifacts" / "methods" / "embeddings" / "thresholds.json").is_file()
 
 
-def test_cli_all_trains_the_built_methods_and_skips_the_rest(mapper_root, FakeEmbedder, capsys):
+class TopPickAgent:
+    """Stands in for the Laya model: always most sure of the first candidate, a little sure of "none"."""
+
+    def predict(self, state, questions, **kwargs):
+        answers = {}
+        for qid, q in questions.items():
+            labels = list(q["criteria"])
+            weights = [3.0 if i == 0 else (0.5 if label == "none" else 1.0) for i, label in enumerate(labels)]
+            answers[qid] = {"probabilities": {label: w / sum(weights) for label, w in zip(labels, weights)}}
+        return {"answers": answers}
+
+
+def test_cli_all_trains_the_built_methods_and_skips_the_rest(mapper_root, FakeEmbedder, capsys, monkeypatch):
+    from d1.mapper.methods import METHOD_REGISTRY
+    from d1.mapper.methods.laya_method import LayaMethod
+
+    # The real Laya would download and run a 322M-parameter model inside a unit test.
+    fake_laya = lambda config, retriever: LayaMethod("fake/laya", chart_of(config), revision="r1", agent_loader=lambda m, r: TopPickAgent())  # noqa: E731
+    monkeypatch.setitem(METHOD_REGISTRY, "laya", fake_laya)
     assert main(["--method", "all"], root=mapper_root, embedder_factory=_fake_factory(FakeEmbedder)) == 0
     out = capsys.readouterr().out
-    assert all(f"{m}: top-1" in out for m in ("fuzzy", "embeddings", "xgboost", "random_forest"))
-    assert "laya: not built yet" in out and "llm: not built yet" in out
+    assert all(f"{m}: top-1" in out for m in ("fuzzy", "embeddings", "xgboost", "random_forest", "laya"))
+    assert "llm: not built yet" in out
+
+
+def chart_of(config):
+    from d1.datagen.standard_chart import load_standard_chart
+
+    return load_standard_chart(config.data.chart_path, expected=config.data.expected_groups)
 
 
 def test_cli_method_not_built_yet(mapper_root, capsys):
-    assert main(["--method", "laya"], root=mapper_root) == 1
+    assert main(["--method", "llm"], root=mapper_root) == 1
     assert "not built yet" in capsys.readouterr().err
 
 
@@ -270,3 +294,50 @@ def test_train_a_reranker_and_map_with_it(mapper_root, FakeEmbedder):
 def test_dev_summary_breaks_down_by_code_scheme(mapper_root, FakeEmbedder):
     summary = train_method(load_config(mapper_root), "fuzzy", _fake_factory(FakeEmbedder))
     assert summary["by_code_scheme"]["legacy"]["n"] == 200
+
+
+# --- one threshold per segment -------------------------------------------------------------------------
+
+
+def test_segment_thresholds_route_by_whether_the_code_agrees(fake_embedder, chart):
+    """The same calibrated confidence is auto-mapped when the code agrees with the pick, and reviewed when it doesn't."""
+    answers = {"a": CLEAR, "b": CLEAR, "c": CLEAR}
+    thresholds = Thresholds(method="embeddings", t_auto=0.9, target_precision=0.98, fitted_on="dev", embedding_model=fake_embedder.model_id,
+                            threshold_by="code_match", t_auto_by_segment={"code_match": 0.9, "other": None})  # fmt: skip
+    mapper = Mapper(Retriever(fake_embedder, chart), StubMethod(answers), CAL, thresholds, K)
+    a, b, c = mapper.map([AccountIn(account_id="a", name="x", code="440000"), AccountIn(account_id="b", name="x", code="604000"),
+                          AccountIn(account_id="c", name="x")])  # fmt: skip
+    assert (a.segment, a.decision_path) == ("code_match", "auto")
+    assert (b.segment, b.decision_path) == ("other", "review") and (c.segment, c.decision_path) == ("other", "review")
+    assert a.confidence == b.confidence  # same confidence, different bar
+
+
+def test_pooled_thresholds_ignore_the_segment(fake_embedder, chart):
+    (d,) = _mapper(fake_embedder, chart, {"a": CLEAR}).map([AccountIn(account_id="a", name="x", code="604000")])
+    assert d.segment == "other" and d.decision_path == "auto"  # pooled: one bar for all
+
+
+def test_segmented_thresholds_must_name_every_segment(fake_embedder):
+    with pytest.raises(ValueError, match="other"):
+        Thresholds(method="embeddings", t_auto=0.9, target_precision=0.98, fitted_on="dev", embedding_model=fake_embedder.model_id,
+                   threshold_by="code_match", t_auto_by_segment={"code_match": 0.9})  # fmt: skip
+
+
+def test_train_writes_a_threshold_per_segment(mapper_root, FakeEmbedder):
+    config = load_config(mapper_root)
+    summary = train_method(config, "fuzzy", _fake_factory(FakeEmbedder))
+    thresholds = json.loads((mapper_root / "artifacts" / "methods" / "fuzzy" / "thresholds.json").read_text())
+    assert thresholds["threshold_by"] == "code_match" and set(thresholds["t_auto_by_segment"]) == {"code_match", "other"}
+    for segment, numbers in summary["by_segment"].items():
+        if numbers["auto_precision"] is not None:
+            assert numbers["auto_precision"] >= 0.98  # the target holds in every segment, not only overall
+
+
+def test_from_artifacts_refuses_another_threshold_setting(mapper_root, FakeEmbedder):
+    train_method(load_config(mapper_root), "fuzzy", _fake_factory(FakeEmbedder))
+    path = mapper_root / "config" / "models.yaml"
+    data = yaml.safe_load(path.read_text())
+    data["mapping"]["threshold_by"] = "pooled"
+    path.write_text(yaml.safe_dump(data))
+    with pytest.raises(MapperError, match="threshold_by"):
+        Mapper.from_artifacts(load_config(mapper_root), "fuzzy", embedder_factory=_fake_factory(FakeEmbedder))

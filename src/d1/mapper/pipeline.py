@@ -14,12 +14,12 @@ from collections.abc import Callable
 from pathlib import Path
 from typing import Literal
 
-from pydantic import BaseModel
+from pydantic import BaseModel, model_validator
 
 from d1.config import Config, Method
 from d1.datagen.schema import StandardAccount
 from d1.datagen.standard_chart import load_standard_chart
-from d1.mapper.calibrate import Calibrator, features
+from d1.mapper.calibrate import SEGMENTS, Calibrator, features, segment_of
 from d1.mapper.descriptions import DescriptionError, load_descriptions
 from d1.mapper.embed import Embedder, SentenceTransformerEmbedder
 from d1.mapper.methods import METHOD_REGISTRY, AccountIn, MappingMethod
@@ -42,6 +42,7 @@ class MappingDecision(BaseModel):
     reason: str | None = None
     status: str
     model_versions: dict[str, str]
+    segment: str | None = None  # code_match / other: which threshold applied (calibrate.segment_of)
     cost_usd: float = 0.0  # what the method's call cost (the LLM), for the cost report
     latency_ms: float = 0.0
     cached: bool = False
@@ -55,6 +56,21 @@ class Thresholds(BaseModel):
     fitted_on: Literal["dev"]
     embedding_model: str  # the shortlists these were fitted on; loading with another model is refused
     group_text: str = "names"  # what the groups were embedded as for those shortlists; a mismatch is refused too
+    threshold_by: Literal["pooled", "code_match"] = "pooled"  # one threshold for all, or one per segment
+    t_auto_by_segment: dict[str, float | None] | None = None  # with code_match: the threshold of each segment
+
+    @model_validator(mode="after")
+    def _segments_complete(self) -> "Thresholds":
+        if self.threshold_by == "code_match":
+            missing = [s for s in SEGMENTS if s not in (self.t_auto_by_segment or {})]
+            if missing:
+                raise ValueError(f"threshold_by code_match needs a threshold (or None) for every segment; missing: {', '.join(missing)}")
+        return self
+
+    def threshold_for(self, segment: str) -> float | None:
+        if self.threshold_by == "code_match":
+            return self.t_auto_by_segment[segment]
+        return self.t_auto
 
 
 def artifact_dir(config: Config, method: str) -> Path:
@@ -111,7 +127,6 @@ class Mapper:
             "method": self.method.version(),
             "calibrator": calibrator_hash(self.calibrator),
         }
-        t_auto = self.thresholds.t_auto
         decisions = []
         for account, out in zip(accounts, outputs):
             # Best first; equal scores keep the method's own order (sorted() is stable).
@@ -120,13 +135,15 @@ class Mapper:
                 confidence = 0.0  # "none" or a failure: nothing to trust
             else:
                 confidence = float(self.calibrator.predict(features(list(out.scores.values()))[None, :])[0])
+            segment = segment_of(account.code, out.chosen_code)
+            t_auto = self.thresholds.threshold_for(segment)
             auto = out.chosen_code is not None and t_auto is not None and confidence >= t_auto
             decisions.append(
                 MappingDecision(
                     account_id=account.account_id, method=self.method.name,
                     candidates=[Candidate(code=c, score=s) for c, s in ranked], confidence=confidence,
                     decision_path="auto" if auto else "review", chosen_code=out.chosen_code,
-                    reason=out.reason, status=out.status, model_versions=versions,
+                    reason=out.reason, status=out.status, model_versions=versions, segment=segment,
                     cost_usd=out.cost_usd, latency_ms=out.latency_ms, cached=out.cached,
                 )  # fmt: skip
             )
@@ -160,6 +177,11 @@ class Mapper:
             raise MapperError(
                 f"{name} was calibrated with group_text {thresholds.group_text}, but the config says "
                 f"{config.models.mapping.group_text}: run `python -m d1.mapper.train --method {name}` again"
+            )
+        if thresholds.threshold_by != config.models.mapping.threshold_by:
+            raise MapperError(
+                f"{name} was calibrated with threshold_by {thresholds.threshold_by}, but the config says "
+                f"{config.models.mapping.threshold_by}: run `python -m d1.mapper.train --method {name}` again"
             )
         chart = load_standard_chart(config.data.chart_path, expected=config.data.expected_groups)
         retriever = build_retriever(config, embedder, chart)

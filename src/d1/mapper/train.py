@@ -27,7 +27,10 @@ import numpy as np
 from d1.config import REPO_ROOT, Config, ConfigError, Method, load_config
 from d1.datagen.schema import CompanyAccount, read_jsonl
 from d1.datagen.standard_chart import ChartError, load_standard_chart
-from d1.mapper.calibrate import Calibrator, choose_threshold, cross_fit_probs, feature_matrix, stricter_threshold
+from d1.mapper.calibrate import (
+    SEGMENTS, Calibrator, choose_threshold, choose_thresholds_by_segment, cross_fit_probs, feature_matrix, segment_of,
+    stricter_threshold,
+)  # fmt: skip
 from d1.mapper.embed import Embedder, MemoEmbedder, SentenceTransformerEmbedder
 from d1.mapper.methods import METHOD_REGISTRY, MethodOutput
 from d1.mapper.methods.base import accounts_from_rows
@@ -49,29 +52,43 @@ def _write_json(path: Path, data: dict) -> None:
 
 @dataclass
 class DevCalibration:
-    """What calibrating one method's dev outputs gives: the calibrator, the threshold and every account's numbers."""
+    """What calibrating one method's dev outputs gives: the calibrator, the thresholds and every account's numbers."""
 
     calibrator: Calibrator
     right: np.ndarray  # the method's pick is the right group
     picked: np.ndarray  # the method picked something (not "none" or a failure)
     oof: np.ndarray  # out-of-fold probability: from a calibrator fitted without the account's company
     p: np.ndarray  # the saved calibrator's probability: what the Mapper will compute
-    t_oof: float | None  # threshold chosen on the out-of-fold probabilities
-    t_auto: float | None  # the stricter of t_oof and the threshold on p: the one that is saved
+    t_oof: float | None  # pooled threshold chosen on the out-of-fold probabilities
+    t_auto: float | None  # pooled: the stricter of t_oof and the threshold on p
+    segment: np.ndarray  # per account: code_match / other (calibrate.segment_of)
+    t_auto_by_segment: dict[str, float | None] | None = None  # with threshold_by code_match: per segment, stricter of both
+
+    def threshold_per_account(self) -> list[float | None]:
+        if self.t_auto_by_segment is None:
+            return [self.t_auto] * len(self.p)
+        return [self.t_auto_by_segment[s] for s in self.segment]
+
+    def _auto(self, probs: np.ndarray) -> np.ndarray:
+        t = self.threshold_per_account()
+        return np.array([pick and th is not None and q >= th for q, th, pick in zip(probs, t, self.picked)], dtype=bool)
 
     @property
     def auto(self) -> np.ndarray:
-        return (self.p >= self.t_auto) & self.picked if self.t_auto is not None else np.zeros(len(self.p), bool)
+        return self._auto(self.p)
 
     @property
     def auto_oof(self) -> np.ndarray:
-        return (self.oof >= self.t_auto) & self.picked if self.t_auto is not None else np.zeros(len(self.p), bool)
+        return self._auto(self.oof)
 
 
-def calibrate_on_dev(outputs: list[MethodOutput], dev: list[CompanyAccount], target: float, min_support: int = MIN_SUPPORT) -> DevCalibration:
-    """Steps 3 of the module docstring: out-of-fold calibration by company, the saved calibrator, t_auto."""
+def calibrate_on_dev(
+    outputs: list[MethodOutput], dev: list[CompanyAccount], target: float, min_support: int = MIN_SUPPORT, threshold_by: str = "pooled"
+) -> DevCalibration:
+    """Steps 3 and 4 of the module docstring: out-of-fold calibration by company, the saved calibrator, the thresholds."""
     right = np.array([o.chosen_code == r.target_code for o, r in zip(outputs, dev)])
     picked = np.array([o.chosen_code is not None for o in outputs])
+    segment = np.array([segment_of(r.code, o.chosen_code) for o, r in zip(outputs, dev)])
     X = feature_matrix([list(o.scores.values()) for o in outputs])
     companies = np.array([r.company_id for r in dev])
     # Accounts without a pick are never auto-mapped: probability 0, and left out of the fit.
@@ -82,7 +99,12 @@ def calibrate_on_dev(outputs: list[MethodOutput], dev: list[CompanyAccount], tar
     p[picked] = calibrator.predict(X[picked])  # exactly what the Mapper will compute for these accounts
     t_oof = choose_threshold(oof, right, target, min_support=min_support)
     t_auto = stricter_threshold(t_oof, choose_threshold(p, right, target, min_support=min_support))
-    return DevCalibration(calibrator, right, picked, oof, p, t_oof, t_auto)
+    by_segment = None
+    if threshold_by == "code_match":
+        on_oof = choose_thresholds_by_segment(oof, right, segment, target, min_support)
+        on_p = choose_thresholds_by_segment(p, right, segment, target, min_support)
+        by_segment = {s: stricter_threshold(on_oof[s], on_p[s]) for s in SEGMENTS}
+    return DevCalibration(calibrator, right, picked, oof, p, t_oof, t_auto, segment, by_segment)
 
 
 def segments(rows: list[CompanyAccount], right: np.ndarray, auto: np.ndarray, by: str) -> dict[str, dict]:
@@ -92,6 +114,16 @@ def segments(rows: list[CompanyAccount], right: np.ndarray, auto: np.ndarray, by
         s = np.array([getattr(r, by) == value for r in rows])
         out[value] = {"n": int(s.sum()), "top1": float(right[s].mean()), "auto_share": float(auto[s].mean()),
                       "auto_precision": float(right[auto & s].mean()) if (auto & s).any() else None}  # fmt: skip
+    return out
+
+
+def _by_segment(cal: DevCalibration) -> dict[str, dict]:
+    out = {}
+    for segment in SEGMENTS:
+        s = cal.segment == segment
+        a = cal.auto & s
+        out[segment] = {"n": int(s.sum()), "top1": float(cal.right[s].mean()) if s.any() else None, "auto_share": float(a.sum() / max(s.sum(), 1)),
+                        "auto_precision": float(cal.right[a].mean()) if a.any() else None}  # fmt: skip
     return out
 
 
@@ -113,14 +145,15 @@ def train_method(config: Config, name: Method, embedder_factory: Callable[[str],
         method.fit(train, retriever.top_k([r.name for r in train], k))
 
     outputs = method.score(accounts_from_rows(dev), retriever.top_k([r.name for r in dev], k))
-    cal = calibrate_on_dev(outputs, dev, target)
+    threshold_by = config.models.mapping.threshold_by
+    cal = calibrate_on_dev(outputs, dev, target, threshold_by=threshold_by)
 
     folder = artifact_dir(config, name)
     folder.mkdir(parents=True, exist_ok=True)
     method.save(folder)
     _write_json(folder / "calibrator.json", cal.calibrator.to_json())
     thresholds = Thresholds(method=name, t_auto=cal.t_auto, target_precision=target, fitted_on="dev", embedding_model=embedder.model_id,
-                            group_text=retriever.group_text)
+                            group_text=retriever.group_text, threshold_by=threshold_by, t_auto_by_segment=cal.t_auto_by_segment)
     _write_json(folder / "thresholds.json", thresholds.model_dump())
 
     # The dev numbers use the saved calibrator, so an evaluation run on dev reproduces them exactly.
@@ -129,6 +162,8 @@ def train_method(config: Config, name: Method, embedder_factory: Callable[[str],
         "method": name, "version": method.version(), "n_dev": len(dev), "top1": float(right.mean()),
         "no_pick": int((~cal.picked).sum()), "t_auto": cal.t_auto, "auto_share": float(auto.mean()),
         "auto_precision": float(right[auto].mean()) if auto.any() else None,
+        "threshold_by": threshold_by, "t_auto_by_segment": cal.t_auto_by_segment,
+        "by_segment": _by_segment(cal),
         "by_source": segments(dev, right, auto, "source"), "by_code_scheme": segments(dev, right, auto, "code_scheme"),
         "out_of_fold": {"t_auto": cal.t_oof, "auto_share": float(auto_oof.mean()),
                         "auto_precision": float(right[auto_oof].mean()) if auto_oof.any() else None},
@@ -138,10 +173,13 @@ def train_method(config: Config, name: Method, embedder_factory: Callable[[str],
 
 
 def _describe(s: dict) -> str:
-    if s["t_auto"] is None:
+    if s["auto_share"] == 0:
         return f"{s['method']}: top-1 {s['top1']:.1%}; no threshold reaches the target precision, so every account goes to review"
-    return (f"{s['method']}: top-1 {s['top1']:.1%}; auto-map {s['auto_share']:.1%} of dev at {s['auto_precision']:.1%} precision "
-            f"(threshold {s['t_auto']:.3f})")  # fmt: skip
+    if s.get("t_auto_by_segment"):
+        bar = ", ".join(f"{k} {'–' if v is None else f'{v:.3f}'}" for k, v in s["t_auto_by_segment"].items())
+    else:
+        bar = f"{s['t_auto']:.3f}"
+    return f"{s['method']}: top-1 {s['top1']:.1%}; auto-map {s['auto_share']:.1%} of dev at {s['auto_precision']:.1%} precision (threshold {bar})"
 
 
 def main(argv: list[str] | None = None, root: Path = REPO_ROOT, embedder_factory: Callable[[str], Embedder] = SentenceTransformerEmbedder) -> int:

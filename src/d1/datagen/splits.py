@@ -199,7 +199,7 @@ def build_split(split: Split, config: Config, chart: list[StandardAccount]) -> l
                 code_scheme=spec.code_scheme,
             )  # fmt: skip
             continue
-        company = load_llm_company(config.data.frozen_llm_dir, spec.company_id, split, spec.n_accounts, spec.code_scheme)
+        company = load_llm_company(config.data.frozen_llm_dir, spec.company_id, split, spec.n_accounts, spec.code_scheme, chart=chart)
         # A frozen file made under a different plan would quietly unbalance the split.
         for field in ("industry", "language"):
             if getattr(company[0], field) != getattr(spec, field):

@@ -5,45 +5,64 @@
   "top1": 0.7028571428571428,
   "no_pick": 0,
   "t_auto": 0.9281479086042382,
-  "auto_share": 0.3211428571428571,
-  "auto_precision": 0.9804270462633452,
+  "auto_share": 0.35942857142857143,
+  "auto_precision": 0.9968203497615262,
+  "threshold_by": "code_match",
+  "t_auto_by_segment": {
+    "code_match": 0.09074411968764654,
+    "other": 0.9989019912301914
+  },
+  "by_segment": {
+    "code_match": {
+      "n": 1189,
+      "top1": 0.9974768713204374,
+      "auto_share": 0.9991589571068125,
+      "auto_precision": 0.9974747474747475
+    },
+    "other": {
+      "n": 2311,
+      "top1": 0.5512765036780615,
+      "auto_share": 0.03028991778450887,
+      "auto_precision": 0.9857142857142858
+    }
+  },
   "by_source": {
     "llm": {
       "n": 1500,
       "top1": 0.44,
-      "auto_share": 0.084,
-      "auto_precision": 0.8809523809523809
+      "auto_share": 0.21533333333333332,
+      "auto_precision": 0.9907120743034056
     },
     "rules": {
       "n": 2000,
       "top1": 0.9,
-      "auto_share": 0.499,
-      "auto_precision": 0.9929859719438878
+      "auto_share": 0.4675,
+      "auto_precision": 0.9989304812834224
     }
   },
   "by_code_scheme": {
     "legacy": {
       "n": 1700,
       "top1": 0.7194117647058823,
-      "auto_share": 0.3241176470588235,
-      "auto_precision": 0.9764065335753176
+      "auto_share": 0.03823529411764706,
+      "auto_precision": 1.0
     },
     "llm": {
       "n": 800,
       "top1": 0.41375,
-      "auto_share": 0.08875,
-      "auto_precision": 0.9154929577464789
+      "auto_share": 0.4,
+      "auto_precision": 0.990625
     },
     "pcmn": {
       "n": 1000,
       "top1": 0.906,
-      "auto_share": 0.502,
-      "auto_precision": 0.9940239043824701
+      "auto_share": 0.873,
+      "auto_precision": 0.9988545246277205
     }
   },
   "out_of_fold": {
     "t_auto": 0.9281479086042382,
-    "auto_share": 0.31685714285714284,
-    "auto_precision": 0.9801623083859333
+    "auto_share": 0.3577142857142857,
+    "auto_precision": 0.9968051118210862
   }
 }

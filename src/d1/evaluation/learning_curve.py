@@ -73,6 +73,7 @@ def learning_curve(
     seed: int = 0,
     target: float = 0.98,
     min_support: int = MIN_SUPPORT,
+    threshold_by: str = "pooled",
 ) -> list[dict]:
     """One point per fraction: a fresh method, fitted on that share of the train companies, measured on dev."""
     # Shortlists don't depend on the training data: computed once for all of train and dev.
@@ -85,7 +86,7 @@ def learning_curve(
         subset = subsample_companies(train_rows, fraction, seed)
         method = make_method()
         method.fit(subset, [train_lists[r.account_id] for r in subset])
-        cal = calibrate_on_dev(method.score(dev_accounts, dev_lists), dev_rows, target, min_support)
+        cal = calibrate_on_dev(method.score(dev_accounts, dev_lists), dev_rows, target, min_support, threshold_by)
         right, auto = cal.right, cal.auto
         by_source = segments(dev_rows, right, auto, "source")
         points.append({
@@ -201,7 +202,7 @@ def main(argv: list[str] | None = None, root: Path = REPO_ROOT, embedder_factory
                 raise MapperError(f"{name} learns nothing from train, so it has no learning curve")
         for name in args.method:
             curves[name] = learning_curve(lambda: METHOD_REGISTRY[name](config, retriever), train, dev, retriever,  # noqa: B023
-                                          k=mapping.candidates_k, target=mapping.target_precision)  # fmt: skip
+                                          k=mapping.candidates_k, target=mapping.target_precision, threshold_by=mapping.threshold_by)  # fmt: skip
             print(_verdict(name, curves[name]).replace("**", ""), flush=True)
         for path in write_report(curves, config.root / "reports"):
             print(f"wrote {path.relative_to(config.root)}")
