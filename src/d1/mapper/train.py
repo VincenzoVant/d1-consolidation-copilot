@@ -26,6 +26,7 @@ import numpy as np
 
 from d1.config import REPO_ROOT, Config, ConfigError, Method, load_config
 from d1.datagen.schema import CompanyAccount, read_jsonl
+from d1.llm import LLMError
 from d1.datagen.standard_chart import ChartError, load_standard_chart
 from d1.mapper.calibrate import (
     SEGMENTS, Calibrator, choose_threshold, choose_thresholds_by_segment, cross_fit_probs, feature_matrix, segment_of,
@@ -168,6 +169,8 @@ def train_method(config: Config, name: Method, embedder_factory: Callable[[str],
         "out_of_fold": {"t_auto": cal.t_oof, "auto_share": float(auto_oof.mean()),
                         "auto_precision": float(right[auto_oof].mean()) if auto_oof.any() else None},
     }  # fmt: skip
+    if getattr(method, "last_usage", None):  # the LLM: calls, time and what its answers cost when first asked
+        summary["usage"] = method.last_usage
     _write_json(folder / "dev_summary.json", summary)
     return summary
 
@@ -202,7 +205,7 @@ def main(argv: list[str] | None = None, root: Path = REPO_ROOT, embedder_factory
                 print(f"{name}: not built yet, skipped")
                 continue
             print(_describe(train_method(config, name, embedder_factory)), flush=True)
-    except (ConfigError, ChartError, MapperError) as e:
+    except (ConfigError, ChartError, MapperError, LLMError) as e:
         print(f"error: {e}", file=sys.stderr)
         return 1
     return 0

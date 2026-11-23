@@ -1,0 +1,14 @@
+{
+  "method": "llm",
+  "t_auto": 0.9563680576130983,
+  "t_llm": null,
+  "target_precision": 0.98,
+  "fitted_on": "dev",
+  "embedding_model": "BAAI/bge-m3",
+  "group_text": "average",
+  "threshold_by": "code_match",
+  "t_auto_by_segment": {
+    "code_match": 0.10968756696605012,
+    "other": 0.97335482755094
+  }
+}

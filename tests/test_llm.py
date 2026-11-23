@@ -70,6 +70,16 @@ def test_cli_command_has_isolation_flags(cli_result):
     assert call["cwd_was_empty"] and call["timeout"] == 60
 
 
+def test_cli_effort_flag_only_when_set(cli_result):
+    runner = FakeRunner(stdout=json.dumps(cli_result))
+    _cli(runner)
+    assert "--effort" not in runner.calls[0]["argv"]  # the CLI's own default
+    ClaudeCLIBackend(runner=runner, effort="low").complete("Answer ok=true.", SCHEMA, "claude-haiku-5-5", "Return JSON only.")
+    assert _value_after(runner.calls[1]["argv"], "--effort") == "low"
+    with pytest.raises(ValueError, match="effort"):
+        ClaudeCLIBackend(effort="lowest")
+
+
 def test_cli_uses_the_login_not_an_api_key(cli_result, monkeypatch):
     monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-test")
     runner = FakeRunner(stdout=json.dumps(cli_result))

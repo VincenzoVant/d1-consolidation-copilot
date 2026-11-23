@@ -227,6 +227,20 @@ class TopPickAgent:
         return {"answers": answers}
 
 
+class FirstPickBackend:
+    """Stands in for Claude: picks each account's first candidate, more sure for even-numbered labels."""
+
+    def complete(self, prompt, schema, model, system, timeout_s=120.0):
+        from d1.llm import LLMResponse
+
+        answers = []
+        for label in schema["properties"]["answers"]["items"]["properties"]["account"]["enum"]:
+            block = prompt.split(f"## Account {label}\n")[1]
+            first = block.split("Candidate groups:\n- ")[1].split(":")[0]
+            answers.append({"account": label, "choice": first, "confidence": 90 if int(label[1:]) % 2 else 40, "reason": "first"})
+        return LLMResponse(structured={"answers": answers}, model=model, latency_ms=1.0)
+
+
 def test_cli_all_trains_the_built_methods_and_skips_the_rest(mapper_root, FakeEmbedder, capsys, monkeypatch):
     from d1.mapper.methods import METHOD_REGISTRY
     from d1.mapper.methods.laya_method import LayaMethod
@@ -234,10 +248,18 @@ def test_cli_all_trains_the_built_methods_and_skips_the_rest(mapper_root, FakeEm
     # The real Laya would download and run a 322M-parameter model inside a unit test.
     fake_laya = lambda config, retriever: LayaMethod("fake/laya", chart_of(config), revision="r1", agent_loader=lambda m, r: TopPickAgent())  # noqa: E731
     monkeypatch.setitem(METHOD_REGISTRY, "laya", fake_laya)
+    # The real LLM method would call Claude through the CLI.
+    from d1.mapper.methods.llm_method import LLMMethod
+
+    monkeypatch.setitem(METHOD_REGISTRY, "llm", lambda config, retriever: LLMMethod(FirstPickBackend(), "fake-model", chart_of(config)))
+    monkeypatch.delitem(METHOD_REGISTRY, "random_forest")  # stands in for a method that isn't built yet
     assert main(["--method", "all"], root=mapper_root, embedder_factory=_fake_factory(FakeEmbedder)) == 0
     out = capsys.readouterr().out
-    assert all(f"{m}: top-1" in out for m in ("fuzzy", "embeddings", "xgboost", "random_forest", "laya"))
-    assert "llm: not built yet" in out
+    assert all(f"{m}: top-1" in out for m in ("fuzzy", "embeddings", "xgboost", "laya", "llm"))
+    assert "random_forest: not built yet" in out
+    llm_summary = json.loads((mapper_root / "artifacts" / "methods" / "llm" / "dev_summary.json").read_text())
+    assert llm_summary["usage"]["calls"] > 0  # the LLM's summary records its calls and first-time cost
+    assert "usage" not in json.loads((mapper_root / "artifacts" / "methods" / "fuzzy" / "dev_summary.json").read_text())
 
 
 def chart_of(config):
@@ -246,7 +268,10 @@ def chart_of(config):
     return load_standard_chart(config.data.chart_path, expected=config.data.expected_groups)
 
 
-def test_cli_method_not_built_yet(mapper_root, capsys):
+def test_cli_method_not_built_yet(mapper_root, capsys, monkeypatch):
+    from d1.mapper.methods import METHOD_REGISTRY
+
+    monkeypatch.delitem(METHOD_REGISTRY, "llm")
     assert main(["--method", "llm"], root=mapper_root) == 1
     assert "not built yet" in capsys.readouterr().err
 

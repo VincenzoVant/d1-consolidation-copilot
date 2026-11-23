@@ -1,0 +1,11 @@
+{
+  "method": "llm",
+  "version": "llm-claude-haiku-5-5-prompt-v1-bbc6098-b10-effort-low",
+  "params": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "v1",
+    "prompt_sha256": "bbc60986dfafc7bc9531bb6c9b9b06eef74616cbb1ef7e7543cd9745543e4d9e",
+    "batch_size": 10,
+    "effort": "low"
+  }
+}

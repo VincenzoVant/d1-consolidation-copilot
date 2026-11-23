@@ -22,8 +22,9 @@ def test_accounts_from_rows_keep_order_and_add_neighbours(chart):
     rows = generate_rule_company("dev-c000", "dev", "retail", "nl", chart, 10, Random(0), code_scheme="legacy")
     accounts = accounts_from_rows(rows, n_neighbours=2)
     assert [a.account_id for a in accounts] == [r.account_id for r in rows]
-    assert accounts[0].neighbours == [rows[1].name, rows[2].name]  # nothing before the first account
-    assert accounts[5].neighbours == [rows[3].name, rows[4].name, rows[6].name, rows[7].name]
+    assert accounts[0].before == [] and accounts[0].after == [rows[1].name, rows[2].name]  # nothing before the first account
+    assert accounts[5].before == [rows[3].name, rows[4].name] and accounts[5].after == [rows[6].name, rows[7].name]
+    assert accounts[5].neighbours == [rows[3].name, rows[4].name, rows[6].name, rows[7].name]  # both sides
     assert accounts[5].code == rows[5].code and accounts[5].company_id == "dev-c000"
 
 
@@ -34,6 +35,7 @@ def test_neighbours_stay_within_one_company(chart):
     accounts = accounts_from_rows(rows, n_neighbours=2)
     assert all(n in [r.name for r in rows[:5]] for n in accounts[4].neighbours)  # last of company 0
     assert all(n in [r.name for r in rows[5:]] for n in accounts[5].neighbours)  # first of company 1
+    assert accounts[4].after == [] and accounts[5].before == []
 
 
 # --- embeddings baseline: take the shortlist's number 1 ---------------------------------------

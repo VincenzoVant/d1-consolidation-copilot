@@ -25,7 +25,13 @@ class AccountIn(BaseModel):
     name: str
     code: str | None = None
     company_id: str | None = None
-    neighbours: list[str] = []  # names of the accounts just before and after it in the company's chart
+    # Names of the accounts just before and just after it in the company's chart (the LLM method shows them).
+    before: list[str] = []
+    after: list[str] = []
+
+    @property
+    def neighbours(self) -> list[str]:
+        return self.before + self.after
 
 
 class MethodOutput(BaseModel):
@@ -78,7 +84,7 @@ def accounts_from_rows(rows: list[CompanyAccount], n_neighbours: int = 2) -> lis
         same = lambda j: 0 <= j < len(rows) and rows[j].company_id == row.company_id  # noqa: E731
         before = [rows[j].name for j in range(i - n_neighbours, i) if same(j)]
         after = [rows[j].name for j in range(i + 1, i + 1 + n_neighbours) if same(j)]
-        out.append(AccountIn(account_id=row.account_id, name=row.name, code=row.code, company_id=row.company_id, neighbours=before + after))
+        out.append(AccountIn(account_id=row.account_id, name=row.name, code=row.code, company_id=row.company_id, before=before, after=after))
     return out
 
 

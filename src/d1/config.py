@@ -40,6 +40,8 @@ class MappingConfig(_Strict):
     group_text: Literal["names", "descriptions", "average"] = "names"  # what each standard group is embedded as (Task 2.6)
     n_pca: int = Field(default=16, ge=0, le=256)  # meaning features for the rerankers (Task 3.1); 0 = none
     threshold_by: Literal["pooled", "code_match"] = "pooled"  # one 98% threshold for all, or one per segment (Task 3.3)
+    llm_batch_size: int = Field(default=1, ge=1, le=50)  # accounts of one company per LLM call (Task 3.4)
+    llm_effort: Literal["low", "medium", "high", "xhigh", "max"] | None = None  # the Claude CLI's --effort; None: its default
 
     @model_validator(mode="after")
     def _check(self) -> "MappingConfig":

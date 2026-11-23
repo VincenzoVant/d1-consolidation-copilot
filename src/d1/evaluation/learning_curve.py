@@ -30,6 +30,7 @@ import numpy as np
 
 from d1.config import REPO_ROOT, ConfigError, load_config
 from d1.datagen.schema import CompanyAccount
+from d1.llm import LLMError
 from d1.datagen.standard_chart import ChartError, load_standard_chart
 from d1.evaluation.metrics import bootstrap_ci
 from d1.mapper.embed import Embedder, MemoEmbedder, SentenceTransformerEmbedder
@@ -206,7 +207,7 @@ def main(argv: list[str] | None = None, root: Path = REPO_ROOT, embedder_factory
             print(_verdict(name, curves[name]).replace("**", ""), flush=True)
         for path in write_report(curves, config.root / "reports"):
             print(f"wrote {path.relative_to(config.root)}")
-    except (ConfigError, ChartError, MapperError) as e:
+    except (ConfigError, ChartError, MapperError, LLMError) as e:
         print(f"error: {e}", file=sys.stderr)
         return 1
     return 0

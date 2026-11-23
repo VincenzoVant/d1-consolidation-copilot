@@ -26,6 +26,7 @@ import numpy as np
 
 from d1.config import REPO_ROOT, Config, ConfigError, load_config
 from d1.datagen.schema import read_jsonl
+from d1.llm import LLMError
 from d1.datagen.standard_chart import ChartError
 from d1.evaluation.metrics import (
     auto_precision, auto_share, bootstrap_ci, breakdown, cost_report, pick_accuracy, recall_at_k, review_share, topk_accuracy,
@@ -208,7 +209,7 @@ def main(argv: list[str] | None = None, root: Path = REPO_ROOT, embedder_factory
         o = metrics["overall"]
         print(f"{args.method} on {args.split}: auto-mapped {_pct(o['auto_share'])} at {_pct(o['auto_precision'])} precision; "
               f"top-1 {_pct(o['top1'])} -> {run.relative_to(config.root)}")  # fmt: skip
-    except (ConfigError, ChartError, MapperError, RunError) as e:
+    except (ConfigError, ChartError, MapperError, RunError, LLMError) as e:
         print(f"error: {e}", file=sys.stderr)
         return 1
     return 0

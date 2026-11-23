@@ -57,3 +57,10 @@ mapping:
   # segment the system can see on real data, "does the account's code start with
   # the picked group?", so each segment holds 98% on its own.
   threshold_by: code_match
+  # The LLM method (Task 3.4): how many consecutive accounts of one company go in one
+  # call, and the Claude CLI's effort. Chosen on 600 dev accounts (12 whole companies,
+  # notebook 16): 10 per call at low effort had the best top-1 (85.8%, against 84.5%
+  # one per call and 85.3% at 25) in 55 s, against 310 s one per call; the default
+  # effort was no better (85.7%) and slower.
+  llm_batch_size: 10
+  llm_effort: low

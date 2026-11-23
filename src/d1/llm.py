@@ -24,6 +24,7 @@ from pydantic import BaseModel, ConfigDict
 from d1.config import Config
 
 LOGIN_HINT = "run `claude` once and log in"
+EFFORTS = ("low", "medium", "high", "xhigh", "max")  # the CLI's --effort levels
 
 
 class LLMError(Exception):
@@ -49,11 +50,16 @@ class ClaudeCLIBackend:
     """Runs `claude -p` as a separate program, once per call.
 
     runner defaults to subprocess.run; tests pass a fake so no real call is made.
+    effort sets the CLI's --effort for every call (None: the CLI's default). For the
+    LLM mapping method "low" halves the time per call (about 4.5 s against 8 s).
     """
 
-    def __init__(self, executable: str = "claude", runner: Callable[..., subprocess.CompletedProcess] = subprocess.run):
+    def __init__(self, executable: str = "claude", runner: Callable[..., subprocess.CompletedProcess] = subprocess.run, effort: str | None = None):
+        if effort is not None and effort not in EFFORTS:
+            raise ValueError(f"effort must be one of {', '.join(EFFORTS)}, got {effort!r}")
         self.executable = executable
         self.runner = runner
+        self.effort = effort
 
     def command(self, schema: dict, model: str, system: str) -> list[str]:
         return [
@@ -71,7 +77,7 @@ class ClaudeCLIBackend:
             "--setting-sources", "",
             "--disable-slash-commands",
             "--no-session-persistence",
-        ]  # fmt: skip
+        ] + (["--effort", self.effort] if self.effort else [])  # fmt: skip
 
     def complete(self, prompt: str, schema: dict, model: str, system: str, timeout_s: float = 120.0) -> LLMResponse:
         # Without an API key in its environment the CLI always uses your login.
@@ -177,10 +183,10 @@ class AnthropicAPIBackend:
         )
 
 
-def make_backend(config: Config) -> LLMBackend:
-    """The backend named by llm_backend in config/models.yaml."""
+def make_backend(config: Config, effort: str | None = None) -> LLMBackend:
+    """The backend named by llm_backend in config/models.yaml. effort applies to the CLI only."""
     if config.models.llm_backend == "claude_cli":
-        return ClaudeCLIBackend()
+        return ClaudeCLIBackend(effort=effort)
     if not os.environ.get("ANTHROPIC_API_KEY"):
         raise LLMError("llm_backend is anthropic_api but ANTHROPIC_API_KEY is not set: set it, or use llm_backend: claude_cli")
     return AnthropicAPIBackend(anthropic.Anthropic())

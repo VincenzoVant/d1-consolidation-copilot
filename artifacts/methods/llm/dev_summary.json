@@ -1,0 +1,79 @@
+{
+  "method": "llm",
+  "version": "llm-claude-haiku-5-5-prompt-v1-bbc6098-b10-effort-low",
+  "n_dev": 3500,
+  "top1": 0.8845714285714286,
+  "no_pick": 153,
+  "t_auto": 0.9563680576130983,
+  "auto_share": 0.614,
+  "auto_precision": 0.9962773382968823,
+  "threshold_by": "code_match",
+  "t_auto_by_segment": {
+    "code_match": 0.10968756696605012,
+    "other": 0.97335482755094
+  },
+  "by_segment": {
+    "code_match": {
+      "n": 1554,
+      "top1": 0.9974259974259975,
+      "auto_share": 0.9987129987129987,
+      "auto_precision": 0.9980670103092784
+    },
+    "other": {
+      "n": 1946,
+      "top1": 0.7944501541623844,
+      "auto_share": 0.3067831449126413,
+      "auto_precision": 0.9916247906197655
+    }
+  },
+  "by_source": {
+    "llm": {
+      "n": 1500,
+      "top1": 0.7633333333333333,
+      "auto_share": 0.464,
+      "auto_precision": 0.9899425287356322
+    },
+    "rules": {
+      "n": 2000,
+      "top1": 0.9755,
+      "auto_share": 0.7265,
+      "auto_precision": 0.9993117687543015
+    }
+  },
+  "by_code_scheme": {
+    "legacy": {
+      "n": 1700,
+      "top1": 0.8735294117647059,
+      "auto_share": 0.3452941176470588,
+      "auto_precision": 0.9914821124361158
+    },
+    "llm": {
+      "n": 800,
+      "top1": 0.78,
+      "auto_share": 0.76,
+      "auto_precision": 0.9967105263157895
+    },
+    "pcmn": {
+      "n": 1000,
+      "top1": 0.987,
+      "auto_share": 0.954,
+      "auto_precision": 0.9989517819706499
+    }
+  },
+  "out_of_fold": {
+    "t_auto": 0.9515311593696539,
+    "auto_share": 0.6142857142857143,
+    "auto_precision": 0.9958139534883721
+  },
+  "usage": {
+    "calls": 290,
+    "cached_calls": 60,
+    "failed_calls": 0,
+    "capped_calls": 0,
+    "wall_s": 254.91505208300077,
+    "first_time_cost_usd": 1.0306711,
+    "median_call_ms": 6285.321604489582,
+    "input_tokens": 3850998,
+    "output_tokens": 521083
+  }
+}

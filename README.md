@@ -104,6 +104,14 @@ python -m d1.mapper.train --method laya   # downloads laya-multilingual once (pi
 
 [Laya](https://huggingface.co/convaiinnovations/laya-multilingual) reads an account and its 10 candidates and answers one multiple-choice question, without any training on this data. Its top-1 on dev is 39.3% (embeddings baseline 70.3%), and it auto-maps 24.3% at 98.5%, all where the account's code agrees with its pick. Its "none of these" answer doesn't veto the pick: on dev, the right group was on the shortlist for 81% of those answers, so "none" is kept as a doubt signal that lowers the confidence instead. This is in line with its authors' own note that the base model is "a fast base to specialise, not a zero-shot decision engine". It runs locally on the Mac's GPU (about 0.2 s per account, no cost), asks each question under 6 rotations of the option order to cancel a position bias, and caches every answer, so a rerun is instant. See [`notebooks/15_laya.ipynb`](notebooks/15_laya.ipynb).
 
+## The LLM method: Claude picks among the candidates
+
+```bash
+python -m d1.mapper.train --method llm   # about 350 calls through the Claude CLI, on your own login
+```
+
+Claude Haiku gets 10 consecutive accounts of one company per call, each with its name, code, the accounts above and below it, and its 10 candidates. It answers with a choice (or "none"), a confidence from 0 to 100 and a one-line reason. With no training on this data, it has **the best top-1 of all methods on dev: 88.5%** (XGBoost 84.5%), and it is much better on LLM-written accounts with legacy codes, XGBoost's weak spot. But it auto-maps 61.4% at 99.6% against XGBoost's 74.3%: it is right more often than it can say it's sure. It costs $0.29 per 1,000 accounts at API prices, and a first dev run takes 4.5 minutes; answers are cached. See [`notebooks/16_llm.ipynb`](notebooks/16_llm.ipynb).
+
 ## Evaluating a method
 
 ```bash
