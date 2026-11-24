@@ -1,6 +1,6 @@
 """Train and calibrate a mapping method, and save it.
 
-    python -m d1.mapper.train --method fuzzy|embeddings|...|all
+    python -m d1.mapper.train --method fuzzy|embeddings|...|cascade|all
 
 For one method:
   1. fit it on the train split, if it learns (XGBoost, random forest);
@@ -11,6 +11,9 @@ For one method:
      probabilities and on the saved calibrator's (the stricter of the two);
   4. write artifacts/methods/<method>/:
      method.json (+ model files), calibrator.json, thresholds.json, dev_summary.json.
+
+The cascade (--method cascade, after its first method is trained) is fitted the same
+way on the dev accounts its first method leaves: see train_cascade and cascade.py.
 
 The test split is never read here.
 """
@@ -32,10 +35,11 @@ from d1.mapper.calibrate import (
     SEGMENTS, Calibrator, choose_threshold, choose_thresholds_by_segment, cross_fit_probs, feature_matrix, segment_of,
     stricter_threshold,
 )  # fmt: skip
+from d1.mapper.cascade import CASCADE, SECOND, CascadeMapper, combine, fingerprint, second_method
 from d1.mapper.embed import Embedder, MemoEmbedder, SentenceTransformerEmbedder
 from d1.mapper.methods import METHOD_REGISTRY, MethodOutput
 from d1.mapper.methods.base import accounts_from_rows
-from d1.mapper.pipeline import MapperError, Thresholds, artifact_dir, build_retriever
+from d1.mapper.pipeline import Mapper, MapperError, Thresholds, artifact_dir, build_retriever
 
 MIN_SUPPORT = 50  # a threshold must be backed by at least this many auto-mapped dev accounts
 
@@ -175,6 +179,101 @@ def train_method(config: Config, name: Method, embedder_factory: Callable[[str],
     return summary
 
 
+def _precision(right: np.ndarray, mask: np.ndarray) -> float | None:
+    return float(right[mask].mean()) if mask.any() else None
+
+
+def train_cascade(
+    config: Config,
+    embedder_factory: Callable[[str], Embedder] = SentenceTransformerEmbedder,
+    first: Method | None = None,
+    save: bool = True,
+) -> dict:
+    """Fit the cascade's second stage on dev and save it; returns the cascade's dev summary.
+
+    1. the trained first method (default: mapping.cascade_first) maps every dev account;
+    2. the LLM scores only the accounts it did not auto-map (same shortlists, batched per company);
+    3. the LLM's calibrator and thresholds are fitted on those accounts, as for any method
+       (out of fold by company, one threshold per segment, the stricter of both ways);
+    4. artifacts/methods/cascade/ (unless save is False: to try another first method).
+    """
+    first = first or config.models.mapping.cascade_first
+    if first is None:
+        raise MapperError("set mapping.cascade_first in config/models.yaml: the method the LLM follows in the cascade")
+    if first == SECOND:
+        raise MapperError("the cascade's first method can't be the LLM: the LLM is its second step")
+    if SECOND not in METHOD_REGISTRY:
+        raise MapperError(f"{SECOND}: not built yet")
+    target, threshold_by = config.models.mapping.target_precision, config.models.mapping.threshold_by
+    dev = _rows(config, "dev")
+    first_mapper = Mapper.from_artifacts(config, first, embedder_factory=embedder_factory)
+    accounts = accounts_from_rows(dev)
+    shortlists = first_mapper.retriever.top_k([a.name for a in accounts], first_mapper.k)
+    first_decisions = first_mapper.map(accounts, shortlists)
+    rest = [i for i, d in enumerate(first_decisions) if d.decision_path != "auto"]
+    if len(rest) < MIN_SUPPORT:
+        raise MapperError(f"{first} leaves only {len(rest)} dev accounts unmapped: too few to calibrate the LLM on")
+
+    llm = second_method(config, first_mapper.retriever)  # Claude as the cascade asks it (cascade_llm_choices)
+    rest_rows, rest_accounts = [dev[i] for i in rest], [accounts[i] for i in rest]
+    outputs = llm.score(rest_accounts, [shortlists[i] for i in rest])
+    usage = getattr(llm, "last_usage", None)
+    cal = calibrate_on_dev(outputs, rest_rows, target, threshold_by=threshold_by)
+    thresholds = Thresholds(method=SECOND, t_auto=cal.t_auto, target_precision=target, fitted_on="dev", embedding_model=first_mapper.retriever.embedder.model_id,
+                            group_text=first_mapper.retriever.group_text, threshold_by=threshold_by, t_auto_by_segment=cal.t_auto_by_segment)  # fmt: skip
+    cascade = CascadeMapper(first_mapper, Mapper(first_mapper.retriever, llm, cal.calibrator, thresholds, first_mapper.k))
+    # The same decisions the saved cascade will make: the LLM's outputs are decided with the saved calibrator.
+    decisions = combine(first_decisions, rest, cascade.second.decide(rest_accounts, outputs), cascade.versions())
+
+    gold = np.array([r.target_code for r in dev])
+    right = np.array([d.chosen_code == g for d, g in zip(decisions, gold)])
+    auto = np.array([d.decision_path in ("auto", "cascade_llm") for d in decisions])
+    by_llm = np.array([d.decision_path == "cascade_llm" for d in decisions])
+    first_auto = np.array([d.decision_path == "auto" for d in first_decisions])
+    first_right = np.array([d.chosen_code == g for d, g in zip(first_decisions, gold)])
+    stage = np.where(first_auto, "first", "llm")
+    segment = np.array([d.segment for d in decisions])
+    by_stage_segment = {}
+    for st in ("first", "llm"):
+        for sg in SEGMENTS:
+            cell = (stage == st) & (segment == sg)
+            by_stage_segment[f"{st}/{sg}"] = {"n": int(cell.sum()), "auto": int((cell & auto).sum()), "auto_precision": _precision(right, cell & auto)}
+    in_rest = ~first_auto
+    summary = {
+        "method": CASCADE, "first": first, "second": SECOND, "n_dev": len(dev),
+        "versions": cascade.versions(), "top1": float(right.mean()), "auto_share": float(auto.mean()), "auto_precision": _precision(right, auto),
+        "first_alone": {"top1": float(first_right.mean()), "auto_share": float(first_auto.mean()), "auto_precision": _precision(first_right, first_auto)},
+        "stages": {"first_auto": int(first_auto.sum()), "sent_to_llm": len(rest), "llm_auto": int(by_llm.sum()), "review": int((~auto).sum())},
+        "rest": {"n": len(rest), "first_top1": float(first_right[in_rest].mean()), "llm_top1": float(cal.right.mean()),
+                 "llm_no_pick": int((~cal.picked).sum()), "llm_auto_precision": _precision(right, by_llm)},
+        "second_stage": {"threshold_by": threshold_by, "t_auto": cal.t_auto, "t_auto_by_segment": cal.t_auto_by_segment,
+                         "out_of_fold": {"t_auto": cal.t_oof, "auto_share_of_rest": float(cal.auto_oof.mean()),
+                                         "auto_precision": _precision(cal.right, cal.auto_oof)}},
+        "by_stage_segment": by_stage_segment,
+        "by_source": segments(dev, right, auto, "source"), "by_code_scheme": segments(dev, right, auto, "code_scheme"),
+        "usage": usage,
+    }  # fmt: skip
+    if save:
+        folder = artifact_dir(config, CASCADE)
+        second = folder / "second"
+        second.mkdir(parents=True, exist_ok=True)
+        llm.save(second)
+        _write_json(second / "calibrator.json", cal.calibrator.to_json())
+        _write_json(second / "thresholds.json", thresholds.model_dump())
+        _write_json(folder / "cascade.json", {"first": first, "second": SECOND, "first_fingerprint": fingerprint(artifact_dir(config, first)),
+                                              "target_precision": target, "threshold_by": threshold_by})  # fmt: skip
+        _write_json(folder / "dev_summary.json", summary)
+    return summary
+
+
+def _describe_cascade(s: dict) -> str:
+    alone, st = s["first_alone"], s["stages"]
+    precision = "–" if s["auto_precision"] is None else f"{s['auto_precision']:.1%}"
+    return (f"cascade ({s['first']}, then llm): auto-map {s['auto_share']:.1%} of dev at {precision} precision "
+            f"({s['first']} alone {alone['auto_share']:.1%}); {st['sent_to_llm']} accounts sent to the LLM, {st['llm_auto']} auto-mapped by it; "
+            f"top-1 {s['top1']:.1%}")  # fmt: skip
+
+
 def _describe(s: dict) -> str:
     if s["auto_share"] == 0:
         return f"{s['method']}: top-1 {s['top1']:.1%}; no threshold reaches the target precision, so every account goes to review"
@@ -187,20 +286,27 @@ def _describe(s: dict) -> str:
 
 def main(argv: list[str] | None = None, root: Path = REPO_ROOT, embedder_factory: Callable[[str], Embedder] = SentenceTransformerEmbedder) -> int:
     parser = argparse.ArgumentParser(prog="python -m d1.mapper.train", description="Train, calibrate on dev and save a mapping method.")
-    parser.add_argument("--method", required=True, help="a method from config/models.yaml, or all")
+    parser.add_argument("--method", required=True, help="a method from config/models.yaml, cascade, or all")
     args = parser.parse_args(argv)
     try:
         config = load_config(root)
         configured = config.models.mapping.methods
+        cascade_first = config.models.mapping.cascade_first
         if args.method == "all":
-            names = configured
-        elif args.method in configured:
+            names = list(configured) + ([CASCADE] if cascade_first else [])  # the cascade last: it builds on its first method
+        elif args.method in configured or args.method == CASCADE:
             names = [args.method]
         else:
-            raise MapperError(f"unknown method {args.method!r}: choose from {', '.join(configured)} or all")
-        if len(names) == 1 and names[0] not in METHOD_REGISTRY:
+            raise MapperError(f"unknown method {args.method!r}: choose from {', '.join(configured)}, cascade or all")
+        if len(names) == 1 and names[0] != CASCADE and names[0] not in METHOD_REGISTRY:
             raise MapperError(f"{names[0]}: not built yet")
         for name in names:
+            if name == CASCADE:
+                if args.method == "all" and not {cascade_first, SECOND} <= set(METHOD_REGISTRY):
+                    print(f"cascade: {cascade_first} or {SECOND} not built yet, skipped")
+                    continue
+                print(_describe_cascade(train_cascade(config, embedder_factory)), flush=True)
+                continue
             if name not in METHOD_REGISTRY:
                 print(f"{name}: not built yet, skipped")
                 continue

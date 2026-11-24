@@ -1,13 +1,10 @@
 import json
 import shutil
-from random import Random
 
 import pytest
 import yaml
 
 from d1.config import REPO_ROOT, load_config
-from d1.datagen.rule_charts import generate_rule_company
-from d1.datagen.schema import write_jsonl
 from d1.mapper.calibrate import FEATURES, Calibrator
 from d1.mapper.methods.base import AccountIn, MethodOutput
 from d1.mapper.pipeline import Mapper, MapperError, Thresholds
@@ -96,21 +93,6 @@ def test_empty_input_gives_no_decisions(fake_embedder, chart):
 
 
 # --- training and loading the artifacts ----------------------------------------------------
-
-
-@pytest.fixture
-def mapper_root(config_root, chart):
-    """A repo root with the real chart and small train/dev splits (no test split at all)."""
-    shutil.copytree(REPO_ROOT / "data" / "source", config_root / "data" / "source")
-    config = load_config(config_root)
-    for split, n_companies in (("train", 2), ("dev", 4)):
-        rows = []
-        for c, language in enumerate(["nl", "fr", "en", "mixed"][:n_companies]):
-            rows += generate_rule_company(f"{split}-c{c:03d}", split, "retail", language, chart, 50, Random(c), code_scheme="legacy")
-        # Mislabel every fourth row, so even an exact-name method is sometimes wrong (calibration needs both).
-        rows = [r.model_copy(update={"target_code": "604" if r.target_code != "604" else "600"}) if i % 4 == 0 else r for i, r in enumerate(rows)]
-        write_jsonl(rows, config.data.generated_dir / f"{split}.jsonl")
-    return config_root
 
 
 def _fake_factory(FakeEmbedder):
@@ -227,21 +209,7 @@ class TopPickAgent:
         return {"answers": answers}
 
 
-class FirstPickBackend:
-    """Stands in for Claude: picks each account's first candidate, more sure for even-numbered labels."""
-
-    def complete(self, prompt, schema, model, system, timeout_s=120.0):
-        from d1.llm import LLMResponse
-
-        answers = []
-        for label in schema["properties"]["answers"]["items"]["properties"]["account"]["enum"]:
-            block = prompt.split(f"## Account {label}\n")[1]
-            first = block.split("Candidate groups:\n- ")[1].split(":")[0]
-            answers.append({"account": label, "choice": first, "confidence": 90 if int(label[1:]) % 2 else 40, "reason": "first"})
-        return LLMResponse(structured={"answers": answers}, model=model, latency_ms=1.0)
-
-
-def test_cli_all_trains_the_built_methods_and_skips_the_rest(mapper_root, FakeEmbedder, capsys, monkeypatch):
+def test_cli_all_trains_the_built_methods_and_skips_the_rest(mapper_root, FakeEmbedder, FirstPickBackend, capsys, monkeypatch):
     from d1.mapper.methods import METHOD_REGISTRY
     from d1.mapper.methods.laya_method import LayaMethod
 
@@ -257,6 +225,7 @@ def test_cli_all_trains_the_built_methods_and_skips_the_rest(mapper_root, FakeEm
     out = capsys.readouterr().out
     assert all(f"{m}: top-1" in out for m in ("fuzzy", "embeddings", "xgboost", "laya", "llm"))
     assert "random_forest: not built yet" in out
+    assert "cascade (xgboost, then llm): " in out  # last, once its first method is trained
     llm_summary = json.loads((mapper_root / "artifacts" / "methods" / "llm" / "dev_summary.json").read_text())
     assert llm_summary["usage"]["calls"] > 0  # the LLM's summary records its calls and first-time cost
     assert "usage" not in json.loads((mapper_root / "artifacts" / "methods" / "fuzzy" / "dev_summary.json").read_text())
@@ -366,3 +335,21 @@ def test_from_artifacts_refuses_another_threshold_setting(mapper_root, FakeEmbed
     path.write_text(yaml.safe_dump(data))
     with pytest.raises(MapperError, match="threshold_by"):
         Mapper.from_artifacts(load_config(mapper_root), "fuzzy", embedder_factory=_fake_factory(FakeEmbedder))
+
+
+# --- what the reviewer reads ------------------------------------------------------------------------
+
+
+def test_the_chosen_candidate_carries_the_reason(fake_embedder, chart):
+    answer = {**UNSURE, "reason": "trade payables, domestic"}
+    (d,) = _mapper(fake_embedder, chart, {"a": answer}).map([AccountIn(account_id="a", name="x")])
+    top, other = d.candidates
+    assert (top.code, top.reason) == ("440", "trade payables, domestic")  # the explanation sits on the option it explains
+    assert other.reason is None
+
+
+def test_review_options_are_the_first_five_candidates(fake_embedder, chart):
+    scores = {c: 0.9 - i / 20 for i, c in enumerate(["440", "400", "604", "620", "550", "600", "650"])}
+    (d,) = _mapper(fake_embedder, chart, {"a": {"scores": scores, "chosen_code": "440"}}).map([AccountIn(account_id="a", name="x")])
+    assert [c.code for c in d.review_options()] == ["440", "400", "604", "620", "550"]
+    assert len(d.candidates) == 7  # the full list is kept; the reviewer is shown five

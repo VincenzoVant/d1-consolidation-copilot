@@ -17,7 +17,8 @@ from d1.mapper.retrieve import Candidate
 
 
 def auto_share(decisions: list[MappingDecision]) -> float:
-    return float(np.mean([d.decision_path == "auto" for d in decisions])) if decisions else 0.0
+    """Share of accounts mapped without a person: by the method itself, or by the LLM in the cascade."""
+    return float(np.mean([d.decision_path in ("auto", "cascade_llm") for d in decisions])) if decisions else 0.0
 
 
 def review_share(decisions: list[MappingDecision]) -> float:

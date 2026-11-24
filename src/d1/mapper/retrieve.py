@@ -23,7 +23,8 @@ class Candidate(BaseModel):
     model_config = ConfigDict(frozen=True)
 
     code: str
-    score: float  # cosine similarity between the account name and the group
+    score: float  # cosine similarity between the account name and the group (a method's own score, after a method)
+    reason: str | None = None  # on a method's pick: its one-line explanation (Claude's), what the reviewer reads next to it
 
 
 def standard_text(a: StandardAccount, description: str | None = None) -> str:

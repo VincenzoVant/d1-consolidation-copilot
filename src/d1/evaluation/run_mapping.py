@@ -1,6 +1,7 @@
 """Run a trained method on a split and write its metrics.
 
     python -m d1.evaluation.run_mapping --split dev --method fuzzy
+    python -m d1.evaluation.run_mapping --split dev --method cascade
     python -m d1.evaluation.run_mapping --split test --method <name> --reported
 
 Writes reports/results/<run_id>/metrics.json, tables.md and decisions.csv (one line per account).
@@ -33,7 +34,8 @@ from d1.evaluation.metrics import (
 )  # fmt: skip
 from d1.mapper.embed import Embedder, SentenceTransformerEmbedder
 from d1.mapper.methods.base import accounts_from_rows
-from d1.mapper.pipeline import Mapper, MapperError
+from d1.mapper.cascade import load_mapper
+from d1.mapper.pipeline import MapperError
 
 RESULTS_DIR = Path("reports") / "results"
 TEST_LOG = Path("reports") / "test_runs.jsonl"
@@ -41,7 +43,7 @@ LABEL_FILES = {"dev": "dev.jsonl", "test": "test_checked.jsonl"}
 BREAKDOWNS = ["source", "code_scheme", "language", "noise", "industry", "overlaps_dev"]
 DECISION_COLUMNS = [
     "account_id", "company_id", "source", "language", "noise", "overlaps_dev", "name", "target_code",
-    "chosen_code", "right", "confidence", "segment", "decision_path", "status", "top3",
+    "chosen_code", "right", "confidence", "segment", "decision_path", "status", "top3", "review_options", "reason",
 ]  # fmt: skip
 
 
@@ -82,7 +84,7 @@ def evaluate(config: Config, split: str, method: str, embedder_factory: Callable
         hint = "python -m d1.datagen apply-review" if split == "test" else "python -m d1.datagen build"
         raise RunError(f"{path} not found: run `{hint}` first")
     rows = read_jsonl(path)
-    mapper = Mapper.from_artifacts(config, method, embedder_factory=embedder_factory)
+    mapper = load_mapper(config, method, embedder_factory=embedder_factory)  # one method, or the cascade
     k = mapper.k
     accounts = accounts_from_rows(rows)
     shortlists = mapper.retriever.top_k([a.name for a in accounts], k)
@@ -114,6 +116,7 @@ def evaluate(config: Config, split: str, method: str, embedder_factory: Callable
             "noise": ";".join(r.noise), "overlaps_dev": int(r.overlaps_dev), "name": r.name, "target_code": r.target_code,
             "chosen_code": d.chosen_code or "", "right": int(d.chosen_code == r.target_code), "confidence": f"{d.confidence:.6f}",
             "segment": d.segment or "", "decision_path": d.decision_path, "status": d.status, "top3": ";".join(c.code for c in d.candidates[:3]),
+            "review_options": ";".join(c.code for c in d.review_options()), "reason": d.reason or "",
         }
         for r, d in zip(rows, decisions)
     ]  # fmt: skip
@@ -146,6 +149,8 @@ def _pct(x: float | None) -> str:
 
 
 def _thresholds(t: dict) -> str:
+    if "first" in t:  # the cascade: the first method's, then the LLM's on what it leaves
+        return f"{t['first']['method']}: {_thresholds(t['first'])}; then {t['second']['method']} on the rest: {_thresholds(t['second'])}"
     if t.get("threshold_by") == "code_match":
         return ", ".join(f"{k} {v}" for k, v in t["t_auto_by_segment"].items()) + " (one per segment)"
     return f"{t['t_auto']} (pooled)"

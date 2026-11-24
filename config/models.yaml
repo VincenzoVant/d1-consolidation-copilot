@@ -64,3 +64,13 @@ mapping:
   # effort was no better (85.7%) and slower.
   llm_batch_size: 10
   llm_effort: low
+  # The cascade (Task 3.6): this method auto-maps what it is sure of; the LLM looks at
+  # every account it leaves, with its own calibration and thresholds fitted on those
+  # accounts. XGBoost has the highest auto share on dev (74.3%, random forest 74.2%);
+  # the final comparison tries both.
+  cascade_first: xgboost
+  # What Claude answers in the cascade: its 5 most likely groups, ranked, with
+  # probabilities and a reason on the first. Every account it can't auto-map goes to
+  # the reviewer with exactly that list (notebook 17). llm_choices stays 1 for the
+  # LLM method on its own (notebook 16), whose calibration was fitted on one choice.
+  cascade_llm_choices: 5

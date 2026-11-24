@@ -42,6 +42,9 @@ class MappingConfig(_Strict):
     threshold_by: Literal["pooled", "code_match"] = "pooled"  # one 98% threshold for all, or one per segment (Task 3.3)
     llm_batch_size: int = Field(default=1, ge=1, le=50)  # accounts of one company per LLM call (Task 3.4)
     llm_effort: Literal["low", "medium", "high", "xhigh", "max"] | None = None  # the Claude CLI's --effort; None: its default
+    llm_choices: int = Field(default=1, ge=1, le=10)  # 1: one choice + confidence; more: a ranked list with probabilities (Task 3.6)
+    cascade_llm_choices: int | None = Field(default=None, ge=1, le=10)  # Claude's question in the cascade; None: llm_choices
+    cascade_first: Method | None = None  # the cascade's first method; the LLM looks at what it doesn't auto-map (Task 3.6)
 
     @model_validator(mode="after")
     def _check(self) -> "MappingConfig":
@@ -49,6 +52,10 @@ class MappingConfig(_Strict):
             raise ValueError("methods contains a duplicate")
         if self.selected_method is not None and self.selected_method not in self.methods:
             raise ValueError(f"selected_method {self.selected_method} is not in methods")
+        if self.cascade_first == "llm":
+            raise ValueError("cascade_first can't be llm: the LLM is the cascade's second step")
+        if self.cascade_first is not None and self.cascade_first not in self.methods:
+            raise ValueError(f"cascade_first {self.cascade_first} is not in methods")
         return self
 
 

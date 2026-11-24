@@ -6,6 +6,7 @@
 The threshold t_auto and the calibrator are fitted per method on dev by
 train.py and saved under artifacts/methods/<method>/; Mapper.from_artifacts
 loads them. Every decision records which embedder, method and calibrator made it.
+The cascade (two methods one after the other) is in cascade.py.
 """
 
 import hashlib
@@ -22,10 +23,11 @@ from d1.datagen.standard_chart import load_standard_chart
 from d1.mapper.calibrate import SEGMENTS, Calibrator, features, segment_of
 from d1.mapper.descriptions import DescriptionError, load_descriptions
 from d1.mapper.embed import Embedder, SentenceTransformerEmbedder
-from d1.mapper.methods import METHOD_REGISTRY, AccountIn, MappingMethod
+from d1.mapper.methods import METHOD_REGISTRY, AccountIn, MappingMethod, MethodOutput
 from d1.mapper.retrieve import Candidate, Retriever
 
 ARTIFACTS_DIR = Path("artifacts") / "methods"
+REVIEW_OPTIONS = 5  # how many groups a reviewer is shown for an account that isn't auto-mapped
 
 
 class MapperError(Exception):
@@ -47,11 +49,14 @@ class MappingDecision(BaseModel):
     latency_ms: float = 0.0
     cached: bool = False
 
+    def review_options(self, n: int = REVIEW_OPTIONS) -> list[Candidate]:
+        """What a reviewer chooses from: the first n candidates, the pick first, with its reason on it."""
+        return self.candidates[:n]
+
 
 class Thresholds(BaseModel):
     method: Method
     t_auto: float | None  # None: no threshold reached the target precision on dev, so everything is reviewed
-    t_llm: float | None = None  # for the cascade (Task 3.6)
     target_precision: float
     fitted_on: Literal["dev"]
     embedding_model: str  # the shortlists these were fitted on; loading with another model is refused
@@ -102,14 +107,12 @@ class Mapper:
         calibrator: Calibrator,
         thresholds: Thresholds,
         k: int,
-        cascade: MappingMethod | None = None,
     ):
         self.retriever = retriever
         self.method = method
         self.calibrator = calibrator
         self.thresholds = thresholds
         self.k = k
-        self.cascade = cascade  # arrives in Task 3.6
 
     def map(self, accounts: list[AccountIn], shortlists: list[list[Candidate]] | None = None) -> list[MappingDecision]:
         """One decision per account, in input order.
@@ -121,12 +124,18 @@ class Mapper:
             return []
         if shortlists is None:
             shortlists = self.retriever.top_k([a.name for a in accounts], self.k)
-        outputs = self.method.score(accounts, shortlists)
-        versions = {
+        return self.decide(accounts, self.method.score(accounts, shortlists))
+
+    def versions(self) -> dict[str, str]:
+        return {
             "embedder": self.retriever.embedder.model_id,
             "method": self.method.version(),
             "calibrator": calibrator_hash(self.calibrator),
         }
+
+    def decide(self, accounts: list[AccountIn], outputs: list[MethodOutput]) -> list[MappingDecision]:
+        """The method's outputs, calibrated and held against the thresholds: one decision per account."""
+        versions = self.versions()
         decisions = []
         for account, out in zip(accounts, outputs):
             # Best first; equal scores keep the method's own order (sorted() is stable).
@@ -141,7 +150,8 @@ class Mapper:
             decisions.append(
                 MappingDecision(
                     account_id=account.account_id, method=self.method.name,
-                    candidates=[Candidate(code=c, score=s) for c, s in ranked], confidence=confidence,
+                    candidates=[Candidate(code=c, score=s, reason=out.reason if c == out.chosen_code else None) for c, s in ranked],
+                    confidence=confidence,
                     decision_path="auto" if auto else "review", chosen_code=out.chosen_code,
                     reason=out.reason, status=out.status, model_versions=versions, segment=segment,
                     cost_usd=out.cost_usd, latency_ms=out.latency_ms, cached=out.cached,
@@ -165,26 +175,32 @@ class Mapper:
         folder = artifact_dir(config, name)
         if not (folder / "thresholds.json").exists():
             raise MapperError(f"{folder} has no trained {name} method: run `python -m d1.mapper.train --method {name}`")
+        embedder = embedder_factory(config.models.embedding_model)
+        chart = load_standard_chart(config.data.chart_path, expected=config.data.expected_groups)
+        return cls.from_folder(config, name, folder, build_retriever(config, embedder, chart))
+
+    @classmethod
+    def from_folder(
+        cls, config: Config, name: Method, folder: Path, retriever: Retriever, trained_as: str | None = None, method: MappingMethod | None = None
+    ) -> "Mapper":
+        """The Mapper for the method saved in folder, on a retriever built already (the cascade's two stages share one).
+
+        trained_as names the train command's --method in the messages (cascade for its second stage);
+        method is the method object to load into, when it isn't built from the config as is (the cascade's Claude).
+        """
+        retrain = f"run `python -m d1.mapper.train --method {trained_as or name}` again"
         thresholds = Thresholds.model_validate_json((folder / "thresholds.json").read_text(encoding="utf-8"))
         calibrator = Calibrator.from_json(json.loads((folder / "calibrator.json").read_text(encoding="utf-8")))
-        embedder = embedder_factory(config.models.embedding_model)
-        if embedder.model_id != thresholds.embedding_model:
+        if retriever.embedder.model_id != thresholds.embedding_model:
             raise MapperError(
-                f"{name} was calibrated on shortlists from {thresholds.embedding_model}, but the embedder is {embedder.model_id}: "
-                f"run `python -m d1.mapper.train --method {name}` again"
+                f"{name} was calibrated on shortlists from {thresholds.embedding_model}, but the embedder is {retriever.embedder.model_id}: {retrain}"
             )
         if thresholds.group_text != config.models.mapping.group_text:
-            raise MapperError(
-                f"{name} was calibrated with group_text {thresholds.group_text}, but the config says "
-                f"{config.models.mapping.group_text}: run `python -m d1.mapper.train --method {name}` again"
-            )
+            raise MapperError(f"{name} was calibrated with group_text {thresholds.group_text}, but the config says {config.models.mapping.group_text}: {retrain}")
         if thresholds.threshold_by != config.models.mapping.threshold_by:
             raise MapperError(
-                f"{name} was calibrated with threshold_by {thresholds.threshold_by}, but the config says "
-                f"{config.models.mapping.threshold_by}: run `python -m d1.mapper.train --method {name}` again"
+                f"{name} was calibrated with threshold_by {thresholds.threshold_by}, but the config says {config.models.mapping.threshold_by}: {retrain}"
             )
-        chart = load_standard_chart(config.data.chart_path, expected=config.data.expected_groups)
-        retriever = build_retriever(config, embedder, chart)
-        mapping_method = METHOD_REGISTRY[name](config, retriever)
+        mapping_method = method or METHOD_REGISTRY[name](config, retriever)
         mapping_method.load(folder)
         return cls(retriever, mapping_method, calibrator, thresholds, config.models.mapping.candidates_k)

@@ -109,5 +109,6 @@ def test_dev_run_writes_one_decision_line_per_account(trained_root, FakeEmbedder
     with open(_only_run_dir(trained_root) / "decisions.csv", encoding="utf-8", newline="") as f:
         lines = list(csv.DictReader(f))
     assert len(lines) == 200 and list(lines[0]) == DECISION_COLUMNS
+    assert "reason" in DECISION_COLUMNS and "review_options" in DECISION_COLUMNS  # what the reviewer reads
     assert {line["decision_path"] for line in lines} <= {"auto", "review"}
     assert all(line["right"] in ("1", "0") for line in lines)

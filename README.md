@@ -112,6 +112,14 @@ python -m d1.mapper.train --method llm   # about 350 calls through the Claude CL
 
 Claude Haiku gets 10 consecutive accounts of one company per call, each with its name, code, the accounts above and below it, and its 10 candidates. It answers with a choice (or "none"), a confidence from 0 to 100 and a one-line reason. With no training on this data, it has **the best top-1 of all methods on dev: 88.5%** (XGBoost 84.5%), and it is much better on LLM-written accounts with legacy codes, XGBoost's weak spot. But it auto-maps 61.4% at 99.6% against XGBoost's 74.3%: it is right more often than it can say it's sure. It costs $0.29 per 1,000 accounts at API prices, and a first dev run takes 4.5 minutes; answers are cached. See [`notebooks/16_llm.ipynb`](notebooks/16_llm.ipynb).
 
+## The cascade: XGBoost first, Claude ranks the rest
+
+```bash
+python -m d1.mapper.train --method cascade   # after xgboost; about 120 Claude calls
+```
+
+XGBoost auto-maps what it's sure of. Claude looks only at the accounts it leaves, with its own calibration fitted on those hard accounts, and ranks its five most likely groups with a one-sentence reason. On dev Claude is never sure enough there to clear 98%, so the cascade auto-maps the same 74.3% as XGBoost. But it raises **top-1 to 88.8%** (+4.3 points), and every account that goes to a person comes with Claude's ranked five, its reason under the first. The right group is among them 71.0% of the time and first 60.9% (XGBoost's own ranking: 67.5% and 44.2%). It costs $0.10 per 1,000 accounts, a third of Claude on everything. See [`notebooks/17_cascade.ipynb`](notebooks/17_cascade.ipynb).
+
 ## Evaluating a method
 
 ```bash

@@ -1,0 +1,114 @@
+{
+  "method": "cascade",
+  "first": "xgboost",
+  "second": "llm",
+  "n_dev": 3500,
+  "versions": {
+    "embedder": "BAAI/bge-m3",
+    "first_method": "xgboost-pair-features-v1-pca16-v1",
+    "first_calibrator": "0a1061134c79",
+    "second_method": "llm-claude-haiku-5-5-prompt-v1-75f3b79-b10-effort-low-rank5",
+    "second_calibrator": "d13fbd15ccab"
+  },
+  "top1": 0.8882857142857142,
+  "auto_share": 0.7425714285714285,
+  "auto_precision": 0.9849942285494421,
+  "first_alone": {
+    "top1": 0.8451428571428572,
+    "auto_share": 0.7425714285714285,
+    "auto_precision": 0.9849942285494421
+  },
+  "stages": {
+    "first_auto": 2599,
+    "sent_to_llm": 901,
+    "llm_auto": 0,
+    "review": 901
+  },
+  "rest": {
+    "n": 901,
+    "first_top1": 0.44173140954495005,
+    "llm_top1": 0.609322974472808,
+    "llm_no_pick": 80,
+    "llm_auto_precision": null
+  },
+  "second_stage": {
+    "threshold_by": "code_match",
+    "t_auto": null,
+    "t_auto_by_segment": {
+      "code_match": null,
+      "other": null
+    },
+    "out_of_fold": {
+      "t_auto": null,
+      "auto_share_of_rest": 0.0,
+      "auto_precision": null
+    }
+  },
+  "by_stage_segment": {
+    "first/code_match": {
+      "n": 1614,
+      "auto": 1614,
+      "auto_precision": 0.9876084262701363
+    },
+    "first/other": {
+      "n": 985,
+      "auto": 985,
+      "auto_precision": 0.9807106598984772
+    },
+    "llm/code_match": {
+      "n": 1,
+      "auto": 0,
+      "auto_precision": null
+    },
+    "llm/other": {
+      "n": 900,
+      "auto": 0,
+      "auto_precision": null
+    }
+  },
+  "by_source": {
+    "llm": {
+      "n": 1500,
+      "top1": 0.774,
+      "auto_share": 0.5053333333333333,
+      "auto_precision": 0.9604221635883905
+    },
+    "rules": {
+      "n": 2000,
+      "top1": 0.974,
+      "auto_share": 0.9205,
+      "auto_precision": 0.9951113525258012
+    }
+  },
+  "by_code_scheme": {
+    "legacy": {
+      "n": 1700,
+      "top1": 0.86,
+      "auto_share": 0.5623529411764706,
+      "auto_precision": 0.9759414225941423
+    },
+    "llm": {
+      "n": 800,
+      "top1": 0.82,
+      "auto_share": 0.82,
+      "auto_precision": 0.9786585365853658
+    },
+    "pcmn": {
+      "n": 1000,
+      "top1": 0.991,
+      "auto_share": 0.987,
+      "auto_precision": 0.9979736575481256
+    }
+  },
+  "usage": {
+    "calls": 0,
+    "cached_calls": 120,
+    "failed_calls": 0,
+    "capped_calls": 0,
+    "wall_s": 0.022578999982215464,
+    "first_time_cost_usd": 0.35187434,
+    "median_call_ms": 12222.416854521725,
+    "input_tokens": 1050747,
+    "output_tokens": 295949
+  }
+}

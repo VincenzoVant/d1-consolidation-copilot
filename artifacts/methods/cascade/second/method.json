@@ -1,0 +1,12 @@
+{
+  "method": "llm",
+  "version": "llm-claude-haiku-5-5-prompt-v1-75f3b79-b10-effort-low-rank5",
+  "params": {
+    "model": "claude-haiku-5-5",
+    "prompt_version": "v1",
+    "prompt_sha256": "75f3b79f99e9be8c9cea59201c4f533245cee601e768f830efbffcdae89d587d",
+    "batch_size": 10,
+    "effort": "low",
+    "n_choices": 5
+  }
+}

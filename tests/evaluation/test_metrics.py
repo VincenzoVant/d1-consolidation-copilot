@@ -33,6 +33,11 @@ def test_auto_and_review_share():
     assert auto_share(ds) == 0.5 and review_share(ds) == 0.5
 
 
+def test_cascade_llm_counts_as_auto_mapped():
+    ds = [_d("a", "440"), _d("b", "440", "cascade_llm"), _d("c", "440", "review"), _d("d", "400", "review")]
+    assert auto_share(ds) == 0.5 and review_share(ds) == 0.5  # an account the LLM mapped in the cascade needs no person
+
+
 def test_auto_precision_simple():
     gold = {"a": "440", "b": "440", "c": "440", "d": "440"}
     ds = [_d("a", "440"), _d("b", "400"), _d("c", "440"), _d("d", "400", "review")]

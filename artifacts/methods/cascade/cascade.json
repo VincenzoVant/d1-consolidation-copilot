@@ -1,0 +1,7 @@
+{
+  "first": "xgboost",
+  "second": "llm",
+  "first_fingerprint": "2cbff7085a847c4b78dc2d3d6170ae34ca88aae8f3cf59ac0dd73871f3625bc4",
+  "target_precision": 0.98,
+  "threshold_by": "code_match"
+}

@@ -274,3 +274,127 @@ def test_registry_builds_llm_from_the_config(chart, fake_embedder):
     assert method.batch_size == config.models.mapping.llm_batch_size
     assert isinstance(method.backend, ClaudeCLIBackend) and method.backend.effort == config.models.mapping.llm_effort
     assert method.cache is not None and method.cache.path == config.root / ".cache" / "llm" / "answers.sqlite"
+
+
+# --- ranked choices: the n most likely groups, each with a probability (n_choices > 1) -------------------------
+
+
+class RankedBackend:
+    """Answers the ranked question. ranking(label, codes) -> the choices list; the default ranks an
+    account's candidates in their listed order at 60, 25 and 10."""
+
+    def __init__(self, ranking=None):
+        self.ranking = ranking
+        self.calls = []
+
+    def complete(self, prompt, schema, model, system, timeout_s=120.0):
+        self.calls.append({"prompt": prompt, "schema": schema})
+        answers = []
+        for label in schema["properties"]["answers"]["items"]["properties"]["account"]["enum"]:
+            block = prompt.split(f"## Account {label}\n")[1].split("## Account")[0]
+            codes = [line[2:].split(":")[0] for line in block.split("Candidate groups:\n")[1].splitlines() if line.startswith("- ")]
+            choices = self.ranking(label, codes) if self.ranking else [{"code": c, "probability": p} for c, p in zip(codes, (60, 25, 10))]
+            answers.append({"account": label, "choices": choices, "reason": f"because {label}"})
+        return LLMResponse(structured={"answers": answers}, model=model, input_tokens=100, output_tokens=80, cost_usd=0.004, latency_ms=900.0)
+
+
+def _ranked(chart, ranking=None, **kwargs):
+    backend = RankedBackend(ranking)
+    return _method(chart, backend, n_choices=5, **kwargs), backend
+
+
+def _choices(*pairs):
+    return [{"code": c, "probability": p} for c, p in pairs]
+
+
+def test_ranked_prompt_and_schema_ask_for_a_ranked_list(chart):
+    items = [("A1", _account(1), SHORTLIST)]
+    prompt = build_prompt(items, {a.code: a for a in chart}, n_choices=5)
+    assert "exactly 5 different groups" in prompt and '"none"' in prompt
+    answer = answer_schema(items, n_choices=5)["properties"]["answers"]["items"]
+    assert set(answer["required"]) == {"account", "choices", "reason"} and "choice" not in answer["properties"]
+    choice = answer["properties"]["choices"]["items"]
+    assert choice["properties"]["code"]["enum"] == ["440", "400", "604", NONE]
+    assert choice["properties"]["probability"] == {"type": "integer", "minimum": 0, "maximum": 100}
+
+
+def test_one_choice_keeps_the_original_question(chart):
+    items = [("A1", _account(1), SHORTLIST)]
+    assert build_prompt(items, {a.code: a for a in chart}) == build_prompt(items, {a.code: a for a in chart}, n_choices=1)
+    assert "choice" in answer_schema(items)["properties"]["answers"]["items"]["properties"]
+
+
+def test_ranked_scores_every_listed_candidate(chart):
+    method, _ = _ranked(chart)
+    (out,) = method.score([_account(1)], [SHORTLIST])
+    assert out.status == "ok" and out.chosen_code == "440" and out.reason == "because A1"
+    assert out.scores == {"440": 0.60, "400": 0.25, "604": 0.10}  # the runner-up's probability now means something
+
+
+def test_ranked_choices_are_sorted_and_cut_to_n(chart):
+    ranking = lambda label, codes: _choices(("604", 5), ("440", 50), ("400", 20), ("620", 1), ("550", 1), ("600", 1))  # noqa: E731
+    method, _ = _ranked(chart, ranking)
+    (out,) = method.score([_account(1)], [_cands("440", "400", "604", "620", "550", "600")])
+    assert list(out.scores) == ["440", "400", "604", "620", "550"]  # highest first, 5 kept
+
+
+def test_ranked_none_does_not_take_one_of_the_five_places(chart):
+    ranking = lambda label, codes: _choices((NONE, 50), ("440", 20), ("400", 10), ("604", 8), ("620", 6), ("550", 4), ("600", 2))  # noqa: E731
+    method, _ = _ranked(chart, ranking)
+    (out,) = method.score([_account(1)], [_cands("440", "400", "604", "620", "550", "600")])
+    assert out.status == "none" and list(out.scores) == ["440", "400", "604", "620", "550"]  # five groups for the reviewer
+
+
+def test_ranked_prompt_asks_for_exactly_n(chart):
+    prompt = build_prompt([("A1", _account(1), SHORTLIST)], {a.code: a for a in chart}, n_choices=5)
+    assert "exactly 5" in prompt
+
+
+def test_ranked_drops_lower_choices_outside_the_shortlist(chart):
+    method, _ = _ranked(chart, lambda label, codes: _choices(("440", 60), ("620", 30), ("400", 5)) if label == "A1" else _choices(("620", 90)))
+    a1, _ = method.score([_account(1), _account(2)], [SHORTLIST, OTHER])
+    assert a1.status == "ok" and a1.scores == {"440": 0.60, "400": 0.05}  # 620 is on A2's list, not A1's
+
+
+def test_ranked_top_none_goes_to_review_but_keeps_the_ranking(chart):
+    method, _ = _ranked(chart, lambda label, codes: _choices((NONE, 70), ("440", 20)))
+    (out,) = method.score([_account(1)], [SHORTLIST])
+    assert out.status == "none" and out.chosen_code is None
+    assert out.scores == {"440": 0.20}  # still shown to the reviewer
+
+
+def test_ranked_top_outside_the_shortlist_is_invalid(chart):
+    method, _ = _ranked(chart, lambda label, codes: _choices(("620", 70), ("440", 20)))
+    (out,) = method.score([_account(1)], [SHORTLIST])
+    assert out.status == "invalid" and out.chosen_code is None and "620" in out.reason and out.scores == {"440": 0.20}
+
+
+@pytest.mark.parametrize("choices", [[], _choices(("440", 60), ("440", 20)), _choices(("440", 101)), [{"code": "440"}], "440"])
+def test_ranked_malformed_answer_is_an_error(chart, choices):
+    method, _ = _ranked(chart, lambda label, codes: choices)
+    (out,) = method.score([_account(1)], [SHORTLIST])
+    assert out.status == "error" and out.chosen_code is None
+
+
+def test_ranked_version_differs_and_one_choice_version_is_unchanged(chart):
+    one = _method(chart, FakeBackend(), batch_size=10)
+    five, _ = _ranked(chart, batch_size=10)
+    assert "rank" not in one.version() and five.version().endswith("-rank5")
+    assert five.answer_version() != one.answer_version()  # different question, different cache entries
+
+
+def test_ranked_answers_are_cached(chart, tmp_path):
+    cache = AnswerCache(tmp_path / "answers.sqlite")
+    first, backend = _ranked(chart, cache=cache)
+    first.score([_account(1)], [SHORTLIST])
+    again, backend2 = _ranked(chart, cache=cache)
+    (out,) = again.score([_account(1)], [SHORTLIST])
+    assert backend2.calls == [] and out.cached and out.scores == {"440": 0.60, "400": 0.25, "604": 0.10}
+
+
+def test_registry_reads_the_number_of_choices(mapper_root):
+    path = mapper_root / "config" / "models.yaml"
+    path.write_text(path.read_text().replace("llm_effort: low", "llm_effort: low\n  llm_choices: 5"))
+    config = load_config(mapper_root)
+    method = METHOD_REGISTRY["llm"](config, None)
+    assert method.n_choices == 5
